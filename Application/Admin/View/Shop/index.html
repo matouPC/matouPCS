@@ -1,0 +1,150 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--头部完结-->  
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">码头商城管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="__APP__/Admin/Shop/index" method="post">
+               <table class="search-tab">
+                        <tr>
+                            <th width="70">关键字:</th>
+                            <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__APP__/Admin/Shop/add"><i class="icon-font"></i>添加商城</a>
+                          <a id="batchDel" href="javascript:void(0)"><input form="myform"  formaction="__APP__/Admin/Shop/bdel" 
+                        type="submit" class="btn btn-primary btn2" onclick="return confirm('确定删除这些信息吗？');" value="批量删除"/></a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                               <th>注册人</th>
+                            <th>商铺名</th>
+                            <th>审核状态</th>
+                            <th>营业执照</th>
+                            <th>法定代表人</th>
+                            <th>商铺类型</th>
+                            <th>详细地址</th>
+                            <th>联系电话</th>
+                            <th>qq</th>
+                            <th>网站链接</th>
+                            <th>收藏数</th>
+                            <th>商铺头像</th>
+                             <th>更多详情</th>
+                            <th>操作</th>
+                        </tr>
+                        <volist name="operarr" id="v">
+                        <tr>
+                <td class="tc"><input name="ids[]" value="{$v.id}"  class="check" type="checkbox"></td>
+                            <td>{$v.username} </td>
+                            <td>{$v.shopname} </td>
+                            <td  id="{$v.id}">{$v['status']=='1'?'未审核':'审核通过'}
+                            </td>
+                            <td>{$v.charter}</td>
+                            <td>{$v.representative}</td>
+                             <td>{$v.type}</td>
+                              <td>{$v.address|substr=0,9}</td>
+                              <td>{$v.tel}</td>
+                              <td>{$v.qq}</td>
+                            <td>{$v.lianjie}</td>
+                             <td>{$v.collect}</td>
+                              <td><img src="__PUBLIC__/upload/{$v.pubtime}/{$v.imagename}" width="50"/></td>
+                              <td> <a class="link-update" href="__APP__/Admin/Shop/commodity?id={$v.id}">商品信息</a></td>
+                            <td>
+                                <a class="link-update" href="__APP__/Admin/Shop/update?id={$v.id}">修改内容</a>
+                                <a class="link-update" href="__APP__/Admin/Shop/updateimage?id={$v.id}">商铺头像</a>
+                                <a  href="javascript:void(0)"  onclick="shen({$v.id})">审核</a>
+                                    <a class="link-del"   onclick="shanchu({$v.id})">删除</a>
+                                 
+                            </td>
+                        </tr>
+                      </volist>
+                    </table>
+                    <div  class="pagelist">{$pageStr}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>     
+ <script type="text/javascript">
+
+ 
+ $("#check").click(function(){
+ if($(this).prop("checked")){
+	 $(".check").prop("checked","checked")
+ }else{
+	 $(".check").removeAttr("checked")
+ }
+ 
+})
+
+
+
+function shen(id){
+	//alert(id);
+   	$.ajax({
+
+   		url:"/matouPCS/index.php/Admin/Force/status/id/"+id,
+ 
+   		type:"get",
+   		success:function(data){
+   		
+   			if(data == 'y'){
+   			
+   		   			document.getElementById(id).innerHTML = "审核通过";
+		
+			}
+   		},error:function(){
+   			alert('no');
+   		}
+   	});
+  
+    };
+    
+    
+    function shanchu(id){
+    	//alert(id);
+    	if(confirm( '是否确定删除这条信息！')==true){
+       	$.ajax({
+
+       		url:"/matouPCS/index.php/Admin/shop/delete/id/"+id,
+     
+       		type:"get",
+       		success:function(data){
+       		
+       			if(data == 'y'){
+       			
+       				alert('删除失败，请先删除商品详情信息');
+    		
+    			}else{
+    				window.location.reload(true);
+    			}
+       		},error:function(){
+       			alert('no');
+       		}
+       	});
+    	}else{
+    		return false;
+    	}
+        };
+
+</script>
+</body>
+</html>

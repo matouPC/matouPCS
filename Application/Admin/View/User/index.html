@@ -1,0 +1,89 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户信息管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="__APP__/Admin/User/index" method="post">
+               <table class="search-tab">
+                        <tr>
+                            <th width="70">关键字:</th>
+                            <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__APP__/Admin/user/add"><i class="icon-font"></i>添加新用户</a>
+                     <a id="batchDel" href="javascript:void(0)"><input form="myform"  formaction="__APP__/Admin/User/bdel" 
+                        type="submit" class="btn btn-primary btn2" onclick="return confirm('确定删除这些信息吗？');" value="批量删除"/></a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                       
+                            <th>用户名</th>
+                          <th>用户密码</th>
+                            <th>性别</th>
+                              <th>地址</th>
+                            <th>电话</th>
+                             <th>微博</th>
+                             <th>qq</th>
+                             <th>微信</th>
+                             <th>用户头像</th>
+                             <th>粉丝数</th>
+                            <th>操作</th>
+                        </tr>
+                        <volist name="operarr" id="v">
+                        <tr>
+                         <td class="tc"><input name="ids[]" value="{$v.id}"  class="check" type="checkbox"></td>
+                          
+                            <td> {$v.username} </td>
+                            <td>{$v.password}</td>
+                            <td>{$v.sex}</td>
+                            <td>{$v.addre}</td>
+                            <td>{$v.tel}</td>
+                            <td>{$v.weibo}</td>
+                            <td>{$v.qq}</td>
+                             <td>{$v.weixin}</td>
+                              <td><img src="__PUBLIC__/upload/{$v.pubtime}/{$v.imagename}" width="50"/></td>
+                                <th>{$v.fen}</th>
+                            <td>
+                                <a class="link-update" href="__APP__/Admin/User/update?id={$v.id}">修改资料</a>
+                                <a class="link-update" href="__APP__/Admin/User/updateimage?id={$v.id}">修改图片</a>
+                               <a class="link-del"  href = "__APP__/Admin/User/delete?id={$v.id}" onclick="if(confirm( '是否确定删除这条链接！')==false)return false;">删除</a>
+	                  
+                            </td>
+                        </tr>
+                      </volist>
+                    </table>
+                    <div  class="pagelist">{$pageStr}</div>
+                </div>
+            </form>
+             <script type="text/javascript">
+     $("#check").click(function(){
+	 if($(this).prop("checked")){
+		 $(".check").prop("checked","checked")
+	 }else{
+		 $(".check").removeAttr("checked")
+	 }
+	 
+ })
+ 
+</script>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>

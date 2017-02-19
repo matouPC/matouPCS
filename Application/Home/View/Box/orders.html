@@ -1,0 +1,44 @@
+
+<!-- 悬赏大厅的局部 -->
+<ul>
+    <foreach name="list" item="xsdt">
+        <a href="?s=/Home/xsdt/xqxs/id/{$xsdt['psid']}">
+        
+            <li>
+                <div class="tx">
+                    <img src="__PUBLIC__/Home/img/yhmc.png" />
+                </div>
+                <p class="yhmc">用户{$xsdt.username|substr=0,5}</p>
+                <p class="hdsj">活动时间：{$xsdt.time}</p>
+                <p class="hddd">活动地点：{$xsdt.address}</p>
+                <div class="details">
+                    <foreach name="data" item="xsdts">
+                        <php>if($xsdt['uid'] == $xsdts['usid'] && $xsdt['psid'] == $xsdts['pid']){</php>
+                            <p>{$xsdts.type}</p>
+                            <literal>
+                                <if condition="$xsdts['sex'] == 1 ">
+                                    <p class="sex">男</p>
+                                </if>
+                                <if condition="$xsdts['sex'] == 2 ">
+                                    <p class="sex">女</p>
+                                </if>
+                                <if condition="$xsdts['sex'] == 3 ">
+                                    <p class="sex">不限</p>
+                                </if>
+                            <literal>
+                            <!-- <p class="sex">女</p> -->
+                            <p class="age">{$xsdts.age}</p>
+                            <p class="jtyq">{$xsdts.yaoqiu}</p>
+                            <p class="price">{$xsdts.price}元/天</p>
+                            <p class="bm">{$xsdts.whether}人报名</p>
+                        <php>}</php>
+                    </foreach>
+                    
+                    <p class="sjfb">{$xsdt.date}发布</p>
+                </div>
+            </li>
+        </a>
+    </foreach>
+    <br>
+    <div class="pager">{$page}</div>
+</ul>

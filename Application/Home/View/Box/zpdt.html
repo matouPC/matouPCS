@@ -1,0 +1,35 @@
+<!-- 招聘大厅的局部 -->
+<ul>
+	<foreach name="list" item="lists">
+		<a href="?s=/Home/Zpdt1/xqzp/id/{$lists.rid}">
+			<li>
+				<div class="tx">
+					<img style="width:60px;" src="__PUBLIC__/Home/hye/{$lists.imagename}" />
+				</div>
+				<p class="yhmc">用户{$lists.username|substr=0,5}</p>
+                <p class="hdsj">认证logo</p>
+				<p class="hdsj">部队名称：</p>
+                <p class="hdsj">部队类型：</p>
+				<p class="hddd">活动地点：{$lists.address}</p>
+				<div class="details">
+					<foreach name="listn" item="zpdt">
+						<php>if($lists['rid'] == $zpdt['pid'] && $lists['uid'] == $zpdt['usid']){</php>
+						<p>{$zpdt.type}</p>
+						<p class="sex" style="color:#000;">{$zpdt.sex}</p>
+						<p class="age" style="color:#000;">{$zpdt.age}岁</p>
+						<p class="jtyq" ><span style="color:#000;">具体要求 :</span> &nbsp;{$zpdt.content}</p>
+						 <p class="price">{$zpdt.price}元/天</p>
+						 <?php $num = explode(',',$zpdt['zhao']);
+						 		array_pop($num);
+						 		$nums = count($num);
+						  ?>
+						<p class="bm">{$nums}人报名</p>
+						<php>}</php>
+					</foreach>
+					<p class="sjfb">{$lists.date}发布</p>
+				</div>
+			</li>
+		</a>
+	</foreach>
+	<div class="pager">{$page}</div>
+</ul>

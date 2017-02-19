@@ -1,0 +1,34 @@
+<!-- 应赏大厅的局部 -->
+<ul>
+	<foreach name="list" item="lists">
+		<a href="?s=/Home/Ysq/xqys/id/{$lists.did}">
+			<li>
+				<div class="tx">
+					<img src="__PUBLIC__/Home/img/yhmc.png" />
+				</div>
+				<p class="yhmc">用户{$lists.username|substr=0,5}</p>
+				<p class="price-f">
+					{$lists.price}元/天
+				</p>
+				<p class="hddd">所在地: {$lists.address}</p>
+				<div class="details">
+					<p>{$lists.name}</p>
+					<p class="age-f">{$lists.age}岁</p>
+					<!--<p style="margin-left: 20px; color: #999999;"></p>-->
+					<p class="grjj">{$lists.content}</p>
+					<p>职位:{$lists.type}</p>
+					<p class="zpzp">照片作品：5个</p>
+					<p class="spzp">视频作品：2个</p>
+					<p class="dq">
+						档期:12-11上午&nbsp;&nbsp;12-14下午&nbsp;&nbsp;12-30中午&nbsp;&nbsp;01-23中午。。。。。。。。。。。。。。。。。。。。。。
+					</p>
+					<p class="sc">
+						<a href="">已有{$lists.collect}人收藏</a>
+					</p>
+					<p class="sjfb">2016.12.12发布</p>
+				</div>
+			</li>
+		</a>
+	</foreach>
+<div class="pager">{$page}</div>
+</ul>

@@ -1,0 +1,116 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">招聘大厅管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="__APP__/Admin/Recruit/index" method="post">
+               <table class="search-tab">
+                        <tr>
+                            <th width="70">招聘人:</th>
+                            <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__APP__/Admin/Recruit/add"><i class="icon-font"></i>添加招聘</a>
+                         <a id="batchDel" href="javascript:void(0)"><input form="myform"  formaction="__APP__/Admin/Recruit/bdel" 
+                        type="submit" class="btn btn-primary btn2" onclick="return confirm('确定删除这些信息吗？');" value="批量删除"/></a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                      <tr>
+                            <th></th>
+                            <th></th>
+
+                            <th colspan="8" style="color:red">基本信息</th>
+                   
+                      
+                        </tr>
+                        <tr>
+                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                            <th>编号</th>
+                            <th>招聘方</th>
+                            <th>工作地址</th>
+                            <th>联系电话</th>
+                            <th>qq</th>
+                            <th>邮箱</th>
+                            <th>收藏数</th>
+                             <th>更多</th>
+                            <th>操作</th>
+                        </tr>
+                        <volist name="operarr" id="v">
+                        <tr>
+                         <td class="tc"><input name="ids[]" value="{$v.rid}"  class="check" type="checkbox"></td>
+                           <td> {$i} </td>
+                            <td> {$v.username} </td>
+                            <td>{$v.address|substr=0,9}</td>
+                             <td>{$v.rtel}</td>
+                             <td>{$v.rqq}</td>
+                             <td>{$v.remail}</td>
+                              <td>{$v.collect}</td>
+                                  <td>    <a class=" link-update" href="__APP__/Admin/Recruit/tem?rid={$v.rid}">招聘详情</a></td>
+                            <td>
+                                <a class="link-update" href="__APP__/Admin/Recruit/update?rid={$v.rid}">修改内容</a>
+                             
+                                  <a class="link-del"   onclick="shanchu({$v.rid})">删除</a>
+                            </td>
+                        </tr>
+                      </volist>
+                    </table>
+                    <div  class="pagelist">{$pageStr}</div>
+                </div>
+            </form>
+            <script type="text/javascript">
+     $("#check").click(function(){
+	 if($(this).prop("checked")){
+		 $(".check").prop("checked","checked")
+	 }else{
+		 $(".check").removeAttr("checked")
+	 }
+	 
+ })
+ 
+  function shanchu(rid){
+	//alert(id);
+	if(confirm( '是否确定删除这条信息！')==true){
+   	$.ajax({
+
+   		url:"/matouPCS/index.php/Admin/Recruit/delete/rid/"+rid,
+ 
+   		type:"get",
+   		success:function(data){
+   		
+   			if(data == 'y'){
+   			
+   				alert('删除失败，请先删除招聘详情信息');
+		
+			}else{
+				window.location.reload(true);
+			}
+   		},error:function(){
+   			alert('no');
+   		}
+   	});
+	}else{
+		return false;
+	}
+    };
+
+</script>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>

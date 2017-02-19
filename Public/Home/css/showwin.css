@@ -1,0 +1,414 @@
+		.xqcc-c0 {
+			color: #333;
+			font-size: 14px;
+		}
+		
+		.xqcc-c1 {
+			/*display: block;*/
+			margin-left: 40px;
+			font-size: 14px;
+			color: #333;
+		}
+		
+		.xqcc-c2 {
+			display: block;
+			width: 500px;
+			position: absolute;
+			right: 30px;
+			top: 0;
+			overflow: hidden;
+			font-size: 14px;
+		}
+		
+		.xqcc-c3 {
+			font-size: 14px;
+			color: #999;
+		}
+		
+		.spdlb {
+			width: 516px;
+			height: 312px;
+			background: #f2f2f2;
+			display: none;
+			position: fixed;
+			margin: auto;
+			left: 0px;
+			right: 0px;
+			top: 0px;
+			bottom: 0px;
+			z-index: 999;
+			border-radius: 8px!important;
+			font-size: 12px;
+		}
+		
+		.spdl-okb {
+			width: 80px;
+			height: 35px;
+			border: 0;
+			cursor: pointer;
+			outline: none;
+			color: #fff;
+			font-size: 15px;
+			position: absolute;
+			left: 50px;
+			border-radius: 8px;
+			background: #FF5C5D;
+		}
+		
+		.spdl-escb {
+			width: 80px;
+			height: 35px;
+			border: 0;
+			cursor: pointer;
+			outline: none;
+			color: #fff;
+			position: absolute;
+			right: 50px;
+			font-size: 15px;
+			border-radius: 8px;
+			background: #FF5C5D;
+		}
+		
+		.spdl-cb {
+			width: 250px;
+			height: 40px;
+			margin: 0 auto;
+			/*line-height: 185px;*/
+			text-align: center;
+			margin-top: 5px;
+			margin-bottom: 40px;
+		}
+		
+		.spdl-cb span {
+			display: block;
+			height: 15px;
+			line-height: 15px;
+			margin-top: 95px;
+		}
+		
+		.timeb {
+			width: 10px;
+		}
+		
+		.titlenab {
+			width: 100%;
+			height: 57px;
+			background: #FF5C5D;
+		}
+		
+		.rhideb {
+			width: 27px;
+			height: 27px;
+			float: right;
+			margin-top: 15px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		
+		.rhideb img {
+			width: 100%!important;
+			margin-top: 0px!important;
+			margin-left: 0px!important;
+		}
+		
+		.titlenab img {
+			/*height: 100%;*/
+			/*line-height: 57px;*/
+			margin-top: 23px;
+			margin-left: 18px;
+		}
+		
+		.fbtypeb {
+			width: 100%;
+			height: 24px;
+			margin-top: 18px;
+			text-align: center;
+		}
+		
+		.fbtypeb a {
+			line-height: 24px;
+			display: block;
+			width: 80px;
+			height: 24px;
+			float: left;
+		}
+		
+		.fbtypeb a p {
+			line-height: 24px;
+			display: block;
+			width: 80px;
+			height: 24px;
+			float: left;
+			border: 2px solid #f2f2f2;
+			border-radius: 15px;
+		}
+		
+		.spfxb {
+			width: 500px;
+			height: 1px;
+			background: #d9d7d7;
+			margin: 0 auto;
+			margin-top: 13px;
+		}
+		
+		.swbtnb {
+			width: 100%;
+			height: 50px;
+			float: left;
+		}
+		
+		.swbtn-cb {
+			width: 420px;
+			height: 31px;
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+		
+		.swbtn-cb div {
+			float: left;
+			margin-top: 5px;
+		}
+		
+		.tjbtnb {
+			width: 60px;
+			height: 30px;
+			border: 0;
+			float: right;
+			color: #fff;
+			border-radius: 6px;
+			background: #ff5c5c;
+		}
+		
+		.contentb {
+			width: 236px;
+			height: auto;
+			float: left;
+			margin-top: 20px;
+			/*margin-left: 10px;*/
+		}
+		
+		.show-bg {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 99;
+			display: none;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		/*-----------------------------------------------------*/
+		
+		.spdlc {
+			width: 500px;
+			height: 451px;
+			background: #f2f2f2;
+			display: none;
+			position: fixed;
+			margin: auto;
+			left: 0px;
+			right: 0px;
+			top: 0px;
+			bottom: 0px;
+			z-index: 999;
+			border-radius: 8px!important;
+			font-size: 12px;
+		}
+		
+		.spdl-okc {
+			width: 80px;
+			height: 35px;
+			border: 0;
+			cursor: pointer;
+			outline: none;
+			color: #fff;
+			font-size: 15px;
+			position: absolute;
+			left: 50px;
+			border-radius: 8px;
+			background: #FF5C5D;
+		}
+		
+		.spdl-escc {
+			width: 80px;
+			height: 35px;
+			border: 0;
+			cursor: pointer;
+			outline: none;
+			color: #fff;
+			position: absolute;
+			right: 50px;
+			font-size: 15px;
+			border-radius: 8px;
+			background: #FF5C5D;
+		}
+		
+		.spdl-cc {
+			width: 250px;
+			height: 40px;
+			margin: 0 auto;
+			/*line-height: 185px;*/
+			text-align: center;
+			margin-top: 5px;
+			margin-bottom: 40px;
+		}
+		
+		.spdl-cc span {
+			display: block;
+			height: 15px;
+			line-height: 15px;
+			margin-top: 95px;
+		}
+		
+		.timec {
+			width: 10px;
+		}
+		
+		.titlenac {
+			width: 100%;
+			height: 57px;
+			background: #FF5C5D;
+		}
+		
+		.rhidec {
+			width: 27px;
+			height: 27px;
+			float: right;
+			margin-top: 15px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		
+		.rhidec img {
+			width: 100%!important;
+			margin-top: 0px!important;
+			margin-left: 0px!important;
+		}
+		
+		.titlenac img {
+			/*height: 100%;*/
+			/*line-height: 57px;*/
+			margin-top: 23px;
+			margin-left: 18px;
+		}
+		
+		.fbtypec {
+			width: 100%;
+			height: 24px;
+			margin-top: 18px;
+			text-align: center;
+		}
+		
+		.fbtypec a {
+			line-height: 24px;
+			display: block;
+			width: 80px;
+			height: 24px;
+			float: left;
+		}
+		
+		.fbtypec a p {
+			line-height: 24px;
+			display: block;
+			width: 80px;
+			height: 24px;
+			float: left;
+			border: 2px solid #f2f2f2;
+			border-radius: 15px;
+		}
+		
+		.spfxc {
+			width: 500px;
+			height: 1px;
+			background: #d9d7d7;
+			margin: 0 auto;
+			margin-top: 13px;
+		}
+		
+		.swbtnc {
+			width: 100%;
+			height: 50px;
+			float: left;
+		}
+		
+		.swbtn-cc {
+			width: 420px;
+			height: 31px;
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+		
+		.swbtn-cc div {
+			float: left;
+			margin-top: 5px;
+		}
+		
+		.tjbtnc {
+			width: 60px;
+			height: 30px;
+			border: 0;
+			float: right;
+			color: #fff;
+			border-radius: 6px;
+			background: #ff5c5c;
+		}
+		
+		.contentc {
+			width: 397px;
+			height: auto;
+			float: left;
+			margin-top: 20px;
+			margin-left: 55px;
+			position: relative;
+			z-index: 9999;
+		}
+		.contentimg{
+			width: 270px;
+			height: 86px;
+			margin: 0 auto;
+			position: relative;
+			top: 50px;
+			/*margin-top: 120px;*/
+		}
+		
+		.show-bg {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 99;
+			display: none;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		
+		.cca {
+			resize: none;
+			width: 130px;
+			height: 110px;
+			border-radius: 15px;
+			/*margin-left: 40px;*/
+			line-height: 110px;
+			text-align: center;
+			border: 0;
+			padding: 10px;
+			border: 2px solid #FF5C5D;
+			float: left;
+			font-size: 16px;
+			color: #FF5C5D;
+		}
+		
+		.ccb {
+			resize: none;
+			width: 130px;
+			height: 110px;
+			border-radius: 15px;
+			margin-left: 85px;
+			line-height: 20px;
+			text-align: center;
+			border: 0;
+			padding: 10px;
+			border: 2px solid #ccc;
+			float: left;
+			font-size: 16px;
+			color: #ccc;
+		}
+		.ccrc{
+			margin-top: 15px;
+		}

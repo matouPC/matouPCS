@@ -1,0 +1,216 @@
+[ 2015-12-15T18:15:22+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 15 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-15T18:15:22+08:00 ] 127.0.0.1 /c/Public/js/jquery1.8.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:C
+
+[ 2015-12-15T18:15:22+08:00 ] 127.0.0.1 /c/Public/css/style_mobile.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:C
+
+[ 2015-12-15T18:15:22+08:00 ] 127.0.0.1 /c/Public/images/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-15T18:31:27+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\user\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 15 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T18:31:28+08:00 ] 127.0.0.1 /c/Public/css/style_mobile.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+ERR: 无法加载控制器:C
+
+[ 2015-12-15T18:31:28+08:00 ] 127.0.0.1 /c/Public/js/jquery1.8.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:C
+
+[ 2015-12-15T18:31:28+08:00 ] 127.0.0.1 /c/Public/images/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T18:31:28+08:00 ] 127.0.0.1 /c/Public/images/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T18:33:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 3 行.
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 8 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: endtime D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T18:33:46+08:00 ] 127.0.0.1 /c/Public/css/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:C
+
+[ 2015-12-15T18:33:46+08:00 ] 127.0.0.1 /c/Public/js/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:C
+
+[ 2015-12-15T18:33:46+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T18:33:46+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-15T18:35:22+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 3 行.
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\user\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 8 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\user\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-15T18:35:22+08:00 ] 127.0.0.1 /c/Public/js/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:C
+
+[ 2015-12-15T18:35:22+08:00 ] 127.0.0.1 /c/Public/css/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:C
+

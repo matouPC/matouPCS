@@ -1,0 +1,899 @@
+[ 2017-01-22T11:45:53+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009877s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0452s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.1079s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0832s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0370s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0645s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0331s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000425s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000525s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 101 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.126524s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.126599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.026303s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.026416s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.019916s ]
+INFO: [ app_end ] --END-- [ RunTime:0.020032s ]
+
+[ 2017-01-22T18:39:42+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001749s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0365s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0084s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 101 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001506s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001561s ]
+
+[ 2017-01-22T18:39:46+08:00 ] ::1 /matouPCS/?s=/Home/Xsdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0124s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.collect desc LIMIT 0,3   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0061s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0513s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `reward1`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023268s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000882s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2017-01-22T18:39:47+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0074s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0341s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0077s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0078s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2017-01-22T18:39:50+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0077s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 2,2   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0090s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0013s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011775s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011834s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000178s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2017-01-22T18:39:53+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0129s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 4,2   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0117s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0015s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026853s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026997s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001644s ]
+
+[ 2017-01-22T18:39:57+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0115s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 6,2   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0119s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0015s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001664s ]
+
+[ 2017-01-22T18:40:08+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0110s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0076s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 101 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036963s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2017-01-22T18:40:11+08:00 ] ::1 /matouPCS/?s=/Home/Xsdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0122s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.collect desc LIMIT 0,3   [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0049s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `reward1`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018106s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018185s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000746s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2017-01-22T18:40:13+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0060s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0053s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013495s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2017-01-22T18:40:14+08:00 ] ::1 /matouPCS/?s=/Home/Ysq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0570s ]
+SQL: SELECT * FROM `due`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0129s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id  ORDER BY d.collect desc  [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0076s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022252s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000699s ]
+
+[ 2017-01-22T18:40:15+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0041s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id  LIMIT 0,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 35 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027273s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027336s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000510s ]
+
+[ 2017-01-22T18:40:20+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0035s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id  LIMIT 2,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 35 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006246s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000456s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000496s ]
+
+[ 2017-01-22T18:40:21+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0119s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id  LIMIT 0,2   [ RunTime:0.0012s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 35 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018834s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018967s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000963s ]
+
+[ 2017-01-22T18:40:24+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000478s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0129s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0113s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id  LIMIT 4,2   [ RunTime:0.0012s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 35 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021738s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021946s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001680s ]
+
+[ 2017-01-22T18:40:31+08:00 ] ::1 /matouPCS/?s=/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0146s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0054s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 101 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021281s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021334s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2017-01-22T18:41:04+08:00 ] ::1 /matouPCS/?s=/Home/Zpdt1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0444s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id   [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0551s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0054s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0037s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0033s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079459s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079548s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2017-01-22T18:49:39+08:00 ] ::1 /matouPCS/?s=/Home/Zpdt1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0116s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0125s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0078s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0056s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0037s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012318s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000578s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2017-01-22T18:49:40+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0054s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0057s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011893s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000708s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000758s ]
+
+[ 2017-01-22T18:49:45+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0137s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0079s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 2,2   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0066s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0008s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013620s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013695s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000885s ]
+
+[ 2017-01-22T18:50:19+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0109s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0061s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 4,2   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0059s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0009s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013554s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013627s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000900s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000966s ]
+
+[ 2017-01-22T18:50:22+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0088s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 6,2   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0064s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0009s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014951s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+
+[ 2017-01-22T18:52:37+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0127s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0110s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 8,2   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0120s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0017s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027581s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027689s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000836s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000886s ]
+
+[ 2017-01-22T18:52:44+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0953s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0072s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 10,2   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0068s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0009s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014886s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014966s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000962s ]
+
+[ 2017-01-22T18:52:49+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0046s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0085s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0011s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017785s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2017-01-22T18:53:05+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0100s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 2,2   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0061s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0009s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014820s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2017-01-22T18:54:38+08:00 ] ::1 /matouPCS/?s=/Home/Zpdt1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0125s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0086s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0086s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0057s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0037s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012184s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2017-01-22T18:54:40+08:00 ] ::1 /matouPCS/?s=/Home/Box/Zpdt&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0043s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0043s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 48 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: page D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\92ed9a84122ebd7b086f358b3ef9efda.php 第 27 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006804s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000435s ]
+
+[ 2017-01-22T18:55:30+08:00 ] ::1 /matouPCS/?s=/Home/Zpdt1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0082s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0070s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0055s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0038s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0035s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014918s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014990s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000604s ]
+
+[ 2017-01-22T18:55:31+08:00 ] ::1 /matouPCS/?s=/Home/Box/Zpdt&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0182s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0059s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0059s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 48 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011927s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000688s ]
+
+[ 2017-01-22T18:55:34+08:00 ] ::1 /matouPCS/?s=/Home/Box/Zpdt&p=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0113s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 2,2   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0078s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 48 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014391s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000961s ]
+
+[ 2017-01-22T18:55:37+08:00 ] ::1 /matouPCS/?s=/Home/Box/Zpdt&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `due` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0037s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 4,2   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0042s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 48 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006718s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000435s ]
+

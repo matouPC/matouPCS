@@ -1,0 +1,55 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">关于我们</span></div>
+        </div>
+     
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__APP__/Admin/Us/add"><i class="icon-font"></i>添加</a>
+                    
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                       
+                            <th>工作时间</th>
+                            <th>电话</th>
+                            <th>地址</th>
+                            <th>邮箱</th>
+                      
+                            <th>操作</th>
+                        </tr>
+                        <volist name="operarr" id="v">
+                        <tr>
+                           <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
+                          
+                            <td> {$v.worktime} </td>
+                            
+                            <td>{$v.tel}</td>
+                             <td>{$v.address}</td>
+                             <td>{$v.email}</td>
+                      
+                            <td>
+                                <a class="link-update" href="__APP__/Admin/Us/update?id={$v.id}">修改</a>
+                               <a class="link-del"  href = "__APP__/Admin/Us/delete?id={$v.id}" onclick="if(confirm( '是否确定删除这条信息！')==false)return false;">删除</a>
+	                  
+                            </td>
+                        </tr>
+                      </volist>
+                    </table>
+                    <div  class="pagelist">{$pageStr}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>

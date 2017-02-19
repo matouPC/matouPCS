@@ -1,0 +1,46 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--头部完结-->  
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">图<a href="__APP__/Admin/Viwepager.html">图片管理</a></span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+            <volist name="jarr" id="v">
+           <form action="__APP__/Admin/User/usaveimage" method="post" enctype="multipart/form-data">
+   <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>用户名：</th>
+                                <td>
+                                {$v.username}
+                                      <input type="hidden" name="id" value="{$v.id}"/>
+                                     <input type="hidden" name="pubtime" value="{$v.pubtime}">
+                                </td>
+                            </tr>
+                          
+                         
+                            <tr>
+                                <th><i class="require-red">*</i>用户头像：</th>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><img src="__PUBLIC__/upload/{$v.pubtime}/{$v.imagename}"  width="400"/></td>
+                            </tr>
+                           
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="修改" type="submit">
+                                    <a href="__APP__/Admin/User"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+ </form>  
+ </volist>   
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

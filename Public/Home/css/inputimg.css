@@ -1,0 +1,61 @@
+.photobt {
+	width: 123px;
+	height: 73px;
+	opacity: 0;
+	z-index: 5;
+	border: 1px solid #999;
+	position: absolute;
+}
+.photobt1 {
+	width: 123px;
+	height: 73px;
+	opacity: 0;
+	z-index: 5;
+	border: 1px solid #999;
+	position: absolute;
+}
+
+.photobg1 {
+	width: 123px;
+	height: 73px;
+	border: 1px solid #ccc;
+	z-index: 4;
+	float: left;
+	overflow: hidden;
+	background: url(../img/photoadd.png);
+	position: relative;
+}
+
+.photobt2 {
+	width: 123px;
+	height: 73px;
+	opacity: 0;
+	background: blanchedalmond;
+	z-index: 5;
+	position: absolute;
+}
+
+.photobg2 {
+	width: 123px;
+	height: 73px;
+	border: 1px solid #ccc;
+	background: url(../img/photoadd.png);
+	overflow: hidden;
+	z-index: 4;
+	position: relative;
+	float: left;
+	margin-left: 5px;
+	/*display: none;*/
+}
+
+.remm {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	z-index: 10;
+	display: none;
+}
+.addimg{
+	text-align: center;
+	line-height: 73px;
+}

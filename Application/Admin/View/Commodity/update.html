@@ -1,0 +1,55 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">商品管理</span></div>
+        </div>
+        
+        <div class="result-wrap">
+            <volist name="jarr" id="v">
+        <form action="__APP__/admin/Commodity/usave" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>商品名称：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="name" size="20" value="{$v.name}" type="text">
+                                         <input type="hidden" name="id" value="{$v.id}"/>
+                     <input type="hidden" name="pubtime" value="{$v.pubtime}">
+                                </td>
+                            </tr>
+                          
+                        
+                            <tr>
+                                <th><i class="require-red">*</i>价格：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="price" size="12" value="{$v.price}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>浏览数：</th>
+                                <td>
+                                    <input class="common-text required" id="sex" name="scan" size="12" value="{$v.scan}" type="text">
+                                </td>
+                            </tr>
+                           
+                         
+                      
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="修改" type="submit">
+                                    <a href="__APP__/Commodity/shop"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+                </volist>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

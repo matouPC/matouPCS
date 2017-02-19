@@ -1,0 +1,67 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">商品管理</span></div>
+        </div>
+        
+        <div class="result-wrap">
+             <form action="__APP__/admin/Commodity/save" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                        
+                            <tr>
+                                <th><i class="require-red">*</i>商品名称：</th>
+                                <td>
+                                    <input class="common-text required" id="type" name="name" size="20" value="" type="text">
+                                      <input type="hidden" name="id" value="5"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>商铺名称：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="shopname" size="20" value="" type="text">
+                                </td>
+                            </tr>
+                          
+                        
+                            <tr>
+                                <th><i class="require-red">*</i>价格：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="price" size="12" value="" type="text">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th><i class="require-red">*</i>浏览数：</th>
+                                <td>
+                                    <input class="common-text required" id="age" name="scan" size="12" value="" type="text">
+                                </td>
+                            </tr>
+                 
+                       
+                          
+                            <tr>
+                                <th><i class="require-red">*</i>商品图：</th>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
+                            </tr>
+                           
+                            <tr>
+                                <th></th>
+                    
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <a href="__APP__/Admin/shop"><input class="btn btn6"  value="返回"></a>
+                              
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

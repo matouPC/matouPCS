@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>应赏填写</title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/yfbxs-3r-cc.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/upimg.css" />
+	</head>
+
+	<body>
+		<header>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<div class="h-c-1f">
+						<div class="s-f1-l">
+							<div class="home">
+								<a href="?s=/Home/Index">
+									<img src="__PUBLIC__/Home/img/home.png" />
+								</a>
+							</div>
+							<p>
+								<a href="?s=/Home/Index">首页</a>
+							</p>
+						</div>
+						<div class="s-f1-r">
+							<ul>
+								<php>if(empty($_SESSION['username'])){</php>
+								<li style="width: 100px;">
+									<a id="login-alert" href="#">请注册\登录</a>
+								</li>
+								<php>}else{</php>
+								<li style="width: 100px;">
+									<a href="#">
+										<img src="__PUBLIC__/Home/img/tx.png" />
+										<p>用户{$_SESSION['username']|substr=0,5}</p>
+									</a>
+									<div class="str"></div>
+								</li>
+								<php>}</php>
+								<li id="select-xx" style="width: 45px;">
+									<a href="#">消息</a>
+									<div class="str"></div>
+									<div class="select-xx">
+										<ul>
+											<li>
+												<a href="">需求消息</a>
+											</li>
+											<li>
+												<a href="">部队消息</a>
+											</li>
+											<li>
+												<a href="">商铺消息</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li style="width: 58px;">
+									<a href="#">收藏夹</a>
+									<div class="str"></div>
+								</li>
+								<li id="select-yfb" style="width: 70px;">
+									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
+									<div class="str"></div>
+									<div class="select-yfb">
+										<ul>
+											<ul>
+												<li>
+													<a href="">悬赏</a>
+												</li>
+												<li>
+													<a href="">应赏</a>
+												</li>
+												<li>
+													<a href="">招聘</a>
+												</li>
+												<li>
+													<a href="">应聘</a>
+												</li>
+												<li>
+													<a href="">求购</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+								<li style="width: 68px;">
+									<a href="#">部队中心</a>
+									<div class="str"></div>
+								</li>
+								<li style="width: 68px;">
+									<a href="#">我的商铺</a>
+									<div class="str"></div>
+								</li>
+								<li style="width: 70px;">
+									<a class="action" href="#">发动态</a>
+									<div class="strf"></div>
+								</li>
+								<li class="clearfloat"></li>
+							</ul>
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="h-c-2f">
+						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<div class="s-f2-r">
+							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<div class="s-f2-r1">
+								<img src="__PUBLIC__/Home/img/ss-t.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="s-main-c">
+				<div class="s-main-r">
+					<p style="font-size: 22px;">WEDDING PIER</p>
+					<p style="font-size: 22px;">喜事码头</p>
+					<p style="font-size: 14px; padding:10px 0;">简单&nbsp;&nbsp;&nbsp;&nbsp;方便&nbsp;&nbsp;&nbsp;&nbsp;效率</p>
+					<div class="bdsz">
+						<div class="bdsz-bt">
+							已发布应赏
+						</div>
+						<ul>
+							<li class="selected-con">
+								<a href="javascript://">
+									基本信息
+									<img class="list-b" src="__PUBLIC__/Home/img/dh.png" style="position: absolute; top: 76px; right: 70px;" />
+								</a>
+							</li>
+							<li>
+								<a href="javascript://">
+									照片作品
+									<img class="list-d" src="__PUBLIC__/Home/img/dh.png" style="position: absolute; top: 156px; right: 70px;" />
+								</a>
+							</li>
+							<li>
+								<a href="javascript://">
+									视频作品
+									<img class="list-d" src="__PUBLIC__/Home/img/dh.png" style="position: absolute; top: 196px; right: 70px;" />
+								</a>
+							</li>
+							<li>
+								<a href="javascript://">
+									档期
+									<img class="list-d" src="__PUBLIC__/Home/img/dh.png" style="position: absolute; top: 116px; right: 70px;" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="s-main-l">
+					<div class="s-c-2f">
+						<div class="s-2f-c1">
+							<span class="hfx"></span>
+							<p><strong>基本信息</strong></p>
+						</div>
+						<div class="s-2f-c2">
+							<ul>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;姓&nbsp;名&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<input type="text" style="width: 200px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;" value="{$fbys.name}">
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;性&nbsp;别&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<?php if($fbys['sexs'] == 1){ ?>
+										<samp style="display: block;width: 60px;margin-top:2px;float: left;margin-left: 30px;">
+												<input type="radio" style="margin-right: 8px;" checked="checked" value="1"/>男
+											</samp>
+										
+										<samp style="display: block;width: 60px;margin-top:2px;float: left;">
+													<input type="radio" style="margin-right: 8px;" value="0"/>女
+												</samp>
+										<?php }else{ ?>
+										<samp style="display: block;width: 60px;margin-top:2px;float: left;margin-left: 30px;">
+												<input type="radio" style="margin-right: 8px;" value="1"/>男
+											</samp>
+										
+										<samp style="display: block;width: 60px;margin-top:2px;float: left;">
+													<input type="radio" style="margin-right: 8px;" checked="checked" value="0"/>女
+												</samp>
+										<?php } ?>
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;年&nbsp;龄&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<input class="w75t"  name="age" value="{$fbys.age}" type="number" />&nbsp;岁
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;身&nbsp;高&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<input class="w75t" name="height" value="{$fbys.height}" type="text" />&nbsp;cm
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;体&nbsp;重&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<input class="w75t" name="weight" value="{$fbys.weight}" type="text" />&nbsp;kg
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;地&nbsp;区&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<input style="cursor: pointer;" name="address" value="<?php $add = explode(',',$fbys['address']); echo $add[0];?>" readonly="readonly" class="w75t" id="xz-city" type="text" value="" data-value="" onclick="appendCity(this,'danxuan')">
+											<input class="w209" type="text" name="address_s" style="background-color:white;" value="<?php echo $add[1]; ?>" placeholder="填写详细地址" />
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;职&nbsp;业&nbsp;</div>
+
+									<div class="s-2f-c2ul-r">
+										<select class="w95s" name="type" id="type" style="width:100px;" onchange="gradeChange()">
+												<option value="0">-请选择-</option>
+												<?php if($fbys['type'] == '主持人'){ ?>
+												<option selected="selected">主持人</option>
+												<?php }else{ ?>
+												<option>主持人</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '摄影师'){ ?>
+												<option selected="selected">摄影师</option>
+												<?php }else{ ?>
+												<option>摄影师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '摄像师'){ ?>
+												<option selected="selected">摄像师</option>
+												<?php }else{ ?>
+												<option>摄像师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '化妆师'){ ?>
+												<option selected="selected">化妆师</option>
+												<?php }else{ ?>
+												<option>化妆师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '策划师'){ ?>
+												<option selected="selected">策划师</option>
+												<?php }else{ ?>
+												<option>策划师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '音响师'){ ?>
+												<option selected="selected">音响师</option>
+												<?php }else{ ?>
+												<option>音响师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '灯光师'){ ?>
+												<option selected="selected">灯光师</option>
+												<?php }else{ ?>
+												<option>灯光师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '花艺师'){ ?>
+												<option selected="selected">花艺师</option>
+												<?php }else{ ?>
+												<option>花艺师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '场布师'){ ?>
+												<option selected="selected">场布师</option>
+												<?php }else{ ?>
+												<option>场布师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '场布师'){ ?>
+												<option selected="selected">场布师</option>
+												<?php }else{ ?>
+												<option>场布师</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '歌手'){ ?>
+												<option selected="selected">歌手</option>
+												<?php }else{ ?>
+												<option>歌手</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '舞者'){ ?>
+												<option selected="selected">舞者</option>
+												<?php }else{ ?>
+												<option>舞者</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '乐器演奏'){ ?>
+												<option selected="selected">乐器演奏</option>
+												<?php }else{ ?>
+												<option>乐器演奏</option>
+												<?php } ?>
+												<?php if($fbys['type'] == '其他'){ ?>
+												<option selected="selected">其他</option>
+												<?php }else{ ?>
+												<option>其他</option>
+												<?php } ?>
+											</select>
+											<span class="types1">
+												<!-- <input class="w209" id="types1" type="text" name="type" placeholder="输入具体职业名称" /> -->
+											</span>
+										<!-- <input type="text" placeholder="填写具体职业名称" style="width: 205px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;left: 10px;background: #999;"> -->
+									</div>
+									<script type="text/javascript">
+									function gradeChange(){
+									    var checkText=$("#type").find("option:selected").text();
+									    if(checkText == '其他'){
+									    	$('.types1').html('<input class="w209" type="text" name="type1" placeholder="填写职业名称" />');
+									    }else{
+									    	$('.types1').html('<input class="w209" type="hidden" name="type1" placeholder="填写职业名称" />');
+									    }
+									}
+								</script>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;期望赏金&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<select class="w200s" name="price" style="width:110px;">
+												<option>请选择</option>
+												<option>不限</option>
+												<?php if($fbys['price'] == '< 1000'){ ?>
+												<option selected="selected">< 1000</option>
+												<?php }else{ ?>
+												<option>< 1000</option>
+												<?php } ?>
+												<?php if($fbys['price'] == '1000 - 1500'){ ?>
+												<option selected="selected">1000 - 1500</option>
+												<?php }else{ ?>
+												<option>1000 - 1500</option>
+												<?php } ?>
+												<?php if($fbys['price'] == '1500 - 2000'){ ?>
+												<option selected="selected">1500 - 2000</option>
+												<?php }else{ ?>
+												<option>1500 - 2000</option>
+												<?php } ?>
+												<?php if($fbys['price'] == '2000 - 2500'){ ?>
+												<option selected="selected">2000 - 2500</option>
+												<?php }else{ ?>
+												<option>2000 - 2500</option>
+												<?php } ?>
+												<?php if($fbys['price'] == '2500 - 3000'){ ?>
+												<option selected="selected">2500 - 3000</option>
+												<?php }else{ ?>
+												<option>2500 - 3000</option>
+												<?php } ?>
+												<?php if($fbys['price'] == '3000 - 5000'){ ?>
+												<option selected="selected">3000 - 5000</option>
+												<?php }else{ ?>
+												<option>3000 - 5000</option>
+												<?php } ?>
+												<?php if($fbys['price'] == '> 5000'){ ?>
+												<option selected="selected">> 5000</option>
+												<?php }else{ ?>
+												<option>> 5000</option>
+												<?php } ?>
+											</select> k/天
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;联系电话&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<input placeholder="15603968156" type="text" value="{$fbys['tels']}"style="width: 200px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;Q&nbsp;Q&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<input placeholder="15603968156" type="text" value="{$fbys['qqs']}" style="width: 200px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">
+									</div>
+								</li>
+								<li>
+									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;"><b>*</b></samp>&nbsp;自我介绍&nbsp;</div>
+									<div class="s-2f-c2ul-r">
+										<textarea style="width: 348px;height: 110px;border: 1px solid #dedede;position: relative;top: -0px;resize: none;">{$fbys['content']}</textarea>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="txfg1-a" style="height:auto;">
+						<div class="txfg1-c1-1-b">
+							<span class="hfx2"></span>
+							<p><strong>照片作品</strong></p>
+							<span class="hfx3" id="hfx3-1-u"><img src="__PUBLIC__/Home/img/tj-sp.png" />新增照片</span>
+
+
+							<div class="s-c-3f">
+								<div class="s-c-3f-2f-f">
+									<ul class="this">
+										<?php for ($i=0; $i <count($fbys_zp); $i++) {  ?>
+										<li>
+											<div class="cjsp_sc">
+												<div class="photobg1">
+													<div class="remm">
+														<img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18">
+													</div>
+													<input class="photobt" name="file{$i+1}" type="file" value="{$i+1}" id="photo1">
+													<img src="<?php echo '/matouPCS/Uploads/'.substr($fbys_zp[$i],1); ?>">
+													<p class="addimg"></p>
+													<div class="click1">
+													</div>
+												</div>
+											</div>
+										</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+						<div class="txfg1-c2-1-a">上传照片作品，展现个人作品及能力，让HR更了解你！</div>
+					</div>
+					<div class="txfg1-b">
+						<div class="txfg1-c1-1-c">
+							<span class="hfx2"></span>
+							<p><strong>视频作品</strong></p>
+							<span class="hfx3" id=""><img src="__PUBLIC__/Home/img/tj-sp.png" />新增视频</span>
+						</div>
+						<div class="txfg1-c2-1-b">上传视频作品，展现个人作品及能力，让HR更了解你！</div>
+					</div>
+					<div class="txfg1-c">
+						<div class="txfg1-c1-1-a">
+							<span class="hfx2"></span>
+							<p><strong>档期</strong></p>
+							<span class="hfx3" id="hfx3-3"><img src="__PUBLIC__/Home/img/tj-sp.png" />新增档期</span>
+						</div>
+						<div class="txfg1-c2-1-c">完善档期，展现档期及能力，让HR更了解你！</div>
+					</div>
+					<div class="clearfloat "></div>
+					<div class="s-tf-bcc">
+						<div class="s-tf-btn" style="background: #ccc;">删除应赏</div>
+						<div class="s-tf-btn">保存修改</div>
+					</div>
+				</div>
+				<div class="clearfloat "></div>
+		</section>
+
+		<br>
+		<br>
+		<br>
+		<footer>
+			<div class="f-main-c ">
+				<div class="f-c-2f ">
+					<div style="width: 90%; margin: 0 auto; "><br>
+						<a href="# ">i店大全</a>&nbsp;
+						<a href="# ">十大家纺排行榜</a>&nbsp;
+						<a href="# ">鲜花礼品网</a>&nbsp;
+						<a href="# ">鲜花网</a>&nbsp;
+						<a href="# ">婚介</a>&nbsp;
+						<a href="# ">婚礼搜索导航</a>&nbsp;
+						<a href="# ">杭州婚庆网</a>&nbsp;
+						<a href="# ">新娘说</a>&nbsp;
+						<a href="# ">拍表网</a>&nbsp;
+						<a href="# ">结婚网</a>&nbsp;
+						<a href="# ">钻戒品牌</a>&nbsp;
+						<a href="# ">武汉婚车租摄</a>&nbsp;
+						<a href="# ">婚礼时光</a>&nbsp;
+						<a href="# ">婚礼电子请帖</a>&nbsp;
+						<a href="# ">小笑话</a>&nbsp;
+						<a href="# ">十大家纺排行榜</a>&nbsp;
+						<br>
+						<br>
+						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
+						<!--<br/>-->
+						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
+						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+					</div>
+
+				</div>
+			</div>
+
+		</footer>
+	</body>
+	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js "></script>
+	<script src="__PUBLIC__/Home/js/upimg.js"></script>
+
+	<script type="text/javascript ">
+		//----------------------------remove tab切换样式--------------------------
+		$('.bdsz li').click(function() {
+			$(this).parents('.s-main-r').children('.bdsz').each(function() {
+				$('li', this).removeClass('selected-con');
+			});
+			$(this).attr('class', 'selected-con');
+		});
+
+		//		下拉菜单
+		$('#select-yfb').hover(function() {
+			$('#select-yfb a img').css('transition-duration', '.5s');
+			$('#select-yfb a img').css('transform', 'rotate(180deg)');
+			$('.select-yfb').stop().animate({
+				height: '150px'
+			}, 300);
+		}, function() {
+			$('#select-yfb a img').css('transition-duration', '.5s');
+			$('#select-yfb a img').css('transform', 'rotate(0deg)');
+			$('.select-yfb').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		$('#select-xx').hover(function() {
+			$('.select-xx').stop().animate({
+				height: '75px'
+			}, 300);
+		}, function() {
+			$('.select-xx').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		//		新增
+		$(function() {
+			$("#hfx3-1-u").click(function() {
+				$(".txfg1-c2-1-a").hide();
+				$(".txfg1-a").css("height", "auto");
+				$(".upimg").css("display", "block");
+				$("#del-f-c1").on("click", function() {
+					$(".s-c-3f").remove();
+					$(".txfg1-a").css("height", "125px");
+					$(".txfg1-c2-1-a").show();
+				});
+			});
+			$('#hfx3-2').click(function() {
+
+			});
+		});
+		// $(".txfg1-c2-1-a").css("display","block");
+		// $(".txfg1-a").css("height","126px")
+
+	</script>
+
+</html>

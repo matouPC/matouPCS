@@ -1,0 +1,2249 @@
+[ 2016-01-07T06:26:00+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008123s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008058s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008192s ]
+
+[ 2016-01-07T06:26:00+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001571s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:26:52+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0818s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,2   [ RunTime:0.0014s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011836s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011963s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2016-01-07T06:26:54+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,2   [ RunTime:0.0037s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010651s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001006s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001146s ]
+
+[ 2016-01-07T06:26:56+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 2,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012770s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001200s ]
+
+[ 2016-01-07T06:29:05+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 2,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011205s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000700s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000812s ]
+
+[ 2016-01-07T06:29:31+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001347s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 2,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011460s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011567s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000837s ]
+
+[ 2016-01-07T06:30:09+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001146s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 2,2   [ RunTime:0.0008s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011658s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011774s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000832s ]
+
+[ 2016-01-07T06:30:17+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 16,2   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010883s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010984s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000810s ]
+
+[ 2016-01-07T06:30:19+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/13.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 24,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011177s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011282s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000936s ]
+
+[ 2016-01-07T06:30:19+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/18.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 34,2   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000749s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000846s ]
+
+[ 2016-01-07T06:30:21+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/21.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 40,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011336s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000818s ]
+
+[ 2016-01-07T06:30:22+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/25.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000830s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 48,2   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010855s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000727s ]
+
+[ 2016-01-07T06:30:24+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/29.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 56,2   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011688s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011788s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000755s ]
+
+[ 2016-01-07T06:30:24+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/34.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 66,2   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010808s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000692s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000789s ]
+
+[ 2016-01-07T06:30:25+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/37.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 72,2   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000873s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2016-01-07T06:30:26+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/34.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 66,2   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012775s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000651s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2016-01-07T06:31:13+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/34.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001120s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001332s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0074s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 66,2   [ RunTime:0.0012s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012447s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000865s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001009s ]
+
+[ 2016-01-07T06:31:25+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/34.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 495,15   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013295s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013402s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000843s ]
+
+[ 2016-01-07T06:31:27+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 45,15   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000871s ]
+
+[ 2016-01-07T06:31:30+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 45,15   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010869s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010971s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000693s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2016-01-07T06:31:32+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 15,15   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011073s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011176s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000783s ]
+
+[ 2016-01-07T06:31:34+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,15   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-01-07T06:31:41+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011088s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000955s ]
+
+[ 2016-01-07T06:31:42+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 24,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011183s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011285s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2016-01-07T06:31:43+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 60,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011629s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000767s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2016-01-07T06:31:44+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010733s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010856s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000708s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000799s ]
+
+[ 2016-01-07T06:32:27+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010605s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000692s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2016-01-07T06:32:59+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011068s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011171s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000797s ]
+
+[ 2016-01-07T06:33:10+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011855s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2016-01-07T06:33:11+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010633s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010741s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000780s ]
+
+[ 2016-01-07T06:33:48+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010623s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010724s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2016-01-07T06:34:30+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014031s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014135s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000718s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2016-01-07T06:34:34+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 72,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010294s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000688s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000779s ]
+
+[ 2016-01-07T06:34:34+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 60,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011686s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000697s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000790s ]
+
+[ 2016-01-07T06:34:35+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 48,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012550s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000695s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+
+[ 2016-01-07T06:34:37+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001093s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 24,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\38e2b98c6c422af46db32388d2ef10a9.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010783s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010882s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2016-01-07T06:35:50+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+ERR: 无法加载控制器:Award
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:35:52+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+ERR: 无法加载控制器:Award
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:35:55+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,12   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 23 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000749s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000847s ]
+
+[ 2016-01-07T06:35:57+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+ERR: 无法加载控制器:Award
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:36:07+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001391s ]
+ERR: 无法加载控制器:Award
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:36:10+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 23 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013148s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2016-01-07T06:36:13+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 23 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2016-01-07T06:36:38+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:36:40+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:37:08+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2016-01-07T06:37:08+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010294s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010393s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000732s ]
+
+[ 2016-01-07T06:37:09+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/award/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+ERR: 无法加载控制器:Award
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+
+[ 2016-01-07T06:37:16+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010782s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010888s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2016-01-07T06:37:17+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010823s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000727s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000822s ]
+
+[ 2016-01-07T06:37:18+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000947s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 24,12   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010902s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000703s ]
+
+[ 2016-01-07T06:37:18+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 36,12   [ RunTime:0.0008s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010773s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010903s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2016-01-07T06:37:19+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 60,12   [ RunTime:0.0012s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010896s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-01-07T06:37:20+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010620s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000870s ]
+
+[ 2016-01-07T06:37:20+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 96,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010770s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2016-01-07T06:37:22+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010750s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000788s ]
+
+[ 2016-01-07T06:37:23+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001797s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 72,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010560s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2016-01-07T06:37:24+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 60,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010686s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010785s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-01-07T06:37:24+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 36,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010636s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001012s ]
+
+[ 2016-01-07T06:37:25+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010323s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000665s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000756s ]
+
+[ 2016-01-07T06:37:42+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001238s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010607s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010777s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2016-01-07T06:37:52+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 6 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\sucai\jquery\5\564\demo\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: version D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 7 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\sucai\jquery\5\564\demo\Application\Runtime\Cache\Home\acd7c2d1be1e600c4a5d9050dddfa586.php 第 8 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000625s ]
+
+[ 2016-01-07T06:40:04+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008102s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2016-01-07T06:40:06+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000853s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0009s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008458s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008581s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2016-01-07T06:40:09+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 48,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007533s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007641s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2016-01-07T06:40:10+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 72,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007911s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008023s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000520s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2016-01-07T06:40:13+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 96,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007984s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008089s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000659s ]
+
+[ 2016-01-07T06:40:15+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0048s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0008s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000450s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013905s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000974s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001217s ]
+
+[ 2016-01-07T06:40:33+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 1,1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008049s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2016-01-07T06:40:37+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 2,2   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007662s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007773s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000621s ]
+
+[ 2016-01-07T06:41:23+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007641s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000637s ]
+
+[ 2016-01-07T06:41:29+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 6,6   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007592s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007697s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000627s ]
+
+[ 2016-01-07T06:42:07+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 6,6   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 29 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007935s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2016-01-07T06:42:59+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000957s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001099s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 12,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009896s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000883s ]
+
+[ 2016-01-07T06:43:02+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 24,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008686s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000889s ]
+
+[ 2016-01-07T06:43:02+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 36,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000653s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2016-01-07T06:43:03+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 60,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009516s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000921s ]
+
+[ 2016-01-07T06:43:04+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 84,12   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000820s ]
+
+[ 2016-01-07T06:43:04+08:00 ] 127.0.0.1 /sucai/jquery/5/564/demo/js/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 96,12   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\564\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\564\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009043s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009152s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000700s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2016-01-07T06:54:35+08:00 ] 127.0.0.1 /sucai/jquery/5/563/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000804s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000930s ]
+
+[ 2016-01-07T06:54:35+08:00 ] 127.0.0.1 /sucai/jquery/5/563/demo/js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `js` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `js` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `js` WHERE ( 1=1 ) LIMIT 0,12   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Page::show(), called in D:\wamp\www\sucai\jquery\5\563\demo\Application\Home\Controller\IndexController.class.php on line 28 and defined D:\wamp\www\sucai\jquery\5\563\demo\ThinkPHP\Library\Think\Page.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009331s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000727s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000818s ]
+

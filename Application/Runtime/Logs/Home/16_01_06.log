@@ -1,0 +1,22 @@
+[ 2016-01-06T08:58:19+08:00 ] 127.0.0.1 /sucai/jquery/5/563/demo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002708s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002930s ]
+
+[ 2016-01-06T08:58:20+08:00 ] 127.0.0.1 /sucai/jquery/5/563/demo/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\sucai\jquery\5\563\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\sucai\jquery\5\563\demo\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+

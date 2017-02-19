@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">招聘大厅管理</span></div>
+        </div>
+        
+        <div class="result-wrap">
+            <volist name="jarr" id="v">
+        <form action="__APP__/admin/Recruit/usave" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                     
+                          
+                            <tr>
+                                <th><i class="require-red">*</i>工作地点：</th>
+                                <td>
+                                    <input class="common-text required" id="type" name="address" size="40" value="{$v.address}" type="text">
+                                          <input type="hidden" name="rid" value="{$v.rid}"/>
+                                        <input type="hidden" name="pubtime" value="{$v.pubtime}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>联系电话：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="rtel" size="20" value="{$v.rtel}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>qq：</th>
+                                <td>
+                                    <input class="common-text required" id="sex" name="rqq" size="15" value="{$v.rqq}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>邮箱：</th>
+                                <td>
+                                    <input class="common-text required" id="age" name="remail" size="20" value="{$v.remail}" type="text">
+                                </td>
+                             </tr>
+                            <tr>
+                                <th>收藏数：</th>
+                                <td><input class="common-text" name="collect" size="10" value="{$v.collect}" type="text"></td>
+                            </tr>
+                              <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="修改" type="submit">
+                                    <a href="__APP__/Admin/Recruit"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+                </volist>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

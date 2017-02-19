@@ -1,0 +1,2426 @@
+[ 2015-11-26T10:23:21+08:00 ] 127.0.0.1 /c/Ajax/checkUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0200s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:23:32+08:00 ] 127.0.0.1 /c/Ajax/checkUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: phone D:\wamp\www\mtgdfsnew\trunk\c\Application\Home\Controller\AjaxController.class.php 第 24 行.
+
+[ 2015-11-26T10:25:00+08:00 ] 127.0.0.1 /c/Ajax/checkUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: phone D:\wamp\www\mtgdfsnew\trunk\c\Application\Home\Controller\AjaxController.class.php 第 24 行.
+
+[ 2015-11-26T10:25:45+08:00 ] 127.0.0.1 /c/Ajax/checkUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T10:30:31+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T10:30:36+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:30:38+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:30:42+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:30:59+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0200s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:31:03+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0200s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:31:05+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0200s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:31:09+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0200s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T10:31:15+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:34:33+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:34:36+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:40:32+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=416148489%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '416148489@qq.com' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T10:41:12+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=416148489%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0380s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.1020s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0520s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '416148489@qq.com' ) LIMIT 1   [ RunTime:0.0580s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-11-26T10:41:15+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=87423050%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0080s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '87423050@qq.com' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-26T10:44:16+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T10:48:00+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T11:00:42+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:02:34+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:05:03+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0300s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:05:33+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=416148489%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.1300s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.1200s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0700s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '416148489@qq.com' ) LIMIT 1   [ RunTime:0.0600s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:05:37+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=416148489%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '416148489@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:05:42+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=87423050%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0900s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.1100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.1500s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '87423050@qq.com' ) LIMIT 1   [ RunTime:0.1500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:05:46+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=87423050%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '87423050@qq.com' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:05:51+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=87423050%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '87423050@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:06:03+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:06:13+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=874230502%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0200s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '874230502@qq.com' ) LIMIT 1   [ RunTime:0.0200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:07:28+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:07:32+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=11321312%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '11321312@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:07:39+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435592
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435592' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:08:31+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:08:48+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=11321312%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '11321312@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:09:25+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T11:10:08+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0300s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0200s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:11:26+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:11:35+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:11:40+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:11:45+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:12:04+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0300s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:12:13+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=1231231%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0200s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '1231231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T11:12:15+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0300s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:12:47+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:12:52+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:12:59+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T11:12:59+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:13:24+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:15:09+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:15:11+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:15:19+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0300s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:15:47+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T11:17:05+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13414141112
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0200s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13414141112' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:17:12+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=21321312%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '21321312@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:35:25+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:35:47+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:35:52+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=32131231%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:36:01+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=32131231%40qq.com&code=212121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T11:37:32+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=32131231%40qq.com&code=212121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T11:37:38+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:37:45+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=416148489%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '416148489@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T11:37:49+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151532&email=416148489%40qq.com&code=111111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '416148489@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-11-26T11:37:55+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=87423050%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '87423050@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T11:38:03+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:42:49+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:42:53+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=321321321%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321321@qq.com' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:42:58+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=321321321%40qq.com&code=132132
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321321@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:43:22+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=321321321%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321321@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:43:26+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=321321321%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321321@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:43:34+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:43:54+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:44:32+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13414141112
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13414141112' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:44:34+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:44:40+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=321321%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:45:02+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:45:22+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435590
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435590' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:45:23+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=13851435590&email=321321%40qq.com&code=212121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435590' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:46:11+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=13851435590&email=321321%40qq.com&code=212121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435590' [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:46:25+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=13851435590&email=321321%40qq.com&code=212121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435590' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '321321@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:48:18+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:48:24+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=111121312%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '111121312@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T11:50:51+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13414141112
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13414141112' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:51:21+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13414141112
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13414141112' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:51:35+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:51:42+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=32131231%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:51:47+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151532&email=32131231%40qq.com&code=111111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:52:16+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151532&email=32131231%40qq.com&code=111111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0200s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:52:25+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:52:29+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:52:35+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151528
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151528' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:52:59+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:52:59+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T11:53:15+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0200s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T11:53:52+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T11:54:21+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151531
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151531' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:03:48+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151532
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:00+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=3123123213%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '3123123213@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:01+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151532&email=3123123213%40qq.com&code=321321
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '3123123213@qq.com' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:06+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151532&email=3123123213%40qq.com&code=321323
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '3123123213@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:09+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151532&email=3123123213%40qq.com&code=321325
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0200s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151532' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '3123123213@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:13+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151530
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0300s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151530' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:13+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151530&email=3123123213%40qq.com&code=321325
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0300s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151530' [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '3123123213@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:16+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0200s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0200s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0200s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:21+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151535
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151535' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:25+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:36+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:04:45+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:05:14+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T12:05:35+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:05:36+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:05:37+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:05:38+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:05:42+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=32131231%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:05:49+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=32131231%40qq.com&code=111111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:05:53+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151530
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151530' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T12:05:53+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151530&email=32131231%40qq.com&code=111111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151530' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2015-11-26T12:06:04+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:06:10+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=32131231%40qq.com&code=111111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:06:14+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:06:25+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T12:06:41+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=32131231%40qq.com&code=454292
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0100s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:07:01+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=32131231%40qq.com&code=454292
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0100s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0100s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T12:07:16+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=32131231%40qq.com&code=454292
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0200s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0200s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0200s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0100s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '32131231@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T14:03:09+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0156s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0156s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T14:03:10+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=18005151538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0156s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+
+[ 2015-11-26T14:03:15+08:00 ] 127.0.0.1 /c/Ajax/CheckUserEmail?UserEmail=241123421%40qq.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '241123421@qq.com' ) LIMIT 1   [ RunTime:0.0156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T14:03:34+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=241123421%40qq.com&code=109762
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '241123421@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2015-11-26T14:03:37+08:00 ] 127.0.0.1 /c/Ajax/CheckRegSave?phone=18005151538&email=241123421%40qq.com&code=109768
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0000s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0156s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0000s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='18005151538' [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer_entity` WHERE ( website_id = 1 AND email = '241123421@qq.com' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-26T14:32:01+08:00 ] 127.0.0.1 /c/Ajax/CheckUserPhone?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0070s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0060s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0080s ]
+SQL: SELECT A.entity_id FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-26T14:32:03+08:00 ] 127.0.0.1 /c/Ajax/sendPhoneCode?UserPhone=13851435593
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `core_website` [ RunTime:0.0080s ]
+SQL: SELECT `website_id` FROM `core_website` WHERE ( name = 'MTDFS' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `eav_attribute` [ RunTime:0.0060s ]
+SQL: SELECT `attribute_id` FROM `eav_attribute` WHERE ( attribute_code = 'register_mobile' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `customer_entity` [ RunTime:0.0060s ]
+SQL: SELECT A.entity_id
+FROM mtdfs.customer_entity A
+inner join mtdfs.customer_entity_varchar B  on A.entity_id=B.entity_id and B.attribute_id=159
+where A.website_id=1 and B.value='13851435593' [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

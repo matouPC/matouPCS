@@ -1,0 +1,103 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/think/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">留言详情</span></div>
+        </div>
+        <div class="result-wrap">
+  <volist name="jarr" id="v">
+          <form action="__APP__/admin/Reward/usave1" method="post" id="myform{$v.wid}" name="myform" enctype="multipart/form-data">
+          
+          
+                <div class="config-items">
+                
+                    <div class="result-content">
+                        <table width="100%" class="insert-tab">
+                            <tr>
+                                <th width="15%"><i class="require-red">*</i>留言用户名：</th>
+                                <td><input type="text" id="" value="{$v.username}" size="20" name="type" class="common-text"  readonly="true"></td>
+                          </tr>
+                                   <tr>
+                                    <th><i class="require-red">*</i>时间：</th>
+                                                 <td><input type="text" id="" value="{$v.ltime}" size="20" name="type" class="common-text"  readonly="true"></td>
+                                </tr>
+                                
+                            </tr>
+                                   <tr>
+                                    <th><i class="require-red">*</i>留言内容：</th>
+                                    <td><textarea name="contents" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="5"  readonly="true">{$v.contents}</textarea></td>
+                                </tr>
+                        <tr>
+                                    <th></th>
+                                    <td>
+                                        <input type="hidden" value="" name="file">
+
+                                               <a class="btn btn-primary btn6 mr10"  onclick="sc({$v.lid})">删除</a>
+	                 
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+
+              </volist> 
+                            <div  class="pagelist">{$pageStr}</div>
+                    <a href="__APP__/Admin/Liuyan"><input type="button" value="返回上一级"  class="btn btn6"></a>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>            
+ <script type="text/javascript">
+ 
+
+ function tj(wid){
+		// alert(id);
+		 $.ajax({
+		                 cache: true,
+		                 type: "POST",
+		                 url:"/matouPCS/index.php/Admin/Reward/usave1/",
+		                 data:$('#myform'+wid).serialize(),// 你的formid
+		                 async: false,
+		                 error: function(request) {
+		                     alert("Connection error");
+		                 },
+		                 success: function(data) {
+		                	 alert("修改完成");
+		                	 window.location.reload(true);//重新加载当前文挡
+		                 }
+		             });
+		 }       
+	 
+                      
+ function sc(lid){
+	alert(lid);
+	if(confirm( '是否确定删除这条信息！')==true){
+       	$.ajax({
+
+       		url:"/matouPCS/index.php/Admin/Liuyan/delete/id/"+lid,
+     
+       		type:"get",
+       		success:function(data){
+       			//alert(data);
+       			if(data == 'y'){
+       			
+       				alert('删除失败');
+    		
+    			}else{
+    				window.location.reload(true);
+    			}
+       		},error:function(){
+       			alert('no');
+       		}
+       	});
+    	}else{
+    		return false;
+    	}
+    };
+    
+</script>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/scj-3r-xy.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			
+			a,
+			img {
+				border: 0;
+			}
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.demo {
+				width: 720px;
+				margin: 35px auto;
+			}
+			
+			.demo h2 {
+				font-size: 16px;
+				color: #3366cc;
+				height: 30px;
+			}
+			
+			.demo li {
+				float: left;
+			}
+			
+			.text,
+			.button {
+				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
+			}
+			
+			.text {
+				width: 425px;
+				height: 22px;
+				padding: 4px 7px;
+				padding: 6px 7px 2px\9;
+				font: 16px arial;
+				border: 1px solid #cdcdcd;
+				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
+				vertical-align: top;
+				outline: none;
+				margin: 0 -1px 0 0;
+			}
+			
+			.button {
+				width: 79px;
+				height: 32px;
+				padding: 0;
+				padding-top: 2px\9;
+				border: 0;
+				background-position: 0 -35px;
+				background-color: #ff5c5d;
+				cursor: pointer;
+				border: 1px solid #cdcdcd;
+				color: #fff;
+			}
+			
+			.button2 {
+				width: 135px;
+				height: 32px;
+				margin-left: 30px;
+				padding: 0;
+				padding-top: 2px\9;
+				border: 0;
+				background-position: 0 -35px;
+				background-color: #ff5c5d;
+				cursor: pointer;
+				border: 1px solid #cdcdcd;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<div class="h-c-1f">
+						<div class="s-f1-l">
+							<div class="home">
+								<a href="?s=/Home/Index">
+									<img src="__PUBLIC__/Home/img/home.png" />
+								</a>
+							</div>
+							<p>
+								<a href="?s=/Home/Index">首页</a>
+							</p>
+						</div>
+						<div class="s-f1-r">
+							<ul>
+								<php>if(empty($_SESSION['username'])){</php>
+								<li style="width: 100px;">
+									<a id="login-alert" href="#">请注册\登录</a>
+								</li>
+								<php>}else{</php>
+								<li style="width: 100px;">
+									<a href="#">
+										<div style="width: 30px; height: 30px; float: left;"><img src="__PUBLIC__/Home/img/tx.png"></div>
+										<p>用户{$_SESSION['username']|substr=0,5}</p>
+									</a>
+									<div class="str"></div>
+								</li>
+								<php>}</php>
+								<li id="select-xx" style="width: 45px;">
+									<a href="#">消息</a>
+									<div class="str"></div>
+									<div class="select-xx">
+										<ul>
+											<li>
+												<a href="">需求消息</a>
+											</li>
+											<li>
+												<a href="">部队消息</a>
+											</li>
+											<li>
+												<a href="">商铺消息</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li style="width: 58px;">
+									<a href="#">收藏夹</a>
+									<div class="str"></div>
+								</li>
+								<li id="select-yfb" style="width: 70px;">
+									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
+									<div class="str"></div>
+									<div class="select-yfb">
+										<ul>
+											<ul>
+												<li>
+													<a href="">悬赏</a>
+												</li>
+												<li>
+													<a href="">应赏</a>
+												</li>
+												<li>
+													<a href="">招聘</a>
+												</li>
+												<li>
+													<a href="">应聘</a>
+												</li>
+												<li>
+													<a href="">求购</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+								<li style="width: 68px;">
+									<a href="#">部队中心</a>
+									<div class="str"></div>
+								</li>
+								<li style="width: 68px;">
+									<a href="#">我的商铺</a>
+									<div class="str"></div>
+								</li>
+								<li style="width: 70px;">
+									<a class="action" href="#">发动态</a>
+									<div class="strf"></div>
+								</li>
+								<li class="clearfloat"></li>
+							</ul>
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="h-c-2f">
+						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<div class="s-f2-r">
+							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<div class="s-f2-r1">
+								<img src="__PUBLIC__/Home/img/ss-t.png" onclick="alert('准备搜索')"/>
+							</div>
+						</div>
+					</div>
+					<div class="h-c-3f">
+						收藏夹
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="s-main-c">
+				<div class="s-c-1f">
+					<div class="left">
+						<button class="selected">已收藏需求</button>
+						<button>已报名</button>
+						<button>已收藏商铺</button>
+					</div>
+					<div class="right">
+						<button class="lb">类别</button>
+					</div>
+					<div class="clearfloat"></div>
+				</div>
+				<div class="con">
+					<div class="s-c-2f">
+						<ul>
+							<foreach name="userYs" item="userYss">
+								<?php 
+								$userYs_s = explode(',',$userYss['due_shou']);
+								array_pop($userYs_s);
+								?>
+								<?php if(in_array($_SESSION['id'],$userYs_s)){ ?>
+								<li>
+									<a href="?s=/Home/Ysq/xqys/id/{$userYss.did}">
+										<div class="s-c-2f-1f">
+											<div class="yhtx">
+												<img src="__PUBLIC__/Home/img/bdmc.png" />
+											</div>
+											<p class="yhmc">用户{$userYss.username|substr=0,6}</p>
+											<p class="szd">所在地：{$userYss.addre}</p>
+											<button>应赏</button>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="s-c-2f-2f">
+											<div>
+												<p>{$userYss.name}</p>
+												<p class="age">{$userYss.age}岁</p>
+												<p class="grjl"><strong style="color: #000; font-weight: 500;">个人简历：</strong>{$userYss.content}</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div>
+												<p>{$userYss.type}</p>
+												<p class="zpzp"><strong style="color: #000; font-weight: 500;">照片作品：</strong>
+													<foreach name="userYs_zp" item="userYs_zp">
+														<?php if($userYs_zp['pid'] == $userYss['did']){
+																$userYs_zps = explode(',',$userYs_zp['imagename_z']);
+																array_pop($userYs_zps);
+																$userYs_zps = count($userYs_zps);
+																?>
+														{$userYs_zps}个
+														<?php } ?>
+													</foreach>
+												</p>
+												<p class="spzp"><strong style="color: #000; font-weight: 500;">视频作品：</strong>
+													<foreach name="userYs_sp" item="userYs_sp">
+														<?php if($userYs_sp['pid'] == $userYss['did']){
+																$userYs_sps = explode(',',$userYs_sp['imagename_v']);
+																array_pop($userYs_sps);
+																$userYs_sps = count($userYs_sps);
+																?>
+														{$userYs_sps}个
+														<?php } ?>
+													</foreach>
+												</p>
+												<foreach name="userYs_dq" item="userYs_dqs">
+													<?php if($userYs_dqs['pid'] == $userYss['did']){ ?>
+													<?php 
+													$dangdate = explode(',',$userYs_dqs['dangdate']);
+													$dangs = explode(',',$userYs_dqs['dangs']);
+													array_pop($dangdate); ?>
+															<p class="dq"><strong style="color: #000; font-weight: 500;">档期：</strong>
+																<?php for ($i=0; $i < count($dangdate); $i++) {  ?>
+																	{$dangdate[$i]}{$dangs[$i]}&nbsp;&nbsp;&nbsp;&nbsp;
+																<?php } ?></p>
+														<?php } ?>
+												</foreach>
+												<p class="jg">{$userYss.price}元/天</p>
+												<div class="clearfloat"></div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<?php } ?>
+							</foreach>
+							<foreach name="userYps" item="userYpss">
+								<li>
+									<a href="?s=/Home/Zpdt/xqyp/id/{$userYpss.pid}">
+										<div class="s-c-2f-1f">
+											<div class="yhtx">
+												<img src="__PUBLIC__/Home/img/bdmc.png" />
+											</div>
+											<p class="yhmc">用户{$userYpss.username|substr=0,6}</p>
+											<p class="szd">所在地：{$userYpss.addre}</p>
+											<p class="qwzw">期望职位：{$userYpss.type}</p>
+											<button>应聘</button>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="s-c-2f-2f">
+											<div>
+												<p>{$userYpss.name}</p>
+												<p class="age">{$userYpss.ages}</p>
+												<p class="gzjy">工作经验：{$userYpss.worktimes}年</p>
+												<p class="grjl" style="width: 700px;"><strong style="color: #000; font-weight: 500;">个人简历：</strong>{$userYpss.content}</p>
+												<p style="float: right; margin-right: 50px;">{$userYpss.typew}</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div>
+												<p class="gzsj"><strong style="color: #000; font-weight: 500;">工作时间：</strong>{$userYpss.worktime}</p>
+												<p class="spzp"><strong style="color: #000; font-weight: 500;">所在公司：</strong>{$userYpss.workname} </p>
+												<p class="spzp"><strong style="color: #000; font-weight: 500;">职位：</strong>{$userYpss.{$userYpss.typew}</p>
+												<!--<p class="jg">￥500-￥700天</p>-->
+												<div class="clearfloat"></div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</foreach>
+							<?php foreach ($userIdle as $userIdles) {
+							 ?>
+							 <?php $shou = explode(',',$userIdles['shou']);
+							 		array_pop($shou);?>
+							 	<?php if(in_array($_SESSION['id'],$shou)){ ?>
+								<li>
+									<div href="{}">
+										<a href="?s=/Home/Tzsc/xqxz/id/{$userIdles['fid']}">
+										<div class="s-c-2f-1f">
+											<div class="yhtx">
+												<img src="__PUBLIC__/Home/img/bdmc.png" />
+											</div>
+											<p class="yhmc">用户{$userIdles.username|substr=0,6}</p>
+											<p class="szd">所在地：{$userIdles.addre}</p>
+											<button>闲置</button>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="s-c-2f-2f">
+											<div>
+												<p>物品名称：<strike style="color: #999999; font-weight: 500;">{$userIdles.name}</strike></p>
+												<p class="ys"><strong style="color: #000000; font-weight: 500;">预算：</strong>￥{$userIdles.price}</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div>
+												<!--<p class="jg">￥500-￥700天</p>-->
+												<p style="margin: 0; width: 1100px;" class="grjl"><strong style="color: #000; font-weight: 500;">个人简历：</strong>{$userIdles.content}</p>
+												<div class="clearfloat"></div>
+											</div>
+										</div>
+									</a>
+									</div>
+								</li>
+								<?php } ?>
+								<?php } ?>
+						</ul>
+					</div>
+				</div>
+				<div class="con" style="display: none;">
+					<div class="s-c-3f">
+						<ul>
+							<li>
+								<!--<p class="hdsj">
+									活动时间：2016-12-10
+								</p>-->
+								<p class="hddd">
+									工作地点：郑州
+								</p>
+								<p class="xsnr">
+									招聘内容：摄影、主持人
+								</p>
+								<a href="">
+									<div class="nr">
+										<div class="left">
+											<div class="yhtx">
+												<img src="__PUBLIC__/Home/img/bdmc.png" />
+											</div>
+											<p class="yhmc">
+												用户名称
+											</p>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="right">
+											<p class="hf">
+												未回复
+											</p>
+											<p class="rq">
+												2017-01-01
+											</p>
+										</div>
+										<div class="clearfloat"></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<!--<p class="hdsj">
+									活动时间：2016-12-10
+								</p>-->
+								<p class="hddd">
+									物品名称：摄影机
+								</p>
+								<p class="xsnr">
+									预算：<span style="color: #ff5c5d;">￥500</span>
+								</p>
+								<a href="">
+									<div class="nr">
+										<div class="left">
+											<div class="yhtx">
+												<img src="__PUBLIC__/Home/img/bdmc.png" />
+											</div>
+											<p class="yhmc">
+												用户名称
+											</p>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="right">
+											<p class="hf">
+												回复：
+											</p>
+											<p class="jj">
+												拒绝
+											</p>
+											<p class="rq">
+												2017-01-01
+											</p>
+										</div>
+										<div class="clearfloat"></div>
+									</div>
+								</a>
+							</li>
+							<foreach name="userBmxs" item="userBmxss">
+								<li>
+									<p class="hdsj">
+										活动时间：{$userBmxss.date}
+									</p>
+									<p class="hddd">
+										活动地点：{$userBmxss.address}
+									</p>
+									<p class="xsnr">
+										悬赏内容：摄影、主持人
+									</p>
+									<a href="">
+										<div class="nr">
+											<div class="left">
+												<div class="yhtx">
+													<img src="__PUBLIC__/Home/img/bdmc.png" />
+												</div>
+												<p class="yhmc">
+													用户名称
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="right">
+												<p class="hf">
+													未回复
+												</p>
+												<p class="rq">
+													2017-01-01
+												</p>
+											</div>
+											<div class="clearfloat"></div>
+										</div>
+									</a>
+								</li>
+							</foreach>
+						</ul>
+					</div>
+				</div>
+				<div class="con" style="display: none;">
+					<div class="s-c-4f">
+						<ul>
+							<li>
+								<a href="">
+									<div class="left">
+										<div class="sptx">
+											<img src="__PUBLIC__/Home/img/sptx.png" />
+										</div>
+										<div class="sp">
+											<p>牛牛婚纱店牛牛婚纱店</p>
+											<div class="bottom">
+												<p class="xss">销售商</p>
+												<p class="sc">收藏1000</p>
+											</div>
+										</div>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="right">
+										<p class="dpdz">
+											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
+										</p>
+										<div class="clearfloat"></div>
+										<div class="bottom">
+											<p class="zysp">
+												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
+											</p>
+										</div>
+									</div>
+									<div class="clearfloat"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="left">
+										<div class="sptx">
+											<img src="__PUBLIC__/Home/img/sptx.png" />
+										</div>
+										<div class="sp">
+											<p>牛牛婚纱店牛牛婚纱店</p>
+											<div class="bottom">
+												<p class="xss">销售商</p>
+												<p class="sc">收藏1000</p>
+											</div>
+										</div>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="right">
+										<p class="dpdz">
+											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
+										</p>
+										<div class="clearfloat"></div>
+										<div class="bottom">
+											<p class="zysp">
+												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
+											</p>
+										</div>
+									</div>
+									<div class="clearfloat"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="left">
+										<div class="sptx">
+											<img src="__PUBLIC__/Home/img/sptx.png" />
+										</div>
+										<div class="sp">
+											<p>牛牛婚纱店牛牛婚纱店</p>
+											<div class="bottom">
+												<p class="xss">销售商</p>
+												<p class="sc">收藏1000</p>
+											</div>
+										</div>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="right">
+										<p class="dpdz">
+											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
+										</p>
+										<div class="clearfloat"></div>
+										<div class="bottom">
+											<p class="zysp">
+												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
+											</p>
+										</div>
+									</div>
+									<div class="clearfloat"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="left">
+										<div class="sptx">
+											<img src="__PUBLIC__/Home/img/sptx.png" />
+										</div>
+										<div class="sp">
+											<p>牛牛婚纱店牛牛婚纱店</p>
+											<div class="bottom">
+												<p class="xss">销售商</p>
+												<p class="sc">收藏1000</p>
+											</div>
+										</div>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="right">
+										<p class="dpdz">
+											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
+										</p>
+										<div class="clearfloat"></div>
+										<div class="bottom">
+											<p class="zysp">
+												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
+											</p>
+										</div>
+									</div>
+									<div class="clearfloat"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<br>
+		<br>
+		<br>
+		<footer>
+			<div class="f-main-c">
+				<div class="f-c-2f">
+					<div style="width: 90%; margin: 0 auto;"><br>
+						<a href="#">i店大全</a>&nbsp;
+						<a href="#">十大家纺排行榜</a>&nbsp;
+						<a href="#">鲜花礼品网</a>&nbsp;
+						<a href="#">鲜花网</a>&nbsp;
+						<a href="#">婚介</a>&nbsp;
+						<a href="#">婚礼搜索导航</a>&nbsp;
+						<a href="#">杭州婚庆网</a>&nbsp;
+						<a href="#">新娘说</a>&nbsp;
+						<a href="#">拍表网</a>&nbsp;
+						<a href="#">结婚网</a>&nbsp;
+						<a href="#">钻戒品牌</a>&nbsp;
+						<a href="#">武汉婚车租摄</a>&nbsp;
+						<a href="#">婚礼时光</a>&nbsp;
+						<a href="#">婚礼电子请帖</a>&nbsp;
+						<a href="#">小笑话</a>&nbsp;
+						<a href="#">十大家纺排行榜</a>&nbsp;
+						<br>
+						<br>
+						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
+						<!--<br/>-->
+						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
+						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+					</div>
+
+				</div>
+			</div>
+
+		</footer>
+	</body>
+	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+				$("#tt").bigAutocomplete({
+					width: 440,
+					data: [{
+						title: "中国好声音",
+						result: {
+							ff: "qq"
+						}
+					}, {
+						title: "中国移动网上营业厅"
+					}, {
+						title: "中国银行"
+					}, {
+						title: "中国移动"
+					}, {
+						title: "中国好声音第三期"
+					}, {
+						title: "中国好声音 第一期"
+					}, {
+						title: "中国电信网上营业厅"
+					}, {
+						title: "中国工商银行"
+					}, {
+						title: "中国好声音第二期"
+					}, {
+						title: "中国地图"
+					}],
+
+				});
+
+			})
+			//		下拉菜单
+		$('#select-yfb').hover(function() {
+			$('#select-yfb a img').css('transition-duration', '.5s');
+			$('#select-yfb a img').css('transform', 'rotate(180deg)');
+			$('.select-yfb').stop().animate({
+				height: '150px'
+			}, 300);
+		}, function() {
+			$('#select-yfb a img').css('transition-duration', '.5s');
+			$('#select-yfb a img').css('transform', 'rotate(0deg)');
+			$('.select-yfb').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		$('#select-xx').hover(function() {
+			$('.select-xx').stop().animate({
+				height: '75px'
+			}, 300);
+		}, function() {
+			$('.select-xx').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		//----------------------------remove tab切换样式--------------------------
+		$('.s-c-1f .left button').click(function() {
+			$(this).parents('.s-c-1f').children('.left').each(function() {
+				$('button', this).removeClass('selected');
+			});
+			$(this).attr('class', 'selected');
+		});
+		//----------------------------切换页面--------------------------
+		$(document).ready(function() {
+			$(".con").eq(0).show();
+			$(".s-c-1f .left button").click(function() {
+				var num = $(".s-c-1f .left button").index(this);
+				$(".con").hide();
+				$(".con").eq(num).show().slblings().hide();
+			});
+		});
+	</script>
+
+</html>

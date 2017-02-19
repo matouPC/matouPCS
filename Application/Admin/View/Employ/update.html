@@ -1,0 +1,107 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">应聘区管理</span></div>
+        </div>
+        
+        <div class="result-wrap">
+            <volist name="jarr" id="v">
+        <form action="__APP__/admin/Employ/usave" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>应聘姓名：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="name" size="20" value="{$v.name}" type="text">
+                                         <input type="hidden" name="id" value="{$v.id}"/>
+                     <input type="hidden" name="pubtime" value="{$v.pubtime}">
+                                </td>
+                            </tr>
+                          
+                            <tr>
+                                <th><i class="require-red">*</i>性别：</th>
+                                   <td>   
+                                    <if condition="$v[sexs]=='1'">
+                                     <input type="radio" name = 'sexs'  value="1"  checked="checked" readonly="true"/> 男
+                                      <else/>
+                                      <input type="radio" name = 'sexs'  value="1"  readonly="true"/> 男
+                                    </if>
+                                        <if condition="$v[sexs]=='2'">
+                                     <input type="radio" name = 'sexs'  value="2"  checked="checked" readonly="true"/> 女
+                                        <else/>
+                                      <input type="radio" name = 'sexs'  value="2"  readonly="true"/> 女
+                                    </if>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>年龄：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="ages" size="10" value="{$v.ages}" type="text">
+                                </td>
+                            </tr>
+                           
+                          
+                           
+                              <tr>
+                                <th><i class="require-red">*</i>所在地：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="address" size="40" value="{$v.address}" type="text">
+                                </td>
+                            </tr>
+                                <tr>
+                                <th><i class="require-red">*</i>期望职业：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="type" size="20" value="{$v.type}" type="text">
+                                </td>
+                            </tr>
+                                   <tr>
+                                <th><i class="require-red">*</i>期望薪资：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="price" size="20" value="{$v.price}" type="text">
+                                </td>
+                                    <tr>
+                                <th><i class="require-red">*</i>工作经验：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="worktimes" size="20" value="{$v.worktimes}" type="text">
+                                </td>
+                            </tr>
+                                   <tr>
+                                <th><i class="require-red">*</i>电话：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="tels" size="20" value="{$v.tels}" type="text">
+                                </td>
+                            </tr>
+                                   <tr>
+                                <th><i class="require-red">*</i>qq：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="qqs" size="20" value="{$v.qqs}" type="text">
+                                </td>
+                            </tr>
+                         
+                            <tr>
+                                <th>自我介绍：</th>
+                                <td><textarea name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10">{$v.content}</textarea></td>
+                            </tr>
+                             <tr>
+                                <th>工作经历：</th>
+                                <td><textarea name="wordold" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10">{$v.content}</textarea></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="修改" type="submit">
+                                    <a href="__APP__/Admin/Employ"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+                </volist>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

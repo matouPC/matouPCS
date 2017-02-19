@@ -1,0 +1,47 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--头部完结-->  
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name"><a href="__APP__/Admin/Viwepager.html">图片轮播管理</a></span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+            <form action="__APP__/admin/Viwepager/save" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                 <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>图片名：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="name" size="20" value="" type="text">
+                                </td>
+                         
+                            <tr>
+                                <th><i class="require-red">*</i>图片链接：</th>
+                                <td>
+                                    <input class="common-text required" id="age" name="lianjie" size="30" value="" type="text">
+                                </td>
+                            </tr>
+                         
+                            <tr>
+                                <th><i class="require-red">*</i>缩略图：</th>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
+                            </tr>
+                 
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="添加" type="submit">
+                                    <a href="__APP__/Admin/Viwepager"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

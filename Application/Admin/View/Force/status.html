@@ -1,0 +1,188 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/think/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">部队审核管理</span></div>
+        </div>
+        <div class="result-wrap">
+  <volist name="operarr" id="v">
+          <form action="__APP__/admin/Force/shen" method="post" id="myform" name="myform" enctype="multipart/form-data">
+          
+          
+                <div class="config-items">
+                    <div class="config-title">
+                        <h1><i class="icon-font">&#xe014;</i>用户详情</h1>
+                    </div>
+                    <div class="result-content">
+                        <table width="100%" class="insert-tab">
+                            <tr>
+                                <th width="15%"><i class="require-red">*</i>用户名：</th>
+                                <td><input type="text" id="" value="{$v.username}" size="20" name="type" class="common-text" readonly="true"></td>                              
+                            </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>性别：</th>
+                               <td><input type="text" id="" value="{$v.sex}" size="20" name="type" class="common-text" readonly="true"></td>                          
+                                    <td>
+                            
+										</td>				
+                                </tr>
+                       
+                                    <tr>
+                                    <th><i class="require-red">*</i>头像：</th>
+                                     <td><img src="__PUBLIC__/upload/{$v.time}/{$v.logo}"  width="70"/></td>
+                                </tr>
+                              
+                        </table>
+                    </div>
+                </div>
+                  <div class="config-items">
+                    <div class="config-title">
+                        <h1><i class="icon-font">&#xe014;</i>码头部队认证信息</h1>
+                    </div>
+                    <div class="result-content">
+                        <table width="100%" class="insert-tab">
+                            <tr>
+                                <th width="15%"><i class="require-red">*</i>部队名称：</th>
+                                <td><input type="text" id="" value="{$v.forcename}" size="85" class="common-text" readonly="true"/>
+                                   <input type="hidden" name="id" value="{$v.id}"/>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>部队类型：</th>
+                                    <td><input type="text" id="" value="{$v.type}" size="85" class="common-text" readonly="true"/></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>营业执照名称：</th>
+                                    <td><input type="text" id="" value="{$v.charter}" size="85" class="common-text" readonly="true"/></td>
+                                </tr>
+                             <tr>
+                                    <th><i class="require-red">*</i>法定代表人：</th>
+                                    <td><input type="text" id="" value="{$v.representative}" size="85" class="common-text" readonly="true"/></td>
+                                </tr>
+                                  <tr>
+                                    <th><i class="require-red">*</i>详细地址：</th>
+                                    <td><input type="text" id="" value="{$v.address}" size="85" class="common-text" readonly="true"/></td>
+                                </tr>
+                                  <tr>
+                                    <th><i class="require-red">*</i>联系电话：</th>
+                                    <td><input type="text" id="phone" value="{$v.tels}" size="85" class="common-text" readonly="true"/></td>
+                                </tr>
+                                   <tr>
+                                    <th><i class="require-red">*</i>审核状态：</th>
+                                    <td>
+                                    
+                                    <if condition="$v[status]=='1'">
+                                          未审核
+                                    </if>
+                                        <if condition="$v[status]=='2'">
+                                          审核通过
+                                    </if>
+                                     <if condition="$v[status]=='3'">
+                                          审核未通过
+                                    </if>
+                                    
+                                    </td>
+                                </tr>
+                                   <if condition="$v[status]=='1'">
+                                          审核通过
+                                   <tr>
+                                    <th><i class="require-red">*</i>码头部队审核结果：</th>
+                               
+                                    <td >
+
+                                      <input type="radio" name = 'status'  value="2"  id="radio" readonly="true"/> 通过
+                                      <input type="radio" name = 'status'  value="3"  id="radio"  readonly="true"/> 不通过
+            
+										</td>				
+                                </tr>
+                                </if>
+                                   <tr>
+                                    <th></th>
+                                    <td>
+                                   <a id="submit" onclick="tj({$v.id})"  class="btn btn-primary btn6 mr10">提交</a>
+                                   <a href="__APP__/Admin/Force"><input type="button" value="返回上一级"  class="btn btn6"></a>
+                                    
+                                    </td>
+                        </table>
+                    </div>
+                </div>
+            </form>
+              </volist> 
+ <script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>       
+   <script type="text/javascript">
+
+
+
+   $("#check").click(function(){
+	 if($(this).prop("checked")){
+		 $(".check").prop("checked","checked")
+	 }else{
+		 $(".check").removeAttr("checked")
+	 }
+	 
+})
+ function tj(id){
+	// alert(id);
+	 $.ajax({
+	                 cache: true,
+	                 type: "POST",
+	                 url:"/matouPCS/index.php/Admin/Force/shen/",
+	                 data:$('#myform').serialize(),// 你的formid
+	                 async: false,
+	                 error: function(request) {
+	                     alert("Connection error");
+	                 },
+	                 success: function(data) {
+	                	 alert("审核成功");
+	                  
+	                	 var phone = $("#phone").val();
+	            
+	                	 var chkObjs=null;
+	                	 var obj= document.getElementsByName("status");
+	                	 for (var i=0;i<obj.length;i++){ //遍历Radio
+	                	 if(obj[i].checked){
+	                	 chkObjs=obj[i].value;
+	                	 }
+	                	 }
+	                	if(chkObjs=='2'){
+	                		xxoo(phone); 	
+	                	}else{
+	                		xxoo1(phone); 
+	                	}
+	       		        
+
+	                 }
+	             });
+	 }     
+
+
+   function xxoo(phone){
+  	 $.ajax({
+          	url:"http://127.0.0.1/matouPCS/sdk-php-2016-06-07/taobao-sdk-PHP-auto_1455552377940-20160607/newfile.php?phone="+phone,
+          	type:"get",
+          	success:function(phone){
+          		alert('审核通过短信通知发送成功');
+          	},error:function(){
+          		alert('no');
+          	}
+          });  
+   }
+   function xxoo1(phone){
+	  	 $.ajax({
+	          	url:"http://127.0.0.1/matouPCS/sdk-php-2016-06-07/taobao-sdk-PHP-auto_1455552377940-20160607/newfile1.php?phone="+phone,
+	          	type:"get",
+	          	success:function(phone){
+	          		alert('审核未通过短信通知发送成功');
+	          	},error:function(){
+	          		alert('no');
+	          	}
+	          });  
+	   }
+</script>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

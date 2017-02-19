@@ -1,0 +1,114 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">码头部队管理</span></div>
+        </div>
+        
+        <div class="result-wrap">
+             <form action="__APP__/admin/Employ/save" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>应聘姓名：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="name" size="10" value="" type="text">
+                                </td>
+                            </tr>
+                             <tr>
+                                <th><i class="require-red">*</i>性别：</th>
+                                <td>
+                                  <input type="radio" name = 'sexs'   value="1"  id="radio" readonly="true"/>男
+                                    <input type="radio" name = 'sexs'  value="2"  id="radio"  readonly="true"/> 女
+                                </td>
+                            </tr>
+                             <tr>
+                                <th><i class="require-red">*</i>年龄：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="ages" size="5" value="" type="text">
+                                </td>
+                            </tr>
+                            
+                             <tr>
+                                <th><i class="require-red">*</i>所在地：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="address" size="30" value="" type="text">
+                                </td>
+                            </tr>
+                             <tr>
+                                <th><i class="require-red">*</i>期望职业：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="type" size="20" value="" type="text">
+                                </td>
+                            </tr>
+                          
+                            <tr>
+                                <th><i class="require-red">*</i>期望资金：</th>
+                                <td>
+                                    <input class="common-text required" id="type" name="price" size="20" value="" type="text">
+                                </td>
+                            </tr>
+                         <tr>
+                                <th><i class="require-red">*</i>工作经验：</th>
+                                <td>
+                                    <input class="common-text required" id="type" name="wordtimes" size="20" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>电话：</th>
+                                <td>
+                                    <input class="common-text required" id="age" name="tels" size="12" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>qq：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="qqs" size="10" value="" type="text">
+                                </td>
+                            </tr>
+                            
+                                <tr>
+                                <th>自我介绍：</th>
+                                <td><textarea name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></textarea></td>
+                            </tr>
+                                     <tr>
+                                <th>工作经历：</th>
+                                <td><textarea name="wordold" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></textarea></td>
+                            </tr>
+                            <tr>
+                             <tr>
+                                <th><i class="require-red">*</i>照片作品：</th>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
+                                </tr>
+                                <tr>
+                                <th><i class="require-red">*</i>视频作品：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="video" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                          <tr>
+                                <th><i class="require-red">*</i>收藏数：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="collect" size="10" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <a href="__APP__/Admin/Employ"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

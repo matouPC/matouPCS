@@ -1,0 +1,90 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--头部完结-->  
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">应赏区</a></span></div>
+        </div>
+        
+        <div class="search-wrap">
+            <div class="search-content">
+               <div class="result-wrap">
+          
+            <volist name="jarr" id="v">
+            <br/>  <br/>  <br/>
+           <form action="__APP__/Admin/Due/usavevideo" method="post" enctype="multipart/form-data">
+   <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>视频标题：</th>
+                                <td>
+                                  <input type="text" name="type" value="{$v.type}">
+                           
+                                      <input type="hidden" name="id" value="{$v.id}"/>
+                                     <input type="hidden" name="pid" value="{$v.pid}">
+                                     <input type="hidden" name="usid" value="{$v.usid}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>链接地址：</th>
+                                <td>
+                                
+                                 <input type="text" name="video" value="{$v.video}">
+                                
+                                </td>
+                            </tr>
+                         
+                            <tr>
+                                <th><i class="require-red">*</i>视频封面：</th>
+                                <td><input  id="" type="file" multiple="multiple" name="upload[]"><img src="__PUBLIC__/upload/{$v.pubtime}/{$v.imagename}"  width="400"/></td>
+                            </tr>
+                           
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="修改" type="submit">
+                                     <a class="btn btn-primary btn6 mr10"  onclick="sc({$v.id})">删除</a>
+                                    <a href="__APP__/Admin/Due"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+ </form>  
+ </volist>   
+ 
+ <script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>            
+ <script type="text/javascript">              
+ function sc(id){
+//	alert(id);
+	if(confirm( '是否确定删除这条信息！')==true){
+       	$.ajax({
+
+       		url:"/matouPCS/index.php/Admin/Due/delete1/id/"+id,
+     
+       		type:"get",
+       		success:function(data){
+       			//alert(data);
+       			if(data == 'y'){
+       			
+       				alert('删除失败');
+    		
+    			}else{
+    				window.location.reload(true);
+    			}
+       		},error:function(){
+       			alert('no');
+       		}
+       	});
+    	}else{
+    		return false;
+    	}
+    };
+    
+</script>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

@@ -1,0 +1,633 @@
+[ 2015-10-20T18:34:06+08:00 ] 127.0.0.1 /c/coupon
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+NOTIC: [8] Undefined index: allotCode D:\wamp\www\wechat\c\Application\Home\Controller\CouponController.class.php 第 16 行.
+NOTIC: [2] unlink(./Application/Runtime/Temp/0cc68931fbd7e465ccebae1c339980c3.php): No such file or directory D:\wamp\www\wechat\c\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 40 行.
+NOTIC: [8] Undefined index: openid D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:34:18+08:00 ] 127.0.0.1 /c/coupon
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+NOTIC: [2] unlink(./Application/Runtime/Temp/0cc68931fbd7e465ccebae1c339980c3.php): No such file or directory D:\wamp\www\wechat\c\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 40 行.
+NOTIC: [8] Undefined index: openid D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\7ae9701b8b86aba242e6fdefe0709649.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:34:18+08:00 ] 127.0.0.1 /c/css/style_mobile.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Css
+
+[ 2015-10-20T18:34:18+08:00 ] 127.0.0.1 /c/js/jquery1.8.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Js
+
+[ 2015-10-20T18:34:18+08:00 ] 127.0.0.1 /c/images/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:34:18+08:00 ] 127.0.0.1 /c/images/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:34:18+08:00 ] 127.0.0.1 /c/js/jquery1.8.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Js
+
+[ 2015-10-20T18:34:32+08:00 ] 127.0.0.1 /c/m1020
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+
+[ 2015-10-20T18:34:42+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+ERR: 模板不存在:./Application/Home/Mobile/Award/index.html
+
+[ 2015-10-20T18:35:06+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:35:07+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2015-10-20T18:35:23+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+ERR: 模板不存在:./Application/Home/Mobile/Award/index.html
+
+[ 2015-10-20T18:35:24+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+ERR: 模板不存在:./Application/Home/Mobile/Award/index.html
+
+[ 2015-10-20T18:35:32+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+ERR: 模板不存在:./Application/Home/Mobile/Award/index.html
+
+[ 2015-10-20T18:35:33+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+ERR: 模板不存在:./Application/Home/Mobile/Award/index.html
+
+[ 2015-10-20T18:35:33+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+ERR: 模板不存在:./Application/Home/Mobile/Award/index.html
+
+[ 2015-10-20T18:35:49+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 11 行.
+NOTIC: [8] Undefined variable: timestamp D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 33 行.
+NOTIC: [8] Undefined variable: wxnonceStr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 34 行.
+NOTIC: [8] Undefined variable: wxSha1 D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 35 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 43 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 60 行.
+NOTIC: [8] Undefined variable: endtime D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 85 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 106 行.
+NOTIC: [8] Undefined variable: openid D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 118 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:35:50+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 11 行.
+NOTIC: [8] Undefined variable: timestamp D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 33 行.
+NOTIC: [8] Undefined variable: wxnonceStr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 34 行.
+NOTIC: [8] Undefined variable: wxSha1 D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 35 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 43 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 60 行.
+NOTIC: [8] Undefined variable: endtime D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 85 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 106 行.
+NOTIC: [8] Undefined variable: openid D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 118 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:23+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 11 行.
+NOTIC: [8] Undefined variable: timestamp D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 33 行.
+NOTIC: [8] Undefined variable: wxnonceStr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 34 行.
+NOTIC: [8] Undefined variable: wxSha1 D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 35 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 43 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 60 行.
+NOTIC: [8] Undefined variable: endtime D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 85 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 106 行.
+NOTIC: [8] Undefined variable: openid D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 118 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:25+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 11 行.
+NOTIC: [8] Undefined variable: timestamp D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 33 行.
+NOTIC: [8] Undefined variable: wxnonceStr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 34 行.
+NOTIC: [8] Undefined variable: wxSha1 D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 35 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 43 行.
+NOTIC: [8] Undefined variable: shareWeixinUrl D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 60 行.
+NOTIC: [8] Undefined variable: endtime D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 85 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 106 行.
+NOTIC: [8] Undefined variable: openid D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\da2245feab9f58b4dceab1f100adff9d.php 第 118 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/css/style_choujiang.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Css
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/js/jquery-1-6.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Js
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p1.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p5.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p6.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/1.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/weixin.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/fenxiang.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/wx.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/cj.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/top.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p3.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p4.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p1.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-10-20T18:36:35+08:00 ] 127.0.0.1 /c/images/p2.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:38:38+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\e797c0fc4e8758ec562b6588502bb966.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\e797c0fc4e8758ec562b6588502bb966.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\e797c0fc4e8758ec562b6588502bb966.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\e797c0fc4e8758ec562b6588502bb966.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:40:51+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: openId D:\wamp\www\wechat\c\Application\Home\Controller\CouponController.class.php 第 43 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 11 行.
+NOTIC: [8] Undefined variable: code D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 24 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 28 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:40:52+08:00 ] 127.0.0.1 /c/award
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: openId D:\wamp\www\wechat\c\Application\Home\Controller\CouponController.class.php 第 43 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 11 行.
+NOTIC: [8] Undefined variable: code D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 24 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\a200a98b61058f4cf7a686b4741d145e.php 第 28 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:40:56+08:00 ] 127.0.0.1 /c/lottery
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Lottery
+
+[ 2015-10-20T18:41:14+08:00 ] 127.0.0.1 /c/Lottery
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-10-20T18:41:19+08:00 ] 127.0.0.1 /c/lottery
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-10-20T18:41:28+08:00 ] 127.0.0.1 /c/lottery
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: keywords D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 8 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: description D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 9 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 5 行.
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\wechat\c\Application\Common\Common\common.php 第 25 行.
+NOTIC: [8] Undefined variable: cssArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 11 行.
+NOTIC: [8] Undefined variable: jsArr D:\wamp\www\wechat\c\Application\Runtime\Cache\Home\c0bbdbf833ee7352a58df995c9cb26f6.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

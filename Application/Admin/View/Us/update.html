@@ -1,0 +1,63 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--头部完结-->  
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name"><a href="__APP__/Admin/Friend">友情链接管理</a></span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+            <volist name="jarr" id="v">
+           <form action="__APP__/Admin/Us/usave" method="post" enctype="multipart/form-data">
+   <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>工作时间：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="worktime" size="20" value="{$v.worktime}" type="text">
+                                       <input type="hidden" name="id" value="{$v.id}"/>
+                                       、
+                                    
+                                </td>
+                            </tr>
+                          
+                              <tr>
+                                <th><i class="require-red">*</i>电话：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="tel" size="20" value="{$v.tel}" type="text">
+                                </td>
+                            </tr>
+                             <tr>
+                                <th><i class="require-red">*</i>地址：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="address" size="30" value="{$v.address}" type="text">
+                                </td>
+                            </tr>
+                             <tr>
+                                <th><i class="require-red">*</i>邮箱：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="email" size="20" value="{$v.email}" type="text">
+                                </td>
+                            </tr>
+                             
+                         
+                
+                           
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="修改" type="submit">
+                                    <a href="__APP__/Admin/Us"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+ </form>  
+ </volist>   
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

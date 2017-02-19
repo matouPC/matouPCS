@@ -1,0 +1,11 @@
+[ 2015-12-22T08:54:49+08:00 ] 127.0.0.1 /test/page/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010355s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\test\page\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear') D:\wamp\www\test\page\ThinkPHP\Library\Think\Think.class.php 第 314 行.
+

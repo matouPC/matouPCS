@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="__PUBLIC__/Home/jquery-1.8.3.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    function nwalletProfit(num, cNum){
+    	$.ajax({
+    	type: "post",
+    	async: true,
+    	url: url,
+    	dataType: "json",
+    	success: function (data) {
+    	if (data.list.length > 0){
+    	var i = num;
+    	var ci= 0;
+    	var x = parseInt((data.profit_list.length)/10);//x为每10个一组的组数
+    	if(cNum >= x){
+    	$(".jiaZai_more").hide(); //当点击更多的次数 ≥ 组数时，隐藏按钮
+    	}
+    	for(; i < data.profit_list.length; i++){
+    	var htmltxt = "";
+    	ci++; 
+    	var date = data.profit_list[i].date;
+    	var year = date.substring(0, 4);
+    	var month = date.substring(4, 6);
+    	var day = date.substring(6);
+    	date = year+'年'+month+'月'+day+'日';
+    	htmltxt += '<dd>';
+    	htmltxt += '<h5 class="date">'+date+'</h5>';
+    	htmltxt += '<p class="income">'+data.list[i].profit+'%</p>';
+    	if(ci> 10){
+    	break;
+    	}
+    	$("#incomeNum").append(htmltxt);
+    	}
+    	}
+    	},
+    	error: function (e, d, c) { 
+    	console.log(d)
+    	}
+    	});
+    	}
+    	nwalletProfit(0);
+    	var clickNum = 0; //点击的次数
+    	$(".jiaZai_more").on('click', function(event) {
+    	event.preventDefault();
+    	clickNum++;
+    	var iNum = 10*clickNum; //每次点击开始加载的第一个索引值
+    	nwalletProfit(iNum, clickNum);
+    	});
+    </script>
+</head>
+<body>
+
+	
+<dl id="incomeNum">
+　　<dt><em></em>每日分配收益</dt>
+</dl>
+<div class="jiaZai_more">点击查看更多</div>
+</body>
+</html>

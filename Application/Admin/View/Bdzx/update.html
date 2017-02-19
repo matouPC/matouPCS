@@ -1,0 +1,96 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">码头部队管理</span></div>
+        </div>
+        
+        <div class="result-wrap">
+            <volist name="jarr" id="v">
+        <form action="__APP__/admin/Force/usave" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>部队名称：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="forcename" size="10" value="{$v.forcename}" type="text">
+                                         <input type="hidden" name="id" value="{$v.id}"/>
+                     <input type="hidden" name="pubtime" value="{$v.pubtime}">
+                                </td>
+                            </tr>
+                          
+                            <tr>
+                                <th><i class="require-red">*</i>部队类型：</th>
+                                <td>
+                                    <input class="common-text required" id="type" name="type" size="50" value="{$v.type}" type="text">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th><i class="require-red">*</i>营业执照名称：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="charter" size="10" value="{$v.charter}" type="text">
+                                </td>
+                            </tr>
+                              <tr>
+                                <th><i class="require-red">*</i>法定代表人：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="representative" size="10" value="{$v.representative}" type="text">
+                                </td>
+                            </tr>
+                              <tr>
+                                <th><i class="require-red">*</i>详细地址：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="address" size="10" value="{$v.address}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>电话：</th>
+                                <td>
+                                    <input class="common-text required" id="sex" name="tel" size="12" value="{$v.tel}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>qq：</th>
+                                <td>
+                                    <input class="common-text required" id="age" name="qq" size="12" value="{$v.qq}" type="text">
+                                </td>
+                            </tr>
+                          
+                           
+                              <tr>
+                                <th><i class="require-red">*</i>官网链接：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="lianjie" size="20" value="{$v.lianjie}" type="text">
+                                </td>
+                            </tr>
+                                <tr>
+                                <th><i class="require-red">*</i>部队简介：</th>
+                                <td>
+                                    <input class="common-text required" id="height" name="content" size="10" value="{$v.content}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>关注数：</th>
+                                <td><input class="common-text" name="collect" size="11" value="{$v.collect}" type="text"></td>
+                            </tr>
+                         
+ 
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="修改" type="submit">
+                                    <a href="__APP__/Admin/Force"><input class="btn btn6"  value="返回"></a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+                </volist>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

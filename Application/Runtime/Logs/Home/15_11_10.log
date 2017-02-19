@@ -1,0 +1,42 @@
+[ 2015-11-10T16:57:18+08:00 ] 127.0.0.1 /c/pro1020
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\mtgdfsnew\trunk\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+
+[ 2015-11-10T16:57:57+08:00 ] 127.0.0.1 /c/pro1020
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\mtgdfsnew\trunk\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+
+[ 2015-11-10T16:59:13+08:00 ] 127.0.0.1 /c/pro1020
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\mtgdfsnew\trunk\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.030000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.030000s ]
+
+[ 2015-11-10T17:01:17+08:00 ] 127.0.0.1 /c/pro1020
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant LANG_SET - assumed 'LANG_SET' D:\wamp\www\mtgdfsnew\trunk\c\Application\Home\Controller\CommonController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

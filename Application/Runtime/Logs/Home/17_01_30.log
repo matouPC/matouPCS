@@ -1,0 +1,1705 @@
+[ 2017-01-30T20:26:13+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001920s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001404s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0387s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0257s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0035s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0036s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0039s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0407s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0064s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0029s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0387s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0480s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000271s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000355s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.109337s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.109436s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.021059s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.021138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.019644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.019702s ]
+
+[ 2017-01-30T20:29:40+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0111s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0067s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0046s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.103734s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.103905s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000974s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001978s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004596s ]
+
+[ 2017-01-30T20:29:51+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001364s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0083s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.1118s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0119s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0103s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000267s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001285s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001366s ]
+
+[ 2017-01-30T20:30:00+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0057s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0062s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0054s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000174s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028194s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2017-01-30T20:30:03+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddndt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0045s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000229s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.095891s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.096022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001523s ]
+
+[ 2017-01-30T20:30:13+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddnxq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064453s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001398s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001507s ]
+
+[ 2017-01-30T20:30:18+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddndt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+ERR: 参数错误或者未定义:id
+
+[ 2017-01-30T20:30:27+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddndt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0057s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000298s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000364s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018469s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001374s ]
+
+[ 2017-01-30T20:30:30+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddnxq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000255s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2017-01-30T20:30:47+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0039s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0039s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022945s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001722s ]
+
+[ 2017-01-30T20:30:57+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0070s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0067s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0062s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000805s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026874s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026993s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001384s ]
+
+[ 2017-01-30T20:31:01+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0053s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0054s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026767s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026834s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000783s ]
+
+[ 2017-01-30T20:31:27+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0070s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0041s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0041s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000279s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000358s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022099s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022160s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000761s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2017-01-30T20:31:37+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0116s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0117s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0097s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000332s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000419s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025863s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025967s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001435s ]
+
+[ 2017-01-30T20:32:01+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0040s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0040s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000761s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2017-01-30T20:33:01+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0128s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0079s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0066s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000284s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000363s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024763s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025200s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000951s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001017s ]
+
+[ 2017-01-30T20:33:04+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0039s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0038s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0039s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023649s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023706s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000641s ]
+
+[ 2017-01-30T20:33:09+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0078s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0078s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0069s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000247s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000322s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044290s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2017-01-30T20:33:18+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.139709s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.139764s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000560s ]
+
+[ 2017-01-30T20:33:22+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009707s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000585s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000634s ]
+
+[ 2017-01-30T20:33:27+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000863s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012438s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2017-01-30T20:33:32+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0127s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0106s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0062s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035926s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035987s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000178s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000510s ]
+
+[ 2017-01-30T20:33:33+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011380s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2017-01-30T20:33:59+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0037s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0036s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0035s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000194s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000245s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025210s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025281s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000813s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000875s ]
+
+[ 2017-01-30T20:34:10+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt_liuyan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000436s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0069s ]
+SQL: INSERT INTO `foree_liuyan` (`fid`,`uid`,`content`,`time`) VALUES ('1','23','213123123123','2017-01-30 20:34:09') [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0064s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0054s ]
+
+[ 2017-01-30T20:34:14+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0042s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0013s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0011s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0015s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0044s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0103s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024434s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002545s ]
+
+[ 2017-01-30T20:36:30+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0065s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0063s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0058s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000357s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000437s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041775s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001082s ]
+
+[ 2017-01-30T20:37:07+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0057s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0047s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0034s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024436s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024490s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000563s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2017-01-30T20:37:11+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt_liuyan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000440s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0111s ]
+SQL: INSERT INTO `foree_liuyan` (`fid`,`uid`,`content`,`time`) VALUES ('1','23','213123123123','2017-01-30 20:37:10') [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0103s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0060s ]
+
+[ 2017-01-30T20:37:37+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyxq/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0129s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on u.id = f.uid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN reward2 as r on f.uid = r.usid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN due as d on f.uid = d.uid  WHERE (  f.id = 1  )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit1 as e on f.uid = e.uid  WHERE ( f.id = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN recruit2 as r on f.uid = r.usid  WHERE (  f.id = 1  )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM forcee as f INNER JOIN employ as e on f.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( f.id = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM forcee as f INNER JOIN flea as e on e.uid = f.uid  WHERE ( f.id = 1 and e.type = 2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0058s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0063s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024992s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2017-01-30T20:37:42+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt_liuyan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0115s ]
+SQL: INSERT INTO `foree_liuyan` (`fid`,`uid`,`content`,`time`) VALUES ('1','23','213123123123','2017-01-30 20:37:40') [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0106s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0058s ]
+
+[ 2017-01-30T20:38:59+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt_liuyan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0039s ]
+SQL: INSERT INTO `foree_liuyan` (`fid`,`uid`,`content`,`time`) VALUES ('1','23','恶趣味群翁请问去问问几块钱恶化四大皆空更好看电视卡JKASEIOASHJKAHDJSFARHASR AS ASKL DJKL ','2017-01-30 20:38:58') [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0035s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0038s ]
+
+[ 2017-01-30T20:40:22+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010594s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2017-01-30T20:40:27+08:00 ] ::1 /matouPCS/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001039s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0118s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0132s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0066s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 101 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 895 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028876s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000933s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001081s ]
+
+[ 2017-01-30T20:40:28+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010089s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2017-01-30T20:47:31+08:00 ] ::1 /matouPCS/?s=/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0056s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0063s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000381s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000462s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026698s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2017-01-30T20:47:37+08:00 ] ::1 /matouPCS/?s=/Home/Tzsc/xqxz/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0040s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as m on f.fid = m.pid INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 4 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM user as u INNER JOIN liuyan as l on u.id = l.uid INNER JOIN flea as f on l.xsid = f.fid  WHERE ( l.xzst = 1 and l.xsid = 4 ) ORDER BY l.lid desc  [ RunTime:0.0043s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080309s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2017-01-30T20:49:52+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0098s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0050s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000761s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2017-01-30T20:49:56+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0038s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0042s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000294s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000349s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000192s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2017-01-30T20:50:09+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0056s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0050s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0053s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018382s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018473s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000689s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2017-01-30T20:50:18+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0083s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0052s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0034s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012571s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000185s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2017-01-30T20:50:34+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000662s ]
+
+[ 2017-01-30T20:52:47+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0161s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0100s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0059s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001033s ]
+
+[ 2017-01-30T20:52:49+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011512s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2017-01-30T20:53:16+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001135s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001222s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014137s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014195s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001111s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001176s ]
+
+[ 2017-01-30T20:54:35+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0086s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0044s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019573s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2017-01-30T20:57:37+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0064s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0051s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000340s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000410s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034801s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034878s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001562s ]
+
+[ 2017-01-30T20:57:40+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0116s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0059s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0069s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000887s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000950s ]
+
+[ 2017-01-30T20:58:00+08:00 ] ::1 /matouPCS/?s=/Home/Tzsc/xqxz/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+
+[ 2017-01-30T20:58:03+08:00 ] ::1 /matouPCS/?s=/Home/Tzsc/xqqg/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0092s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as m on f.fid = m.pid INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 6 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0105s ]
+SQL: SELECT * FROM user as u INNER JOIN liuyan as l on u.id = l.uid INNER JOIN flea as f on l.xsid = f.fid  WHERE ( l.xzst = 2 and l.xsid = 6 ) ORDER BY l.lid desc  [ RunTime:0.0079s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000293s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016545s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001056s ]
+
+[ 2017-01-30T20:58:43+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddndt/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0065s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 2 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000281s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000352s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020020s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020107s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001192s ]
+
+[ 2017-01-30T20:58:49+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0066s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0043s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0041s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012888s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000673s ]
+
+[ 2017-01-30T21:03:38+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0054s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0040s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0038s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013271s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013344s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000859s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2017-01-30T21:03:45+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012009s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000680s ]
+
+[ 2017-01-30T21:06:02+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0073s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 1 ) ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0067s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000306s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000395s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024072s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024182s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000787s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000858s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001268s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001390s ]
+
+[ 2017-01-30T21:06:46+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0110s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 1 ) ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0125s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000270s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000355s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030709s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000955s ]
+
+[ 2017-01-30T21:08:35+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0064s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 1 ) ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0069s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022043s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2017-01-30T21:10:08+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0130s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 1 ) ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000282s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000373s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024139s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024254s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001325s ]
+
+[ 2017-01-30T21:10:47+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0117s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 1 ) ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0072s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022926s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000843s ]
+
+[ 2017-01-30T21:30:02+08:00 ] ::1 /matouPCS/?s=/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0073s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0055s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030365s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001179s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001254s ]
+
+[ 2017-01-30T21:30:06+08:00 ] ::1 /matouPCS/?s=/Home/Tzsc/xqxz/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0159s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as m on f.fid = m.pid INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 4 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0078s ]
+SQL: SELECT * FROM user as u INNER JOIN liuyan as l on u.id = l.uid INNER JOIN flea as f on l.xsid = f.fid  WHERE ( l.xzst = 1 and l.xsid = 4 ) ORDER BY l.lid desc  [ RunTime:0.0087s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039963s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000523s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000570s ]
+
+[ 2017-01-30T21:36:21+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001341s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0097s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0054s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000487s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000616s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038061s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038135s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000943s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001931s ]
+
+[ 2017-01-30T21:36:28+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000863s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.1050s ]
+SQL: SELECT * FROM forcee as f INNER JOIN user as u on f.uid = u.id INNER JOIN forceimage as m on f.id = m.pid INNER JOIN forcevideo as v on f.id = v.pid  WHERE ( f.id = 1 ) LIMIT 1   [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0338s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0227s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000237s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044163s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044287s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2017-01-30T21:36:40+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddyly/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+SQL: SHOW COLUMNS FROM `foree_liuyan` [ RunTime:0.0039s ]
+SQL: SELECT * FROM foree_liuyan as f INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 1 ) ORDER BY f.id desc LIMIT 0,3   [ RunTime:0.0046s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039166s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2017-01-30T21:39:48+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/rzbddydt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+ERR: 参数错误或者未定义:id
+
+[ 2017-01-30T21:41:20+08:00 ] ::1 /matouPCS/?s=/Home/Tzsc/xqxz/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0050s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as m on f.fid = m.pid INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 4 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM user as u INNER JOIN liuyan as l on u.id = l.uid INNER JOIN flea as f on l.xsid = f.fid  WHERE ( l.xzst = 1 and l.xsid = 4 ) ORDER BY l.lid desc  [ RunTime:0.0037s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089108s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2017-01-30T21:42:02+08:00 ] ::1 /matouPCS/?s=/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0044s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `forcee` WHERE ( status = 2 ) ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0043s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as e on f.fid = e.pid INNER JOIN user as u on f.uid = u.id  LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000208s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2017-01-30T21:43:53+08:00 ] ::1 /matouPCS/?s=/Home/Xsdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0052s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.collect desc LIMIT 0,3   [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0040s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `reward1`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016440s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001092s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001327s ]
+
+[ 2017-01-30T21:43:55+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0320s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0046s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0038s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010453s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000829s ]
+
+[ 2017-01-30T21:45:14+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0111s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 10,2   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0104s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000865s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000923s ]
+
+[ 2017-01-30T21:45:18+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0038s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0039s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 21 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007552s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007589s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000430s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000460s ]
+

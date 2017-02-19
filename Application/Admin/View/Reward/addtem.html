@@ -1,0 +1,62 @@
+<include file="Public/header"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/think/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">悬赏大厅管理</span></div>
+        </div>
+        <div class="result-wrap">
+
+          
+                <div class="config-items">
+                    <div class="config-title">
+                        <h1><i class="icon-font">&#xe014;</i>悬赏详情 &nbsp; &nbsp; &nbsp;<a href="__APP__/Admin/Reward/add"><i class="icon-font"></i>添加悬赏</a></h1>
+                    </div>
+                    <div class="result-content">
+    
+                    <form action="__APP__/admin/Reward/usave1" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                        <table width="100%" class="insert-tab">
+                            <tr>
+                                <th width="15%"><i class="require-red">*</i>悬赏职位：</th>
+                                <td><input type="text" id="" value=" " size="20" name="type" class="common-text"></td>
+                            </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>性别：</th>
+                                    <td><input type="text" id="" value="" size="10" name="sex" class="common-text"></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>年龄：</th>
+                                    <td><input type="text" id="" value="" size="10" name="age" class="common-text"></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>赏金：</th>
+                                    <td><input type="text" id="" value="" size="10" name="price" class="common-text">元/天</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>报销路费：</th>
+                                    <td><input type="text" id="" value="{$v['whether']=='1'?'否':'是'}" size="10" name="whether" class="common-text"></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>具体要求：</th>
+                                    <td><textarea name="yaoqiu" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10">{$v.yaoqiu}</textarea></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td>
+                                        <input type="hidden" value="" name="file">
+                                          <a href="__APP__/Admin/Reward"><input type="button" value="返回上一级"  class="btn btn6"></a>
+                                        <input type="submit" value="修改" class="btn btn-primary btn6 mr10">
+                                    </td>
+                                </tr>
+                        </table>
+                       </form>
+                    </div>
+                </div>
+     
+  
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

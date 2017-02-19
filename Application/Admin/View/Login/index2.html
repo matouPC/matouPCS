@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>喜事码头Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
+		<link href="__PUBLIC__/Admin/css/style.css" rel='stylesheet' type='text/css' />
+		<script src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<script>
+			$(document).ready(function(c) {
+				$('.close').on('click', function(c) {
+					$('.login-form').fadeOut('slow', function(c) {
+						$('.login-form').remove();
+					});
+				});
+			});
+		</script>
+		<script>
+			function loginUser() {
+				var userName = document.forms["Userlogin"]["username"].value();
+				if(userName == null || userName == "") {
+					alert("请输入用户名");
+					return false;
+				}
+			}
+		</script>
+		<!--SIGN UP-->
+		<h1>欢迎来到喜事码头</h1>
+		<div class="login-form">
+			<!--<div class="close"> </div>-->
+			<div class="head-info">
+				<label class="lbl-1"> </label>
+				<label class="lbl-2"> </label>
+				<label class="lbl-3"> </label>
+			</div>
+			<div class="clear"> </div>
+			<div class="avtar">
+				<img src="__PUBLIC__/Admin/images/avtar.png" />
+			</div>
+			<form name="Userlogin" action="" onsubmit=" return loginUser()">
+				<input name="username" type="text" class="text" value="" placeholder="请输入用户名">
+				<div class="key">
+					<input type="password" value="" placeholder="请输入密码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+				</div>
+ 
+                    <label for="pwd">验证码：</label>
+                    <input type="text" name="verify" size=5  class="yan"/>&nbsp&nbsp&nbsp&nbsp<img onclick="this.src='__APP__/Admin/Login/verify/'+Math.random();" style="height:30px" src="__APP__/Admin/Login/verify"/>
+            
+			</form>
+			<div class="signin">
+				<input type="submit" value="Login">
+			</div>
+		</div>
+		<div class="copy-rights">
+		</div>
+
+	</body>
+
+</html>
