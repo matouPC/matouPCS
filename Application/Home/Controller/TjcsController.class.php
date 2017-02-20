@@ -34,7 +34,7 @@ class TjcsController extends Controller
         $this->display('Tjcs/spxq');
     
     }
-    public function usave(){
+   public function usave(){
         //创建商品基本信息
         $_POST['uid'] = $_SESSION['id'];
         $product = M('shop');
@@ -57,45 +57,62 @@ class TjcsController extends Controller
             $data['content'] = $_POST["content{$i}"];
             $v=M('commodity');
             $id = $v->add($data);
-
-        
-            //
-            if($i==$j){
-                $this->upload( $_FILES["upload{$i}"],$id);
-                
-                $this->upload( $_FILES["uploads{$i}"],$id);
+           // $this->upload( $_FILES["upload{$i}"],$id);
+            $upload=$_FILES["upload{$i}"];
+            $upload = new \Think\Upload($upload);   
+           // var_dump($upload);die;
+            $upload->maxSize   =     99999999999999 ;// 设置附件上传大小
+            $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+            $upload->savePath  =      './Uploads/'; // 设置附件上传目录
+            $info   =   $upload->upload(array($_FILES["upload{$i}"]));
+            $data['psid'] =  $id;
+            $data['pubtimes']=date("Y-m-d",time());
+            if(!$info) {// 上传错误提示错误信息
+                $this->redirect('Tjcs/spcjcg');
+            }else{// 上传成功
+                foreach($info as $upload){
+                    //echo $file['savepath'].$file['savename'];die;
+                    $data['imagenames'] =  $upload['savename'];
+                    $ob = M('comimage')->add($data);
             
-    
-                
+                }
+            }
+            $uploads=$_FILES["uploads{$i}"];
+            $upload = new \Think\Upload($uploads);
+            // var_dump($upload);die;
+            $upload->maxSize   =     99999999999999 ;// 设置附件上传大小
+            $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+            $upload->savePath  =      './Uploads/'; // 设置附件上传目录
+            $info   =   $upload->upload(array($_FILES["uploads{$i}"]));
+            $data['psid'] =  $id;
+            $data['pubtimes']=date("Y-m-d",time());
+            if(!$info) {// 上传错误提示错误信息
+                $this->redirect('Tjcs/spcjcg');
+            }else{// 上传成功
+                foreach($info as $upload){
+                    //echo $file['savepath'].$file['savename'];die;
+                    $data['imagenames'] =  $upload['savename'];
+                    $ob = M('comimage')->add($data);
+                } 
+             }
+            
+             if($i==$j){
+            $this->redirect('Tjcs/spcjcg');
             }
    
-        }
+           }
     
-    }   
-    public function upload($upload,$id){
-        //echo '<pre>';
-        //var_dump($_FILES['upload1']);die;
-        $upload = new \Think\Upload();// 实例化上传类
-    $upload->maxSize   =     99999999999999 ;// 设置附件上传大小
-    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-    $upload->savePath  =      './Uploads/'; // 设置附件上传目录
-    $info   =   $upload->upload();
+           }   
     
-    $data['psid'] =  $id;
-   $data['pubtimes']=date("Y-m-d",time());
-    if(!$info) {// 上传错误提示错误信息
-            $this->redirect('Tjcs/spcjcg');
-    }else{// 上传成功
-        foreach($info as $upload){
-            //echo $file['savepath'].$file['savename'];die;
-            $data['imagenames'] =  $upload['savename'];
-            $ob = M('comimage')->add($data);
+           public function spcjcg()
+           {
+            //商品详情
+     
+            $shop = M('shop as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->order('s.id desc')->limit('0,2')->select();
     
-        }
-        //var_dump($data['imagenames']);die;
-        
+            $this->assign('shop',$shop);
+            $this->display('Tjcs/spcjcg');
+           
+           }   
     
-    }
-    
-    }
 }

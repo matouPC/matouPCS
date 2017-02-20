@@ -176,9 +176,9 @@ class UserController extends Controller
         $li = M('dueimage')->where("pid = {$did}")->find();//数据库图片的信息
         $dataImg = $this->stringimg($li['imagename_z']);//这个是数据库的值
         $li_v = M('duevideo')->where("pid = {$did}")->find();//数据库视频封面的信息
-        $dataImg_v = $this->stringimg($li['imagename_v']);//视频封面存数据库的值
-        $dataImg_t = $this->stringimg($li['type']);//视频封面存数据库的值->标题
-        $dataImg_l = $this->stringimg($li['video']);//视频封面存数据库的值->链接
+        $dataImg_v = $this->stringimg($li_v['imagename_v']);//视频封面存数据库的值
+        $dataImg_t = $this->stringimg($li_v['type']);//视频封面存数据库的值->标题
+        $dataImg_l = $this->stringimg($li_v['video']);//视频封面存数据库的值->链接
         $li_d = M('due_dang')->where("pid = {$did}")->find();//数据库的档期信息
         $dataDang = $this->stringimg($li_d['dangdate']);//数据库档期信息->日期
         $dataDang_w = $this->stringimg($li_d['dangs']);//数据库档期信息->日期
@@ -217,6 +217,7 @@ class UserController extends Controller
                 $this->Uploadimg($_FILES['ysimg'.$i.'']);//将图片上传至服务器
            }
         } 
+
         $newImages = $this->strPj($upimg,$dataImg);//处理照片
         //处理视频封面
          for ($i=0; $i <= count($arrv) ; $i++) { 
@@ -235,28 +236,39 @@ class UserController extends Controller
            $newText_l[$i] .= $_POST['file_video'.$i.''];//这个用来存取数据库
         }
         //处理档期日期 
-        for ($i=0; $i <= count($dang) ; $i++) { 
-           $dang_t[$i] .= $_POST['dang_time'.$i.''];//这个用来存取数据库-》档期日期
+        for ($i=0; $i <= 30 ; $i++) { //档期最低30个 所以让它小于等于30
+            if($_POST['dang_time'.$i.''] != ''){
+               $dang_t[$i] .= $_POST['dang_time'.$i.''];//这个用来存取数据库-》档期日期 
+            }
+           
         }
         //处理档期上下午
-        for ($i=0; $i <= count($dangs) ; $i++) { 
+        for ($i=0; $i <= 30 ; $i++) { 
            $dang_w[$i] .= $_POST['dangB'.$i.''];//这个用来存取数据库-》档期日上下午
         }
         // var_dump($dang_w);die;
+        // array_shift($newTexts);//如果有一项为空 就把剩下的拼接组成新的修改条件
+        // for ($i=0; $i <= count($newTexts) ; $i++) { 
+        //      if($_POST['file_title'.$i.''] == ''){
+        //         $newText[$i] .= $_POST['file_title'.$i.''];
+        //         unset($newText[$i]);
+        //      }
+        // }
+        // var_dump($newTexts);die;
+        
         $newTexts_t = $this->upText($newText,$dataImg_t);//得到更改后的数据-》标题
         $newTexts_v = $this->upText($newText_l,$dataImg_l);//得到更改后的数据-》链接
         $newDang = $this->upTextw($dang_t,$dataDang);//得到更改后的数据——》日期
         $newDangs = $this->upTextw($dang_w,$dataDang_w);//得到更改后的数据——》上下午
-        $newImages_v = $this->strPj($upimgs,$dataImg_v);//处理照片
-        
+        $newImages_v = $this->strPjs($upimgs,$dataImg_v,$newText);//处理照片
         foreach ($newImages_v as $key => $value) {//视频封面图标
-            $newimg_v['imagename_v'] .= $value;
+            $newimg_v['imagename_v'] = $value;
         }
         foreach ($newTexts_t as $key => $value) {//视频标题
-            $newimg_v['type'] .= $value;
+            $newimg_v['type'] = $value;
         }
         foreach ($newTexts_v as $key => $value) {//视频连接
-            $newimg_v['video'] .= $value;
+            $newimg_v['video'] = $value;
         }
         foreach ($newDang as $value){//档期 日期
             $newDangData['dangdate'] .= $value;
@@ -264,7 +276,6 @@ class UserController extends Controller
         foreach ($newDangs as $value){//档期 上下午
             $newDangData['dangs'] .= $value;
         }
-        // var_dump($newDangData);die;
         $db = M('due_dang')->where("pid = {$did}")->save($newDangData);
         if($db > 0){
             echo '档期信息修改成功';
@@ -311,7 +322,6 @@ class UserController extends Controller
     *   多图片的修改方法
     */
     public function strPj($upimg,$dataImg){
-        
         array_shift($upimg);//由于第一个元素为空 所以需要弹出第一个
         //$upimg表单提交的图片
         //$dataImg数据库提交的图片
@@ -320,6 +330,8 @@ class UserController extends Controller
                  if($upimg[$i] != ''){
                      $newImage['imagename_z'] .= './Uploads/'.date("Y-m-d",time()).'/'.$upimg[$i].',';
                  }else{
+                     session_start();
+                     $_SESSION['img'] = '';
                      $newImage['imagename'] .= $dataImg[$i].',';
                  }
              }
@@ -337,20 +349,56 @@ class UserController extends Controller
 
     }
     /**
+    *  该方法只对视频作品作品的增删改查有效
+    */
+     public function strPjs($upimg,$dataImg,$newText){
+        array_shift($upimg);
+        array_shift($newText);
+        // var_dump($upimg);
+        // // var_dump($dataImg);
+        // var_dump($newText);die;
+        // var_dump($did);
+        // die;
+       //由于第一个元素为空 所以需要弹出第一个
+        //$upimg表单提交的图片
+        //$dataImg数据库提交的图片
+         for ($i=0; $i <= count($upimg) ; $i++) { //提交的图片
+                 if($upimg[$i] != '' && $newText[$i] != ''){//可以重新上传(修改的视频封面)
+                     $newImage['imagename_z'] .= './Uploads/'.date("Y-m-d",time()).'/'.$upimg[$i].',';
+                 }else if($newText[$i] == ''){
+                     unset($upimg[$i]);
+                 }else{
+                    $newImage['imagename'] .= $dataImg[$i].',';
+                 }
+         }
+        // echo '<pre>';
+         sort($newImage);
+         
+        //处理多出来的逗号
+        // $xx = explode(',',$newImage['imagename']);
+        // for ($i=0; $i < count($xx); $i++) { 
+        //     if(!empty($xx[$i])){
+        //         // var_dump($xx[$i].',');
+        //         $ss['xx'] .= $xx[$i].',';
+        //     }
+        // } 
+        // var_dump($newImage);
+        //将提交的值和数据库剩下的值进行拼接 修改
+        $newImages['imagename_z'] = $newImage[0].$newImage[1];
+        return  $newImages;
+
+    }
+    /**
     *  这是处理纯文本拼接的方法
     */
     public function upText($newText,$dataImg_t){//第一个为表单提交的数据 第二个为数据库本身存在的数据
         array_shift($newText);//由于第一个元素为空 所以需要弹出第一个
-        //$upimg表单提交的图片
-        //$dataImg数据库提交的图片
          for ($i=0; $i <= count($newText) ; $i++) { //表单
-            // for ($j=0; $j < count($dataImg); $j++) { //数据库
                  if($newText[$i] != ''){
                      $newImage['imagename_z'] .= $newText[$i].',';
-                 }else{
-                     $newImage['imagename'] .= $dataImg_t[$i].',';
                  }
              }
+             
         //处理多出来的逗号
         $xx = explode(',',$newImage['imagename']);
         for ($i=0; $i < count($xx); $i++) { 
@@ -367,25 +415,34 @@ class UserController extends Controller
         // array_shift($newText);//文字有误差 不需要这一步
         //$upimg表单提交的图片
         //$dataImg数据库提交的图片
-         for ($i=0; $i <= count($newText) ; $i++) { //表单
+         // var_dump(count($newText));die;
+         for ($i=0; $i <= 30; $i++) { //表单  档期最多30  所以让循环控制在30以内
             // for ($j=0; $j < count($dataImg); $j++) { //数据库
                  if($newText[$i] != ''){
                      $newImage['imagename_z'] .= $newText[$i].',';
-                 }else{
-                     $newImage['imagename'] .= $dataImg_t[$i].',';
                  }
              }
         //处理多出来的逗号
-        $xx = explode(',',$newImage['imagename']);
-        for ($i=0; $i < count($xx); $i++) { 
-            if(!empty($xx[$i])){
-                // var_dump($xx[$i].',');
-                $ss['xx'] .= $xx[$i].',';
-            }
-        }
+        // $xx = explode(',',$newImage['imagename']);
+        // for ($i=0; $i < count($xx); $i++) { 
+        //     if(!empty($xx[$i])){
+        //         // var_dump($xx[$i].',');
+        //         $ss['xx'] .= $xx[$i].',';
+        //     }
+        // }
         //将提交的值和数据库剩下的值进行拼接 修改
-        $newImages['imagename_z'] = $newImage['imagename_z'].$ss['xx'];
+        $newImages['imagename_z'] = $newImage['imagename_z'];
         return  $newImages;
+    }
+    /**
+    *  视频封面的删除方法
+    */
+    public function delefeng($id){
+        $li = M('duevideo')->where("pid = {$id}")->find();
+        $lis = explode(',',$li['type']);
+        array_pop($lis);
+        array_pop($lis);
+        var_dump($lis);die;
     }
     /**
     *  删除一发布应赏的方法
@@ -435,9 +492,9 @@ class UserController extends Controller
         $this->display("User/userYp");
     }
     public function userYp(){
-        $id = $_POST['id'];
-        /*******************图片的修改********************/
-        /*************工作经历的修改************/
+        $id = $_POST['id'];//基本信息的id
+        // $wid = $_POST['']
+        /*************工作经历的修改************//*******************图片的修改********************/
         $li = M('employimage')->where("pid = {$id}")->find();//数据库图片的信息
         $li_v = M('employvideo')->where("pid = {$id}")->find();//数据库视频封面的信息
         $dataImg_v = $this->stringimg($li_v['imagename_v']);//视频封面存数据库的值
@@ -480,27 +537,26 @@ class UserController extends Controller
                 $pof['worktimes'] .= $pos.'.';
             }
         }
+
         $pofs = explode(',',$pof['worktime']);
         $poss = explode('.',$pof['worktimes']);
         array_pop($pofs);
         array_pop($poss);
-        for ($i=0; $i < count($pofs); $i++) { 
+        for ($i=0; $i < 3; $i++) { 
             $newliDate = $newDate['worktime'] = $_POST[$pofs[$i].$i].','. $_POST[$poss[$i].$i];//拿到所有的开始日期+结束日期
             $newDate['workname'] = $_POST['workname'.$i.''];
             $newDate['typew'] = $_POST['ty'.$i.''];
-            $newDate['contents'] = $_POST['miao'.$i.''];
-            $liw = M('employwork')->where("pid = {$id} and worktime = '{$newliDate}'")->select();
-            // var_dump($liw);die;
-            if(!empty($liw)){
-                $wt = M('employwork')->where("pid = {$id}")->save($newDate);
-            }else{
-                $newDate['pid'] = $id;
-                $wtadd = M('employwork')->add($newDate);
-            }
-            if( $wt > 0 || $wtadd > 0 ){
-                echo '日期'.$i.'添加或修改成功';
-            } 
-
+            $newDate['contents'] = $_POST['miao'.$i.'']; 
+            $newDate['pid'] = $id;
+            if(!empty($newDate)){
+                $lw = M("employwork")->where("worktime = '{$newliDate}'")->find();
+                if(empty($lw)){
+                    $wt = M('employwork')->add($newDate);
+                    if( $wt > 0){
+                        echo '添加成功';
+                    }
+                } 
+            }     
         }
         //图片作品
         for ($i=0; $i <= count($arr) ; $i++) { 
@@ -529,7 +585,7 @@ class UserController extends Controller
         $newTexts_t = $this->upText($newText,$dataImg_t);//得到更改后的数据-》标题
         $newTexts_v = $this->upText($newText_l,$dataImg_l);//得到更改后的数据-》链接
         $newImages = $this->strPj($upimg,$dataImg);//处理照片
-        $newImages_v = $this->strPj($upimgs,$dataImg_v);//处理视频封面
+        $newImages_v = $this->strPjs($upimgs,$dataImg_v,$newText);//处理视频封面
         foreach ($newImages as $key => $value) {//照片作品图标
             $newimg_v['imagenames'] .= $value;
         }

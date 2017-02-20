@@ -1003,38 +1003,39 @@
 		var dq = parseInt(ce.selector.substr(3));
 		var cg = $('#db{$i}');
 		var dang = parseInt(cg.selector.substr(3));
-		// alert(dang)
-		// $('#hfx3-3').click(function() {
-			function hfx3d(){
-				// console.log();
-			$('#tc .txfg1-c2-1').hide();
-			$('.addmation-dq').append('<li><input id="da' + dq + '" name="dang_time'+dang+'" type="text" readonly="readonly" placeholder="请选择时间" /><select name="dangB'+dang+'"><option selected="selected">请选择</option><option>全天</option><option>上午</option><option>中午</option><option>下午</option><option>晚上</option></select><div class="delete-2"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div><div id="db' + dq + '" style="left: 0 !important; top:30px !important"></div></li>');
-			dang += 1;
-			//		删除档期
-			$('.delete-2').click(function() {
-				$(this).parents('li').remove();
-				if($('#tc .addmation-dq').has('li').length > 0) {
-					$('#tc .txfg1-c2-1').css('display', 'none');
-				} else {
-					$('#tc .txfg1-c2-1').css('display', 'block');
-				}
-			});
-			$('#db' + dq).calendar({
-				trigger: '#da' + dq,
-				zIndex: 999,
-				format: 'yyyy-mm-dd',
-				onSelected: function(view, date, data) {
-					console.log('event: onSelected')
-				},
-				onClose: function(view, date, data) {
-					console.log('event: onClose')
-					console.log('view:' + view)
-					console.log('date:' + date)
-					console.log('data:' + (data || 'None'));
-				}
+		function hfx3d(){
+				if (dang > 29) {
+					alert('滚犊子');
+				}else{
+					$('#tc .txfg1-c2-1').hide();
+					$('.addmation-dq').append('<li><input id="da' + dq + '" name="dang_time'+dang+'" type="text" readonly="readonly" placeholder="请选择时间" /><select name="dangB'+dang+'"><option selected="selected">请选择</option><option>全天</option><option>上午</option><option>中午</option><option>下午</option><option>晚上</option></select><div class="delete-2"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div><div id="db' + dq + '" style="left: 0 !important; top:30px !important"></div></li>');
+					dang += 1;
+					//		删除档期
+					$('.delete-2').click(function() {
+						$(this).parents('li').remove();
+						if($('#tc .addmation-dq').has('li').length > 0) {
+							$('#tc .txfg1-c2-1').css('display', 'none');
+						} else {
+							$('#tc .txfg1-c2-1').css('display', 'block');
+						}
+					});
+					$('#db' + dq).calendar({
+						trigger: '#da' + dq,
+						zIndex: 999,
+						format: 'yyyy-mm-dd',
+						onSelected: function(view, date, data) {
+							console.log('event: onSelected')
+						},
+						onClose: function(view, date, data) {
+							console.log('event: onClose')
+							console.log('view:' + view)
+							console.log('date:' + date)
+							console.log('data:' + (data || 'None'));
+						}
 
-			});
-			dq++;
+					});
+					dq++;
+				}
 		}
 		// });
 $('#tc .txfg1-c2-1').hide();//隐藏提示代码

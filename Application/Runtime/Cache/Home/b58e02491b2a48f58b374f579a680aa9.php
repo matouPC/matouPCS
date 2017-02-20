@@ -90,12 +90,12 @@
 					<div class="h-c-1f">
 						<div class="s-f1-l">
 							<div class="home">
-								<a href="index.html">
+								<a href="?s=/Home/index.html">
 									<img src="/matouPCS/Public/Home/img/home.png" />
 								</a>
 							</div>
 							<p>
-								<a href="index.html">首页</a>
+								<a href="?s=/Home/index.html">首页</a>
 							</p>
 						</div>
 						<div class="s-f1-r">
@@ -310,7 +310,7 @@
 						<div class="czsp">
 							<ul>
 								<?php if(is_array($shangpin)): foreach($shangpin as $key=>$v): ?><li>
-									<img src="/matouPCS/Public/Home/img/czsp.png" width="254" height="150">
+									<img src="Uploads/Uploads/<?php echo ($v["pubtimes"]); ?>/<?php echo ($v["imagenames"]); ?>" width="254" height="150">
 									<div class="czsp_01">
 										<div class="czsp_01_00">
 											<p class="czsp_01_01">￥<?php echo ($v["price"]); ?>元</p>

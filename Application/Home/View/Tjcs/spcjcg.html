@@ -114,7 +114,7 @@
 						<div class="s-f2-r">
 							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" />
+								<img src="__PUBLIC__/Home/img/spsh.png" />
 							</div>
 						</div>
 					</div>
@@ -170,45 +170,54 @@
 								<a href="#">创建商铺</a>
 							</li>
 							<li class="cjsp_bt_02">
-								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-							<li class="cjsp_bt_02">
-								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;添加商品</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>		
 							<li class="cjsp_bt_03">
-								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;创建成功</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;审核中...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 						</ul>
 					</div>
 				</div>
 				<div class="s-main-l">
 					<div class="s-c-2f">
-						<a href="#">
-							<div class="zk">查看我的商铺主页</div>
-						</a>
+					
 					</div>
+						<foreach name="shop" item="v">
 					<div class="s-c-3f">
+					
 						<ul class="sc3f-ul">
+					
 							<li>
-								<a href="#">
+									
+										<php>if($_SESSION['id'] == $v['uid']){</php>
+									<a href="?s=/Home/Mtbu/spbddndt/id/{$v.id}">
+									<php>}else{</php>
+                                       <a href="?s=/Home/Mtbu/spbddydt/id/{$v.id}"">
+                                       <php>}</php>
+										
 									<div class="sc3f-ulc1">
 										<span class="ulc1">
 											<img src="__PUBLIC__/Home/img/bdmc.png" />
 										</span>
 										<span class="ulc2">
-											<p class="p18">部队名称</p>
-											<p class="p14" style="margin-top: 10px!important;">部队类型</p>
-											<p class="p14">粉丝数量</p>
-											<p class="p14">所在地点：郑州</p>
+											<p class="p18">{$v.shopname}</p>
+											<p class="p14" style="margin-top: 10px!important;">{$v.type}</p>
+											<p class="p14">粉丝{$v.fen}</p>
+											<p class="p14">所在地点：{$v.address}</p>
 											<p class="clearfloat"></p>
 										</span>
 										<span class="clearfloat"></span>
 									</div>
 									<div class="sc3f-ulc2">
-										<p>部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部部队介绍部队介介...</p>
+										<p>主要商品:{$v.zysp}</p>
 									</div>
 									<div class="clearfloat"></div>
 								</a>
+						
 							</li>
+						
 						</ul>
+						
 					</div>
+								</foreach>
 					<div class="s-c-4f">
 						<a href="#">进入码头部队商城</a>
 					</div>

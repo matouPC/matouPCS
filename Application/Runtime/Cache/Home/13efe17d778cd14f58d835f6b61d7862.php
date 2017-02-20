@@ -478,7 +478,7 @@
 							
 								<ul class="addmation1" id="xxs">
 									<?php $wnum = 0; ?>
-									<?php if(is_array($fbyp_jl)): foreach($fbyp_jl as $key=>$fbyp_jls): ?><li id="dew<?php echo ($fbyp_jls["id"]); ?>" class="dc<?php echo ($dnum); ?>"><div class="delete-gzjl"  onclick="dework(<?php echo ($fbyp_jls["id"]); ?>)"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div><ul class="tyint"><li><div class="mhdsj"><div class="litl"><p class="litx">*</p><p class="litc">活动时间</p><p class="cf"></p></div><div class="litr"><input readonly="readonly" name="workdate1<?php echo ($wnum); ?>" class="w150t" type="text" id="dt<?php echo ($wnum); ?>"  value="<?php $tt = explode(',',$fbyp_jls['worktime']); echo $tt[0]; ?>" />&nbsp;到&nbsp;<input id="da<?php echo ($wnum); ?>" name="workdate2<?php echo ($wnum); ?>"readonly="readonly" class="w150t" type="text"   value="<?php  echo $tt[1]; ?>" /><div class="liti1"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div><div class="liti2"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div></div><div  id="dd<?php echo ($wnum); ?>" style="left: 14px !important; top:42px !important"></div><div  id="db<?php echo ($wnum); ?>" style="left: 182px !important; top:42px !important"></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">所在公司</p><p class="cf"></p></div><div class="litr"><input name="workname<?php echo ($wnum); ?>" class="w200t" type="text" value="<?php echo $fbyp_jls['workname'] ?>"/></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">担任职位</p><p class="cf"></p></div><div class="litr"><input name="ty<?php echo ($wnum); ?>" class="w200t" value="<?php echo $fbyp_jls['typew'] ?>" type="text" /></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作描述</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="miao<?php echo ($wnum); ?>" type="text"><?php echo $fbyp_jls['contents'] ?></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>
+									<?php if(is_array($fbyp_jl)): foreach($fbyp_jl as $key=>$fbyp_jls): ?><li id="dew<?php echo ($fbyp_jls["id"]); ?>" class="dc<?php echo ($dnum); ?>"><div class="delete-gzjl"  onclick="dework(<?php echo ($fbyp_jls["id"]); ?>)"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div><ul class="tyint"><li><div class="mhdsj"><div class="litl"><p class="litx">*</p><p class="litc">活动时间</p><p class="cf"></p></div><div class="litr"><input readonly="readonly" name="workdate1<?php echo ($wnum); ?>" class="w150t" type="text" id="dt<?php echo ($wnum); ?>"  value="<?php $tt = explode(',',$fbyp_jls['worktime']); echo $tt[0]; ?>" />&nbsp;到&nbsp;<input id="da<?php echo ($wnum); ?>" name="workdate2<?php echo ($wnum); ?>"readonly="readonly" class="w150t" type="text"   value="<?php  echo $tt[1]; ?>" /><input type="hidden" name="wid<?php echo ($wnum); ?>" value="<?php echo ($fbyp_jls["id"]); ?>"><div class="liti1"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div><div class="liti2"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div></div><div  id="dd<?php echo ($wnum); ?>" style="left: 14px !important; top:42px !important"></div><div  id="db<?php echo ($wnum); ?>" style="left: 182px !important; top:42px !important"></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">所在公司</p><p class="cf"></p></div><div class="litr"><input name="workname<?php echo ($wnum); ?>" class="w200t" type="text" value="<?php echo $fbyp_jls['workname'] ?>"/></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">担任职位</p><p class="cf"></p></div><div class="litr"><input name="ty<?php echo ($wnum); ?>" class="w200t" value="<?php echo $fbyp_jls['typew'] ?>" type="text" /></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作描述</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="miao<?php echo ($wnum); ?>" type="text"><?php echo $fbyp_jls['contents'] ?></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>
 										<?php $wnum++; endforeach; endif; ?>
 								</ul>
 							
@@ -551,7 +551,7 @@
 												<input type="text" name="video1"  value="<?php echo $fbyp_jl_l[0] ?>" placeholder="输入视频链接地址" />
 											</div>
 										</div>
-										<div class="delete-2">
+										<div class="delete-2" onclick="pcs1()">
 											<img src="/matouPCS/Public/Home/img/delete-2.png" />
 										</div>
 									</li>
@@ -573,7 +573,7 @@
 												<input type="text" name="video2" value="<?php echo $fbyp_jl_l[1] ?>" placeholder="输入视频链接地址" />
 											</div>
 										</div>
-										<div class="delete-2">
+										<div class="delete-2" onclick="pcs2()">
 											<img src="/matouPCS/Public/Home/img/delete-2.png" />
 										</div>
 									</li>
@@ -595,7 +595,7 @@
 												<input type="text" name="video3" value="<?php echo $fbyp_jl_l[2] ?>" placeholder="输入视频链接地址" />
 											</div>
 										</div>
-										<div class="delete-2">
+										<div class="delete-2" onclick="pcs3()">
 											<img src="/matouPCS/Public/Home/img/delete-2.png" />
 										</div>
 									</li>
