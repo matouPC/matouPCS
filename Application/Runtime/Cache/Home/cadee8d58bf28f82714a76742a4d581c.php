@@ -678,7 +678,11 @@
 <script type="text/javascript">
 function ajax(where,id){
 
+<<<<<<< HEAD
 	alert(where);
+=======
+	//alert(where);
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 
 		if(where=='z'||where=='r'){
 			$.ajax({
@@ -806,13 +810,18 @@ function ajax(where,id){
 			});
 		
 	}else if(where==2||where=='2z'){
+<<<<<<< HEAD
 			//alert(1);								
+=======
+		//	alert(1);								
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 				$.ajax({
 					url:"?s=/Home/Mtbu/yingshang",
 					type:"post",
 					data:{id:id},
 					dataType:"json",
 					success:function(data){
+<<<<<<< HEAD
 						var li = '';
 						
 						for (var i = 0; i < data.length; i++) {
@@ -822,6 +831,16 @@ function ajax(where,id){
 						var p='<div class="s-c-3f"><ul id="ys">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button  onclick="tj1(<?php echo ($_GET['id']); ?>,1)" name="btn1" id="btn1">点击加载更多</button></div></div>'
 						
 						console.log(p);
+=======
+					//	alert(2);
+						var li = '';
+
+						for (var i = 0; i < data.length; i++) {
+						
+							li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data['shang'][i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+						};
+						var p='<div class="s-c-3f"><ul id="ys">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button  onclick="tj1(<?php echo ($_GET['id']); ?>,1)" name="btn1" id="btn1">点击加载更多</button></div></div>'
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 						$('#ul').html(p);
 						$('#content').val('');
 					},error:function(){
@@ -844,7 +863,11 @@ function ajax(where,id){
 						for (var i = 0; i < data['ji'].length; i++) {
 							var li = '';
                              var p='';
+<<<<<<< HEAD
 							li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['ji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+=======
+							li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['wji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							
 						
 								for (var j = 0; j < data['ben'].length; j++) {
@@ -878,7 +901,11 @@ function ajax(where,id){
 
 							for (var i = 0; i < data.length; i++) {
 							
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data[i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data['pin'][i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							};
 							var p='<div class="s-c-3f"><ul id="yp">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj3(<?php echo ($_GET['id']); ?>,1)" name="btn3" id="btn3">点击加载更多</button></div></div>'
 							$('#ul').html(p);
@@ -902,7 +929,11 @@ function ajax(where,id){
 
 												for (var i = 0; i < data.length; i++) {
 												
+<<<<<<< HEAD
 													li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data[i].fid+'"><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+													li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data['qiu'][i].fid+'"><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 												};
 												var p='<div class="s-c-3f"><ul id="qg">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj4(<?php echo ($_GET['id']); ?>,1)" name="btn4" id="btn4">点击加载更多</button></div></div>'
 												$('#ul').html(p);
@@ -926,7 +957,11 @@ function ajax(where,id){
 
 												for (var i = 0; i < data.length; i++) {
 												
+<<<<<<< HEAD
 													li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data[i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+													li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data['xian'][i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 												};
 												var p='<div class="s-c-3f"><ul id="xz">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj5(<?php echo ($_GET['id']); ?>,1)" name="btn5" id="btn5">点击加载更多</button></div></div>'
 												$('#ul').html(p);
@@ -983,7 +1018,11 @@ function ajax(where,id){
 
 												for (var i = 0; i < data.length; i++) {
 												
+<<<<<<< HEAD
 													li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data[i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+=======
+													li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data['shang'][i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 												};
 												var p='<div class="s-c-3f"><ul id="ys">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button  onclick="tj1c(<?php echo ($_GET['id']); ?>,2)" name="btn1" id="btn1">点击加载更多</button></div></div>'
 												$('#ul').html(p);
@@ -1008,7 +1047,11 @@ function ajax(where,id){
 												for (var i = 0; i < data['ji'].length; i++) {
 													var li = '';
 						                             var p='';
+<<<<<<< HEAD
 													li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['ji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+=======
+													li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['wji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 													
 												
 														for (var j = 0; j < data['ben'].length; j++) {
@@ -1042,7 +1085,11 @@ function ajax(where,id){
 
 													for (var i = 0; i < data.length; i++) {
 													
+<<<<<<< HEAD
 														li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data[i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+=======
+														li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data['pin'][i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 													};
 													var p='<div class="s-c-3f"><ul id="yp">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj3c(<?php echo ($_GET['id']); ?>,2)" name="btn3" id="btn3">点击加载更多</button></div></div>'
 													$('#ul').html(p);
@@ -1066,7 +1113,11 @@ function ajax(where,id){
 
 																		for (var i = 0; i < data.length; i++) {
 																		
+<<<<<<< HEAD
 																			li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data[i].fid+'"><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+																			li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data['qiu'][i].fid+'"><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 																		};
 																		var p='<div class="s-c-3f"><ul id="qg">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj4c(<?php echo ($_GET['id']); ?>,2)" name="btn4" id="btn4">点击加载更多</button></div></div>'
 																		$('#ul').html(p);
@@ -1090,7 +1141,11 @@ function ajax(where,id){
 
 																		for (var i = 0; i < data.length; i++) {
 																		
+<<<<<<< HEAD
 																			li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data[i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+																			li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data['xian'][i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 																		};
 																		var p='<div class="s-c-3f"><ul id="xz">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj5c(<?php echo ($_GET['id']); ?>,2)" name="btn5" id="btn5">点击加载更多</button></div></div>'
 																		$('#ul').html(p);
@@ -1173,7 +1228,11 @@ var p=2;
 						  var li = '';
 						for (var i = 0; i < data.length; i++) {
 												
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data[i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data['shang'][i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							};
 							$("#ys").append(li);
 				
@@ -1210,7 +1269,11 @@ var p=2;
 							for (var i = 0; i < data['ji'].length; i++) {
 								var li = '';
                                 var p='';
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['ji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['wji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 								
 							
 									for (var j = 0; j < data['ben'].length; j++) {
@@ -1257,7 +1320,11 @@ var p=2;
 
 								for (var i = 0; i < data.length; i++) {
 												
+<<<<<<< HEAD
 									li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data[i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+=======
+									li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data['pin'][i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 									};
 									$("#yp").append(li);
 				
@@ -1294,7 +1361,11 @@ var p=2;
 
 							for (var i = 0; i < data.length; i++) {
 								
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data][i].fid+'">><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data['qiu'][i].fid+'">><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							};
 										$("#qg").append(li);
 					
@@ -1331,7 +1402,11 @@ var p=2;
 
 							for (var i = 0; i < data.length; i++) {
 								
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data[i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data['xian'][i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							};
 										$("#xz").append(li);
 					
@@ -1415,7 +1490,11 @@ var p=2;
 						  var li = '';
 						for (var i = 0; i < data.length; i++) {
 												
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data[i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data['shang'][i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							};
 							$("#ys").append(li);
 				
@@ -1452,7 +1531,11 @@ var p=2;
 							for (var i = 0; i < data['ji'].length; i++) {
 								var li = '';
                                 var p='';
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['ji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Zpdt1/xqzp/id/'+data['wji'][i].rid+'"><p style="color: #000000;"><span>工作地点：</span><span class="hddd">'+data['ji'][i].address+'</span></p>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 								
 							
 									for (var j = 0; j < data['ben'].length; j++) {
@@ -1499,7 +1582,11 @@ var p=2;
 
 								for (var i = 0; i < data.length; i++) {
 												
+<<<<<<< HEAD
 									li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data[i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+=======
+									li+='<li><a href="/matouPCS/?s=/Home/Zpdt/xqyp/id/'+data['pin'][i].id+'"><p><span class="name">'+data[i].name+'</span><span class="age">'+data[i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data[i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data[i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data[i].workname+'</span><span>职位：</span><span class="drzw">'+data[i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 									};
 									$("#yp").append(li);
 				
@@ -1536,7 +1623,11 @@ var p=2;
 
 							for (var i = 0; i < data.length; i++) {
 								
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data[i].fid+'"><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqqg/id/'+data['qiu'][i].fid+'"><!--<div class="yhtx"><img src="img/yhmc-big.png" /></div>--><div style="width: 100%;" class="word"><div><p class="mc">求购物品：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">预算：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq" style="width: 100%;"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' <!--<strong class="clearfloat"></strong>--></span><span class="clearfloat"></span></p><p class="word-bottom" style="width: 100%;"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							};
 										$("#qg").append(li);
 					
@@ -1573,7 +1664,11 @@ var p=2;
 
 							for (var i = 0; i < data.length; i++) {
 								
+<<<<<<< HEAD
 								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data[i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+=======
+								li+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data['xian'][i].fid+'"><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data[i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data[i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data[i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
+>>>>>>> 7df91bd1d1ac6683b7e74ccb7628cb666c023dbf
 							};
 										$("#xz").append(li);
 					
