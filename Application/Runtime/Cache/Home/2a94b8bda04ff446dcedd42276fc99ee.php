@@ -176,8 +176,15 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<div class="str"></div>
 							</li>
 							<li style="width: 68px;">
+									<?php if(is_array($sp)): foreach($sp as $key=>$v): if($v['status']==1){ ?>
+								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
+								<?php }else if($v['status']==2){ ?>
 								<a href="#">我的商铺</a>
+							   <?php }else{ ?>				   		
+                                   <a href="#">我的商铺</a>                    	
+                                   <?php } endforeach; endif; ?>
 								<div class="str"></div>
+							
 							</li>
 							<li style="width: 70px;">
 								<a class="action" href="#" id="find">发动态</a>
@@ -995,7 +1002,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						</div>
 						<div class="s-f5-l">
 							<div class="s-f5-l-1f">
-								码头商城
+					码头商城
 							</div>
 							<div class="s-f5-l-2f">
 								<ul>
@@ -1041,15 +1048,13 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											</div>
 											<div class="mtsc-cr">
 												<p style="font-size: 16px;color: #5b5b5b;"><?php echo ($shangs["shopname"]); ?></p>
-												<p style="height: 20px;">地址：<?php echo ($shangs["address"]); ?>&nbsp;地址地址地址</p>
+												<p style="height: 20px;">地址：<?php echo ($shangs["address"]); ?>&nbsp;</p>
 												<p>类型：<?php echo ($shangs["type"]); ?></p>
-												<div class="mtscc">
-													<div class="mtsc-crbtn">音响</div>
-													<div class="mtsc-crbtn">音响</div>
-													<div class="mtsc-crbtn">音响</div>
-													<div class="mtsc-crbtn">音响</div>
-													<div class="mtsc-crbtn">音响</div>
-													<div class="mtsc-crbtn">音响</div>
+											<div class="mtscc">
+												<p>
+													<?php echo ($shangs["zysp"]); ?>
+												</p>
+												<div class="clearf"></div>
 												</div>
 												<p style="float: right;width: 90px;margin-top: 10px;"><img src="/matouPCS/Public/Home/img/sca.png" />&nbsp;收藏<?php echo ($shangs["collect"]); ?></p>
 											</div>

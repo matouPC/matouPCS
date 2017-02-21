@@ -1,0 +1,2139 @@
+[ 2017-02-21T09:01:49+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001481s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0133s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0050s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0022s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0022s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0023s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0058s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0020s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000338s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000395s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036390s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000817s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001368s ]
+
+[ 2017-02-21T09:01:58+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxqre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0034s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.collect desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 4   [ RunTime:0.0009s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 3   [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.collect desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.collect desc LIMIT 3   [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:02:09+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxqre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0041s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:02:18+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxqre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.collect desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 3   [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.collect desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.collect desc LIMIT 3   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:02:21+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshangre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:02:36+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingshangre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.collect desc LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-02-21T09:04:04+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/qiugoure
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001960s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0055s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-02-21T09:04:21+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddyxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0043s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0034s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000457s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000574s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031720s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000585s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2017-02-21T09:04:27+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/zhaopin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002326s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0036s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:06:28+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddyxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0029s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028444s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028497s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2017-02-21T09:06:32+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:06:39+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshangre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:06:48+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshangre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:08:47+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddyxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0024s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000348s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028611s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000890s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000973s ]
+
+[ 2017-02-21T09:08:49+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddyxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0024s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0029s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027762s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027813s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000595s ]
+
+[ 2017-02-21T09:08:51+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddyxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000284s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026846s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2017-02-21T09:08:53+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddyxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0036s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000287s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000354s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027804s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2017-02-21T09:08:55+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddyxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000270s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000333s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\cadee8d58bf28f82714a76742a4d581c.php 第 449 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027176s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2017-02-21T09:09:16+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0034s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0045s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0053s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004166s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2017-02-21T09:09:30+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0034s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000273s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028168s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028219s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2017-02-21T09:09:33+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:10:40+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000286s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000363s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028038s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028088s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2017-02-21T09:10:44+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:11:06+08:00 ] ::1 /matouPCS/?s=/Home/xsdt/xqxs/id/28
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0030s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid INNER JOIN user as u on u.id = e.uid INNER JOIN forcee as f on f.uid = u.id  WHERE (  e.psid = 28 ) LIMIT 1   [ RunTime:0.0024s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( e.psid = 28 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\49b121750ad59544b32e7766dbc119bc.php 第 241 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009388s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2017-02-21T09:12:30+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0037s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0034s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000286s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000345s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028895s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2017-02-21T09:12:33+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:14:24+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023708s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2017-02-21T09:14:27+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:14:40+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0038s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000206s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031075s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2017-02-21T09:14:43+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:16:35+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000904s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023058s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000590s ]
+
+[ 2017-02-21T09:16:38+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:17:34+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0035s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0035s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2017-02-21T09:17:37+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:17:50+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0024s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024453s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2017-02-21T09:17:53+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:18:59+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000279s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000545s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2017-02-21T09:19:02+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:19:05+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xuanshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Home\Controller\MtbuController.class.php 第 921 行.
+NOTIC: [8] Undefined index: where D:\www\matouPCS\Application\Home\Controller\MtbuController.class.php 第 922 行.
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0035s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-02-21T09:19:44+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0024s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029830s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2017-02-21T09:19:47+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:19:50+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xuanshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+NOTIC: [8] Undefined index: where D:\www\matouPCS\Application\Home\Controller\MtbuController.class.php 第 922 行.
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.collect desc LIMIT 2,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:20:17+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0040s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0054s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024403s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2017-02-21T09:20:21+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:20:24+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xuanshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 2,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:20:55+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0035s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0024s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028172s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2017-02-21T09:20:58+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0057s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:21:01+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xuanshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 2,2   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:21:18+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0052s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0008s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000209s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000275s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026404s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026461s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2017-02-21T09:21:21+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:21:24+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xuanshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002452s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 2,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:22:04+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0057s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0034s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0008s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0045s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000746s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000955s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032166s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2017-02-21T09:22:07+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:23:10+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0029s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023789s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023836s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2017-02-21T09:23:13+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:23:16+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xuanshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 2,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:23:55+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0044s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0035s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0044s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029047s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2017-02-21T09:23:58+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:24:01+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xuanshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000112s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 2,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:24:06+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-02-21T09:24:08+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/yingshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 1,1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:24:36+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000332s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000416s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2017-02-21T09:24:40+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/zhaopin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:24:42+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/zhaopinjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 1,1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:25:14+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0037s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025773s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025822s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000669s ]
+
+[ 2017-02-21T09:25:22+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingpin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2017-02-21T09:25:24+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/yingpinjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1,1   [ RunTime:0.0027s ]
+
+[ 2017-02-21T09:25:48+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000522s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000633s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027391s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
+
+[ 2017-02-21T09:25:52+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/qiugou
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:26:48+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0046s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000260s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000331s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031732s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000546s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000604s ]
+
+[ 2017-02-21T09:26:51+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xuanshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000100s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+
+[ 2017-02-21T09:27:16+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024891s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001781s ]
+
+[ 2017-02-21T09:27:20+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingshang
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:27:22+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/yingshangjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 1,1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:30:22+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0034s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0029s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000267s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000331s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026652s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026704s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000673s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000735s ]
+
+[ 2017-02-21T09:30:26+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/qiugou
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:31:03+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0036s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0007s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0010s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000259s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000326s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027408s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2017-02-21T09:31:07+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingpin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1   [ RunTime:0.0031s ]
+
+[ 2017-02-21T09:31:09+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/yingpinjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1,1   [ RunTime:0.0027s ]
+
+[ 2017-02-21T09:31:40+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0007s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000358s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025988s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001022s ]
+
+[ 2017-02-21T09:31:44+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/qiugou
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:32:02+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0035s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0028s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000247s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025722s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025770s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2017-02-21T09:32:06+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/qiugou
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.collect desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:32:07+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/qiugoujz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 1,1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:32:37+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000250s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028427s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028522s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2017-02-21T09:32:41+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingpin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1   [ RunTime:0.0027s ]
+
+[ 2017-02-21T09:33:49+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0027s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000318s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2017-02-21T09:33:54+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingpin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1   [ RunTime:0.0027s ]
+
+[ 2017-02-21T09:33:55+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/yingpinjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1,1   [ RunTime:0.0027s ]
+
+[ 2017-02-21T09:34:32+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/spbddnxq/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000854s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0033s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop_liuyan` [ RunTime:0.0025s ]
+SQL: SELECT * FROM shop_liuyan as s INNER JOIN user as u on s.uid = u.id  WHERE ( s.sid = 3 ) ORDER BY s.id desc LIMIT 0,3   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `shop` WHERE ( id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN user as u on u.id = s.uid  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.psid desc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN reward2 as r on s.uid = r.usid  WHERE ( s.id = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN due as d on s.uid = d.uid  WHERE (  s.id = 3  ) ORDER BY d.did desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit1 as e on s.uid = e.uid  WHERE ( s.id = 3 ) ORDER BY e.rid desc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN recruit2 as r on s.uid = r.usid  WHERE (  s.id = 3  )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 3   [ RunTime:0.0026s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 2 ) ORDER BY e.fid desc LIMIT 3   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000370s ]
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+NOTIC: [8] Undefined index: time D:\www\matouPCS\Application\Runtime\Cache\Home\93cb20228522b8820bf1a3dbb4fa4531.php 第 455 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032335s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000794s ]
+
+[ 2017-02-21T09:34:37+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/yingpin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1   [ RunTime:0.0028s ]
+
+[ 2017-02-21T09:34:38+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/yingpinjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM shop as s INNER JOIN employ as e on s.uid = e.uid INNER JOIN employwork as r on r.pid = e.id  WHERE ( s.id = 3 ) ORDER BY e.id desc LIMIT 1,1   [ RunTime:0.0032s ]
+
+[ 2017-02-21T09:34:46+08:00 ] ::1 /matouPCS/?s=/Home/Mtbu/xianzhi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0032s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:34:48+08:00 ] ::1 /matouPCS/index.php/Home/Mtbu/xianzhijz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM shop as s INNER JOIN flea as e on e.uid = s.uid  WHERE ( s.id = 3 and e.type = 1 ) ORDER BY e.fid desc LIMIT 1,1   [ RunTime:0.0004s ]
+
+[ 2017-02-21T09:37:14+08:00 ] ::1 /matouPCS/?s=/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0032s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0027s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: ren D:\www\matouPCS\Application\Home\Controller\IndexController.class.php 第 39 行.
+NOTIC: [8] Undefined variable: fbys D:\www\matouPCS\Application\Home\Controller\IndexController.class.php 第 41 行.
+NOTIC: [8] Undefined variable: fbyp D:\www\matouPCS\Application\Home\Controller\IndexController.class.php 第 43 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] Undefined index: username D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 104 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 929 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019878s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019933s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000585s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000649s ]
+
+[ 2017-02-21T09:37:39+08:00 ] ::1 /matouPCS/?s=/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `user` WHERE ( tel = 222 and password = 333 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\www\matouPCS\Application\Home\Controller\IndexController.class.php 第 84 行.
+SQL: SHOW COLUMNS FROM `user_fen` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `user_fen` WHERE (  uid = 8 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000688s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000738s ]
+
+[ 2017-02-21T09:37:40+08:00 ] ::1 /matouPCS/?s=/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0033s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0026s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 8 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 8 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 8 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0025s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 543 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019870s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000543s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000598s ]
+

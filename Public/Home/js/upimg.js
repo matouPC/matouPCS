@@ -230,17 +230,21 @@
 			
 		function hfx3(){ //应赏图片的方法this
 			var im = document.getElementById("this").getElementsByTagName("li").length;
-			// var im = $('#this li').len();
 			im++;
-			$(".p12").hide();
-			$(".dianji").hide();
-			$(".s-c-2f-2f-f ul").append('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="ysimg'+im+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
-				$(".refcc").on("click", function() {
-					if($(".s-c-3f").css("height") == "10px") {
-						$(".p12").show();
-					}
-					$(this).parent().parent().remove();
-				});
+			if( im > 9 ){
+				alert('滚犊子(最多张图片)');
+			}else{
+				$(".p12").hide();
+				$(".dianji").hide();
+				$(".s-c-2f-2f-f ul").append('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="ysimg'+im+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
+					$(".refcc").on("click", function() {
+						if($(".s-c-3f").css("height") == "10px") {
+							$(".p12").show();
+						}
+						$(this).parent().parent().remove();
+					});
+			}
+			
 			$(".photobt").change(function(e) {
 				var that = this;
 				var $os = $(that).siblings(".click1");
