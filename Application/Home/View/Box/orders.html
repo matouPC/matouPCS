@@ -1,5 +1,6 @@
 
 <!-- 悬赏大厅的局部 -->
+<?php if(!empty($data)){?>
 <ul>
     <foreach name="list" item="xsdt">
         <a href="?s=/Home/xsdt/xqxs/id/{$xsdt['psid']}">
@@ -42,3 +43,8 @@
     <br>
     <div class="pager">{$page}</div>
 </ul>
+<?php }else{ ?>
+<ul>
+    <h1>没有内容了！</h1>
+</ul>
+<?php } ?>

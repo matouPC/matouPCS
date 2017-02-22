@@ -87,7 +87,7 @@ class XsdtController extends Controller
     }
     public function xqxs($id){
         //悬赏详情 
-        $list = M('reward2 as r')->join("reward1 as e on r.pid = e.psid")->join('user as u on u.id = e.uid')->join('forcee as f on f.uid = u.id')->where(" e.psid = {$id}")->find();//先查是否为认证部队
+        $list = M('reward2 as r')->join("reward1 as e on r.pid = e.psid")->join('user as u on u.id = e.uid')->where(" e.psid = {$id}")->find();//先查是否为认证部队
         //悬赏要求
         $listNew = M('reward2 as r')->join("reward1 as e on r.pid = e.psid")->where("e.psid = {$id}")->select();
         //悬赏报名人数查询

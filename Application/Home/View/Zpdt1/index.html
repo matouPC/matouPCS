@@ -391,8 +391,10 @@
 							<dl>
 								<dt>活动地点</dt>
 								<dd>
-									<div>
-										<input id="city" type="text" placeholder="点击选择地点" />
+									<div id="ceshi">
+										<form name="xxoo">
+											<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
+										</form>
 									</div>
 								</dd>
 							</dl>
@@ -407,22 +409,6 @@
 							</div>
 						</div>
 					</div>
-					<script type="text/javascript">
-						var url_ajax = "?s=/Home/Box/zpdt";//这个路径是真正显示列表的
-			           $(function() {
-			                $("#ajax_lists").delegate(".pager a", "click", function() {
-			                    var page = $(this).attr("data-page");
-			                    getPage(page);
-			                })
-			                getPage(1);
-			            })
-			            function getPage(page) {
-			                 $("#ajax_lists").html("<h1>请稍等。。。</h1>");
-			                 $.get(url_ajax, {p: page}, function(data) {
-			                    $('#ajax_lists').html(data);
-			                })
-			            }
-            		</script>
 					<div class="s-c-3f" id="ajax_lists">
 						
 					</div>
@@ -606,8 +592,11 @@
 	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
 	<script src="__PUBLIC__/Home/js/jquery.date_input.pack.js"></script>
 	<script src="__PUBLIC__/Home/js/city-data.js"></script>
+	<script src="__PUBLIC__/Home/js/areadata.js"></script>
 	<script src="__PUBLIC__/Home/js/hzw-city-picker.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
+	<script src="__PUBLIC__/Home/js/zp.js"></script>
+	<script src="__PUBLIC__/Home/js/sousuo.js"></script>
 	<script type="text/javascript">
 		$(function() {
 

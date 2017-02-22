@@ -539,8 +539,8 @@
 									<li>
 										<div class="na2">
 											<div class="picture1">
-												<img id="pic1" src="<?php echo '/matouPCS/Uploads/'.$fbyp_jl_v[0]; ?>">
-												<input id="upload1" name="file1" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
+												<img id="pics1" src="<?php echo '/matouPCS/Uploads/'.$fbyp_jl_v[0]; ?>">
+												<input id="uploads1" name="file1" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
 											</div>
 											<!--<div class="na2bg">
 												<a onclick="document.getElementById('pic1').click()" href="javascript://">编辑视频封面</a>
@@ -548,10 +548,10 @@
 										</div>
 										<div class="input-h">
 											<div class="input-bt">
-												<input type="text" name="title1" value="<?php echo $fbyp_jl_t[0] ?>" placeholder="请输入视频标题" />
+												<input type="text" name="title1" id="title1" value="<?php echo $fbyp_jl_t[0] ?>" placeholder="请输入视频标题" />
 											</div>
 											<div class="input-dz">
-												<input type="text" name="video1"  value="<?php echo $fbyp_jl_l[0] ?>" placeholder="输入视频链接地址" />
+												<input type="text" name="video1"  id="video1" value="<?php echo $fbyp_jl_l[0] ?>" placeholder="输入视频链接地址" />
 											</div>
 										</div>
 										<div class="delete-2" onclick="pcs1()">
@@ -561,8 +561,8 @@
 									<li>
 										<div class="na2">
 											<div class="picture2">
-												<img id="pic2" src="<?php echo '/matouPCS/Uploads/'.$fbyp_jl_v[1]; ?>">
-												<input id="upload2" name="file2" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
+												<img id="pics2" src="<?php echo '/matouPCS/Uploads/'.$fbyp_jl_v[1]; ?>">
+												<input id="uploads2" name="file2" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
 											</div>
 											<!--<div class="na2bg">
 												<a onclick="document.getElementById('pic1').click()" href="javascript://">编辑视频封面</a>
@@ -570,10 +570,10 @@
 										</div>
 										<div class="input-h">
 											<div class="input-bt">
-												<input type="text" name="title2" value="<?php echo $fbyp_jl_t[1] ?>" placeholder="请输入视频标题" />
+												<input type="text" name="title2" id="title2" value="<?php echo $fbyp_jl_t[1] ?>" placeholder="请输入视频标题" />
 											</div>
 											<div class="input-dz">
-												<input type="text" name="video2" value="<?php echo $fbyp_jl_l[1] ?>" placeholder="输入视频链接地址" />
+												<input type="text" name="video2" id="video2" value="<?php echo $fbyp_jl_l[1] ?>" placeholder="输入视频链接地址" />
 											</div>
 										</div>
 										<div class="delete-2" onclick="pcs2()">
@@ -583,8 +583,8 @@
 									<li style="margin: 0;">
 										<div class="na2">
 											<div class="picture3">
-												<img id="pic3" src="<?php echo '/matouPCS/Uploads/'.$fbyp_jl_v[2]; ?>">
-												<input id="upload3" name="file3" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
+												<img id="pics3" src="<?php echo '/matouPCS/Uploads/'.$fbyp_jl_v[2]; ?>">
+												<input id="uploads3" name="file3" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
 											</div>
 											<!--<div class="na2bg">
 												<a onclick="document.getElementById('pic1').click()" href="javascript://">编辑视频封面</a>
@@ -592,10 +592,10 @@
 										</div>
 										<div class="input-h">
 											<div class="input-bt">
-												<input type="text" name="title3" value="<?php echo $fbyp_jl_t[2] ?>" placeholder="请输入视频标题" />
+												<input type="text" name="title3" id="title3" value="<?php echo $fbyp_jl_t[2] ?>" placeholder="请输入视频标题" />
 											</div>
 											<div class="input-dz">
-												<input type="text" name="video3" value="<?php echo $fbyp_jl_l[2] ?>" placeholder="输入视频链接地址" />
+												<input type="text" name="video3" id="video3" value="<?php echo $fbyp_jl_l[2] ?>" placeholder="输入视频链接地址" />
 											</div>
 										</div>
 										<div class="delete-2" onclick="pcs3()">
@@ -851,12 +851,12 @@
 		
 		//图片上传预览    IE是用了滤镜。
 		$(function() {
-			$("#pic1").click(function() {
-				$("#upload1").click(); //隐藏了input:file样式后，点击头像就可以本地上传
-				$("#upload1").on("change", function() {
+			$("#pics1").click(function() {
+				$("#uploads1").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+				$("#uploads1").on("change", function() {
 					var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
 					if(objUrl) {
-						$("#pic1").attr("src", objUrl); //将图片路径存入src中，显示出图片
+						$("#pics1").attr("src", objUrl); //将图片路径存入src中，显示出图片
 					}
 				});
 			});
@@ -879,23 +879,23 @@
 			return url;
 		}
 		$(function() {
-			$("#pic2").click(function() {
-				$("#upload2").click(); //隐藏了input:file样式后，点击头像就可以本地上传
-				$("#upload2").on("change", function() {
+			$("#pics2").click(function() {
+				$("#uploads2").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+				$("#uploads2").on("change", function() {
 					var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
 					if(objUrl) {
-						$("#pic2").attr("src", objUrl); //将图片路径存入src中，显示出图片
+						$("#pics2").attr("src", objUrl); //将图片路径存入src中，显示出图片
 					}
 				});
 			});
 		});
 		$(function() {
-			$("#pic3").click(function() {
-				$("#upload3").click(); //隐藏了input:file样式后，点击头像就可以本地上传
-				$("#upload3").on("change", function() {
+			$("#pics3").click(function() {
+				$("#uploads3").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+				$("#uploads3").on("change", function() {
 					var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
 					if(objUrl) {
-						$("#pic3").attr("src", objUrl); //将图片路径存入src中，显示出图片
+						$("#pics3").attr("src", objUrl); //将图片路径存入src中，显示出图片
 					}
 				});
 			});
@@ -1029,7 +1029,99 @@
 		}
 		//进去就加载这个方法
 		userYp();
-		
+if(document.getElementById('pics1').src == 'http://localhost/matouPCS/Uploads/'){
+	$('#pics1').attr('src','/matouPCS/Public/Home/img/scsp.png');
+}
+if(document.getElementById('pics2').src == 'http://localhost/matouPCS/Uploads/'){
+	$('#pics2').attr('src','/matouPCS/Public/Home/img/scsp.png');
+}
+if(document.getElementById('pics3').src == 'http://localhost/matouPCS/Uploads/'){
+	$('#pics3').attr('src','/matouPCS/Public/Home/img/scsp.png');
+}
+$('#dd0').calendar({
+	trigger: '#dt0',
+	zIndex: 999,
+	format: 'yyyy-mm-dd',
+	onSelected: function(view, date, data) {
+		console.log('event: onSelected')
+	},
+	onClose: function(view, date, data) {
+		console.log('event: onClose')
+		console.log('view:' + view)
+		console.log('date:' + date)
+		console.log('data:' + (data || 'None'));
+	}
+});
+$('#db0').calendar({
+	trigger: '#da0',
+	zIndex: 999,
+	format: 'yyyy-mm-dd',
+	onSelected: function(view, date, data) {
+		console.log('event: onSelected')
+	},
+	onClose: function(view, date, data) {
+		console.log('event: onClose')
+		console.log('view:' + view)
+		console.log('date:' + date)
+		console.log('data:' + (data || 'None'));
+	}
+});
+$('#dd1').calendar({
+	trigger: '#dt1',
+	zIndex: 999,
+	format: 'yyyy-mm-dd',
+	onSelected: function(view, date, data) {
+		console.log('event: onSelected')
+	},
+	onClose: function(view, date, data) {
+		console.log('event: onClose')
+		console.log('view:' + view)
+		console.log('date:' + date)
+		console.log('data:' + (data || 'None'));
+	}
+});
+$('#db1').calendar({
+	trigger: '#da1',
+	zIndex: 999,
+	format: 'yyyy-mm-dd',
+	onSelected: function(view, date, data) {
+		console.log('event: onSelected')
+	},
+	onClose: function(view, date, data) {
+		console.log('event: onClose')
+		console.log('view:' + view)
+		console.log('date:' + date)
+		console.log('data:' + (data || 'None'));
+	}
+});
+$('#dd2').calendar({
+	trigger: '#dt2',
+	zIndex: 999,
+	format: 'yyyy-mm-dd',
+	onSelected: function(view, date, data) {
+		console.log('event: onSelected')
+	},
+	onClose: function(view, date, data) {
+		console.log('event: onClose')
+		console.log('view:' + view)
+		console.log('date:' + date)
+		console.log('data:' + (data || 'None'));
+	}
+});
+$('#db2').calendar({
+	trigger: '#da2',
+	zIndex: 999,
+	format: 'yyyy-mm-dd',
+	onSelected: function(view, date, data) {
+		console.log('event: onSelected')
+	},
+	onClose: function(view, date, data) {
+		console.log('event: onClose')
+		console.log('view:' + view)
+		console.log('date:' + date)
+		console.log('data:' + (data || 'None'));
+	}
+});
 	</script>
 
 </html>

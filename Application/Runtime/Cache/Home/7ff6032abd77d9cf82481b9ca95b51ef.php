@@ -1,5 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?>
 <!-- 悬赏大厅的局部 -->
+<?php if(!empty($data)){?>
 <ul>
     <?php if(is_array($list)): foreach($list as $key=>$xsdt): ?><a href="?s=/Home/xsdt/xqxs/id/<?php echo ($xsdt['psid']); ?>">
         
@@ -32,3 +33,8 @@
     <br>
     <div class="pager"><?php echo ($page); ?></div>
 </ul>
+<?php }else{ ?>
+<ul>
+    <h1>没有内容了！</h1>
+</ul>
+<?php } ?>

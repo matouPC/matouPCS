@@ -537,26 +537,34 @@ class UserController extends Controller
                 $pof['worktimes'] .= $pos.'.';
             }
         }
-
+        //修改工作经历 先全部删除 然后表单里有什么 就添加什么
         $pofs = explode(',',$pof['worktime']);
         $poss = explode('.',$pof['worktimes']);
         array_pop($pofs);
         array_pop($poss);
+        $delWork = M("employwork")->where("pid = {$id}")->delete();
         for ($i=0; $i < 3; $i++) { 
-            $newliDate = $newDate['worktime'] = $_POST[$pofs[$i].$i].','. $_POST[$poss[$i].$i];//拿到所有的开始日期+结束日期
-            $newDate['workname'] = $_POST['workname'.$i.''];
-            $newDate['typew'] = $_POST['ty'.$i.''];
-            $newDate['contents'] = $_POST['miao'.$i.'']; 
-            $newDate['pid'] = $id;
-            if(!empty($newDate)){
-                $lw = M("employwork")->where("worktime = '{$newliDate}'")->find();
-                if(empty($lw)){
-                    $wt = M('employwork')->add($newDate);
-                    if( $wt > 0){
-                        echo '添加成功';
-                    }
-                } 
-            }     
+            $newDate['worktime'] .= $_POST[$pofs[$i].$i].','. $_POST[$poss[$i].$i].'.';//拿到所有的开始日期+结束日期
+            $newDate['workname'] .= $_POST['workname'.$i.''].',';
+            $newDate['typew'] .= $_POST['ty'.$i.''].',';
+            $newDate['contents'] .= $_POST['miao'.$i.''].','; 
+            $newDate['pid'] .= $id.',';   
+        }
+        $newDates_t = $this->string_yp($newDate['worktime']);
+        $newDates_n = $this->stringimg($newDate['workname']);
+        $newDates_p = $this->stringimg($newDate['typew']);
+        $newDates_o = $this->stringimg($newDate['contents']);
+        $newDates_d = $this->stringimg($newDate['pid']);
+        for ($i=0; $i < count($newDates_t); $i++) { 
+            $arrs['worktime'] = $newDates_t[$i];
+            $arrs['workname'] = $newDates_n[$i];
+            $arrs['typew'] = $newDates_p[$i];
+            $arrs['contents'] = $newDates_o[$i];
+            $arrs['pid'] = $newDates_d[$i];
+            $add_work = M("employwork")->add($arrs);
+            if($add_work > 0){
+                echo '工作经历修改成功';
+            }
         }
         //图片作品
         for ($i=0; $i <= count($arr) ; $i++) { 
@@ -630,8 +638,15 @@ class UserController extends Controller
         if($ob > 0){
             echo '基本信息修改成功';
         }
-
-
+    }
+    /**
+    *  专门处理应赏-》日期
+    */
+    public function string_yp($userYp){
+        $shou = explode('.',$userYp);
+        // var_dump($shou);die;
+        array_pop($shou);
+        return $shou;
     }
     public function user_yp_jl($id){
         $ob = M('employwork')->where("id = {$id}")->delete();

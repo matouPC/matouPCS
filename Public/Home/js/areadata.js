@@ -293,7 +293,9 @@ function svae_City() {
     	$('#xsdz').css('color','#999');
     	$('#xsdz').attr('disabled',true);
     }
-//	alert(Cityname);
+    //直接将选中的地址存入cookie
+    setCookie('address',Cityname);
+    getPage(1);
     Close();
 }
 function Close() {

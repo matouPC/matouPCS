@@ -260,6 +260,7 @@
 								<?php } endforeach; endif; ?>
 							<script type="text/javascript">
 								function tian(wid){
+									alert(wid);
 									if(window.confirm('你确定要报名么？')){
 										if($("#bt-p"+wid+" a").text() == '我要报名'){
 											$.ajax({

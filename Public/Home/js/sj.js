@@ -55,66 +55,35 @@ if(document.getElementById('pic3').src == 'http://localhost/matouPCS/Uploads/'){
 			}
 		}
 	});
-/***********应聘*日期选择器*************/
-$('#dd'+i).calendar({
-	trigger: '#dt'+i,
-	zIndex: 999,
-	format: 'yyyy-mm-dd',
-	onSelected: function(view, date, data) {
-		console.log('event: onSelected')
-	},
-	onClose: function(view, date, data) {
-		console.log('event: onClose')
-		console.log('view:' + view)
-		console.log('date:' + date)
-		console.log('data:' + (data || 'None'));
-	}
-});
-$('#db'+i).calendar({
-	trigger: '#da'+i,
-	zIndex: 999,
-	format: 'yyyy-mm-dd',
-	onSelected: function(view, date, data) {
-		console.log('event: onSelected')
-	},
-	onClose: function(view, date, data) {
-		console.log('event: onClose')
-		console.log('view:' + view)
-		console.log('date:' + date)
-		console.log('data:' + (data || 'None'));
-	}
-});
+/***********应聘*日期选择器******循环一使用就失效  暂时先这样写*******/
+// for (var ii = 0; ii < 100 ii++) {
+
+
+
+// };
+
 //应聘 视频封面时间
-// if(document.getElementById('pic1').src == 'http://localhost/matouPCS/Uploads/'){
-// 	$('#pics1').attr('src','/matouPCS/Public/Home/img/scsp.png');
-// }
-// if(document.getElementById('pic2').src == 'http://localhost/matouPCS/Uploads/'){
-// 	$('#pics2').attr('src','/matouPCS/Public/Home/img/scsp.png');
-// }
-// if(document.getElementById('pic3').src == 'http://localhost/matouPCS/Uploads/'){
-// 	$('#pics3').attr('src','/matouPCS/Public/Home/img/scsp.png');
-// }
-// function pcs1(){//第3个视频文件
-// 		if(window.confirm('确定删除1？')){
-// 			$('#uploads1').val('');//先将图片清楚
-// 			$('#file_titles1').val('');//再将标题和连接清空
-// 			$('#file_videos1').val('');
-// 			$('#pics1').attr('src','/matouPCS/Public/Home/img/scsp.png');
-// 		}
-// 	}
-// function pcs2(){//第3个视频文件
-// 		if(window.confirm('确定删除2？')){
-// 			$('#uploads2').val('');//先将图片清楚
-// 			$('#file_titles2').val('');//再将标题和连接清空
-// 			$('#file_videos2').val('');
-// 			$('#pics2').attr('src','/matouPCS/Public/Home/img/scsp.png');
-// 		}
-// 	}
-// function pcs3(){//第3个视频文件
-// 		if(window.confirm('确定删除3？')){
-// 			$('#uploads3').val('');//先将图片清楚
-// 			$('#file_titles3').val('');//再将标题和连接清空
-// 			$('#file_videos3').val('');
-// 			$('#pics3').attr('src','/matouPCS/Public/Home/img/scsp.png');
-// 		}
-// 	}
+function pcs1(){//第3个视频文件
+		if(window.confirm('确定删除1？')){
+			$('#uploads1').val('');//先将图片清楚
+			$('#title1').val('');//再将标题和连接清空
+			$('#video1').val('');
+			$('#pics1').attr('src','/matouPCS/Public/Home/img/scsp.png');
+		}
+	}
+function pcs2(){//第3个视频文件
+		if(window.confirm('确定删除2？')){
+			$('#uploads2').val('');//先将图片清楚
+			$('#title2').val('');//再将标题和连接清空
+			$('#video2').val('');
+			$('#pics2').attr('src','/matouPCS/Public/Home/img/scsp.png');
+		}
+	}
+function pcs3(){//第3个视频文件
+		if(window.confirm('确定删除3？')){
+			$('#uploads3').val('');//先将图片清楚
+			$('#title3').val('');//再将标题和连接清空
+			$('#video3').val('');
+			$('#pics3').attr('src','/matouPCS/Public/Home/img/scsp.png');
+		}
+	}

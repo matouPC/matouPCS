@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/datePicker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="http://www.sucaihuo.com/jquery/css/common.css" /> -->
 		<style>
 			.s-f1-r ul li a .img {
@@ -13,7 +15,15 @@
 				margin-right: 10px;
 				float: right;
 			}
-			
+			#xz-date{
+				position: relative;
+			}
+
+			.sjxz {
+				position: absolute;
+				top: 10px;
+				left: 111px;
+			}
 			.select-yfb {
 				width: 70px;
 				/*height: 100px;*/
@@ -86,7 +96,9 @@
 		</style>
 	</head>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<body>
+	
+	<body onbeforeunload="checkLeave()">
+		
 		<header>
 			<div class="h-content-main">
 				<div class="h-main-c">
@@ -370,7 +382,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl id="price">
+							<!-- <dl id="">
 								<dt>赏金/天</dt>
 								<dd>
 									<div class="gray">
@@ -402,12 +414,20 @@
 										<a>6000元以上</a>
 									</div>
 								</dd>
-							</dl>
-							<dl>
+							</dl> -->
+							<dl id="xz-date">
 								<dt>活动时间</dt>
 								<dd>
-									<div>
-										<input id="date" type="text" class="date_picker" placeholder="点击选择时间" />
+									<div class="gray">
+										<a id="daTe">不限</a>
+									</div>
+								</dd>
+								<dd>
+									<div class="xz-date" >
+										<input type="text" id="dt" readonly="readonly" placeholder="请选择活动时间">
+									</div>
+									<div class="sjxz">
+										<div id="dd"></div>
 									</div>
 								</dd>
 							</dl>
@@ -416,13 +436,34 @@
 								<dd>
 									<div id="ceshi">
 										<form name="xxoo">
-											<input id="city" name="xxoos" type="text" placeholder="点击选择地点" />
-											<input name="xxoos" type="hidden" />
+											<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
 										</form>
 									</div>
 								</dd>
 							</dl>
-							<div class="px">
+							<script type="text/javascript">
+							var url_ajax = "?s=/Home/Box/orders";//这个路径是真正显示列表的
+							   $(function() {
+							        $("#ajax_lists").delegate(".pager a", "click", function() {
+							            var page = $(this).attr("data-page");
+							            getPage(page);
+							        })
+							        getPage(1);
+							    })
+							    function getPage(page,type) {
+							         $("#ajax_lists").html("<h1>请稍等。。。</h1>");
+							         var type = getCookie("type");//类型
+							         var sex = getCookie("sex");//性别
+							         var age = getCookie("age");//年龄
+							         var date = getCookie("date");//活动时间
+							         var address = getCookie("address");//活动时间
+							         var re = getCookie("re");//热门
+							         $.get(url_ajax, {p: page,type:type,sex:sex,age:age,date:date,address:address,re:re}, function(data) {
+							            $('#ajax_lists').html(data);
+							        })
+							    }
+							    </script>
+									<div class="px">
 								<p>排序：</p>
 								<div class="hot">
 									热门
@@ -434,20 +475,7 @@
 						</div>
 					</div>
 					<script type="text/javascript">
-						var url_ajax = "?s=/Home/Box/orders";//这个路径是真正显示列表的
-			           $(function() {
-			                $("#ajax_lists").delegate(".pager a", "click", function() {
-			                    var page = $(this).attr("data-page");
-			                    getPage(page);
-			                })
-			                getPage(1);
-			            })
-			            function getPage(page) {
-			                 $("#ajax_lists").html("<h1>请稍等。。。</h1>");
-			                 $.get(url_ajax, {p: page}, function(data) {
-			                    $('#ajax_lists').html(data);
-			                })
-			            }
+						
             		</script>
 					<div class="s-c-3f"  id="ajax_lists">
 						
@@ -615,110 +643,16 @@
 	</body>
 	
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
-	<script src="/matouPCS/Public/Home/js/jquery.date_input.pack.js"></script>
-	<script src="/matouPCS/Public/Home/js/city-data.js"></script>
-	<script src="/matouPCS/Public/Home/js/hzw-city-picker.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
+	<script src="/matouPCS/Public/Home/js/calendar.js"></script>
+	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
 	<script src="/matouPCS/Public/Home/js/sousuo.js"></script>
+	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
+	<script src="/matouPCS/Public/Home/js/2rank.js"></script>
 	<script type="text/javascript">
-		$(function() {
+		
 
-			$("#tt").bigAutocomplete({
-				width: 440,
-				data: [{
-					title: "中国好声音",
-					result: {
-						ff: "qq"
-					}
-				}, {
-					title: "中国移动网上营业厅"
-				}, {
-					title: "中国银行"
-				}, {
-					title: "中国移动"
-				}, {
-					title: "中国好声音第三期"
-				}, {
-					title: "中国好声音 第一期"
-				}, {
-					title: "中国电信网上营业厅"
-				}, {
-					title: "中国工商银行"
-				}, {
-					title: "中国好声音第二期"
-				}, {
-					title: "中国地图"
-				}],
-
-			});
-
-		})
-
-		//			地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-
-			//			callback: function() {
-			//				回调函数， 选择城市后调用
-			//				alert('OK');
-			//			}
-
-		});
-		cityPicker.init();
-		//		var a = false;
-		//		var i = 0;
-		//		$("#city").click(function() {
-		////			alert($("#city").val());
-		//			var ad = $("#city").val();
-		//			if(ad.length > 0){
-		//				alert(ad);
-		//			}
-		//			$('#ceshi').click(function(){
-		//				$("#city").val();
-		//			});
-		//			$('#filter').click(function(){
-		////					alert(123);
-		//					if($("#city").val() == ""){
-		//						alert('滚犊子');
-		//					}else{
-		//						alert($("#city").val());
-		//					}
-		//			});
-		//			i+=1;
-		//			var xxoo = document.xxoo;
-		//			var ad = xxoo.xxoos.value;
-		//			alert()
-
-		//			alert(i);
-		//			var p = $('#province').val();
-		//			alert(p);
-		//		});
-		//		}
-
-		//	        add();
-		$(function() {
-			//日期
-			$('#date').date_input();
-			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
-			$("#filter a").hover(
-				function() {
-					$(this).addClass("seling");
-				},
-				function() {
-					$(this).removeClass("seling");
-				}
-			);
-
+		
 			//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
 			$("#filter dt+dd a").attr("class", "seled");
 			/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
@@ -737,8 +671,6 @@
 
 				//				alert(RetSelecteds()); //返回选中结果
 			});
-			//返回选中结果
-		});
 
 		function RetSelecteds() {
 			var result = "";
@@ -750,14 +682,19 @@
 		//		$('#date').click(function(){
 		//				alert(RetSelecteds()+$('#date').val()+$('#city').val());
 		//			})
+		//热门
 		$('.px .hot').click(function() {
+			setCookie('re',1);
 			$('.px .hot').css('background-color', '#ff5c5d');
 			$('.px .new').css('background-color', '#999999');
+			alert(getCookie('re'));
+			 getPage(1);
 		})
 		$('.px .new').click(function() {
-				$('.px .new').css('background-color', '#ff5c5d');
-				$('.px .hot').css('background-color', '#999999');
-			})
+			$('.px .new').css('background-color', '#ff5c5d');
+			$('.px .hot').css('background-color', '#999999');
+			getPage(1);
+		})
 			//		下拉菜单
 		$('#select-yfb').hover(function() {
 			$('#select-yfb a img').css('transition-duration', '.5s');
@@ -817,6 +754,72 @@
 				$("#find").css("color", "#fff");
 			});
 		});
+		//-------------------------------日期----------------------------------------
+			$('#dd').calendar({
+				trigger: '#dt',
+				zIndex: 999,
+				format: 'yyyy-mm-dd',
+				onSelected: function(view, date, data) {
+					console.log('event: onSelected');
+					
+				},
+				onClose: function(view, date, data) {
+					console.log('event: onClose')
+					console.log('view:' + view)
+					console.log('date:' + date)
+					console.log('data:' + (data || 'None'));
+				}
+			});
+			// alert($('#dt').val());
+			var flag = true;
+			function checkLeave(){
+		　　　　window.event.returnValue="确定离开当前页面吗？";
+					setCookie("type",'');//类型
+					setCookie("sex",'');//性别
+					setCookie("age",'');//年龄
+					setCookie("date",'');//活动时间
+					setCookie("address",'');//活动时间
+					 if (flag) {
+			            var evt = window.event || arguments[0];
+			            var userAgent = navigator.userAgent;
+			            if (userAgent.indexOf("MSIE") > 0) {
+			              var n = window.event.screenX - window.screenLeft;
+			              var b = n > document.documentElement.scrollWidth - 20;
+			              if (b && window.event.clientY < 0 || window.event.altKey) {
+			                window.event.returnValue = ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
+				                setCookie("type",'');//类型
+								setCookie("sex",'');//性别
+								setCookie("age",'');//年龄
+								setCookie("date",'');//活动时间
+								setCookie("address",'');//活动时间
+
+			              }else {
+			                return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
+			              }
+			            }else if (userAgent.indexOf("Firefox") > 0) {
+			               return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
+			            }
+			          }
+		　　　}
+	 
+        // window.onbeforeunload = function () {
+        //   if (flag) {
+        //     var evt = window.event || arguments[0];
+        //     var userAgent = navigator.userAgent;
+        //     if (userAgent.indexOf("MSIE") > 0) {
+        //       var n = window.event.screenX - window.screenLeft;
+        //       var b = n > document.documentElement.scrollWidth - 20;
+        //       if (b && window.event.clientY < 0 || window.event.altKey) {
+        //         window.event.returnValue = ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
+
+        //       }else {
+        //         return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
+        //       }
+        //     }else if (userAgent.indexOf("Firefox") > 0) {
+        //        return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
+        //     }
+        //   }
+        // }
 	</script>
 
 </html>

@@ -248,6 +248,7 @@
 											<div class="liti"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div>
 											<div id="dd" style="left: 0 !important; top:30px !important"></div>
 										</div>
+
 										<div class="cf"></div>
 									</div>
 								</li>
@@ -382,6 +383,7 @@
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/City_data.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/areadata.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/upimage.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/sousuo.js"></script>
 	<script type="text/javascript ">
 		$(document).ready(function() {
 			$(".con ").eq(0).show();

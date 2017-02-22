@@ -486,8 +486,8 @@
                 offs = _this.options.offset;
 
             $this.addClass('calendar-modal').css({
-                left: 10 + 'px',
-                top: 30 + 'px',
+                left: _this.left + 'px',
+                top: _this.top + 'px',
                 zIndex: _this.options.zIndex
             });
 
@@ -544,7 +544,7 @@
                         }, 300, 'swing', function() {
                             $dis.children(':last').remove();
                             $dis.prepend($prevItem).css('margin-left', '-100%');
-
+							$dis.prepend($prevItem).css('width', '560px');
                             $.isFunction(cb) && cb.call(_this);
                         });
                     },
@@ -620,8 +620,8 @@
             } else {
                 toggleClass.call(this);
             }
-
-            return new Date(y, m - 1, d);
+            var date = new Date(y, m - 1, d);
+            return date;
         },
         showLabel: function(event, view, date, data) {
             var $lbl = this.$label;
@@ -691,19 +691,19 @@
                 var d = parseInt(this.innerHTML),
                     cls = getClass(this),
                     type = /new|old/.test(cls) ? cls.match(/new|old/)[0] : '';
-
                 var day = _this.selectedDay(d, type);
-
                 _this.options.onSelected.call(this, 'date', day, $(this).data(MARK_DATA));
-
+                var newDay = day.getFullYear() + '-' + (day.getMonth() + 1) + '-' + day.getDate();
+                date(newDay);
                 _this.$trigger && _this.hide('date', day, $(this).data(MARK_DATA));
-
             }).on('click', '[' + ITEM_MONTH + ']', function() {
                 var y = Number(_this.$disMonth.html()),
                     m = parseInt(this.innerHTML);
 
                 _this.updateDateView(y, m);
                 vc('date', y, m);
+
+                
                 _this.options.onSelected.call(this, 'month', new Date(y, m - 1));
             });
 
@@ -711,7 +711,6 @@
             _this.$element.on('mouseenter', '[' + ITEM_DAY + ']', function(e) {
                 var arr = _this.getDisDateValue(),
                     day = new Date(arr[0], arr[1] - 1, parseInt(this.innerHTML));
-
                 if (_this.hasLabel && $(this).data(MARK_DATA)) {
                     $('body').append(_this.$label);
                     _this.showLabel(e, 'date', day, $(this).data(MARK_DATA));
@@ -745,7 +744,6 @@
         },
         setData: function(data) {
             this.data = data;
-
             if (this.view === 'date') {
                 var d = this.getDisDateValue();
                 this.fillDateItems(d[0], d[1]);
@@ -780,5 +778,5 @@
     }
 
     $.fn.calendar.defaults = defaults;
-
+            
 }));

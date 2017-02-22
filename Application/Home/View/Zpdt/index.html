@@ -14,7 +14,6 @@
 				margin-right: 10px;
 				float: right;
 			}
-			
 			.select-yfb {
 				width: 70px;
 				/*height: 100px;*/
@@ -406,8 +405,10 @@
 							<dl>
 								<dt>工作地区</dt>
 								<dd>
-									<div>
-										<input id="city" type="text" placeholder="点击选择地点" />
+									<div id="ceshi">
+										<form name="xxoo">
+											<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
+										</form>
 									</div>
 								</dd>
 							</dl>
@@ -628,6 +629,8 @@
 	<script src="__PUBLIC__/Home/js/city-data.js"></script>
 	<script src="__PUBLIC__/Home/js/hzw-city-picker.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
+	<script src="__PUBLIC__/Home/js/areadata.js"></script>
+	
 	<script type="text/javascript">
 		$(function() {
 
