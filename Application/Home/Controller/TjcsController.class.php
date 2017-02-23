@@ -104,15 +104,24 @@ class TjcsController extends Controller
     
            }   
     
-           public function spcjcg()
+          public function spcjcg()
            {
             //商品详情
      
-            $shop = M('shop as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->order('s.id desc')->limit('0,2')->select();
+            $shop = M('shop as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->where('s.status=2')->order('s.id desc')->limit('0,2')->select();
     
             $this->assign('shop',$shop);
             $this->display('Tjcs/spcjcg');
            
            }   
-    
+           public function spcjcg1()
+           {
+            //商品详情
+             
+            $shop = M('shop as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->where('s.status=2')->order('s.id desc')->limit('0,2')->select();
+           
+            $this->assign('shop',$shop);
+            $this->display('Tjcs/spcjcg1');
+             
+           }  
 }

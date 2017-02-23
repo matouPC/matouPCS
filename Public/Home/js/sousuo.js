@@ -127,11 +127,11 @@ for( var i=0; i<age.length; i++){
 //     }
 // }
 //获取日期！
-function date(date){
-    setCookie('date',date);
-    // alert(getCookie('date'));
-    getPage(1);
-}
+// function date(date){
+//     setCookie('date',date);
+//     // alert(getCookie('date'));
+//     getPage(1);
+// }
 $('#daTe').click(function(){
     setCookie('date','');
     getPage(1);

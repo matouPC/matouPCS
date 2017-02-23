@@ -466,10 +466,10 @@
 									<div class="px">
 								<p>排序：</p>
 								<div class="hot">
-									热门
+									最新
 								</div>
 								<div class="new">
-									最新
+									热门
 								</div>
 							</div>
 						</div>
@@ -688,13 +688,13 @@
 		//			})
 		//热门
 		$('.px .hot').click(function() {
-			setCookie('re',1);
 			$('.px .hot').css('background-color', '#ff5c5d');
 			$('.px .new').css('background-color', '#999999');
 			alert(getCookie('re'));
 			 getPage(1);
 		})
 		$('.px .new').click(function() {
+			setCookie('re',1);
 			$('.px .new').css('background-color', '#ff5c5d');
 			$('.px .hot').css('background-color', '#999999');
 			getPage(1);

@@ -215,7 +215,7 @@
 							</p>
 							<p class="szd">
 								<span style="font-size: 18px;" class="icon-szd"></span>
-								<span style="display: block; float: right; line-height: 20px;"><?php echo ($dt["address"]); ?></span>
+								<span style="display: block; float: right; line-height: 20px;"><?php echo (substr($dt["address"],0,6)); ?></span>
 							</p>
 							<p class="clearfloat"></p>
 							</div>
@@ -600,7 +600,7 @@
 					</div>
 					<div class="s-main-b">
 						<div class="margin">
-							<button onclick="tj(<?php echo ($v["id"]); ?>)" name='btn' id='btn' >点击加载更多</button>
+							<button onclick="tj(<?php echo ($v["uid"]); ?>)" name='btn' id='btn' >点击加载更多</button>
 			
 			
 						</div>
@@ -611,10 +611,9 @@
 
 
 <script type="text/javascript">
+var bd="sp";
 var p=2;
   function tj(id){
-
-	 
 	//  alert(id);
 		$.ajax({
 			type:'post',
@@ -682,7 +681,7 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
-					data:{k:l,id:id},
+					data:{k:l,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -711,16 +710,16 @@ var p=2;
 		  }  
 	  var z=2;
 	  function tj2(id){		 
-			 alert(id);
+		//	 alert(id);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthd');?>",
-					data:{k:z,id:id},
+					data:{k:z,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						 alert(data);
+					//	 alert(data);
 						if(data!=null){				
 								//alert(1);
 								 for (var i = 0; i < data.length; i++) {
@@ -744,11 +743,11 @@ var p=2;
 		  }  
 	  var x=2;
 	  function tjz(id){		 
-			 alert(id);
+			// alert(id);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
-					data:{k:x,id:id},
+					data:{k:x,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -781,7 +780,7 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdtre');?>",
-					data:{k:c,id:id},
+					data:{k:c,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -810,11 +809,11 @@ var p=2;
 		  }  
 	  var v=2;
 	  function  tj1r(id){		 
-			 alert(id);
+			// alert(id);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdtre');?>",
-					data:{k:v,id:id},
+					data:{k:v,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -843,11 +842,11 @@ var p=2;
 		  }  
 	  var b=2;
 	  function tj1z(id){		 
-			 alert(id);
+		//	 alert(id);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
-					data:{k:b,id:id},
+					data:{k:b,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -876,11 +875,11 @@ var p=2;
 		  }  
 	  var n=2;
 	  function tj2r(id){		 
-			 alert(id);
+		//	 alert(id);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthdr');?>",
-					data:{k:n,id:id},
+					data:{k:n,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -909,11 +908,11 @@ var p=2;
 		  }  
 	  var m=2;
 	  function tj2z(id){		 
-			 alert(id);
+		//	 alert(id);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthd');?>",
-					data:{k:m,id:id},
+					data:{k:m,id:id,bd:bd},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},

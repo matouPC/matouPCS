@@ -3,7 +3,6 @@
 <?php if(!empty($data)){?>
 <ul>
     <?php if(is_array($list)): foreach($list as $key=>$xsdt): ?><a href="?s=/Home/xsdt/xqxs/id/<?php echo ($xsdt['psid']); ?>">
-        
             <li>
                 <div class="tx">
                     <img src="/matouPCS/Public/Home/img/yhmc.png" />

@@ -215,7 +215,7 @@
 							</p>
 							<p class="szd">
 								<span style="font-size: 18px;" class="icon-szd"></span>
-								<span style="display: block; float: right; line-height: 20px;"><?php echo ($dt["address"]); ?></span>
+								<span style="display: block; float: right; line-height: 20px;"><?php echo (substr($dt["address"],0,6)); ?></span>
 							</p>
 							<p class="clearfloat"></p>
 							</div>
@@ -288,7 +288,7 @@
 						<a  class="selected" href="javascript://">最新</a>
 						<a  href="javascript://">热门</a>
 					</div>
-								<script>
+					<script>
                     var cNode =document.getElementById('paixu').getElementsByTagName('a');
                             for( var i=0; i<cNode.length; i++){
                                 cNode[i].index= i;
@@ -383,7 +383,7 @@
 											</p>
 											<div class="bottom">
 												<p class="sj"><?php echo ($lis["time"]); ?></p>
-												<p class="dz dz-qx"><span class="icon-dz"></span>1000</p>
+												<p class="dz dz-qx"><span class="icon-dz"></span><?php echo ($lis["zan"]); ?></p>
 											</div>
 										</div>
 										<div class="clearfloat"></div>
@@ -570,7 +570,7 @@ var p=2;
 			});
 		
 	}
-	
+	var pc=2;
 	  function tj1(id){
 			 
 			 
@@ -578,7 +578,7 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/lyjzdtre');?>",
-					data:{k:p,id:id},
+					data:{k:pc,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -602,7 +602,7 @@ var p=2;
 					},
 				 	dataType:'json'
 				 	});
-			 	p++;
+			 	pc++;
 		// alert(p);
 		  }
 </script>

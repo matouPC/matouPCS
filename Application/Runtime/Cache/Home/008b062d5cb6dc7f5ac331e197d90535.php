@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/datePicker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
 		<style>
 			.s-f1-r ul li a .img {
 				margin-top: 15px;
@@ -87,7 +88,7 @@
 		</style>
 	</head>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<body>
+	<body onbeforeunload="checkLeave()">
 		<header>
 			<div class="h-content-main">
 				<div class="h-main-c">
@@ -266,7 +267,7 @@
 					</div>
 					<div class="s-c-2f">
 						<div id="filter">
-							<dl>
+							<dl id="type">
 								<dt>职位</dt>
 								<dd>
 									<div class="gray">
@@ -310,7 +311,7 @@
 								</dd>
 								<dd>
 									<div>
-										<a>场布</a>
+										<a>场布师</a>
 									</div>
 								</dd>
 								<dd>
@@ -324,7 +325,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="sex">
 								<dt>性别</dt>
 								<dd>
 									<div class="gray">
@@ -342,7 +343,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="ages">
 								<dt>年龄</dt>
 								<dd>
 									<div class="gray">
@@ -370,55 +371,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
-								<dt>价格</dt>
-								<!--<dd>
-									<div class="gray">
-										<a>不限</a>
-									</div>
-								</dd>
-								<dd>
-									<div>
-										<a>800元以下</a>
-									</div>
-								</dd>
-								<dd>
-									<div>
-										<a>800元-1500元</a>
-									</div>
-								</dd>
-								<dd>
-									<div>
-										<a>1500元-3000元</a>
-									</div>
-								</dd>
-								<dd>
-									<div>
-										<a>3000元-5000元</a>
-									</div>
-								</dd>
-								<dd>
-									<div>
-										<a>6000元以上</a>
-									</div>
-								</dd>-->
-								<dd>
-									<div class="gray">
-										<a>不限</a>
-									</div>
-								</dd>
-								<dd>
-									<div style="color: #000000;">
-										<input type="number" style="width: 65px; margin-top: 17px; border: solid 1px #CCCCCC; float:left;">
-										<span style="font-size:25px; display:block; width:20px; height:30px; color: #999999; float :left; margin-top:-1px; text-align:center;">-</span>
-										<input type="number" style="width: 65px; margin-top: 15px;border: solid 1px #CCCCCC;">元
-										<button style="outline: none; margin-left: 20px; background-color: #FF5C5D; border: 0; color: white; border-radius: 10px; width: 40px; height: 18px;">
-											ok
-										</button>
-									</div>
-								</dd>
-							</dl>
-							<dl>
+							<dl id="bd">
 								<dt>类型</dt>
 								<dd>
 									<div class="gray">
@@ -436,11 +389,14 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="rq">
 								<dt>档期</dt>
 								<dd>
-									<div>
-										<input id="date" type="text" class="date_picker" placeholder="点击选择时间" />
+									<div class="xz-date" >
+										<input type="text" id="dt" readonly="readonly" placeholder="请选择活动时间">
+									</div>
+									<div class="sjxz">
+										<div id="dd"></div>
 									</div>
 								</dd>
 							</dl>
@@ -455,30 +411,14 @@
 							<div class="px">
 								<p>排序：</p>
 								<div class="hot">
-									热门
+									最新
 								</div>
 								<div class="new">
-									最新
+									热门
 								</div>
 							</div>
 						</div>
 					</div>
-					<script type="text/javascript">
-						var url_ajax = "?s=/Home/Box/ysdt";//这个路径是真正显示列表的
-			           $(function() {
-			                $("#ajax_lists").delegate(".pager a", "click", function() {
-			                    var page = $(this).attr("data-page");
-			                    getPage(page);
-			                })
-			                getPage(1);
-			            })
-			            function getPage(page) {
-			                 $("#ajax_lists").html("<h1>请稍等。。。</h1>");
-			                 $.get(url_ajax, {p: page}, function(data) {
-			                    $('#ajax_lists').html(data);
-			                })
-			            }
-			            </script>
 					<div class="s-c-3f" id="ajax_lists">
 						
 					</div>
@@ -655,67 +595,32 @@
 			</div>
 		</footer>
 	</body>
+	<script src="/matouPCS/Public/Home/js/sousuo.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.date_input.pack.js"></script>
-	<script src="/matouPCS/Public/Home/js/city-data.js"></script>
-	<script src="/matouPCS/Public/Home/js/hzw-city-picker.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
+	<script src="/matouPCS/Public/Home/js/calendar.js"></script>
+	<script src="/matouPCS/Public/Home/js/ys.js"></script>
 	<script type="text/javascript">
-		$(function() {
-
-			$("#tt").bigAutocomplete({
-				width: 440,
-				data: [{
-					title: "中国好声音",
-					result: {
-						ff: "qq"
-					}
-				}, {
-					title: "中国移动网上营业厅"
-				}, {
-					title: "中国银行"
-				}, {
-					title: "中国移动"
-				}, {
-					title: "中国好声音第三期"
-				}, {
-					title: "中国好声音 第一期"
-				}, {
-					title: "中国电信网上营业厅"
-				}, {
-					title: "中国工商银行"
-				}, {
-					title: "中国好声音第二期"
-				}, {
-					title: "中国地图"
-				}],
-
+		//日期
+		$('#dd').calendar({
+				trigger: '#dt',
+				zIndex: 999,
+				format: 'yyyy-mm-dd',
+				onSelected: function(view, date, data) {
+					console.log('event: onSelected');
+					
+				},
+				onClose: function(view, date, data) {
+					console.log('event: onClose')
+					console.log('view:' + view)
+					console.log('date:' + date)
+					console.log('data:' + (data || 'None'));
+				}
 			});
 
-		})
-
-		//			地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-
-		});
-		cityPicker.init();
-
 		$(function() {
-			//日期
-			$('#date').date_input();
-			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
 			$("#filter a").hover(
 				function() {
 					$(this).addClass("seling");

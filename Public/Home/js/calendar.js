@@ -694,7 +694,8 @@
                 var day = _this.selectedDay(d, type);
                 _this.options.onSelected.call(this, 'date', day, $(this).data(MARK_DATA));
                 var newDay = day.getFullYear() + '-' + (day.getMonth() + 1) + '-' + day.getDate();
-                date(newDay);
+                setCookie('date',newDay);
+                getPage(1);
                 _this.$trigger && _this.hide('date', day, $(this).data(MARK_DATA));
             }).on('click', '[' + ITEM_MONTH + ']', function() {
                 var y = Number(_this.$disMonth.html()),
@@ -780,3 +781,39 @@
     $.fn.calendar.defaults = defaults;
             
 }));
+function setCookie(cookieName, cookieValue, cookieExpires) {
+    try {
+        cookieName = cookieName.trim();
+        cookieValue = escape(cookieValue);
+        var nowDate = new Date();
+        nowDate.setTime(new Date().getTime() + 7 * 24 * 60 * 60 * 1000);
+        var cookieExpiresTime = nowDate.toGMTString();
+        if (cookieExpires !== undefined && cookieExpires !== "" && cookieExpires > 0) {
+            nowDate.setTime(new Date().getTime() + cookieExpires);
+            cookieExpiresTime = nowDate.toGMTString();
+        }
+        document.cookie = cookieName + "=" + cookieValue
+            + "; expires=" + cookieExpiresTime;
+    } catch (e) {
+    }
+}
+function getCookie(cookieName) {
+    try {
+        cookieName = cookieName.trim();
+        var cookieValue = document.cookie;
+        var cookieStartAt = cookieValue.indexOf("" + cookieName + "=");
+        if (cookieStartAt === -1) {
+            cookieValue = "";
+        } else {
+            cookieStartAt = cookieValue.indexOf("=", cookieStartAt) + 1;
+            var cookieEndAt = cookieValue.indexOf(";", cookieStartAt);
+            if (cookieEndAt === -1) {
+                cookieEndAt = cookieValue.length;
+            }
+            cookieValue = unescape(cookieValue.substring(cookieStartAt, cookieEndAt));
+        }
+        return cookieValue;
+    } catch (e) {
+    }
+    return "";
+}

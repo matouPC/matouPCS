@@ -300,7 +300,7 @@
 								<?php  $date = explode(',',$list['dangdate']); $dates = explode(',',$list['dangs']); array_pop($date); array_pop($dates);?>
 								<div class="clearfloat"></div>
 								<ul>
-									<?php for ($i=1; $i < count($date); $i++) { ?>
+									<?php for ($i=0; $i < count($date); $i++) { ?>
 									<li>
 										<p><?php echo $date[$i] ?></p>
 										<p><?php echo $dates[$i] ?></p>

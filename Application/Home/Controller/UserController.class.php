@@ -463,6 +463,7 @@ class UserController extends Controller
             }
     }
     public function stringimg($userYp){
+        // var_dump($userYp);die;
         $shou = explode(',',$userYp);
         // var_dump($shou);die;
         array_pop($shou);

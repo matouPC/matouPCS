@@ -1,12 +1,12 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
 		<title>商铺创建-创建成功</title>
-		<link rel="stylesheet" href="/matouPCS/Public/css/cjspcg-3r-cc.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/css/showWin.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/cjspcg-3r-cc.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/showWin.css" />
 	</head>
 
 	<body>
@@ -18,7 +18,7 @@
 						<div class="s-f1-l">
 							<div class="home">
 								<a href="?s=Home/index.html">
-									<img src="/matouPCS/Public/Home/img/home.png" />
+									<img src="__PUBLIC__/Home/img/home.png" />
 								</a>
 							</div>
 							<p>
@@ -29,7 +29,7 @@
 							<ul>
 								<li style="width: 100px;">
 									<a href="#">
-										<img src="/matouPCS/Public/Home/img/tx.png" />
+										<img src="__PUBLIC__/Home/img/tx.png" />
 										<p>chenney</p>
 									</a>
 									<div class="str"></div>
@@ -56,7 +56,7 @@
 									<div class="str"></div>
 								</li>
 								<li id="select-yfb" style="width: 70px;">
-									<a href="#">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
+									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
 									<div class="str"></div>
 									<div class="select-yfb">
 										<ul>
@@ -110,11 +110,11 @@
 						<div class="clearfloat"></div>
 					</div>
 					<div class="h-c-2f">
-						<img src="/matouPCS/Public/Home/img/navbg2.png" />
+						<img src="__PUBLIC__/Home/img/navbg2.png" />
 						<div class="s-f2-r">
 							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
 							<div class="s-f2-r1">
-								<img src="/matouPCS/Public/Home/img/ss-t.png" />
+								<img src="__PUBLIC__/Home/img/ss-t.png" />
 							</div>
 						</div>
 					</div>
@@ -123,9 +123,9 @@
 		</header>
 		<div class="spdlb" id="spdlb" title="消息">
 			<div class="titlenab">
-				<img src="/matouPCS/Public/Home/img/swtitle.png">
+				<img src="__PUBLIC__/Home/img/swtitle.png">
 				<div class="rhideb">
-					<img src="/matouPCS/Public/Home/img/hide.png">
+					<img src="__PUBLIC__/Home/img/hide.png">
 				</div>
 			</div>
 			<div class="fbtypeb">
@@ -144,10 +144,10 @@
 			<div class="swbtnb">
 				<div class="swbtn-cb">
 					<div>
-						<img src="/matouPCS/Public/Home/img/addp.png" />
+						<img src="__PUBLIC__/Home/img/addp.png" />
 					</div>
 					<div style="margin-left: 10px;">
-						<img src="/matouPCS/Public/Home/img/adds.png" />
+						<img src="__PUBLIC__/Home/img/adds.png" />
 					</div>
 					<button class="tjbtnb" id="tjbtn">发布</button>
 				</div>
@@ -167,12 +167,14 @@
 					<div class="cjsp_bt">
 						<ul>
 							<li class="cjsp_bt_01">
-								<a href="#">创建商铺</a>
+								<a href="#">管理商铺</a>
 							</li>
 							<li class="cjsp_bt_02">
-								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>		
-							<li class="cjsp_bt_03">
-								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;审核中...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>		
+							<li class="cjsp_bt_02">
+								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;商品管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li class="cjsp_bt_03">
+								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;创建成功</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 						</ul>
 					</div>
 				</div>
@@ -180,33 +182,34 @@
 					<div class="s-c-2f">
 					
 					</div>
-						<?php if(is_array($shop)): foreach($shop as $key=>$v): ?><div class="s-c-3f">
+						<foreach name="shop" item="v">
+					<div class="s-c-3f">
 					
 						<ul class="sc3f-ul">
 					
 							<li>
 									
-										<?php if($_SESSION['id'] == $v['uid']){ ?>
-									<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($v["id"]); ?>">
-									<?php }else{ ?>
-                                       <a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($v["id"]); ?>"">
-                                       <?php } ?>
+										<php>if($_SESSION['id'] == $v['uid']){</php>
+									<a href="?s=/Home/Mtbu/spbddndt/id/{$v.id}">
+									<php>}else{</php>
+                                       <a href="?s=/Home/Mtbu/spbddydt/id/{$v.id}"">
+                                       <php>}</php>
 										
 									<div class="sc3f-ulc1">
 										<span class="ulc1">
-											<img src="/matouPCS/Public/Home/img/bdmc.png" />
+											<img src="__PUBLIC__/Home/img/bdmc.png" />
 										</span>
 										<span class="ulc2">
-											<p class="p18"><?php echo ($v["shopname"]); ?></p>
-											<p class="p14" style="margin-top: 10px!important;"><?php echo ($v["type"]); ?></p>
-											<p class="p14">粉丝<?php echo ($v["fen"]); ?></p>
-											<p class="p14">所在地点：<?php echo (substr($v["address"],0,6)); ?></p>
+											<p class="p18">{$v.shopname}</p>
+											<p class="p14" style="margin-top: 10px!important;">{$v.type}</p>
+											<p class="p14">粉丝{$v.fen}</p>
+											<p class="p14">所在地点：{$v.address|substr=0,6}</p>
 											<p class="clearfloat"></p>
 										</span>
 										<span class="clearfloat"></span>
 									</div>
 									<div class="sc3f-ulc2">
-										<p>主要商品:<?php echo ($v["zysp"]); ?></p>
+										<p>主要商品:{$v.zysp|substr=0,6}</p>
 									</div>
 									<div class="clearfloat"></div>
 								</a>
@@ -215,7 +218,8 @@
 						
 						</ul>
 						
-					</div><?php endforeach; endif; ?>
+					</div>
+								</foreach>
 					<div class="s-c-4f">
 						<a href="?s=/Home/Tjcs">进入码头部队商城</a>
 					</div>
@@ -259,9 +263,9 @@
 
 		</footer>
 	</body>
-	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
-	<script src="/matouPCS/Public/Home/showWin.js"></script>
+	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
+	<script src="__PUBLIC__/Home/showWin.js"></script>
 	<script type="text/javascript">
 		$(function() {
 

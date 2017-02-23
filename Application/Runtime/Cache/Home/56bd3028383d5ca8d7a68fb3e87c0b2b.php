@@ -90,12 +90,12 @@
 					<div class="h-c-1f">
 						<div class="s-f1-l">
 							<div class="home">
-								<a href="index.html">
+								<a href="?s=/Home/index.html">
 									<img src="/matouPCS/Public/Home/img/home.png" />
 								</a>
 							</div>
 							<p>
-								<a href="index.html">首页</a>
+								<a href="?s=/Home/index.html">首页</a>
 							</p>
 						</div>
 						<div class="s-f1-r">
@@ -237,14 +237,14 @@
 						</ul>
 					</div>
 					<div class="cjsp_bt">
-						<ul>
+					<ul>
 							<li class="cjsp_bt_01">
-								<a href="#">创建商铺</a>
+								<a href="#">商铺创建</a>
 							</li>
 							<li class="cjsp_bt_03">
 								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;</li>
 							<li class="cjsp_bt_02">
-								<a href=""><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;添加商品</a>&nbsp;&nbsp;&nbsp;</li>
+								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;等待审核</a>&nbsp;&nbsp;&nbsp;</li>
 						</ul>
 					</div>
 
@@ -503,11 +503,11 @@
 				                     alert("Connection error");
 				                 },
 				                 success: function(data) {
-				                	 if(type=="销售商"){
-				                	 location = "?s=/Home/Tjcs/spcjcs";
-				                	 }else{
-				                		 location = "?s=/Home/Tjcs/spcjcz";
-				                	 }
+				                	
+				                	 location = "?s=/Home/Tjcs/spcjcg";
+				               
+				                	
+				          
 				                 }
 				             });
 			    }

@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/datePicker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 		<style>
 			.s-f1-r ul li a .img {
 				margin-top: 15px;
@@ -329,7 +330,7 @@
 								</dd>
 							</dl>
                             
-							<dl>
+							<!-- <dl>
 								<dt>薪资/月</dt>
 								<dd>
 									<div class="gray">
@@ -357,7 +358,7 @@
 										<a>8000元以上</a>
 									</div>
 								</dd>
-							</dl>
+							</dl> -->
 							<dl>
 								<dt>招聘方</dt>
 								<dd>
@@ -585,9 +586,8 @@
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.date_input.pack.js"></script>
-	<script src="/matouPCS/Public/Home/js/city-data.js"></script>
+	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
 	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
-	<script src="/matouPCS/Public/Home/js/hzw-city-picker.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/zp.js"></script>
 	<script src="/matouPCS/Public/Home/js/sousuo.js"></script>

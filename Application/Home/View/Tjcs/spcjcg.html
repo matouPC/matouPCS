@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>商铺创建-创建成功</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/cjspcg-3r-cc.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/cjspcg-3r-cc.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
 		<link rel="stylesheet" href="__PUBLIC__/css/showWin.css" />
 	</head>
@@ -22,7 +22,7 @@
 								</a>
 							</div>
 							<p>
-								<a href="index.html">首页</a>
+								<a href="?s=Home/index.html">首页</a>
 							</p>
 						</div>
 						<div class="s-f1-r">
@@ -114,7 +114,7 @@
 						<div class="s-f2-r">
 							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/spsh.png" />
+								<img src="__PUBLIC__/Home/img/ss-t.png" />
 							</div>
 						</div>
 					</div>
@@ -201,7 +201,7 @@
 											<p class="p18">{$v.shopname}</p>
 											<p class="p14" style="margin-top: 10px!important;">{$v.type}</p>
 											<p class="p14">粉丝{$v.fen}</p>
-											<p class="p14">所在地点：{$v.address}</p>
+											<p class="p14">所在地点：{$v.address|substr=0,6}</p>
 											<p class="clearfloat"></p>
 										</span>
 										<span class="clearfloat"></span>
@@ -219,7 +219,7 @@
 					</div>
 								</foreach>
 					<div class="s-c-4f">
-						<a href="#">进入码头部队商城</a>
+						<a href="?s=/Home/Tjcs">进入码头部队商城</a>
 					</div>
 				</div>
 				<div class="clearfloat"></div>
