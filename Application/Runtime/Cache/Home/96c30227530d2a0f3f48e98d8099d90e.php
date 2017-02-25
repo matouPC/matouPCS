@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
 		<style>
 			.s-f1-r ul li a .img {
 				margin-top: 15px;
@@ -83,7 +84,7 @@
 		</style>
 	</head>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<body>
+	<body onbeforeunload="checkLeave()">
 		<header>
 			<div class="h-content-main">
 				<div class="h-main-c">
@@ -204,7 +205,7 @@
 					</div>
 					<div class="s-c-2f">
 						<div id="filter">
-							<dl>
+							<dl id="type">
 								<dt>职位</dt>
 								<dd>
 									<div class="gray">
@@ -258,7 +259,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="sex">
 								<dt>性别</dt>
 								<dd>
 									<div class="gray">
@@ -276,7 +277,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="age">
 								<dt>年龄</dt>
 								<dd>
 									<div class="gray">
@@ -305,7 +306,7 @@
 								</dd>
 							</dl>
                             
-                            <dl>
+                            <dl id="worktime">
 								<dt>工作经验</dt>
 								<dd>
 									<div class="gray">
@@ -322,10 +323,14 @@
 										<a>2-5年</a>
 									</div>
 								</dd>
-							
 								<dd>
 									<div>
-										<a>5年以上</a>
+										<a>5-10年</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>10年以上</a>
 									</div>
 								</dd>
 							</dl>
@@ -359,7 +364,7 @@
 									</div>
 								</dd>
 							</dl> -->
-							<dl>
+							<dl id="rzbd">
 								<dt>招聘方</dt>
 								<dd>
 									<div class="gray">
@@ -387,7 +392,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="address">
 								<dt>活动地点</dt>
 								<dd>
 									<div id="ceshi">
@@ -590,61 +595,9 @@
 	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/zp.js"></script>
-	<script src="/matouPCS/Public/Home/js/sousuo.js"></script>
 	<script type="text/javascript">
-		$(function() {
-
-			$("#tt").bigAutocomplete({
-				width: 440,
-				data: [{
-					title: "中国好声音",
-					result: {
-						ff: "qq"
-					}
-				}, {
-					title: "中国移动网上营业厅"
-				}, {
-					title: "中国银行"
-				}, {
-					title: "中国移动"
-				}, {
-					title: "中国好声音第三期"
-				}, {
-					title: "中国好声音 第一期"
-				}, {
-					title: "中国电信网上营业厅"
-				}, {
-					title: "中国工商银行"
-				}, {
-					title: "中国好声音第二期"
-				}, {
-					title: "中国地图"
-				}],
-
-			});
-
-		})
-
-		//			地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-
-		});
-		cityPicker.init();
 
 		$(function() {
-			//日期
-			$('#date').date_input();
 			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
 			$("#filter a").hover(
 				function() {

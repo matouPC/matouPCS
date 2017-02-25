@@ -28,7 +28,7 @@ class ZpdtController extends Controller
     public function txzpgo(){
         //执行招聘填写
         date_default_timezone_set('prc');
-        $data['address'] = $_POST['address'].$_POST['add'];
+        $data['address_zp'] = $_POST['address'].','.$_POST['add'];
         $data['rtel'] = $_POST['tel'];
         $data['rqq'] = $_POST['qq'];
         $data['remail'] = $_POST['email'];

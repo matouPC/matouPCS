@@ -660,26 +660,8 @@
 
 		})
 
-		//			地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-
-		});
-		cityPicker.init();
-
+		//地址选择
 		$(function() {
-			//日期
-			$('#date').date_input();
 			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
 			$("#filter a").hover(
 				function() {

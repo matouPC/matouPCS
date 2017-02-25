@@ -367,15 +367,181 @@ class BoxController extends CommonController {
     *   招聘大厅搜索分页
     */
     public function zpdt(){
-        $count = M('recruit1')->count();
-        $Page = new \Think\PageAjax($count,2);//分页开始
-        $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->limit($Page->firstRow.','.$Page->listRows)->select();
-        $data = M('recruit2 as r')->join('recruit1 as e on r.pid = e.rid')->select();
+        $type =  addslashes($_GET['type']);//职业
+        $sex =  $_GET['sex'];//性别
+        $age =  $_GET['age'];//年龄
+        $worktime = $_GET['worktime'];//工作经验
+        $rzbd = $_GET['rzbd'];//认证部队
+        $address = $_GET['address'];//活动地址
+        if($type != '' && $sex != '' && $age != '' && $worktime != '' && $rzbd != ''){// 职业 性别 年龄 工作经验 认证部队
+            $where = "r.type = '{$type}' and r.sex = '{$sex}' and {$age} and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $sex != '' && $age != '' && $rzbd != ''){// 职业 性别 年龄 认证部队
+            $where = "r.type = '{$type}' and r.sex = '{$sex}' and {$age}";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $sex != '' && $worktime != '' && $rzbd != ''){// 职业 性别 工作经验 认证部队
+            $where = "r.type = '{$type}' and r.sex = '{$sex}' and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $age != '' && $worktime != '' && $rzbd != ''){// 职业 年龄 工作经验 认证部队
+            $where = "r.type = '{$type}' and {$age} and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($sex != '' && $age != '' && $worktime != '' && $rzbd != ''){// 性别 年龄 工作经验 认证部队 
+            $where = "r.sex = '{$sex}' and {$age} and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $sex != '' && $age != '' && $worktime != ''){// 职业 性别 年龄 工作经验
+            $where = "r.type = '{$type}' and r.sex = '{$sex}' and {$age} and r.worktime = '{$worktime}'";
+        }else if($type != '' && $sex != '' && $rzbd != ''){//职业 性别 认证部队
+            $where = "r.type = '{$type}' and r.sex = '{$sex}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $age != '' && $rzbd != ''){//职业 年龄 认证部队
+            $where = "r.type = '{$type}' and  {$age}";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $worktime != '' && $rzbd != ''){//职业 工作经验 认证部队
+            $where = "r.type = '{$type}' and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($sex != '' && $age != '' && $rzbd != ''){//性别 年龄 认证部队
+            $where = " r.sex = '{$sex}' and {$age} and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($sex != '' && $worktime != '' && $rzbd != ''){ //性别 工作经验 认证部队
+            $where = "r.sex = '{$sex}'  and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($age != '' && $worktime != '' && $rzbd != ''){// 年龄 工作经验 认证部队
+            $where = " {$age} and r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $age != '' && $worktime != ''){// 职业 年龄 工作经验
+            $where = "r.type = '{$type}' and {$age} and r.worktime = '{$worktime}'";
+        }else if($age != '' && $sex != '' && $worktime != ''){// 性别 年龄 工作经验
+            $where = "r.sex = '{$sex}' and {$age} and r.worktime = '{$worktime}'";
+        }else if($type != '' && $sex != '' && $worktime != ''){// 职业 性别 工作经验
+            $where = "r.type = '{$type}' and r.sex = '{$sex}' and r.worktime = '{$worktime}'";
+        }else if($type != '' && $sex != '' && $age != ''){//职业 性别 年龄
+            $where = "r.type = '{$type}' and r.sex = '{$sex}' and {$age}";
+        }else if($type != ''  && $rzbd != ''){//职业 认证部队      
+            $where = "r.type = '{$type}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($age != '' && $rzbd != ''){//年龄 认证部队
+            $where = "{$age}";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($sex != '' && $rzbd != ''){//性别 认证部队
+            $where = "r.sex = '{$sex}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($worktime != '' && $rzbd != ''){//工作经验 认证部队 
+            $where = "r.worktime = '{$worktime}'";
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }else if($type != '' && $worktime != ''){//职业 工作经验     
+            $where = "r.type = '{$type}' and r.worktime = '{$worktime}'";
+        }else if($sex != '' &&  $worktime != ''){//性别 工作经验
+            $where = "r.sex = '{$sex}' and r.worktime = '{$worktime}'";
+        }else if($age != '' && $worktime != ''){//年龄 工作经验
+            $where = "{$age} and r.worktime = '{$worktime}'";
+        }else if($type != '' && $sex !='') {// 职业 性别
+            $where = "r.type = '{$type}' and r.sex = '{$sex}'";
+        }else if($type != '' && $age !=''){//职业 年龄     
+            $where = "r.type = '{$type}' and {$age}";
+        }else if($age != '' && $sex !=''){//性别 年龄
+            $where = "r.sex = '{$sex}' and {$age}";
+        }else if($type != ''){ //职业 
+            $where = "r.type = '{$type}'";
+        }else if($sex != ''){//性别
+            $where = "r.sex = '{$sex}'";
+        }else if($age != ''){//年龄
+            $where = $age;
+        }else if($worktime != ''){//工作经验
+            $where = "r.worktime = '{$worktime}'";
+        }else if($rzbd != ''){//认证部队
+            $jwhere = "f.type_bd = '{$rzbd}'";
+        }
+        // else if($address != ''){
+        //     $where = "e.address = '{$address}'";
+        // }
+        //计算总页数
+        if(!empty($where)){
+            $count = M('recruit2 as r')->where($where)->count();
+        }else if(!empty($jwhere)){
+            $count = M('recruit1 as e')->join("forcee as f on e.uid = f.uid")->where($jwhere)->count();
+        }else{
+            $count = M('recruit1')->count();
+        }
+        $Page = new \Think\PageAjax($count,10);//分页开始
+        //分析条件是否为空的条件
+        if(!empty($where) && !empty($jwhere) && !empty($address)){/*****************************/
+             $data = M('recruit2 as r')->join("forcee as f on f.uid = r.usid")->where($jwhere.' and '.$where)->select();
+            if($data == ''){
+                $list = '';
+            }else{
+                $lists = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("forcee as f on f.uid = e.uid")->where($jwhere)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            }
+             $list = $this->addre($address,$lists);
+        }else if(!empty($where) && !empty($jwhere)){
+            $data = M('recruit2 as r')->join("forcee as f on f.uid = r.usid")->where($jwhere.' and '.$where)->select();
+            if($data == ''){
+                $list = '';
+            }else{
+                $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("forcee as f on f.uid = e.uid")->where($jwhere)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            }
+        }else if(!empty($where) && !empty($address)){//详细条件 地址
+            $data = M('recruit2 as r')->where($where)->select();
+            if($data == ''){
+                $list = '';
+            }else{
+                $lists = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("recruit2 as r on r.pid = e.rid")->join("forcee as f on f.uid = u.id")->where($where)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            }
+            $list = $this->addre($address,$lists);
+        }else if(!empty($jwhere) && !empty($address)){
+            $data = M('recruit2 as r')->join("forcee as f on f.uid = r.usid")->where($jwhere)->select();
+            if($data == ''){
+                $list = '';
+            }else{
+                $lists = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("forcee as f on f.uid = e.uid")->where($jwhere)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            }
+             $list = $this->addre($address,$lists);
+        }else if(!empty($where)){
+            $data = M('recruit2 as r')->where($where)->select();
+            if($data == ''){
+                $list = '';
+            }else{
+                $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("recruit2 as r on r.pid = e.rid")->join("forcee as f on f.uid = u.id")->where($where)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            }
+        }else if(!empty($jwhere)){
+            $data = M('recruit2 as r')->join("forcee as f on f.uid = r.usid")->where($jwhere)->select();
+            if($data == ''){
+                $list = '';
+            }else{
+                $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("forcee as f on f.uid = e.uid")->where($jwhere)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            }
+        }else if(!empty($address)){
+           $lists = M('recruit1 as e')->join('user as u on e.uid = u.id')->join('forcee as f on f.uid = u.id')->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+
+           $list = $this->addre($address,$lists);
+           $data = M('recruit2')->select();
+        }else{
+            $data = M('recruit2')->select();
+            if($data == ''){
+                $list = '';
+            }else{
+                $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->join('forcee as f on f.uid = u.id')->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            } 
+        }
         $show = $Page->show();
-         $this->assign('page',$show);//赋值分页输出
+        $this->assign('page',$show);//赋值分页输出
         $this->assign('list',$list);
         $this->assign('listn',$data);
         $this->display();
+    }
+    public function addre($address,$lists){//分别为传递过来的地址  和sql语句
+          // $lists = M('recruit1 as e')->join('user as u on e.uid = u.id')->join('forcee as f on f.uid = u.id')->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+            
+             foreach ($lists as $key => $value) {//遍历完成条件后的数组
+                $aa = explode(',',$value['address_zp']);
+                $arr[] .= $aa[0];//拿到可以查的地址
+                $array[] = $value;
+            }
+            for ($i=0; $i < count($arr); $i++) { //将地址进行循环
+                if($address == $arr[$i]){//如果传过来的地址等于处理过的这个地址 则将数组重新给一个数组
+                    $list[$i] =  $lists[$i];
+                }
+            }
+            return $list;
     }
     /**
     *   应聘区的搜索分页

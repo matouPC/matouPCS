@@ -664,10 +664,12 @@
 		$('.px .hot').click(function() {
 			$('.px .hot').css('background-color', '#ff5c5d');
 			$('.px .new').css('background-color', '#999999');
+			getPage(1);
 		})
 		$('.px .new').click(function() {
 				$('.px .new').css('background-color', '#ff5c5d');
 				$('.px .hot').css('background-color', '#999999');
+				getPage(1);
 			})
 			//		下拉菜单
 		$('#select-yfb').hover(function() {
