@@ -596,6 +596,24 @@
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/zp.js"></script>
 	<script type="text/javascript">
+<<<<<<< HEAD
+=======
+		//地址选择
+		var cityPicker = new HzwCityPicker({
+			data: data,
+			target: 'city',
+			valType: 'k-v',
+			hideCityInput: {
+				name: 'city',
+				id: 'city'
+			},
+			hideProvinceInput: {
+				name: 'province',
+				id: 'province'
+			}
+		});
+		cityPicker.init();
+>>>>>>> d61cdda3ac16aed719b32fbca3b9ed944c3c1ad6
 
 		$(function() {
 			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。

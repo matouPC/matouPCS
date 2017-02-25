@@ -546,7 +546,7 @@ var p=2;
 
 
 	function remen(where,id){
-	//	alert(paixus);	
+		alert(888);	
 			$.ajax({
 				url:"?s=/Home/Mtbu/spbddnlyre",
 				type:"post",
@@ -561,7 +561,7 @@ var p=2;
 									
 						
 					};
-					var p ='<div id="ha">'+li+'</div><div class="s-main-b"><div class="margin"><button onclick="tj1(<?php echo ($_GET['id']); ?>)" name="btn1" id="btn1" >点击加载更多</button></div></div>';
+					var p ='<div id="ha">'+li+'</div><div class="s-main-b"><div class="margin"><button onclick="tj1(<?php echo ($_GET['id']); ?>)" name="btnt" id="btn1" >点击加载更多</button></div></div>';
 					$('#re').html(p);
 					//$('#re').val('');
 				},error:function(){
@@ -583,7 +583,7 @@ var p=2;
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
+						alert(data);
 						if(data!=null){				
 								//alert(1);
 								 for (var i = 0; i < data.length; i++) {

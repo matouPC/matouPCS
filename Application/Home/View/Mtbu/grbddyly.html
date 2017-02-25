@@ -227,7 +227,7 @@
 						<div class="s-f4">
 							<div>
 								<a href="?s=/Home/Mtbu/grbddydt/id/{$_GET['id']}">动态</a>
-								<a href="?s=/Home/Mtbu/grbddyxqid/{$_GET['id']}">需求</a>
+								<a href="?s=/Home/Mtbu/grbddyxq/id/{$_GET['id']}">需求</a>
 								<a style="color: #FF5C5D;" href="#">留言区</a>
 							</div>
 						</div>
@@ -595,7 +595,7 @@ var p=2;
 
 
 	function remen(where,id){
-	alert(where);	
+//	alert(where);	
 	if(where=='z'){
 			$.ajax({
 				url:"?s=/Home/Mtbu/grbddnlyre",
@@ -643,13 +643,11 @@ var p=2;
 	}
 	}
 	var pc=2;
-	  function tj1(id){
-			 
-			 
-			 alert(id);
+	  function tj1(id){ 
+		//	 alert(id);
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/lyjzdtre')}",
+					url:"{:U('Mtbu/grlyjzdtre')}",
 					data:{k:pc,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -679,9 +677,8 @@ var p=2;
 		  }
 	  var pd=2;
 	  function tj2(id){
-			 
-			 
-			 alert(id);
+ 
+		// alert(id);
 				$.ajax({
 					type:'post',
 					url:"{:U('Mtbu/grlyjzdt')}",
