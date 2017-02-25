@@ -686,7 +686,6 @@
 		$('.px .hot').click(function() {
 			$('.px .hot').css('background-color', '#ff5c5d');
 			$('.px .new').css('background-color', '#999999');
-			alert(getCookie('re'));
 			 getPage(1);
 		})
 		$('.px .new').click(function() {

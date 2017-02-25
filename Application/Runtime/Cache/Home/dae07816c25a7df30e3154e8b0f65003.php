@@ -223,7 +223,7 @@
 							</p>
 							<p class="szd">
 								<span style="font-size: 18px;" class="icon-szd"></span>
-								<span style="display: block; float: right; line-height: 20px;"><?php echo ($dt["address"]); ?></span>
+								<span style="display: block; float: right; line-height: 20px;"><?php echo (substr($dt["address"],0,6)); ?></span>
 							</p>
 							<p class="clearfloat"></p>
 							</div>
@@ -551,15 +551,13 @@ var p=2;
 			});
 		
 	}
-	
+	  var pc=2;
 	  function tj1(id){
-			 
-			 
 			 //alert(id);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/lyjzdtre');?>",
-					data:{k:p,id:id},
+					data:{k:pc,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
@@ -583,7 +581,7 @@ var p=2;
 					},
 				 	dataType:'json'
 				 	});
-			 	p++;
+			 	pc++;
 		// alert(p);
 		  }
 </script>

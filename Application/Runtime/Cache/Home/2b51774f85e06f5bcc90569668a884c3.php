@@ -18,7 +18,7 @@
 						<p class="jtyq" ><span style="color:#000;">具体要求 :</span> &nbsp;<?php echo ($zpdt["content"]); ?></p>
 						 <p class="price"><?php echo ($zpdt["price"]); ?>元/天</p>
 						 <?php $num = explode(',',$zpdt['zhao']); array_pop($num); $nums = count($num); ?>
-						<p class="bm"><?php echo ($nums); ?>人报名</p>
+						<p class="bm"><?php echo ($nums); ?>人应聘</p>
 						<?php } endforeach; endif; ?>
 					<p class="sjfb"><?php echo ($lists["date"]); ?>发布</p>
 				</div>

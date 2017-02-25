@@ -592,40 +592,7 @@
 	<script src="/matouPCS/Public/Home/js/zp.js"></script>
 	<script src="/matouPCS/Public/Home/js/sousuo.js"></script>
 	<script type="text/javascript">
-		$(function() {
-
-			$("#tt").bigAutocomplete({
-				width: 440,
-				data: [{
-					title: "中国好声音",
-					result: {
-						ff: "qq"
-					}
-				}, {
-					title: "中国移动网上营业厅"
-				}, {
-					title: "中国银行"
-				}, {
-					title: "中国移动"
-				}, {
-					title: "中国好声音第三期"
-				}, {
-					title: "中国好声音 第一期"
-				}, {
-					title: "中国电信网上营业厅"
-				}, {
-					title: "中国工商银行"
-				}, {
-					title: "中国好声音第二期"
-				}, {
-					title: "中国地图"
-				}],
-
-			});
-
-		})
-
-		//			地址选择
+		//地址选择
 		var cityPicker = new HzwCityPicker({
 			data: data,
 			target: 'city',
@@ -638,7 +605,6 @@
 				name: 'province',
 				id: 'province'
 			}
-
 		});
 		cityPicker.init();
 
