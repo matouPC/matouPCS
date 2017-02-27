@@ -205,7 +205,12 @@
 						</div>
 						<div class="s-f2">
 							<p class="yhmc">
-								<a href="">用户{$user.username|substr=0,6}</a>
+								<if condition="$user[username]==$user[tel]">
+								<a href="">{$user.username|substr=0,6}</a>
+								</if>
+								<if condition="$user[username]!=$user[tel]">
+								<a href="">{$user.username}</a>
+								</if>
 							</p>
 							<p style="text-align: center;">
 								（摄影师）
@@ -1031,9 +1036,8 @@ var xqr='r';
 						
 							le+='<li><a href=""><h style="color:#FF5C5D;">应聘</h><p><span class="name">'+data['pin'][i].name+'</span><span class="age">'+data['pin'][i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data['pin'][i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data['pin'][i].content+'</span><span class="zw">'+data['pin'][i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data['pin'][i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data['pin'][i].workname+'</span><span>职位：</span><span class="drzw">'+data['pin'][i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data['pin'][i].collect+'人收藏</span><span class="fb">'+data['pin'][i].date+'</span><span class="clearfloat"></span></p></a></li>';
 						};
-						//var p='<div class="s-c-3f"><ul id="yp">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj3({$_GET['id']})" name="btn3" id="btn3">点击加载更多</button></div></div>		
-						
-						
+					
+
 						var lr = '';
 
 						for (var i = 0; i < data['qiu'].length; i++) {

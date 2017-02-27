@@ -3,7 +3,7 @@
     <!--/sidebar-->
     <div class="main-wrap">
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/think/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">部队审核管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="/think/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">商铺审核管理</span></div>
         </div>
         <div class="result-wrap">
   <volist name="operarr" id="v">
@@ -38,20 +38,20 @@
                 </div>
                   <div class="config-items">
                     <div class="config-title">
-                        <h1><i class="icon-font">&#xe014;</i>码头部队认证信息</h1>
+                        <h1><i class="icon-font">&#xe014;</i>商铺部队认证信息</h1>
                     </div>
                     <div class="result-content">
                         <table width="100%" class="insert-tab">
                             <tr>
-                                <th width="15%"><i class="require-red">*</i>部队名称：</th>
-                                <td><input type="text" id="" value="{$v.forcename}" size="85" class="common-text" readonly="true"/>
+                                <th width="15%"><i class="require-red">*</i>商铺名称：</th>
+                                <td><input type="text" id="" value="{$v.shopname}" size="85" class="common-text" readonly="true"/>
                                    <input type="hidden" name="id" value="{$v.id}"/>
-                                    <input type="hidden" name="uid" value="{$v.uid}"/>
+                                      <input type="hidden" name="uid" value="{$v.uid}"/>
                                 </td>
                             </tr>
                                 <tr>
-                                    <th><i class="require-red">*</i>部队类型：</th>
-                                    <td><input type="text" id="" value="{$v.type_bd}" size="85" class="common-text" readonly="true"/></td>
+                                    <th><i class="require-red">*</i>商铺类型：</th>
+                                    <td><input type="text" id="" value="{$v.type}" size="85" class="common-text" readonly="true"/></td>
                                 </tr>
                                 <tr>
                                     <th><i class="require-red">*</i>营业执照名称：</th>
@@ -67,7 +67,7 @@
                                 </tr>
                                   <tr>
                                     <th><i class="require-red">*</i>联系电话：</th>
-                                    <td><input type="text" id="phone" value="{$v.tels}" size="85" class="common-text" readonly="true"/></td>
+                                    <td><input type="text" id="phone" value="{$v.tel}" size="85" class="common-text" readonly="true"/></td>
                                 </tr>
                                    <tr>
                                     <th><i class="require-red">*</i>审核状态：</th>
@@ -88,7 +88,7 @@
                                    <if condition="$v[status]=='1'">
                                           审核通过
                                    <tr>
-                                    <th><i class="require-red">*</i>码头部队审核结果：</th>
+                                    <th><i class="require-red">*</i>商铺部队审核结果：</th>
                                
                                     <td >
 
@@ -102,7 +102,7 @@
                                     <th></th>
                                     <td>
                                    <a id="submit" onclick="tj({$v.id})"  class="btn btn-primary btn6 mr10">提交</a>
-                                   <a href="__APP__/Admin/Force"><input type="button" value="返回上一级"  class="btn btn6"></a>
+                                   <a href="__APP__/Admin/Shop"><input type="button" value="返回上一级"  class="btn btn6"></a>
                                     
                                     </td>
                         </table>
@@ -128,7 +128,7 @@
 	 $.ajax({
 	                 cache: true,
 	                 type: "POST",
-	                 url:"/matouPCS/index.php/Admin/Force/shen/",
+	                 url:"/matouPCS/index.php/Admin/Shop/shen/",
 	                 data:$('#myform').serialize(),// 你的formid
 	                 async: false,
 	                 error: function(request) {
@@ -163,9 +163,9 @@
           	url:"http://127.0.0.1/matouPCS/sdk-php-2016-06-07/taobao-sdk-PHP-auto_1455552377940-20160607/newfile.php?phone="+phone,
           	type:"get",
           	success:function(phone){
-          		alert('审核通过短信通知发送成功');
-          	},error:function(){
           		alert('no');
+          	},error:function(){
+          		alert('审核通过短信通知发送成功');
           	}
           });  
    }
@@ -174,9 +174,9 @@
 	          	url:"http://127.0.0.1/matouPCS/sdk-php-2016-06-07/taobao-sdk-PHP-auto_1455552377940-20160607/newfile1.php?phone="+phone,
 	          	type:"get",
 	          	success:function(phone){
-	          		alert('审核未通过短信通知发送成功');
-	          	},error:function(){
 	          		alert('no');
+	          	},error:function(){
+	          		alert('审核未通过短信通知发送成功');
 	          	}
 	          });  
 	   }

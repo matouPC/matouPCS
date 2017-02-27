@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
 		<title>商铺管理-管理信息</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/spgl-3rxx-cc.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<link rel="stylesheet" href="__PUBLIC__/css/showWin.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/spgl-3rxx-cc.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/css/showWin.css" />
 
 		<style type="text/css">
 			* {
@@ -91,7 +91,7 @@
 						<div class="s-f1-l">
 							<div class="home">
 								<a href="?s=Home/index.html">
-									<img src="__PUBLIC__/Home/img/home.png" />
+									<img src="/matouPCS/Public/Home/img/home.png" />
 								</a>
 							</div>
 							<p>
@@ -102,7 +102,7 @@
 							<ul>
 								<li style="width: 100px;">
 									<a href="#">
-										<img src="__PUBLIC__/Home/img/tx.png" />
+										<img src="/matouPCS/Public/Home/img/tx.png" />
 										<p>chenney</p>
 									</a>
 									<div class="str"></div>
@@ -129,7 +129,7 @@
 									<div class="str"></div>
 								</li>
 								<li id="select-yfb" style="width: 70px;">
-									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
+									<a href="#">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
 									<div class="str"></div>
 									<div class="select-yfb">
 										<ul>
@@ -183,11 +183,11 @@
 						<div class="clearfloat"></div>
 					</div>
 					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<img src="/matouPCS/Public/Home/img/navbg2.png" />
 						<div class="s-f2-r">
 							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" />
+								<img src="/matouPCS/Public/Home/img/ss-t.png" />
 							</div>
 						</div>
 					</div>
@@ -196,9 +196,9 @@
 		</header>
 		<div class="spdlb" id="spdlb" title="消息">
 			<div class="titlenab">
-				<img src="__PUBLIC__/Home/img/swtitle.png">
+				<img src="/matouPCS/Public/Home/img/swtitle.png">
 				<div class="rhideb">
-					<img src="__PUBLIC__/Home/img/hide.png">
+					<img src="/matouPCS/Public/Home/img/hide.png">
 				</div>
 			</div>
 			<div class="fbtypeb">
@@ -217,10 +217,10 @@
 			<div class="swbtnb">
 				<div class="swbtn-cb">
 					<div>
-						<img src="__PUBLIC__/Home/img/addp.png" />
+						<img src="/matouPCS/Public/Home/img/addp.png" />
 					</div>
 					<div style="margin-left: 10px;">
-						<img src="__PUBLIC__/Home/img/adds.png" />
+						<img src="/matouPCS/Public/Home/img/adds.png" />
 					</div>
 					<button class="tjbtnb" id="tjbtn">发布</button>
 				</div>
@@ -242,9 +242,9 @@
 								<a href="#">商铺管理</a>
 							</li>
 							<li class="cjsp_bt_03">
-								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;</li>
+								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;</li>
 							<li class="cjsp_bt_02">
-								<a href="?s=Home/Mtbu/spglsp/id/{$v['id']}"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;店铺商品</a>&nbsp;&nbsp;&nbsp;</li>
+								<a href="?s=Home/Mtbu/spglsp/id/<?php echo ($v['id']); ?>"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;店铺商品</a>&nbsp;&nbsp;&nbsp;</li>
 						</ul>
 					</div>
 
@@ -253,7 +253,7 @@
 		
 						<div class="s-c-2f">
 							<ul>
-								<li class="cjsp_cz">&nbsp;<img style="position: relative;top: 3px;" src="__PUBLIC__/Home/img/cjsp_01.png">&nbsp;&nbsp;<strong>基本信息</strong></li>
+								<li class="cjsp_cz">&nbsp;<img style="position: relative;top: 3px;" src="/matouPCS/Public/Home/img/cjsp_01.png">&nbsp;&nbsp;<strong>基本信息</strong></li>
 							</ul>
 						</div>
 						<div class="s-c-3f">
@@ -263,56 +263,56 @@
 								<div class="spgl_xx_00">
 									<em>*</em>
 										<p>营业执照名称</p>
-										<input type="hidden" name="id" value="{$v.id}"/>
-									<input name="charter" value="{$v.charter}"  type="text" placeholder="" class="spgl_input_00" style="background: #ccc; maxlength="20" autocomplete="off" readonly="readonly">
+										<input type="hidden" name="id" value="<?php echo ($v["id"]); ?>"/>
+									<input name="charter" value="<?php echo ($v["charter"]); ?>"  type="text" placeholder="" class="spgl_input_00" style="background: #ccc; maxlength="20" autocomplete="off" readonly="readonly">
 								</div>
 								<div class="spgl_xx_00">
 									<em style="margin-left:16px;">*</em>
 									<p>法定代表人</p>
 									 
-									<input name="representative" value="{$v.representative}"   type="text" placeholder="" class="spgl_input_00" style="background: #ccc; maxlength="20" autocomplete="off" readonly="readonly">
+									<input name="representative" value="<?php echo ($v["representative"]); ?>"   type="text" placeholder="" class="spgl_input_00" style="background: #ccc; maxlength="20" autocomplete="off" readonly="readonly">
 								</div>
 								<div class="spgl_xx_00">
 									<em style="margin-left:33px;">*</em>
 									<p>商铺名称</p>
-									<input name="shopname"  value="{$v.shopname}" type="text" placeholder="" class="spgl_input_00" style="background: #ccc; maxlength="20" autocomplete="off" readonly="readonly">
+									<input name="shopname"  value="<?php echo ($v["shopname"]); ?>" type="text" placeholder="" class="spgl_input_00" style="background: #ccc; maxlength="20" autocomplete="off" readonly="readonly">
 								</div>
 								<div class="spgl_xx_00">
 									<em style="margin-left:33px;">*</em>
 									<p>商铺类型</p>
-									<input name="type"  value="{$v.type}" type="text" placeholder="" class="spgl_input_02" maxlength="11" style="background: #ccc;width: 111px;" autocomplete="off" readonly="readonly">
+									<input name="type"  value="<?php echo ($v["type"]); ?>" type="text" placeholder="" class="spgl_input_02" maxlength="11" style="background: #ccc;width: 111px;" autocomplete="off" readonly="readonly">
 								</div>
 								<div class="spgl_xx_00">
 									<em style="margin-left:33px;">*</em>
 									<p>详细地址</p>
 									<input id="city" type="text" placeholder="点击选择地点" />
-									<input name="address" id="address"  value="{$v.address}" type="text" placeholder="请输入详细地址" class="spgl_input_01" maxlength="20">
+									<input name="address" id="address"  value="<?php echo ($v["address"]); ?>" type="text" placeholder="请输入详细地址" class="spgl_input_01" maxlength="20">
 								</div>
 								<div class="spgl_xx_00">
 									<em style="margin-left:33px;">*</em>
 									<p>联系电话</p>
-									<input name="tel" id="tel"  value="{$v.tel}" type="text" placeholder="" class="spgl_input_02" maxlength="11">
+									<input name="tel" id="tel"  value="<?php echo ($v["tel"]); ?>" type="text" placeholder="" class="spgl_input_02" maxlength="11">
 								</div>
 								<div class="spgl_xx_00">
 									<p style="margin-left:89px;">QQ</p>
-									<input name="qq" value="{$v.qq}" type="text" placeholder="" class="spgl_input_02" maxlength="12">
+									<input name="qq" value="<?php echo ($v["qq"]); ?>" type="text" placeholder="" class="spgl_input_02" maxlength="12">
 								</div>
 
 								<div class="spgl_xx_01">
 									<em style="margin-left:33px;">*</em>
 									<p>主营商品</p>
-									<textarea name="zysp" id="zysp"   cols="" rows="" placeholder="请输入商品名称，用间隔号隔开。。。。。。" class="spgl_input_03">{$v.zysp}</textarea>
+									<textarea name="zysp" id="zysp"   cols="" rows="" placeholder="请输入商品名称，用间隔号隔开。。。。。。" class="spgl_input_03"><?php echo ($v["zysp"]); ?></textarea>
 								</div>
 								<div class="spgl_xx_00">
 									<em style="margin-left:33px;">&nbsp;&nbsp;</em>
 									<p>网店链接</p>
 									<select name="wangzhan"  id="city2">
-									   <option>{$v.wangzhan}</option >
+									   <option><?php echo ($v["wangzhan"]); ?></option >
 										<option>淘宝</option>
 										<option>天猫</option>
 										<option>阿里巴巴</option>
 									</select>
-									<input name="lianjie" value="{$v.lianjie}" type="text" placeholder="请输入链接地址" class="spgl_input_01" maxlength="20">
+									<input name="lianjie" value="<?php echo ($v["lianjie"]); ?>" type="text" placeholder="请输入链接地址" class="spgl_input_01" maxlength="20">
 								</div>
 
 							</div>
@@ -368,10 +368,10 @@
 
 		</footer>
 	</body>
-	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/city-data.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script src="__PUBLIC__/js/showWin.js"></script>
+	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
+	<script src="/matouPCS/Public/Home/js/city-data.js"></script>
+	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
+	<script src="/matouPCS/Public/js/showWin.js"></script>
 	<script type="text/javascript">
 		$(function() {
 

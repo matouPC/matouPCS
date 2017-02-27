@@ -205,7 +205,12 @@
 						</div>
 						<div class="s-f2">
 							<p class="yhmc">
-								<a href="">用户{$bu.username|substr=0,6}</a>
+								<if condition="$bu[username]==$bu[tel]">
+								<a href="">{$bu.username|substr=0,6}</a>
+								</if>
+								<if condition="$bu[username]!=$bu[tel]">
+								<a href="">{$bu.username}</a>
+								</if>
 							</p>
 							<p style="text-align: center;">
 								（摄影师）

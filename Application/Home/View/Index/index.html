@@ -176,15 +176,16 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<div class="str"></div>
 							</li>
 							<li style="width: 68px;">
-									<foreach name="sp" item="v">
-								<php>if($v['status']==1){</php>
+							
+								<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
-								<php>}else if($v['status']==2){</php>
-								<a href="#">我的商铺</a>
-							   <php>}else{</php>				   		
-                                   <a href="#">我的商铺</a>                    	
-                                   <php>}</php>
-                                   	</foreach>
+								<?php }else if($sp['status']==2){ ?>
+								<a href="?s=/Home/Mtbu/spgl">我的商铺</a>
+							   <?php }else{ ?>	
+							   <a href="#">我的商铺</a>
+							   <?php } ?>
+                                
+                                   
 								<div class="str"></div>
 							
 							</li>

@@ -204,7 +204,12 @@
 						</div>
 						<div class="s-f2">
 							<p class="yhmc">
+								<if condition="$dt[username]==$dt[tel]">
+								<a href="">{$dt.username|substr=0,6}</a>
+								</if>
+								<if condition="$dt[username]!=$dt[tel]">
 								<a href="">{$dt.username}</a>
+								</if>
 							</p>
 							<p style="text-align: center;">
 								（摄影师）

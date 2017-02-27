@@ -22,6 +22,13 @@ class IndexController extends Controller
             $fbys = M('user as u')->join("due as d on u.id = d.uid")->where("u.id = {$uid}")->find();
             $fbyp = M('user as u')->join("employ as d on u.id = d.uid")->where("u.id = {$uid}")->find();
         }
+        //判断是否能进入商铺
+        if(!empty($_SESSION['id'])){
+        	$uid = $_SESSION['id'];//当前用户的id
+        	$sp = M('shop')->where("uid = {$uid}")->limit('1')->find();//我的商铺
+        	//  var_dump($sp);die;
+        	$this->assign('sp',$sp);
+        }
     	//码头商城遍历
     	$shang = M('shop')->order('collect desc')->limit(' 0,4')->select();
     	//跳槽市场
