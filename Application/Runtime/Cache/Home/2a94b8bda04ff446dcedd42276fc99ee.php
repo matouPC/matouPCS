@@ -180,9 +180,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">我的商铺1</a>
+								<a href="?s=/Home/Mtbu/spgl">我的商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">我的商铺2</a>
+							   <a href="#">我的商铺</a>
 							   <?php } ?>
                                 
                                    

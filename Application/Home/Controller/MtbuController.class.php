@@ -8,15 +8,129 @@ class MtbuController extends Controller
     public function index()
     {
     	//码头部队
-    	$list = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.id desc')->select();
+   
+    	$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("bdlx='2'||bdlx='3'||bdlx='4'||bdlx='5'")->order('d.did desc')->limit('0,2')->select();
     	//热门部队
     	$listNew = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.collect desc')->select();
     	//工作室
-    	$listg = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.id')->select();
+    	$listg = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='工作室'")->order('f.id')->limit('0,3')->select();
+    	$listb = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='表演团'")->order('f.id')->limit('0,3')->select();
+    	$listy = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='影楼'")->order('f.id')->limit('0,3')->select();
+    	$listh = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='婚庆公司'")->order('f.id')->limit('0,3')->select();
     	$this->assign('list',$list);
     	$this->assign('listn',$listNew);
     	$this->assign('listg',$listg);
+    	$this->assign('listb',$listb);
+    	$this->assign('listy',$listy);
+    	$this->assign('listh',$listh);
     	$this->display();
+    }
+    public function dongtaidi()
+    {
+    	//码头部队
+    	$address=I('address');
+    	if($address==''){
+    		$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit('0,2')->select();
+    	}else{
+    		$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("addre='{$address}'")->order('d.did desc')->limit('0,2')->select();
+    	}
+    	
+    	//热门部队
+    	$this->ajaxReturn($list);
+    }
+    public function buduijzre(){
+    	//动态
+    	//$uid = $_SESSION['id'];
+    	$address=I('address');
+    	
+    	$p=1;
+    	$total=M('dongtai')->count();//数据记录总数
+    	$num=2;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	if($p>$totalpage){
+    		exit();
+    	}//超过最大页数，退出if
+    	if($address==''){
+    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->limit($limitpage,$num)->order('d.did desc')->select();
+    	}else{
+    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("addre='{$address}'")->limit($limitpage,$num)->order('d.did desc')->select();
+    	}
+    	//$this->ajaxReturn($data);
+    	$this->ajaxReturn($data);
+    
+    }
+    public function buduijzgz(){
+    $address=I('address');
+    	//$uid = $_SESSION['id'];
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$total=M('forcee')->count();//数据记录总数
+    	$num=3;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	if($p>$totalpage){
+    		exit();
+    	}//超过最大页数，退出if
+    	 
+    	$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='工作室' and addre='{$address}'")->limit($limitpage,$num)->order('f.id desc')->select();
+    	 
+    	//$this->ajaxReturn($data);
+    	$this->ajaxReturn($data);
+    
+    }
+    public function buduijzby(){
+    	$address=I('address');
+    	//$uid = $_SESSION['id'];
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$total=M('forcee')->count();//数据记录总数
+    	$num=3;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	if($p>$totalpage){
+    		exit();
+    	}//超过最大页数，退出if
+    
+    	$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='表演团' addre='{$address}'")->limit($limitpage,$num)->order('f.id desc')->select();
+    
+    	//$this->ajaxReturn($data);
+    	$this->ajaxReturn($data);
+    
+    }
+    public function buduijzhq(){
+    	$address=I('address');
+    	//$uid = $_SESSION['id'];
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$total=M('forcee')->count();//数据记录总数
+    	$num=3;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	if($p>$totalpage){
+    		exit();
+    	}//超过最大页数，退出if
+    
+    	$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='婚庆公司' addre='{$address}'")->limit($limitpage,$num)->order('f.id desc')->select();
+    
+    	//$this->ajaxReturn($data);
+    	$this->ajaxReturn($data);
+    
+    }
+    public function buduijzyl(){
+    	$address=I('address');
+    	//$uid = $_SESSION['id'];
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$total=M('forcee')->count();//数据记录总数
+    	$num=3;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	if($p>$totalpage){
+    		exit();
+    	}//超过最大页数，退出if
+    
+    	$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='影楼' addre='{$address}'")->limit($limitpage,$num)->order('f.id desc')->select();
+    
+    	//$this->ajaxReturn($data);
+    	$this->ajaxReturn($data);
+    
     }
     public function rzbd()
     {
