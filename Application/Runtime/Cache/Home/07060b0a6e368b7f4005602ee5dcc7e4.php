@@ -244,11 +244,7 @@
 							<li class="cjsp_bt_03">
 								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;</li>
 							<li class="cjsp_bt_02">
-<<<<<<< HEAD
-								<a href="?s=Home/Mtbu/spglsp/id/<?php echo ($_GET['id']); ?>"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;店铺商品</a>&nbsp;&nbsp;&nbsp;</li>
-=======
 								<a href="?s=Home/Mtbu/spglsp/id/<?php echo ($v['id']); ?>"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;店铺商品</a>&nbsp;&nbsp;&nbsp;</li>
->>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
 						</ul>
 					</div>
 
@@ -262,12 +258,8 @@
 						</div>
 						<div class="s-c-3f">
 						<form action="?s=/Home/Mtbu/usave" method="post" id="myform" enctype="multipart/form-data">
-<<<<<<< HEAD
-						<?php if(is_array($sp)): foreach($sp as $key=>$v): ?><div class="spgl_xx">
-=======
 						
 							<div class="spgl_xx">
->>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
 								<div class="spgl_xx_00">
 									<em>*</em>
 										<p>营业执照名称</p>
@@ -323,12 +315,8 @@
 									<input name="lianjie" value="<?php echo ($v["lianjie"]); ?>" type="text" placeholder="请输入链接地址" class="spgl_input_01" maxlength="20">
 								</div>
 
-<<<<<<< HEAD
-							</div><?php endforeach; endif; ?>
-=======
 							</div>
 					
->>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
 							</form>
 							<div class="spgl_x1">
 								<div class="spgl_x1_00"></div>

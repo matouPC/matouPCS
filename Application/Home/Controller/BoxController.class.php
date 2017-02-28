@@ -784,6 +784,26 @@ class BoxController extends CommonController {
         $this->display();
     }
 
+    
+    
+    public function bddz()
+    {
+    	//码头部队
+    	 
+    	$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit('0,2')->select();
+    	//热门部队
+    	
+    	$this->assign('list',$list);
+
+    
+    	$this->display('Box/bddz');
+    }
+    
+    
+    
+    
+    
+    
 }
 
 ?>

@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/hzw-city-picker.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+
 		<style>
 			.s-f1-r ul li a .img {
 				margin-top: 15px;
@@ -87,112 +88,15 @@
 			}
 		</style>
 	</head>
+<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+<script src="__PUBLIC__/Home/js/City_data.js"></script>
+        <script src="__PUBLIC__/Home/js/bddz.js"></script>
 
 	<body>
 		<header>
-			<div class="h-content-main">
-				<div class="h-main-c">
-					<div class="h-c-1f">
-						<div class="s-f1-l">
-							<div class="home">
-								<a href="?s=/Home/Index">
-									<img src="__PUBLIC__/Home/img/home.png" />
-								</a>
-							</div>
-							<p>
-								<a href="?s=/Home/Index">首页</a>
-							</p>
-						</div>
-						<div class="s-f1-r">
-							<ul>
-								<php>if(empty($_SESSION['username'])){</php>
-								<li style="width: 100px;">
-									<a id="login-alert" href="#">请注册\登录</a>
-								</li>
-								<php>}else{</php>
-								<li style="width: 100px;">
-									<a href="#">
-										<img src="__PUBLIC__/Home/img/tx.png" />
-										<p>用户{$_SESSION['username']|substr=0,5}</p>
-									</a>
-									<div class="str"></div>
-								</li>
-								<php>}</php>
-								<li id="select-xx" style="width: 45px;">
-									<a href="#">消息</a>
-									<div class="str"></div>
-									<div class="select-xx">
-										<ul>
-											<li>
-												<a href="">需求消息</a>
-											</li>
-											<li>
-												<a href="">部队消息</a>
-											</li>
-											<li>
-												<a href="">商铺消息</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li style="width: 58px;">
-									<a href="#">收藏夹</a>
-									<div class="str"></div>
-								</li>
-								<li id="select-yfb" style="width: 70px;">
-									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
-									<div class="str"></div>
-									<div class="select-yfb">
-										<ul>
-											<ul>
-												<li>
-													<a href="">悬赏</a>
-												</li>
-												<li>
-													<a href="">应赏</a>
-												</li>
-												<li>
-													<a href="">招聘</a>
-												</li>
-												<li>
-													<a href="">应聘</a>
-												</li>
-												<li>
-													<a href="">求购</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-								<li style="width: 68px;">
-									<a href="#">部队中心</a>
-									<div class="str"></div>
-								</li>
-								<li style="width: 68px;">
-									<a href="#">我的商铺</a>
-									<div class="str"></div>
-								</li>
-								<li style="width: 70px;">
-									<a class="action" href="#" id="find">发动态</a>
-									<div class="strf"></div>
-								</li>
-								<li class="clearfloat"></li>
-							</ul>
-						</div>
-						<div class="clearfloat"></div>
-					</div>
+		<include file="Public/header"/>
+					
+					
 					<div class="h-c-2f">
 						<div class="s-f2-l">
 							<div class="f2-l-1">
@@ -263,7 +167,22 @@
 								
 						<img src="__PUBLIC__/Home/img/mtbutitle.png" />
 					</div>
-					<div class="s-c-2f">
+						<script type="text/javascript">				
+							var url_ajax = "?s=/Home/Box/bddz";//这个路径是真正显示列表的
+							    function getPage() {
+							    	//alert(getCookie("add"));
+							         $("#xxoos").html("<h1>请稍等。。。</h1>");
+							         var address = getCookie("add");//活动时间
+							         $.get(url_ajax, {address:address}, function(data) {
+							        	   //	alert(data);
+							            $('#xxoos').html(data);
+							        })
+							    }
+							    getPage();
+							    </script>
+					
+				
+					<div   class="s-c-2f">
 						<div style="width: 850px;">
 							<div class="s-f2l-c1">
 								<ul>
@@ -271,117 +190,35 @@
 										<a class="selected-tab" href="javascript://">热门动态</a>
 									</li>
 									<li>
-										<a href="javascript://">工作室</a>
+										<a href="javascript://"  onclick="gzs(1)">工作室</a>
 									</li>
 									<li>
-										<a href="javascript://">表演团</a>
+										<a href="javascript://" onclick="gzs(2)">表演团</a>
 									</li>
 									<li>
-										<a href="javascript://">婚庆公司</a>
+										<a href="javascript://" onclick="gzs(3)">婚庆公司</a>
 									</li>
 									<li>
-										<a href="javascript://">影楼</a>
+										<a href="javascript://" onclick="gzs(4)">影楼</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<br>
+					<div>
 					<div class="con" id="re">
-					<div id="content">
-						<foreach name="list" item="lists">
-							<div class="s-c-3f">
-								<div class="rmdtct">
-									<ul class="rmdt">
-										<li>
-											<div class="rmdt-1f">
-												<div class="rmdt-1fc1">
-													<p><img src="__PUBLIC__/Home/img/pltx.png" /></p>
-													<p>用户{$lists.username|substr=0,5}</p>
-													<p>logo</p>
-<<<<<<< HEAD
-													<p class="rmdtcmap">所在地：{$lists.addre}&nbsp;</p>
-=======
-													<p class="rmdtcmap">所在地：{$lists.address}&nbsp;</p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-													<p class="rmdtcjs">{$lists.content}</p>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-2f">
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="clearfloat "></div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-3f">
-												<p class="rmdtcdz">点赞&nbsp;100</p>
-												<p class="rmdtcfb">2016.12.12发布</p>
-												<p class="clearfloat"></p>
-												<br>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<br>
-						</foreach>
-					</div>
-						<div style="text-align:center;" class="margin">
-							<button onclick="tj()" name='btn' id='btn' >点击加载更多</button>
-						</div>
-				
+					<div id="xxoos">
+					
+				</div>
 					</div>
 					<div class="con">
 				
 						<div class="s-c-3f">
 							<div class="f3-t-1">
 							
-								<ul id='xxoo'>
-									<foreach name="listg" item="listgs">
-										<li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="__PUBLIC__/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p>{$listgs.forcename}</p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:{$listgs.type_bd}</p>
-<<<<<<< HEAD
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p>{$listgs.content}...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：{$listgs.address}</p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li>
-									</foreach>
+								<ul id='xxoo1'>
+									
 								</ul>
 				
 						</div>
@@ -393,34 +230,8 @@
 					<div class="con">
 							<div class="s-c-3f">
 							<div class="f3-t-1">
-								<ul id="xxoo1">
-									<foreach name="listb" item="listgs">
-										<li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="__PUBLIC__/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p>{$listgs.forcename}</p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:{$listgs.type}</p>
-=======
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p>{$listgs.content}...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：{$listgs.address}</p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li>
-									</foreach>
+								<ul id="xxoo2">
+								
 									<li class="clearfloat"></li>
 								</ul>
 							</div>
@@ -429,61 +240,17 @@
 							<button onclick="tj2()" name='btn2' id='btn2' >点击加载更多</button>
 						</div>
 					</div>
+					
+					
 					<div class="con">
-<<<<<<< HEAD
 							<div class="s-c-3f">
 							<div class="f3-t-1">
-								<ul id="xxoo2">
-									<foreach name="listh" item="listgs">
-=======
-						<div class="s-c-3f">
-							<div class="f3-t-1">
-								<ul>
-									<foreach name="listb" item="listbs">
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-										<li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="__PUBLIC__/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-<<<<<<< HEAD
-													<p>{$listgs.forcename}</p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:{$listgs.type}</p>
-=======
-													<p>{$listbs.forcename}</p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:{$listbs.type_bd}</p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-<<<<<<< HEAD
-													<p>{$listgs.content}...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：{$listgs.address}</p>
-=======
-													<p>{$listbs.content}...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：{$listbs.address}</p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li>
-									</foreach>
+								<ul id="xxoo3">
+							
 									<li class="clearfloat"></li>
 								</ul>
 							</div>
 						</div>
-<<<<<<< HEAD
 						  <div style="text-align:center;" class="margin">
 							<button onclick="tj3()" name='btn3' id='btn3' >点击加载更多</button>
 						</div>
@@ -491,113 +258,43 @@
 					<div class="con">
 							<div class="s-c-3f">
 							<div class="f3-t-1">
-								<ul id='xxoo3'>
-=======
-					</div>
-					<div class="con">
-						<div class="s-c-3f">
-							<div class="f3-t-1">
-								<ul>
-									<foreach name="listh" item="lisths">
-										<li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="__PUBLIC__/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p>{$lisths.forcename}</p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:{$lisths.type_bd}</p>
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p>{$lisths.content}...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：{$lisths.address}</p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li>
-									</foreach>
+								<ul id='xxoo4'>
+								
 									<li class="clearfloat"></li>
 								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="con">
-						<div class="s-c-3f">
-							<div class="f3-t-1">
-								<ul>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-									<foreach name="listy" item="listgs">
-										<li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="__PUBLIC__/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p>{$listgs.forcename}</p>
-												</div>
-												<div class="f3-t-1-c3l">
-<<<<<<< HEAD
-													<p>部队类型:{$listgs.type}</p>
-=======
-													<p>部队类型:{$listgs.type_bd}</p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p>{$listgs.content}...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：{$listgs.address}</p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li>
-									</foreach>
-									<li class="clearfloat"></li>
-								</ul>
-							</div>
-						</div>
-<<<<<<< HEAD
 						  <div style="text-align:center;" class="margin">
 							<button onclick="tj4()" name='btn4' id='btn4' >点击加载更多</button>
 						</div>
-=======
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 					</div>
 					<!--<div class="s-c-3f2">
 
 					</div>-->
 				</div>
+				</div>
   <script type="text/javascript">
-	function dongtai(){
-		  var address = $("#xz-city").val(); 
-		alert(address);	
+	function gzs(id){
+		 var address = getCookie("add");//活动时间 
+		alert(id);	
+		alert(address);
 				$.ajax({
 					url:"?s=/Home/Mtbu/dongtaidi",
 					type:"post",
-					data:{address:address},
+					data:{id:id,address:address},
 					dataType:"json",
 					success:function(data){
-						alert(data);	
+						//alert(data);	
 	                   var li='';
 						for (var i = 0; i < data.length; i++) {
 						
-							li+='<div class="s-c-3f"><div class="rmdtct"><ul class="rmdt"><li><div class="rmdt-1f"><div class="rmdt-1fc1"><p><img src="__PUBLIC__/Home/img/pltx.png" /></p><p>'+use+'</p><p>logo</p><p class="rmdtcmap">所在地：'+data[i].addre+'</p><p class="rmdtcjs">'+data[i].content+'</p></div></div></li><li><div class="rmdt-2f"><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="clearfloat "></div></div></li><li><div class="rmdt-3f"><p class="rmdtcdz">'+data[i].zan+'</p><p class="rmdtcfb">'+data[i].time+'发布</p><p class="clearfloat"></p><br></div></li></ul></div></div><br>';
+							li+='<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>';
 										
 							
 						};
-						var p ='<div id="content">'+li+'</div><div style="text-align:center;" class="margin"><button onclick="tj()" name="btn" id="btn" >点击加载更多</button></div></div>';
-						$('#re').html(p);
-						$('#re').val('');
+						
+						$('#xxoo'+id).html(li);
+						$('#xxoo'+id).val('');
 					},error:function(){
 						alert('no');
 					}
@@ -610,7 +307,7 @@
 	  
 	  function tj(){	
 		  alert(111);
-	      var address = getCookie("address");//活动时间
+	      var address = getCookie("add");//活动时间
 		alert(address);
 				$.ajax({
 					type:'post',
@@ -645,14 +342,14 @@
 		  }  
 		 var w=2;
 		  function tj1(){	
-			  var address = $("#city").val(); 
+			   var address = getCookie("add");//活动时间
 			//	 alert(1);
 					$.ajax({
 						type:'post',
 						url:"{:U('Mtbu/buduijzgz')}",
 						data:{k:w,address:address},
 						beforeSend:function(){
-				         $("#xxoo").append("<div id='load'>加载中……</div>");
+				         $("#xxoo1").append("<div id='load'>加载中……</div>");
 						},
 						success:function(data){
 							// alert(data);
@@ -661,7 +358,7 @@
 									
 									 for (var i = 0; i < data.length; i++) {
 							
-									$("#xxoo").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+									$("#xxoo1").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 				 		
 									 }
 							}else{
@@ -680,23 +377,23 @@
 			  }  
 			 var t=2;
 			  function tj2(){
-				  var address = $("#city").val(); 
-					// alert(1);
+				   var address = getCookie("add");//活动时间
+					alert(2);
 						$.ajax({
 							type:'post',
 							url:"{:U('Mtbu/buduijzby')}",
 							data:{k:w,address:address},
 							beforeSend:function(){
-					         $("#xxoo1").append("<div id='load'>加载中……</div>");
+					         $("#xxoo2").append("<div id='load'>加载中……</div>");
 							},
 							success:function(data){
-								// alert(data);
+								alert(data);
 								if(data!=null){				
 										//alert(1);
 										
 										 for (var i = 0; i < data.length; i++) {
 								
-										$("#xxoo1").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+										$("#xxoo2").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 					 		
 										 }
 								}else{
@@ -715,14 +412,14 @@
 				  } 
 				 var r=2;
 				  function tj3(){	
-					  var address = $("#city").val(); 
+					   var address = getCookie("add");//活动时间; 
 					//	 alert(1);
 							$.ajax({
 								type:'post',
 								url:"{:U('Mtbu/buduijzhq')}",
 								data:{k:w,address:address},
 								beforeSend:function(){
-						         $("#xxoo2").append("<div id='load'>加载中……</div>");
+						         $("#xxoo3").append("<div id='load'>加载中……</div>");
 								},
 								success:function(data){
 									// alert(data);
@@ -731,7 +428,7 @@
 											
 											 for (var i = 0; i < data.length; i++) {
 									
-											$("#xxoo2").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+											$("#xxoo3").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 						 		
 											 }
 									}else{
@@ -750,14 +447,14 @@
 					  } 
 					 var e=2;
 					  function tj4(){
-						  var address = $("#city").val(); 
+						   var address = getCookie("add");
 							// alert(1);
 								$.ajax({
 									type:'post',
 									url:"{:U('Mtbu/buduijzyl')}",
 									data:{k:e,address:address},
 									beforeSend:function(){
-							         $("#xxoo3").append("<div id='load'>加载中……</div>");
+							         $("#xxoo4").append("<div id='load'>加载中……</div>");
 									},
 									success:function(data){
 										// alert(data);
@@ -766,7 +463,7 @@
 												
 												 for (var i = 0; i < data.length; i++) {
 										
-												$("#xxoo3").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+												$("#xxoo4").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 							 		
 												 }
 										}else{
@@ -917,11 +614,9 @@
 
 		</footer>
 
-		<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+		
 		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-    	<script src="__PUBLIC__/Home/js/sousuo.js"></script>
-		<script src="__PUBLIC__/Home/js/City_data.js"></script>
-        <script src="__PUBLIC__/Home/js/dz.js"></script>
+		
 		<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -1100,6 +795,7 @@
 					$("#find").css("color", "#fff");
 				});
 			});
+
 		</script>
 	</body>
 

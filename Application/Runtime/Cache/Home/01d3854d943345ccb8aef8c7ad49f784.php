@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+
 		<style>
 			.s-f1-r ul li a .img {
 				margin-top: 15px;
@@ -87,112 +88,403 @@
 			}
 		</style>
 	</head>
+<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
+<script src="/matouPCS/Public/Home/js/City_data.js"></script>
+        <script src="/matouPCS/Public/Home/js/bddz.js"></script>
 
 	<body>
 		<header>
-			<div class="h-content-main">
-				<div class="h-main-c">
-					<div class="h-c-1f">
-						<div class="s-f1-l">
-							<div class="home">
-								<a href="?s=/Home/Index">
+		<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
+	</head>
+	<body>
+		<div class="show-bg"></div>
+		<header>
+			<div class="h-c-1f">
+						<div class="h-c-1f">
+							<div class="h-f1-lzy">
+								<div class="home">
 									<img src="/matouPCS/Public/Home/img/home.png" />
-								</a>
+								</div>
+								<p>
+									<a href="?s=/Home/index">首页</a>
+								</p>
 							</div>
-							<p>
-								<a href="?s=/Home/Index">首页</a>
-							</p>
-						</div>
-						<div class="s-f1-r">
-							<ul>
-								<?php if(empty($_SESSION['username'])){ ?>
-								<li style="width: 100px;">
-									<a id="login-alert" href="#">请注册\登录</a>
-								</li>
+							<div class="h-f1-rzy">
+								<ul>
+									<li class="login-register">
+									<?php if($_SESSION['username'] != ''){ ?>
+										<a id="login-alert" href="#">
+											<div class="dltx">
+												<img src="/matouPCS/Public/Home/img/tx.png" />
+											</div>
+											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
+										</a>
 								<?php }else{ ?>
-								<li style="width: 100px;">
-									<a href="#">
-										<img src="/matouPCS/Public/Home/img/tx.png" />
-										<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
-									</a>
-									<div class="str"></div>
-								</li>
+								<a id="login-alert" href="#">请注册\登录</a>
 								<?php } ?>
+									</li>
+								
 								<li id="select-xx" style="width: 45px;">
-									<a href="#">消息</a>
-									<div class="str"></div>
-									<div class="select-xx">
-										<ul>
-											<li>
-												<a href="">需求消息</a>
-											</li>
-											<li>
-												<a href="">部队消息</a>
-											</li>
-											<li>
-												<a href="">商铺消息</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li style="width: 58px;">
-									<a href="#">收藏夹</a>
-									<div class="str"></div>
-								</li>
+								<a href="#">消息</a>
+								<div class="str"></div>
+								<div class="select-xx">
+									<ul>
+										<li>	
+											<a href="?s=/Home/User/xqxx">需求消息</a>
+										</li>
+										<li>
+											<a href="">部队消息</a>
+										</li>
+										<li>
+											<a href="">商铺消息</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li style="width: 58px;">
+								<?php if(empty($_SESSION['username'])){ ?>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏夹</a>
+								<?php }else{ ?>
+									<a href="?s=/Home/User/scj">收藏夹</a>
+								<?php } ?>
+								<div class="str"></div>
+							</li>
+							<?php if(!empty($_SESSION['id'])){ ?>
 								<li id="select-yfb" style="width: 70px;">
 									<a href="#">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
 									<div class="str"></div>
 									<div class="select-yfb">
-										<ul>
+								
 											<ul>
 												<li>
 													<a href="">悬赏</a>
 												</li>
 												<li>
-													<a href="">应赏</a>
+													<a href="?s=/Home/User/user_ys">应赏</a>
 												</li>
 												<li>
 													<a href="">招聘</a>
 												</li>
 												<li>
-													<a href="">应聘</a>
+													<a href="?s=/Home/User/user_yp">应聘</a>
 												</li>
 												<li>
-													<a href="">求购</a>
+													<a href="?s=/Home/User/user_qg">求购</a>
 												</li>
 												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
+													<a href="?s=/Home/User/user_xz">闲置</a>
 												</li>
 											</ul>
-										</ul>
+								</div>
+							</li>
+							<?php }else{ ?>
+									<li id="select-yfb" style="width: 70px;">
+									<a href="javascript:alert('您还没有登录！')">已发布</a>
+								</li>
+								<?php } ?>
+							<li style="width: 68px;">
+								<?php if(empty($_SESSION['username'])){ ?>
+								<a href="javascript:void(0)" onclick="alert('请先登录')">部队中心</a>
+								<?php }else{ ?>
+								<a href="?s=/Home/User/bdzx">部队中心</a>
+								<?php } ?>
+								<div class="str"></div>
+							</li>
+							<li id="select-sp">
+								<a href="#">商铺中心<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
+								<div class="str"></div>
+								<div class="select-sp">
+									<ul>
+										<li>
+										<?php if($sp['status']==1){?>
+								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
+								<?php }else if($sp['status']==2){ ?>
+								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
+							   <?php }else{ ?>	
+							   <a href="#">商铺主页</a>
+							   <?php } ?>
+                                
+										</li>
+										<li>
+											<?php if($sp['status']==1){?>
+								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
+								<?php }else if($sp['status']==2){ ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+							   <?php }else{ ?>	
+							   <a href="#">管理商铺</a>
+							   <?php } ?>
+										
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="fdt-top">
+								<a class="action" href="#" id="find">发动态</a>
+								<div class="strf"></div>
+							</li>
+							<li class="clearf"></li>
+						</ul>
+					</div>
+					<div class="clearf"></div>
+				</div>
+			</div>
+				<!--登录注册开始-->
+			<div class="alert">
+				<div class="alert-1f">
+					<div class="alert-close">
+						<img src="/matouPCS/Public/Home/img/alert-close.png">
+					</div>
+				</div>
+				<div class="alert-2f">
+					<div class="alert-logo">
+						<img src="/matouPCS/Public/Home/img/alert-logo.png">
+					</div>
+				</div>
+				<div class="alert-3f">
+					<div class="tabbox">
+						<div class="tabbox-t">
+							<div class="tab">
+								<a href="javascript:;" class="on">登录</a>
+								<a href="javascript:;">注册</a>
+								<span class="str">|</span>
+							</div>
+						</div>
+						<div class="content-a">
+							<ul>
+								<li>
+									<div class="content-1f">
+										<div class="login-user">
+											<img src="/matouPCS/Public/Home/img/login-uesr.png">
+										</div>
+										<input id="login-userName" type="text" placeholder="使用用户名/手机号码">
+									</div>
+									<div class="login-userName">
+										<p class="none">*用户名/手机号码输入有误，请重新输入</p>
+									</div>
+									<div class="content-2f">
+										<div class="login-pw">
+											<img src="/matouPCS/Public/Home/img/login-pw.png">
+										</div>
+										<input id="login-passWord" type="password" placeholder="请输入您的密码">
+									</div>
+									<div class="login-passWord">
+										<p class="none">* 您的密码输入有误，请重新输入</p>
+									</div>
+									<div class="content-3f">
+										<button>登录</button>
+									</div>
+									<div class="content-4f">
+										<div class="i-check">
+											<input type="checkbox" checked value="" />
+											<label></label>
+										</div>
+										<P>
+											<span class="left">下次自动登录</span>
+											<span class="right"><a href="">忘记密码</a></span>
+										</P>
+									</div>
+									<div class="content-5f">
+										<p>使用其它方式登录</p>
+										<div class="alert-QQ">
+											<a href="">
+												<img src="/matouPCS/Public/Home/img/alert-QQ.png">
+											</a>
+										</div>
+										<div class="alert-wc">
+											<a href="">
+												<img src="/matouPCS/Public/Home/img/alert-wc.png">
+											</a>
+										</div>
+										<div class="alert-xl">
+											<a href="">
+												<img src="/matouPCS/Public/Home/img/alert-xl.png">
+											</a>
+										</div>
 									</div>
 								</li>
-								<li style="width: 68px;">
-									<a href="#">部队中心</a>
-									<div class="str"></div>
+								<li>
+									<div class="register-1f">
+										<span class="title">手 机 号</span>
+										<input type="text" placeholder="请输入您的手机号码" id="register-userName">
+										<input type="button" autocomplete="off" class="button" value="获取验证码" id="btn_yzm" />
+									</div>
+									<div class="register-userName">
+										<p class="none">*请输入手机号码</p>
+									</div>
+									<div class="register-2f">
+										<span class="title">验 证 码</span>
+										<input id="yzm" type="text" maxlength="4" placeholder="请输入您的手机验证码">
+										<div class="alert-true">
+											<img src="/matouPCS/Public/Home/img/true.png">
+										</div>
+										<div class="alert-false">
+											<img src="/matouPCS/Public/Home/img/false.png">
+										</div>
+									</div>
+									<div class="register-3f">
+										<span class="title">设置密码</span>
+										<input id="register-passWord" type="password" placeholder="建议使用至少两种字符组合">
+									</div>
+									<div class="register-passWord">
+										<p class="none">*请输入密码</p>
+									</div>
+									<div class="register-4f">
+										<span class="title">确认密码</span>
+										<input id="again" type="password" placeholder="请再次输入密码">
+										<div class="register-again">
+											<p class="none">*两次输入密码不一致，请重新输入</p>
+										</div>
+									</div>
+									<div class="register-5f">
+										<div class="i-check">
+											<input type="checkbox" checked value="" />
+											<label></label>
+										</div>
+										<p>
+											<span class="left">我已阅读并同意</span>
+											<a>《码头用户使用协议》</a>
+										</p>
+										<div class="clear"></div>
+									</div>
+									<div class="register-6f">
+										<button>注册</button>
+									</div>
 								</li>
-								<li style="width: 68px;">
-									<a href="#">我的商铺</a>
-									<div class="str"></div>
-								</li>
-								<li style="width: 70px;">
-									<a class="action" href="#" id="find">发动态</a>
-									<div class="strf"></div>
-								</li>
-								<li class="clearfloat"></li>
 							</ul>
 						</div>
-						<div class="clearfloat"></div>
 					</div>
+				</div>
+			</div>
+			<div class="alert-black"></div>
+			<!--登录注册结束-->
+			
+			<!--发动态-->
+		<div class="spdlb" id="spdlb" title="消息">
+		
+			<div class="titlenab">
+				<img src="/matouPCS/Public/Home/img/swtitle.png">
+				<div class="rhideb">
+					<img src="/matouPCS/Public/Home/img/hide.png">
+				</div>
+			</div>
+			
+			<div id="type1" class="fbtypeb">
+				<a>类型：</a>
+				<a href="#">
+					<p id="fbp1">婚礼喜事</p>
+				</a>
+				<a href="#" class="fbp2">
+					<p id="fbp2">门面活动</p>
+				</a>
+			</div>
+				 <script>
+            var cNode =document.getElementById('type1').getElementsByTagName('p');
+                    for( var i=0; i<cNode.length; i++){
+                        cNode[i].index= i;
+                        //用来计算点击次数
+                        var type = 0;
+                        cNode[i].onclick = function(){
+                           type+=1; 
+                            if(this.index == 0){
+                                this.index = '婚礼喜事';  
+                            }else if(this.index == 1){
+                                this.index = '门面活动';
+                            }
+                         
+                            types = this.index;
+                            if(types == '婚礼喜事'){
+                            	types = '1';
+                            }else{
+                            	types = '2';
+                            }
+                     
+               
+                            
+                        }
+                    }
+                </script>
+			<div class="spfxb"></div>
+			<div class="contentb">
+				<textarea name="content" id="content" class="text-face"></textarea>
+			</div>
+			<div class="swbtnb">
+				<div class="swbtn-cb">
+					<div>
+						<a class="item" id="btn" tabindex="1">
+							<img src="/matouPCS/Public/Home/img/addp.png" />
+						</a>
+					</div>
+				
+					<div class="adds">
+						<img src="/matouPCS/Public/Home/img/adds.png" />
+					</div>
+				
+					<button class="tjbtnb" id="tjbtn" onclick="tj()">发布</button>
+				</div>
+			</div>
+		
+		</div>
+	<script>
+			function tj(){
+				   var tu = getCookie("tu");
+				    var content= $("#content").val();  
+				//  alert(tu);
+
+				    $.ajax({  
+				        type: "POST",  
+				         url:"/matouPCS/index.php/Home/Index/usave1",
+				         data: {content:content,type:types,tu:tu},  
+				        success: function(data){ 
+				
+				        		 window.location.reload(true);//重新加载当前文挡
+				  
+	                	
+				      
+			          },error:function(){
+			       			alert('no');
+			       		}
+			       	});
+			      
+		
+		}   
+	</script>
+		<!--上传图片开始-->
+		<div class="photo_upload_box_outside" id="photo_upload_box_outside" tabindex="2000">
+            <div class="photo_upload_box">
+                <a class="photo_upload_close"href="javascript:void(0);"onclick="photo_upload_close()"></a>
+                <h1>本地上传</h1>
+                <p class="upload_num">共<span id="uploaded_length">0</span>张，还能上传<span id="upload_other">9</span>张</p>
+                <ul id="ul_pics" class="ul_pics clearfix">
+                    <li id="local_upload"><img src="/matouPCS/Public/Home/img/local_upload.png" id="btn2"/></li>
+                </ul>
+                <div class="arrow_layer">
+                    <span class="arrow_top_area"><i class="arrow_top_bg"></i><em class="arrow_top"></em></span>
+                </div>
+            </div>
+        </div>
+		<!--上传图片结束-->
+		
+		
+		<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
+		<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>
+		<script src="/matouPCS/Public/Home/js/City_data.js"></script>
+		<script src="/matouPCS/Public/Home/js/areadata.js"></script>
+		<script src="/matouPCS/Public/Home/js/sinaFaceAndEffec.js"></script>
+		<script src="/matouPCS/Public/Home/plupload/plupload.full.min.js"></script>
+		<script src="/matouPCS/Public/Home/js/header-index.js"></script>
+	</body>
+</html>
+
+					
+					
 					<div class="h-c-2f">
 						<div class="s-f2-l">
 							<div class="f2-l-1">
@@ -263,7 +555,22 @@
 								
 						<img src="/matouPCS/Public/Home/img/mtbutitle.png" />
 					</div>
-					<div class="s-c-2f">
+						<script type="text/javascript">				
+							var url_ajax = "?s=/Home/Box/bddz";//这个路径是真正显示列表的
+							    function getPage() {
+							    	//alert(getCookie("add"));
+							         $("#xxoos").html("<h1>请稍等。。。</h1>");
+							         var address = getCookie("add");//活动时间
+							         $.get(url_ajax, {address:address}, function(data) {
+							        	   //	alert(data);
+							            $('#xxoos').html(data);
+							        })
+							    }
+							    getPage();
+							    </script>
+					
+				
+					<div   class="s-c-2f">
 						<div style="width: 850px;">
 							<div class="s-f2l-c1">
 								<ul>
@@ -271,113 +578,35 @@
 										<a class="selected-tab" href="javascript://">热门动态</a>
 									</li>
 									<li>
-										<a href="javascript://">工作室</a>
+										<a href="javascript://"  onclick="gzs(1)">工作室</a>
 									</li>
 									<li>
-										<a href="javascript://">表演团</a>
+										<a href="javascript://" onclick="gzs(2)">表演团</a>
 									</li>
 									<li>
-										<a href="javascript://">婚庆公司</a>
+										<a href="javascript://" onclick="gzs(3)">婚庆公司</a>
 									</li>
 									<li>
-										<a href="javascript://">影楼</a>
+										<a href="javascript://" onclick="gzs(4)">影楼</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<br>
+					<div>
 					<div class="con" id="re">
-					<div id="content">
-						<?php if(is_array($list)): foreach($list as $key=>$lists): ?><div class="s-c-3f">
-								<div class="rmdtct">
-									<ul class="rmdt">
-										<li>
-											<div class="rmdt-1f">
-												<div class="rmdt-1fc1">
-													<p><img src="/matouPCS/Public/Home/img/pltx.png" /></p>
-													<p>用户<?php echo (substr($lists["username"],0,5)); ?></p>
-													<p>logo</p>
-<<<<<<< HEAD
-													<p class="rmdtcmap">所在地：<?php echo ($lists["addre"]); ?>&nbsp;</p>
-=======
-													<p class="rmdtcmap">所在地：<?php echo ($lists["address"]); ?>&nbsp;</p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-													<p class="rmdtcjs"><?php echo ($lists["content"]); ?></p>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-2f">
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="clearfloat "></div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-3f">
-												<p class="rmdtcdz">点赞&nbsp;100</p>
-												<p class="rmdtcfb">2016.12.12发布</p>
-												<p class="clearfloat"></p>
-												<br>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<br><?php endforeach; endif; ?>
-					</div>
-						<div style="text-align:center;" class="margin">
-							<button onclick="tj()" name='btn' id='btn' >点击加载更多</button>
-						</div>
-				
+					<div id="xxoos">
+					
+				</div>
 					</div>
 					<div class="con">
 				
 						<div class="s-c-3f">
 							<div class="f3-t-1">
 							
-								<ul id='xxoo'>
-									<?php if(is_array($listg)): foreach($listg as $key=>$listgs): ?><li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p><?php echo ($listgs["forcename"]); ?></p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:<?php echo ($listgs["type_bd"]); ?></p>
-<<<<<<< HEAD
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p><?php echo ($listgs["content"]); ?>...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：<?php echo ($listgs["address"]); ?></p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li><?php endforeach; endif; ?>
+								<ul id='xxoo1'>
+									
 								</ul>
 				
 						</div>
@@ -389,32 +618,8 @@
 					<div class="con">
 							<div class="s-c-3f">
 							<div class="f3-t-1">
-								<ul id="xxoo1">
-									<?php if(is_array($listb)): foreach($listb as $key=>$listgs): ?><li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p><?php echo ($listgs["forcename"]); ?></p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:<?php echo ($listgs["type"]); ?></p>
-=======
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p><?php echo ($listgs["content"]); ?>...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：<?php echo ($listgs["address"]); ?></p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li><?php endforeach; endif; ?>
+								<ul id="xxoo2">
+								
 									<li class="clearfloat"></li>
 								</ul>
 							</div>
@@ -423,59 +628,17 @@
 							<button onclick="tj2()" name='btn2' id='btn2' >点击加载更多</button>
 						</div>
 					</div>
+					
+					
 					<div class="con">
-<<<<<<< HEAD
 							<div class="s-c-3f">
 							<div class="f3-t-1">
-								<ul id="xxoo2">
-									<?php if(is_array($listh)): foreach($listh as $key=>$listgs): ?><li>
-=======
-						<div class="s-c-3f">
-							<div class="f3-t-1">
-								<ul>
-									<?php if(is_array($listb)): foreach($listb as $key=>$listbs): ?><li>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-<<<<<<< HEAD
-													<p><?php echo ($listgs["forcename"]); ?></p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:<?php echo ($listgs["type"]); ?></p>
-=======
-													<p><?php echo ($listbs["forcename"]); ?></p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:<?php echo ($listbs["type_bd"]); ?></p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-<<<<<<< HEAD
-													<p><?php echo ($listgs["content"]); ?>...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：<?php echo ($listgs["address"]); ?></p>
-=======
-													<p><?php echo ($listbs["content"]); ?>...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：<?php echo ($listbs["address"]); ?></p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li><?php endforeach; endif; ?>
+								<ul id="xxoo3">
+							
 									<li class="clearfloat"></li>
 								</ul>
 							</div>
 						</div>
-<<<<<<< HEAD
 						  <div style="text-align:center;" class="margin">
 							<button onclick="tj3()" name='btn3' id='btn3' >点击加载更多</button>
 						</div>
@@ -483,109 +646,43 @@
 					<div class="con">
 							<div class="s-c-3f">
 							<div class="f3-t-1">
-								<ul id='xxoo3'>
-=======
-					</div>
-					<div class="con">
-						<div class="s-c-3f">
-							<div class="f3-t-1">
-								<ul>
-									<?php if(is_array($listh)): foreach($listh as $key=>$lisths): ?><li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p><?php echo ($lisths["forcename"]); ?></p>
-												</div>
-												<div class="f3-t-1-c3l">
-													<p>部队类型:<?php echo ($lisths["type_bd"]); ?></p>
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p><?php echo ($lisths["content"]); ?>...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：<?php echo ($lisths["address"]); ?></p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li><?php endforeach; endif; ?>
+								<ul id='xxoo4'>
+								
 									<li class="clearfloat"></li>
 								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="con">
-						<div class="s-c-3f">
-							<div class="f3-t-1">
-								<ul>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-									<?php if(is_array($listy)): foreach($listy as $key=>$listgs): ?><li>
-											<a href="#">
-												<div class="f3-t-1-c1">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" />
-												</div>
-												<div class="f3-t-1-c2">
-													<p><?php echo ($listgs["forcename"]); ?></p>
-												</div>
-												<div class="f3-t-1-c3l">
-<<<<<<< HEAD
-													<p>部队类型:<?php echo ($listgs["type"]); ?></p>
-=======
-													<p>部队类型:<?php echo ($listgs["type_bd"]); ?></p>
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
-												</div>
-												<div class="f3-t-1-c3r">
-													<p>粉丝数量100</p>
-												</div>
-												<div class="f3-t-1-c4">
-													<p><?php echo ($listgs["content"]); ?>...</p>
-												</div>
-												<div class="f3-t-1-c5">
-													<p>所在地：<?php echo ($listgs["address"]); ?></p>
-												</div>
-												<div class="clearfloat"></div>
-											</a>
-										</li><?php endforeach; endif; ?>
-									<li class="clearfloat"></li>
-								</ul>
-							</div>
-						</div>
-<<<<<<< HEAD
 						  <div style="text-align:center;" class="margin">
 							<button onclick="tj4()" name='btn4' id='btn4' >点击加载更多</button>
 						</div>
-=======
->>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 					</div>
 					<!--<div class="s-c-3f2">
 
 					</div>-->
 				</div>
+				</div>
   <script type="text/javascript">
-	function dongtai(){
-		  var address = $("#xz-city").val(); 
-		alert(address);	
+	function gzs(id){
+		 var address = getCookie("add");//活动时间 
+		alert(id);	
+		alert(address);
 				$.ajax({
 					url:"?s=/Home/Mtbu/dongtaidi",
 					type:"post",
-					data:{address:address},
+					data:{id:id,address:address},
 					dataType:"json",
 					success:function(data){
-						alert(data);	
+						//alert(data);	
 	                   var li='';
 						for (var i = 0; i < data.length; i++) {
 						
-							li+='<div class="s-c-3f"><div class="rmdtct"><ul class="rmdt"><li><div class="rmdt-1f"><div class="rmdt-1fc1"><p><img src="/matouPCS/Public/Home/img/pltx.png" /></p><p>'+use+'</p><p>logo</p><p class="rmdtcmap">所在地：'+data[i].addre+'</p><p class="rmdtcjs">'+data[i].content+'</p></div></div></li><li><div class="rmdt-2f"><div class="rmdt-img1"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="clearfloat "></div></div></li><li><div class="rmdt-3f"><p class="rmdtcdz">'+data[i].zan+'</p><p class="rmdtcfb">'+data[i].time+'发布</p><p class="clearfloat"></p><br></div></li></ul></div></div><br>';
+							li+='<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>';
 										
 							
 						};
-						var p ='<div id="content">'+li+'</div><div style="text-align:center;" class="margin"><button onclick="tj()" name="btn" id="btn" >点击加载更多</button></div></div>';
-						$('#re').html(p);
-						$('#re').val('');
+						
+						$('#xxoo'+id).html(li);
+						$('#xxoo'+id).val('');
 					},error:function(){
 						alert('no');
 					}
@@ -598,7 +695,7 @@
 	  
 	  function tj(){	
 		  alert(111);
-	      var address = getCookie("address");//活动时间
+	      var address = getCookie("add");//活动时间
 		alert(address);
 				$.ajax({
 					type:'post',
@@ -633,14 +730,14 @@
 		  }  
 		 var w=2;
 		  function tj1(){	
-			  var address = $("#city").val(); 
+			   var address = getCookie("add");//活动时间
 			//	 alert(1);
 					$.ajax({
 						type:'post',
 						url:"<?php echo U('Mtbu/buduijzgz');?>",
 						data:{k:w,address:address},
 						beforeSend:function(){
-				         $("#xxoo").append("<div id='load'>加载中……</div>");
+				         $("#xxoo1").append("<div id='load'>加载中……</div>");
 						},
 						success:function(data){
 							// alert(data);
@@ -649,7 +746,7 @@
 									
 									 for (var i = 0; i < data.length; i++) {
 							
-									$("#xxoo").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+									$("#xxoo1").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 				 		
 									 }
 							}else{
@@ -668,23 +765,23 @@
 			  }  
 			 var t=2;
 			  function tj2(){
-				  var address = $("#city").val(); 
-					// alert(1);
+				   var address = getCookie("add");//活动时间
+					alert(2);
 						$.ajax({
 							type:'post',
 							url:"<?php echo U('Mtbu/buduijzby');?>",
 							data:{k:w,address:address},
 							beforeSend:function(){
-					         $("#xxoo1").append("<div id='load'>加载中……</div>");
+					         $("#xxoo2").append("<div id='load'>加载中……</div>");
 							},
 							success:function(data){
-								// alert(data);
+								alert(data);
 								if(data!=null){				
 										//alert(1);
 										
 										 for (var i = 0; i < data.length; i++) {
 								
-										$("#xxoo1").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+										$("#xxoo2").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 					 		
 										 }
 								}else{
@@ -703,14 +800,14 @@
 				  } 
 				 var r=2;
 				  function tj3(){	
-					  var address = $("#city").val(); 
+					   var address = getCookie("add");//活动时间; 
 					//	 alert(1);
 							$.ajax({
 								type:'post',
 								url:"<?php echo U('Mtbu/buduijzhq');?>",
 								data:{k:w,address:address},
 								beforeSend:function(){
-						         $("#xxoo2").append("<div id='load'>加载中……</div>");
+						         $("#xxoo3").append("<div id='load'>加载中……</div>");
 								},
 								success:function(data){
 									// alert(data);
@@ -719,7 +816,7 @@
 											
 											 for (var i = 0; i < data.length; i++) {
 									
-											$("#xxoo2").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+											$("#xxoo3").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 						 		
 											 }
 									}else{
@@ -738,14 +835,14 @@
 					  } 
 					 var e=2;
 					  function tj4(){
-						  var address = $("#city").val(); 
+						   var address = getCookie("add");
 							// alert(1);
 								$.ajax({
 									type:'post',
 									url:"<?php echo U('Mtbu/buduijzyl');?>",
 									data:{k:e,address:address},
 									beforeSend:function(){
-							         $("#xxoo3").append("<div id='load'>加载中……</div>");
+							         $("#xxoo4").append("<div id='load'>加载中……</div>");
 									},
 									success:function(data){
 										// alert(data);
@@ -754,7 +851,7 @@
 												
 												 for (var i = 0; i < data.length; i++) {
 										
-												$("#xxoo3").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+												$("#xxoo4").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 							 		
 												 }
 										}else{
@@ -903,11 +1000,9 @@
 
 		</footer>
 
-		<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
+		
 		<script type="text/javascript" src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
-    	<script src="/matouPCS/Public/Home/js/sousuo.js"></script>
-		<script src="/matouPCS/Public/Home/js/City_data.js"></script>
-        <script src="/matouPCS/Public/Home/js/dz.js"></script>
+		
 		<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -1086,6 +1181,7 @@
 					$("#find").css("color", "#fff");
 				});
 			});
+
 		</script>
 	</body>
 

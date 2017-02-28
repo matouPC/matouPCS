@@ -79,6 +79,8 @@ class UserController extends Controller
             array_pop($us_fen);
             $arr += $us_fen;
         }
+        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+        $this->assign('dongtai',$dongtai);
         $this->assign('user',$user);
         $this->assign('arr',$arr);
         $this->assign('li',$li);
@@ -683,4 +685,57 @@ class UserController extends Controller
     public function xqxx(){
         $this->display();
     }
+    
+    
+    
+    public function bdjz(){
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	
+    	$total=M('dongtai')->count();//数据记录总数
+    	$num=1;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->limit($limitpage,$num)->order('d.did desc')->select();
+    
+    	$this->ajaxReturn($data);
+    
+    }
+    
+    public function bdsousu()
+    {
+    	//商铺部队对内动态热门
+    	//$uid = $_SESSION['id'];
+    
+    	$where=I('where');
+   
+
+    		if($where=='z'){
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    		}else if($where=='1z'){
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    		}else if($where=='2z'){
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    		}else if ($where=='3z'){
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    		}else if ($where='4z'){
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    		}else if($where=='1r') {
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    		}else if($where=='r') {
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    		}else if($where=='2r') {
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    		}else if($where=='3r') {
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    		}else{
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.did desc')->limit(1)->select();
+    		}
+    	
+    	$this->ajaxReturn($remen);
+    } 
+    
+    
+    
+    
 }

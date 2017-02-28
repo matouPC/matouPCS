@@ -507,7 +507,7 @@
 								<p>全部类型</p>
 								<img src="/matouPCS/Public/Home/img/xxjt.png" />
 								<div class="select-lx">
-									<ul>
+									<ul id="type1">
 										<li style="padding-top: 5px;">
 											<a href="javascript://">全部部队</a>
 										</li>
@@ -523,15 +523,82 @@
 									</ul>
 								</div>
 							</div>
-							<div class="right">
-								<p>排序：</p>
-								<a class="selected" href="javascript://">热门</a>
-								<a href="javascript://">最新</a>
-							</div>
+								<script>
+            var cNode =document.getElementById('type1').getElementsByTagName('li');
+                    for( var i=0; i<cNode.length; i++){
+                        cNode[i].index= i;
+                        //用来计算点击次数
+                        var type = 0;
+                        cNode[i].onclick = function(){
+                           type+=1; 
+                            if(this.index == 0){
+                                this.index = '全部部队';  
+                            }else if(this.index == 1){
+                                this.index = '个人部队';
+                            }else if(this.index == 2){
+                                this.index = '认证部队';
+                            }else if(this.index == 3){
+                                this.index = '商铺部队';
+                            }
+                         
+                            types = this.index;
+                            if(types == '全部部队'){
+                            	types = '1';
+                            }else if(types == '个人部队'){
+                            	types = '2';
+                            }else if(types == '认证部队'){
+                            	types = '3';
+                            }else if(types == '商铺部队'){
+                            	types = '4';
+                            }
+                          if( paixu > 0){
+                                
+                                var where = types+paixus;
+                            }else{
+                                var where = types;
+                            }
+                        
+                       
+
+                 ajax(where);  
+                            
+                        }
+                    }
+                </script>
+							<div id="paixu" class="right">
+							<p>排序：</p>
+						<a class="selected" href="javascript://">最新</a>
+						<a href="javascript://">热门</a>
+					</div>
+					<script>
+                    var cNode =document.getElementById('paixu').getElementsByTagName('a');
+                            for( var i=0; i<cNode.length; i++){
+                                cNode[i].index= i;
+                                //用来计算点击次数
+                                var paixu = 0;
+                                cNode[i].onclick = function(){
+                                   paixu+=1; 
+                                    if(this.index == 0){
+                                        this.index = 'z';  
+                                    }else if(this.index == 1){
+                                        this.index = 'r';
+                                    }
+                                 paixus = this.index;
+                                 if( type > 0){
+                                     
+                                     var where = types+paixus;
+                                 }else{
+                                     var where =paixus;
+                                 }
+                      
+                          ajax(where);  
+                                }
+                            }
+                        </script>
 						</div>
 					</div>
-					<div class="s-c-3f">
-						<div class="mdhd">
+					<div id="content" class="s-c-3f">
+						<?php if(is_array($dongtai)): foreach($dongtai as $key=>$v): ?><div class="mdhd">
 							<img src="/matouPCS/Public/Home/img/mdhd.png" />
 						</div>
 						<div class="s-c-3f-1f">
@@ -541,11 +608,11 @@
 								</a>
 							</div>
 							<p class="yhmc">
-								<a href="">用户名称</a>
+								<a href=""><?php echo ($v["username"]); ?></a>
 							</p>
-							<p class="szd">所在地：郑州</p>
+							<p class="szd">所在地：<?php echo ($v["addre"]); ?></p>
 							<p class="dtnr">
-								动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容
+							<?php echo ($v["content"]); ?>
 							</p>
 							<ul>
 								<li>
@@ -611,21 +678,85 @@
 								<li class="clearfloat"></li>
 							</ul>
 							<div class="bottom">
-								<p class="left">图标点赞100</p>
-								<p class="right">2016-12-12发布</p>
+								<p class="left">图标点赞<?php echo ($v["zan"]); ?></p>
+								<p class="right"><?php echo ($v["time"]); ?></p>
 							</div>
 							<div class="clearfloat"></div>
 						</div>
-					</div>
+					</div><?php endforeach; endif; ?>
 				</div>
 				<div class="s-main-b">
 					<div class="margin">
-						<button>点击加载更多</button>
+					<button onclick="tj(<?php echo ($v["uid"]); ?>)" name='bt'  id='bt' >点击加载更多</button>
 					</div>
 				</div>
 				<div class="clearfloat"></div>
 			</div>
+<script type="text/javascript">
+var p=2;
+  function tj(id){
 
+	 
+	//  alert(id);
+		$.ajax({
+			type:'post',
+			url:"<?php echo U('User/bdjz');?>",
+			data:{k:p},
+			beforeSend:function(){
+	         $("#content").append("<div id='load'>加载中……</div>");
+			},
+			success:function(data){
+			// alert(data);
+			
+					if(data!=null){				
+						//alert(1);
+						 for (var i = 0; i < data.length; i++) {
+						$("#content").append('<div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="s-c-3f-1f"><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr"> '+data[i].content+'</p><ul><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">图标点赞'+data[i].zan+'</p><p class="right">'+data[i].time+'</p></div><div class="clearfloat"></div></div></div>');
+	 		
+						 }
+				}else{
+					// alert(22);
+					 document.getElementById('bt').innerHTML = '加载完毕';
+	 				flag=true;	
+				}	
+	 },
+	 	complete:function(){
+	           $("#load").remove();
+			},
+		 	dataType:'json'
+		 	});
+	 	p++;
+	//  alert(p);
+  }
+  function ajax(where){
+		//var id=	 $_GET['id'];
+			alert(where);	
+				$.ajax({
+					url:"?s=/Home/User/bdsousu",
+					type:"post",
+					data:{where:where},
+					dataType:"json",
+					success:function(data){
+						alert(data);
+	                   var li='';
+						for (var i = 0; i < data.length; i++) {
+						
+							li+='<div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="s-c-3f-1f"><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr"> '+data[i].content+'</p><ul><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">图标点赞'+data[i].zan+'</p><p class="right">'+data[i].time+'</p></div><div class="clearfloat"></div></div></div>';
+										
+							
+						};
+						
+						var p ='<div id="ha" class="s-c-3f">'+li+'</div><div class="s-main-b"><div class="margin"><button onclick="tj'+where+'(<?php echo ($_GET['id']); ?>)" name="btn1" id="btn1" >点击加载更多</button></div></div>';
+						alert(p);
+						$('#re').html(p);
+						$('#re').val('');
+					},error:function(){
+						alert('no');
+					}
+				});
+			
+		}
+  </script >
 		</section>
 		<br>
 		<br>

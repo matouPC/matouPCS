@@ -91,120 +91,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 	<body>
 		<div class="show-bg"></div>
 		<header>
-			<div class="h-c-1fwc">
-				<div class="h-c-1f">
-					<div class="h-f1-l">
-						<div>
-							<p style="text-align: center;">欢迎来到喜事码头官方网站 <img src="__PUBLIC__/Home/img/gray_small_position.png" /></p>
-						</div>
-					</div>
-					<div class="h-f1-r">
-						<ul>
-							<li style="width: 100px;">
-								<php>if($_SESSION['username'] != ''){</php>
-								<a id="login-alert" href="?s=/Home/User">用户{$_SESSION['username']|substr=0,5}</a>
-								<php>}else{</php>
-								<a id="login-alert" href="#">请注册\登录</a>
-								<php>}</php>
-
-							</li>
-							<li id="select-xx" style="width: 45px;">
-								<a href="#">消息</a>
-								<div class="str"></div>
-								<div class="select-xx">
-									<ul>
-										<li>
-											<a href="?s=/Home/User/xqxx">需求消息</a>
-										</li>
-										<li>
-											<a href="">部队消息</a>
-										</li>
-										<li>
-											<a href="">商铺消息</a>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li style="width: 58px;">
-								<php>if(empty($_SESSION['username'])){</php>
-									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏夹</a>
-								<php>}else{</php>
-									<a href="?s=/Home/User/scj">收藏夹</a>
-								<php>}</php>
-								<div class="str"></div>
-							</li>
-							<?php if(!empty($_SESSION['id'])){ ?>
-								<li id="select-yfb" style="width: 70px;">
-									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
-									<div class="str"></div>
-									<div class="select-yfb">
-										<ul>
-											<ul>
-												<li>
-													<a href="">悬赏</a>
-												</li>
-												<li>
-													<a href="?s=/Home/User/user_ys">应赏</a>
-												</li>
-												<li>
-													<a href="">招聘</a>
-												</li>
-												<li>
-													<a href="?s=/Home/User/user_yp">应聘</a>
-												</li>
-												<li>
-													<a href="?s=/Home/User/user_qg">求购</a>
-												</li>
-												<li>
-													<a href="?s=/Home/User/user_xz">闲置</a>
-												</li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-								<?php }else{ ?>
-									<li id="select-yfb" style="width: 70px;">
-									<a href="javascript:alert('您还没有登录！')">已发布</a>
-								</li>
-								<?php } ?>
-							<li style="width: 68px;">
-								<?php if(empty($_SESSION['username'])){ ?>
-								<a href="javascript:void(0)" onclick="alert('请先登录')">部队中心</a>
-								<?php }else{ ?>
-								<a href="?s=/Home/User/bdzx">部队中心</a>
-								<?php } ?>
-								<div class="str"></div>
-							</li>
-							<li style="width: 68px;">
-<<<<<<< HEAD
-										   		
-                                   <a href="#">我的商铺</a>                    	
-                                  
-=======
-							
-								<?php if($sp['status']==1){?>
-								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
-								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">我的商铺</a>
-							   <?php }else{ ?>	
-							   <a href="#">我的商铺</a>
-							   <?php } ?>
-                                
-                                   
->>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
-								<div class="str"></div>
-							
-							</li>
-							<li style="width: 70px;">
-								<a class="action" href="#" id="find">发动态</a>
-								<div class="strf"></div>
-							</li>
-							<li class="clearf"></li>
-						</ul>
-					</div>
-					<div class="clearf"></div>
-				</div>
-			</div>
+			<include file="Public/head"/>
+			
+			
 			<div class="h-content-main">
 				<div class="h-main-c">
 
@@ -416,38 +305,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 			</nav>
 		</header>
 
-		<div class="spdl" id="spdl" title="消息">
-			<div class="titlena">
-				<img src="__PUBLIC__/Home/img/swtitle.png">
-				<div class="rhide">
-					<img src="__PUBLIC__/Home/img/hide.png">
-				</div>
-			</div>
-			<div class="fbtype">
-				<a>类型：</a>
-				<a href="#">
-					<p id="fbp1">婚礼喜事</p>
-				</a>
-				<a href="#" style="margin-left: 24px;">
-					<p id="fbp2">门面活动</p>
-				</a>
-			</div>
-			<div class="spfx"></div>
-			<div class="content">
-				<textarea style="resize: none; width: 420px; height: 100px;border-radius: 15px;margin-left: 40px; border: 0;padding: 10px;"></textarea>
-			</div>
-			<div class="swbtn">
-				<div class="swbtn-c">
-					<div>
-						<img src="__PUBLIC__/Home/img/addp.png" />
-					</div>
-					<div style="margin-left: 10px;">
-						<img src="__PUBLIC__/Home/img/adds.png" />
-					</div>
-					<button class="tjbtn" id="tjbtn">发布</button>
-				</div>
-			</div>
-		</div>
+		
 		<div class="spdlc" id="spdlc" title="消息">
 			<div class="titlenac">
 				<img src="__PUBLIC__/Home/img/swtitle.png">
@@ -1384,13 +1242,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 			</div>
 		</footer>
 	</body>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/index.js"></script>
-	<script src="__PUBLIC__/Home/js/index-alert-login.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/showwin.js"></script>
+
 	<script>
 		//描点
 		//	$('#xsdt-a').click(function(){
@@ -1485,29 +1337,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 				});
 
 			})
-			//		下拉开始
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
+		
 		//收藏
 		$(function() {
 			$(".company_01_01 img").hover(
@@ -1540,42 +1370,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 			}
 				);
 		});
-		//查看号码
-		$(function() {
-			$("#find").click(function() {
-				// alert("充值")
-				$("#spdl").show();
-				$("#find").css("background", "#ff5c5d");
-			});
-			$("#spdl-ok").click(function() {
-
-			});
-			$("#spdl-esc").click(function() {
-				$(".spdl").hide();
-			});
-		});
-		//弹窗
-		$(function() {
-			$("#fbp1").css("border", "2px solid #ff5c5d");
-			$("#fbp2").click(function() {
-					$("#fbp2").css("border", "2px solid #ff5c5d");
-					$("#fbp1").css("border", "2px solid  #f2f2f2");
-				}),
-				$("#fbp1").click(function() {
-					$("#fbp1").css("border", "2px solid #ff5c5d");
-					$("#fbp2").css("border", "2px solid  #f2f2f2");
-				});
-			$(".rhide").click(function() {
-				$("#spdl").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-			$("#tjbtn").click(function() {
-				$("#spdl").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-		});
+	
 		
 	</script>
 
