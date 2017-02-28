@@ -167,10 +167,7 @@ class EmployController extends BsController {//应聘大厅
         	$product = D('Employimage');
         	date_default_timezone_set('prc');
         	$pubtime = date("Y-m-d",time());
-        	//var_dump($pubtime);die;
-    
-        //	var_dump($id);die;
-        	//if ($id) {
+
         		$upload = new \Think\Upload();
         		//设置
         		$upload->maxSize = 111245600;//设置附件上传大小
@@ -205,9 +202,7 @@ class EmployController extends BsController {//应聘大厅
         			}
         		}
         
-        //	}else{
-        		//$this->error("修改失败",U("Employ/updateimage") );
-        //	}
+     
         
         }
         

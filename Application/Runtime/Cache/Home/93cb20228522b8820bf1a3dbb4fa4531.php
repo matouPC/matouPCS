@@ -195,7 +195,7 @@
 						</div>-->
 						<div class="s-f1">
 							<div class="bjzl">
-							<a style="width: 120px;" href="">
+							<a style="width: 120px;" href="?s=/Home/User">
 								<button>编辑个人资料</button>
 								</a>
 							</div>
@@ -221,7 +221,7 @@
 							</p>
 							<p class="szd">
 								<span style="font-size: 18px;" class="icon-szd"></span>
-								<span style="display: block; float: right; line-height: 20px;"><?php echo ($dt["address"]); ?></span>
+								<span style="display: block; float: right; line-height: 20px;"><?php echo (substr($dt["address"],0,6)); ?></span>
 							</p>
 							<p class="clearfloat"></p>
 							</div>
@@ -689,8 +689,9 @@
 <script type="text/javascript">
 function ajax(where,id){
 
-	alert(where);
-
+	//alert(where);
+var xqz='z';
+var xqr='r';
 		if(where=='z'||where=='r'){
 			$.ajax({
 				url:"?s=/Home/Mtbu/spbddnxqre",
@@ -772,7 +773,7 @@ function ajax(where,id){
 						
 							lt+='<li><a href="/matouPCS/?s=/Home/Tzsc/xqxz/id/'+data['xian'][i].fid+'"><h style="color:#FF5C5D;">闲置</h><div class="yhtx"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div><div class="word"><div><p class="mc">闲置名称：'+data['xian'][i].name+'</p><p class="jg"><strong style="font-weight: 500; color: #000;">价格：</strong>￥'+data['xian'][i].price+'</p><div class="clearfloat"></div></div><p><span class="word-jtyq"><strong style="font-weight: 500; color: #333;">具体要求：</strong> '+data['xian'][i].content+' </span></p><p style="top:5px;" class="word-bottom"><span class="sc">已有'+data['xian'][i].collect+'人收藏</span><span class="fb">'+data['xian'][i].date+'</span><span class="clearfloat"></span></p></div><div class="clearfloat"></div></a></li>';
 						};
-						var py='<div class="s-c-3f"><ul id="xz">'+xxoo+lq+xxww+le+lr+lt+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj5(<?php echo ($_GET['id']); ?>)" name="btn5" id="btn5">点击加载更多</button></div></div>'
+						var py='<div class="s-c-3f"><ul id="xz">'+xxoo+lq+xxww+le+lr+lt+'</ul></div><div class="s-main-b"></div>'
 						
 						
 						$('#ul').html(py);
@@ -788,7 +789,7 @@ function ajax(where,id){
 			$.ajax({
 				url:"?s=/Home/Mtbu/xuanshang",
 				type:"post",
-				data:{id:id},
+				data:{id:id,rz:xqz},
 				dataType:"json",
 				success:function(data){
 					//alert(data);
@@ -821,13 +822,13 @@ function ajax(where,id){
 				$.ajax({
 					url:"?s=/Home/Mtbu/yingshang",
 					type:"post",
-					data:{id:id},
+					data:{id:id,rz:xqz},
 					dataType:"json",
 					success:function(data){
 						var li = '';
 						
 						for (var i = 0; i < data.length; i++) {
-							console.log(data[i].did);
+						//	console.log(data[i].did);
 							li+='<li><a href="/matouPCS/?s=/Home/Ysq/xqys/id/'+data[i].did+'"><p>应赏 <span class="name">'+data[i].name+'</span><span class="age">'+data[i].age+'</span><!--<span>工作经验：</span><span class="gzjy">1-2年</span>--><span>个人简介：</span><span style="width: 450px;" class="grjj">'+data[i].content+'</span><span class="zw">'+data[i].price+'元/天</span><span class="clearfloat"></span></p><p><span>职位：</span><span class="drzw">'+data[i].type+'</span><span>照片作品：</span><span style="width: auto;" class="gzsj">5个</span><span>视频作品：</span><span style="width: auto;" class="szgs">2个</span><span>档期：</span><span style="width: auto;" class="szgs">中午 上午 晚上</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data[i].collect+'人收藏</span><span class="fb">'+data[i].date+'</span><span class="clearfloat"></span></p></a></li>';
 						};
 						var p='<div class="s-c-3f"><ul id="ys">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button  onclick="tj1(<?php echo ($_GET['id']); ?>,1)" name="btn1" id="btn1">点击加载更多</button></div></div>'
@@ -846,7 +847,7 @@ function ajax(where,id){
 				$.ajax({
 					url:"?s=/Home/Mtbu/zhaopin",
 					type:"post",
-					data:{id:id},
+					data:{id:id,rz:xqz},
 					dataType:"json",
 					success:function(data){
 						
@@ -881,7 +882,7 @@ function ajax(where,id){
 					$.ajax({
 						url:"?s=/Home/Mtbu/yingpin",
 						type:"post",
-						data:{id:id},
+						data:{id:id,rz:xqz},
 						dataType:"json",
 						success:function(data){
 						//	alert(2);
@@ -905,7 +906,7 @@ function ajax(where,id){
 										$.ajax({
 											url:"?s=/Home/Mtbu/qiugou",
 											type:"post",
-											data:{id:id},
+											data:{id:id,rz:xqz},
 											dataType:"json",
 											success:function(data){
 												//alert(2);
@@ -929,7 +930,7 @@ function ajax(where,id){
 										$.ajax({
 											url:"?s=/Home/Mtbu/xianzhi",
 											type:"post",
-											data:{id:id},
+											data:{id:id,rz:xqz},
 											dataType:"json",
 											success:function(data){
 												//alert(2);
@@ -948,12 +949,12 @@ function ajax(where,id){
 										});
 									
 								}else if(where=='1r'){
-								//	alert(id);
+									alert(xqr);
 									
 									$.ajax({
-										url:"?s=/Home/Mtbu/xuanshangre",
+										url:"?s=/Home/Mtbu/xuanshang",
 										type:"post",
-										data:{id:id},
+										data:{id:id,rz:xqz},
 										dataType:"json",
 										success:function(data){
 
@@ -984,9 +985,9 @@ function ajax(where,id){
 							}else if(where=='2r'){
 								//	alert(1);								
 										$.ajax({
-											url:"?s=/Home/Mtbu/yingshangre",
+											url:"?s=/Home/Mtbu/yingshang",
 											type:"post",
-											data:{id:id},
+											data:{id:id,rz:xqr},
 											dataType:"json",
 											success:function(data){
 											//	alert(2);
@@ -1008,9 +1009,9 @@ function ajax(where,id){
 								//	alert(id);
 								
 										$.ajax({
-											url:"?s=/Home/Mtbu/zhaopinre",
+											url:"?s=/Home/Mtbu/zhaopin",
 											type:"post",
-											data:{id:id},
+											data:{id:id,rz:xqr},
 											dataType:"json",
 											success:function(data){
 												
@@ -1043,9 +1044,9 @@ function ajax(where,id){
 									//	alert(1);
 									
 											$.ajax({
-												url:"?s=/Home/Mtbu/yingpinre",
+												url:"?s=/Home/Mtbu/yingpin",
 												type:"post",
-												data:{id:id},
+												data:{id:id,rz:xqr},
 												dataType:"json",
 												success:function(data){
 												//	alert(2);
@@ -1067,9 +1068,9 @@ function ajax(where,id){
 														//	alert(1);
 														
 																$.ajax({
-																	url:"?s=/Home/Mtbu/qiugoure",
+																	url:"?s=/Home/Mtbu/qiugou",
 																	type:"post",
-																	data:{id:id},
+																	data:{id:id,rz:xqr},
 																	dataType:"json",
 																	success:function(data){
 																		//alert(2);
@@ -1091,9 +1092,9 @@ function ajax(where,id){
 														//	alert(1);
 													
 																$.ajax({
-																	url:"?s=/Home/Mtbu/xianzhire",
+																	url:"?s=/Home/Mtbu/xianzhi",
 																	type:"post",
-																	data:{id:id},
+																	data:{id:id,rz:xqr},
 																	dataType:"json",
 																	success:function(data){
 																		//alert(2);
@@ -1121,7 +1122,7 @@ function ajax(where,id){
 var p=2;
 
   function tj(id,where){ 
-	alert(888);
+	//alert(888);
 
 		$.ajax({
 			type:'post',

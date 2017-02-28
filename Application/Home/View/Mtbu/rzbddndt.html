@@ -213,10 +213,15 @@
 						</div>
 						<div class="s-f2">
 							<p class="yhmc">
-								<a href="">用户{$list.username|substr=0,6}</a>
+								<if condition="$list[username]==$list[tel]">
+								<a href="">{$list.username|substr=0,6}</a>
+								</if>
+								<if condition="$list[username]!=$list[tel]">
+								<a href="">{$list.username}</a>
+								</if>
 							</p>
 							<p style="text-align: center;">
-								（摄影师）
+								（{$list.bdlx}）
 							</p>
 							<div>
 								<p class="fsl">
@@ -543,7 +548,7 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户{$lis.username|substr=0,5}</a>
+													<a href="">用户{$lis.username|substr=0,6}</a>
 												</span>
 												<span style="float: right; text-align: right;">{$lis.addre}</span>
 											</p>

@@ -176,9 +176,22 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<div class="str"></div>
 							</li>
 							<li style="width: 68px;">
+<<<<<<< HEAD
 										   		
                                    <a href="#">我的商铺</a>                    	
                                   
+=======
+							
+								<?php if($sp['status']==1){?>
+								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
+								<?php }else if($sp['status']==2){ ?>
+								<a href="?s=/Home/Mtbu/spgl">我的商铺1</a>
+							   <?php }else{ ?>	
+							   <a href="#">我的商铺2</a>
+							   <?php } ?>
+                                
+                                   
+>>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
 								<div class="str"></div>
 							
 							</li>

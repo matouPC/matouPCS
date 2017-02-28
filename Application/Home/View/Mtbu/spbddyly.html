@@ -105,7 +105,7 @@
 								<li style="width: 100px;">
 									<a href="#">
 										<img src="__PUBLIC__/Home/img/tx.png" />
-										<p>用户{$_SESSION['username']|substr=0,5}</p>
+										<p>用户{$_SESSION['username']|substr=0,6}</p>
 									</a>
 									<div class="str"></div>
 								</li>
@@ -203,7 +203,12 @@
 						</div>
 						<div class="s-f2">
 							<p class="yhmc">
+								<if condition="$dt[username]==$dt[tel]">
+								<a href="">{$dt.username|substr=0,6}</a>
+								</if>
+								<if condition="$dt[username]!=$dt[tel]">
 								<a href="">{$dt.username}</a>
+								</if>
 							</p>
 							<p style="text-align: center;">
 								（{$dt.type}）
@@ -478,7 +483,7 @@
 									<div class="clearfloat"></div>
 								</div>
 								<p class="yhmc">
-									<a href="">{$v.username}</a>
+									<a href="">{$v.username|substr=0,6}</a>
 								</p>
 								<p class="zwmc">
 									职位名称：{$v.type}

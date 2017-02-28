@@ -147,7 +147,7 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.id desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     	//基本闲置
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
     	//基本求购
@@ -211,7 +211,7 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.id desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     	//基本闲置
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
     	//基本求购
@@ -248,7 +248,7 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('collect desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('collect desc')->limit('3')->select();
     	//基本闲置
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('collect desc')->limit('3')->select();
     	//基本求购
@@ -274,7 +274,7 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.id desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     	//基本闲置
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
     	//基本求购
@@ -349,9 +349,9 @@ class MtbuController extends Controller
     	$id=$_POST['id'];
     	$rz=I('rz');
     	if($rz=='z'){
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit(1)->order('e.id desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.eid desc')->select();
     	}else if($rz=='r'){
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
     	}//详情悬赏信息
     	$this->ajaxReturn($list);
     
@@ -469,7 +469,7 @@ class MtbuController extends Controller
         //详情招聘信息
         $jbzpData = M('forcee as f')->join('recruit2 as r on f.uid = r.usid')->where(" f.id = {$id} ")->select();
         //基本应聘信息
-        $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("f.id = {$id}")->select();
+        $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("f.id = {$id}")->select();
         //基本闲置
         $jbxz = M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 1")->select();
         //基本求购
@@ -706,7 +706,7 @@ class MtbuController extends Controller
         //详情招聘信息
         $jbzpData = M('forcee as f')->join('recruit2 as r on f.uid = r.usid')->where(" f.id = {$id} ")->limit('0,3')->select();
         //基本应聘信息
-        $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("f.id = {$id}")->limit('0,3')->select();
+        $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("f.id = {$id}")->limit('0,3')->select();
         //基本闲置
         $jbxz = M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 1")->limit('0,3')->select();
         //基本求购
@@ -757,7 +757,7 @@ class MtbuController extends Controller
     		//详情招聘信息
     		$jbzpData = M('forcee as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
     		//基本应聘信息
-    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.collect desc')->limit('3')->select();
+    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.collect desc')->limit('3')->select();
     		//基本闲置
     		$jbxz = M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.collect desc')->limit('3')->select();
     		//基本求购
@@ -783,7 +783,7 @@ class MtbuController extends Controller
     		//详情招聘信息
     		$jbzpData = M('forcee as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
     		//基本应聘信息
-    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.id desc')->limit('3')->select();
+    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     		//基本闲置
     		$jbxz = M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
     		//基本求购
@@ -1101,7 +1101,7 @@ class MtbuController extends Controller
         //详情招聘信息
         $jbzpData = M('shop as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
         //基本应聘信息
-        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.id desc')->limit('3')->select();
+        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
         //基本闲置
         $jbxz = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
         //基本求购
@@ -1139,7 +1139,7 @@ class MtbuController extends Controller
         //详情招聘信息
        $jbzpData = M('shop as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
         //基本应聘信息
-      $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.collect desc')->limit('3')->select();
+      $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.collect desc')->limit('3')->select();
         //基本闲置
      $jbxz = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.collect desc')->limit('3')->select();
         //基本求购
@@ -1165,7 +1165,7 @@ class MtbuController extends Controller
         //详情招聘信息
         $jbzpData = M('shop as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
         //基本应聘信息
-        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->order('e.id desc')->limit('3')->select();
+        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
         //基本闲置
         $jbxz = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
         //基本求购
@@ -1182,13 +1182,18 @@ class MtbuController extends Controller
     
       $this->ajaxReturn($xuqiu);
     }
-    public function spgl($id)
+    public function spgl()
     {
         //商铺部队基本信息详情
-        //$id = $_SESSION['id'];
-        $sp = M('shop')->where("id = {$id}")->select();//我的商铺
+    	$id=I('id');
+        if($id==''){
+        $uid = $_SESSION['id'];
+        $v = M('shop')->where("uid = {$uid}")->find();//我的商铺
+    }else{
+    	$v = M('shop')->where("id = {$id}")->find();//我的商铺
+    }
         //var_dump($sp);die;
-        $this->assign('sp',$sp);
+        $this->assign('v',$v);
         $this->display('Mtbu/spgl');
     }
     public function spglsp()
@@ -1199,9 +1204,14 @@ class MtbuController extends Controller
     }
     public function usave(){
         //商铺基本信息修改
-        $id = I('id');
-        $product = M('shop');
-        $reward = $product ->where("id={$id}")->save($_POST);
+    	$id=I('id');
+    	if($id==''){
+    		$uid = $_SESSION['id'];
+    		    $reward =M('shop')->where("uid={$uid}")->save($_POST);//我的商铺
+    	}else{
+    		    $reward =M('shop')->where("id={$id}")->save($_POST);//我的商铺
+    	}
+    
         $this->ajaxReturn($reward);
     
     
@@ -1271,7 +1281,7 @@ class MtbuController extends Controller
         //详情招聘信息
         $jbzpData = M('shop as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
         //基本应聘信息
-        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->select();
+        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->select();
         //基本闲置
         $jbxz = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->select();
         //基本求购
@@ -1399,9 +1409,9 @@ class MtbuController extends Controller
     	$id=$_POST['id'];  
     	$rz=I('rz');
     	if($rz=='z'){
-    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit(1)->order('e.id desc')->select();
+    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.eid desc')->select();
     	}else if($rz=='r'){
-    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
+    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
     	}
     	$this->ajaxReturn($list);
     
@@ -1481,9 +1491,9 @@ class MtbuController extends Controller
     	$id=$_POST['id'];
     	$rz=I('rz');
     	if($rz=='z'){
-    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit(1)->order('e.id desc')->select();
+    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.eid desc')->select();
     	}else if($rz=='r'){
-    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
+    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
     	}//详情悬赏信息
     	$this->ajaxReturn($list);
     
@@ -1762,7 +1772,7 @@ class MtbuController extends Controller
     	$id=$_POST['id'];
     	$where=$_POST['where'];
     	//$db=M('user');
-    	$total=M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->count();//数据记录总数
+    	$total=M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->count();//数据记录总数
     	$num=1;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
@@ -1770,9 +1780,9 @@ class MtbuController extends Controller
     		exit();
     	}//超过最大页数，退出
     	if($where==1){
-    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.id desc')->select();
+    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.eid desc')->select();
     	}else{
-    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
+    	$list= M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
     	}
 
     	if(count($list)>0){
@@ -1786,7 +1796,7 @@ class MtbuController extends Controller
     	$id=$_POST['id'];
     	$where=$_POST['where'];
     	//$db=M('user');
-    	$total=M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->count();//数据记录总数
+    	$total=M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->count();//数据记录总数
     	$num=1;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
@@ -1794,9 +1804,9 @@ class MtbuController extends Controller
     		exit();
     	}//超过最大页数，退出
     	if($where==1){
-    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.id desc')->select();
+    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.eid desc')->select();
     	}else{
-    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
+    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
     	}
 
     	if(count($list)>0){
@@ -1816,9 +1826,9 @@ class MtbuController extends Controller
     	$limitpage=($p-1)*$num;//每次查询取记录
  
     	if($where==1){
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.id desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.eid desc')->select();
     	}else{
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.id")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
     	}
     
     		$this->ajaxReturn($list);

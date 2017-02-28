@@ -546,7 +546,7 @@ var p=2;
 
 
 	function remen(where,id){
-		alert(888);	
+		//alert(888);	
 			$.ajax({
 				url:"?s=/Home/Mtbu/spbddnlyre",
 				type:"post",
@@ -583,7 +583,7 @@ var p=2;
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						alert(data);
+					//	alert(data);
 						if(data!=null){				
 								//alert(1);
 								 for (var i = 0; i < data.length; i++) {

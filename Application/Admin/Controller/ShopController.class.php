@@ -195,18 +195,7 @@ class ShopController extends BsController {
         //	}
         
         }
-public function status(){//点击审核
-	     $id = I('id');
-		$data['status'] = 2;//2代表已审核
-		$shop = M('shop')->where("id = {$id}")->save($data);
-	
-		$lists =M('shop')->where("id = {$id}") ->select();
-		if($lists>0){
-			echo 'y';
-		}
-		//$this->ajaxReturn($lists);
 
-	}
 	
 	public function bdel(){
 		$ids=I('ids');//获取批量删除id
@@ -370,7 +359,40 @@ public function status(){//点击审核
         
         }
         
+        public function status(){//点击审核
+        	$id = I('id');
+        	//var_dump($id);die;
+        	//$data['status'] = 2;//2代表已审核
+        	//	$force = M('forcee')->where("id = {$id}")->save($data);
         
+        	//	$lists =M('forcee')->where("id = {$id}") ->select();
+        	//	if($lists>0){
+        	//		echo 'y';
+        	//	}
+        	$news=M('shop');
+        	$operarr = $news -> field( "shop.*,user.username,user.sex,user.pubtime,user.imagename" ) ->//确定查询两个表里的字段
+        	join( "user on shop.uid=user.id" ) ->//两个表的关联字段
+        	where("uid = {$id}") ->//查询内容
+        	select();
+        	$this->assign("operarr",$operarr);//返回当前分页数据内容
+        	$this->display();
+        
+        }
+        
+        public function shen(){
+        	$id = I('id');
+        	$uid = I('uid');
+        	$data['status'] = $_POST['status'];
+           $status=$_POST['status'];
+        	$type=$_POST['type'];
+        	if($status=='2'){
+        		$bdlx = M('user')->where("id = {$uid}")->save("bdlx = 6");
+        	}
+        	$force = M('shop')->where("id = {$id}")->save($data);
+        	$fo = M('shop')->where("id = {$id}")->select();
+        	$this->ajaxReturn($fo);
+        
+        }
         
         
         

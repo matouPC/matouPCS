@@ -45,6 +45,7 @@
                             <th>网站链接</th>
                             <th>收藏数</th>
                             <th>商铺头像</th>
+                             <th>审核</th>
                              <th>更多详情</th>
                             <th>操作</th>
                         </tr>
@@ -64,12 +65,12 @@
                             <td>{$v.lianjie}</td>
                              <td>{$v.collect}</td>
                               <td><img src="__PUBLIC__/upload/{$v.pubtime}/{$v.imagename}" width="50"/></td>
+                              <td><a  href="__APP__/Admin/Shop/status?id={$v.uid}">审核详情</a></td>
                               <td> <a class="link-update" href="__APP__/Admin/Shop/commodity?id={$v.id}">商品信息</a></td>
                             <td>
                                 <a class="link-update" href="__APP__/Admin/Shop/update?id={$v.id}">修改内容</a>
                                 <a class="link-update" href="__APP__/Admin/Shop/updateimage?id={$v.id}">商铺头像</a>
-                                <a  href="javascript:void(0)"  onclick="shen({$v.id})">审核</a>
-                                    <a class="link-del"   onclick="shanchu({$v.id})">删除</a>
+                                 <a class="link-del"   onclick="shanchu({$v.id})">删除</a>
                                  
                             </td>
                         </tr>
@@ -94,31 +95,7 @@
  }
  
 })
-
-
-
-function shen(id){
-	//alert(id);
-   	$.ajax({
-
-   		url:"/matouPCS/index.php/Admin/Force/status/id/"+id,
- 
-   		type:"get",
-   		success:function(data){
-   		
-   			if(data == 'y'){
-   			
-   		   			document.getElementById(id).innerHTML = "审核通过";
-		
-			}
-   		},error:function(){
-   			alert('no');
-   		}
-   	});
   
-    };
-    
-    
     function shanchu(id){
     	//alert(id);
     	if(confirm( '是否确定删除这条信息！')==true){

@@ -333,6 +333,23 @@ public function status(){//点击审核
 	public function shen(){
 		$id = I('id');
 		$data['status'] = $_POST['status'];
+		$uid = I('uid');
+		$data['status'] = $_POST['status'];
+		$status=$_POST['status'];
+		$type=$_POST['type_bd'];
+		if($type=='婚庆公司'){
+			$lx='2';
+		}else if($type=='工作室'){
+			$lx='3';
+		}else if($type=='影楼'){
+			$lx='4';
+		}else if($type=='表演团'){
+			$lx='5';
+		}
+		
+		if($status=='2'){
+			$bdlx = M('user')->where("id = {$uid}")->save("bdlx = {$lx}");
+		}
 	  $force = M('forcee')->where("id = {$id}")->save($data);
 	  $fo = M('forcee')->where("id = {$id}")->select();
 	       	$this->ajaxReturn($fo);

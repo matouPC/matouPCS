@@ -198,7 +198,7 @@
 
 						<div class="s-f1">
 							<div class="bjzl">
-							<a style="width: 120px;" href="">
+							<a style="width: 120px;" href="?s=/Home/User">
 								<button>编辑个人资料</button>
 								</a>
 							</div>
@@ -212,7 +212,8 @@
 						</div>
 					<div class="s-f2">
 							<p class="yhmc">
-								<a href=""><?php echo ($dt["username"]); ?></a>
+								<?php if($dt[username]==$dt[tel]): ?><a href=""><?php echo (substr($dt["username"],0,6)); ?></a><?php endif; ?>
+								<?php if($dt[username]!=$dt[tel]): ?><a href=""><?php echo ($dt["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
 								（<?php echo ($dt["type"]); ?>）

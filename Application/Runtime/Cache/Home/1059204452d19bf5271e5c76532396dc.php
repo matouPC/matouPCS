@@ -203,7 +203,8 @@
 						</div>
 						<div class="s-f2">
 							<p class="yhmc">
-								<a href=""><?php echo ($dt["username"]); ?></a>
+								<?php if($dt[username]==$dt[tel]): ?><a href=""><?php echo (substr($dt["username"],0,6)); ?></a><?php endif; ?>
+								<?php if($dt[username]!=$dt[tel]): ?><a href=""><?php echo ($dt["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
 								（<?php echo ($dt["type"]); ?>）
