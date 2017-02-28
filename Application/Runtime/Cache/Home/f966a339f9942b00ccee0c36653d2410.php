@@ -251,7 +251,7 @@
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
 	<script src="/matouPCS/Public/js/showWin.js"></script>
-	<script src="/matouPCS/Public/Home/js/upimg.js"></script>
+	<script src="/matouPCS/Public/js/upimg.js"></script>
 
 	<script type="text/javascript">
 		$(function() {
@@ -310,11 +310,11 @@
 			}, 300);
 		});
 		function submit(){
-			 alert(123);
+			// alert(123);
 			 var form = document.myform;
 				form.action = "?s=/Home/Tjcs/usave1";
 				form.method = "post";
-				alert(123);
+				//alert(123);
 				form.submit();
 				
 		

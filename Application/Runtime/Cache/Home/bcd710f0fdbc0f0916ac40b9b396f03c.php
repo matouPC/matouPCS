@@ -252,6 +252,7 @@
 							</p>
 							<img src="/matouPCS/Public/Home/img/xzfx.png" />
 						</div>
+						<?php if($_SESSION['id'] != ''){ ?>
 						<div class="s-tf-btn" onclick="shou(<?php echo ($list["fid"]); ?>)" style="margin-left: 5px;" id="bt-sc">
 							<?php  $shou = explode(',',$list['shou']); array_pop($shou); ?>
 							 <?php if(in_array($_SESSION['id'],$shou)){ ?>
@@ -264,6 +265,14 @@
 							<?php }?>
 							
 						</div>
+						<?php }else{ ?>
+							<div class="s-tf-btn" onclick="alert('请先登录')" style="margin-left: 5px;" id="bt-sc">
+							<p>收藏
+							</p>
+							<img src="/matouPCS/Public/Home/img/sc.png" style="top: 14px;">
+							
+						</div>
+						<?php } ?>
 
 						<div class="clearfloat "></div>
 					</div>

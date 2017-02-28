@@ -85,6 +85,8 @@
 	</head>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<body onbeforeunload="checkLeave()">
+	<!-- 用隐藏域 接受get值  用来搜索 -->
+	<input type="hidden" id="types" value="<?php echo ($_GET['type']); ?>">
 		<header>
 			<div class="h-content-main">
 				<div class="h-main-c">
@@ -208,54 +210,54 @@
 							<dl id="type">
 								<dt>职位</dt>
 								<dd>
-									<div class="gray">
+									<div class="gray" id="bx">
 										<a>不限</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>经理/店长</a>
+										<a id="jl">经理/店长</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>营业员</a>
+										<a id="yy">营业员</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>数码师</a>
+										<a id="sm">数码师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>视频剪辑师</a>
+										<a id="sp">视频剪辑师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>摄影师</a>
+										<a id='sy'>摄影师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>摄像师</a>
+										<a id='sx'>摄像师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>化妆师</a>
+										<a id='hz'>化妆师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>策划师</a>
+										<a id='ch'>策划师</a>
 									</div>
 								</dd>
 								
 								<dd>
 									<div>
-										<a>其他</a>
+										<a id='qt'>其他</a>
 									</div>
 								</dd>
 							</dl>
@@ -596,24 +598,6 @@
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/zp.js"></script>
 	<script type="text/javascript">
-<<<<<<< HEAD
-=======
-		//地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-		});
-		cityPicker.init();
->>>>>>> d61cdda3ac16aed719b32fbca3b9ed944c3c1ad6
 
 		$(function() {
 			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。

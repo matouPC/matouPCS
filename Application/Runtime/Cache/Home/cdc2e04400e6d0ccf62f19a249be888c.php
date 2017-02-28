@@ -407,7 +407,7 @@
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js "></script>
 	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
-	<script src="/matouPCS/Public/Home/js/areadata.js"></script> 
+	<script src="/matouPCS/Public/Home/js/dz.js"></script> 
 
 	<script type="text/javascript ">
 		$(document).ready(function() {

@@ -255,6 +255,7 @@
 							</p>
 							<img src="__PUBLIC__/Home/img/xzfx.png" />
 						</div>
+						<php>if($_SESSION['id'] != ''){</php>
 						<div class="s-tf-btn" onclick="shou({$list.fid})" style="margin-left: 5px;" id="bt-sc">
 							<?php 
 								$shou = explode(',',$list['shou']);
@@ -270,6 +271,14 @@
 							<?php }?>
 							
 						</div>
+						<php>}else{</php>
+							<div class="s-tf-btn" onclick="alert('请先登录')" style="margin-left: 5px;" id="bt-sc">
+							<p>收藏
+							</p>
+							<img src="__PUBLIC__/Home/img/sc.png" style="top: 14px;">
+							
+						</div>
+						<php>}</php>
 
 						<div class="clearfloat "></div>
 					</div>

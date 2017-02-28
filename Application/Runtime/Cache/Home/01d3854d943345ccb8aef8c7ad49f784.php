@@ -293,7 +293,7 @@
 													<p><img src="/matouPCS/Public/Home/img/pltx.png" /></p>
 													<p>用户<?php echo (substr($lists["username"],0,5)); ?></p>
 													<p>logo</p>
-													<p class="rmdtcmap">所在地：<?php echo ($lists["address"]); ?>&nbsp;郑州</p>
+													<p class="rmdtcmap">所在地：<?php echo ($lists["address"]); ?>&nbsp;</p>
 													<p class="rmdtcjs"><?php echo ($lists["content"]); ?></p>
 												</div>
 											</div>
@@ -347,7 +347,7 @@
 													<p><?php echo ($listgs["forcename"]); ?></p>
 												</div>
 												<div class="f3-t-1-c3l">
-													<p>部队类型:<?php echo ($listgs["type"]); ?></p>
+													<p>部队类型:<?php echo ($listgs["type_bd"]); ?></p>
 												</div>
 												<div class="f3-t-1-c3r">
 													<p>粉丝数量100</p>
@@ -367,13 +367,100 @@
 						</div>
 					</div>
 					<div class="con">
-						333
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+								<ul>
+									<?php if(is_array($listb)): foreach($listb as $key=>$listbs): ?><li>
+											<a href="#">
+												<div class="f3-t-1-c1">
+													<img src="/matouPCS/Public/Home/img/bdmc.png" />
+												</div>
+												<div class="f3-t-1-c2">
+													<p><?php echo ($listbs["forcename"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3l">
+													<p>部队类型:<?php echo ($listbs["type_bd"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3r">
+													<p>粉丝数量100</p>
+												</div>
+												<div class="f3-t-1-c4">
+													<p><?php echo ($listbs["content"]); ?>...</p>
+												</div>
+												<div class="f3-t-1-c5">
+													<p>所在地：<?php echo ($listbs["address"]); ?></p>
+												</div>
+												<div class="clearfloat"></div>
+											</a>
+										</li><?php endforeach; endif; ?>
+									<li class="clearfloat"></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="con">
-						444
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+								<ul>
+									<?php if(is_array($listh)): foreach($listh as $key=>$lisths): ?><li>
+											<a href="#">
+												<div class="f3-t-1-c1">
+													<img src="/matouPCS/Public/Home/img/bdmc.png" />
+												</div>
+												<div class="f3-t-1-c2">
+													<p><?php echo ($lisths["forcename"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3l">
+													<p>部队类型:<?php echo ($lisths["type_bd"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3r">
+													<p>粉丝数量100</p>
+												</div>
+												<div class="f3-t-1-c4">
+													<p><?php echo ($lisths["content"]); ?>...</p>
+												</div>
+												<div class="f3-t-1-c5">
+													<p>所在地：<?php echo ($lisths["address"]); ?></p>
+												</div>
+												<div class="clearfloat"></div>
+											</a>
+										</li><?php endforeach; endif; ?>
+									<li class="clearfloat"></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="con">
-						555
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+								<ul>
+									<?php if(is_array($listy)): foreach($listy as $key=>$listgs): ?><li>
+											<a href="#">
+												<div class="f3-t-1-c1">
+													<img src="/matouPCS/Public/Home/img/bdmc.png" />
+												</div>
+												<div class="f3-t-1-c2">
+													<p><?php echo ($listgs["forcename"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3l">
+													<p>部队类型:<?php echo ($listgs["type_bd"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3r">
+													<p>粉丝数量100</p>
+												</div>
+												<div class="f3-t-1-c4">
+													<p><?php echo ($listgs["content"]); ?>...</p>
+												</div>
+												<div class="f3-t-1-c5">
+													<p>所在地：<?php echo ($listgs["address"]); ?></p>
+												</div>
+												<div class="clearfloat"></div>
+											</a>
+										</li><?php endforeach; endif; ?>
+									<li class="clearfloat"></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<!--<div class="s-c-3f2">
 

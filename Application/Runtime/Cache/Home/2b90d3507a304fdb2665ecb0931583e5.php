@@ -381,9 +381,8 @@
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js "></script>
 	<script src="/matouPCS/Public/Home/js/calendar.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/City_data.js"></script>
-	<script type="text/javascript" src="/matouPCS/Public/Home/js/areadata.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/dz.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/upimage.js"></script>
-	<script type="text/javascript" src="/matouPCS/Public/Home/js/sousuo.js"></script>
 	<script type="text/javascript ">
 		$(document).ready(function() {
 			$(".con ").eq(0).show();
@@ -552,6 +551,5 @@ function gradeChange3(){
 				console.log('data:' + (data || 'None'));
 			}
 		});
-
 	</script>
 </html>

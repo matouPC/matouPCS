@@ -625,9 +625,9 @@
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js "></script>
 	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
-	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
 	<script src="/matouPCS/Public/Home/js/calendar.js"></script>
 	<script src="/matouPCS/Public/Home/js/txyp.js"></script>
+	<script src="/matouPCS/Public/Home/js/dz.js"></script>
 	<script type="text/javascript ">
 		$(document).ready(function() {
 			$(".con ").eq(0).show();
@@ -883,7 +883,7 @@
 			$(".shadeImg").fadeOut(500);
 		}
 		
-		//		H-S-CONTENT滑动跳转
+		//H-S-CONTENT滑动跳转
 		$("#tab-jbxx").click(function() {
 			$("html,body").animate({
 				scrollTop: $("#jbxx").offset().top

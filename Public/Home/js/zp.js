@@ -1,50 +1,50 @@
-var cNode =document.getElementById('type').getElementsByTagName('dd');
-for( var i=0; i<cNode.length; i++){
-    cNode[i].index= i;
-    cNode[i].onclick = function(){ 
-     switch(this.index){
-        case 0:
-            this.index="";
-            break;
-        case 1:
-            this.index="经理\\店长";
-            break;
-        case 2:
-            this.index="营业员";
-            break;
-        case 3:
-            this.index="数码师";
-            break;
-        case 4:
-            this.index="视频剪辑师";
-            break;
-        case 5:
-            this.index="摄影师";
-            break;
-        case 6:
-            this.index="摄像师";
-            break;
-        case 7:
-            this.index="化妆师";
-            break;
-        case 8:
-            this.index="策划师";
-            break;
-        case 9:
-            this.index="其他";
-            break;
-     } 
-     if(this.index == ''){
-        var type = '';
-     }else{
-        var type = this.index;
-     }
-     // alert(type);
-     setCookie("type",type);
-     getPage(1);
-     // ajax();
+    var cNode =document.getElementById('type').getElementsByTagName('dd');
+    for( var i=0; i<cNode.length; i++){
+        cNode[i].index= i;
+        cNode[i].onclick = function(){ 
+         switch(this.index){
+            case 0:
+                this.index="";
+                break;
+            case 1:
+                this.index="经理\\店长";
+                break;
+            case 2:
+                this.index="营业员";
+                break;
+            case 3:
+                this.index="数码师";
+                break;
+            case 4:
+                this.index="视频剪辑师";
+                break;
+            case 5:
+                this.index="摄影师";
+                break;
+            case 6:
+                this.index="摄像师";
+                break;
+            case 7:
+                this.index="化妆师";
+                break;
+            case 8:
+                this.index="策划师";
+                break;
+            case 9:
+                this.index="其他";
+                break;
+         } 
+         if(this.index == ''){
+            var type = '';
+         }else{
+            var type = this.index;
+         }
+         // alert(type);
+         setCookie("type",type);
+         getPage(1);
+         // ajax();
+        }
     }
-}
 //获得性别
 var cNodes =document.getElementById('sex').getElementsByTagName('dd');
 for( var i=0; i<cNodes.length; i++){
@@ -99,7 +99,7 @@ for( var i=0; i<worktime.length; i++){
     worktime[i].onclick = function(){ 
      switch(this.index){
         case 0:
-            this.index="不限";
+            this.index="";
             break;
         case 1:
             this.index="1-2";
@@ -146,6 +146,45 @@ for( var i=0; i<rzbd.length; i++){
       getPage(1);
     }
 }
+//从一级点进来的搜索事件
+// if($('#type').val() ){}
+var ty = document.getElementById('types');
+switch (ty.value){
+    case '1':
+        setCookie('type','经理\\店长');
+        
+        $('#jl').attr('class','seled');
+        break;
+    case '2':
+        setCookie('type','营业员');
+         $('#yy').attr('class','seled');
+        break;
+    case '3':
+        setCookie('type','化妆师');
+         $('#hz').attr('class','seled');
+        break;
+    case '4':
+        setCookie('type','数码师');
+         $('#sm').attr('class','seled');
+        break;
+    case '5':
+        setCookie('type','视频剪辑师');
+         $('#sp').attr('class','seled');
+        break;
+    case '6':
+        setCookie('type','摄像师');
+         $('#sx').attr('class','seled');
+        break;
+    case '7':
+        setCookie('type','摄影师');
+         $('#sy').attr('class','seled');
+        break;
+    case '8':
+        setCookie('type','策划师');
+         $('#ch').attr('class','seled');
+        break;
+        $('#bx').html('<a>不限</a>');
+}
 
 //招聘大厅搜索分页
 var url_ajax = "?s=/Home/Box/zpdt";//这个路径是真正显示列表的
@@ -171,35 +210,16 @@ var url_ajax = "?s=/Home/Box/zpdt";//这个路径是真正显示列表的
    function address(address){
    	alert(address);
    }
-   var flag = true;
-      function checkLeave(){
-    　　　　window.event.returnValue="确定离开当前页面吗？";
-          setCookie("type",'');//职业
-          setCookie("sex",'');//性别
-          setCookie("age",'');//年龄
-          setCookie("worktime",'');//工作经验
-          setCookie("rzbd",'');//认证部队
-          setCookie("address",'');//认证部队
-           if (flag) {
-                  var evt = window.event || arguments[0];
-                  var userAgent = navigator.userAgent;
-                  if (userAgent.indexOf("MSIE") > 0) {
-                    var n = window.event.screenX - window.screenLeft;
-                    var b = n > document.documentElement.scrollWidth - 20;
-                    if (b && window.event.clientY < 0 || window.event.altKey) {
-                      window.event.returnValue = ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-                        setCookie("type",'');//职业
-                        setCookie("sex",'');//性别
-                        setCookie("age",'');//年龄
-                        setCookie("worktime",'');//工作经验
-                      setCookie("rzbd",'');//活动时间
-                      setCookie("address",'');//活动时间
-
-                    }else {
-                      return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-                    }
-                  }else if (userAgent.indexOf("Firefox") > 0) {
-                     return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-                  }
-                }
-    　　　}
+//刷新或关闭浏览器清除搜索使用的cookie值
+window.onbeforeunload = onbeforeunload_handler;  
+function onbeforeunload_handler(){      
+    var warning="确认退出sssssssssss?";
+    setCookie("type",'');//职业
+    setCookie("sex",'');//性别
+    setCookie("age",'');//年龄
+    setCookie("worktime",'');//工作经验
+    setCookie("rzbd",'');//活动时间
+    setCookie("address",'');//活动时间
+    $('#types').val('');
+    return warning;      
+}

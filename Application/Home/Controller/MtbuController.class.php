@@ -11,11 +11,17 @@ class MtbuController extends Controller
     	$list = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.id desc')->select();
     	//热门部队
     	$listNew = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.collect desc')->select();
-    	//工作室
-    	$listg = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.id')->select();
+    	//影楼
+        $listy = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '影楼'")->order('f.id')->select();
+        $listh = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '婚庆公司'")->order('f.id')->select();
+        $listb = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '表演团'")->order('f.id')->select();
+    	$listg = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '工作室'")->order('f.id')->select();
+        $this->assign('listy',$listy);
+        $this->assign('listh',$listh);
+        $this->assign('listb',$listb);
+    	$this->assign('listg',$listg);
     	$this->assign('list',$list);
     	$this->assign('listn',$listNew);
-    	$this->assign('listg',$listg);
     	$this->display();
     }
     public function rzbd()

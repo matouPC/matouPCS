@@ -201,7 +201,7 @@
 					</div>
 					<div class="s-c-2f">
 						<div id="filter">
-							<dl>
+							<dl id="type">
 								<dt>类型</dt>
 								<dd>
 									<div class="gray">
@@ -219,7 +219,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="wp">
 								<dt>物品</dt>
 								<dd>
 									<div class="gray">
@@ -281,10 +281,10 @@
 								</dd>
 								<dd>
 									<div style="color: #000000;">
-										<input type="number" style="width: 65px; margin-top: 17px; border: solid 1px #CCCCCC; float:left;">
+										<input type="number" id="nu1" style="width: 65px; margin-top: 17px; border: solid 1px #CCCCCC; float:left;">
 										<span style="font-size:25px; display:block; width:20px; height:30px; color: #999999; float :left; margin-top:-1px; text-align:center;">-</span>
-										<input type="number" style="width: 65px; margin-top: 15px;border: solid 1px #CCCCCC;">元
-										<button style="outline: none; margin-left: 20px; background-color: #FF5C5D; border: 0; color: white; border-radius: 10px; width: 40px; height: 18px;">
+										<input type="number" id="nu2" style="width: 65px; margin-top: 15px;border: solid 1px #CCCCCC;">元
+										<button style="outline: none; margin-left: 20px; background-color: #FF5C5D; border: 0; color: white; border-radius: 10px; width: 40px; height: 18px;" onclick="ok()">
 											ok
 										</button>
 									</div>
@@ -301,44 +301,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="s-c-3f">
-						<div class="user">
-							<?php if(is_array($list)): foreach($list as $key=>$lists): if($lists['type'] == 2){ ?>
-								<div class="user_01">
-									<a href="?s=/Home/Tzsc/xqxz/id/<?php echo ($lists["fid"]); ?>">
-										<img src="/matouPCS/Public/Home/img/yhmc-big.png" width="260" height="145">
-										<div class="user_01_01">
-											<div class="user_01_02">
-												<h4>用户<?php echo (substr($lists["username"],0,5)); ?></h4><span>￥<?php echo ($lists["price"]); ?>元</span></div>
-											<p class="user_01_03"><?php echo ($lists["content"]); ?></p>
-											<p class="user_01_04">已有<?php echo ($lists["collect"]); ?>人收藏</p>
-											<p class="user_01_05"><?php echo ($lists["address"]); ?></p>
-										</div>
-									</a>
-								</div>
-								<?php }else{ ?>
-									<div class="user_01">
-										<a href="?s=/Home/Tzsc/xqqg/id/<?php echo ($lists["fid"]); ?>">
-											<div class="user_02">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
-												<h4>用户<?php echo (substr($lists["username"],0,5)); ?></h4>
-											</div>
-											<div class="user_01_01">
-												<div class="user_01_02">
-													<h4><?php echo ($lists["name"]); ?></h4><span>预算￥<?php echo ($lists["price"]); ?>元</span></div>
-												<p class="user_01_03"><?php echo ($lists["content"]); ?></p>
-												<p class="user_01_04">已有<?php echo ($lists["collect"]); ?>人收藏</p>
-												<p class="user_01_05"><?php echo ($lists["address"]); ?></p>
-											</div>
-										</a>
-									</div>
-								<?php } endforeach; endif; ?>
-
-							
-
-							
-						</div>
-						<br>
+					<div class="s-c-3f" id="lists">
 
 					</div>
 				</div>
@@ -547,6 +510,7 @@
 	<script src="/matouPCS/Public/Home/js/city-data.js"></script>
 	<script src="/matouPCS/Public/Home/js/hzw-city-picker.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
+	<script src="/matouPCS/Public/Home/js/tz.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".tab-r").eq(0).show();
@@ -664,10 +628,12 @@
 		$('.px .hot').click(function() {
 			$('.px .hot').css('background-color', '#ff5c5d');
 			$('.px .new').css('background-color', '#999999');
+			getPage(1);
 		})
 		$('.px .new').click(function() {
 			$('.px .new').css('background-color', '#ff5c5d');
 			$('.px .hot').css('background-color', '#999999');
+			getPage(1);
 		})
 	</script>
     <!--点击取消关注-->
