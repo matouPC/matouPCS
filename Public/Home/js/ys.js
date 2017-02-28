@@ -135,32 +135,14 @@ function getPage(page) {
         $('#ajax_lists').html(data);
     })
 }
-var flag = true;
-    function checkLeave(){
-　　　　window.event.returnValue="确定离开当前页面吗？";
-            setCookie("type",'');//类型
-            setCookie("sex",'');//性别
-            setCookie("age",'');//年龄
-            setCookie("date",'');//活动时间
-            setCookie("address",'');//活动时间
-             if (flag) {
-                var evt = window.event || arguments[0];
-                var userAgent = navigator.userAgent;
-                if (userAgent.indexOf("MSIE") > 0) {
-                  var n = window.event.screenX - window.screenLeft;
-                  var b = n > document.documentElement.scrollWidth - 20;
-                  if (b && window.event.clientY < 0 || window.event.altKey) {
-                    window.event.returnValue = ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-                        setCookie("type",'');//类型
-                        setCookie("sex",'');//性别
-                        setCookie("age",'');//年龄
-                        setCookie("date",'');//活动时间
-                        setCookie("bd",'');//活动时间
-                  }else {
-                    return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-                  }
-                }else if (userAgent.indexOf("Firefox") > 0) {
-                   return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-                }
-              }
-　　　}
+//刷新或关闭浏览器清除搜索使用的cookie值
+window.onbeforeunload = onbeforeunload_handler;  
+function onbeforeunload_handler(){      
+    var warning="确认退出sssssssssss?";
+    setCookie("type",'');//类型
+    setCookie("sex",'');//性别
+    setCookie("age",'');//年龄
+    setCookie("date",'');//活动时间
+    setCookie("bd",'');//活动时间   
+    return warning;      
+}

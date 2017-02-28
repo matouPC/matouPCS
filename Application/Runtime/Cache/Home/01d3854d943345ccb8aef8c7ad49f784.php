@@ -298,7 +298,11 @@
 													<p><img src="/matouPCS/Public/Home/img/pltx.png" /></p>
 													<p>用户<?php echo (substr($lists["username"],0,5)); ?></p>
 													<p>logo</p>
+<<<<<<< HEAD
 													<p class="rmdtcmap">所在地：<?php echo ($lists["addre"]); ?>&nbsp;</p>
+=======
+													<p class="rmdtcmap">所在地：<?php echo ($lists["address"]); ?>&nbsp;</p>
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 													<p class="rmdtcjs"><?php echo ($lists["content"]); ?></p>
 												</div>
 											</div>
@@ -360,6 +364,7 @@
 												</div>
 												<div class="f3-t-1-c3l">
 													<p>部队类型:<?php echo ($listgs["type_bd"]); ?></p>
+<<<<<<< HEAD
 												</div>
 												<div class="f3-t-1-c3r">
 													<p>粉丝数量100</p>
@@ -395,6 +400,8 @@
 												</div>
 												<div class="f3-t-1-c3l">
 													<p>部队类型:<?php echo ($listgs["type"]); ?></p>
+=======
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 												</div>
 												<div class="f3-t-1-c3r">
 													<p>粉丝数量100</p>
@@ -417,28 +424,49 @@
 						</div>
 					</div>
 					<div class="con">
+<<<<<<< HEAD
 							<div class="s-c-3f">
 							<div class="f3-t-1">
 								<ul id="xxoo2">
 									<?php if(is_array($listh)): foreach($listh as $key=>$listgs): ?><li>
+=======
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+								<ul>
+									<?php if(is_array($listb)): foreach($listb as $key=>$listbs): ?><li>
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 											<a href="#">
 												<div class="f3-t-1-c1">
 													<img src="/matouPCS/Public/Home/img/bdmc.png" />
 												</div>
 												<div class="f3-t-1-c2">
+<<<<<<< HEAD
 													<p><?php echo ($listgs["forcename"]); ?></p>
 												</div>
 												<div class="f3-t-1-c3l">
 													<p>部队类型:<?php echo ($listgs["type"]); ?></p>
+=======
+													<p><?php echo ($listbs["forcename"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3l">
+													<p>部队类型:<?php echo ($listbs["type_bd"]); ?></p>
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 												</div>
 												<div class="f3-t-1-c3r">
 													<p>粉丝数量100</p>
 												</div>
 												<div class="f3-t-1-c4">
+<<<<<<< HEAD
 													<p><?php echo ($listgs["content"]); ?>...</p>
 												</div>
 												<div class="f3-t-1-c5">
 													<p>所在地：<?php echo ($listgs["address"]); ?></p>
+=======
+													<p><?php echo ($listbs["content"]); ?>...</p>
+												</div>
+												<div class="f3-t-1-c5">
+													<p>所在地：<?php echo ($listbs["address"]); ?></p>
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 												</div>
 												<div class="clearfloat"></div>
 											</a>
@@ -447,6 +475,7 @@
 								</ul>
 							</div>
 						</div>
+<<<<<<< HEAD
 						  <div style="text-align:center;" class="margin">
 							<button onclick="tj3()" name='btn3' id='btn3' >点击加载更多</button>
 						</div>
@@ -455,6 +484,45 @@
 							<div class="s-c-3f">
 							<div class="f3-t-1">
 								<ul id='xxoo3'>
+=======
+					</div>
+					<div class="con">
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+								<ul>
+									<?php if(is_array($listh)): foreach($listh as $key=>$lisths): ?><li>
+											<a href="#">
+												<div class="f3-t-1-c1">
+													<img src="/matouPCS/Public/Home/img/bdmc.png" />
+												</div>
+												<div class="f3-t-1-c2">
+													<p><?php echo ($lisths["forcename"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3l">
+													<p>部队类型:<?php echo ($lisths["type_bd"]); ?></p>
+												</div>
+												<div class="f3-t-1-c3r">
+													<p>粉丝数量100</p>
+												</div>
+												<div class="f3-t-1-c4">
+													<p><?php echo ($lisths["content"]); ?>...</p>
+												</div>
+												<div class="f3-t-1-c5">
+													<p>所在地：<?php echo ($lisths["address"]); ?></p>
+												</div>
+												<div class="clearfloat"></div>
+											</a>
+										</li><?php endforeach; endif; ?>
+									<li class="clearfloat"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="con">
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+								<ul>
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 									<?php if(is_array($listy)): foreach($listy as $key=>$listgs): ?><li>
 											<a href="#">
 												<div class="f3-t-1-c1">
@@ -464,7 +532,11 @@
 													<p><?php echo ($listgs["forcename"]); ?></p>
 												</div>
 												<div class="f3-t-1-c3l">
+<<<<<<< HEAD
 													<p>部队类型:<?php echo ($listgs["type"]); ?></p>
+=======
+													<p>部队类型:<?php echo ($listgs["type_bd"]); ?></p>
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 												</div>
 												<div class="f3-t-1-c3r">
 													<p>粉丝数量100</p>
@@ -482,9 +554,12 @@
 								</ul>
 							</div>
 						</div>
+<<<<<<< HEAD
 						  <div style="text-align:center;" class="margin">
 							<button onclick="tj4()" name='btn4' id='btn4' >点击加载更多</button>
 						</div>
+=======
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
 					</div>
 					<!--<div class="s-c-3f2">
 

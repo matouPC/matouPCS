@@ -22,7 +22,7 @@ class UserController extends Controller
         $userYs_sp =  M("duevideo")->select();//视频遍历
         //收藏的应聘
         // $userYp = M('user as u')->join('employ as e on u.id = e.uid')->select();   //
-        $userYp = M('user as u')->join('employ as e on u.id = e.uid')->join("employwork as w on e.id = w.pid")->select();   //工作经历
+        $userYp = M('user as u')->join('employ as e on u.id = e.uid')->join("employwork as w on e.eid = w.pid")->select();   //工作经历
        
         $userYps = array();
         foreach ($userYp as $value) {
@@ -679,5 +679,8 @@ class UserController extends Controller
         $fbxz = M("flea")->where("uid = {$uid} and type = 2")->select();
         $this->assign('fbxz',$fbxz);
         $this->display("User/userXz");
+    }
+    public function xqxx(){
+        $this->display();
     }
 }

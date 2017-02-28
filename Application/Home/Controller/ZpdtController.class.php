@@ -8,9 +8,9 @@ class ZpdtController extends Controller
     public function index()
     {
     	//应聘区
-    	$list = M('user as u')->join('employ as e on u.id = e.uid')->join('employwork as m on e.id = m.pid')->order('e.id desc')->select();
+    	$list = M('user as u')->join('employ as e on u.id = e.uid')->join('employwork as m on e.eid = m.pid')->order('e.eid desc')->select();
         //推荐应聘
-        $listn = M('employ as e')->join('employwork as m on e.id = m.pid')->order('collect desc')->limit('0,3')->select();
+        $listn = M('employ as e')->join('employwork as m on e.eid = m.pid')->order('collect desc')->limit('0,3')->select();
         //推荐部队
         // $listNew = M('forcee as f')->join('user as u on u.id = f.uid')->order('f.collect desc')->limit('0,3')->select();
         $listNew = M('forcee')->order('collect desc')->limit('0,3')->select();
@@ -87,7 +87,7 @@ class ZpdtController extends Controller
     public function xqyp($id){
         //应聘详情
         // $list = M('employ as e')->join('employwork as w on e.id = w.pid')->join('employimage as m on m.pid = e.id')->join('employvideo as v on v.pid = e.id')->join('user as u on e.uid = u.id')->where(" w.id = {$id}")->find();
-        $list = M('employ as e')->join('employvideo as v on e.id = v.pid')->join('employwork as w on e.id = w.pid')->join('employimage as i on e.id = i.pid')->join('user as u on e.uid = u.id')->join('forcee as f on u.id = f.uid')->where(" e.id = {$id}")->find();
+        $list = M('employ as e')->join('employvideo as v on e.eid = v.pid')->join('employwork as w on e.eid = w.pid')->join('employimage as i on e.eid = i.pid')->join('user as u on e.uid = u.id')->join('forcee as f on u.id = f.uid')->where(" e.eid = {$id}")->find();
         // var_dump($list);die;
         $work = M('employwork')->where("pid = {$id}")->select();
         $this->assign('list',$list);
@@ -114,7 +114,7 @@ class ZpdtController extends Controller
 
     public function zpfb(){
         //招聘发布完成
-        $list = M('user as u')->join('employ as e on u.id = e.uid')->join('employwork as m on e.id = m.pid')->order('e.id desc')->limit('0,3')->select();
+        $list = M('user as u')->join('employ as e on u.id = e.uid')->join('employwork as m on e.eid = m.pid')->order('e.eid desc')->limit('0,3')->select();
         $id = M('recruit1')->order('rid desc')->find();
         $this->assign('list',$list);
         $this->assign('id',$id['rid']);

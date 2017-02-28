@@ -5,10 +5,9 @@ use Think\Controller;
 header("Content-type: text/html; charset=utf-8"); 
 class Zpdt1Controller extends Controller
 {
-    public function index()
+    public function index($type)
     {
     	//招聘大厅	
-    	
         //推荐招聘
         // $datas = M()
         $xiang = count(M('recruit1')->select());

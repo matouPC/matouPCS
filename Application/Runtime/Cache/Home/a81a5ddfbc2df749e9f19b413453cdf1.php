@@ -238,9 +238,15 @@
 										  <a href="#">已有<?php echo ($num); ?>人报名</a>
 									  </div>
 								  <?php }else{ ?>
+								  	  <?php if($_SESSION['id'] != ''){ ?>
 									  <div class="xqbta" onclick="bao(<?php echo ($list["fid"]); ?>)" id="bt-p">
 										  <a href="#" id="b<?php echo ($list["fid"]); ?>">我要报名</a>
 									  </div>
+									  <?php }else{ ?>
+									  <div class="xqbta" onclick="alert('请先登录')" id="bt-p">
+										  <a href="#">我要报名</a>
+									  </div>
+									  <?php } ?>
 								  <?php } ?>
 							<div class="clearfloat "></div>
 						</div>

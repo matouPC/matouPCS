@@ -627,6 +627,7 @@
 	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
 	<script src="/matouPCS/Public/Home/js/calendar.js"></script>
 	<script src="/matouPCS/Public/Home/js/upimg.js"></script>
+	<script src="/matouPCS/Public/Home/js/dz.js"></script>
 	<script type="text/javascript ">
 		$(document).ready(function() {
 			$(".con ").eq(0).show();

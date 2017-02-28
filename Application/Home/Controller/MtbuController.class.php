@@ -12,6 +12,7 @@ class MtbuController extends Controller
     	$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("bdlx='2'||bdlx='3'||bdlx='4'||bdlx='5'")->order('d.did desc')->limit('0,2')->select();
     	//热门部队
     	$listNew = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.collect desc')->select();
+<<<<<<< HEAD
     	//工作室
     	$listg = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='工作室'")->order('f.id')->limit('0,3')->select();
     	$listb = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("type_bd='表演团'")->order('f.id')->limit('0,3')->select();
@@ -23,6 +24,19 @@ class MtbuController extends Controller
     	$this->assign('listb',$listb);
     	$this->assign('listy',$listy);
     	$this->assign('listh',$listh);
+=======
+    	//影楼
+        $listy = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '影楼'")->order('f.id')->select();
+        $listh = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '婚庆公司'")->order('f.id')->select();
+        $listb = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '表演团'")->order('f.id')->select();
+    	$listg = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '工作室'")->order('f.id')->select();
+        $this->assign('listy',$listy);
+        $this->assign('listh',$listh);
+        $this->assign('listb',$listb);
+    	$this->assign('listg',$listg);
+    	$this->assign('list',$list);
+    	$this->assign('listn',$listNew);
+>>>>>>> 080b91abe3e5c96edc77a81eae33db00ea6f8238
     	$this->display();
     }
     public function dongtaidi()

@@ -141,6 +141,17 @@ $('#daTe').click(function(){
 //     setCookie('address',address);
 //     getPage(1);
 // }
+//刷新浏览器  清除搜索的cookie值
+window.onbeforeunload = onbeforeunload_handler;  
+function onbeforeunload_handler(){      
+    var warning="确认退出sssssssssss?";
+    setCookie("type",'');//类型
+    setCookie("sex",'');//性别
+    setCookie("age",'');//年龄
+    setCookie("date",'');//活动时间
+    setCookie("address",'');//活动时间     
+    return warning;      
+}
 
 $('#submits').click(function(){
     alert($('#city').val());

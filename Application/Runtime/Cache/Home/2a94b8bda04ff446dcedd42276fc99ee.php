@@ -114,7 +114,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<div class="select-xx">
 									<ul>
 										<li>
-											<a href="">需求消息</a>
+											<a href="?s=/Home/User/xqxx">需求消息</a>
 										</li>
 										<li>
 											<a href="">部队消息</a>
@@ -176,6 +176,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<div class="str"></div>
 							</li>
 							<li style="width: 68px;">
+<<<<<<< HEAD
+										   		
+                                   <a href="#">我的商铺</a>                    	
+                                  
+=======
 							
 								<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
@@ -186,6 +191,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							   <?php } ?>
                                 
                                    
+>>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
 								<div class="str"></div>
 							
 							</li>
@@ -686,11 +692,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<div id="zpdt" class="s-ft-f">
 
 							<div class="Catalog">
-								<a href="?s=/Home/Zpdt1"><img src="/matouPCS/Public/Home/img/Catalog_02.png" width="198" height="26"></a>
+								<a href="?s=/Home/Zpdt1/index/type/0"><img src="/matouPCS/Public/Home/img/Catalog_02.png" width="198" height="26"></a>
 							</div>
 							<div class="More">
 								<p>
-									<a href="?s=/Home/Zpdt1">更多>></a>
+									<a href="?s=/Home/Zpdt1/index/type/0">更多>></a>
 								</p>
 							</div>
 
@@ -742,28 +748,28 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								</ul>
 								<ul class="s-f3-r-2f-r">
 									<li>
-										<a href="">经理/店长</a>
+										<a href="?s=/Home/Zpdt1/index/type/1">经理/店长</a>
 									</li>
 									<li>
-										<a href="">营业员</a>
+										<a href="?s=/Home/Zpdt1/index/type/2">营业员</a>
 									</li>
 									<li>
-										<a href="">化妆师</a>
+										<a href="?s=/Home/Zpdt1/index/type/3">化妆师</a>
 									</li>
 									<li>
-										<a href="">数码师/设计</a>
+										<a href="?s=/Home/Zpdt1/index/type/4">数码师/设计</a>
 									</li>
 									<li>
-										<a href="">视频剪辑师</a>
+										<a href="?s=/Home/Zpdt1/index/type/5">视频剪辑师</a>
 									</li>
 									<li>
-										<a href="">摄像师</a>
+										<a href="?s=/Home/Zpdt1/index/type/6">摄像师</a>
 									</li>
 									<li>
-										<a href="">摄影师</a>
+										<a href="?s=/Home/Zpdt1/index/type/7">摄影师</a>
 									</li>
 									<li>
-										<a href="">策划师</a>
+										<a href="?s=/Home/Zpdt1/index/type/8">策划师</a>
 									</li>
 								</ul>
 							</div>
@@ -776,7 +782,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<div class="s-f3-l">
 							<ul>
 								<li>
-									<a href="#" class="abgs1">
+									<a href="?s=/Home/Zpdt1/index/type/1" class="abgs1">
 										<img src="/matouPCS/Public/Home/img/recruit_pic01.png" />
 										<div class="abg1">
 											<div class="abg1-c">
@@ -790,7 +796,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 
 								</li>
 								<li>
-									<a href="#" class="abgs2">
+									<a href="?s=/Home/Zpdt1/index/type/2" class="abgs2">
 										<img src="/matouPCS/Public/Home/img/recruit_pic02.png" />
 										<div class="abg2">
 											<div class="abg2-c">
@@ -803,7 +809,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									</a>
 								</li>
 								<li>
-									<a href="#" class="abgs1">
+									<a href="?s=/Home/Zpdt1/index/type/3" class="abgs1">
 										<img src="/matouPCS/Public/Home/img/recruit_pic03.png" />
 										<div class="abg1">
 											<div class="abg1-c">
@@ -816,7 +822,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									</a>
 								</li>
 								<li>
-									<a href="#" class="abgs1">
+									<a href="?s=/Home/Zpdt1/index/type/4" class="abgs1">
 										<img src="/matouPCS/Public/Home/img/recruit_pic04b.png" />
 										<div class="abg1">
 											<div class="abg1-c">
@@ -829,7 +835,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									</a>
 								</li>
 								<li>
-									<a href="#" class="abgs1">
+									<a href="?s=/Home/Zpdt1/index/type/5" class="abgs1">
 										<img src="/matouPCS/Public/Home/img/recruit_pic05.png" />
 										<div class="abg1">
 											<div class="abg1-c">
@@ -842,7 +848,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									</a>
 								</li>
 								<li>
-									<a href="#" class="abgs1">
+									<a href="?s=/Home/Zpdt1/index/type/6" class="abgs1">
 										<img src="/matouPCS/Public/Home/img/recruit_pic06.png" />
 										<div class="abg1">
 											<div class="abg1-c">
@@ -856,7 +862,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									</a>
 								</li>
 								<li>
-									<a href="#" class="abgs2">
+									<a href="?s=/Home/Zpdt1/index/type/7" class="abgs2">
 										<img src="/matouPCS/Public/Home/img/recruit_pic07.png" />
 										<div class="abg2">
 											<div class="abg2-c">
@@ -869,7 +875,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									</a>
 								</li>
 								<li>
-									<a href="#" class="abgs1">
+									<a href="?s=/Home/Zpdt1/index/type/8" class="abgs1">
 										<img src="/matouPCS/Public/Home/img/recruit_pic08.png" />
 										<div class="abg1">
 											<div class="abg1-c">
@@ -919,7 +925,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 										<ul>
 											<li>公司类型：</li>
 											<li>
-												<p><?php echo ($buduis["type"]); ?></p>
+												<p><?php echo ($buduis["type_bd"]); ?></p>
 											</li>
 											<span><img src="/matouPCS/Public/Home/img/zb.png"><?php echo ($buduis["address"]); ?></span>
 										</ul>

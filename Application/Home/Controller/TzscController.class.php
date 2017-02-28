@@ -8,7 +8,7 @@ class TzscController extends Controller
     public function index()
     {
     	//跳蚤市场	
-    	$list = M('flea as f')->join('user as u on f.uid = u.id')->select();
+    	
     	//推荐求购
     	$listnew = M('flea as f')->join('user as u on f.uid = u.id')->where('type = 1 and tz_status = "1"')->limit('0,3')->select();
     	//推荐闲置
@@ -26,7 +26,7 @@ class TzscController extends Controller
         $uus = M('user_fen')->select();
         // 查询粉丝
         // $uu = M('user_fen as f')->join('user as u on f.fid = u.id')->select();
-        $this->assign('list',$list);
+        
     	$this->assign('uus',$uus);
     	$this->assign('listnew',$listnew);
     	$this->assign('listx',$listx);

@@ -85,6 +85,8 @@
 	</head>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<body onbeforeunload="checkLeave()">
+	<!-- 用隐藏域 接受get值  用来搜索 -->
+	<input type="hidden" id="types" value="{$_GET['type']}">
 		<header>
 			<div class="h-content-main">
 				<div class="h-main-c">
@@ -210,54 +212,54 @@
 							<dl id="type">
 								<dt>职位</dt>
 								<dd>
-									<div class="gray">
+									<div class="gray" id="bx">
 										<a>不限</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>经理/店长</a>
+										<a id="jl">经理/店长</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>营业员</a>
+										<a id="yy">营业员</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>数码师</a>
+										<a id="sm">数码师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>视频剪辑师</a>
+										<a id="sp">视频剪辑师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>摄影师</a>
+										<a id='sy'>摄影师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>摄像师</a>
+										<a id='sx'>摄像师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>化妆师</a>
+										<a id='hz'>化妆师</a>
 									</div>
 								</dd>
 								<dd>
 									<div>
-										<a>策划师</a>
+										<a id='ch'>策划师</a>
 									</div>
 								</dd>
 								
 								<dd>
 									<div>
-										<a>其他</a>
+										<a id='qt'>其他</a>
 									</div>
 								</dd>
 							</dl>

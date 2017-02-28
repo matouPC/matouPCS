@@ -1,0 +1,43 @@
+<div class="user">
+<foreach name="list" item="lists">
+	<php>if($lists['type'] == 2){</php>
+	<div class="user_01">
+		<a href="?s=/Home/Tzsc/xqxz/id/{$lists.fid}">
+			<img src="__PUBLIC__/Home/img/yhmc-big.png" width="260" height="145">
+			<div class="user_01_01">
+				<div class="user_01_02">
+					<h4>{$lists.name}</h4><span>￥{$lists.price}元</span></div>
+				<p class="user_01_03">{$lists.content}</p>
+				<?php $shou = explode(',',$lists['shou']);
+						  array_pop($shou);
+						  $shous = count($shou); ?>
+					<p class="user_01_04">已有{$shous}人收藏</p>
+				<p class="user_01_05">{$lists.address}</p>
+			</div>
+		</a>
+	</div>
+	<php>}else{</php>
+		<div class="user_01">
+			<a href="?s=/Home/Tzsc/xqqg/id/{$lists.fid}">
+				<div class="user_02">
+					<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+					<h4>用户{$lists.username|substr=0,5}</h4>
+				</div>
+				<div class="user_01_01">
+					<div class="user_01_02">
+						<h4>{$lists.name}</h4><span>预算￥{$lists.price}元</span></div>
+					<p class="user_01_03">{$lists.content}</p>
+					<?php 
+					$bao = explode(',',$lists['bao']);
+						  array_pop($bao);
+						  $baos = count($bao); ?>
+					<p class="user_01_04">已有<?php echo $baos;?>人报名</p>
+					<p class="user_01_05">{$lists.address}</p>
+				</div>
+			</a>
+		</div>
+	<php>}</php>
+</foreach>
+</div>
+<br>
+<div class="pager">{$page}</div>
