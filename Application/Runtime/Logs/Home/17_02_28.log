@@ -1287,3 +1287,78 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
 
+[ 2017-02-28T09:41:07+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0032s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0021s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0021s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: ren D:\www\matouPCS\Application\Home\Controller\IndexController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: fbys D:\www\matouPCS\Application\Home\Controller\IndexController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: fbyp D:\www\matouPCS\Application\Home\Controller\IndexController.class.php 第 50 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: username D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 104 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 180 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 182 行.
+NOTIC: [8] Undefined index: type D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 922 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 932 行.
+NOTIC: [8] Undefined index: type D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 922 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 932 行.
+NOTIC: [8] Undefined index: type D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 922 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 932 行.
+NOTIC: [8] Undefined index: type D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 922 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 932 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017889s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017945s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000419s ]
+
+[ 2017-02-28T09:41:18+08:00 ] ::1 /matouPCS/?s=/Home/Tzsc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0025s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id   [ RunTime:0.0004s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( type = 1 and tz_status = "1" ) LIMIT 0,3   [ RunTime:0.0006s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( type = 2 and tz_status = "1" ) LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0027s ]
+SQL: SELECT * FROM user as u INNER JOIN user_fen as f on u.id = f.uid  ORDER BY u.fen desc  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user_fen` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user_fen`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined index: username D:\www\matouPCS\Application\Runtime\Cache\Home\7f4f8ba774bd773477985fbcf86cdbc9.php 第 103 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\7f4f8ba774bd773477985fbcf86cdbc9.php 第 434 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\7f4f8ba774bd773477985fbcf86cdbc9.php 第 434 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\7f4f8ba774bd773477985fbcf86cdbc9.php 第 434 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\7f4f8ba774bd773477985fbcf86cdbc9.php 第 434 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013267s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000458s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
