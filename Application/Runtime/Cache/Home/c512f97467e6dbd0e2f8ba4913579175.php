@@ -237,8 +237,12 @@
 								<br>
 								<p class="xqcc-c"><span class="xqcc-c0">岗位要求：</span><span class="xqcc-c2"><?php echo ($datas["work"]); ?>...</span></p>
 							</div>
-							<?php $zhao = explode(',',$datas['zhao']); array_pop($zhao); $num = count($zhao); ?>
-							<?php if(in_array($_SESSION['id'],$zhao)){ ?>
+							<?php $zhao = explode(',',$datas['zhao']); array_pop($zhao); $num = count($zhao); ?>      
+								  <?php if($datas['zhao_st'] == '2'){ ?>
+								<div class="xqbta" style="background:#ccc;">
+									<a href="#">招聘已结束</a>
+								</div>
+							<?php }else if(in_array($_SESSION['id'],$zhao)){ ?>
 							<div class="xqbta" id="bt-p<?php echo ($datas["id"]); ?>" style="background:#ccc;" id="bt-p<?php echo ($listNews["wid"]); ?>">
 								<a href="#" style="font-size:12px;">已有<?php echo ($num); ?>人应聘</a>
 							</div>

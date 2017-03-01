@@ -84,13 +84,26 @@ class IndexController extends Controller
     //用户登录
     public function login(){
         // if(!empty($_POST['username']) && !empty($_POST['password'])){
-            $username = $_POST['username'];
+            $username = $_POST['username'];//可能是用户名 可能是电话号码
             $password = $_POST['password'];
-            $ob = M('user')->where("tel = {$username} and password = {$password}")->find();
+            $ob = M('user')->where("tel = '{$username}' and password = '{$password}'")->find();
+            $xb = M('user')->where("username = '{$username}' and password = '{$password} '")->find();
             if(!empty($ob)){
                 session_start();
                 $_SESSION['username'] = $ob['tel'];
                 $_SESSION['id'] = $ob['id'];
+                //增加粉丝的方法
+                $uid = $_SESSION['id'];//当前用户的id
+                $ji = M('user_fen')->where(" uid = {$uid}")->find();
+                if(empty($ji)){
+                    $arr['uid'] = $uid;
+                    $dd = M('user_fen')->add($arr);
+                }
+                echo 'y';
+            }else if(!empty($xb)){
+                session_start();
+                $_SESSION['username'] = $xb['tel'];
+                $_SESSION['id'] = $xb['id'];
                 //增加粉丝的方法
                 $uid = $_SESSION['id'];//当前用户的id
                 $ji = M('user_fen')->where(" uid = {$uid}")->find();

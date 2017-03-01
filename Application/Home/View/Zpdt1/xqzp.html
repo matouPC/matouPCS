@@ -241,8 +241,12 @@
 							<?php $zhao = explode(',',$datas['zhao']);
 								  array_pop($zhao);
 								  $num = count($zhao);
-								   ?>
-							<?php if(in_array($_SESSION['id'],$zhao)){ ?>
+								   ?>      
+								  <?php if($datas['zhao_st'] == '2'){ ?>
+								<div class="xqbta" style="background:#ccc;">
+									<a href="#">招聘已结束</a>
+								</div>
+							<?php }else if(in_array($_SESSION['id'],$zhao)){ ?>
 							<div class="xqbta" id="bt-p{$datas.id}" style="background:#ccc;" id="bt-p{$listNews.wid}">
 								<a href="#" style="font-size:12px;">已有{$num}人应聘</a>
 							</div>

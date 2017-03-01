@@ -205,7 +205,8 @@
 						</div>
 						<div class="s-f2">
 							<p class="yhmc">
-								<a href="">用户<?php echo (substr($list["username"],0,6)); ?></a>
+								<?php if($list[username]==$list[tel]): ?><a href=""><?php echo (substr($list["username"],0,6)); ?></a><?php endif; ?>
+								<?php if($list[username]!=$list[tel]): ?><a href=""><?php echo ($list["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
 								（摄影师）

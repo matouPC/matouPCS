@@ -479,8 +479,8 @@ class UserController extends Controller
     }
     public function user_yp(){//已发布 应聘
         $uid = $_SESSION['id'];
-        $fbyp = M('employ as e')->join('employimage as i on e.id = i.pid')->join("employvideo as v on e.id = v.pid")->where("e.uid = {$uid}")->find();
-        $fbyp_jl =M('employ as e')->join('employwork as m on e.id = m.pid')->where("e.uid = {$uid}")->select();
+        $fbyp = M('employ as e')->join('employimage as i on e.eid = i.pid')->join("employvideo as v on e.eid = v.pid")->where("e.uid = {$uid}")->find();
+        $fbyp_jl =M('employ as e')->join('employwork as m on e.eid = m.pid')->where("e.uid = {$uid}")->select();
         // var_dump($fbyp_jl);die;
         $fbyp_js_num = count($fbyp_jl);
         $this->assign('fbyp',$fbyp);
@@ -683,4 +683,246 @@ class UserController extends Controller
     public function xqxx(){
         $this->display();
     }
+    /**
+    *  已发布 悬赏
+    */
+    public function userXs(){
+        $uid = $_SESSION['id'];
+        $list = M('reward1')->where("uid = {$uid}")->select();//悬赏基本信息
+        $data = M('reward2')->where("usid = {$uid}")->select();//悬赏详情信息
+        foreach ($list as $k => $v) {
+            foreach ($data as $key => $value) {
+                if($v['psid'] == $value['pid']){
+                    // var_dump($value['type']);
+                    $arr[] = $value['type'].','.$value['pid'];//悬赏内容
+                    $bao[] = $value['bao'].','.$value['pid'];//报名人数
+                }
+            }
+        }
+        //报名人数
+        $this->assign('list',$list);
+        $this->assign('data',$data);
+        $this->assign('arr',$arr);
+        $this->assign('bao',$bao);
+        $this->display();
+    }
+    /**
+    *  已发布 悬赏->已找到@id为详情id
+    */
+    public function yzd($id){
+        $data['bao_st'] = 2; 
+        $ob = M('reward2')->where(" wid = {$id}")->save($data);
+        if($ob > 0){
+            echo $id.'已找到';
+        }
+    }
+    /**
+    *  已发布 悬赏->编辑
+    */
+    public function userXss($psid){
+        $list = M('reward1')->where("psid = {$psid}")->find();//悬赏基本信息
+        $data = M('reward2')->where("pid = {$psid}")->select();//悬赏详情信息
+        $this->assign('list',$list);
+        $this->assign('data',$data);
+        $this->display('userXss');
+    }
+    /**
+    *  已发布 悬赏->提交
+    */
+    public function userXsgo(){
+        $id = $_POST['id'];
+        $id1 = $_POST['id1'];
+        $id2 = $_POST['id2'];
+        $id3 = $_POST['id3'];
+          //填写悬赏
+        // echo '<pre>';
+        // var_dump($_POST);die;
+        date_default_timezone_set('prc');
+        $data['address'] = $_POST['add'].','.$_POST['ad'];
+        $data['tels'] = $_POST['te'];
+        $data['qqs'] = $_POST['q'];
+        $data['time'] = $_POST['ti'];
+        $data['content'] = $_POST['con'];//可直接添加
+        $data['uid'] = $_SESSION['id'];
+        $data['date'] = date('Y-m-d',time());
+        $ob = $id = M('reward1')->where("psid = {$id}")->save($data);
+        if($ob > 0){
+            return 'ok';
+        }
+        //详细信息
+        if(!empty($_POST['sex1']) && !empty($_POST['age1']) && !empty($_POST['yaoqiu1']) && !empty($_POST['whether1']) && !empty($_POST['type1'])){
+            $xsdt['sex'] = $_POST['sex1'];
+            $xsdt['age'] = $_POST['age1'];
+            $xsdt['yaoqiu'] = $_POST['yaoqiu1'];
+            $xsdt['whether'] = $_POST['whether1'];
+            $xsdt['price'] = $_POST['price11'].'-'.$_POST['price21'];
+            if($_POST['type1'] == '其他'){
+               $xsdt['type'] = $_POST['zymc1']; 
+            }else{
+               $xsdt['type'] = $_POST['type1'];
+            }
+            $db = M('reward2')->where("wid = {$id1}")->save($xsdt);
+            if($db > 0){
+                return '第一个';
+            }
+        }
+        if(!empty($_POST['sex2']) && !empty($_POST['age2']) && !empty($_POST['yaoqiu2']) && !empty($_POST['whether2']) && !empty($_POST['type1'])){
+            $xsdts['sex'] = $_POST['sex2'];
+            $xsdts['age'] = $_POST['age2'];
+            $xsdts['yaoqiu'] = $_POST['yaoqiu2'];
+            $xsdts['whether'] = $_POST['whether2'];
+            $xsdts['price'] = $_POST['price12'].'-'.$_POST['price22'];
+            if($_POST['type2'] == '其他'){
+               $xsdts['type'] = $_POST['zymc2']; 
+            }else{
+               $xsdts['type'] = $_POST['type2'];
+            }
+            $obs = M('reward2')->where("wid = {$id2}")->save($xsdts);
+            if($obs > 0){
+                return '第二个';
+            }
+        }
+        if(!empty($_POST['sex3']) && !empty($_POST['age3']) && !empty($_POST['yaoqiu3']) && !empty($_POST['whether3']) && !empty($_POST['type3'])){
+            $xsdt['sex'] = $_POST['sex3'];
+            $xsdt['age'] = $_POST['age3'];
+            $xsdt['yaoqiu'] = $_POST['yaoqiu3'];
+            $xsdt['whether'] = $_POST['whether3'];
+            $xsdt['price'] = $_POST['price13'].'-'.$_POST['price23'];
+            if($_POST['type3'] == '其他'){
+               $xsdt['type'] = $_POST['zymc3']; 
+            }else{
+               $xsdt['type'] = $_POST['type3'];
+            }
+            $ob = $xsid = M('reward2')->where("wid = {$id3}")->save($xsdt);
+            if($ob > 0){
+                return '第三个';
+            }
+        }
+        if($ob > 0){
+            $this->userXss($_POST['id']);
+        }
+        $this->userXss($_POST['id']);
+    }
+    /**
+    *  已发布 应赏-》删除应赏详情
+    */
+    public function userXs_del($id){
+        $ob = M("reward2")->where("wid = {$id}")->delete();
+        if($ob > 0){
+            echo '删除成功';
+        }
+    }
+    /**
+    *  已发布 招聘
+    */
+    public function userZp(){
+        $uid = $_SESSION['id'];
+        $list = M('recruit1')->where("uid = {$uid}")->select();//招聘基本信息
+        $data = M('recruit2')->where("usid = {$uid}")->select();//招聘详情信息
+        foreach ($list as $k => $v) {
+            foreach ($data as $key => $value) {
+                if($v['psid'] == $value['rid']){
+                    // var_dump($value['type']);
+                    $arr[] = $value['type'].','.$value['pid'];//招聘内容
+                }
+            }
+        }
+        $this->assign('list',$list);
+        $this->assign('data',$data);
+        $this->assign('arr',$arr);
+        $this->display('userZp');
+    }
+     /**
+    *  已发布 招聘->已找到@id为详情id
+    */
+    public function yzds($id){
+        $data['zhao_st'] = 2; 
+        $ob = M('recruit2')->where("id = {$id}")->save($data);
+        if($ob > 0){
+            echo $id.'已找到';
+        }
+    }
+    /**
+    *  已发布 招聘-》修改@id为基本信息id
+    */
+    public function userEdit($id){
+        $list = M('recruit1')->where("rid = {$id}")->find();//招聘基本信息
+        $data = M('recruit2')->where("pid = {$id}")->select();//招聘详情信息
+        $this->assign('list',$list);
+        $this->assign('data',$data);
+        $this->display('userEdit');
+    }
+    /**
+    *  已发布 招聘-》执行修改
+    */
+    public function userEditgo(){
+        $rid = $_POST['rid'];
+        $rid1 = $_POST['rid1'];
+        $rid2 = $_POST['rid2'];
+        $rid3 = $_POST['rid3'];
+        date_default_timezone_set('prc');
+        $data['address_zp'] = $_POST['address'].','.$_POST['add'];
+        $data['rtel'] = $_POST['tel'];
+        $data['rqq'] = $_POST['qq'];
+        $data['remail'] = $_POST['email'];
+        $data['date'] = date("Y-m-d",time());
+        $ob = $id = M('recruit1')->where("rid = {$rid}")->save($data);
+        // if($ob > 0){
+        //     $this->userZp();
+        // }
+
+        // if($ob > 0){
+            if(!empty($_POST['sex1']) && !empty($_POST['timework1']) && !empty($_POST['type1']) && !empty($_POST['content1']) && !empty($_POST['yaoqiu1']) && !empty($_POST['age1'])){
+                $xsdt['sex'] = $_POST['sex1'];
+                $xsdt['age'] = $_POST['age1'];
+                $xsdt['type'] = $_POST['type1'];
+                $xsdt['worktime'] = $_POST['timework1'];
+                $xsdt['price'] = $_POST['price11'].'-'.$_POST['price21'];
+                $xsdt['type'] = $_POST['type1'];
+                $xsdt['content'] = $_POST['content1'];
+                $xsdt['work'] = $_POST['yaoqiu1'];
+                $db = M('recruit2')->where("id = {$rid1}")->save($xsdt);
+                // if($db > 0){
+                //     $this->userZp();
+                // }
+            }
+            if(!empty($_POST['sex2']) && !empty($_POST['timework2']) && !empty($_POST['type2']) && !empty($_POST['content2']) && !empty($_POST['yaoqiu2']) && !empty($_POST['age2'])){
+                $xsdt1['sex'] = $_POST['sex2'];
+                $xsdt1['age'] = $_POST['age2'];
+                $xsdt1['type'] = $_POST['type2'];
+                $xsdt1['worktime'] = $_POST['timework2'];
+                $xsdt['price'] = $_POST['price12'].'-'.$_POST['price22'];
+                $xsdt1['type'] = $_POST['type2'];
+                $xsdt1['content'] = $_POST['content2'];
+                $xsdt1['work'] = $_POST['yaoqiu2'];
+                $db1 = M('recruit2')->where("id = {$rid2}")->save($xsdt1);
+                // if($db1 > 0){
+                //     $this->userZp();
+                // }
+                
+            }
+            if(!empty($_POST['sex3']) && !empty($_POST['timework3']) && !empty($_POST['type3']) && !empty($_POST['content3']) && !empty($_POST['yaoqiu3']) && !empty($_POST['age3'])){
+                $xsdt2['sex'] = $_POST['sex3'];
+                $xsdt2['age'] = $_POST['age3'];
+                $xsdt2['type'] = $_POST['type3'];
+                $xsdt2['worktime'] = $_POST['timework3'];
+                $xsdt['price'] = $_POST['price13'].'-'.$_POST['price23'];
+                $xsdt2['type'] = $_POST['type3'];
+                $xsdt2['content'] = $_POST['content3'];
+                $xsdt2['work'] = $_POST['yaoqiu3'];
+                $db2 = M('recruit2')->where("id = {$rid3}")->save($xsdt2);
+                // if($db2 > 0){
+                //     $this->userZp();
+                // }
+                
+            }
+            $this->userZp();
+    }
+    public function userZp_del($id){
+        $ob = M("recruit2")->where("id = {$id}")->delete();
+        if($ob > 0){
+            echo '招聘删除成功';
+        }
+    }
+
 }

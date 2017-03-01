@@ -465,7 +465,8 @@
 											</div>
 											<div class="xg_02">
 												<p class="xg_02_01">已有<?php echo ($listns["collect"]); ?>人收藏</p>
-												<p class="xg_02_02"><?php echo ($listns["address"]); ?></p>
+												<?php $add = explode(',',$listns['address']); ?>
+												<p class="xg_02_02"><?php echo ($add[0]); ?></p>
 											</div>
 
 										</div>

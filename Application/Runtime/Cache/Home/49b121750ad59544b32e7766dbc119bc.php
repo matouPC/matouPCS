@@ -238,7 +238,11 @@
 									</div>
 									
 										<?php  $bao = explode(',',$listNews['bao']); array_pop($bao); $num = count($bao); ?>
-										 <?php if(in_array($_SESSION['id'], $bao)){ ?>
+										 <?php if($listNews['bao_st'] == '2'){ ?>
+												<div class="xqbta a<?php echo ($listNews["wid"]); ?>"  style="background:#ccc;">
+													<a href="#" style="font-size:12px;">报名结束</a>
+												</div>
+										 <?php }else if(in_array($_SESSION['id'], $bao)){ ?>
 											 <div class="xqbta a<?php echo ($listNews["wid"]); ?>"  style="background:#ccc;" id="bt-p<?php echo ($listNews["wid"]); ?>">
 												<a href="#" style="font-size:12px;">已有<?php echo ($num); ?>人报名</a>
 											</div>
@@ -247,7 +251,7 @@
 												<div class="xqbta a<?php echo ($listNews["wid"]); ?>"  id="bt-p<?php echo ($listNews["wid"]); ?>">
 													<a href="#" onclick="alert('请先登录');">我要报名</a>
 												</div>
-											<?php }else{ ?>
+											<?php }else if(!empty($_SESSION['id'])){ ?>
 												<div class="xqbta a<?php echo ($listNews["wid"]); ?>"  id="bt-p<?php echo ($listNews["wid"]); ?>">
 													<a href="#" onclick="tian(<?php echo ($listNews["wid"]); ?>)">我要报名</a>
 												</div>

@@ -102,7 +102,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<ul>
 							<li style="width: 100px;">
 								<php>if($_SESSION['username'] != ''){</php>
-								<a id="login-alert" href="?s=/Home/User">用户{$_SESSION['username']|substr=0,5}</a>
+								<a  href="?s=/Home/User">用户{$_SESSION['username']|substr=0,5}</a>
 								<php>}else{</php>
 								<a id="login-alert" href="#">请注册\登录</a>
 								<php>}</php>
@@ -141,13 +141,13 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 										<ul>
 											<ul>
 												<li>
-													<a href="">悬赏</a>
+													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_ys">应赏</a>
 												</li>
 												<li>
-													<a href="">招聘</a>
+													<a href="?s=/Home/User/userZp">招聘</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_yp">应聘</a>
@@ -176,12 +176,6 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<div class="str"></div>
 							</li>
 							<li style="width: 68px;">
-<<<<<<< HEAD
-										   		
-                                   <a href="#">我的商铺</a>                    	
-                                  
-=======
-							
 								<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
 								<?php }else if($sp['status']==2){ ?>
@@ -189,11 +183,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							   <?php }else{ ?>	
 							   <a href="#">我的商铺</a>
 							   <?php } ?>
-                                
-                                   
->>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
 								<div class="str"></div>
-							
 							</li>
 							<li style="width: 70px;">
 								<a class="action" href="#" id="find">发动态</a>
@@ -661,7 +651,8 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 													</div>
 													<div class="sxultem2">
 														<p>用户{$stuone.username|substr=0,5}发布</p>
-														<p style="font-size: 12px; float: right;padding-right: 10px;"><img src="__PUBLIC__/Home/img/gray_small_position.png" />&nbsp;{$stuone.address}</p>
+														<?php $add = explode(',',$stuone['address']); ?>
+														<p style="font-size: 12px; float: right;padding-right: 10px;"><img src="__PUBLIC__/Home/img/gray_small_position.png" />&nbsp;{$add[0]}</p>
 													</div>
 												</div>
 											</a>

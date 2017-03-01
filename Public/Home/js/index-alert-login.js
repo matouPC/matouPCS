@@ -10,10 +10,6 @@ $('.content-3f').click(function(){
         data:{username:user,password:pass},
         success:function(data){
             if(data == 'y'){
-                $('.alert').css('display','none');
-                $('.alert-black').css('display','none');
-                $('#login-alert').html('用户'+user.substr(0,5));
-                $('#login-alert').attr('href','?s=/Home/User');
                 location.reload();
             }else if(data == 'n'){
                 $('.login-passWord p').html('账号或密码错误');

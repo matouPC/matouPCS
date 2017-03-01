@@ -102,7 +102,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<ul>
 							<li style="width: 100px;">
 								<?php if($_SESSION['username'] != ''){ ?>
-								<a id="login-alert" href="?s=/Home/User">用户<?php echo (substr($_SESSION['username'],0,5)); ?></a>
+								<a  href="?s=/Home/User">用户<?php echo (substr($_SESSION['username'],0,5)); ?></a>
 								<?php }else{ ?>
 								<a id="login-alert" href="#">请注册\登录</a>
 								<?php } ?>
@@ -141,13 +141,13 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 										<ul>
 											<ul>
 												<li>
-													<a href="">悬赏</a>
+													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_ys">应赏</a>
 												</li>
 												<li>
-													<a href="">招聘</a>
+													<a href="?s=/Home/User/userZp">招聘</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_yp">应聘</a>
@@ -176,24 +176,14 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<div class="str"></div>
 							</li>
 							<li style="width: 68px;">
-<<<<<<< HEAD
-										   		
-                                   <a href="#">我的商铺</a>                    	
-                                  
-=======
-							
 								<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">我的商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">我的商铺1</a>
+								<a href="?s=/Home/Mtbu/spgl">我的商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">我的商铺2</a>
+							   <a href="#">我的商铺</a>
 							   <?php } ?>
-                                
-                                   
->>>>>>> 3a286e7b51c630fad0faece5027770b96d034711
 								<div class="str"></div>
-							
 							</li>
 							<li style="width: 70px;">
 								<a class="action" href="#" id="find">发动态</a>
@@ -260,7 +250,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									<a href="?s=/Home/Xsdt" id="xsdt-a">悬赏大厅</a>
 								</li>
 								<li>
-									<a id="zpdt-a" href="?s=/Home/Zpdt1">招聘大厅</a>
+									<a id="zpdt-a" href="?s=/Home/Zpdt1/index/type/0">招聘大厅</a>
 								</li>
 								<li>
 									<a id="tzsc-a" href="?s=/Home/Tzsc">跳蚤市场</a>
@@ -660,7 +650,8 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 													</div>
 													<div class="sxultem2">
 														<p>用户<?php echo (substr($stuone["username"],0,5)); ?>发布</p>
-														<p style="font-size: 12px; float: right;padding-right: 10px;"><img src="/matouPCS/Public/Home/img/gray_small_position.png" />&nbsp;<?php echo ($stuone["address"]); ?></p>
+														<?php $add = explode(',',$stuone['address']); ?>
+														<p style="font-size: 12px; float: right;padding-right: 10px;"><img src="/matouPCS/Public/Home/img/gray_small_position.png" />&nbsp;<?php echo ($add[0]); ?></p>
 													</div>
 												</div>
 											</a><?php endforeach; endif; ?>
