@@ -9,7 +9,7 @@
     $phone = $_GET['phone'];
    
     $c ->appkey = '23590039' ;
-    $c ->secretKey = '78b9d0b14317705a140e9512d2092682';
+    $c ->secretKey = '076573480d66d9b94eab00fd00b958dd';
     $req = new AlibabaAliqinFcSmsNumSendRequest;
    $req ->setExtend( "12312" );
   $req ->setSmsType( "normal" );

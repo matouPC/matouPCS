@@ -192,4 +192,32 @@ class IndexController extends Controller
         }
 
     }
+    
+    public function usave1(){
+    	//echo '<pre>';
+    	//var_dump($_FILES['upload1']);die;
+    	$tu=I('tu');
+    
+    	$data['uid'] =  $_SESSION['id'];
+    	$data['content'] =  $_POST['content'];
+    	$data['type'] =  $_POST['type'];
+    	$data['time']=date("Y-m-d ",time());
+    		$id = M('dongtai')->add($data);
+    		$tu1=rtrim($tu, ",");
+    		$array = explode("," ,$tu1);
+    		$form=M('dongimage');
+    		$data['pid']=$id;
+    		foreach ($array as $v){
+    			$data['imagename'] = $v;
+    			
+    		$fu = $form->add($data);
+    
+    		}
+    		
+    
+    } 
+    
+    
+    
+    
 }

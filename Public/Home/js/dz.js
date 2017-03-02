@@ -294,6 +294,8 @@ function svae_City() {
     	$('#xsdz').attr('disabled',true);
     }
     //直接将选中的地址存入cookie
+
+   
     Close();
 }
 function Close() {
