@@ -26,7 +26,7 @@ class XsdtController extends Controller
         //填写悬赏
         // var_dump($_POST);die;
         date_default_timezone_set('prc');
-        $data['address'] = $_POST['add'];
+        $data['address'] = $_POST['add'].','.$_POST['ad'];
         $data['tels'] = $_POST['te'];
         $data['qqs'] = $_POST['q'];
         $data['time'] = $_POST['ti'];

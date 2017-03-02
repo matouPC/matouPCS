@@ -100,11 +100,9 @@ class BoxController extends CommonController {
         }else if($address != ''){//活动地点
             $jwhere = "e.address = '{$address}'";
         }
-        var_dump($where);
-        var_dump($jwhere);
         //分页开始
         if(!empty($where)){
-             $data = M('reward2 as r')->join('reward1 as e on r.pid = e.psid')->where($where)->select();
+             $data = M('reward2 as r')->join('reward1 as e on r.pid = e.psid')->where($where.' and bao_st = 1')->select();
           }else if(!empty($re)){
              $data = M('reward2 as r')->join('reward1 as e on r.pid = e.psid')->select(); 
             foreach($data as $datas){
@@ -258,7 +256,6 @@ class BoxController extends CommonController {
         }else if($address != ''){//活动地点
             $jwhere = "e.address = '{$address}'";
         }
-        var_dump($where);
         $count = M('due as d')->where($where)->count();
         $Page = new \Think\PageAjax($count,10);//分页开始
         if(!empty($where) && !empty($bd)){//部队和条件都存在的情况
@@ -481,8 +478,6 @@ class BoxController extends CommonController {
         // else if($address != ''){
         //     $where = "e.address = '{$address}'";
         // }
-        var_dump($where);
-        var_dump($jwhere);
         //计算总页数
         if(!empty($where)){
             $count = M('recruit2 as r')->where($where)->count();
@@ -689,8 +684,6 @@ class BoxController extends CommonController {
         // else if($address != ''){
         //     $where = "e.address = '{$address}'";
         // }
-        var_dump($where);
-        var_dump($jwhere);
         $count = M('employ')->count();
         $Page = new \Think\PageAjax($count,10);//分页开始
         if(!empty($where) && !empty($address) && !empty($zuo)){
@@ -770,7 +763,7 @@ class BoxController extends CommonController {
             $count = M('flea as f')->join('user as u on f.uid = u.id')->count();
         }
         
-        $Page = new \Think\PageAjax($count,6);
+        $Page = new \Think\PageAjax($count,4);
         //根据条件确定最终获得的数据
         if($where != ''){
             $list = M('flea as f')->join('user as u on f.uid = u.id')->order("f.fid desc")->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();

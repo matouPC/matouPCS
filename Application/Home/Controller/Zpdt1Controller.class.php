@@ -11,7 +11,7 @@ class Zpdt1Controller extends Controller
         //推荐招聘
         // $datas = M()
         $xiang = count(M('recruit1')->select());
-        $datan = M('recruit2 as  r')->join('recruit1 as e on r.pid = e.rid ')->join(' user as u on e.uid = u.id')->order('r.id desc')->limit('0,3')->select();
+        $datan = M('recruit2 as  r')->join('recruit1 as e on r.pid = e.rid ')->join(' user as u on e.uid = u.id')->join("forcee as f on f.uid = u.id")->order('r.id desc')->limit('0,3')->select();
     	$num = count($list);
         //推荐部队
         $listNew = M('forcee as f')->join('forceimage as r on f.id = r.pid')->order('f.collect desc')->limit('0,3')->select();

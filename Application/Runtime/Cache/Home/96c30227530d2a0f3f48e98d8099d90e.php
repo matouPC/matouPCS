@@ -159,13 +159,13 @@
 								
 											<ul>
 												<li>
-													<a href="">悬赏</a>
+													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_ys">应赏</a>
 												</li>
 												<li>
-													<a href="">招聘</a>
+													<a href="?s=/Home/User/userZp">招聘</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_yp">应聘</a>
@@ -695,6 +695,11 @@
 							<dl id="address">
 								<dt>活动地点</dt>
 								<dd>
+									<div class="gray">
+										<a>不限</a>
+									</div>
+								</dd>
+								<dd>
 									<div id="ceshi">
 										<form name="xxoo">
 											<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
@@ -735,7 +740,7 @@
 											部队名称
 										</p>
 										<p style="display:block; float: left; overflow: hidden; line-height: 30px; margin-left: 10px; float:left; width: 68px; height: 30px; font-size:14px;">
-											经理/店长
+											<?php echo ($dataa["forcename"]); ?>
 										</p>
 										<p style="display:block; float: left; overflow: hidden; margin-left: 25px; float:left; width: 30px; height: 30px; line-height: 30px; font-size:14px;">
 											<?php echo ($dataa["sex"]); ?>
@@ -750,7 +755,8 @@
 										<p style="font-size: 14px; color: #999999; width: 265px; height: 44px; line-height: 24px; overflow: hidden;">
 											具体要求 : &nbsp;<?php echo ($dataa["content"]); ?>
 										</p>
-										<p style="font-size: 14px; display: block; width: 80px; float: left; color: #CCCCCC; margin-top: 10px;">报名数</p>
+										<?php $numBao = explode(',',$dataa['zhao']); array_pop($numBao); $numBaos = count($numBao);?>
+										<p style="font-size: 14px; display: block; width: 80px; float: left; color: #CCCCCC; margin-top: 10px;">应聘人数<?php echo ($numBaos); ?></p>
 										<p style="font-size: 14px;display: block; width: 100px; float: right; color: #CCCCCC; margin-top: 10px;"><?php echo ($dataa["address"]); ?></p>
 									</a>
 								</li><?php endforeach; endif; ?>

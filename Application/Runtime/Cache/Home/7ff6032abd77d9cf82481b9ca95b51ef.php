@@ -9,7 +9,8 @@
                 </div>
                 <p class="yhmc">用户<?php echo (substr($list[$i]['username'],0,6)); ?></p>
                 <p class="hdsj">活动时间：<?php echo ($list[$i]['time']); ?></p>
-                <p class="hddd">活动地点：<?php echo ($list[$i]['address']); ?></p>
+                <?php $add = explode(',',$list[$i]['address']); ?>
+                <p class="hddd">活动地点：<?php echo ($add[0]); ?></p>
                 <div class="details">
                         <?php for ($j=0; $j < count($list[$i]); $j++) { ?>
 

@@ -10,10 +10,6 @@ $('.content-3f').click(function(){
         data:{username:user,password:pass},
         success:function(data){
             if(data == 'y'){
-                $('.alert').css('display','none');
-                $('.alert-black').css('display','none');
-                $('#login-alert').html('用户'+user.substr(0,5));
-                $('#login-alert').attr('href','?s=/Home/User');
                 location.reload();
             }else if(data == 'n'){
                 $('.login-passWord p').html('账号或密码错误');
@@ -43,6 +39,7 @@ $('#register-userName').blur(function(){
                 if(data == 'y'){
                     $('.register-userName').append('<p style="color:green">该号码可以注册</p>');
                 }
+
                 if(data == 'n'){
                     $('.register-userName').append('<p  style="color:red">该号码已被注册</p>');
                     $('#submit').click(function(){
@@ -273,3 +270,103 @@ $(function () {
 //            });
     }
 });
+//QQ登录
+// QC.Login({
+//        btnId:"qqLoginBtn"    //插入按钮的节点id
+// });
+if(window.opener != null){
+    window.opener.a();
+}
+function a(){
+    location.reload();
+    self.close();
+
+}
+
+
+//调用QC.Login方法，指定btnId参数将按钮绑定在容器节点中
+function windowDl(){
+    window.open('https://graph.qq.com/oauth2.0/authorize?client_id=101383226&response_type=token&scope=all&redirect_uri=http://www.xishimatou.com', 'oauth2Login_10086' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes');     
+    }
+    QC.Login({
+       //btnId：插入按钮的节点id，必选
+           btnId:"qqLoginBtn",   
+           //用户需要确认的scope授权项，可选，默认all
+           scope:"all",
+           //按钮尺寸，可用值[A_XL| A_L| A_M| A_S|  B_M| B_S| C_S]，可选，默认B_S
+           // size: "A_XL"
+       }, function(reqData, opts){//登录成功
+           //根据返回数据，更换按钮显示状态方法
+            // window.close();
+           // alert(123);
+           // $('.alert-close').click(function(){
+           //      $('.alert').css('display','none');
+           //      $('.alert-black').css('display','none');
+           //  });
+           var dom = document.getElementById(opts['btnId']),
+           _logoutTemplate=[
+                //头像
+                // '<span><img src="{figureurl}" class="{size_key}"/></span>',
+                //昵称
+                // '<span>{nickname}</span>',
+                //退出
+                // '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'    
+           ].join("");
+           dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
+               nickname : QC.String.escHTML(reqData.nickname), //做xss过滤
+               figureurl : reqData.figureurl
+           }));
+           
+           al(reqData.nickname);//拿到qq昵称
+           // this.window.opener = null; 
+           // alert($('#login-alert').html()); 
+           var ss = window.location.href.split("#");
+           setCookie('token',ss[1]);
+           alert(getCookie('token'));
+       }, function(opts){//注销成功
+             alert('QQ登录 注销成功');
+       }
+    );
+function al(name){//暂且先只留一个昵称
+    alert(name);
+}
+
+// location.reload('http://www.xishimatou.com/matouPCS/');
+//https://graph.qq.com/oauth2.0/authorize&response_type=code&client_id=101383226&redirect_uri=http://www.xishimatou.com&state
+function setCookie(cookieName, cookieValue, cookieExpires) {
+    try {
+        cookieName = cookieName.trim();
+        cookieValue = escape(cookieValue);
+        var nowDate = new Date();
+        nowDate.setTime(new Date().getTime() + 7 * 24 * 60 * 60 * 1000);
+        var cookieExpiresTime = nowDate.toGMTString();
+        if (cookieExpires !== undefined && cookieExpires !== "" && cookieExpires > 0) {
+            nowDate.setTime(new Date().getTime() + cookieExpires);
+            cookieExpiresTime = nowDate.toGMTString();
+        }
+        document.cookie = cookieName + "=" + cookieValue
+            + "; expires=" + cookieExpiresTime;
+    } catch (e) {
+    }
+}
+function getCookie(cookieName) {
+    try {
+        cookieName = cookieName.trim();
+        var cookieValue = document.cookie;
+        var cookieStartAt = cookieValue.indexOf("" + cookieName + "=");
+        if (cookieStartAt === -1) {
+            cookieValue = "";
+        } else {
+            cookieStartAt = cookieValue.indexOf("=", cookieStartAt) + 1;
+            var cookieEndAt = cookieValue.indexOf(";", cookieStartAt);
+            if (cookieEndAt === -1) {
+                cookieEndAt = cookieValue.length;
+            }
+            cookieValue = unescape(cookieValue.substring(cookieStartAt, cookieEndAt));
+        }
+        return cookieValue;
+    } catch (e) {
+    }
+    return "";
+}
+   

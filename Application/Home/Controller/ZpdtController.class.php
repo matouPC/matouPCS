@@ -41,7 +41,7 @@ class ZpdtController extends Controller
                 $xsdt['age'] = $_POST['age1'];
                 $xsdt['type'] = $_POST['type1'];
                 $xsdt['worktime'] = $_POST['timework1'];
-                $xsdt['price'] = $_POST['price11'].','.$_POST['price21'];
+                $xsdt['price'] = $_POST['price11'].'-'.$_POST['price21'];
                 $xsdt['type'] = $_POST['type1'];
                 $xsdt['content'] = $_POST['content1'];
                 $xsdt['work'] = $_POST['yaoqiu1'];
@@ -55,7 +55,7 @@ class ZpdtController extends Controller
                 $xsdt1['age'] = $_POST['age2'];
                 $xsdt1['type'] = $_POST['type2'];
                 $xsdt1['worktime'] = $_POST['timework2'];
-                $xsdt['price'] = $_POST['price12'].','.$_POST['price22'];
+                $xsdt['price'] = $_POST['price12'].'-'.$_POST['price22'];
                 $xsdt1['type'] = $_POST['type2'];
                 $xsdt1['content'] = $_POST['content2'];
                 $xsdt1['work'] = $_POST['yaoqiu2'];
@@ -69,7 +69,7 @@ class ZpdtController extends Controller
                 $xsdt2['age'] = $_POST['age3'];
                 $xsdt2['type'] = $_POST['type3'];
                 $xsdt2['worktime'] = $_POST['timework3'];
-                $xsdt['price'] = $_POST['price13'].','.$_POST['price23'];
+                $xsdt['price'] = $_POST['price13'].'-'.$_POST['price23'];
                 $xsdt2['type'] = $_POST['type3'];
                 $xsdt2['content'] = $_POST['content3'];
                 $xsdt2['work'] = $_POST['yaoqiu3'];
