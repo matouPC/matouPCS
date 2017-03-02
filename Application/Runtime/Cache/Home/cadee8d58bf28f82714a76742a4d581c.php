@@ -82,109 +82,7 @@
 
 	<body>
 		<header>
-			<div class="h-content-main">
-				<div class="h-main-c">
-					<div class="h-c-1f">
-						<div class="s-f1-l">
-							<div class="home">
-								<a href="?s=/Home/Index">
-									<img src="/matouPCS/Public/Home/img/home.png" />
-								</a>
-							</div>
-							<p>
-								<a href="?s=/Home/Index">首页</a>
-							</p>
-						</div>
-						<div class="s-f1-r">
-							<ul>
-								<?php if(empty($_SESSION['username'])){ ?>
-								<li style="width: 100px;">
-									<a id="login-alert" href="#">请注册\登录</a>
-								</li>
-								<?php }else{ ?>
-								<li style="width: 100px;">
-									<a href="#">
-										<img src="/matouPCS/Public/Home/img/tx.png" />
-										<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
-									</a>
-									<div class="str"></div>
-								</li>
-								<?php } ?>
-								<li id="select-xx" style="width: 45px;">
-									<a href="#">消息</a>
-									<div class="str"></div>
-									<div class="select-xx">
-										<ul>
-											<li>
-												<a href="">需求消息</a>
-											</li>
-											<li>
-												<a href="">部队消息</a>
-											</li>
-											<li>
-												<a href="">商铺消息</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li style="width: 58px;">
-									<a href="#">收藏夹</a>
-									<div class="str"></div>
-								</li>
-								<li id="select-yfb" style="width: 70px;">
-									<a href="#">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
-									<div class="str"></div>
-									<div class="select-yfb">
-										<ul>
-											<ul>
-												<li>
-													<a href="">悬赏</a>
-												</li>
-												<li>
-													<a href="">应赏</a>
-												</li>
-												<li>
-													<a href="">招聘</a>
-												</li>
-												<li>
-													<a href="">应聘</a>
-												</li>
-												<li>
-													<a href="">求购</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-												<li>
-													<a href="">闲置</a>
-												</li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-								<li style="width: 68px;">
-									<a href="#">部队中心</a>
-									<div class="str"></div>
-								</li>
-								<li style="width: 68px;">
-									<a href="#">我的商铺</a>
-									<div class="str"></div>
-								</li>
-								<li style="width: 70px;">
-									<a class="action" href="#">发动态</a>
-									<div class="strf"></div>
-								</li>
-								<li class="clearfloat"></li>
-							</ul>
-						</div>
-						<div class="clearfloat"></div>
-					</div>
+		
 					<div class="h-c-2f">
 						<!--<img src="img/navbg3.png" />-->
 						<!--<div class="s-f2-r">
@@ -414,8 +312,15 @@
 												var li = '';
 
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].bdlx=1){
+														var helf="/http://localhost/matouPCS/Home/Mtbu/grbddydt"
+													}else if(data[i].bdlx=6){
+														var helf="/http://localhost/matouPCS/Home/Mtbu/spbddydt"
+													}else{
+														var helf="/http://localhost/matouPCS/Home/Mtbu/rzbddydt"
+													}
 													var use = data[i].username.substr(0,5);
-													li+='<li><div class="left"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													li+='<li><div class="left"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="'+use+'">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -439,7 +344,11 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户<?php echo (substr($lis["username"],0,5)); ?></a>
+												  <?php if($lis[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($lis["id"]); ?>">用户<?php echo (substr($lis["username"],0,5)); ?></a>
+													<?php elseif($lis[bdlx]=='6'): ?>
+														<a href="?s=/Home/Mtbu/spbddydt/uid/<?php echo ($lis["id"]); ?>">用户<?php echo (substr($lis["username"],0,5)); ?></a>
+														<?php else: ?>
+															<a href="?s=/Home/Mtbu/rzbddydt/uid/<?php echo ($lis["id"]); ?>">用户<?php echo (substr($lis["username"],0,5)); ?></a><?php endif; ?>
 												</span>
 												<span style="float: right; text-align: right;"><?php echo ($lis["addre"]); ?></span>
 											</p>

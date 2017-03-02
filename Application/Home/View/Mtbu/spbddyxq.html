@@ -82,7 +82,7 @@
 
 	<body>
 		<header>
-		<include file="Public/header"/>
+		
 					<div class="h-c-2f">
 						<!--<img src="img/navbg3.png" />-->
 						<!--<div class="s-f2-r">
@@ -316,8 +316,15 @@
 												var li = '';
 
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].bdlx=1){
+														var helf="/http://localhost/matouPCS/Home/Mtbu/grbddydt"
+													}else if(data[i].bdlx=6){
+														var helf="/http://localhost/matouPCS/Home/Mtbu/spbddydt"
+													}else{
+														var helf="/http://localhost/matouPCS/Home/Mtbu/rzbddydt"
+													}
 													var use = data[i].username.substr(0,5);
-													li+='<li><div class="left"><img src="__PUBLIC__/Home/img/tx2-3r.png" /><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													li+='<li><div class="left"><img src="__PUBLIC__/Home/img/tx2-3r.png" /><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="'+use+'">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -342,7 +349,13 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户{$lis.username|substr=0,5}</a>
+												  <if condition="$lis[bdlx]=='1'">
+													<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.id}">用户{$lis.username|substr=0,5}</a>
+													<elseif condition="$lis[bdlx]=='6'"/>
+														<a href="?s=/Home/Mtbu/spbddydt/uid/{$lis.id}">用户{$lis.username|substr=0,5}</a>
+														<else/>
+															<a href="?s=/Home/Mtbu/rzbddydt/uid/{$lis.id}">用户{$lis.username|substr=0,5}</a>
+															</if>
 												</span>
 												<span style="float: right; text-align: right;">{$lis.addre}</span>
 											</p>

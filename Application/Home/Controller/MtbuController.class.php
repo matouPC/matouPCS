@@ -9,9 +9,9 @@ class MtbuController extends Controller
     {
     	//码头部队
    
-    	$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("bdlx='2'||bdlx='3'||bdlx='4'||bdlx='5'")->order('d.did desc')->limit('0,2')->select();
+    	$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit('0,2')->select();
     	//热门部队
-    	$listNew = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.collect desc')->select();
+    	$listNew = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.collect desc')->limit('0,2')->select();
 
 
     	$this->assign('list',$list);
@@ -536,9 +536,32 @@ class MtbuController extends Controller
     	}
     	$this->ajaxReturn($remen);
     }
-    public function rzbddndt($id)
+    public function rzbd1()
+    {
+    	//认证部队对内动态
+             $uid=I('uid');
+    	$sp= M('forcee')->where("uid = {$uid}")->select();//我
+    	foreach ($sp as $v){
+    		$id=$v['id'];
+    	}
+    	//var_dump($id);die;
+    	 $this->rzbddndt($id);
+    }
+    public function rzbddndt()
     {
         //认证部队对内动态
+    	
+   
+    	$uidd=I('uid');
+    	var_dump($uidd);
+    	if($uidd==''){
+    		$id=I('id');
+    	}else{
+    	$sp1= M('forcee')->where("uid = {$uidd}")->select();//我
+    	foreach ($sp1 as $v){
+    		$id=$v['id'];
+    	}
+    	}
         $list = M('forcee as f')->join('user as u on f.uid = u.id')->join('forceimage as m on f.id = m.pid')->join('forcevideo as v on f.id = v.pid')->where("f.id = {$id}")->find();
         $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();
         $sp = M('forcee')->where("id = {$id}")->select();//我

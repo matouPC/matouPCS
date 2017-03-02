@@ -7,9 +7,7 @@
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/mtbu-zy.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/datePicker.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/hzw-city-picker.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-
 		<style>
 			.s-f1-r ul li a .img {
 				margin-top: 15px;
@@ -88,15 +86,115 @@
 			}
 		</style>
 	</head>
-<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-<script src="__PUBLIC__/Home/js/City_data.js"></script>
-        <script src="__PUBLIC__/Home/js/bddz.js"></script>
 
 	<body>
 		<header>
-		<include file="Public/header"/>
-					
-					
+		<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+<script src="__PUBLIC__/Home/js/City_data.js"></script>
+        <script src="__PUBLIC__/Home/js/bddz.js"></script>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<div class="h-c-1f">
+						<div class="s-f1-l">
+							<div class="home">
+								<a href="?s=/Home/Index">
+									<img src="__PUBLIC__/Home/img/home.png" />
+								</a>
+							</div>
+							<p>
+								<a href="?s=/Home/Index">首页</a>
+							</p>
+						</div>
+						<div class="s-f1-r">
+							<ul>
+								<php>if(empty($_SESSION['username'])){</php>
+								<li style="width: 100px;">
+									<a id="login-alert" href="#">请注册\登录</a>
+								</li>
+								<php>}else{</php>
+								<li style="width: 100px;">
+									<a href="#">
+										<img src="__PUBLIC__/Home/img/tx.png" />
+										<p>用户{$_SESSION['username']|substr=0,5}</p>
+									</a>
+									<div class="str"></div>
+								</li>
+								<php>}</php>
+								<li id="select-xx" style="width: 45px;">
+									<a href="#">消息</a>
+									<div class="str"></div>
+									<div class="select-xx">
+										<ul>
+											<li>
+												<a href="">需求消息</a>
+											</li>
+											<li>
+												<a href="">部队消息</a>
+											</li>
+											<li>
+												<a href="">商铺消息</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li style="width: 58px;">
+									<a href="#">收藏夹</a>
+									<div class="str"></div>
+								</li>
+								<li id="select-yfb" style="width: 70px;">
+									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
+									<div class="str"></div>
+									<div class="select-yfb">
+										<ul>
+											<ul>
+												<li>
+													<a href="">悬赏</a>
+												</li>
+												<li>
+													<a href="">应赏</a>
+												</li>
+												<li>
+													<a href="">招聘</a>
+												</li>
+												<li>
+													<a href="">应聘</a>
+												</li>
+												<li>
+													<a href="">求购</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+												<li>
+													<a href="">闲置</a>
+												</li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+								<li style="width: 68px;">
+									<a href="#">部队中心</a>
+									<div class="str"></div>
+								</li>
+								<li style="width: 68px;">
+									<a href="#">我的商铺</a>
+									<div class="str"></div>
+								</li>
+								<li style="width: 70px;">
+									<a class="action" href="#" id="find">发动态</a>
+									<div class="strf"></div>
+								</li>
+								<li class="clearfloat"></li>
+							</ul>
+						</div>
+						<div class="clearfloat"></div>
+					</div>
 					<div class="h-c-2f">
 						<div class="s-f2-l">
 							<div class="f2-l-1">
@@ -161,13 +259,12 @@
 				<div class="s-main-l">
 					<div class="s-c-1f">
 						<p style="float: left; display: block; width: 60px; line-height: 30px; font-size: 14px; margin-right: 30px;">所在地区</p>
-	                            <form name="xxoo">
-											<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
-										</form>
-								
+						     <form name="xxoo">
+								<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
+								</form>
 						<img src="__PUBLIC__/Home/img/mtbutitle.png" />
 					</div>
-						<script type="text/javascript">				
+					<script type="text/javascript">				
 							var url_ajax = "?s=/Home/Box/bddz";//这个路径是真正显示列表的
 							    function getPage() {
 							    	//alert(getCookie("add"));
@@ -180,9 +277,7 @@
 							    }
 							    getPage();
 							    </script>
-					
-				
-					<div   class="s-c-2f">
+					<div class="s-c-2f">
 						<div style="width: 850px;">
 							<div class="s-f2l-c1">
 								<ul>
@@ -190,23 +285,22 @@
 										<a class="selected-tab" href="javascript://">热门动态</a>
 									</li>
 									<li>
-										<a href="javascript://"  onclick="gzs(1)">工作室</a>
+										<a href="javascript://">工作室</a>
 									</li>
 									<li>
-										<a href="javascript://" onclick="gzs(2)">表演团</a>
+										<a href="javascript://">表演团</a>
 									</li>
 									<li>
-										<a href="javascript://" onclick="gzs(3)">婚庆公司</a>
+										<a href="javascript://">婚庆公司</a>
 									</li>
 									<li>
-										<a href="javascript://" onclick="gzs(4)">影楼</a>
+										<a href="javascript://">影楼</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<br>
-					<div>
 					<div class="con" id="re">
 					<div id="xxoos">
 					
@@ -272,8 +366,7 @@
 
 					</div>-->
 				</div>
-				</div>
-  <script type="text/javascript">
+				<script type="text/javascript">
 	function gzs(id){
 		 var address = getCookie("add");//活动时间 
 	//	alert(id);	
@@ -613,9 +706,9 @@
 
 		</footer>
 
-		
+
 		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-		
+
 		<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -794,7 +887,6 @@
 					$("#find").css("color", "#fff");
 				});
 			});
-
 		</script>
 	</body>
 

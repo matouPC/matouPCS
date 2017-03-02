@@ -664,8 +664,8 @@
   <script type="text/javascript">
 	function gzs(id){
 		 var address = getCookie("add");//活动时间 
-		alert(id);	
-		alert(address);
+	//	alert(id);	
+	//	alert(address);
 				$.ajax({
 					url:"?s=/Home/Mtbu/dongtaidi",
 					type:"post",
@@ -694,9 +694,8 @@
 	 var c=2;
 	  
 	  function tj(){	
-		  alert(111);
 	      var address = getCookie("add");//活动时间
-		alert(address);
+		//alert(address);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/buduijzre');?>",
@@ -766,7 +765,7 @@
 			 var t=2;
 			  function tj2(){
 				   var address = getCookie("add");//活动时间
-					alert(2);
+					//alert(2);
 						$.ajax({
 							type:'post',
 							url:"<?php echo U('Mtbu/buduijzby');?>",
@@ -775,7 +774,7 @@
 					         $("#xxoo2").append("<div id='load'>加载中……</div>");
 							},
 							success:function(data){
-								alert(data);
+							//	alert(data);
 								if(data!=null){				
 										//alert(1);
 										
