@@ -350,7 +350,7 @@ function qqLogins(){
         // data:{openid:xxqq},
         success:function(data){
             // alert(data);
-
+            onload=reurls
              // location.reload();
              // if($('#login-alert').html() == '请注册\\登录'){
              //    location.reload();
@@ -362,7 +362,20 @@ function qqLogins(){
         }
     });
 }
+function reurls(){
 
+    url = location.href; //把当前页面的地址赋给变量 url
+
+    var times = url.split("?"); //分切变量 url 分隔符号为 "?"
+
+    if(times[1] != 1){ //如果?后的值不等于1表示没有刷新
+
+    url += "?1"; //把变量 url 的值加入 ?1
+
+    self.location.replace(url); //刷新页面
+
+    }
+    }
 // /json解析/
 // function genJSON(data) {
 //     try {
@@ -377,36 +390,61 @@ function qqLogins(){
 
 //     }
 // }
+//计算页面刷新次数
+// window.onload = function() {
+//     if(window.name == "") {
+//         window.name = "0";
+//     } else {
+//         window.name = eval(window.name) + 1;
+//         // if(window.name < 2){
+//             location.reload();
+//             alert("已经刷新" + window.name + '次');
+//             setCookie('sxcs',window.name);
+//         // }
+//         // alert("已经刷新" + window.name + '次');
+//     }
+// }
 /**
 *   微信登录
 */
 function wxLogin(){
     window.open('https://open.weixin.qq.com/connect/qrconnect?appid=wx06fc578080933319&redirect_uri=http://www.xishimatou.com/matouPCS&response_type=code&scope=snsapi_login#wechat_redirect');
 }
-var wxss = window.location.href.split("?");
-setCookie('wxcode',wxss[1]);
-var wxcode = getCookie('wxcode');
-if(wxcode != ''){
-    // alert(wxcode);
-    $.ajax({
-        url:"?s=/Home/User/wxcode/code/"+wxcode,
-        type:"get",
-        // data:{wxcode:wxcode},
-        success:function(data){
-             if($('#login-alert').html() == '请注册\\登录'){
-                 location.reload();
-              }
-             // alert(data);
-        },error:function(){
-            alert('ajax请求失败');
-        }
-    });
+function wxdlgo(){
+    var wxss = window.location.href.split("?");
+    setCookie('wxcode',wxss[1]);
+    var wxcode = getCookie('wxcode');
+    if(wxcode != ''){
+        // alert(wxcode);
+        $.ajax({
+            url:"?s=/Home/User/wxcode/code/"+wxcode,
+            type:"get",
+            // data:{wxcode:wxcode},
+            success:function(data){
+                    onload=reurl
+                    // reurl()
+            },error:function(){
+                alert('ajax请求失败');
+            }
+        });
+    }
 }
+wxdlgo();
+//微信 专属
+function reurl(){
 
+    url = location.href; //把当前页面的地址赋给变量 url
 
+    var times = url.split("?"); //分切变量 url 分隔符号为 "?"
 
+    if(times[1] != 1){ //如果?后的值不等于1表示没有刷新
 
+    url += "?1"; //把变量 url 的值加入 ?1
 
+    self.location.replace(url); //刷新页面
+
+    }
+    }
 function setCookie(cookieName, cookieValue, cookieExpires) {
     try {
         cookieName = cookieName.trim();
