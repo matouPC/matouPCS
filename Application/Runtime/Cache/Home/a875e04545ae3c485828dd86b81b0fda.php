@@ -90,7 +90,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank.css" />
+	
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
 	</head>
@@ -155,13 +155,13 @@
 								
 											<ul>
 												<li>
-													<a href="">悬赏</a>
+													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_ys">应赏</a>
 												</li>
 												<li>
-													<a href="">招聘</a>
+													<a href="?s=/Home/User/userZp">招聘</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_yp">应聘</a>
@@ -495,7 +495,7 @@
 								<?php if($list[username]!=$list[tel]): ?><a href=""><?php echo ($list["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
-								（摄影师）
+								（<?php echo ($list["bdlx"]); ?>）
 							</p>
 							<div>
 								<p class="fsl">
@@ -526,7 +526,7 @@
 						<div class="s-f4">
 							<div>
 								<a style="width: 120px;" href="">基本信息</a>
-								<a style="color: #FF5C5D;" href="rzbddydt-3r-xy.html">动态</a>
+								<a style="color: #FF5C5D;" href="">动态</a>
 								<a href="?s=/Home/Mtbu/rzbddyxq/id/<?php echo ($_GET['id']); ?>">需求</a>
 								<a id="zp" href="">作品</a>
 								<a style="width: 105px;" href="?s=/Home/Mtbu/rzbddyly/id/<?php echo ($_GET['id']); ?>">留言区</a>
@@ -807,41 +807,83 @@
 									<button>留 言 区</button>
 								</div>
 								<div class="textarea">
-									<textarea id="content"></textarea>
+									<textarea id="contents"></textarea>
 								</div>
 								<div class="fbly">
-									<button onclick="submit(<?php echo ($_GET['id']); ?>)">发布留言</button>
+										<button onclick="liuyan(<?php echo ($_GET['id']); ?>)">发布留言</button>
 								</div>
 							</div>
+							
 							<script type="text/javascript">
-								function submit(id){
-									var content = $('#content').val();
-									if(content.replace(/\s+/g, "")){
+								function liuyan(id){
+									var p=id;
+									var t = "<?php echo session('id');?>";
+									alert(p);
+									var contents = $('#contents').val();
+									if(contents.replace(/\s+/g, "")){
 										$.ajax({
 											url:"?s=/Home/Mtbu/rzbddydt_liuyan",
 											type:"post",
-											data:{fid:id,content:content},
+											data:{id:p,content:contents},
 											dataType:"json",
 											success:function(data){
+											alert(2);
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
-													var use = data[i].username.substr(0,5);
-													li+='<li><div class="left"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].content+'</p><div class="bottom"><p class="sj">'+data[i].time+'</p><p onclick="zan('+data[i].id+')" class="dz dz-qx"><span class="icon-dz"></span>'+data[i].zan+'</p></div></div><div class="clearfloat"></div></li>';
+													if(data[i].username==data[i].tel){
+														var use = data[i].username.substr(0,5);
+														}else{
+													     var use = data[i].username;
+														}
+													if(t==data[i].uid){
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';	
+														}
+													}else{
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';	
+														}
+													}
+													
+													
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].content+'</p><div class="bottom"><p class="sj">'+data[i].time+'</p><p class="dz dz-qx"><span class="icon-dz"></span>'+data[i].zan+'</p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
+												$('#contents').val('');
 											},error:function(){
 												alert('no');
 											}
 										});
 									}else{
-										alert('滚犊子');
+										alert('请填写留言内容在提交');
 									}
 								}
 							</script>
 							<ul id="li">
 								<?php if(is_array($li)): foreach($li as $key=>$lis): ?><li>
 										<div class="left">
-											<img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+												<?php if($_SESSION['id'] == $lis['uid']){ ?>
+									  <?php if($lis[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($lis["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+									<?php }else{ ?>
+                                        <?php if($lis[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+							
+                                       <?php } ?>
 											<div class="vip">
 												<img src="/matouPCS/Public/Home/img/rzlogo.png" />
 											</div>
@@ -849,7 +891,8 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户<?php echo (substr($lis["username"],0,5)); ?></a>
+													<?php if($lis[username]==$lis[tel]): echo (substr($lis["username"],0,5)); endif; ?>
+								               <?php if($lis[username]!=$lis[tel]): echo ($lis["username"]); endif; ?>
 												</span>
 												<span style="float: right; text-align: right;"><?php echo ($lis["addre"]); ?></span>
 											</p>
@@ -1038,97 +1081,21 @@
 								</div>
 							</div>
 							<p class="yhmc">
-								<a href=""><?php echo ($v["username"]); ?></a>
+								  <?php if($v[username]==$v[tel]): echo (substr($v["username"],0,5)); endif; ?>
+							<?php if($v[username]!=$v[tel]): echo ($v["username"]); endif; ?>
 							</p>
 							<p class="szd">所在地：<?php echo ($v["addre"]); ?></p>
 							<p class="dtnr">
 							<?php echo ($v["content"]); ?>
 							</p>
 							<ul>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+								<?php if(is_array($img)): foreach($img as $key=>$vd): if($v[did]==$vd[pid]): ?><li>
+									<a rel="gallery1" class="boxer" href="/matouPC/Uploads/<?php echo ($vd["imagename"]); ?>">
 										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
+											<img src="/matouPCS/Uploads/<?php echo ($vd["imagename"]); ?>" />
 										</div>
 									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
-								<li>
-									<a rel="gallery" class="boxer" href="img/yhmc-big.png">
-										<div class="pic">
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-										</div>
-									</a>
-								</li>
+								</li><?php endif; endforeach; endif; ?>
 								<li class="clearfloat"></li>
 							</ul>
 							<div class="bottom">
@@ -1153,27 +1120,39 @@
 				</div>
 				<div class="clearfloat"></div>
 			</div>
-<script type="text/javascript">
-var  bd='rz';
+			<script type="text/javascript">
+
 var p=2;
   function tj(id){
 
 	 
-	  alert(id);
+	 // alert(id);
 		$.ajax({
 			type:'post',
 			url:"<?php echo U('Mtbu/dnjzdt');?>",
 			data:{k:p,id,id},
 			beforeSend:function(){
-	         $("#con").append("<div id='load'>加载中……</div>");
+	         $("#conn").append("<div id='load'>加载中……</div>");
 			},
 			success:function(data){
-		alert(data);
+	//	alert(data);
 			
 					if(data!=null){				
-						alert(1);
-						 for (var i = 0; i < data.length; i++) {
-						$("#con").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr"> '+data[i].content+'</p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div');
+						 for (var i = 0; i < data['nr'].length; i++) {
+	                            var p='';
+							 if(data['nr'][i].username==data['nr'][i].tel){
+									var use = data['nr'][i].username.substr(0,5);
+									}else{
+								     var use = data['nr'][i].username;
+									}
+							 for (var j= 0; j < data['tu'].length; j++) {
+								 if(data['nr'][i].did==data['tu'][j].pid){
+									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+								 }
+							 }
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+			//	alert(li);
+						$("#conn").append(li);
 	 		
 						 }
 				}else{
@@ -1197,21 +1176,30 @@ var p=2;
 	//var id=	 $_GET['id'];
 		
 			$.ajax({
-				url:"?s=/Home/Mtbu/rzdtre",
+				url:"?s=/Home/Mtbu/spbddndtre",
 				type:"post",
 				data:{id:id,where:where},
 				dataType:"json",
 				success:function(data){
-					//alert(data);	
-                   var li='';
-					for (var i = 0; i < data.length; i++) {
-					
-						li+='<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr"> '+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
-									
+					var pl='';
+					 for (var i = 0; i < data['nr'].length; i++) {
+                       var p='';
+                       if(data['nr'][i].username==data['nr'][i].tel){
+							var use = data['nr'][i].username.substr(0,5);
+							}else{
+						     var use = data['nr'][i].username;
+							}
+                  	 for (var j= 0; j < data['tu'].length; j++) {
+						 if(data['nr'][i].did==data['tu'][j].pid){
+							p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+						 }
+					 }
+                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+                    	
 						
 					};
-					var p ='<div id="ha" class="s-c-3f">'+li+'</div><div class="s-main-b"><div class="margin"><button onclick="tj'+where+'(<?php echo ($_GET['id']); ?>)" name="btn1" id="btn1" >点击加载更多</button></div></div>';
-					$('#re').html(p);
+					var pl ='<div id="ha" class="s-c-3f ">'+li+'</div><div class="s-main-b"><div class="margin"><button onclick="tj'+where+'(<?php echo ($_GET['id']); ?>)" name="btn1" id="btn1" >点击加载更多</button></div></div>';
+					$('#re').html(pl);
 					$('#re').val('');
 				},error:function(){
 					alert('no');
@@ -1222,23 +1210,34 @@ var p=2;
 	var l=2;
 
 	  function tj1(id){		 
-			// alert(1);
+			alert(1);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
-					data:{k:l,id:id,bd:bd},
+					data:{k:l,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
 						// alert(data);
 						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+		                          
+							$("#ha").append(li);
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1259,19 +1258,30 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthd');?>",
-					data:{k:z,id:id,bd:bd},
+					data:{k:z,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
 						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+									// alert(li);
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1288,23 +1298,34 @@ var p=2;
 		  }  
 	  var x=2;
 	  function tjz(id){		 
-			 alert(id);
+			// alert(id);
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdt,bd:bd');?>",
+					url:"<?php echo U('Mtbu/dtjzdt');?>",
 					data:{k:x,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
 						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+				
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1325,19 +1346,30 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdtre');?>",
-					data:{k:c,id:id,bd:bd},
+					data:{k:c,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
 						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+									// alert(li);
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1358,19 +1390,31 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdtre');?>",
-					data:{k:v,id:id,bd:bd},
+					data:{k:v,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
 						// alert(data);
 						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+									// alert(li);
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1391,19 +1435,31 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
-					data:{k:b,id:id,bd:bd},
+					data:{k:b,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
 						// alert(data);
-						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							if(data!=null){				
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								//	 alert(li);
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1424,19 +1480,31 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthdr');?>",
-					data:{k:n,id:id,bd:bd},
+					data:{k:n,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
 						// alert(data);
-						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							if(data!=null){				
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+									// alert(li);
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1457,19 +1525,30 @@ var p=2;
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthd');?>",
-					data:{k:m,id:id,bd:bd},
+					data:{k:m,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
 						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="szd">所在地：'+data[i].addre+'</p><p class="dtnr">'+data[i].content+' </p><ul><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li><a rel="gallery1" class="boxer" href="img/yhmc-big.png"><div class="pic"><img src="/matouPCS/Public/Home/img/yhmc-big.png" /></div></a></li><li class="clearfloat"></li></ul><div class="bottom"><p class="left">'+data[i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
 								 }
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+									 //alert(li);
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1487,7 +1566,6 @@ var p=2;
 
   
 </script>
-
 		</section>
 		<br>
 		<br>

@@ -17,7 +17,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank.css" />
+	
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
 	</head>
@@ -82,13 +82,13 @@
 								
 											<ul>
 												<li>
-													<a href="">悬赏</a>
+													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_ys">应赏</a>
 												</li>
 												<li>
-													<a href="">招聘</a>
+													<a href="?s=/Home/User/userZp">招聘</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_yp">应聘</a>

@@ -23,7 +23,16 @@ class TjcsController extends Controller
      public function spxq()
     {
         //商品详情
-        $id=I('id');
+        
+        $uid=I('uid');
+        if($uid==''){
+        	$id=I('id');
+        }else{
+        $sp = M('shop')->where("uid ={$uid} and status=2")->select();//我的商铺
+        foreach ($sp as $v){
+        	$id=$v['id'];
+        }
+    }
         $shop=M('shop as c')->join('user as u on c.uid = u.id')->where("c.id=$id")->select();
         $shangpin=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id")->select();
         $list = M('shop_liuyan as s')->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
