@@ -82,7 +82,7 @@
 
 	<body>
 		<header>
-		
+		<include file="Public/header"/>
 					<div class="h-c-2f">
 						<!--<img src="img/navbg3.png" />-->
 						<!--<div class="s-f2-r">
@@ -129,7 +129,7 @@
 						</div>
 						<div class="s-f4">
 							<div>
-								<a style="width: 120px;" href="?s=/Home/Tjcs/spxq/id/{$_GET['id']}">商品</a>
+								<a style="width: 120px;" href="?s=/Home/Tjcs/spxq/uid/{$_GET['id']}">商品</a>
 								<a  href="?s=/Home/Mtbu/spbddydt/id/{$_GET['id']}">动态</a>
 								<a style="color: #FF5C5D;" href="?s=/Home/Mtbu/spbddyxq/id/{$_GET['id']}">需求</a>
 								<a style="width: 105px;" href="?s=/Home/Mtbu/spbddyly/id/{$_GET['id']}">留言区</a>
@@ -165,7 +165,7 @@
 					<div class="left-xq">
 						<p>全部需求</p>
 						<img src="__PUBLIC__/Home/img/xxjt.png" />
-						<div id="type1" class="select-xq">
+						<div id="typee" class="select-xq">
 								<ul>
 								<li style="padding-top: 5px;">
 									<a href="javascript://">悬赏需求</a>
@@ -191,7 +191,7 @@
 					</div>
 					       <script>
 	       
-            var cNode =document.getElementById('type1').getElementsByTagName('li');
+            var cNode =document.getElementById('typee').getElementsByTagName('li');
                     for( var i=0; i<cNode.length; i++){
                         cNode[i].index= i;
                         //用来计算点击次数
@@ -301,30 +301,47 @@
 								</div>
 							</div>
 							
-							<script type="text/javascript">
+								<script type="text/javascript">
 								function liuyan(id){
-									//alert(1);
+									var p=id;
+									var t = "{:session('id')}";
+								
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
 											url:"?s=/Home/Mtbu/spbddyly_liuyan",
 											type:"post",
-											data:{id:id,contents:contents},
+											data:{id:p,contents:contents},
 											dataType:"json",
 											success:function(data){
 											//	alert(2);
 												var li = '';
-
 												for (var i = 0; i < data.length; i++) {
-													if(data[i].bdlx=1){
-														var helf="/http://localhost/matouPCS/Home/Mtbu/grbddydt"
-													}else if(data[i].bdlx=6){
-														var helf="/http://localhost/matouPCS/Home/Mtbu/spbddydt"
-													}else{
-														var helf="/http://localhost/matouPCS/Home/Mtbu/rzbddydt"
-													}
+													if(data[i].username==data[i].tel){
 													var use = data[i].username.substr(0,5);
-													li+='<li><div class="left"><img src="__PUBLIC__/Home/img/tx2-3r.png" /><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="'+use+'">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													}else{
+												     var use = data[i].username;
+													}
+													if(t==data[i].uid){
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
+														}
+													}else{
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
+														}
+													}
+													
+													
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -333,7 +350,7 @@
 											}
 										});
 									}else{
-										alert('no');
+										alert('请填写留言内容在提交');
 									}
 								}
 							</script>
@@ -341,7 +358,23 @@
 								<foreach name="list" item="lis">
 									<li>
 										<div class="left">
-											<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+												<php>if($_SESSION['id'] == $lis['uid']){</php>
+									  <if condition="$lis[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$lis.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$lis[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+									</if>
+									<php>}else{</php>
+                                   <if condition="$lis[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$lis[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								</if>
+                              <php>}</php>
 											<div class="vip">
 												<img src="__PUBLIC__/Home/img/rzlogo.png" />
 											</div>
@@ -349,13 +382,12 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-												  <if condition="$lis[bdlx]=='1'">
-													<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.id}">用户{$lis.username|substr=0,5}</a>
-													<elseif condition="$lis[bdlx]=='6'"/>
-														<a href="?s=/Home/Mtbu/spbddydt/uid/{$lis.id}">用户{$lis.username|substr=0,5}</a>
-														<else/>
-															<a href="?s=/Home/Mtbu/rzbddydt/uid/{$lis.id}">用户{$lis.username|substr=0,5}</a>
-															</if>
+													<if condition="$lis[username]==$lis[tel]">
+							                      	{$lis.username|substr=0,5}
+								                 </if>
+								               <if condition="$lis[username]!=$lis[tel]">
+								                {$lis.username}
+								                  </if>
 												</span>
 												<span style="float: right; text-align: right;">{$lis.addre}</span>
 											</p>
@@ -372,7 +404,7 @@
 								</foreach>
 							</ul>
 							<p class="ckgd">
-								<a href="?s=/Home/Mtbu/spbddyly">查看更多 》</a>
+								<a href="?s=/Home/Mtbu/spbddyly/id/{$_GET['id']}">查看更多 》</a>
 							</p>
 						</div>
 					</div>
@@ -403,7 +435,7 @@
 							</div>
 						
 							<p class="ckgd">
-								<a href="?s=/Home/Tjcs/spxq/id/{$_GET['id']}">进入商铺 》</a>
+								<a href="?s=/Home/Tjcs/spxq/uid/{$_GET['id']}">进入商铺 》</a>
 							</p>
 							</foreach>
 						</div>

@@ -112,14 +112,14 @@
 						<div class="s-f2">
 							<p class="yhmc">
 								<if condition="$user[username]==$user[tel]">
-								<a href="">{$user.username|substr=0,6}</a>
+								<a href="">{$user.username|substr=0,5}</a>
 								</if>
 								<if condition="$user[username]!=$user[tel]">
 								<a href="">{$user.username}</a>
 								</if>
 							</p>
 							<p style="text-align: center;">
-								（摄影师）
+								（{$user.type}）
 							</p>
 							<div>
 								<p class="fsl">
@@ -128,7 +128,7 @@
 							</p>
 							<p class="szd">
 								<span style="font-size: 18px;" class="icon-szd"></span>
-								<span style="display: block; float: right; line-height: 20px;">{$user.addre}</span>
+								<span style="display: block; float: right; line-height: 20px;">{$user.addre|substr=0,6}</span>
 							</p>
 							<p class="clearfloat"></p>
 							</div>
@@ -176,7 +176,7 @@
 						<p>全部需求</p>
 						<img src="__PUBLIC__/Home/img/xxjt.png" />
 						<div class="select-xq">
-									<ul id="type1">
+									<ul id="typee">
 									<li style="padding-top: 5px;">
 										<a href="javascript://">悬赏需求</a>
 									</li>
@@ -200,7 +200,7 @@
 					</div>
 					   <script>
 	       
-            var cNode =document.getElementById('type1').getElementsByTagName('li');
+            var cNode =document.getElementById('typee').getElementsByTagName('li');
                     for( var i=0; i<cNode.length; i++){
                         cNode[i].index= i;
                         //用来计算点击次数
@@ -477,7 +477,12 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户{$lis.username|substr=0,5}</a>
+													<if condition="$lis[username]==$lis[tel]">
+							                      	{$lis.username|substr=0,5}
+								                 </if>
+								               <if condition="$lis[username]!=$lis[tel]">
+								                {$lis.username}
+								                  </if>
 												</span>
 												<span style="float: right; text-align: right;">{$lis.addre}</span>
 											</p>
@@ -540,7 +545,7 @@
 								</script>
 							</ul>
 							<p class="ckgd">
-								<a href="rzbddnly-3r-xy.html">查看更多 》</a>
+						<a href="?s=/Home/Mtbu/rzbddyly/id/{$_GET['id']}">查看更多 》</a>
 							</p>
 							<!--<button onclick="window.location='bdzxgz-3r-xy.html'">查看更多</button>-->
 						</div>
@@ -933,7 +938,7 @@ var xqr='r';
 				data:{id:id,rz:xqz},
 				dataType:"json",
 				success:function(data){
-					alert(data);
+					//alert(data);
                    var xxoo='';
 					for (var i = 0; i < data['ji'].length; i++) {
 						var li = '';
@@ -950,7 +955,7 @@ var xqr='r';
 						}
 							xxoo+=li+p+'<p><span class="sc">已有'+data['ji'][i].collect+'人收藏</span><span class="fb">'+data['ji'][i].date+'</span></p></a></li>';	
 					};
-					var p1='<div class="s-c-2f"><ul id="shiyan">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj({$_GET['id']},1)" name="btn" id="btn">点击加载更多</button></div></div>'
+					var p1='<div class="s-c-2f"><ul id="shiyan">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj({$_GET['id']},1)" name="btnn" id="btnn">点击加载更多</button></div></div>'
 					$('#ul').html(p1);
 					$('#content').val('');
 				},error:function(){
@@ -1009,7 +1014,7 @@ var xqr='r';
 							}
 								xxoo+=li+p+'<p><span class="sc">已有'+data['ji'][i].collect+'人收藏</span><span class="fb">'+data['ji'][i].date+'</span><span class="clearfloat"></span></p></a></li>';	
 						};
-						var p1='<div class="s-c-2f"><ul id="zp1">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj2({$_GET['id']},1)" name="btn2" id="btn2">点击加载更多</button></div></div>'
+						var p1='<div class="s-c-2f"><ul id="zp1">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj2({$_GET['id']},1)" name="btnt" id="btnt">点击加载更多</button></div></div>'
 						$('#ul').html(p1);
 						$('#content').val('');
 					},error:function(){
@@ -1295,7 +1300,7 @@ var p=2;
 			
 				}else{
 					 //alert(22);
-					 document.getElementById('btn').innerHTML = '加载完毕';
+					 document.getElementById('btnn').innerHTML = '加载完毕';
 	 				flag=true;	
 				}	
 	 },
@@ -1378,8 +1383,8 @@ var p=2;
 							$("#zp1").append(xxoo);
 				
 					}else{
-						 //alert(22);
-						 document.getElementById('btn2').innerHTML = '加载完毕';
+					//alert(22);
+						 document.getElementById('btnt').innerHTML = '加载完毕';
 		 				flag=true;	
 					}	
 		 },

@@ -155,13 +155,13 @@
 								
 											<ul>
 												<li>
-													<a href="">悬赏</a>
+													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_ys">应赏</a>
 												</li>
 												<li>
-													<a href="">招聘</a>
+													<a href="?s=/Home/User/userZp">招聘</a>
 												</li>
 												<li>
 													<a href="?s=/Home/User/user_yp">应聘</a>
@@ -495,7 +495,7 @@
 								<?php if($user[username]!=$user[tel]): ?><a href=""><?php echo ($user["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
-								（摄影师）
+								（<?php echo ($user["type"]); ?>）
 							</p>
 							<div>
 								<p class="fsl">
@@ -563,7 +563,7 @@
 							<p>全部需求</p>
 							<img src="/matouPCS/Public/Home/img/xxjt.png" />
 							<div class="select-xq">
-								<ul id="type1">
+								<ul id="typee">
 									<li style="padding-top: 5px;">
 										<a href="javascript://">悬赏需求</a>
 									</li>
@@ -587,7 +587,7 @@
 						</div>
 					</div>
 		 <script>
-            var cNode =document.getElementById('type1').getElementsByTagName('li');
+            var cNode =document.getElementById('typee').getElementsByTagName('li');
                     for( var i=0; i<cNode.length; i++){
                         cNode[i].index= i;
                         //用来计算点击次数
@@ -853,37 +853,75 @@
 									<button onclick="liuyan(<?php echo ($_GET['id']); ?>)">发布留言</button>
 								</div>
 							</div>
-							<script type="text/javascript">
+								<script type="text/javascript">
 								function liuyan(id){
-									var content = $('#content').val();
-									if(content.replace(/\s+/g, "")){
+									var p=id;
+									var t = "<?php echo session('id');?>";
+								
+									var contents = $('#contents').val();
+									if(contents.replace(/\s+/g, "")){
 										$.ajax({
-											url:"?s=/Home/Mtbu/rzbddydt_liuyan",
+											url:"?s=/Home/Mtbu/spbddyly_liuyan",
 											type:"post",
-											data:{fid:id,content:content},
+											data:{id:p,contents:contents},
 											dataType:"json",
 											success:function(data){
+											//	alert(2);
 												var li = '';
-
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].username==data[i].tel){
 													var use = data[i].username.substr(0,5);
-													li+='<li><div class="left"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].content+'</p><div class="bottom"><p class="sj">'+data[i].time+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													}else{
+												     var use = data[i].username;
+													}
+													if(t==data[i].uid){
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';	
+														}
+													}else{
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';	
+														}
+													}
+													
+													
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
-												$('#content').val('');
+												$('#contents').val('');
 											},error:function(){
 												alert('no');
 											}
 										});
 									}else{
-										alert('滚犊子');
+										alert('请填写留言内容在提交');
 									}
 								}
 							</script>
 							<ul id="li">
 								<?php if(is_array($li)): foreach($li as $key=>$lis): ?><li>
 										<div class="left">
-											<img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+												<?php if($_SESSION['id'] == $lis['uid']){ ?>
+									  <?php if($lis[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($lis["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+									<?php }else{ ?>
+                                   <?php if($lis[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+                              <?php } ?>
 											<div class="vip">
 												<img src="/matouPCS/Public/Home/img/rzlogo.png" />
 											</div>
@@ -891,7 +929,8 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户<?php echo (substr($lis["username"],0,5)); ?></a>
+															<?php if($lis[username]==$lis[tel]): echo (substr($lis["username"],0,5)); endif; ?>
+								               <?php if($lis[username]!=$lis[tel]): echo ($lis["username"]); endif; ?>	
 												</span>
 												<span style="float: right; text-align: right;"><?php echo ($lis["addre"]); ?></span>
 											</p>
@@ -1291,8 +1330,9 @@ var xqr='r';
 						
 							le+='<li><a href=""><h style="color:#FF5C5D;">应聘</h><p><span class="name">'+data['pin'][i].name+'</span><span class="age">'+data['pin'][i].ages+'</span><span>工作经验：</span><span class="gzjy">'+data['pin'][i].worktimes+'年</span><span>个人简介：</span><span class="grjj">'+data['pin'][i].content+'</span><span class="zw">'+data['pin'][i].type+'</span><span class="clearfloat"></span></p><p><span>工作时间：</span><span class="gzsj">'+data['pin'][i].worktime+'</span><span>所在公司：</span><span class="szgs">'+data['pin'][i].workname+'</span><span>职位：</span><span class="drzw">'+data['pin'][i].typew+'</span><span class="clearfloat"></span></p><p><span class="sc">已有'+data['pin'][i].collect+'人收藏</span><span class="fb">'+data['pin'][i].date+'</span><span class="clearfloat"></span></p></a></li>';
 						};
-					
-
+						//var p='<div class="s-c-3f"><ul id="yp">'+li+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj3(<?php echo ($_GET['id']); ?>)" name="btn3" id="btn3">点击加载更多</button></div></div>		
+						
+						
 						var lr = '';
 
 						for (var i = 0; i < data['qiu'].length; i++) {
@@ -1327,7 +1367,7 @@ var xqr='r';
 				data:{id:id,rz:xqz},
 				dataType:"json",
 				success:function(data){
-					alert(data);
+					//alert(data);
                    var xxoo='';
 					for (var i = 0; i < data['ji'].length; i++) {
 						var li = '';
@@ -1344,7 +1384,7 @@ var xqr='r';
 						}
 							xxoo+=li+p+'<p><span class="sc">已有'+data['ji'][i].collect+'人收藏</span><span class="fb">'+data['ji'][i].date+'</span></p></a></li>';	
 					};
-					var p1='<div class="s-c-2f"><ul id="shiyan">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj(<?php echo ($_GET['id']); ?>,1)" name="btn" id="btn">点击加载更多</button></div></div>'
+					var p1='<div class="s-c-2f"><ul id="shiyan">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj(<?php echo ($_GET['id']); ?>,1)" name="btnn" id="btnn">点击加载更多</button></div></div>'
 					$('#ul').html(p1);
 					$('#content').val('');
 				},error:function(){
@@ -1403,7 +1443,7 @@ var xqr='r';
 							}
 								xxoo+=li+p+'<p><span class="sc">已有'+data['ji'][i].collect+'人收藏</span><span class="fb">'+data['ji'][i].date+'</span><span class="clearfloat"></span></p></a></li>';	
 						};
-						var p1='<div class="s-c-2f"><ul id="zp1">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj2(<?php echo ($_GET['id']); ?>,1)" name="btn2" id="btn2">点击加载更多</button></div></div>'
+						var p1='<div class="s-c-2f"><ul id="zp1">'+xxoo+'</ul></div><div class="s-main-b"><div class="margin"><button onclick="tj2(<?php echo ($_GET['id']); ?>,1)" name="btnt" id="btnt">点击加载更多</button></div></div>'
 						$('#ul').html(p1);
 						$('#content').val('');
 					},error:function(){
@@ -1689,7 +1729,7 @@ var p=2;
 			
 				}else{
 					 //alert(22);
-					 document.getElementById('btn').innerHTML = '加载完毕';
+					 document.getElementById('btnn').innerHTML = '加载完毕';
 	 				flag=true;	
 				}	
 	 },
@@ -1772,8 +1812,8 @@ var p=2;
 							$("#zp1").append(xxoo);
 				
 					}else{
-						 //alert(22);
-						 document.getElementById('btn2').innerHTML = '加载完毕';
+					//alert(22);
+						 document.getElementById('btnt').innerHTML = '加载完毕';
 		 				flag=true;	
 					}	
 		 },

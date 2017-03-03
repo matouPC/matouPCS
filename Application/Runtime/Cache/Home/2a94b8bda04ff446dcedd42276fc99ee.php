@@ -1377,9 +1377,18 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<div class="clearf"></div>
 					</div>
 					<span style="height: 50px;display: block;"></span>
-					<br>
-					<br>
-					<br>
+				<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
+	</head>
+	<body>
+		<footer>
+			<div class="f-content-main">
+				<div class="ttm">
 					<div class="s-c-7f">
 						<div class="f7-o1">
 							<ul>
@@ -1425,62 +1434,39 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<li class="clearf"></li>
 							</ul>
 						</div>
-						<!--<div class="f7-o2">
-							<h4>热门城市:</h4>
-							<a href="#">北京婚纱摄影</a>&nbsp;
-							<a href="#">上海婚纱摄影</a>&nbsp;
-							<a href="#">杭州婚纱摄影</a>&nbsp;
-							<a href="#">成都婚纱摄影</a>&nbsp;
-							<a href="#">深圳婚纱摄影</a>&nbsp;
-							<a href="#">武汉婚纱摄影</a>&nbsp;
-							<a href="#">三亚婚纱摄影</a>&nbsp;
-							<a href="#">厦门婚纱摄影</a>&nbsp;
-							<a href="#">广州婚纱摄影</a>&nbsp;
-							<a href="#">南京婚纱摄影</a>&nbsp;
-							<a href="#">重庆婚纱摄影</a>&nbsp;
-							<a href="#">苏州婚纱摄影</a>&nbsp;
-							<a href="#">天津婚纱摄影</a>&nbsp;
-							<a href="#">青岛婚纱摄影</a>&nbsp;
-							<a href="#">长沙婚纱摄影</a>&nbsp;
-							<a href="#">郑州婚纱摄影</a>&nbsp;
-							<a href="#">丽江婚纱摄影</a>&nbsp;
-							<a href="#">西安婚纱摄影</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="#">更多></a>
-						</div>-->
 					</div>
-					<div class="clearf"></div>
 				</div>
-			</div>
-		</section>
-		<footer>
-			<div class="f-content-main">
 				<div class="f-main-c">
 					<div class="f-c-1f">
-						<a href="#">友情链接：</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<p style="text-align: center;">© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
-						<p style="text-align: center;">京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p style="text-align: center;">京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<a href="#">友情链接：</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
+						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
+						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
 					</div>
 				</div>
 			</div>
 		</footer>
+	</body>
+</html>
+
+
+
 	</body>
 
 	<script>

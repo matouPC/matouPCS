@@ -137,7 +137,7 @@
 						</div>
 						<div class="s-f4">
 							<div>
-								<a style="width: 120px;" href="?s=/Home/Tjcs/spxq/id/{$_GET['id']}">商品</a>
+								<a style="width: 120px;" href="?s=/Home/Tjcs/spxq/uid/{$_GET['id']}">商品</a>
 								<a  href="?s=/Home/Mtbu/spbddndt/id/{$_GET['id']}">动态</a>
 								<a href="?s=/Home/Mtbu/spbddnxq/id/{$_GET['id']}">需求</a>
 								<a style="width: 105px;color: #FF5C5D;" href="?s=/Home/Mtbu/spbddnly/id/{$_GET['id']}">留言区</a>
@@ -246,21 +246,45 @@
 							
 							<script type="text/javascript">
 								function liuyan(id){
-									//alert(1);
+									var p=id;
+									var t = "{:session('id')}";
+								
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
 											url:"?s=/Home/Mtbu/spbddyly_liuyan",
 											type:"post",
-											data:{id:id,contents:contents},
+											data:{id:p,contents:contents},
 											dataType:"json",
 											success:function(data){
 											//	alert(2);
 												var li = '';
-
 												for (var i = 0; i < data.length; i++) {
-													var use = data[i].username.substr(0,5);
-													li+='<li><div class="left"><img src="__PUBLIC__/Home/img/tx2-3r.png" /><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													if(data[i].username==data[i].tel){
+														var use = data[i].username.substr(0,5);
+														}else{
+													     var use = data[i].username;
+														}
+													if(t==data[i].uid){
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
+														}
+													}else{
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
+														}
+													}
+													
+													
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -269,7 +293,7 @@
 											}
 										});
 									}else{
-										alert('no');
+										alert('请填写留言内容在提交');
 									}
 								}
 							</script>
@@ -277,7 +301,24 @@
 								<foreach name="list" item="lis">
 									<li>
 										<div class="left">
-											<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+										       	<php>if($_SESSION['id'] == $lis['uid']){</php>
+									  <if condition="$lis[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$lis.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$lis[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$lis[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$lis[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+									</if>
+                                       <php>}</php>
+
 											<div class="vip">
 												<img src="__PUBLIC__/Home/img/rzlogo.png" />
 											</div>
@@ -285,7 +326,12 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户{$lis.username|substr=0,5}</a>
+															<if condition="$lis[username]==$lis[tel]">
+							                      	{$lis.username|substr=0,5}
+								                 </if>
+								               <if condition="$lis[username]!=$lis[tel]">
+								                {$lis.username}
+								                  </if>
 												</span>
 												<span style="float: right; text-align: right;">{$lis.addre}</span>
 											</p>
@@ -302,7 +348,7 @@
 								</foreach>
 							</ul>
 							<p class="ckgd">
-								<a href="?s=/Home/Mtbu/spbddnly">查看更多 》</a>
+								<a href="?s=/Home/Mtbu/spbddnly/id/{$_GET['id']}">查看更多 》</a>
 							</p>
 						</div>
 					</div>
@@ -313,7 +359,7 @@
 							码 头 商 铺
 								</div>
 								<div class="bj">
-								<a style="width: 120px;" href="?s=/Home/Mtbu/spgl/id/{$_GET['id']}">
+								<a style="width: 120px;" href="?s=/Home/Mtbu/spgl/uid/{$_GET['id']}">
 									<img src="__PUBLIC__/Home/img/bj-gray.png" />
 									</a>
 								</div>
@@ -337,14 +383,14 @@
 							</div>
 						
 							<p class="ckgd">
-						<a  href="?s=/Home/Tjcs/spxq/id/{$_GET['id']}">进入商铺 》</a>
+						<a  href="?s=/Home/Tjcs/spxq/uid/{$_GET['id']}">进入商铺 》</a>
 							</p>
 							</foreach>
 						</div>
 					</div>
 				</div>
 				<div id="re" class="s-main-l">
-					<div id="content" class="s-c-3f">
+					<div id="contentt" class="s-c-3f">
 					<foreach name="list" item="v">
 						<div class="s-c-3f-1f">
 							<!--<div class="mdhd">
@@ -353,16 +399,38 @@
 							<div>
 							
 								<div class="yhtx">
-									<a href="">
-										<img src="__PUBLIC__/Home/img/yhmc.png" />
-									</a>
+								       	<php>if($_SESSION['id'] == $v['uid']){</php>
+									  <if condition="$v[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$v.uid}">	<img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<elseif condition="$v[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$v[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<elseif condition="$lis[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+									</if>
+							
+                                       <php>}</php>
+								
 									<div class="vip">
 										<img src="__PUBLIC__/Home/img/rzlogo.png" />
 									</div>
 									<div class="clearfloat"></div>
 								</div>
 								<p class="yhmc">
-									<a href="">{$v.username}</a>
+								<if condition="$v[username]==$v[tel]">
+							                      	{$v.username|substr=0,5}
+								                 </if>
+								               <if condition="$v[username]!=$v[tel]">
+								                {$v.username}
+								                  </if>
+												</span>
 								</p>
 								<p class="zwmc">
 									性别：{$v.sex}
@@ -391,7 +459,7 @@
 					
 					<div class="s-main-b">
 						<div class="margin">
-								<button onclick="tj({$_GET['id']})" name='btn' id='btn' >点击加载更多</button>
+								<button onclick="tj({$_GET['id']})" name='btnn' id='btnn' >点击加载更多</button>
 						</div>
 					</div>
 				</div>
@@ -402,9 +470,8 @@
 <script type="text/javascript">
 var p=2;
   function tj(id){
-	 
-	 
-	 //alert(id);
+	  var t = "{:session('id')}";
+
 		$.ajax({
 			type:'post',
 			url:"{:U('Mtbu/lyjzdt')}",
@@ -417,12 +484,35 @@ var p=2;
 				if(data!=null){				
 						//alert(1);
 						 for (var i = 0; i < data.length; i++) {
-						$("#content").append('<div class="s-c-3f-1f"><div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+							 if(data[i].username==data[i].tel){
+									var use = data[i].username.substr(0,5);
+									}else{
+								     var use = data[i].username;
+									}
+							   if(t==data[i].uid){
+									if(data[i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data[i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data[i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data[i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
+								
+						$("#contentt").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 	 		
 						 }
 				}else{
 					 //alert(22);
-					 document.getElementById('btn').innerHTML = '加载完毕';
+					 document.getElementById('btnn').innerHTML = '加载完毕';
 	 				flag=true;	
 				}	
 	 },
@@ -436,7 +526,7 @@ var p=2;
   }
 
 	function remen(paixus,id){
-		//alert(id);	
+		var t = "{:session('id')}";
 			$.ajax({
 				url:"?s=/Home/Mtbu/spbddnlyre",
 				type:"post",
@@ -446,8 +536,29 @@ var p=2;
 
                    var li='';
 					for (var i = 0; i < data.length; i++) {
-					
-						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+						 if(data[i].username==data[i].tel){
+								var use = data[i].username.substr(0,5);
+								}else{
+							     var use = data[i].username;
+								}
+						   if(t==data[i].uid){
+								if(data[i].bdlx==1){
+									var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else if(data[i].bdlx==6){
+									var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else{
+									var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+								}
+							}else{
+								if(data[i].bdlx==1){
+									var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else if(data[i].bdlx==6){
+									var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else{
+									var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+								}
+							}
+						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 									
 						
 					};
@@ -462,7 +573,7 @@ var p=2;
 	}
 	  var pc=2;
 	  function tj1(id){
-			 //alert(id);
+		  var t = "{:session('id')}";;
 				$.ajax({
 					type:'post',
 					url:"{:U('Mtbu/lyjzdtre')}",
@@ -475,8 +586,29 @@ var p=2;
 						if(data!=null){				
 								//alert(1);
 								 for (var i = 0; i < data.length; i++) {
-									 
-								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+data[i].username+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+									 if(data[i].username==data[i].tel){
+											var use = data[i].username.substr(0,5);
+											}else{
+										     var use = data[i].username;
+											}
+									   if(t==data[i].uid){
+											if(data[i].bdlx==1){
+												var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+											}else if(data[i].bdlx==6){
+												var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+											}else{
+												var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+											}
+										}else{
+											if(data[i].bdlx==1){
+												var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+											}else if(data[i].bdlx==6){
+												var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+											}else{
+												var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+											}
+										}	 
+								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 			 		
 								 }
 						}else{
