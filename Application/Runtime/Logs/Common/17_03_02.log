@@ -64,3 +64,21 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
 ERR: 无法加载模块:Public
 
+[ 2017-03-02T10:33:29+08:00 ] ::1 /matouPCS/Public/Home/img/simple_s_468f567e.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000086s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001153s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-02T10:33:29+08:00 ] ::1 /matouPCS/Public/Home/img/simple_s2_580aece7.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+ERR: 无法加载模块:Public
+
+[ 2017-03-02T10:33:29+08:00 ] ::1 /matouPCS/Public/Home/img/dropdown_369a8965.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+ERR: 无法加载模块:Public
+
