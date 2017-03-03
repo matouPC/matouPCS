@@ -977,8 +977,151 @@ class UserController extends Controller
     	
     	$this->ajaxReturn($remen);
     }   
+    //小测试使用
     public function a(){
         $this->display();
     }
+    /**
+    *  处理QQ登录的token值  该方法仅仅返回openid值
+    */
+    public function qqToken(){
+        // var_dump($token);
+        // var_dump($qqname);
+        $token = $_POST['token'];
+        $qqname = $_POST['qqname'];
+
+        $tokens = explode("=",$token);
+        $qqToken = $tokens[1];
+        $url = 'https://graph.qq.com/oauth2.0/me?access_token='.$qqToken.'';
+        $open = $this->get($url);
+
+        $opens = explode("(",$open);
+        $openid = explode(')',$opens[1]);
+        array_pop($openid);
+        $json = json_decode($openid[0],true);
+        $openids = $json['openid'];
+        $this->ajaxReturn($openids);
+        // $list = M("user")->where("qq = '{$openids}'")->find();
+        
+        // if($list == null){
+           
+        //     $op['qq'] = $openids;
+        //     $op['username'] = $qqname; 
+        //     $ad =  M('user')->add($op);
+        //     $this->ajaxReturn($ad);die;
+        //     if($ad > 0){
+        //         session_start();
+        //         $_SESSION['qq'] = $openids;
+        //         $_SESSION['username'] = $qqname;
+        //     }
+        //     // $_SESSION['id'] = $id;
+        // }else{
+        //     session_start();
+        //     $_SESSION['username'] = $list['username'];
+        //     $_SESSION['qq'] = $openids;
+        //     // $_SESSION['id'] = $list['id'];
+        //     // $this->ajaxReturn($_SESSION);
+        // }
+        
+    }
+    /**
+    *   拿到qq用户的唯一就开始进行存储
+    */
+    public function qqLogin($openid,$qqname){
+        // $openid = $_POST['openid'];
+        // var_dump($qqname);die;
+        $list = M("user")->where("qq = '{$openid}'")->find();
+
+        // var_dump($list);die;
+        if(empty($list)){
+            $op['qq'] = $openid;
+            $op['username'] = $qqname;
+            $ad = $id = M('user')->order('id desc')->add($op);
+            if($ad > 0){
+                session_start();
+                $_SESSION['qq'] = $openid;
+                $_SESSION['username'] = $qqname;
+                $_SESSION['id'] = $id;
+                // echo 123;
+                // var_dump($_SESSION);
+                echo '登陆成功';
+            }
+            
+        }else{
+            // $uid = $list['id'];
+            session_start();
+            $_SESSION['username'] = $list['username'];
+            $_SESSION['qq'] = $openid;
+            $_SESSION['id'] = $list['id'];
+            echo '登陆成功';
+        }
+    }
+    public function wxLogin(){
+        $url='https://open.weixin.qq.com/connect/qrconnect?appid=wx06fc578080933319&redirect_uri=http://xishimatou.com;&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect';
+        // var_dump($this->get($url));
+        file_get_contents($url);
+        // echo $this->get($url);
+    }
+    /**
+    *  微信请求
+    */
+    public function wxcode($code){
+        $codes = explode('=',$code);
+        $newCode = $codes[1];//拿到微信的code值
+        $url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx06fc578080933319&secret=6477b3140c2043f67e4289e4245a8c6f&code='.$newCode.'&grant_type=authorization_code';//这个接口可以获得token和openid
+        // // var_dump($this->get($url));die;
+        $user = $this->get($url);
+        // var_dump($user);die;
+        $users = json_decode($user);
+        //微信的openid  token
+        $userXx = json_decode($this->wxUser($users->openid,$users->access_token));//获得登录用户的基本信息
+        // var_dump($userXx->nickname);die;
+        $wxad['username'] = $wxname = $userXx->nickname;//若用户第一次登录 则用户名为微信昵称
+        $wxad['weixin'] = $wxopenid = $userXx->openid;//用户唯一id
+        //先查询此用户之前是否登录过
+        $wxLi = M('user')->where("weixin = '{$wxopenid}'")->find();
+        // var_dump($wxLi);die;
+        if(empty($wxLi)){//如果为空证明之前没有登陆过 就进行添加
+            $wxAdd = $wxId = M('user')->order(" id desc")->add($wxad);
+            if($wxadd > 0){
+                session_start();
+                $_SESSION['username'] = $wxname;
+                $_SESSION['id'] = $wxId;
+                // echo '登陆成功';
+                return $_SESSION;
+            }
+        }else{//如果不为空则直接登录
+            session_start();
+            $_SESSION['username'] = $wxLi['username'];
+            $_SESSION['id'] = $wxLi['id'];
+            // echo '登陆成功';
+            return $_SESSION;
+        }
+    }
+    /**
+    *  微信登录 获取用户个人信息
+    */
+    public function wxUser($openid,$access_token){
+        $url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'';
+        $userWx = $this->get($url);
+        return $userWx;
+    }
+    /**
+     * 在脚本中发送http get请求
+     * get('http://www.itxdl.cn')
+     */
+    function get($url)
+    {
+        //curl扩展
+        $ch = curl_init($url);
+        //设置请求的参数
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+
+        $res = curl_exec($ch);
+        //返回请求的结果
+        return $res;
+    }
+
     
 }

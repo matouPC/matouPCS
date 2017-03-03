@@ -27,7 +27,8 @@
 						<ul>
 							<li style="width: 100px;">
 								<php>if($_SESSION['username'] != ''){</php>
-								<a id="login-alert" href="?s=/Home/User">用户{$_SESSION['username']|substr=0,5}</a>
+								<a href="?s=/Home/User">{$_SESSION['username']}</a>
+								<!-- <span><a href="javascript:void(0);" onclick="QC.Login.signOut();">退出</a></span> -->
 								<php>}else{</php>
 								<a id="login-alert" href="#">请注册\登录</a>
 								<php>}</php>
@@ -201,7 +202,7 @@
 											</a>
 										</div>
 										<div class="alert-wc">
-											<a href="">
+											 <a href="javascript:void(0)" onclick="wxLogin()"> <!--微信登录 -->
 												<img src="__PUBLIC__/Home/img/alert-wc.png">
 											</a>
 										</div>
@@ -382,5 +383,6 @@
 		<script src="__PUBLIC__/Home/js/header-index.js"></script>
 		<script src="__PUBLIC__/Home/js/index-alert-login.js"></script>
 		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://www.xishimatou.com;" charset="utf-8"></script>
+		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	</body>
 </html>

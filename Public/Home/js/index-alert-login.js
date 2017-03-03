@@ -274,19 +274,24 @@ $(function () {
 // QC.Login({
 //        btnId:"qqLoginBtn"    //插入按钮的节点id
 // });
-if(window.opener != null){
-    window.opener.a();
-}
-function a(){
-    location.reload();
-    self.close();
+// function a(){
+//     if($('#login-alert').html() == '请注册\\登录'){
+//                 location.reload();
+//                 self.close();
+//              }
+//     // location.reload();
+    
 
-}
+// }
+// if(window.opener != null){
+//     // location.reload();
+//     window.opener.a();
+// }
 
 
-//调用QC.Login方法，指定btnId参数将按钮绑定在容器节点中
+//QQ登录
 function windowDl(){
-    window.open('https://graph.qq.com/oauth2.0/authorize?client_id=101383226&response_type=token&scope=all&redirect_uri=http://www.xishimatou.com', 'oauth2Login_10086' ,'height=525,width=585, toolbar=no, menubar=no, scrollbars=no, status=no, location=yes, resizable=yes');     
+    window.open('https://graph.qq.com/oauth2.0/authorize?client_id=101383226&response_type=token&scope=all&redirect_uri=http://www.xishimatou.com', 'oauth2Login_10086');     
     }
     QC.Login({
        //btnId：插入按钮的节点id，必选
@@ -296,13 +301,7 @@ function windowDl(){
            //按钮尺寸，可用值[A_XL| A_L| A_M| A_S|  B_M| B_S| C_S]，可选，默认B_S
            // size: "A_XL"
        }, function(reqData, opts){//登录成功
-           //根据返回数据，更换按钮显示状态方法
             // window.close();
-           // alert(123);
-           // $('.alert-close').click(function(){
-           //      $('.alert').css('display','none');
-           //      $('.alert-black').css('display','none');
-           //  });
            var dom = document.getElementById(opts['btnId']),
            _logoutTemplate=[
                 //头像
@@ -316,23 +315,98 @@ function windowDl(){
                nickname : QC.String.escHTML(reqData.nickname), //做xss过滤
                figureurl : reqData.figureurl
            }));
-           
-           al(reqData.nickname);//拿到qq昵称
-           // this.window.opener = null; 
-           // alert($('#login-alert').html()); 
            var ss = window.location.href.split("#");
-           setCookie('token',ss[1]);
-           alert(getCookie('token'));
+            setCookie('token',ss[1]);
+           var token = getCookie('token');
+           var qqname = reqData.nickname;
+           setCookie('qqname',reqData.nickname);
+           if(getCookie('token') != ''){
+                $.ajax({
+                    url:"?s=/Home/User/qqToken",
+                    type:"post",
+                    data:{token:token,qqname:qqname},
+                    // dataType :"json",
+                    success:function(data){
+                        setCookie('openid',data);
+                        qqLogins();
+                    },error:function(){
+                        alert('no');
+                    }
+               });
+           }
+           
        }, function(opts){//注销成功
              alert('QQ登录 注销成功');
        }
     );
-function al(name){//暂且先只留一个昵称
-    alert(name);
+//执行qq登录
+function qqLogins(){
+    var xxqq = getCookie('openid');
+    var qqname = getCookie('qqname');
+    // alert(qqname);
+    $.ajax({
+        url:"?s=/Home/User/qqLogin/openid/"+xxqq+"/qqname/"+qqname,
+        type:"get",
+        // data:{openid:xxqq},
+        success:function(data){
+            // alert(data);
+
+             // location.reload();
+             // if($('#login-alert').html() == '请注册\\登录'){
+             //    location.reload();
+             // }
+             // $('#login-alert').html(qqname);
+             // $('#login-alert').attr('href','?s=/Home/User');
+        },error:function(){
+            alert('no');
+        }
+    });
 }
 
-// location.reload('http://www.xishimatou.com/matouPCS/');
-//https://graph.qq.com/oauth2.0/authorize&response_type=code&client_id=101383226&redirect_uri=http://www.xishimatou.com&state
+// /json解析/
+// function genJSON(data) {
+//     try {
+//         return eval("(" + data + ")");
+//     } catch (e) {
+//     }
+//     return {};
+// }
+
+// function isEmpty(data){
+//     if(data == ''){
+
+//     }
+// }
+/**
+*   微信登录
+*/
+function wxLogin(){
+    window.open('https://open.weixin.qq.com/connect/qrconnect?appid=wx06fc578080933319&redirect_uri=http://www.xishimatou.com/matouPCS&response_type=code&scope=snsapi_login#wechat_redirect');
+}
+var wxss = window.location.href.split("?");
+setCookie('wxcode',wxss[1]);
+var wxcode = getCookie('wxcode');
+if(wxcode != ''){
+    // alert(wxcode);
+    $.ajax({
+        url:"?s=/Home/User/wxcode/code/"+wxcode,
+        type:"get",
+        // data:{wxcode:wxcode},
+        success:function(data){
+             if($('#login-alert').html() == '请注册\\登录'){
+                 location.reload();
+              }
+             // alert(data);
+        },error:function(){
+            alert('ajax请求失败');
+        }
+    });
+}
+
+
+
+
+
 function setCookie(cookieName, cookieValue, cookieExpires) {
     try {
         cookieName = cookieName.trim();
