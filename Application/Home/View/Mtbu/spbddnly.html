@@ -117,7 +117,19 @@
 								</if>
 							</p>
 							<p style="text-align: center;">
-								（{$dt.type}）
+								<if condition="$dt[bdlx]==1">
+								（个人部队）
+								<elseif condition="$dt[bdlx]==2"/>
+								（婚庆公司）
+								<elseif condition="$dt[bdlx]==3"/>
+								（工作室）
+								<elseif condition="$dt[bdlx]==4"/>
+								（影楼）
+								<elseif condition="$dt[bdlx]==5"/>
+								（表演团）
+								<else/>
+								（商铺部队）
+								</if>
 							</p>
 							<div>
 								<p class="fsl">
@@ -410,7 +422,7 @@
 									<php>}else{</php>
                                         <if condition="$v[bdlx]=='1'">
 								<a href="?s=/Home/Mtbu/grbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
-								<elseif condition="$lis[bdlx]=='6'"/>
+								<elseif condition="$v[bdlx]=='6'"/>
 								<a href="?s=/Home/Mtbu/spbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
 								<else/>
 								<a href="?s=/Home/Mtbu/rzbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
@@ -425,12 +437,11 @@
 								</div>
 								<p class="yhmc">
 								<if condition="$v[username]==$v[tel]">
-							                      	{$v.username|substr=0,5}
-								                 </if>
-								               <if condition="$v[username]!=$v[tel]">
-								                {$v.username}
-								                  </if>
-												</span>
+							   	{$v.username|substr=0,5}
+								   </if>
+								 <if condition="$v[username]!=$v[tel]">
+								  {$v.username}
+							     </if>
 								</p>
 								<p class="zwmc">
 									性别：{$v.sex}
@@ -632,106 +643,7 @@ var p=2;
 		<br>
 		<br>
 		<br>
-		<footer>
-			<div class="f-main-c">
-				<!--<div class="f-c-1f">
-					<ul>
-						<li>
-							<h4>喜事码头客服热线</h4></li>
-						<li>
-							<p>工作时间：每天9：00-23：00</p>
-						</li>
-						<li>
-							<p>188-8888-888</p>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>关注喜事码头官方微信公众号</h4></li>
-						<li>
-							<img style="margin-left: 45px;" src="img/erweima_bottom.png" />
-						</li>
-
-					</ul>
-					<ul>
-						<li>
-							<h4>关于我们</h4></li>
-						<li>
-							<a href="#">
-								<p>关于喜事码头</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头部队</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>联系我们</h4></li>
-						<li>
-							<a href="#">
-								<p>官方邮箱：xishimatou@163.com</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>通讯地址：河南省郑州市863软件园</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-				</div>-->
-				<div class="f-c-2f">
-					<div style="width: 90%; margin: 0 auto;"><br>
-						<a href="#">i店大全</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<a href="#">鲜花礼品网</a>&nbsp;
-						<a href="#">鲜花网</a>&nbsp;
-						<a href="#">婚介</a>&nbsp;
-						<a href="#">婚礼搜索导航</a>&nbsp;
-						<a href="#">杭州婚庆网</a>&nbsp;
-						<a href="#">新娘说</a>&nbsp;
-						<a href="#">拍表网</a>&nbsp;
-						<a href="#">结婚网</a>&nbsp;
-						<a href="#">钻戒品牌</a>&nbsp;
-						<a href="#">武汉婚车租摄</a>&nbsp;
-						<a href="#">婚礼时光</a>&nbsp;
-						<a href="#">婚礼电子请帖</a>&nbsp;
-						<a href="#">小笑话</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
-					</div>
-
-				</div>
-			</div>
-
-		</footer>
+	<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>

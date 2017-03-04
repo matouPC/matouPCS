@@ -847,7 +847,7 @@
 									<button>留 言 区</button>
 								</div>
 								<div class="textarea">
-									<textarea id="content"></textarea>
+									<textarea id="contents"></textarea>
 								</div>
 								<div class="fbly">
 									<button onclick="liuyan(<?php echo ($_GET['id']); ?>)">发布留言</button>

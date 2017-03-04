@@ -91,7 +91,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank.css" />
+	
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
 	</head>

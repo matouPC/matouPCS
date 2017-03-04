@@ -778,7 +778,7 @@
 								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($v["uid"]); ?>"><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><?php endif; ?>
 									<?php }else{ ?>
                                         <?php if($v[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($v["uid"]); ?>"><img src="/matouPCS/Public/Home/img/yhmc.png" /></a>
-								<?php elseif($lis[bdlx]=='6'): ?>
+								<?php elseif($v[bdlx]=='6'): ?>
 								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($v["uid"]); ?>"><img src="/matouPCS/Public/Home/img/yhmc.png" /></a>
 								<?php else: ?>
 								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($v["uid"]); ?>"><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><?php endif; ?>
@@ -792,8 +792,7 @@
 								</div>
 								<p class="yhmc">
 								<?php if($v[username]==$v[tel]): echo (substr($v["username"],0,5)); endif; ?>
-								               <?php if($v[username]!=$v[tel]): echo ($v["username"]); endif; ?>
-												</span>
+								 <?php if($v[username]!=$v[tel]): echo ($v["username"]); endif; ?>
 								</p>
 								<p class="zwmc">
 									性别：<?php echo ($v["sex"]); ?>

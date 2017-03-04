@@ -513,7 +513,7 @@
 						</div>
 						<div class="s-f4">
 							<div>
-								<a style="width: 120px;" href="?s=/Home/Tjcs/spxq/id/<?php echo ($_GET['id']); ?>">商品</a>
+								<a style="width: 120px;" href="?s=/Home/Tjcs/spxq/uid/<?php echo ($_GET['id']); ?>">商品</a>
 								<a  href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($_GET['id']); ?>">动态</a>
 								<a style="color: #FF5C5D;" href="?s=/Home/Mtbu/spbddyxq/id/<?php echo ($_GET['id']); ?>">需求</a>
 								<a style="width: 105px;" href="?s=/Home/Mtbu/spbddyly/id/<?php echo ($_GET['id']); ?>">留言区</a>
@@ -778,7 +778,7 @@
 									</li><?php endforeach; endif; ?>
 							</ul>
 							<p class="ckgd">
-								<a href="?s=/Home/Mtbu/spbddyly">查看更多 》</a>
+								<a href="?s=/Home/Mtbu/spbddyly/id/<?php echo ($_GET['id']); ?>">查看更多 》</a>
 							</p>
 						</div>
 					</div>
@@ -808,7 +808,7 @@
 							</div>
 						
 							<p class="ckgd">
-								<a href="?s=/Home/Tjcs/spxq/id/<?php echo ($_GET['id']); ?>">进入商铺 》</a>
+								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($_GET['id']); ?>">进入商铺 》</a>
 							</p><?php endforeach; endif; ?>
 						</div>
 					</div>

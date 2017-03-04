@@ -121,7 +121,8 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<ul>
 							<li style="width: 100px;">
 								<?php if($_SESSION['username'] != ''){ ?>
-								<a id="login-alert" href="?s=/Home/User">用户<?php echo (substr($_SESSION['username'],0,5)); ?></a>
+								<a href="?s=/Home/User"><?php echo ($_SESSION['username']); ?></a>
+								<!-- <span><a href="javascript:void(0);" onclick="QC.Login.signOut();">退出</a></span> -->
 								<?php }else{ ?>
 								<a id="login-alert" href="#">请注册\登录</a>
 								<?php } ?>
@@ -295,7 +296,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											</a>
 										</div>
 										<div class="alert-wc">
-											<a href="">
+											 <a href="javascript:void(0)" onclick="wxLogin()"> <!--微信登录 -->
 												<img src="/matouPCS/Public/Home/img/alert-wc.png">
 											</a>
 										</div>
@@ -476,6 +477,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 		<script src="/matouPCS/Public/Home/js/header-index.js"></script>
 		<script src="/matouPCS/Public/Home/js/index-alert-login.js"></script>
 		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://www.xishimatou.com;" charset="utf-8"></script>
+		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	</body>
 </html>
 
@@ -1377,84 +1379,20 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<div class="clearf"></div>
 					</div>
 					<span style="height: 50px;display: block;"></span>
+
 				<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
 	</head>
 	<body>
 		<footer>
 			<div class="f-content-main">
-				<div class="ttm">
-					<div class="s-c-7f">
-						<div class="f7-o1">
-							<ul>
-								<li class="f4-o1-1">
-									<div>
-										<h4>喜事码头客服热线</h4>
-										<p>工作时间:每天9:00-23:00</p>
-										<p>188-8888-888</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h4>关注喜事码头微信公众号</h4>
-										<p>
-											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h4>关于我们</h4>
-										<p>
-											<a href="#">关于喜事码头</a>
-										</p>
-										<p>
-											<a href="#">加入我们</a>
-										</p>
-										<p>
-											<a href="#">网站地图</a>
-										</p>
-										<p>
-											<a href="#">合伙人招募</a>
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h4>联系我们</h4>
-										<p>官方邮箱:xishimatou@163.com</p>
-										<p>通讯地址:河南省郑州市863软件园</p>
-									</div>
-								</li>
-								<li class="clearf"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
-						<a href="#">友情链接：</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
+						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
@@ -1464,7 +1402,6 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 		</footer>
 	</body>
 </html>
-
 
 
 	</body>

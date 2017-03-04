@@ -784,7 +784,7 @@
 									</li><?php endforeach; endif; ?>
 							</ul>
 							<p class="ckgd">
-								<a href="?s=/Home/Mtbu/spbddnly">查看更多 》</a>
+								<a href="?s=/Home/Mtbu/spbddnly/id/<?php echo ($_GET['id']); ?>">查看更多 》</a>
 							</p>
 						</div>
 					</div>
@@ -795,7 +795,7 @@
 									码 头 商 铺
 								</div>
 								<div class="bj">
-								<a style="width: 120px;" href="?s=/Home/Mtbu/spgl/id/<?php echo ($_GET['id']); ?>">
+								<a style="width: 120px;" href="?s=/Home/Mtbu/spgl/uid/<?php echo ($_GET['id']); ?>">
 									<img src="/matouPCS/Public/Home/img/bj-gray.png" />
 									</a>
 								</div>
@@ -818,7 +818,7 @@
 							</div>
 						
 							<p class="ckgd">
-								<a  href="?s=/Home/Tjcs/spxq/id/<?php echo ($_GET['id']); ?>">进入商铺 》</a>
+								<a  href="?s=/Home/Tjcs/spxq/uid/<?php echo ($_GET['id']); ?>">进入商铺 》</a>
 							</p><?php endforeach; endif; ?>
 						</div>
 					</div>

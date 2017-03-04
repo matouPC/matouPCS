@@ -167,9 +167,10 @@ class MtbuController extends Controller
     	//个人基本信息遍历
     	$dt = M('user')->where("id = {$id}")->find();
     	//	var_dump($dt);die;
-    	$dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
-    	//var_dump($dongtai);die;
-    	$this->assign('dongtai',$dongtai);
+    $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
+        $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$id}")->order('g.iid desc')->select();
+        $this->assign('img',$img);
+        $this->assign('dongtai',$dongtai);
     	$this->assign('dt',$dt);
     	$this->assign('list',$list);
         $this->display('Mtbu/grbddndt');
@@ -180,6 +181,7 @@ class MtbuController extends Controller
     	// var_dump($_POST);
     	date_default_timezone_set('prc');
     	$data['xsid'] = $_POST['id'];//商铺的id
+    	$id=$_POST['id'];
     	$data['uid'] = $_SESSION['id'];//用户的id
     	$data['contents'] = $_POST['contents'];//留言的内容
     	$data['ltime'] = date('Y-m-d H:i:s',time());//留言的事件
@@ -188,7 +190,7 @@ class MtbuController extends Controller
     	$ob = $form->add($data);
     	// echo  $form->getLastSql();die;
     	if($ob > 0){
-    		$id = $_POST['id'];
+
     		$list = M('liuyan as s')->join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->order('lid desc')->limit('0,3')->select();
     		$this->ajaxReturn($list);
     	}
@@ -290,9 +292,10 @@ class MtbuController extends Controller
     	//个人基本信息遍历
     	$dt = M('user')->where("id = {$id}")->find();
     	//	var_dump($dt);die;
-    	$dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
-    	//var_dump($dongtai);die;
-    	$this->assign('dongtai',$dongtai);
+   $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
+        $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$id}")->order('g.iid desc')->select();
+        $this->assign('img',$img);
+        $this->assign('dongtai',$dongtai);
     	$this->assign('dt',$dt);
     	$this->assign('list',$list);
         $this->display('Mtbu/grbddydt');
@@ -591,8 +594,8 @@ class MtbuController extends Controller
     public function rzbddnxq()
     {
         //认证部队对内详情
-    	$uid=I('id');
-    	$sp = M('forcee')->where("uid ={$uid} and status=2")->select();//我的商铺
+    	$uuid=I('id');
+    	$sp = M('forcee')->where("uid ={$uuid} and status=2")->select();//我的商铺
     	foreach ($sp as $v){
     		$id=$v['id'];
     	}
@@ -619,9 +622,11 @@ class MtbuController extends Controller
         //留言
         $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();
         //关注
+       if($_SESSION['id']!=''){
         $uid = $_SESSION['id'];
         $fid = $user['id'];
         $guan = M('user_fen')->where("uid = {$uid} and fid = {$fid}")->find();
+       }
         $uus = M('user_fen')->select();//互粉
         //开始带值
         $this->assign('li',$li);
@@ -653,7 +658,7 @@ class MtbuController extends Controller
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);
-       
+     
         $uid = $_SESSION['id'];//当前登录用户的id
         $fid = $list['uid'];//当前查看的用户id
         $uus = M('user_fen')->select();//互粉
@@ -691,6 +696,7 @@ class MtbuController extends Controller
         // var_dump($_POST);
         date_default_timezone_set('prc');
         $uid = I('id');//商铺的id
+      
         $sp = M('forcee')->where("uid = {$uid}")->select();//我的商铺
         foreach ($sp as $v){
         	$fid=$v['id'];
@@ -726,9 +732,14 @@ class MtbuController extends Controller
             } 
         }   
     }
-    public function rzbddyly($id)
+    public function rzbddyly()
     {
         //认证部队对外留言 $id为部队id
+    	$uuid=I('id');
+    	$sp = M('forcee')->where("uid ={$uuid} and status=2")->select();//我的商铺
+    	foreach ($sp as $v){
+    		$id=$v['id'];
+    	}
         $list = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();
         //用户和部队基本信息遍历
         $bu = M('forcee as f')->join('user as u on f.uid = u.id')->where("f.id = {$id}")->find();
@@ -748,27 +759,30 @@ class MtbuController extends Controller
     }
     public function lyjiazai(){
     	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
-    	$id=$_POST['id'];
+     	$uuid=I('id');
+    	$sp = M('forcee')->where("uid ={$uuid} and status=2")->select();//我的商铺
+    	foreach ($sp as $v){
+    		$id=$v['id'];
+    	}
     	//$db=M('foree_liuyan');
     	$total=M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->count();//数据记录总数
     	$num=3;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
-    	if($p>$totalpage){
-    		exit();
-    	}//超过最大页数，退出
+   
     	$data=M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->limit($limitpage,$num)->order('f.lid desc')->select();
     	//echo $data;die;
     	$this->ajaxReturn($data);
-    	if(count($data)>0){
-    		//  echo 1;
-    		$this->ajaxReturn($data);
-    	}else{}
+    
     }
     public function lypaixu()
     {
     	
-    	$id = I('id');
+       	$uuid=I('id');
+    	$sp = M('forcee')->where("uid ={$uuid} and status=2")->select();//我的商铺
+    	foreach ($sp as $v){
+    		$id=$v['id'];
+    	}
     	$where = I('where');
     	if($where=='z'){
     		$list = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();
@@ -779,7 +793,11 @@ class MtbuController extends Controller
     }
     public function lyjiazaire(){
     	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
-    	$id=$_POST['id'];
+       	$uuid=I('id');
+    	$sp = M('forcee')->where("uid ={$uuid} and status=2")->select();//我的商铺
+    	foreach ($sp as $v){
+    		$id=$v['id'];
+    	}
     	$where = I('where');
     	$total=M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->count();//数据记录总数
     	$num=3;//每页记录数

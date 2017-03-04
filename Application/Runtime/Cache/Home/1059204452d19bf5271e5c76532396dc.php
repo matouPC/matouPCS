@@ -737,7 +737,7 @@
 									</li><?php endforeach; endif; ?>
 							</ul>
 							<p class="ckgd">
-								<a href="?s=/Home/Mtbu/spbddyly">查看更多 》</a>
+								<a href="?s=/Home/Mtbu/spbddyly/id/<?php echo ($_GET['id']); ?>">查看更多 》</a>
 							</p>
 						</div>
 					</div>
@@ -815,8 +815,8 @@
 								</div>
 							</div>
 							<p class="yhmc">
-							 <?php if($v[username]==$lis[tel]): echo (substr($lis["username"],0,5)); endif; ?>
-							<?php if($lis[username]!=$lis[tel]): echo ($lis["username"]); endif; ?>
+							 <?php if($v[username]==$v[tel]): echo (substr($v["username"],0,5)); endif; ?>
+							<?php if($v[username]!=$v[tel]): echo ($v["username"]); endif; ?>
 							</p>
 							<p class="szd">所在地：<?php echo ($v["addre"]); ?></p>
 							<p class="dtnr">
