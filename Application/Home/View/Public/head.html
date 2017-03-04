@@ -25,9 +25,9 @@
 					</div>
 					<div class="h-f1-rzy">
 						<ul>
-							<li style="width: 100px;">
+							<li id="qqaj" style="width: 100px;">
 								<php>if($_SESSION['username'] != ''){</php>
-								<a href="?s=/Home/User">{$_SESSION['username']}</a>
+								<a  class="xxlo" href="?s=/Home/User">{$_SESSION['username']}</a>
 								<!-- <span><a href="javascript:void(0);" onclick="QC.Login.signOut();">退出</a></span> -->
 								<php>}else{</php>
 								<a id="login-alert" href="#">请注册\登录</a>
@@ -43,7 +43,7 @@
 											<a href="?s=/Home/User/xqxx">需求消息</a>
 										</li>
 										<li>
-											<a href="">部队消息</a>
+											<a href="?s=/Home/User/bdxx">部队消息</a>
 										</li>
 										<li>
 											<a href="">商铺消息</a>
@@ -89,8 +89,31 @@
 							</li>
 							<?php }else{ ?>
 									<li id="select-yfb" style="width: 70px;">
-									<a href="javascript:alert('您还没有登录！')">已发布</a>
-								</li>
+									<a href="#">已发布<img class="img" src="__PUBLIC__/Home/img/arrow_bottom.png"></a>
+									<div class="str"></div>
+									<div class="select-yfb" style="display:none;">
+								
+											<ul>
+												<li>
+													<a href="?s=/Home/User/userXs">悬赏</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_ys">应赏</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/userZp">招聘</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_yp">应聘</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_qg">求购</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_xz">闲置</a>
+												</li>
+											</ul>
+								</div>
 								<?php } ?>
 							<li style="width: 68px;">
 								<?php if(empty($_SESSION['username'])){ ?>

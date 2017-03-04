@@ -119,9 +119,10 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 					</div>
 					<div class="h-f1-rzy">
 						<ul>
-							<li style="width: 100px;">
+							<li id="qqaj" style="width: 100px;">
 								<?php if($_SESSION['username'] != ''){ ?>
-								<a id="login-alert" href="?s=/Home/User">用户<?php echo (substr($_SESSION['username'],0,5)); ?></a>
+								<a  class="xxlo" href="?s=/Home/User"><?php echo ($_SESSION['username']); ?></a>
+								<!-- <span><a href="javascript:void(0);" onclick="QC.Login.signOut();">退出</a></span> -->
 								<?php }else{ ?>
 								<a id="login-alert" href="#">请注册\登录</a>
 								<?php } ?>
@@ -136,7 +137,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											<a href="?s=/Home/User/xqxx">需求消息</a>
 										</li>
 										<li>
-											<a href="">部队消息</a>
+											<a href="?s=/Home/User/bdxx">部队消息</a>
 										</li>
 										<li>
 											<a href="">商铺消息</a>
@@ -182,8 +183,31 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							</li>
 							<?php }else{ ?>
 									<li id="select-yfb" style="width: 70px;">
-									<a href="javascript:alert('您还没有登录！')">已发布</a>
-								</li>
+									<a href="#">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
+									<div class="str"></div>
+									<div class="select-yfb" style="display:none;">
+								
+											<ul>
+												<li>
+													<a href="?s=/Home/User/userXs">悬赏</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_ys">应赏</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/userZp">招聘</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_yp">应聘</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_qg">求购</a>
+												</li>
+												<li>
+													<a href="?s=/Home/User/user_xz">闲置</a>
+												</li>
+											</ul>
+								</div>
 								<?php } ?>
 							<li style="width: 68px;">
 								<?php if(empty($_SESSION['username'])){ ?>
@@ -295,7 +319,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											</a>
 										</div>
 										<div class="alert-wc">
-											<a href="">
+											 <a href="javascript:void(0)" onclick="wxLogin()"> <!--微信登录 -->
 												<img src="/matouPCS/Public/Home/img/alert-wc.png">
 											</a>
 										</div>
@@ -476,6 +500,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 		<script src="/matouPCS/Public/Home/js/header-index.js"></script>
 		<script src="/matouPCS/Public/Home/js/index-alert-login.js"></script>
 		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://www.xishimatou.com;" charset="utf-8"></script>
+		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	</body>
 </html>
 
@@ -634,20 +659,17 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							</div>
 						</div>
 						<div class="s-f1-r">
-							<div class="s-f1-r-1f">
+							<div class="s-f1-r-1f" id="ydl">
 								<div class="center s-f1-r-1f-word">
 									<h2>发现更多好服务</h2>
 								</div>
 								<?php if(empty($_SESSION['username'])){ ?>
-									<div id="login" class="center login">
+									<div id="login" class="center login ">
 										<div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div>
 										<span>用户登录</span>
 									</div>
 								<?php }else{ ?>
-									<div class="center login">
-										<div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div>
-										<span onclick="alert('您已登录')">用户登录</span>
-									</div>
+									<div class="center login"><div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div><span><?php echo ($_SESSION['username']); ?></span></div>
 								<?php } ?>
 
 							</div>
@@ -659,10 +681,10 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="/matouPCS/Public/Home/img/rightside_icon01.png" alt="" />
 											</div>
 											<?php if(empty($_SESSION['username'])){ ?>
-												<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a id="findc" href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
 											<?php }else{ ?>
 												<?php if(in_array($_SESSION['id'],$ren)){ ?>
-												<span class="s-f1-r-word"><a href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a id="findc" href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
 												<?php }else{ ?>
 												<span class="s-f1-r-word"><a id="findc" href="javascript:void(0)">发布悬赏</a></span>
 												<?php } ?>
@@ -675,12 +697,12 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											</div>
 											<?php if(empty($_SESSION['username'])){ ?>
 
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布应赏</a></span>
+											<span class="s-f1-r-word"><a id="fbys" href="#" onclick="alert('您还没有登录!')">发布应赏</a></span>
 											
 											<?php }else if(!empty($fbys)){ ?>
 											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应赏!')">发布应赏</a></span>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a href="?s=/Home/Ysq/txys">发布应赏</a></span>
+											<span class="s-f1-r-word"><a id="fbys" href="?s=/Home/Ysq/txys">发布应赏</a></span>
 											<?php } ?>
 										</td>
 									</tr>
@@ -690,9 +712,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="/matouPCS/Public/Home/img/rightside_icon03.png" alt="" />
 											</div>
 											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布招聘</a></span>
+											<span class="s-f1-r-word"><a id="fbzp" href="#" onclick="alert('您还没有登录!')">发布招聘</a></span>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a href="?s=/Home/Zpdt/txzp">发布招聘</a></span>
+											<span class="s-f1-r-word"><a id="fbzp" href="?s=/Home/Zpdt/txzp">发布招聘</a></span>
 											<?php } ?>
 										</td>
 										<td>
@@ -700,11 +722,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="/matouPCS/Public/Home/img/rightside_icon04.png" alt="" />
 											</div>
 											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布应聘</a></span>
+											<span class="s-f1-r-word"><a id="fbyp" href="#" onclick="alert('您还没有登录!')">发布应聘</a></span>
 											<?php }else if(!empty($fbyp)){ ?>
 											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应聘!')">发布应聘</a></span>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a href="?s=/Home/Zpdt1/txyp">发布应聘</a></span>
+											<span class="s-f1-r-word"><a id="fbyp" href="?s=/Home/Zpdt1/txyp">发布应聘</a></span>
 											<?php } ?>
 										</td>
 									</tr>
@@ -714,9 +736,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="/matouPCS/Public/Home/img/rightside_icon05.png" alt="" />
 											</div>
 											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布二手求购</a></span>
+											<span class="s-f1-r-word"><a id="fbqg" href="#" onclick="alert('您还没有登录!')">发布二手求购</a></span>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a href="?s=/Home/Tzsc/txqg">发布二手求购</a></span>
+											<span class="s-f1-r-word"><a id="fbqg" href="?s=/Home/Tzsc/txqg">发布二手求购</a></span>
 											<?php } ?>
 										</td>
 										<td>
@@ -724,9 +746,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="/matouPCS/Public/Home/img/rightside_icon06.png" alt="" />
 											</div>
 											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布二手闲置</a></span>
+											<span class="s-f1-r-word"><a id="fbxz" href="#" onclick="alert('您还没有登录!')">发布二手闲置</a></span>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a href="?s=/Home/Tzsc/txxz">发布二手闲置</a></span>
+											<span class="s-f1-r-word"><a id="fbxz" href="?s=/Home/Tzsc/txxz">发布二手闲置</a></span>
 											<?php } ?>
 										</td>
 									</tr>
@@ -1377,6 +1399,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<div class="clearf"></div>
 					</div>
 					<span style="height: 50px;display: block;"></span>
+
 				<!DOCTYPE html>
 <html>
 	<head>

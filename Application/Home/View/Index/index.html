@@ -248,20 +248,17 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							</div>
 						</div>
 						<div class="s-f1-r">
-							<div class="s-f1-r-1f">
+							<div class="s-f1-r-1f" id="ydl">
 								<div class="center s-f1-r-1f-word">
 									<h2>发现更多好服务</h2>
 								</div>
 								<php>if(empty($_SESSION['username'])){</php>
-									<div id="login" class="center login">
+									<div id="login" class="center login ">
 										<div class="img"><img src="__PUBLIC__/Home/img/login.png" alt="" /></div>
 										<span>用户登录</span>
 									</div>
 								<php>}else{</php>
-									<div class="center login">
-										<div class="img"><img src="__PUBLIC__/Home/img/login.png" alt="" /></div>
-										<span onclick="alert('您已登录')">用户登录</span>
-									</div>
+									<div class="center login"><div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div><span>{$_SESSION['username']}</span></div>
 								<php>}</php>
 
 							</div>
@@ -273,10 +270,10 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon01.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-												<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a id="findc" href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
 											<php>}else{</php>
 												<?php if(in_array($_SESSION['id'],$ren)){ ?>
-												<span class="s-f1-r-word"><a href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a id="findc" href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
 												<?php }else{ ?>
 												<span class="s-f1-r-word"><a id="findc" href="javascript:void(0)">发布悬赏</a></span>
 												<?php } ?>
@@ -289,12 +286,12 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
 
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布应赏</a></span>
+											<span class="s-f1-r-word"><a id="fbys" href="#" onclick="alert('您还没有登录!')">发布应赏</a></span>
 											
 											<php>}else if(!empty($fbys)){</php>
 											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应赏!')">发布应赏</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Ysq/txys">发布应赏</a></span>
+											<span class="s-f1-r-word"><a id="fbys" href="?s=/Home/Ysq/txys">发布应赏</a></span>
 											<php>}</php>
 										</td>
 									</tr>
@@ -304,9 +301,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon03.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布招聘</a></span>
+											<span class="s-f1-r-word"><a id="fbzp" href="#" onclick="alert('您还没有登录!')">发布招聘</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Zpdt/txzp">发布招聘</a></span>
+											<span class="s-f1-r-word"><a id="fbzp" href="?s=/Home/Zpdt/txzp">发布招聘</a></span>
 											<php>}</php>
 										</td>
 										<td>
@@ -314,11 +311,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon04.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布应聘</a></span>
+											<span class="s-f1-r-word"><a id="fbyp" href="#" onclick="alert('您还没有登录!')">发布应聘</a></span>
 											<php>}else if(!empty($fbyp)){</php>
 											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应聘!')">发布应聘</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Zpdt1/txyp">发布应聘</a></span>
+											<span class="s-f1-r-word"><a id="fbyp" href="?s=/Home/Zpdt1/txyp">发布应聘</a></span>
 											<php>}</php>
 										</td>
 									</tr>
@@ -328,9 +325,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon05.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布二手求购</a></span>
+											<span class="s-f1-r-word"><a id="fbqg" href="#" onclick="alert('您还没有登录!')">发布二手求购</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Tzsc/txqg">发布二手求购</a></span>
+											<span class="s-f1-r-word"><a id="fbqg" href="?s=/Home/Tzsc/txqg">发布二手求购</a></span>
 											<php>}</php>
 										</td>
 										<td>
@@ -338,9 +335,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon06.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布二手闲置</a></span>
+											<span class="s-f1-r-word"><a id="fbxz" href="#" onclick="alert('您还没有登录!')">发布二手闲置</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Tzsc/txxz">发布二手闲置</a></span>
+											<span class="s-f1-r-word"><a id="fbxz" href="?s=/Home/Tzsc/txxz">发布二手闲置</a></span>
 											<php>}</php>
 										</td>
 									</tr>
@@ -1006,113 +1003,8 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<div class="clearf"></div>
 					</div>
 					<span style="height: 50px;display: block;"></span>
-<<<<<<< HEAD
-					<br>
-					<br>
-					<br>
-					<div class="s-c-7f">
-						<div class="f7-o1">
-							<ul>
-								<li class="f4-o1-1">
-									<div>
-										<h4>喜事码头客服热线</h4>
-										<p>工作时间:每天9:00-23:00</p>
-										<p>188-8888-888</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h4>关注喜事码头微信公众号</h4>
-										<p>
-											<img src="__PUBLIC__/Home/img/erweima_top.png" />
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h4>关于我们</h4>
-										<p>
-											<a href="#">关于喜事码头</a>
-										</p>
-										<p>
-											<a href="#">加入我们</a>
-										</p>
-										<p>
-											<a href="#">网站地图</a>
-										</p>
-										<p>
-											<a href="#">合伙人招募</a>
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h4>联系我们</h4>
-										<p>官方邮箱:xishimatou@163.com</p>
-										<p>通讯地址:河南省郑州市863软件园</p>
-									</div>
-								</li>
-								<li class="clearf"></li>
-							</ul>
-						</div>
-						<!--<div class="f7-o2">
-							<h4>热门城市:</h4>
-							<a href="#">北京婚纱摄影</a>&nbsp;
-							<a href="#">上海婚纱摄影</a>&nbsp;
-							<a href="#">杭州婚纱摄影</a>&nbsp;
-							<a href="#">成都婚纱摄影</a>&nbsp;
-							<a href="#">深圳婚纱摄影</a>&nbsp;
-							<a href="#">武汉婚纱摄影</a>&nbsp;
-							<a href="#">三亚婚纱摄影</a>&nbsp;
-							<a href="#">厦门婚纱摄影</a>&nbsp;
-							<a href="#">广州婚纱摄影</a>&nbsp;
-							<a href="#">南京婚纱摄影</a>&nbsp;
-							<a href="#">重庆婚纱摄影</a>&nbsp;
-							<a href="#">苏州婚纱摄影</a>&nbsp;
-							<a href="#">天津婚纱摄影</a>&nbsp;
-							<a href="#">青岛婚纱摄影</a>&nbsp;
-							<a href="#">长沙婚纱摄影</a>&nbsp;
-							<a href="#">郑州婚纱摄影</a>&nbsp;
-							<a href="#">丽江婚纱摄影</a>&nbsp;
-							<a href="#">西安婚纱摄影</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="#">更多></a>
-						</div>-->
-					</div>
-					<div class="clearf"></div>
-				</div>
-			</div>
-		</section>
-		<footer>
-			<div class="f-content-main">
-				<div class="f-main-c">
-					<div class="f-c-1f">
-						<a href="#">友情链接：</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<a href="#">友情链接</a>&nbsp;
-						<p style="text-align: center;">© 2016-2017 郑州码头网络技术有限公司 </p>
-						<!--<br/>-->
-						<p style="text-align: center;"><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a> 喜事码头 </p>
-					</div>
-				</div>
-			</div>
-		</footer>
-=======
+
 				<include file="Public/foot"/>
->>>>>>> e0d5497a42ea0112bd367cf38d3badc85b8d7d63
 	</body>
 
 	<script>

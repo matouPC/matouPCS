@@ -221,6 +221,7 @@ $(function () {
 //  $('.alert-black').hide();
     $('#login-alert').click(function(){
         if($('#login-alert').html() == '请注册\\登录'){
+            // alert($('#login-alert').html());
           $('.alert').css('display','block');
           $('.alert-black').css('display','block');  
         }
@@ -274,15 +275,10 @@ $(function () {
 // QC.Login({
 //        btnId:"qqLoginBtn"    //插入按钮的节点id
 // });
-// function a(){
-//     if($('#login-alert').html() == '请注册\\登录'){
-//                 location.reload();
-//                 self.close();
-//              }
-//     // location.reload();
-    
-
-// }
+//  function a(){
+//     location.reload();
+//     self.close();
+//  }
 // if(window.opener != null){
 //     // location.reload();
 //     window.opener.a();
@@ -348,34 +344,29 @@ function qqLogins(){
         url:"?s=/Home/User/qqLogin/openid/"+xxqq+"/qqname/"+qqname,
         type:"get",
         // data:{openid:xxqq},
+        dataType:"json",
         success:function(data){
-            // alert(data);
-            onload=reurls
-             // location.reload();
-             // if($('#login-alert').html() == '请注册\\登录'){
-             //    location.reload();
-             // }
              // $('#login-alert').html(qqname);
+             console.log(data);
+             $('#login-alert').attr('href','?s=/Home/User');
+             $('#findc').attr('href','?s=/Home/Xsdt/txxs/');
+             $('#fbys').attr('href','?s=/Home/Ysq/txys');
+             $('#fbzp').attr('href','?s=?s=/Home/Zpdt/txzp');
+             $('#fbyp').attr('href','?s=?s=/Home/Zpdt1/txyp');
+             $('#fbqg').attr('href','?s=/Home/Tzsc/txqg');
+             $('#fbxz').attr('href','?s=/Home/Tzsc/txxz');
              // $('#login-alert').attr('href','?s=/Home/User');
+             $('.select-yfb').css('display','block');
+             $('#qqaj').html('<a  class="xxlo" href="?s=/Home/User">'+data.username+'</a>');
+             $('#ydl').html('<div class="center s-f1-r-1f-word"><h2>发现更多好服务</h2></div><div class="center login"><div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div><span>'+data.username+'</span></div>');
+             $('.img').click(function(){
+                alert('您已登陆');
+             });
         },error:function(){
             alert('no');
         }
     });
 }
-function reurls(){
-
-    url = location.href; //把当前页面的地址赋给变量 url
-
-    var times = url.split("?"); //分切变量 url 分隔符号为 "?"
-
-    if(times[1] != 1){ //如果?后的值不等于1表示没有刷新
-
-    url += "?1"; //把变量 url 的值加入 ?1
-
-    self.location.replace(url); //刷新页面
-
-    }
-    }
 // /json解析/
 // function genJSON(data) {
 //     try {
@@ -417,34 +408,30 @@ function wxdlgo(){
     if(wxcode != ''){
         // alert(wxcode);
         $.ajax({
-            url:"?s=/Home/User/wxcode/code/"+wxcode,
-            type:"get",
-            // data:{wxcode:wxcode},
+            url:"?s=/Home/User/wxcode/",
+            type:"post",
+            data:{code:wxcode},
+            dataType:'json',
             success:function(data){
-                    onload=reurl
-                    // reurl()
-            },error:function(){
-                alert('ajax请求失败');
+                console.log(data);
+                $('#login-alert').attr('href','?s=/Home/User');
+                 $('#findc').attr('href','?s=/Home/Xsdt/txxs/');
+                 $('#fbys').attr('href','?s=/Home/Ysq/txys');
+                 $('#fbzp').attr('href','?s=?s=/Home/Zpdt/txzp');
+                 $('#fbyp').attr('href','?s=?s=/Home/Zpdt1/txyp');
+                 $('#fbqg').attr('href','?s=/Home/Tzsc/txqg');
+                 $('#fbxz').attr('href','?s=/Home/Tzsc/txxz');
+                 $('.select-yfb').css('display','block');
+                 $('#qqaj').html('<a  class="xxlo" href="?s=/Home/User">'+data.username+'</a>');
+                 $('#ydl').html('<div class="center s-f1-r-1f-word"><h2>发现更多好服务</h2></div><div class="center login"><div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div><span>'+data.username+'</span></div>');
+                 $('.img').click(function(){
+                    alert('您已登陆');
+                 });
             }
         });
     }
 }
 wxdlgo();
-//微信 专属
-function reurl(){
-
-    url = location.href; //把当前页面的地址赋给变量 url
-
-    var times = url.split("?"); //分切变量 url 分隔符号为 "?"
-
-    if(times[1] != 1){ //如果?后的值不等于1表示没有刷新
-
-    url += "?1"; //把变量 url 的值加入 ?1
-
-    self.location.replace(url); //刷新页面
-
-    }
-    }
 function setCookie(cookieName, cookieValue, cookieExpires) {
     try {
         cookieName = cookieName.trim();

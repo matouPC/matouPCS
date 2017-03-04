@@ -48,7 +48,7 @@ input[type="number"] {
 }
 
 
-/*-----------------------------------澶撮儴寮�濮�---------------------------------------*/
+/*-----------------------------------头部开始---------------------------------------*/
 
 .h-f1-rzy ul li a .img {
 	margin-top: 16px;
@@ -90,8 +90,8 @@ input[type="number"] {
 	width: 13px;
 	height: 12px;
 	float: left;
-	margin-top: 6px;
-	margin-left: 4px;
+	margin-top: 9px;
+	margin-left: 8px;
 }
 
 .h-f1-lzy p {
@@ -100,7 +100,7 @@ input[type="number"] {
 }
 
 .h-f1-lzy p a {
-	margin-left: 10px;
+	margin-left: 5px;
 }
 
 .welcome {
@@ -424,10 +424,10 @@ input[type="number"] {
 }
 
 
-/*-----------------------------------澶撮儴缁撴潫---------------------------------------*/
+/*-----------------------------------头部结束---------------------------------------*/
 
 
-/*鐧诲綍娉ㄥ唽寮�濮�*/
+/*登录注册开始*/
 
 .alert {
 	width: 450px;
@@ -661,7 +661,7 @@ input[type="number"] {
 }
 
 
-/*澶嶉�夋寮�濮�*/
+/*复选框开始*/
 
 .i-check {
 	width: 16px;
@@ -711,7 +711,7 @@ input[type="number"] {
 }
 
 
-/*澶嶉�夋缁撴潫*/
+/*复选框结束*/
 
 .content-4f p {
 	display: block;
@@ -942,10 +942,10 @@ input[type="number"] {
 }
 
 
-/*鐧婚檰娉ㄥ唽缁撴潫*/
+/*登陆注册结束*/
 
 
-/*-----------------------------------棰嗗彇鐮佸ご甯佸紑濮�---------------------------------------*/
+/*-----------------------------------领取码头币开始---------------------------------------*/
 
 .brand {
 	margin: 0 auto;
@@ -1079,7 +1079,7 @@ input[type="number"] {
 }
 
 
-/*-----------------------------------棰嗗彇鐮佸ご甯佺粨鏉�---------------------------------------*/
+/*-----------------------------------领取码头币结束---------------------------------------*/
 
 input,
 button,
@@ -1134,7 +1134,7 @@ textarea {
 	right: 0px;
 	top: 0px;
 	bottom: 0px;
-	z-index: 111;
+	z-index: 999;
 	border-radius: 8px!important;
 	font-size: 12px;
 }
@@ -1858,22 +1858,4 @@ footer {
 
 .icon-zw:before {
 	content: "\e90b";
-}
-* {
-	padding: 0;
-	margin: 0;
-	/*text-align: center;*/
-}
-
-ul {
-	width: 100%;
-	display: block;
-}
-
-li,
-a {
-	/*display: block;*/
-	list-style: none;
-	text-decoration: inherit;
-	color: #000000;
 }

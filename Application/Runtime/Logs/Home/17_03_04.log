@@ -1,0 +1,2269 @@
+[ 2017-03-04T10:40:59+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001314s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.1011s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:1.1127s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.2694s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.1177s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0800s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.1011s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 50 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000281s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 203 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 205 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 213 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 215 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1053 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1053 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.310078s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.310184s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001070s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002427s ]
+
+[ 2017-03-04T10:41:01+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1137 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1072 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1104 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000810s ]
+
+[ 2017-03-04T10:41:04+08:00 ] ::1 /matouPCS/?1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0044s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0044s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 13 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 13 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0040s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000795s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000852s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024876s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025019s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000583s ]
+
+[ 2017-03-04T10:41:05+08:00 ] ::1 /matouPCS/?s=/Home/Xsdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0058s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,3   [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0049s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `reward1`  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000254s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 214 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 216 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 224 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 226 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 821 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 821 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131281s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.131368s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000982s ]
+
+[ 2017-03-04T10:41:07+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=&sex=&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001190s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0063s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0043s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,10   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [2] array_multisort(): Array sizes are inconsistent D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 132 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041037s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041102s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2017-03-04T10:41:09+08:00 ] ::1 /matouPCS/?s=/Home/Ysq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0176s ]
+SQL: SELECT * FROM `due`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0044s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id  ORDER BY d.collect desc LIMIT 0,3   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0063s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0333s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 203 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 205 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 213 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 215 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 762 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 762 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000753s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2017-03-04T10:41:11+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1&type=&sex=&age=&bd=&date=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001039s ]
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 256 行.
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0038s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 259 行.
+SQL: SELECT COUNT(*) AS tp_count FROM due as d LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id INNER JOIN dueimage as m on d.did = m.pid INNER JOIN duevideo as v on d.did = v.pid INNER JOIN due_dang as a on a.pid = d.did  LIMIT 0,10   [ RunTime:0.3845s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 384 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 387 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\4da3780efe7a7fb78ceff4230ecb57bd.php 第 23 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000497s ]
+
+[ 2017-03-04T10:42:26+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=&age=&bd=&date=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 222 行.
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM due as d WHERE ( d.type_d = '主持人' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id INNER JOIN dueimage as m on d.did = m.pid INNER JOIN duevideo as v on d.did = v.pid INNER JOIN due_dang as a on a.pid = d.did  WHERE ( d.type_d = '主持人' ) LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 384 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 387 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\4da3780efe7a7fb78ceff4230ecb57bd.php 第 23 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008633s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000258s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000502s ]
+
+[ 2017-03-04T10:42:27+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=&bd=&date=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 193 行.
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 222 行.
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 225 行.
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0126s ]
+SQL: SELECT COUNT(*) AS tp_count FROM due as d WHERE ( d.type_d = '主持人' and d.sexs = '1' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id INNER JOIN dueimage as m on d.did = m.pid INNER JOIN duevideo as v on d.did = v.pid INNER JOIN due_dang as a on a.pid = d.did  WHERE ( d.type_d = '主持人' and d.sexs = '1' ) LIMIT 0,10   [ RunTime:0.0016s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 384 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 387 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\4da3780efe7a7fb78ceff4230ecb57bd.php 第 23 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022645s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022761s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001637s ]
+
+[ 2017-03-04T10:42:31+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=&bd=%E8%AE%A4%E8%AF%81%E9%83%A8%E9%98%9F&date=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 193 行.
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 222 行.
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 225 行.
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0129s ]
+SQL: SELECT COUNT(*) AS tp_count FROM due as d WHERE ( d.type_d = '主持人' and d.sexs = '1' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id INNER JOIN dueimage as m on d.did = m.pid INNER JOIN duevideo as v on d.did = v.pid INNER JOIN due_dang as a on a.pid = d.did INNER JOIN forcee as f on f.uid = u.id  WHERE ( d.type_d = '主持人' and d.sexs = '1' ) LIMIT 0,10   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 384 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 387 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\4da3780efe7a7fb78ceff4230ecb57bd.php 第 23 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022060s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001639s ]
+
+[ 2017-03-04T10:43:50+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=&bd=%E8%AE%A4%E8%AF%81%E9%83%A8%E9%98%9F&date=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 193 行.
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 222 行.
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 225 行.
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM due as d WHERE ( d.type_d = '主持人' and d.sexs = '1' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id INNER JOIN dueimage as m on d.did = m.pid INNER JOIN duevideo as v on d.did = v.pid INNER JOIN due_dang as a on a.pid = d.did INNER JOIN forcee as f on f.uid = u.id  WHERE ( d.type_d = '主持人' and d.sexs = '1' ) LIMIT 0,10   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 384 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 387 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\4da3780efe7a7fb78ceff4230ecb57bd.php 第 23 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013211s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013298s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000990s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001047s ]
+
+[ 2017-03-04T10:44:18+08:00 ] ::1 /matouPCS/?s=/Home/Ysq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `due`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0078s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id  ORDER BY d.collect desc LIMIT 0,3   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0081s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0072s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000305s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000398s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 203 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 205 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 213 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 215 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 762 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\008b062d5cb6dc7f5ac331e197d90535.php 第 762 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058259s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058352s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2017-03-04T10:44:19+08:00 ] ::1 /matouPCS/?s=/Home/Box/ysdt&p=1&type=&sex=&age=&bd=&date=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+NOTIC: [8] Undefined variable: address D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 256 行.
+SQL: SHOW COLUMNS FROM `due` [ RunTime:0.0133s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 259 行.
+SQL: SELECT COUNT(*) AS tp_count FROM due as d LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM due as d INNER JOIN user as u on d.uid = u.id INNER JOIN dueimage as m on d.did = m.pid INNER JOIN duevideo as v on d.did = v.pid INNER JOIN due_dang as a on a.pid = d.did  LIMIT 0,10   [ RunTime:0.0016s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 384 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 387 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\4da3780efe7a7fb78ceff4230ecb57bd.php 第 23 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022155s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001840s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002010s ]
+
+[ 2017-03-04T10:45:47+08:00 ] ::1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0073s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0075s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 13 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 13 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0043s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000345s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000402s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.069194s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000673s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2017-03-04T10:45:49+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1137 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1104 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2017-03-04T10:47:56+08:00 ] ::1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000997s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0126s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0069s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 13 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 13 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0069s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022885s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022935s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000768s ]
+
+[ 2017-03-04T10:47:57+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1137 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0438s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1104 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000834s ]
+
+[ 2017-03-04T10:48:05+08:00 ] ::1 /matouPCS/?s=/Home/index?1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+ERR: 无法加载控制器:Index?1
+
+[ 2017-03-04T12:28:44+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0168s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0067s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0064s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 50 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000285s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000330s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 226 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 228 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 236 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 238 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1076 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1076 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035919s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035961s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002063s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002122s ]
+
+[ 2017-03-04T12:28:45+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000726s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1137 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1072 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1081 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1104 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001566s ]
+
+[ 2017-03-04T12:28:47+08:00 ] ::1 /matouPCS/?s=/Home/Xsdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0110s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,3   [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0066s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `reward1`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000310s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000400s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 214 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 216 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 224 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 226 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 821 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 821 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075396s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075474s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001018s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001111s ]
+
+[ 2017-03-04T12:28:48+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=&sex=&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001725s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0046s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0073s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,10   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [2] array_multisort(): Array sizes are inconsistent D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 132 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023633s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2017-03-04T12:28:53+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0116s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and bao_st = 1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0064s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0080s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009505s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000629s ]
+
+[ 2017-03-04T12:28:56+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0266s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and r.sex = '1' and bao_st = 1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0106s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010433s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001425s ]
+
+[ 2017-03-04T12:28:58+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=18-25&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0118s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and r.sex = '1' and r.age = '18-25' and bao_st = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0099s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010480s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010576s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000877s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000939s ]
+
+[ 2017-03-04T12:29:00+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=25-30&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0124s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and r.sex = '1' and r.age = '25-30' and bao_st = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0067s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010490s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010567s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000942s ]
+
+[ 2017-03-04T12:29:02+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=30-35&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0117s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and r.sex = '1' and r.age = '30-35' and bao_st = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0127s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0092s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010571s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000959s ]
+
+[ 2017-03-04T12:29:04+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=18-25&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0082s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and r.sex = '1' and r.age = '18-25' and bao_st = 1 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0078s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0082s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012537s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012632s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2017-03-04T12:29:07+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=1&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0119s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and r.sex = '1' and bao_st = 1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0086s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009586s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000886s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000958s ]
+
+[ 2017-03-04T12:29:09+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0072s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and bao_st = 1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0068s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010214s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010293s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000879s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+
+[ 2017-03-04T12:33:21+08:00 ] ::1 /matouPCS/?s=/Home/Xsdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0049s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,3   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0042s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `reward1`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 214 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 216 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 224 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 226 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 821 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 821 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015308s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015364s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000925s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001015s ]
+
+[ 2017-03-04T12:33:23+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=&sex=&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0139s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0072s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [2] array_multisort(): Array sizes are inconsistent D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 132 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008050s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008128s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000550s ]
+
+[ 2017-03-04T12:33:24+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0138s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and bao_st = 1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0115s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000822s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2017-03-04T12:33:25+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=%E4%B8%BB%E6%8C%81%E4%BA%BA&sex=2&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0074s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid  WHERE ( r.type = '主持人' and r.sex = '2' and bao_st = 1 )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0040s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006173s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000441s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000472s ]
+
+[ 2017-03-04T16:24:48+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001818s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0092s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0061s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 50 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000296s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000361s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 226 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 228 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 236 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 238 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1073 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1073 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.109075s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.109122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001216s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001253s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001437s ]
+
+[ 2017-03-04T16:24:50+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1107 行.
+
+[ 2017-03-04T18:58:41+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001718s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0148s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0137s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0021s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 13 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0045s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 13 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0182s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000998s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080697s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003906s ]
+
+[ 2017-03-04T18:58:43+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1107 行.
+
+[ 2017-03-04T18:59:08+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001179s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0130s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0120s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0118s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0015s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 50 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001013s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001179s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 226 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 228 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 236 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 238 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1073 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1073 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085293s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001627s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001763s ]
+
+[ 2017-03-04T18:59:10+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1107 行.
+
+[ 2017-03-04T19:00:29+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0094s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0062s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0061s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 48 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 50 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000293s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000343s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 226 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 228 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 236 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 238 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1073 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024193s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000185s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000631s ]
+
+[ 2017-03-04T19:00:31+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001158s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001254s ]
+
+[ 2017-03-04T19:00:49+08:00 ] ::1 /matouPCS/?s=/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user` WHERE ( tel = '15236631921' and password = '123456' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE ( username = '15236631921' and password = '123456 ' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `user_fen` [ RunTime:0.0264s ]
+SQL: SELECT * FROM `user_fen` WHERE (  uid = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000787s ]
+
+[ 2017-03-04T19:00:51+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0138s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0074s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0077s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000270s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001068s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001237s ]
+
+[ 2017-03-04T19:00:52+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001477s ]
+
+[ 2017-03-04T19:01:00+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0042s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0046s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0045s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000244s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023221s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2017-03-04T19:01:01+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000584s ]
+
+[ 2017-03-04T19:01:10+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007684s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000516s ]
+
+[ 2017-03-04T19:01:17+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000497s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2017-03-04T19:01:21+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006673s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2017-03-04T19:01:28+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002217s ]
+
+[ 2017-03-04T19:01:30+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000534s ]
+
+[ 2017-03-04T19:01:33+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000999s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001069s ]
+
+[ 2017-03-04T19:01:47+08:00 ] ::1 /matouPCS/?s=/Home/Xsdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0043s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,3   [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0045s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `reward1`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 214 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 216 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 224 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 226 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\512f353e7cc5ac7bb6281b10a93262f7.php 第 821 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019913s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000523s ]
+
+[ 2017-03-04T19:01:49+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=&sex=&age=&date=&address=&re=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0071s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0069s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  ORDER BY  e.psid desc  LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039020s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039111s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000506s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2017-03-04T19:02:00+08:00 ] ::1 /matouPCS/?s=/Home/Box/orders&p=1&type=&sex=&age=&date=&address=&re=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0125s ]
+SQL: SELECT * FROM reward2 as r INNER JOIN reward1 as e on r.pid = e.psid   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `reward1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reward1` [ RunTime:0.0114s ]
+SQL: SELECT * FROM reward1 as e INNER JOIN user as u on e.uid = u.id  LIMIT 0,10   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [8] Undefined index: bao D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 130 行.
+NOTIC: [2] array_multisort(): Array sizes are inconsistent D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 132 行.
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 154 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 161 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019447s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001520s ]
+
+[ 2017-03-04T19:02:07+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001576s ]
+
+[ 2017-03-04T19:02:51+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000478s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004895s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004955s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000419s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2017-03-04T19:02:54+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000586s ]
+
+[ 2017-03-04T19:08:37+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0051s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0044s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000244s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021780s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021834s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001438s ]
+
+[ 2017-03-04T19:08:39+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002683s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2017-03-04T19:09:02+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0121s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0075s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0053s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000244s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022612s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000552s ]
+
+[ 2017-03-04T19:09:04+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001328s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001801s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001913s ]
+
+[ 2017-03-04T19:09:04+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+ERR: 模板不存在:./Application/Home/View/User/xqxx.html
+
+[ 2017-03-04T19:09:50+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2017-03-04T19:09:51+08:00 ] ::1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0046s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0038s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0041s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021951s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2017-03-04T19:09:52+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000542s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000575s ]
+
+[ 2017-03-04T19:09:55+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 14 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 14 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 277 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 277 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006806s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006844s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000480s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2017-03-04T19:13:10+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1076 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0269s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000905s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000966s ]
+
+[ 2017-03-04T19:13:10+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 14 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 14 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 277 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 277 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010808s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010846s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2017-03-04T19:15:10+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 121 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 131 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 133 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011037s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011075s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000187s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2017-03-04T19:15:18+08:00 ] ::1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0103s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0086s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0017s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0047s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000364s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000439s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000670s ]
+
+[ 2017-03-04T19:15:19+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000820s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2017-03-04T19:15:20+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 121 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 131 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 133 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010977s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2017-03-04T19:16:25+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 121 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 131 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 133 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011505s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000174s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2017-03-04T19:17:44+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 121 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 131 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 133 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012769s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012807s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2017-03-04T19:18:18+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 121 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 131 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 133 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013644s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013689s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2017-03-04T19:19:27+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 121 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 131 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 133 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011770s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011804s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2017-03-04T19:22:44+08:00 ] ::1 /matouPCS/?s=/Home/User/xqxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 121 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 123 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 131 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 133 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\786dcdf29babc002ab3066418a878390.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012786s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012822s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000578s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2017-03-04T19:23:25+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000865s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000926s ]
+
+[ 2017-03-04T19:23:31+08:00 ] ::1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0045s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0041s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000326s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023262s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000749s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000815s ]
+
+[ 2017-03-04T19:23:32+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1139 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1085 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1089 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1100 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2017-03-04T19:26:37+08:00 ] ::1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0068s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0061s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 23 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0068s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000275s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2017-03-04T19:26:39+08:00 ] ::1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1148 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1094 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1094 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1098 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1109 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2017-03-04T19:26:39+08:00 ] ::1 /matouPCS/?s=/Home/User/bdxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1148 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 15 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 15 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 137 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 137 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006380s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006427s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000448s ]
+
+[ 2017-03-04T19:28:33+08:00 ] ::1 /matouPCS/?s=/Home/User/bdxx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1148 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 15 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 15 行.
+NOTIC: [2] include(3rank-footer.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 137 行.
+NOTIC: [2] include(): Failed opening '3rank-footer.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bad523a12916d5368a7591e1a1b1e604.php 第 137 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008116s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000413s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000445s ]
+
