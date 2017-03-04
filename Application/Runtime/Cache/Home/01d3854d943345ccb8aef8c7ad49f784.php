@@ -10,7 +10,83 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
 
-	
+		<style>
+			.s-f1-r ul li a .img {
+				margin-top: 15px;
+				margin-right: 10px;
+				float: right;
+			}
+			
+			.select-yfb {
+				width: 70px;
+				/*height: 100px;*/
+				height: 0px;
+				background-color: white;
+				position: absolute;
+				/*background-color: #008B8B;*/
+				border-left: solid 1px #E6E6E6;
+				border-right: solid 1px #E6E6E6;
+				border-bottom: solid 1px #E6E6E6;
+				/*right: 200px;*/
+				top: 34px;
+				z-index: 555;
+				overflow: hidden;
+			}
+			
+			.select-yfb ul {
+				width: 70px;
+				height: 150px;
+				/*background-color: #008B8B;*/
+				overflow: hidden;
+			}
+			
+			.select-yfb ul li {
+				width: 70px;
+				height: 25px;
+				line-height: 25px !important;
+			}
+			
+			.select-yfb ul li a {
+				width: 70px;
+				height: 25px;
+				line-height: 25px !important;
+			}
+			
+			.select-xx {
+				width: 70px;
+				/*height: 100px;*/
+				height: 0px;
+				background-color: white;
+				position: absolute;
+				/*background-color: #008B8B;*/
+				border-left: solid 1px #E6E6E6;
+				border-right: solid 1px #E6E6E6;
+				border-bottom: solid 1px #E6E6E6;
+				/*right: 200px;*/
+				top: 34px;
+				z-index: 555;
+				overflow: hidden;
+			}
+			
+			.select-xx ul {
+				width: 70px;
+				height: 150px;
+				/*background-color: #008B8B;*/
+				overflow: hidden;
+			}
+			
+			.select-xx ul li {
+				width: 70px;
+				height: 25px;
+				line-height: 25px !important;
+			}
+			
+			.select-xx ul li a {
+				width: 70px;
+				height: 25px;
+				line-height: 25px !important;
+			}
+		</style>
 	</head>
 <script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 <script src="/matouPCS/Public/Home/js/City_data.js"></script>
@@ -24,7 +100,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank.css" />
+	
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
 	</head>
@@ -832,96 +908,76 @@
 		<br>
 		<br>
 		<br>
+		<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank-footer.css" />
+	</head>
+	<body>
 		<footer>
-			<div class="f-main-c">
-				<div class="f-c-1f">
-					<ul>
-						<li>
-							<h4>喜事码头客服热线</h4></li>
-						<li>
-							<p>工作时间：每天9：00-23：00</p>
-						</li>
-						<li>
-							<p>188-8888-888</p>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>关注喜事码头官方微信公众号</h4></li>
-						<li>
-							<img style="margin-left: 45px;" src="/matouPCS/Public/Home/img/erweima_bottom.png" />
-						</li>
-
-					</ul>
-					<ul>
-						<li>
-							<h4>关于我们</h4></li>
-						<li>
-							<a href="#">
-								<p>关于喜事码头</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头部队</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>联系我们</h4></li>
-						<li>
-							<a href="#">
-								<p>官方邮箱：xishimatou@163.com</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>通讯地址：河南省郑州市863软件园</p>
-							</a>
-						</li>
-					</ul>
+			<div class="f-content-main">
+				<div class="ttm">
+					<div class="s-c-7f">
+						<div class="f7-o1">
+							<ul>
+								<li class="f4-o1-1">
+									<div>
+										<h4>喜事码头客服热线</h4>
+										<p>工作时间:每天9:00-23:00</p>
+										<p>188-8888-888</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h4>关注喜事码头微信公众号</h4>
+										<p>
+											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
+										</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h4>关于我们</h4>
+										<p>
+											<a href="#">关于喜事码头</a>
+										</p>
+										<p>
+											<a href="#">加入我们</a>
+										</p>
+										<p>
+											<a href="#">网站地图</a>
+										</p>
+										<p>
+											<a href="#">合伙人招募</a>
+										</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h4>联系我们</h4>
+										<p>官方邮箱:xishimatou@163.com</p>
+										<p>通讯地址:河南省郑州市863软件园</p>
+									</div>
+								</li>
+								<li class="clearf"></li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div class="f-c-2f">
-					<div style="width: 90%; margin: 0 auto;"><br>
-						<a href="#">i店大全</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<a href="#">鲜花礼品网</a>&nbsp;
-						<a href="#">鲜花网</a>&nbsp;
-						<a href="#">婚介</a>&nbsp;
-						<a href="#">婚礼搜索导航</a>&nbsp;
-						<a href="#">杭州婚庆网</a>&nbsp;
-						<a href="#">新娘说</a>&nbsp;
-						<a href="#">拍表网</a>&nbsp;
-						<a href="#">结婚网</a>&nbsp;
-						<a href="#">钻戒品牌</a>&nbsp;
-						<a href="#">武汉婚车租摄</a>&nbsp;
-						<a href="#">婚礼时光</a>&nbsp;
-						<a href="#">婚礼电子请帖</a>&nbsp;
-						<a href="#">小笑话</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
+				<div class="f-main-c">
+					<div class="f-c-1f">
+						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
+	</body>
+</html>
 
 		
 		<script type="text/javascript" src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
