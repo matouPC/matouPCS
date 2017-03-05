@@ -79,25 +79,25 @@ var checkPhone = function(a) {
 	return true;
 };
 $(function() {
-	$(window).on("load", function() {
-		$("#loading").fadeOut();
-	})
-	$("#tip .pack a").on("click", function() {
-		$("#tip").fadeOut()
-		$("#tip .pack p").html("")
-		$("#submit").css({
-			"pointer-events": "auto"
-		});
-		return false;
-	})
+		$(window).on("load", function() {
+			$("#loading").fadeOut();
+		})
+		$("#tip .pack a").on("click", function() {
+			$("#tip").fadeOut()
+			$("#tip .pack p").html("")
+			$("#submit").css({
+				"pointer-events": "auto"
+			});
+			return false;
+		})
 
-	function alerths(str) {
-		$("#tip").fadeIn()
-		$("#tip .pack p").html(str)
-		return false;
-	}
-})
-/*yanzhengma*/
+		function alerths(str) {
+			$("#tip").fadeIn()
+			$("#tip .pack p").html(str)
+			return false;
+		}
+	})
+	/*yanzhengma*/
 function shortMessagraxc() {
 	$('#btn_yzm').click(function() {
 		var count = 60;
@@ -226,7 +226,6 @@ $(function() {
 
 $(function() {
 	//$("#cca").val("aaa");
-//	document.getElementById("cca").value = "aaa";
 	$("#cca").click(function() {
 		$("#cca").css("border", "2px solid #ff5c5d");
 		$("#ccb").css("border", "2px solid #ccc");
@@ -618,97 +617,145 @@ $(function() {
 });
 
 //		--------------------------------------------------消息页面-----------------------------------------------------------
+//需求
+$('#xqxx-lb').hover(function() {
+	$('.xqxx-lb ul').stop().animate({
+		height: '150px'
+	}, 300);
+}, function() {
+	$('.xqxx-lb ul').stop().animate({
+		height: '0px'
+	}, 300);
+});
+$('.xqxx-lb ul li').click(function() {
+	$('#xqxx-lb p').html($(this).html());
+	$('.xqxx-lb ul').stop().animate({
+		height: '0px'
+	}, 300);
+});
+//部队
+$('#bdxx-lb').hover(function() {
+	$('.bdxx-lb ul').stop().animate({
+		height: '75px'
+	}, 300);
+}, function() {
+	$('.bdxx-lb ul').stop().animate({
+		height: '0px'
+	}, 300);
+});
+$('.bdxx-lb ul li').click(function() {
+	$('#bdxx-lb p').html($(this).html());
+	$('.bdxx-lb ul').stop().animate({
+		height: '0px'
+	}, 300);
+});
+//商铺
+$('#spxx-lb').hover(function() {
+	$('.spxx-lb ul').stop().animate({
+		height: '75px'
+	}, 300);
+}, function() {
+	$('.spxx-lb ul').stop().animate({
+		height: '0px'
+	}, 300);
+});
+$('.spxx-lb ul li').click(function() {
+	$('#spxx-lb p').html($(this).html());
+	$('.spxx-lb ul').stop().animate({
+		height: '0px'
+	}, 300);
+});
 
+
+$(function() {
+	$("#xx_01").toggle(function() {
+		$("#xx_01 img").css('transform', 'rotate(180deg)');
+		$('#xx_01 span').html('收起');
+		$('.yhmc dl').stop().animate({
+			height: '430px'
+		}, 1000);
+	}, function() {
+		$("#xx_01 img").css('transform', 'rotate(0deg)');
+		$('#xx_01 span').html('查看详情');
+		$('.yhmc dl').stop().animate({
+			height: '0px'
+		}, 1000);
+	});
+});
+
+$('.spxx_hf').click(function(){
+		$(this).parents('li').children('.no').show();
+	});
+	
+	function tel(){
+		var tel = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：2016-12-10</p><p class="xqxx_01_02">活动地点：郑州</p><p class="xqxx_01_03">悬赏内容：摄影、主持人</p></div><div class="yhmc"><div id="xl_01" class="yhmc_01"><img src="img/yhmc.png"><p class="yhmc_01_01">用户名称</p><p class="yhmc_01_01">1年经验</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">回复</p><p class="yhmc_01_04">电聊</p><a class="yhmc_01_07">查看号码</a><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div><div class="clearfloat"></div></div></li>';
+		$('.s-main-b ul').append(tel);	
+		$(".xs1").click(function(event) {
+			$(this).parents('li').remove();
+			event.stopPropagation();
+		});
+		xiala();
+		return false;
+	}
+	
+	function xiala(){
+		$(".xll1").hover(function() {
+			$(this).children('.xs1').show();
+		},function(){
+			$(this).children('.xs1').hide();
+		});
+	}
+	
+	function reject(){
+		var reject = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：2016-12-10</p><p class="xqxx_01_02">活动地点：郑州</p><p class="xqxx_01_03">悬赏内容：摄影、主持人</p></div><div class="yhmc"><div id="xl_01" class="yhmc_01"><img src="img/yhmc.png"><p class="yhmc_01_01">用户名称</p><p class="yhmc_01_01">1年经验</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">回复</p><p class="yhmc_01_06">拒绝</p><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div><div class="clearfloat"></div></div></li>';
+		$('.s-main-b ul').append(reject);
+		$(".xs1").click(function(event) {
+			$(this).parents('li').remove();
+			event.stopPropagation();
+		});
+		xiala();
+	}
 
 //		--------------------------------------------------部队消息-----------------------------------------------------------
 
-
-
-//点击查看详情
-$(".yfb_xl").hide(500);
-function xx(id){
-	$("#xl"+id).toggle(500);
-}
-$(function() {
-	$("#xl_01").hide(500);
-	$("#xx_01").click(function() {
-		$("#xl_01").toggle(500);
-	});
-});
 $(".xs1").click(function() {
-	$(this).parent().parent().remove();
+	$(this).parents('li').remove();
 });
 $("#man-top").click(function() {
 	$(".na-top").toggle();
 });
 $(document).ready(function() {
-	$(".xll1").click(function() {
-		$(this).siblings(".xs1").slideToggle(200);
-	});
+	xiala();
 });
 
 //		--------------------------------------------------详情页面-----------------------------------------------------------
-		//已完成
-		function changes(id) {
-			var mark = document.getElementById('btn_01'+id).innerText;
-			if(mark == '未完成') {
-				document.getElementById('btn_01'+id).innerText = "已完成";
-			} else {
-				document.getElementById('btn_01'+id).innerText = "未完成";
-			}
-		}
-		//已出售
-		//已完成
-		function changess(id) {
-			var mark = document.getElementById('btn_01'+id).innerText;
-			if(mark == '未出售') {
-				document.getElementById('btn_01'+id).innerText = "已出售";
-			} else {
-				document.getElementById('btn_01'+id).innerText = "未出售";
-			}
-		}
+//已完成
+function change() {
+	var mark = document.getElementById('btn').innerText;
+	if(mark == '已出售') {
+		document.getElementById('btn').innerText = "未出售";
+	} else {
+		document.getElementById('btn').innerText = "已出售";
+	}
+}
 
-		// 已找到  参数为详情的id
-		function yzd(id){
-			if(window.confirm('确定找到了么？')){
-				$.ajax({
-					url:'?s=/Home/User/yzd/id/'+id,
-					type:'get',
-					success:function(data){
-						alert(data);
-						$('#yzd'+id).html('<div>已找到</div>');
-					},error:function(){
-						alert('no');
-					}
-				});
-			}
-			
-		}
-		function yzds(id){
-			if(window.confirm('确定找到了么？')){
-				$.ajax({
-					url:'?s=/Home/User/yzds/id/'+id,
-					type:'get',
-					success:function(data){
-						alert(data);
-						$('#yzds'+id).html('<div>已找到</div>');
-					},error:function(){
-						alert('no');
-					}
-				});
-			}
-		}
-
-		//收藏
-		function changec() {
-			var mark = document.getElementById('btn_c').innerText;
-			if(mark == '收藏') {
-				document.getElementById('btn_c').innerText = "取消收藏";
-			} else {
-				document.getElementById('btn_c').innerText = "收藏";
-			};
-		};
-
+function changes() {
+	var mark = document.getElementById('btn_01').innerText;
+	if(mark == '已出售') {
+		document.getElementById('btn_01').innerText = "未出售";
+	} else {
+		document.getElementById('btn_01').innerText = "已出售";
+	}
+}
+//收藏
+function changec() {
+	var mark = document.getElementById('btn_c').innerText;
+	if(mark == '收藏') {
+		document.getElementById('btn_c').innerText = "取消收藏";
+	} else {
+		document.getElementById('btn_c').innerText = "收藏";
+	};
+};
 //		--------------------------------------------------详情页面-----------------------------------------------------------
 //		--------------------------------------------------详情页面-----------------------------------------------------------
 //		--------------------------------------------------详情页面-----------------------------------------------------------

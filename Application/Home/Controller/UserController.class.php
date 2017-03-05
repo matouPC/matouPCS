@@ -682,7 +682,16 @@ class UserController extends Controller
         $this->assign('fbxz',$fbxz);
         $this->display("User/userXz");
     }
+    /**
+    *  需求消息
+    */
     public function xqxx(){
+        $this->display();
+    }
+    /**
+    *  部队消息
+    */
+    public function bdxx(){
         $this->display();
     }
     /**
@@ -1035,16 +1044,17 @@ class UserController extends Controller
         // var_dump($list);die;
         if(empty($list)){
             $op['qq'] = $openid;
-            $op['username'] = $qqname;
+            $op['username'] = '用户'.time();
             $ad = $id = M('user')->order('id desc')->add($op);
             if($ad > 0){
                 session_start();
                 $_SESSION['qq'] = $openid;
-                $_SESSION['username'] = $qqname;
+                $_SESSION['username'] = $op['username'];
                 $_SESSION['id'] = $id;
                 // echo 123;
                 // var_dump($_SESSION);
-                echo '登陆成功';
+                // echo '登陆成功';
+                $this->ajaxReturn($_SESSION);
             }
             
         }else{
@@ -1053,9 +1063,12 @@ class UserController extends Controller
             $_SESSION['username'] = $list['username'];
             $_SESSION['qq'] = $openid;
             $_SESSION['id'] = $list['id'];
-            echo '登陆成功';
+            $this->ajaxReturn($_SESSION);
         }
     }
+    /**
+    *  请求微信第三方登录
+    */
     public function wxLogin(){
         $url='https://open.weixin.qq.com/connect/qrconnect?appid=wx06fc578080933319&redirect_uri=http://xishimatou.com;&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect';
         // var_dump($this->get($url));
@@ -1065,37 +1078,45 @@ class UserController extends Controller
     /**
     *  微信请求
     */
-    public function wxcode($code){
+    public function wxcode(){
+        $code = $_POST['code'];
+        // var_dump($code);die;
         $codes = explode('=',$code);
-        $newCode = $codes[1];//拿到微信的code值
+        $xxoo = explode('&',$codes[1]);
+        $newCode = $xxoo[0];//拿到微信的code值
+        // var_dump($newCode);die;
         $url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx06fc578080933319&secret=6477b3140c2043f67e4289e4245a8c6f&code='.$newCode.'&grant_type=authorization_code';//这个接口可以获得token和openid
         // // var_dump($this->get($url));die;
         $user = $this->get($url);
-        // var_dump($user);die;
+        
         $users = json_decode($user);
         //微信的openid  token
         $userXx = json_decode($this->wxUser($users->openid,$users->access_token));//获得登录用户的基本信息
+
         // var_dump($userXx->nickname);die;
-        $wxad['username'] = $wxname = $userXx->nickname;//若用户第一次登录 则用户名为微信昵称
+        $wxad['username'] = '用户'.time();//若用户第一次登录 则用户名为微信昵称
         $wxad['weixin'] = $wxopenid = $userXx->openid;//用户唯一id
+
         //先查询此用户之前是否登录过
         $wxLi = M('user')->where("weixin = '{$wxopenid}'")->find();
         // var_dump($wxLi);die;
         if(empty($wxLi)){//如果为空证明之前没有登陆过 就进行添加
-            $wxAdd = $wxId = M('user')->order(" id desc")->add($wxad);
-            if($wxadd > 0){
+            // echo 123;die;
+            // var_dump($wxad);die;
+            if($wxad['weixin'] != ''){
+                $wxAdd = $wxId = M('user')->order('id desc')->add($wxad);
+            }
+            if($wxAdd > 0){
                 session_start();
-                $_SESSION['username'] = $wxname;
+                $_SESSION['username'] = $wxad['username'];
                 $_SESSION['id'] = $wxId;
-                // echo '登陆成功';
-                return $_SESSION;
+                $this->ajaxReturn($_SESSION);
             }
         }else{//如果不为空则直接登录
             session_start();
             $_SESSION['username'] = $wxLi['username'];
             $_SESSION['id'] = $wxLi['id'];
-            // echo '登陆成功';
-            return $_SESSION;
+            $this->ajaxReturn($_SESSION);
         }
     }
     /**

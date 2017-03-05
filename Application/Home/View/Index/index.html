@@ -248,20 +248,17 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							</div>
 						</div>
 						<div class="s-f1-r">
-							<div class="s-f1-r-1f">
+							<div class="s-f1-r-1f" id="ydl">
 								<div class="center s-f1-r-1f-word">
 									<h2>发现更多好服务</h2>
 								</div>
 								<php>if(empty($_SESSION['username'])){</php>
-									<div id="login" class="center login">
+									<div id="login" class="center login ">
 										<div class="img"><img src="__PUBLIC__/Home/img/login.png" alt="" /></div>
 										<span>用户登录</span>
 									</div>
 								<php>}else{</php>
-									<div class="center login">
-										<div class="img"><img src="__PUBLIC__/Home/img/login.png" alt="" /></div>
-										<span onclick="alert('您已登录')">用户登录</span>
-									</div>
+									<div class="center login"><div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div><span>{$_SESSION['username']}</span></div>
 								<php>}</php>
 
 							</div>
@@ -273,10 +270,10 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon01.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-												<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a id="findc" href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
 											<php>}else{</php>
 												<?php if(in_array($_SESSION['id'],$ren)){ ?>
-												<span class="s-f1-r-word"><a href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a id="findc" href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
 												<?php }else{ ?>
 												<span class="s-f1-r-word"><a id="findc" href="javascript:void(0)">发布悬赏</a></span>
 												<?php } ?>
@@ -289,12 +286,12 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
 
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布应赏</a></span>
+											<span class="s-f1-r-word"><a id="fbys" href="#" onclick="alert('您还没有登录!')">发布应赏</a></span>
 											
 											<php>}else if(!empty($fbys)){</php>
 											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应赏!')">发布应赏</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Ysq/txys">发布应赏</a></span>
+											<span class="s-f1-r-word"><a id="fbys" href="?s=/Home/Ysq/txys">发布应赏</a></span>
 											<php>}</php>
 										</td>
 									</tr>
@@ -304,9 +301,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon03.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布招聘</a></span>
+											<span class="s-f1-r-word"><a id="fbzp" href="#" onclick="alert('您还没有登录!')">发布招聘</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Zpdt/txzp">发布招聘</a></span>
+											<span class="s-f1-r-word"><a id="fbzp" href="?s=/Home/Zpdt/txzp">发布招聘</a></span>
 											<php>}</php>
 										</td>
 										<td>
@@ -314,11 +311,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon04.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布应聘</a></span>
+											<span class="s-f1-r-word"><a id="fbyp" href="#" onclick="alert('您还没有登录!')">发布应聘</a></span>
 											<php>}else if(!empty($fbyp)){</php>
 											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应聘!')">发布应聘</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Zpdt1/txyp">发布应聘</a></span>
+											<span class="s-f1-r-word"><a id="fbyp" href="?s=/Home/Zpdt1/txyp">发布应聘</a></span>
 											<php>}</php>
 										</td>
 									</tr>
@@ -328,9 +325,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon05.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布二手求购</a></span>
+											<span class="s-f1-r-word"><a id="fbqg" href="#" onclick="alert('您还没有登录!')">发布二手求购</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Tzsc/txqg">发布二手求购</a></span>
+											<span class="s-f1-r-word"><a id="fbqg" href="?s=/Home/Tzsc/txqg">发布二手求购</a></span>
 											<php>}</php>
 										</td>
 										<td>
@@ -338,9 +335,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<img src="__PUBLIC__/Home/img/rightside_icon06.png" alt="" />
 											</div>
 											<php>if(empty($_SESSION['username'])){</php>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您还没有登录!')">发布二手闲置</a></span>
+											<span class="s-f1-r-word"><a id="fbxz" href="#" onclick="alert('您还没有登录!')">发布二手闲置</a></span>
 											<php>}else{</php>
-											<span class="s-f1-r-word"><a href="?s=/Home/Tzsc/txxz">发布二手闲置</a></span>
+											<span class="s-f1-r-word"><a id="fbxz" href="?s=/Home/Tzsc/txxz">发布二手闲置</a></span>
 											<php>}</php>
 										</td>
 									</tr>
@@ -1008,7 +1005,10 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 					<span style="height: 50px;display: block;"></span>
 
 				<include file="Public/foot"/>
+<<<<<<< HEAD
+=======
 
+>>>>>>> ee45fa4211dd639ba953b97cb0eed33404cd56e9
 	</body>
 
 	<script>
