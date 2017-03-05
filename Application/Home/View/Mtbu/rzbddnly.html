@@ -621,14 +621,58 @@
 									</span>
 									<div class="right dz-qx">
 										<span style="font-size: 20px;" class="icon-dz"></span>
-										<p style="float: right; margin-left: 5px;">{$lists.zan}</p>
-									</div>
-									<p class="clearfloat"></p>
-								</div>
-								<div class="clearfloat"></div>
-							</div>
-						</foreach>
-					</div>
+											<p onclick="zan({$lists.did},{$lists.zan})" class="dz dz-qx">
+													<?php $zan = explode(',',$lists['zid']);
+														  array_pop($zan);
+														   ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z{$lists.lid}" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z{$lists.lid}" class="icon-dz"></span>
+													<?php } ?>
+													<span id="s{$lists.lid}">{$lists.zan}</span></p> 
+											</div>
+										</div>
+										<div class="clearfloat"></div>
+									</li>
+								</foreach>
+								<script type="text/javascript">
+									var a = 0;
+									function zan(lid,zan){
+										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
+										if($('#z'+lid).hasClass('icon-dz')){
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+lid).removeClass('icon-dz');
+													$('#z'+lid).addClass('icon-dz-kz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+lid).removeClass('icon-dz-kz');
+													$('#z'+lid).addClass('icon-dz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}
+									}
+								</script>
 					<div class="s-main-b">
 						<div class="margin">
 						<button onclick="tj({$_GET['id']})" name='lyt' id='lyt' >点击加载更多</button>

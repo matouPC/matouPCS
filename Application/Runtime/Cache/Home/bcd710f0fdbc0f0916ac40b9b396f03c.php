@@ -570,14 +570,14 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content" placeholder="留言吧"></textarea>
+							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
 							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>)" >我要留言</button>
 						</div>
 						<br>
 						<script type="text/javascript">
 							function liuyan(xsid){
 								//获得基本信息id
-								var content = $('#content').val();
+								var content = $('#contentt').val();
 								if(content == ''){
 									alert('滚犊子');
 								}else{;
@@ -614,38 +614,29 @@
 		<br>
 		<br>
 		<br>
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+	</head>
+	<body>
 		<footer>
-			<div class="f-main-c ">
-				<div class="f-c-2f ">
-					<div style="width: 90%; margin: 0 auto; "><br>
-						<a href="# ">i店大全</a>&nbsp;
-						<a href="# ">十大家纺排行榜</a>&nbsp;
-						<a href="# ">鲜花礼品网</a>&nbsp;
-						<a href="# ">鲜花网</a>&nbsp;
-						<a href="# ">婚介</a>&nbsp;
-						<a href="# ">婚礼搜索导航</a>&nbsp;
-						<a href="# ">杭州婚庆网</a>&nbsp;
-						<a href="# ">新娘说</a>&nbsp;
-						<a href="# ">拍表网</a>&nbsp;
-						<a href="# ">结婚网</a>&nbsp;
-						<a href="# ">钻戒品牌</a>&nbsp;
-						<a href="# ">武汉婚车租摄</a>&nbsp;
-						<a href="# ">婚礼时光</a>&nbsp;
-						<a href="# ">婚礼电子请帖</a>&nbsp;
-						<a href="# ">小笑话</a>&nbsp;
-						<a href="# ">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
+			<div class="f-content-main">
+				<div class="f-main-c">
+					<div class="f-c-1f">
+						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
+	</body>
+</html>
+
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js "></script>
