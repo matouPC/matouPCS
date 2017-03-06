@@ -114,6 +114,8 @@ class XsdtController extends Controller
         $fids['fid'] = $lis['usid'];//被收藏的用户id
         $fids['type_xx'] = 2;
         $fids['type_xs'] = 4;
+        $fids['tid'] = $lis['pid'];
+        $fids['wid'] = $lis['wid'];
         $fids['content_xx'] = '报名悬赏';
         $xd = M("user_xx")->add($fids);
         if($xd > 0){

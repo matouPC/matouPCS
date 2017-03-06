@@ -129,6 +129,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 
 							</li>
 							<li id="select-xx" style="width: 45px;">
+								<?php if($_SESSION['id'] != ''){ ?>
 								<a href="#">消息</a>
 								<div class="str"></div>
 								<div class="select-xx">
@@ -144,6 +145,23 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 										</li>
 									</ul>
 								</div>
+								<?php }else{ ?>
+								<a href="#" onclick="alert('请先登录')">消息</a>
+								<div class="str"></div>
+								<div class="select-xx" style="display:none;">
+									<ul>
+										<li>	
+											<a href="?s=/Home/User/xqxx">需求消息</a>
+										</li>
+										<li>
+											<a href="?s=/Home/User/bdxx">部队消息</a>
+										</li>
+										<li>
+											<a href="?s=/Home/User/spxx">商铺消息</a>
+										</li>
+									</ul>
+								</div>
+								<?php } ?>
 							</li>
 							<li style="width: 58px;">
 								<?php if(empty($_SESSION['username'])){ ?>
@@ -686,7 +704,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<?php if(in_array($_SESSION['id'],$ren)){ ?>
 												<span class="s-f1-r-word"><a id="findc" href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
 												<?php }else{ ?>
-												<span class="s-f1-r-word"><a id="findc" href="javascript:void(0)">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a id="findc" href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
 												<?php } ?>
 												<!-- <span class="s-f1-r-word"><a href="?s=/Home/Xsdt/txxs">发布悬赏</a></span> -->
 											<?php } ?>
