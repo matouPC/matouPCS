@@ -732,6 +732,26 @@ class MtbuController extends Controller
             } 
         }   
     }
+    public function rzbd_gt_zan($did,$zan){
+    	$uid = $_SESSION['id'].',';
+    
+    	$li = M('dongtai')->where("did = {$did}")->find();
+    	if(empty($li)){
+    		$data['did'] = $did;
+    		$ob = M("dongtai")->add($data);
+    	}
+    	$li['zid'] = '';
+    	$lis = M('dongtai')->where("did = {$did}")->find();
+    	$lis['zid'] .= $uid;
+    	$db = M("dongtai")->where("did = {$did}")->save($lis);
+    	if($db > 0){
+    		$data['zan'] = $zan;
+    		$ob = M('dongtai')->where("did = {$did}")->save($data);
+    		if($ob > 0){
+    			echo '点赞成功';
+    		}
+    	}
+    }
     public function rzbddyly()
     {
         //认证部队对外留言 $id为部队id

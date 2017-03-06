@@ -495,7 +495,17 @@
 								<?php if($list[username]!=$list[tel]): ?><a href=""><?php echo ($list["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
-								（<?php echo ($list["bdlx"]); ?>）
+								<?php if($list[bdlx]==1): ?>（个人部队）
+								<?php elseif($list[bdlx]==2): ?>
+								（婚庆公司）
+								<?php elseif($list[bdlx]==3): ?>
+								（工作室）
+								<?php elseif($list[bdlx]==4): ?>
+								（影楼）
+								<?php elseif($list[bdlx]==5): ?>
+								（表演团）
+								<?php else: ?>
+								（商铺部队）<?php endif; ?>
 							</p>
 							<div>
 								<p class="fsl">
@@ -818,7 +828,7 @@
 								function liuyan(id){
 									var p=id;
 									var t = "<?php echo session('id');?>";
-									alert(p);
+							
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
@@ -827,7 +837,7 @@
 											data:{id:p,content:contents},
 											dataType:"json",
 											success:function(data){
-											alert(2);
+										
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
 													if(data[i].username==data[i].tel){
@@ -1069,7 +1079,7 @@
 							</div>
 						</div>-->
 					<!--</div>-->	
-					<div id="con" class="s-c-3f">				
+					<div id="conn" class="s-c-3f">				
 						<div   class="s-c-3f-1f">
 						<?php if(is_array($dongtai)): foreach($dongtai as $key=>$v): ?><div class="mdhd">
 									<img src="/matouPCS/Public/Home/img/mdhd.png" />
@@ -1104,14 +1114,59 @@
 									<img src="img/delete-2.png" />
 								</span>-->
 								<div class="right dz-qx">
-									<span style="font-size: 20px;" class="icon-dz"></span>
-									<p style="float: right; margin-left: 5px;"><?php echo ($v["zan"]); ?></p>
+								
+										<p onclick="zan(<?php echo ($v["did"]); ?>,<?php echo ($v["zan"]); ?>)" class="dz dz-qx">
+													<?php $zan = explode(',',$v['zid']); array_pop($zan); ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z<?php echo ($v["did"]); ?>" style="font-size: 17px;" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z<?php echo ($v["did"]); ?>" style="font-size: 17px;" class="icon-dz"></span>
+													<?php } ?>
+													<span style="font-size: 17px;" id="s<?php echo ($v["did"]); ?>"><?php echo ($v["zan"]); ?></span></p> 
 								</div>
 								<p class="clearfloat"></p>
 							</div>
 							<div class="clearfloat"></div><?php endforeach; endif; ?>
 						</div>
 					</div>
+					<script type="text/javascript">
+									var a = 0;
+									function zan(did,zan){
+						
+										var zan = parseInt(document.getElementById('s'+did).innerHTML);
+										if($('#z'+did).hasClass('icon-dz')){
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_gt_zan/did/"+did+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+did).removeClass('icon-dz');
+													$('#z'+did).addClass('icon-dz-kz');
+													$('#s'+did).html(zan);
+												},error:function(){
+													alert('n2o');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_gt_zan/did/"+did+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+did).removeClass('icon-dz-kz');
+													$('#z'+did).addClass('icon-dz');
+													$('#s'+did).html(zan);
+												},error:function(){
+													alert('n4o');
+												}
+											});
+											
+										}
+									}
+								</script>
 					<div class="s-main-b">
 						<div class="margin">
 							<button onclick="tj(<?php echo ($v["uid"]); ?>)" name='btn' id='btn' >点击加载更多</button>
@@ -1120,12 +1175,13 @@
 				</div>
 				<div class="clearfloat"></div>
 			</div>
+			<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 			<script type="text/javascript">
 
 var p=2;
   function tj(id){
 
-	 
+	  var t = "<?php echo session('id');?>";
 	 // alert(id);
 		$.ajax({
 			type:'post',
@@ -1137,10 +1193,28 @@ var p=2;
 			success:function(data){
 	//	alert(data);
 			
-					if(data!=null){				
+					if(data!=null){		
+						var zan='';
 						 for (var i = 0; i < data['nr'].length; i++) {
+				
 	                            var p='';
 							 if(data['nr'][i].username==data['nr'][i].tel){
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+							
+				
+								 for (s = 0; s < myArray.length; s++) {
+									var  thisEntry = myArray[s].toString();
+									  if (thisEntry == stringToSearch) {
+											var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+									  }
+									 }else{
+										 var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+										
+								
+								 }
+									 alert(dianzan);
 									var use = data['nr'][i].username.substr(0,5);
 									}else{
 								     var use = data['nr'][i].username;
@@ -1150,8 +1224,8 @@ var p=2;
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
-			//	alert(li);
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+			alert(li);
 						$("#conn").append(li);
 	 		
 						 }
@@ -1570,106 +1644,29 @@ var p=2;
 		<br>
 		<br>
 		<br>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+	</head>
+	<body>
 		<footer>
-			<div class="f-main-c">
-				<!--<div class="f-c-1f">
-					<ul>
-						<li>
-							<h4>喜事码头客服热线</h4></li>
-						<li>
-							<p>工作时间：每天9：00-23：00</p>
-						</li>
-						<li>
-							<p>188-8888-888</p>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>关注喜事码头官方微信公众号</h4></li>
-						<li>
-							<img style="margin-left: 45px;" src="img/erweima_bottom.png" />
-						</li>
-
-					</ul>
-					<ul>
-						<li>
-							<h4>关于我们</h4></li>
-						<li>
-							<a href="#">
-								<p>关于喜事码头</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头部队</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>联系我们</h4></li>
-						<li>
-							<a href="#">
-								<p>官方邮箱：xishimatou@163.com</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>通讯地址：河南省郑州市863软件园</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-				</div>-->
-				<div class="f-c-2f">
-					<div style="width: 90%; margin: 0 auto;"><br>
-						<a href="#">i店大全</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<a href="#">鲜花礼品网</a>&nbsp;
-						<a href="#">鲜花网</a>&nbsp;
-						<a href="#">婚介</a>&nbsp;
-						<a href="#">婚礼搜索导航</a>&nbsp;
-						<a href="#">杭州婚庆网</a>&nbsp;
-						<a href="#">新娘说</a>&nbsp;
-						<a href="#">拍表网</a>&nbsp;
-						<a href="#">结婚网</a>&nbsp;
-						<a href="#">钻戒品牌</a>&nbsp;
-						<a href="#">武汉婚车租摄</a>&nbsp;
-						<a href="#">婚礼时光</a>&nbsp;
-						<a href="#">婚礼电子请帖</a>&nbsp;
-						<a href="#">小笑话</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
+			<div class="f-content-main">
+				<div class="f-main-c">
+					<div class="f-c-1f">
+						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
+	</body>
+</html>
+
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/DialogBySHF.js"></script>
