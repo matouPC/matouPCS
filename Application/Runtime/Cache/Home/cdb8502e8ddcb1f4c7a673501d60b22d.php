@@ -502,7 +502,17 @@
 								<?php if($dt[username]!=$dt[tel]): ?><a href=""><?php echo ($dt["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
-								（<?php echo ($dt["type"]); ?>）
+								<?php if($dt[bdlx]==1): ?>（个人部队）
+								<?php elseif($dt[bdlx]==2): ?>
+								（婚庆公司）
+								<?php elseif($dt[bdlx]==3): ?>
+								（工作室）
+								<?php elseif($dt[bdlx]==4): ?>
+								（影楼）
+								<?php elseif($dt[bdlx]==5): ?>
+								（表演团）
+								<?php else: ?>
+								（商铺部队）<?php endif; ?>
 							</p>
 							<div>
 								<p class="fsl">
@@ -545,7 +555,7 @@
 							<p>全部动态</p>
 							<img src="/matouPCS/Public/Home/img/xxjt.png" />
 							<div class="select-dt">
-								<ul id="type1">
+								<ul id="typee">
 									<li style="padding-top: 5px;">
 										<a href="javascript://">全部动态</a>
 									</li>
@@ -557,7 +567,7 @@
 						</div>
 	        <script>
 	       
-            var cNode =document.getElementById('type1').getElementsByTagName('li');
+            var cNode =document.getElementById('typee').getElementsByTagName('li');
                     for( var i=0; i<cNode.length; i++){
                         cNode[i].index= i;
                         //用来计算点击次数
@@ -652,7 +662,7 @@
 									<button onclick="liuyan(<?php echo ($_GET['id']); ?>)">发布留言</button>
 								</div>
 							</div>
-							
+								
 							<script type="text/javascript">
 								function liuyan(id){
 									var p=id;
@@ -669,11 +679,30 @@
 											//	alert(2);
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													 var myArray=new Array()
+													 var str=data[i].zid;  
+													 myArray = str.split(","); 
+													 
+													 var c = ","; // 要计算的字符
+													 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+													 var result = str.match(regex);
+													 var count = !result ? 0 : result.length;
+													 for(var j=0;j<=count;j++){
+														 if(myArray[j]==t){
+															 var aa=1;
+								
+														 }
+													 }
+													if(aa==1){
+														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
+													}else{
+														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz"></span>';
+													}
 													if(data[i].username==data[i].tel){
-														var use = data[i].username.substr(0,5);
-														}else{
-													     var use = data[i].username;
-														}
+													var use = data[i].username.substr(0,5);
+													}else{
+												     var use = data[i].username;
+													}
 													if(t==data[i].uid){
 														if(data[i].bdlx==1){
 															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
@@ -693,7 +722,7 @@
 													}
 													
 													
-													li+='<li><div class="left">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><p onclick="zan('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].id+'">'+data[i].zan+'</span></p></p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -741,12 +770,58 @@
 											</p>
 											<div class="bottom">
 												<p class="sj"><?php echo ($lis["time"]); ?></p>
-												<p class="dz dz-qx"><span class="icon-dz"></span>1000</p>
+												<p class="dz dz-qx">			
+												<p onclick="zan(<?php echo ($lis["id"]); ?>,<?php echo ($lis["zan"]); ?>)" class="dz dz-qx">
+													<?php $zan = explode(',',$lis['zid']); array_pop($zan); ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z<?php echo ($lis["id"]); ?>" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z<?php echo ($lis["id"]); ?>" class="icon-dz"></span>
+													<?php } ?>
+													<span id="s<?php echo ($lis["id"]); ?>"><?php echo ($lis["zan"]); ?></span></p> 
 											</div>
 										</div>
 										<div class="clearfloat"></div>
 									</li><?php endforeach; endif; ?>
 							</ul>
+							<script type="text/javascript">
+									var a = 0;
+									function zan(lid,zan){
+								
+										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
+										if($('#z'+lid).hasClass('icon-dz')){
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+lid).removeClass('icon-dz');
+													$('#z'+lid).addClass('icon-dz-kz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+lid).removeClass('icon-dz-kz');
+													$('#z'+lid).addClass('icon-dz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}
+									}
+								</script>
 							<p class="ckgd">
 								<a href="?s=/Home/Mtbu/spbddnly/id/<?php echo ($_GET['id']); ?>/">查看更多 》</a>
 							</p>
@@ -788,7 +863,7 @@
 					</div>
 				</div>
 				<div id="re" class="s-main-l">
-					<div id="contentt" class="s-c-3f">				
+					<div id="conn" class="s-c-3f">				
 						<div   class="s-c-3f-1f">
 						<?php if(is_array($dongtai)): foreach($dongtai as $key=>$v): ?><div class="mdhd">
 								<img src="/matouPCS/Public/Home/img/mdhd.png" />
@@ -823,12 +898,56 @@
 									<img src="/matouPCS/Public/Home/img/delete-2.png" />
 								</span>
 								<div class="right dz-qx">
-									<span style="font-size: 20px;" class="icon-dz"></span>
-									<p style="float: right; margin-left: 5px;"><?php echo ($v["zan"]); ?></p>
+									<p onclick="zan1(<?php echo ($v["did"]); ?>,<?php echo ($v["zan"]); ?>)" class="dz dz-qx">
+													<?php $zan = explode(',',$v['zid']); array_pop($zan); ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z<?php echo ($v["did"]); ?>" style="font-size: 17px;" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z<?php echo ($v["did"]); ?>" style="font-size: 17px;" class="icon-dz"></span>
+													<?php } ?>
+													<span style="font-size: 17px;" id="s<?php echo ($v["did"]); ?>"><?php echo ($v["zan"]); ?></span></p> 
 								</div>
 								<p class="clearfloat"></p>
 							</div>
 							<div class="clearfloat"></div><?php endforeach; endif; ?>
+						<script type="text/javascript">
+									var a = 0;
+									function zan1(did,zan){
+						
+										var zan = parseInt(document.getElementById('s'+did).innerHTML);
+										if($('#z'+did).hasClass('icon-dz')){
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_gt_zan/did/"+did+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+did).removeClass('icon-dz');
+													$('#z'+did).addClass('icon-dz-kz');
+													$('#s'+did).html(zan);
+												},error:function(){
+													alert('n2o');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_gt_zan/did/"+did+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+did).removeClass('icon-dz-kz');
+													$('#z'+did).addClass('icon-dz');
+													$('#s'+did).html(zan);
+												},error:function(){
+													alert('n4o');
+												}
+											});
+											
+										}
+									}
+								</script>
 						</div>
 					</div>
 					<div class="s-main-b">
@@ -843,24 +962,48 @@
 
 
 <script type="text/javascript">
-var p=2;
 
+var p=2;
   function tj(id){
 
+	  var t = "<?php echo session('id');?>";
+	 // alert(id);
 		$.ajax({
 			type:'post',
 			url:"<?php echo U('Mtbu/dnjzdt');?>",
 			data:{k:p,id,id},
 			beforeSend:function(){
-	         $("#contentt").append("<div id='load'>加载中……</div>");
+	         $("#conn").append("<div id='load'>加载中……</div>");
 			},
 			success:function(data){
-
-					if(data!=null){				
-						
+	//	alert(data);
+			
+					if(data!=null){		
+						var zan='';
 						 for (var i = 0; i < data['nr'].length; i++) {
+							 var myArray=new Array()
+							 var str=data['nr'][i].zid;  
+							 myArray = str.split(","); 
+						
+				
+							 var c = ","; // 要计算的字符
+							 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+							 var result = str.match(regex);
+							 var count = !result ? 0 : result.length;
+							 for(var j=0;j<count;j++){
+								 if(myArray[j]==t){
+									 var aa=1;
+		
+								 }
+							 }
+							if(aa==1){
+								var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+							}else{
+								var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+							}
 	                            var p='';
 							 if(data['nr'][i].username==data['nr'][i].tel){
+							
 									var use = data['nr'][i].username.substr(0,5);
 									}else{
 								     var use = data['nr'][i].username;
@@ -870,9 +1013,9 @@ var p=2;
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
-				
-						$("#contentt").append(li);
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+		//	alert(li);
+						$("#conn").append(li);
 	 		
 						 }
 				}else{
@@ -894,28 +1037,48 @@ var p=2;
   
 	function ajax(where,id){
 	//var id=	 $_GET['id'];
-		//alert(id);	
+		 var t = "<?php echo session('id');?>";
 			$.ajax({
 				url:"?s=/Home/Mtbu/spbddndtre",
 				type:"post",
 				data:{id:id,where:where},
 				dataType:"json",
 				success:function(data){
+					
 					var pl='';
 					 for (var i = 0; i < data['nr'].length; i++) {
-                        var p='';
-                        if(data['nr'][i].username==data['nr'][i].tel){
+						 var myArray=new Array()
+						 var str=data['nr'][i].zid;  
+						 myArray = str.split(","); 
+						 
+						 var c = ","; // 要计算的字符
+						 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+						 var result = str.match(regex);
+						 var count = !result ? 0 : result.length;
+						 for(var j=0;j<=count;j++){
+							 if(myArray[j]==t){
+								 var aa=1;
+	
+							 }
+						 }
+						if(aa==1){
+							var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+						}else{
+							var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+						}
+                       var p='';
+                       if(data['nr'][i].username==data['nr'][i].tel){
 							var use = data['nr'][i].username.substr(0,5);
 							}else{
 						     var use = data['nr'][i].username;
 							}
-                   	 for (var j= 0; j < data['tu'].length; j++) {
+                  	 for (var j= 0; j < data['tu'].length; j++) {
 						 if(data['nr'][i].did==data['tu'][j].pid){
 							p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 						 }
 					 }
-                   	 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
-                     	
+                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+                    	
 						
 					};
 					var pl ='<div id="ha" class="s-c-3f ">'+li+'</div><div class="s-main-b"><div class="margin"><button onclick="tj'+where+'(<?php echo ($_GET['id']); ?>)" name="btn1" id="btn1" >点击加载更多</button></div></div>';
@@ -930,7 +1093,7 @@ var p=2;
 	var l=2;
 
 	  function tj1(id){		 
-			// alert(1);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
@@ -943,6 +1106,25 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
+								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 		                            var p='';
 								 if(data['nr'][i].username==data['nr'][i].tel){
 										var use = data['nr'][i].username.substr(0,5);
@@ -954,12 +1136,11 @@ var p=2;
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
-		 		
 							 }
-					}else{
+						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
 			 				flag=true;	
@@ -975,7 +1156,7 @@ var p=2;
 		  }  
 	  var z=2;
 	  function tj2(id){		 
-			// alert(id);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthd');?>",
@@ -984,10 +1165,28 @@ var p=2;
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
+								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 		                            var p='';
 								 if(data['nr'][i].username==data['nr'][i].tel){
 										var use = data['nr'][i].username.substr(0,5);
@@ -999,8 +1198,8 @@ var p=2;
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
-									// alert(li);
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+		                          
 							$("#ha").append(li);
 		 		
 							 }
@@ -1020,7 +1219,7 @@ var p=2;
 		  }  
 	  var x=2;
 	  function tjz(id){		 
-		//	 alert(id);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
@@ -1029,25 +1228,44 @@ var p=2;
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
 						if(data!=null){				
-								 for (var i = 0; i < data['nr'].length; i++) {
-			                            var p='';
-									 if(data['nr'][i].username==data['nr'][i].tel){
-											var use = data['nr'][i].username.substr(0,5);
-											}else{
-										     var use = data['nr'][i].username;
-											}
-									 for (var j= 0; j < data['tu'].length; j++) {
-										 if(data['nr'][i].did==data['tu'][j].pid){
-											p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
-										 }
+							
+							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
 									 }
-										 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
-			                          
-								$("#ha").append(li);
-			 		
 								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
+		                            var p='';
+								 if(data['nr'][i].username==data['nr'][i].tel){
+										var use = data['nr'][i].username.substr(0,5);
+										}else{
+									     var use = data['nr'][i].username;
+										}
+								 for (var j= 0; j < data['tu'].length; j++) {
+									 if(data['nr'][i].did==data['tu'][j].pid){
+										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+									 }
+								 }
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+		                          
+							$("#ha").append(li);
+		 		
+							 }
 						}else{
 							 //alert(22);
 							 document.getElementById('btn1').innerHTML = '加载完毕';
@@ -1064,7 +1282,7 @@ var p=2;
 		  }  
 	  var c=2;
 	  function tjr(id){		 
-			// alert(id);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdtre');?>",
@@ -1073,10 +1291,28 @@ var p=2;
 			         $("#ha").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
+								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 		                            var p='';
 								 if(data['nr'][i].username==data['nr'][i].tel){
 										var use = data['nr'][i].username.substr(0,5);
@@ -1088,7 +1324,7 @@ var p=2;
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1109,7 +1345,7 @@ var p=2;
 		  }  
 	  var v=2;
 	  function  tj1r(id){		 
-		//	 alert(id);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdtre');?>",
@@ -1122,6 +1358,25 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
+								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 		                            var p='';
 								 if(data['nr'][i].username==data['nr'][i].tel){
 										var use = data['nr'][i].username.substr(0,5);
@@ -1133,7 +1388,7 @@ var p=2;
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1154,7 +1409,7 @@ var p=2;
 		  }  
 	  var b=2;
 	  function tj1z(id){		 
-			// alert(id);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdt');?>",
@@ -1167,6 +1422,25 @@ var p=2;
 							if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
+								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 		                            var p='';
 								 if(data['nr'][i].username==data['nr'][i].tel){
 										var use = data['nr'][i].username.substr(0,5);
@@ -1178,7 +1452,7 @@ var p=2;
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1199,7 +1473,7 @@ var p=2;
 		  }  
 	  var n=2;
 	  function tj2r(id){		 
-			// alert(id);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthdr');?>",
@@ -1209,9 +1483,28 @@ var p=2;
 					},
 					success:function(data){
 						// alert(data);
-					if(data!=null){				
+							if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
+								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 		                            var p='';
 								 if(data['nr'][i].username==data['nr'][i].tel){
 										var use = data['nr'][i].username.substr(0,5);
@@ -1223,7 +1516,7 @@ var p=2;
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1244,7 +1537,7 @@ var p=2;
 		  }  
 	  var m=2;
 	  function tj2z(id){		 
-		//	 alert(id);
+		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/dtjzdthd');?>",
@@ -1256,6 +1549,25 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+								 var myArray=new Array()
+								 var str=data['nr'][i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
+								 }
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 		                            var p='';
 								 if(data['nr'][i].username==data['nr'][i].tel){
 										var use = data['nr'][i].username.substr(0,5);
@@ -1267,7 +1579,7 @@ var p=2;
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data['nr'][i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1287,113 +1599,35 @@ var p=2;
 		// alert(p);
 		  }  
 
+  
 </script>
-
-
 		</section>
 		<br>
 		<br>
 		<br>
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+	</head>
+	<body>
 		<footer>
-			<div class="f-main-c">
-				<!--<div class="f-c-1f">
-					<ul>
-						<li>
-							<h4>喜事码头客服热线</h4></li>
-						<li>
-							<p>工作时间：每天9：00-23：00</p>
-						</li>
-						<li>
-							<p>188-8888-888</p>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>关注喜事码头官方微信公众号</h4></li>
-						<li>
-							<img style="margin-left: 45px;" src="img/erweima_bottom.png" />
-						</li>
-
-					</ul>
-					<ul>
-						<li>
-							<h4>关于我们</h4></li>
-						<li>
-							<a href="#">
-								<p>关于喜事码头</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头部队</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>联系我们</h4></li>
-						<li>
-							<a href="#">
-								<p>官方邮箱：xishimatou@163.com</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>通讯地址：河南省郑州市863软件园</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-				</div>-->
-				<div class="f-c-2f">
-					<div style="width: 90%; margin: 0 auto;"><br>
-						<a href="#">i店大全</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<a href="#">鲜花礼品网</a>&nbsp;
-						<a href="#">鲜花网</a>&nbsp;
-						<a href="#">婚介</a>&nbsp;
-						<a href="#">婚礼搜索导航</a>&nbsp;
-						<a href="#">杭州婚庆网</a>&nbsp;
-						<a href="#">新娘说</a>&nbsp;
-						<a href="#">拍表网</a>&nbsp;
-						<a href="#">结婚网</a>&nbsp;
-						<a href="#">钻戒品牌</a>&nbsp;
-						<a href="#">武汉婚车租摄</a>&nbsp;
-						<a href="#">婚礼时光</a>&nbsp;
-						<a href="#">婚礼电子请帖</a>&nbsp;
-						<a href="#">小笑话</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
+			<div class="f-content-main">
+				<div class="f-main-c">
+					<div class="f-c-1f">
+						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
+	</body>
+</html>
+
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
@@ -1526,15 +1760,7 @@ var p=2;
 			$(this).parents('.s-c-3f-1f').remove();
 		});
 		//----------------------------点赞--------------------------
-		$('.dz-qx span').click(function(){
-			if($(this).hasClass('icon-dz')){
-				$(this).removeClass('icon-dz');
-				$(this).addClass('icon-dz-kz');
-			}else{
-				$(this).removeClass('icon-dz-kz');
-				$(this).addClass('icon-dz');
-			}
-		});
+
 		//----------------------------图片放大--------------------------
 		$(function() {
 			$('.boxer').boxer({
