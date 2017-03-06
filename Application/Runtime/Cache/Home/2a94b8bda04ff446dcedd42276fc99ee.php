@@ -1423,13 +1423,6 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 	</body>
 </html>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> ee45fa4211dd639ba953b97cb0eed33404cd56e9
-=======
->>>>>>> 99c16a4bec51ade23ce10f21542225aaa6c206aa
 	</body>
 
 	<script>
