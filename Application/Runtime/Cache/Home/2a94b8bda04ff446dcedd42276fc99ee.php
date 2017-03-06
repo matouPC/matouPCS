@@ -140,7 +140,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											<a href="?s=/Home/User/bdxx">部队消息</a>
 										</li>
 										<li>
-											<a href="">商铺消息</a>
+											<a href="?s=/Home/User/spxx">商铺消息</a>
 										</li>
 									</ul>
 								</div>
@@ -1424,9 +1424,12 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 </html>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> ee45fa4211dd639ba953b97cb0eed33404cd56e9
+=======
+>>>>>>> 99c16a4bec51ade23ce10f21542225aaa6c206aa
 	</body>
 
 	<script>

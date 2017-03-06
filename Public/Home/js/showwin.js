@@ -667,21 +667,23 @@ $('.spxx-lb ul li').click(function() {
 });
 
 
-$(function() {
-	$("#xx_01").toggle(function() {
-		$("#xx_01 img").css('transform', 'rotate(180deg)');
-		$('#xx_01 span').html('收起');
-		$('.yhmc dl').stop().animate({
-			height: '430px'
-		}, 1000);
-	}, function() {
-		$("#xx_01 img").css('transform', 'rotate(0deg)');
-		$('#xx_01 span').html('查看详情');
-		$('.yhmc dl').stop().animate({
-			height: '0px'
-		}, 1000);
+$('#xx_01').on('click', function() {
+		if($(this).hasClass('act')) {
+			$(this).removeClass('act');
+			$("#xx_01 img").css('transform', 'rotate(0deg)');
+			$('#xx_01 span').html('查看详情');
+			$('.yhmc dl').stop().animate({
+				height: '0px'
+			}, 1000);
+		} else {
+			$(this).addClass('act');
+			$("#xx_01 img").css('transform', 'rotate(180deg)');
+			$('#xx_01 span').html('收起');
+			$('.yhmc dl').stop().animate({
+				height: '430px'
+			}, 1000);
+		}
 	});
-});
 
 $('.spxx_hf').click(function(){
 		$(this).parents('li').children('.no').show();

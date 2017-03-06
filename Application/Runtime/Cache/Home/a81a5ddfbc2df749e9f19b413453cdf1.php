@@ -555,23 +555,27 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-							<textarea id="content" style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>)">我要留言</button>
+							<textarea id="contents" style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;" placeholder="留言吧"></textarea>
+							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)">我要留言</button>
+							<input type="hidden" id="yhid" value="<?php echo ($_SESSION['id']); ?>">
 						</div>
 						<br>
 						<script type="text/javascript">
-							function liuyan(xsid){
+							function liuyan(xsid,fid){
 							//获得基本信息id
-								var content = $('#content').val();
-								if(content == ''){
+								var content = $('#contents').val();
+								if($('#yhid').val() == ''){
+									alert('请先登录');
+								}else if(content == ''){
 									alert('滚犊子');
 								}else{
 									$.ajax({
 										url:"?s=/Home/User/qliuyan",
 										type:"post",
-										data:{xsid:xsid,content:content},
+										data:{xsid:xsid,content:content,fid:fid},
 										dataType:"json",
 										success:function(data){
+											// alert(data);
 											$('#content').val('');
 											var content = '';
 											for (var i = 0; i < data.length; i++) {

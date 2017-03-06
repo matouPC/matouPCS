@@ -168,6 +168,9 @@ class YsqController extends Controller
         // }
 
     }
+    /**
+    *  应赏详情
+    */
     public function xqys($id){
         //应赏详情
         $list = M('due as d')->join('dueimage as m on d.did = m.pid')->join('duevideo as e on d.did = e.pid')->join('user as u on d.uid = u.id')->join('due_dang as a on d.did = a.pid')->where("d.did = {$id}")->find();
@@ -175,7 +178,7 @@ class YsqController extends Controller
         $this->display('Ysq/xqys');
     }
     public function xqys_shou($did){//应赏_->收藏
-        $uid = $_SESSION['id'];
+        $uid = $_SESSION['id'];//当前用户的id
         $ob = M('due')->where("did = {$did}")->find();
         
         if(empty($ob)){
@@ -185,10 +188,19 @@ class YsqController extends Controller
         $shou['due_shou'] = '';
         $shou = M('due')->where("did = {$did}")->find();
         $shou['due_shou'] .= $uid.',';
-        $dd = M('due')->where("did = {$did}")->save($shou);
-        if($dd > 0){
-            echo '收藏成功';
+        $fids['uid'] = $uid;
+        $fids['fid'] = $shou['uid'];//被收藏的用户id
+        $fids['type_xx'] = 1;
+        $fids['type_xs'] = 1;
+        $fids['content_xx'] = '收藏应赏';
+        $xd = M("user_xx")->add($fids);
+        if($xd > 0){
+            $dd = M('due')->where("did = {$did}")->save($shou);
+            if($dd > 0){
+                echo '收藏成功';
+            }
         }
+        
     }
     public function ysxqwc(){
         //应赏发布完成

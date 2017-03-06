@@ -110,14 +110,23 @@ class XsdtController extends Controller
         $lis = M('reward2')->where("wid = {$wid}")->find();
         $lis['bao'] .= $uid;
         $lis['baodate'] .= date("Y-m-d",time()).',';
-        $db = M("reward2")->where("wid = {$wid}")->save($lis);
-        if($db > 0){
-            $db = M("reward2")->where("wid = {$wid}")->find();
-            $bao = explode(',',$db['bao']);
-            array_pop($bao);
-            $bao_num = count($bao);
-            $this->ajaxReturn($bao_num);
+        $fids['uid'] = $uid;
+        $fids['fid'] = $lis['usid'];//被收藏的用户id
+        $fids['type_xx'] = 2;
+        $fids['type_xs'] = 4;
+        $fids['content_xx'] = '报名悬赏';
+        $xd = M("user_xx")->add($fids);
+        if($xd > 0){
+            $db = M("reward2")->where("wid = {$wid}")->save($lis);
+            if($db > 0){
+                $db = M("reward2")->where("wid = {$wid}")->find();
+                $bao = explode(',',$db['bao']);
+                array_pop($bao);
+                $bao_num = count($bao);
+                $this->ajaxReturn($bao_num);
+            }
         }
+        
     }
     public function xsfb(){
         //悬赏发布完成

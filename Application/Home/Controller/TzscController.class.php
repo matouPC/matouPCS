@@ -124,7 +124,7 @@ class TzscController extends Controller
         //求购详情页
         $list = M('flea as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id} and tz_status = '1'")->find();
         // var_dump($list);die;
-        $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->join('flea as f on l.xsid = f.fid')->where("l.xsid = {$id} and tz_status = '1'")->order('l.lid desc')->select();//求购留言遍历
+        $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->join('flea as f on l.xsid = f.fid')->where("l.xsid = {$id} and tz_status = '1'")->order('l.lid desc')->limit('0,3')->select();//求购留言遍历
         $this->assign('list',$list);
         $this->assign('liu',$liu);
         $this->display('Tzsc/xqqg');
@@ -153,7 +153,7 @@ class TzscController extends Controller
     public function xqxz($id){
         //闲置详情
         $list = M('flea as f')->join('fleaimage as m on f.fid = m.pid')->join('user as u on f.uid = u.id')->where("f.fid = {$id} and tz_status = '1'")->find();
-        $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->join('flea as f on l.xsid = f.fid')->where("l.xsid = {$id} and tz_status = '1'")->order('l.lid desc')->select();//闲置留言遍历
+        $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->join('flea as f on l.xsid = f.fid')->where("l.xsid = {$id} and tz_status = '1'")->order('l.lid desc')->limit('0,3')->select();//闲置留言遍历
         $this->assign('list',$list);
         $this->assign('liu',$liu);
         $this->display('Tzsc/xqxz');
