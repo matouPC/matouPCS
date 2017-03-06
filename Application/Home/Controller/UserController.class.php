@@ -89,33 +89,54 @@ class UserController extends Controller
         $this->assign('bb',$bb);//
         $this->display('Mtbu/bdzx');
     }
+    /**
+    *  闲置留言板
+    */
     public function liuyan(){
-        //闲置留言板
         date_default_timezone_set('prc');
         $data['uid'] = $_SESSION['id'];
-        $data['xsid'] = $_POST['xsid'];
-        $data['contents'] = $_POST['content'];
-        $data['ltime'] = date("Y-m-d H:i:s",time());
-        $data['xzst'] = 1;
-        $ob=$id= M('liuyan')->order("id desc")->add($data);
-        if( $ob > 0 ){
-            $xsid = $_POST['xsid'];
-            $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->where("l.xsid = {$xsid}")->order('l.lid desc')->select(); 
-            $this->ajaxReturn($liu);
-        }
-    }
-    public function qliuyan(){
-        //求购留言板
-        date_default_timezone_set('prc');
-        $data['uid'] = $_SESSION['id'];
-        $data['xsid'] = $_POST['xsid'];
+        $data['xsid'] = $ffid = $_POST['xsid'];
         $data['contents'] = $_POST['content'];
         $data['ltime'] = date("Y-m-d H:i:s",time());
         $data['xzst'] = 2;
         $ob=$id= M('liuyan')->order("id desc")->add($data);
-        if( $ob > 0 ){
-            $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->where('l.xzst = 2')->order('l.lid desc')->select(); 
-            $this->ajaxReturn($liu);
+        if( $ob > 0 ){//留言成功后给消息表插数据
+            $user_xx['uid'] = $_SESSION['id'];//当前用户id
+            $user_xx['fid'] =  $_POST['fid'];//被留言用户的id
+            $user_xx['type_xx'] = 3;//留言
+            $user_xx['type_xs'] = 6;//求购
+            $user_xx['content_xx'] = $_POST['content'];//消息详情
+            $db = M("user_xx")->add($user_xx);//执行消息表插入
+            if($db > 0){//如果插入成功 则遍历
+                 $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->join('flea as f on l.xsid = f.fid')->where("l.xsid = {$ffid} and tz_status = '1'")->order('l.lid desc')->limit('0,3')->select();//闲置留言遍历
+                $this->ajaxReturn($liu);
+            }
+            
+        }
+    }
+    /**
+    *  求购留言板
+    **/
+    public function qliuyan(){
+        date_default_timezone_set('prc');
+        $data['uid'] = $_SESSION['id'];
+        $data['xsid'] = $ffid = $_POST['xsid'];
+        $data['contents'] = $_POST['content'];
+        $data['ltime'] = date("Y-m-d H:i:s",time());
+        $data['xzst'] = 1;
+        $ob=$id= M('liuyan')->order("id desc")->add($data);
+        if( $ob > 0 ){//留言成功后给消息表插数据
+            $user_xx['uid'] = $_SESSION['id'];//当前用户id
+            $user_xx['fid'] =  $_POST['fid'];//被留言用户的id
+            $user_xx['type_xx'] = 3;//留言
+            $user_xx['type_xs'] = 7;//求购
+            $user_xx['content_xx'] = $_POST['content'];//消息详情
+            $db = M("user_xx")->add($user_xx);//执行消息表插入
+            if($db > 0){//如果插入成功 则遍历
+                $liu = M('user as u')->join('liuyan as l on u.id = l.uid')->join('flea as f on l.xsid = f.fid')->where("l.xsid = {$ffid} and tz_status = '1'")->order('l.lid desc')->limit('0,3')->select();//求购留言遍历 
+                $this->ajaxReturn($liu);
+            }
+            
         }
     }
     public function usave(){
@@ -686,12 +707,23 @@ class UserController extends Controller
     *  需求消息
     */
     public function xqxx(){
+        $uid = $_SESSION['id'];
+        $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid}")->select();
+        // echo '<pre>';
+        // var_dump($list);
+        $this->assign('list',$list);
         $this->display();
     }
     /**
     *  部队消息
     */
     public function bdxx(){
+        $this->display();
+    }
+    /**
+    *  商铺消息
+    */
+    public function spxx(){
         $this->display();
     }
     /**

@@ -121,11 +121,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						<ul>
 							<li id="qqaj" style="width: 100px;">
 								<?php if($_SESSION['username'] != ''){ ?>
-<<<<<<< HEAD
 								<a  class="xxlo" href="?s=/Home/User"><?php echo ($_SESSION['username']); ?></a>
-=======
-								<a href="?s=/Home/User"><?php echo ($_SESSION['username']); ?></a>
->>>>>>> ee45fa4211dd639ba953b97cb0eed33404cd56e9
 								<!-- <span><a href="javascript:void(0);" onclick="QC.Login.signOut();">退出</a></span> -->
 								<?php }else{ ?>
 								<a id="login-alert" href="#">请注册\登录</a>
@@ -144,7 +140,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											<a href="?s=/Home/User/bdxx">部队消息</a>
 										</li>
 										<li>
-											<a href="">商铺消息</a>
+											<a href="?s=/Home/User/spxx">商铺消息</a>
 										</li>
 									</ul>
 								</div>
@@ -1426,7 +1422,6 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 		</footer>
 	</body>
 </html>
-
 
 	</body>
 

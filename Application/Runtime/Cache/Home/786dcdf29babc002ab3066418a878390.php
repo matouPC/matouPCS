@@ -422,7 +422,7 @@
 					<div class="con">
 						<div class="s-main-b">
 							<ul>
-								<li>
+								<?php if(is_array($list)): foreach($list as $key=>$lists): ?><li><h1><?php echo ($lists['status_xx'] == 1 ? '未读' : '已读'); ?></h1>
 									<div class="xialai">
 										<span class="xll1">
 											<p class="xs1">删除</p>
@@ -430,16 +430,18 @@
 									</div>
 									<div class="spxx">
 										<img src="/matouPCS/Public/Home/img/yhmc.png">
-										<p class="spxx_01">用户名称用户名称</p>
+										<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 										<p class="spxx_02"></p>
 										<form>
-											<p class="spxx_03">留言</p>
+											<p class="spxx_03">
+												<?php  if($lists['type_xx'].$lists['type_xs'] == '36'){ echo '闲置留言'; }else if($lists['type_xx'].$lists['type_xs'] == '37'){ echo '求购留言'; }else if($lists['type_xx'].$lists['type_xs'] == '14'){ echo '报名悬赏'; }else{ echo $lists['type_xx'].$lists['type_xs']; }?>
+											</p>
 											
 										</form>
 									</div>
 									<div class="spxx_00">
 										<p>
-											二战时，美国军方委托着名的心理学家桂尔福研发一套心理测验，希望能用这套东西挑选出最优秀的人来担任飞行员。 结果很惨，通过这套测试的飞行员，训练时的表现很亮眼，可是一上战场，所驾驶的飞机大多被击落，死亡率非常高。 桂尔福在反思时发现那些战绩辉煌，身经百战打不死的飞行员，多半是从那些退役的“老鸟”中挑选出来的。 他非常纳闷儿，为什么精密的心理测量，却比不上“老鸟”的直觉呢？其中的问题在哪儿呢？
+											<?php echo ($lists["content_xx"]); ?>
 										</p>
 									</div>
 									<div class="spxx_sj">
@@ -453,11 +455,11 @@
 									<button class="hf">回复</button>
 									<div class="clear"></div>
 									</div>
-								</li>
-
+								</li><?php endforeach; endif; ?>
 								<li>
 									<div class="xialai">
 										<span class="xll1">
+
 											<p class="xs1">删除</p>
 										</span>
 									</div>
@@ -515,7 +517,7 @@
 									</div>
 
 									<!--下拉隐藏开始-->
-									<div class="yhmc">
+									<div class="yhmc" id="yhmc">
 										<dl>
 
 											<!--<dd></dd>-->
@@ -722,6 +724,5 @@
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
-	<script src="/matouPCS/Public/Home/js/textarea.js"></script>
 	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
 </html>
