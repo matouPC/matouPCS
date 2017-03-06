@@ -859,11 +859,16 @@ var p=2;
 								 var count = !result ? 0 : result.length;
 								 for(var i=0;i<count;i++){
 									 if(myArray[i]==t){
+										 var aa=1;
 										 return true;
-									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+									
 									 }
 								 }
-								
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 									var use = data['nr'][i].username.substr(0,5);
 									}else{
 								     var use = data['nr'][i].username;
@@ -874,7 +879,7 @@ var p=2;
 								 }
 							 }
 								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="__PUBLIC__/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
-			alert(li);
+		//	alert(li);
 						$("#conn").append(li);
 	 		
 						 }

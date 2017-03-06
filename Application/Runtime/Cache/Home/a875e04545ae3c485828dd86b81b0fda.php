@@ -1203,18 +1203,23 @@ var p=2;
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
 							
-				
-								 for (s = 0; s < myArray.length; s++) {
-									var  thisEntry = myArray[s].toString();
-									  if (thisEntry == stringToSearch) {
-											var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
-									  }
-									 }else{
-										 var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
-										
-								
+					
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var i=0;i<count;i++){
+									 if(myArray[i]==t){
+										 var aa=1;
+										 return true;
+									
+									 }
 								 }
-									 alert(dianzan);
+								if(aa==1){
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+								}
 									var use = data['nr'][i].username.substr(0,5);
 									}else{
 								     var use = data['nr'][i].username;
