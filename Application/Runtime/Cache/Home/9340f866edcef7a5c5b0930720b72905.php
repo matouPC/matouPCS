@@ -1027,7 +1027,6 @@
 										<img src="/matouPCS/Public/Home/img/delete-2.png" />
 									</span>
 									<div class="right dz-qx">
-										<span style="font-size: 20px;" class="icon-dz"></span>
 										<p onclick="zan1(<?php echo ($lists["lid"]); ?>,<?php echo ($lists["zan"]); ?>)" class="dz dz-qx">
 													<?php $zan = explode(',',$lists['zid']); array_pop($zan); ?>
 													<?php if(in_array($_SESSION['id'],$zan)){ ?>

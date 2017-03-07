@@ -1,0 +1,681 @@
+[ 2017-03-07T18:44:39+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000758s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0052s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0028s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0004s ]
+
+[ 2017-03-07T18:44:43+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0040s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  WHERE ( d.type = 2 ) ORDER BY d.zan desc LIMIT 1   [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0044s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0006s ]
+
+[ 2017-03-07T18:44:49+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000950s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001211s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0042s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  WHERE ( d.type = 2 ) ORDER BY d.zan desc LIMIT 1   [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0031s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0007s ]
+
+[ 2017-03-07T18:44:52+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/rzbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0029s ]
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f.fid' in 'field list'
+
+[ 2017-03-07T18:44:54+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/rzbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0031s ]
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f.fid' in 'field list'
+
+[ 2017-03-07T18:44:57+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/rzbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0037s ]
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f.fid' in 'field list'
+
+[ 2017-03-07T18:46:03+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdzx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001743s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `user` WHERE (  id = 13  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_fen` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `user_fen` WHERE (  uid = 13  ) LIMIT 0,6   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SELECT * FROM user as u INNER JOIN user_fen as f on u.id = f.uid  LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN user_fen as f on u.id = f.uid  WHERE ( f.uid = 13 ) LIMIT 0,6   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0033s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0027s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000350s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000417s ]
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 377 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 379 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 387 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 389 行.
+NOTIC: [8] Undefined variable: num D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 698 行.
+NOTIC: [8] Undefined variable: gzs D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 729 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 902 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 902 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 903 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 903 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 1102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026141s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026260s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001183s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001352s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000692s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2017-03-07T18:46:08+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0042s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0029s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:46:10+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0048s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  WHERE ( d.type = 2 ) ORDER BY d.zan desc LIMIT 1   [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0030s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:46:12+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/rzbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0034s ]
+SQL: SELECT d.*,u.username,u.sex,u.addre FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id  WHERE ( status=2 ) ORDER BY d.zan desc LIMIT 1,1   [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0028s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:21+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdzx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `user` WHERE (  id = 13  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_fen` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `user_fen` WHERE (  uid = 13  ) LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SELECT * FROM user as u INNER JOIN user_fen as f on u.id = f.uid  LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN user_fen as f on u.id = f.uid  WHERE ( f.uid = 13 ) LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0053s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0033s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000469s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000576s ]
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 377 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 379 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 387 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 389 行.
+NOTIC: [8] Undefined variable: num D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 698 行.
+NOTIC: [8] Undefined variable: gzs D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 729 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 902 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 902 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 903 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 903 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 1102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026770s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026824s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2017-03-07T18:47:24+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0035s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0034s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:28+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/bdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0030s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id  ORDER BY d.did desc LIMIT 1,1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0032s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:33+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0045s ]
+SQL: SELECT d.*,u.username,u.sex,u.addre FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0027s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:34+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001976s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0036s ]
+SQL: SELECT d.*,u.username,u.sex,u.addre FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0028s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:36+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/rzbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0030s ]
+SQL: SELECT d.*,u.username,u.sex,u.addre FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id  WHERE ( status=2 ) ORDER BY d.did desc LIMIT 1,1   [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0028s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:42+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0083s ]
+SQL: SELECT d.*,u.username,u.sex,u.addre FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  WHERE ( d.type = 2 ) ORDER BY d.zan desc LIMIT 1   [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0036s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0012s ]
+
+[ 2017-03-07T18:47:44+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/rzbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0040s ]
+SQL: SELECT d.*,u.username,u.sex,u.addre FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN forcee as f on f.uid = u.id  WHERE ( status=2 ) ORDER BY d.zan desc LIMIT 1,1   [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0039s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:47+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/rzbd_gt_zan/did/6/zan/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `dongtai` WHERE ( did = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `dongtai` WHERE ( did = 6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `dongtai` SET `did`='6',`content`='内容内容',`type`='1',`zan`='4',`zid`='13,13,13,13,13,13,13,13,13,13,',`time`='2017-02-09',`uid`='23' WHERE ( did = 6 ) [ RunTime:0.0003s ]
+SQL: UPDATE `dongtai` SET `zan`='3' WHERE ( did = 6 ) [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000689s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000745s ]
+
+[ 2017-03-07T18:47:50+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/rzbd_gt_zan/did/6/zan/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `dongtai` WHERE ( did = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `dongtai` WHERE ( did = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `dongtai` SET `did`='6',`content`='内容内容',`type`='1',`zan`='3',`zid`='13,13,13,13,13,13,13,13,13,13,13,',`time`='2017-02-09',`uid`='23' WHERE ( did = 6 ) [ RunTime:0.0004s ]
+SQL: UPDATE `dongtai` SET `zan`='4' WHERE ( did = 6 ) [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000708s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2017-03-07T18:47:55+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0041s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN shop as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  WHERE ( d.type = 2 ) ORDER BY d.did desc LIMIT 1   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0036s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0005s ]
+
+[ 2017-03-07T18:47:59+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0046s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN shop as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0041s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0007s ]
+
+[ 2017-03-07T18:48:00+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/spbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0029s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN shop as f on f.uid = u.id  ORDER BY d.zan desc LIMIT 1,1   [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0036s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0008s ]
+
+[ 2017-03-07T18:48:04+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdsousu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0037s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN shop as f on f.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  WHERE ( d.type = 2 ) ORDER BY d.did desc LIMIT 1   [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0029s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0004s ]
+
+[ 2017-03-07T18:48:06+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/User/spbdjz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0035s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN shop as f on f.uid = u.id  ORDER BY d.zan desc LIMIT 2,1   [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0032s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0006s ]
+
+[ 2017-03-07T18:57:26+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+NOTIC: [8] Trying to get property of non-object D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1222 行.
+NOTIC: [8] Trying to get property of non-object D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1222 行.
+NOTIC: [8] Trying to get property of non-object D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1226 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1244 行.
+
+[ 2017-03-07T18:58:03+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdxz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+ERR: 非法操作:bdxz
+
+[ 2017-03-07T18:59:02+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/userxz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+ERR: 非法操作:userxz
+
+[ 2017-03-07T18:59:15+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/useXz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+ERR: 非法操作:useXz
+
+[ 2017-03-07T18:59:34+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/userxz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+ERR: 非法操作:userxz
+
+[ 2017-03-07T18:59:34+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdxz
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+ERR: 非法操作:bdxz
+
+[ 2017-03-07T19:00:05+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0048s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0008s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 and u.id = 13 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN due as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as d on u.id = d.uid  WHERE ( u.id = 13 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `shop` WHERE ( uid = 13 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0038s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) LIMIT 0,5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000250s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024527s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024594s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000672s ]
+
+[ 2017-03-07T19:00:07+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+NOTIC: [8] Trying to get property of non-object D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1222 行.
+NOTIC: [8] Trying to get property of non-object D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1222 行.
+NOTIC: [8] Trying to get property of non-object D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1226 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1244 行.
+
+[ 2017-03-07T19:00:09+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/bdzx
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with that of Think\Controller::get() D:\www\matouPCS\Application\Home\Controller\UserController.class.php 第 1276 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `user` WHERE (  id = 13  ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_fen` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `user_fen` WHERE (  uid = 13  ) LIMIT 0,6   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0033s ]
+SQL: SELECT * FROM user as u INNER JOIN user_fen as f on u.id = f.uid  LIMIT 0,6   [ RunTime:0.0003s ]
+SQL: SELECT * FROM user as u INNER JOIN user_fen as f on u.id = f.uid  WHERE ( f.uid = 13 ) LIMIT 0,6   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `user`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0046s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 1   [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `dongimage` [ RunTime:0.0027s ]
+SQL: SELECT * FROM dongimage as g INNER JOIN dongtai as d on d.did = g.pid  ORDER BY g.iid desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000430s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000522s ]
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 377 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 379 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 387 行.
+NOTIC: [8] Undefined variable: sp D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 389 行.
+NOTIC: [8] Undefined variable: num D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 698 行.
+NOTIC: [8] Undefined variable: gzs D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 729 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 902 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 902 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 903 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 903 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant did - assumed 'did' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 910 行.
+NOTIC: [8] Undefined index: id D:\www\matouPCS\Application\Runtime\Cache\Home\c5708b193e7766e8ca9ece0983897c0e.php 第 1102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025939s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000589s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+

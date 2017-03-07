@@ -493,12 +493,22 @@
 								<?php if($dt[username]!=$dt[tel]): ?><a href=""><?php echo ($dt["username"]); ?></a><?php endif; ?>
 							</p>
 							<p style="text-align: center;">
-								（摄影师）
+									<?php if($dt[bdlx]==1): ?>（个人部队）
+								<?php elseif($dt[bdlx]==2): ?>
+								（婚庆公司）
+								<?php elseif($dt[bdlx]==3): ?>
+								（工作室）
+								<?php elseif($dt[bdlx]==4): ?>
+								（影楼）
+								<?php elseif($dt[bdlx]==5): ?>
+								（表演团）
+								<?php else: ?>
+								（商铺部队）<?php endif; ?>
 							</p>
 							<div>
 								<p class="fsl">
 								<span style="font-size: 24px; display: block; float: left; margin-top: -2px;" class="icon-fs"></span>
-								<span style="display: block; float: left;"><?php echo ($dt["fen"]); ?></span>
+								<span id="gfen" style="display: block; float: left;"><?php echo ($dt["fen"]); ?></span>
 							</p>
 							<p class="szd">
 								<span style="font-size: 18px;" class="icon-szd"></span>
@@ -509,8 +519,62 @@
 						</div>
 						<div class="clearfloat"></div>
 						<div class="s-f3">
-							<button id="gz-qx">关注</button>
+							<?php if(is_array($uus)): foreach($uus as $key=>$uuss): if($uuss['uid'] == $dt['id']){ ?>
+									<?php  $uu = explode(',',$uuss['fid']); array_pop($uu); if(in_array($_SESSION['id'],$uu)){ ?>
+										<button id="gz-qx" onclick="guanzhu(<?php echo ($dt['id']); ?>)">已关注</button>
+									<?php }else{ ?>
+										<?php if(empty($_SESSION['id'])){ ?>
+											<button id="gz-qx" onclick="alert('请先登录')">关注</button>
+										<?php }else{ ?>
+											<button id="gz-qx" onclick="guanzhu(<?php echo ($dt['id']); ?>)">关注</button>
+										<?php } ?>
+									<?php } ?>
+								<?php } endforeach; endif; ?>
 						</div>
+						 <script>
+							function guanzhu(fid){
+					
+								var fen = parseInt(document.getElementById('gfen').innerHTML);
+								if($('#gz-qx').html() == '关注') {
+									fen += 1;
+									$.ajax({
+										url:"?s=/Home/Index/guanzhu/id/"+fid,
+										type:"get",
+										success:function(data){
+											$('#gfen').html(fen);
+											$('#gz-qx').html('已关注');
+											$('#gz-qx').css('background-color','#FF5C5D');
+											$('#gz-qx').hover(function(){
+												$('#gz-qx').css('background-color','#FF5C5D');
+											})
+										},error:function(){
+											alert('no');
+										}
+									});
+									;
+								} else {
+									fen -= 1;
+									$.ajax({
+										url:"?s=/Home/Index/qguan/id/"+fid,
+										type:"get",
+										success:function(data){
+											$('#gfen').html(fen);
+											$('#gz-qx').html('关注');
+											$('#gz-qx').css('background-color','transparent');
+											$('#gz-qx').hover(function(){
+												$('#gz-qx').css('background-color','#FF5C5D');
+											},function(){
+												$('#gz-qx').css('background-color','transparent');
+											}
+											);
+										},error:function(){
+											alert('no');
+										}
+									});
+									
+								}
+							}
+						 </script>
 						<div class="s-f4">
 							<div>
 								<a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($_GET['id']); ?>">动态</a>
@@ -706,6 +770,7 @@
 							<script type="text/javascript">
 								function liuyan(id){
 									//alert(1);
+									var t = "<?php echo session('id');?>";
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
@@ -718,8 +783,49 @@
 												var li = '';
 
 												for (var i = 0; i < data.length; i++) {
-													var use = data[i].username.substr(0,5);
-													li+='<li><div class="left"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].ltime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													 var myArray=new Array()
+													 var str=data[i].zid;  
+													 myArray = str.split(","); 
+													 
+													 var c = ","; // 要计算的字符
+													 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+													 var result = str.match(regex);
+													 var count = !result ? 0 : result.length;
+													 for(var j=0;j<=count;j++){
+														 if(myArray[j]==t){
+															 var aa=1;
+								
+														 }
+													 }
+													if(aa==1){
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz-kz"></span>';
+													}else{
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz"></span>';
+													}
+													if(data[i].username==data[i].tel){
+														var use = data[i].username.substr(0,5);
+														}else{
+													     var use = data[i].username;
+														}
+													if(t==data[i].uid){
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';	
+														}
+													}else{
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>';	
+														}
+													}
+													
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].ltime+'</p><p class="dz dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].lid+'">'+data[i].zan+'</span></p></p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -735,7 +841,19 @@
 						<ul id="li">
 								<?php if(is_array($list)): foreach($list as $key=>$lis): ?><li>
 										<div class="left">
-											<img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+												<?php if($_SESSION['id'] == $lis['uid']){ ?>
+									  <?php if($lis[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($lis["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+									<?php }else{ ?>
+                                   <?php if($lis[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($lis["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+                              <?php } ?>
 											<div class="vip">
 												<img src="/matouPCS/Public/Home/img/rzlogo.png" />
 											</div>
@@ -743,7 +861,8 @@
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户<?php echo (substr($lis["username"],0,5)); ?></a>
+													<?php if($lis[username]==$lis[tel]): echo (substr($lis["username"],0,5)); endif; ?>
+								               <?php if($lis[username]!=$lis[tel]): echo ($lis["username"]); endif; ?>	
 												</span>
 												<span style="float: right; text-align: right;"><?php echo ($lis["addre"]); ?></span>
 											</p>
@@ -752,14 +871,60 @@
 											</p>
 											<div class="bottom">
 												<p class="sj"><?php echo ($lis["ltime"]); ?></p>
-												<p class="dz dz-qx"><span class="icon-dz"></span><?php echo ($lis["zan"]); ?></p>
+													<p class="dz dz-qx">		<p onclick="zan(<?php echo ($lis["lid"]); ?>,<?php echo ($lis["zan"]); ?>)" class="dz dz-qx">
+													<?php $zan = explode(',',$lis['zid']); array_pop($zan); ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z<?php echo ($lis["lid"]); ?>" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z<?php echo ($lis["lid"]); ?>" class="icon-dz"></span>
+													<?php } ?>
+													<span id="s<?php echo ($lis["lid"]); ?>"><?php echo ($lis["zan"]); ?></span></p> 
 											</div>
 										</div>
 										<div class="clearfloat"></div>
 									</li><?php endforeach; endif; ?>
 							</ul>
+							<script type="text/javascript">
+									var a = 0;
+									function zan(lid,zan){
+									
+										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
+										if($('#z'+lid).hasClass('icon-dz')){
+									
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+lid).removeClass('icon-dz');
+													$('#z'+lid).addClass('icon-dz-kz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+lid).removeClass('icon-dz-kz');
+													$('#z'+lid).addClass('icon-dz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}
+									}
+								</script>
 							<p class="ckgd">
-								<a href="?s=/Home/Mtbu/spbddyly">查看更多 》</a>
+									<a href="?s=/Home/Mtbu/rzbddyly/id/<?php echo ($_GET['id']); ?>">查看更多 》</a>
 							</p>
 							<!--<button onclick="window.location='bdzxgz-3r-xy.html'">查看更多</button>-->
 						</div>
@@ -1871,106 +2036,29 @@ var p=2;
 		<br>
 		<br>
 		<br>
+		<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+	</head>
+	<body>
 		<footer>
-			<div class="f-main-c">
-				<!--<div class="f-c-1f">
-					<ul>
-						<li>
-							<h4>喜事码头客服热线</h4></li>
-						<li>
-							<p>工作时间：每天9：00-23：00</p>
-						</li>
-						<li>
-							<p>188-8888-888</p>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>关注喜事码头官方微信公众号</h4></li>
-						<li>
-							<img style="margin-left: 45px;" src="img/erweima_bottom.png" />
-						</li>
-
-					</ul>
-					<ul>
-						<li>
-							<h4>关于我们</h4></li>
-						<li>
-							<a href="#">
-								<p>关于喜事码头</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头部队</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>联系我们</h4></li>
-						<li>
-							<a href="#">
-								<p>官方邮箱：xishimatou@163.com</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>通讯地址：河南省郑州市863软件园</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-				</div>-->
-				<div class="f-c-2f">
-					<div style="width: 90%; margin: 0 auto;"><br>
-						<a href="#">i店大全</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<a href="#">鲜花礼品网</a>&nbsp;
-						<a href="#">鲜花网</a>&nbsp;
-						<a href="#">婚介</a>&nbsp;
-						<a href="#">婚礼搜索导航</a>&nbsp;
-						<a href="#">杭州婚庆网</a>&nbsp;
-						<a href="#">新娘说</a>&nbsp;
-						<a href="#">拍表网</a>&nbsp;
-						<a href="#">结婚网</a>&nbsp;
-						<a href="#">钻戒品牌</a>&nbsp;
-						<a href="#">武汉婚车租摄</a>&nbsp;
-						<a href="#">婚礼时光</a>&nbsp;
-						<a href="#">婚礼电子请帖</a>&nbsp;
-						<a href="#">小笑话</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
+			<div class="f-content-main">
+				<div class="f-main-c">
+					<div class="f-c-1f">
+						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
+	</body>
+</html>
+
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
@@ -2110,15 +2198,7 @@ var p=2;
 			}
 		});
 		//----------------------------点赞--------------------------
-		$('.dz-qx span').click(function(){
-			if($(this).hasClass('icon-dz')){
-				$(this).removeClass('icon-dz');
-				$(this).addClass('icon-dz-kz');
-			}else{
-				$(this).removeClass('icon-dz-kz');
-				$(this).addClass('icon-dz');
-			}
-		});
+	
 	</script>
 
 </html>

@@ -162,7 +162,7 @@ class MtbuController extends Controller
     public function grbddndt($id)
     {
         //个人部队对内动态
-    	$list = $list = M('liuyan as s')->join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->order('lid desc')->limit('0,3')->select();
+       $list = M('liuyan as s')->join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->order('lid desc')->limit('0,3')->select();
     	//var_dump($list);die;
     	//个人基本信息遍历
     	$dt = M('user')->where("id = {$id}")->find();
@@ -197,16 +197,16 @@ class MtbuController extends Controller
     	 
     }
     public function grlyjzdt(){
-    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
-    	$id=$_POST['id'];
+    	$p=2;
+    	$id=23;
     
-    	$total=M('liuyan as s')->join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->count();//数据记录总数
+    	$total=M('liuyan')->count();//数据记录总数
     	$num=3;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
-    	$data=M('liuyan as s')>join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->limit($limitpage,$num)->order('lid desc')->select();
-    	//echo $data;die;
+    	$data=M('liuyan as s')->join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->limit($limitpage,$num)->order('lid desc')->select();
+    	
     	$this->ajaxReturn($data);
     }
     public function grbddnlyre()
@@ -284,16 +284,27 @@ class MtbuController extends Controller
     	$this->assign('list',$list);
         $this->display('Mtbu/grbddnxq');
     }
-    public function grbddydt($id)
+    public function grbddydt()
     {
         //个人部队对外动态
-    	$list = $list = M('liuyan as s')->join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->order('lid desc')->limit('0,3')->select();
+       $id=I('id');
+    	$list = M('liuyan as s')->join('user as u on s.uid = u.id')->where("s.xsid = {$id}")->order('lid desc')->limit('0,3')->select();
     	//var_dump($list);die;
     	//个人基本信息遍历
     	$dt = M('user')->where("id = {$id}")->find();
     	//	var_dump($dt);die;
-   $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
+        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$id}")->order('g.iid desc')->select();
+        $uuid = $_SESSION['id'];
+        if($uuid == ''){
+        	$uuid = 0;
+        }
+        $fid = $dt['id'];
+        $guan = M('user_fen')->where("uid = {$uuid} and fid = {$fid}")->find();
+        $uus = M('user_fen')->select();//互粉
+        $this->assign('guan',$guan);
+        $this->assign('uus',$uus);
+
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);
     	$this->assign('dt',$dt);
@@ -307,7 +318,15 @@ class MtbuController extends Controller
     	//var_dump($list);die;
     	//个人基本信息遍历
     	$dt = M('user')->where("id = {$id}")->find();
-    //	var_dump($dt);die;
+        $uuid = $_SESSION['id'];
+        if($uuid == ''){
+        	$uuid = 0;
+        }
+        $fid = $dt['id'];
+        $guan = M('user_fen')->where("uid = {$uuid} and fid = {$fid}")->find();
+        $uus = M('user_fen')->select();//互粉
+        $this->assign('guan',$guan);
+        $this->assign('uus',$uus);
     	$this->assign('dt',$dt);
     	$this->assign('list',$list);
         $this->display('Mtbu/grbddyly');
@@ -336,7 +355,15 @@ class MtbuController extends Controller
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
     	//基本求购
     	$jbqg = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 2")->order('e.fid desc')->limit('3')->select();
- 
+    	$uuid = $_SESSION['id'];
+    	if($uuid == ''){
+    		$uuid = 0;
+    	}
+    	$fid = $dt['id'];
+    	$guan = M('user_fen')->where("uid = {$uuid} and fid = {$fid}")->find();
+    	$uus = M('user_fen')->select();//互粉
+    	$this->assign('guan',$guan);
+    	$this->assign('uus',$uus);
     	$this->assign('jbxs',$jbxs);
     	$this->assign('jbxsData',$jbxsData);
     	$this->assign('jbys',$jbys);
@@ -731,6 +758,26 @@ class MtbuController extends Controller
                echo '点赞成功';
             } 
         }   
+    }
+    public function grbd_liu_zan($lid,$zan){
+    	$uid = $_SESSION['id'].',';
+    
+    	$li = M('liuyan')->where("lid = {$lid}")->find();
+    	if(empty($li)){
+    		$data['lid'] = $lid;
+    		$ob = M("liuyan")->add($data);
+    	}
+    	$li['zid'] = '';
+    	$lis = M('liuyan')->where("lid = {$lid}")->find();
+    	$lis['zid'] .= $uid;
+    	$db = M("liuyan")->where("lid = {$lid}")->save($lis);
+    	if($db > 0){
+    		$data['zan'] = $zan;
+    		$ob = M('liuyan')->where("lid = {$lid}")->save($data);
+    		if($ob > 0){
+    			echo '点赞成功';
+    		}
+    	}
     }
     public function spbd_liu_zan($lid,$zan){
     	$uid = $_SESSION['id'].',';

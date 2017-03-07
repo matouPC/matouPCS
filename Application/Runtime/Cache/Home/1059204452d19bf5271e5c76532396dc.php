@@ -205,7 +205,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -821,7 +821,7 @@
 													<?php }else{ ?>
 													<span id="z<?php echo ($lis["id"]); ?>" class="icon-dz"></span>
 													<?php } ?>
-													<span id="s<?php echo ($lis["id"]); ?>"><?php echo ($lis["zan"]); ?></span></p> </p>
+													<span id="s<?php echo ($lis["id"]); ?>"><?php echo ($lis["zan"]); ?></span></p> 
 											</div>
 										</div>
 										<div class="clearfloat"></div>
@@ -902,34 +902,7 @@
 					</div>
 				</div>
 			<div id="re" class="s-main-l">
-					<!--<div class="s-c-2f">
-						<p class="title">
-							结婚是个开心事，分享喜事，传递辛福！
-						</p>
-						<div class="s-c-2f-1f">
-							<textarea></textarea>
-						</div>
-						<div class="s-c-2f-2f">
-							<div class="left">
-								<div class="sctp">
-									<img src="img/sctpic.png" />
-								</div>
-								<p>上传图片</p>
-							</div>
-							<button class="right">
-								发动态
-							</button>
-						</div>
-						<!--<div class="s-c-2f-3f">
-							<div class="left">
-								<p>全部类型</p>
-								<img src="img/xxjt.png" />
-							</div>
-							<div class="right">
-								排序：热门&nbsp;&nbsp; |&nbsp;&nbsp; 最新
-							</div>
-						</div>-->
-					<!--</div>-->
+					
 					<div id="contentt" class="s-c-3f">
 						<div class="s-c-3f-1f">
 							<?php if(is_array($dongtai)): foreach($dongtai as $key=>$v): ?><div class="mdhd">
@@ -1031,7 +1004,7 @@
 
 
 	<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-			<script type="text/javascript">
+	<script type="text/javascript">
 
 var p=2;
   function tj(id){
