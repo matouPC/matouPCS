@@ -667,23 +667,26 @@ $('.spxx-lb ul li').click(function() {
 });
 
 
-$('#xx_01').on('click', function() {
-		if($(this).hasClass('act')) {
-			$(this).removeClass('act');
-			$("#xx_01 img").css('transform', 'rotate(0deg)');
-			$('#xx_01 span').html('查看详情');
-			$('.yhmc dl').stop().animate({
+// $('#xx_01').on('click', function() {
+	function xx_01(id){
+		if($('#xx_01'+id).hasClass('act')) {
+			$('#xx_01'+id).removeClass('act');
+			$("#xx_01"+id+" img").css('transform', 'rotate(0deg)');
+			$('#xx_01'+id+' span').html('查看详情');
+			$('#yhmc'+id+' dl').stop().animate({
 				height: '0px'
 			}, 1000);
 		} else {
-			$(this).addClass('act');
-			$("#xx_01 img").css('transform', 'rotate(180deg)');
-			$('#xx_01 span').html('收起');
-			$('.yhmc dl').stop().animate({
+			$('#xx_01'+id).addClass('act');
+			$("#xx_01"+id+" img").css('transform', 'rotate(180deg)');
+			$('#xx_01'+id+' span').html('收起');
+			$('#yhmc'+id+' dl').stop().animate({
 				height: '430px'
 			}, 1000);
 		}
-	});
+	}
+		
+	// });
 
 $('.spxx_hf').click(function(){
 		$(this).parents('li').children('.no').show();

@@ -32,7 +32,7 @@ class IndexController extends Controller
     	//码头商城遍历
     	$shang = M('shop')->order('collect desc')->limit(' 0,4')->select();
     	//跳槽市场
-    	$tiao = M('flea as f')->join('user as u on f.uid = u.id')->where("tz_status = '1'")->limit('0,5')->select();
+    	$tiao = M('flea as f')->join('user as u on f.uid = u.id')->order('f.fid desc')->where("tz_status = '1'")->limit('0,5')->select();
     	$this->assign('stu_one',$list_one);
     	// $this->assign('stu_two',$list_two);
     	// $this->assign('stu_three',$list_three);

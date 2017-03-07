@@ -458,59 +458,6 @@
 										</div>
 									</li>
 									<?php } ?>
-									
-									<?php if($lists['type_xx'].$lists['type_xs'] == '24'){ ?>
-
-										<li><h1><?php echo ($lists['status_xx'] == 1 ? '未读' : '已读'); ?></h1>
-											<div class="xialai">
-												<span class="xll1">
-													<p class="xs1">删除</p>
-												</span>
-											</div>
-											<div class="xqxx">
-												<p class="xqxx_01_01">活动时间：2016-12-10</p>
-												<p class="xqxx_01_02">活动地点：郑州</p>
-												<p class="xqxx_01_03">悬赏内容：摄影、主持人</p>
-												<p class="xqxx_01_03">报名悬赏</p>
-												<p class="xqxx_01_04">未完成</p>
-											</div>
-											<!--下拉隐藏开始-->
-											<div class="yhmc" id="yhmc">
-												<dl>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-													</dd>
-												</dl>
-												<div class="showmore">
-													<a id="xx_01" href="javascript:;">
-														<div class="ckxq">
-															<img src="/matouPCS/Public/Home/img/xiala.png" />
-														</div>
-														<span>查看详情</span>
-													</a>
-
-												</div>
-
-												<div class="clearfloat"></div>
-											</div>
-										</li>
-									<?php } ?>
 									<!-- 收藏应赏 -->
 									<?php if($lists['type_xx'].$lists['type_xs'] == '11'){ ?>
 											<li>
@@ -522,7 +469,7 @@
 												</div>
 												<div class="spxx">
 													<img src="/matouPCS/Public/Home/img/yhmc.png">
-													<p class="spxx_01">用户名称用户名称</p>
+													<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 													<p class="spxx_02"></p>
 													<p class="spxx_03">收藏应赏</p>
 													<div class="spxx_img">
@@ -537,142 +484,6 @@
 												</div>
 											</li>
 									<?php } ?>
-									<!-- 报名招聘 -->
-									<?php if($lists['type_xx'].$lists['type_xs'] == '22'){ ?>
-											<li><h1><?php echo ($lists['status_xx'] == 1 ? '未读' : '已读'); ?></h1>
-											<div class="xialai">
-												<span class="xll1">
-													<p class="xs1">删除</p>
-												</span>
-											</div>
-											<div class="xqxx">
-												<p class="xqxx_01_01">活动时间：2016-12-10</p>
-												<p class="xqxx_01_02">活动地点：郑州</p>
-												<p class="xqxx_01_03">招聘内容：摄影、主持人</p>
-												<p class="xqxx_01_03">报名悬赏</p>
-												<p class="xqxx_01_04">未完成</p>
-											</div>
-
-											<!--下拉隐藏开始-->
-											<div class="yhmc" id="yhmc">
-												<dl>
-
-													<!--<dd></dd>-->
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-												</dl>
-												<div class="showmore">
-													<a id="xx_01" href="javascript:;">
-														<div class="ckxq">
-															<img src="/matouPCS/Public/Home/img/xiala.png" />
-														</div>
-														<span>查看详情</span>
-													</a>
-
-												</div>
-
-												<div class="clearfloat"></div>
-											</div>
-										</li>
-									<?php } ?>
 										<!-- 收藏应聘 -->
 									<?php  if($lists['type_xx'].$lists['type_xs'] == '13'){ ?>
 												<li>
@@ -684,7 +495,7 @@
 												</div>
 												<div class="spxx">
 													<img src="/matouPCS/Public/Home/img/yhmc.png">
-													<p class="spxx_01">用户名称用户名称</p>
+													<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 													<p class="spxx_02"></p>
 													<p class="spxx_03">收藏应聘</p>
 													<div class="spxx_img">
@@ -699,141 +510,31 @@
 												</div>
 											</li>
 									<?php } ?>
-									<!-- 报名求购 -->
-									<?php  if($lists['type_xx'].$lists['type_xs'] == '27'){ ?>
-												<li><h1><?php echo ($lists['status_xx'] == 1 ? '未读' : '已读'); ?></h1>
-											<div class="xialai">
-												<span class="xll1">
-													<p class="xs1">删除</p>
-												</span>
-											</div>
-											<div class="xqxx">
-												<p class="xqxx_01_01">活动时间：2016-12-10</p>
-												<p class="xqxx_01_02">活动地点：郑州</p>
-												<p class="xqxx_01_03">求购内容内容：摄影、主持人</p>
-												<p class="xqxx_01_03">报名悬赏</p>
-												<p class="xqxx_01_04">未完成</p>
-											</div>
+									<!-- 闲置收藏 -->
+									<?php  if($lists['type_xx'].$lists['type_xs'] == '16'){ ?>
+												<li>
+												<div class="xialai">
+													<span class="xll1">
 
-											<!--下拉隐藏开始-->
-											<div class="yhmc" id="yhmc">
-												<dl>
-
-													<!--<dd></dd>-->
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-													<dd>
-														<a href="">
-															<div id="xl_01" class="yhmc_01">
-															<img src="/matouPCS/Public/Home/img/yhmc.png">
-															<p class="yhmc_01_01">用户名称</p>
-															<p class="yhmc_01_01">1年经验</p>
-															<p class="yhmc_01_02"></p>
-															<p class="yhmc_01_03">报名</p>
-															<p class="yhmc_01_04">摄影师</p>
-															<p class="yhmc_01_04">期望赏金：300-800元/天</p>
-															<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-															<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
-															<div class="clear"></div>
-															<div class="yhmc-date">
-																<span>2012-12-12</span>
-															</div>
-														</div>
-														</a>
-
-													</dd>
-												</dl>
-												<div class="showmore">
-													<a id="xx_01" href="javascript:;">
-														<div class="ckxq">
-															<img src="/matouPCS/Public/Home/img/xiala.png" />
-														</div>
-														<span>查看详情</span>
-													</a>
-
+														<p class="xs1">删除</p>
+													</span>
 												</div>
-
-												<div class="clearfloat"></div>
-											</div>
-										</li>
+												<div class="spxx">
+													<img src="/matouPCS/Public/Home/img/yhmc.png">
+													<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+													<p class="spxx_02"></p>
+													<p class="spxx_03">收藏闲置</p>
+													<div class="spxx_img">
+															<img src="/matouPCS/Public/Home/img/heart.png" />
+														</div>
+													<p class="spxx_04">
+														收藏
+													</p>
+												</div>
+												<div class="spxx_sj">
+													<p class="spxx_sj_r">2016-12-12</p>
+												</div>
+											</li>
 									<?php } ?>
 									<!-- 收藏闲置 -->
 									 <?php  if($lists['type_xx'].$lists['type_xs'] == '16'){?>
@@ -861,6 +562,170 @@
 													</div>
 												</li>
 									 <?php } endforeach; endif; ?>
+								<!-- 报名悬赏 -->
+								<?php $num = 0; ?>
+								<?php if(is_array($arr)): foreach($arr as $key=>$arrs): ?><li>
+										<div class="xialai">
+											<span class="xll1">
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="xqxx">
+											<p class="xqxx_01_01">活动时间：<?php echo ($arrs["time"]); ?></p>
+											<p class="xqxx_01_02">活动地点：<?php $xx = explode(',',$arrs['address']);echo $xx[0];?></p>
+											<p class="xqxx_01_03">悬赏内容：<?php echo ($arrs['xs']['type']); ?></p>
+											<p class="xqxx_01_03">报名悬赏</p>
+											<p class="xqxx_01_04">未完成</p>
+										</div>
+										<!--下拉隐藏开始-->
+										<div class="yhmc" id="yhmc<?php echo ($num); ?>">
+											<dl>
+												<?php for ($i=0; $i < count($arrs['xs']['uu']); $i++) {?>
+												<dd>
+													<a href="">
+														<div id="xl_01" class="yhmc_01">
+														<img src="/matouPCS/Public/Home/img/yhmc.png">
+														<p class="yhmc_01_01"><?php echo $arrs['xs']['uu'][$i]['username']; ?></p>
+														<!-- <p class="yhmc_01_01">1年经验</p> -->
+														<p class="yhmc_01_02"></p>
+														<p class="yhmc_01_03">报名</p>
+														<p class="yhmc_01_04">期望赏金：私聊</p>
+														<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
+														<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
+														<div class="clear"></div>
+														<div class="yhmc-date">
+															<span>2012-12-12</span>
+														</div>
+													</div>
+													</a>
+												</dd>
+												<?php } ?>
+											</dl>
+											<div class="showmore">
+												<a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;">
+													<div class="ckxq">
+														<img src="/matouPCS/Public/Home/img/xiala.png" />
+													</div>
+													<span>查看详情</span>
+												</a>
+
+											</div>
+
+											<div class="clearfloat"></div>
+										</div>
+									</li>
+									<?php $num++; endforeach; endif; ?>
+								<!-- 报名招聘 -->
+								<?php $num_zp = 10; ?>
+								<?php if(is_array($arr_zp)): foreach($arr_zp as $key=>$arr_zps): ?><li>
+									<div class="xialai">
+										<span class="xll1">
+											<p class="xs1">删除</p>
+										</span>
+									</div>
+									<div class="xqxx">
+										<!-- <p class="xqxx_01_01">活动时间：<?php echo ($arrs["time"]); ?></p> -->
+										<p class="xqxx_01_02">工作地点：<?php $xx = explode(',',$arr_zps['address_zp']);echo $xx[0];?></p>
+										<p class="xqxx_01_03">招聘内容：<?php echo ($arr_zps['xs']['type']); ?></p>
+										<p class="xqxx_01_03">报名招聘</p>
+										<p class="xqxx_01_04">未完成</p>
+									</div>
+
+									<!--下拉隐藏开始-->
+									<div class="yhmc" id="yhmc<?php echo ($num_zp); ?>">
+										<dl>
+											<!--<dd></dd>-->
+											<?php for ($i=0; $i < count($arr_zps['xs']['uu']); $i++) {?>
+												<dd>
+													<a href="">
+														<div id="xl_01" class="yhmc_01">
+														<img src="/matouPCS/Public/Home/img/yhmc.png">
+														<p class="yhmc_01_01"><?php echo $arr_zps['xs']['uu'][$i]['username'];?></p>
+														<p class="yhmc_01_02"></p>
+														<p class="yhmc_01_03">报名</p>
+														<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
+														<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
+														<div class="clear"></div>
+														<div class="yhmc-date">
+															<span>2012-12-12</span>
+														</div>
+													</div>
+													</a>
+
+												</dd>
+											<?php } ?>
+										</dl>
+										<div class="showmore">
+											<a id="xx_01<?php echo ($num_zp); ?>" onclick="xx_01(<?php echo ($num_zp); ?>)" href="javascript:;">
+												<div class="ckxq">
+													<img src="/matouPCS/Public/Home/img/xiala.png" />
+												</div>
+												<span>查看详情</span>
+											</a>
+
+										</div>
+
+										<div class="clearfloat"></div>
+									</div>
+								</li>
+								<?php $num_zp++; endforeach; endif; ?>
+							<!-- 报名求购 --><?php $numqg = 200; ?>
+								<?php if(is_array($arr_qg)): foreach($arr_qg as $key=>$arr_qgs): ?><li>
+										<div class="xialai">
+											<span class="xll1">
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="xqxx">
+											<p class="xqxx_01_01">发布时间：<?php echo ($arr_qgs['date']); ?></p>
+											<p class="xqxx_01_02">地点：<?php echo ($arr_qgs['address']); ?></p>
+											<p class="xqxx_01_03">求购内容：<?php echo ($arr_qgs['name']); ?></p>
+											<p class="xqxx_01_03">报名求购</p>
+											<p class="xqxx_01_04">未完成</p>
+										</div>
+
+										<!--下拉隐藏开始-->
+										<div class="yhmc" id="yhmc<?php echo ($numqg); ?>">
+											<dl>
+												<!--<dd></dd>-->
+												<?php for ($i=0; $i < count($arr_qgs['xs']); $i++) {?>
+												<dd>
+													<a href="">
+														<div id="xl_01" class="yhmc_01">
+														<img src="/matouPCS/Public/Home/img/yhmc.png">
+														<p class="yhmc_01_01"><?php echo $arr_qgs['xs'][$i]['username']; ?></p>
+														<!-- <p class="yhmc_01_01">1年经验</p> -->
+														<!-- <p class="yhmc_01_02"></p> -->
+														<p class="yhmc_01_03">报名</p>
+														<!-- <p class="yhmc_01_04">摄影师</p> -->
+														<!-- <p class="yhmc_01_04">期望赏金：300-800元/天</p> -->
+														<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
+														<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
+														<div class="clear"></div>
+														<div class="yhmc-date">
+															<span>2012-12-12</span>
+														</div>
+													</div>
+													</a>
+
+												</dd>
+												<?php } ?>
+											</dl>
+											<div class="showmore">
+												<a id="xx_01<?php echo ($numqg); ?>" onclick="xx_01(<?php echo ($numqg); ?>)" href="javascript:;">
+													<div class="ckxq">
+														<img src="/matouPCS/Public/Home/img/xiala.png" />
+													</div>
+													<span>查看详情</span>
+												</a>
+
+											</div>
+
+											<div class="clearfloat"></div>
+										</div>
+
+									</li>
+									<?php $numqg++; endforeach; endif; ?>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>

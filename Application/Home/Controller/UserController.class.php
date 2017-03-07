@@ -707,43 +707,54 @@ class UserController extends Controller
     *  需求消息
     */
     public function xqxx(){
-        echo '<pre>';
+        // echo '<pre>';
         $uid = $_SESSION['id'];
         $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1'")->select();
         $lijb = M('reward1 as e')->where("e.uid = {$uid}")->select();//悬赏基本信息
         $li = M('reward2')->where("usid = {$uid}")->select();//悬赏详情信息
-        foreach ($lijb as $key => $value) {
-            foreach ($list as $k => $v) {
-                if($v['fid'] == $value['uid'] && $v['type_xx'].$v['type_xs'] == '24'){
-                    // var_dump($value);
+
+        $lijb_zp = M('recruit1 as e')->where("e.uid = {$uid}")->select();//招聘基本信息
+        $li_zp = M('recruit2')->where("usid = {$uid}")->select();//招聘详情信息
+
+        $lijb_qg = M('flea')->where("uid = {$uid} and type = '1'")->select();
+        //悬赏
+        foreach ($lijb as $key => $value) {//基本信息
+            foreach ($li as $k => $v) {//详情信息
+                if($value['psid'] == $v['pid'] && $v['bao'] != ''){//如果报名了详情信息表的bao字段肯定有数据
+                    $value['xs'] = $v;//符合条件的直接给详情信息赋值 数组建名为xs 
+                    $value['xs']['uu'] = $this->xsFangfa($v['bao']);
+                    if($value['xs'] != ''){//有的可能xs字段可能为空的存在 所以在这里进行处理
+                        $arr[] = $value;
+                    } 
                 }
             }
         }
-        foreach ($li as $key => $value) {
-            foreach ($list as $k => $v) {
-                if($v['fid'] == $value['usid'] && $v['type_xx'].$v['type_xs'] == '24'&& $value['bao'] != ''){
-                    // var_dump($this->stringimg($value['bao']));
-                    $users = $this->stringimg($value['bao']);
-                    if($users != ''){//拿到报名的用户
-                        $userBao = $this->fangfa($users);
-                    }
-                    
+        //招聘
+        foreach ($lijb_zp as $key => $value) {//基本信息
+            foreach ($li_zp as $k => $v) {//详情信息
+                if($value['rid'] == $v['pid'] && $v['zhao'] != ''){//如果报名了详情信息表的bao字段肯定有数据
+                    $value['xs'] = $v;//符合条件的直接给详情信息赋值 数组建名为xs 
+                    $value['xs']['uu'] = $this->xsFangfa($v['zhao']);
+                    // var_dump($this->xsFangfa($v['bao']));
+                    if($value['xs'] != ''){//有的可能xs字段可能为空的存在 所以在这里进行处理
+                        $arr_zp[] = $value;
+                    } 
                 }
             }
         }
-        var_dump($userBao);
-        die;
+        //求购
+        foreach ($lijb_qg as $key => $value) {
+            if($value['bao'] != ''){
+                $value['xs'] = $this->xsFangfa($value['bao']);
+                $arr_qg[] = $value;
+            }
+        }
         $this->assign('list',$list);
-        $this->assign('lijb',$lijb);
+        $this->assign('arr',$arr);//报名悬赏
+        $this->assign('arr_zp',$arr_zp);//报名招聘
+        $this->assign('arr_qg',$arr_qg);//报名求购
         // $this->assign('catXs',array_unique($catXs));
         $this->display();
-    }
-    public function fangfa($users){
-        for ($i=0; $i < count($users); $i++) { 
-            $uuid = $users[$i];
-            $userList[] = M('user')->where("id = {$uuid}")->find();
-        }
-        return $userList;
     }
     /**
     *  部队消息
@@ -1182,6 +1193,23 @@ class UserController extends Controller
             $this->ajaxReturn($_SESSION);
         }
     }
+    /**
+    *  处理报名悬赏用户的方法 
+    *   该方法仅仅适用于本次
+    */
+    public function xsFangfa($userYp){
+
+        // $uid = $_SESSION['id'];
+        $shou = explode(',',$userYp);
+        array_pop($shou);
+        for ($i=0; $i < count($shou); $i++) { 
+            $uuid = $shou[$i];
+            // var_dump($uuid
+            $users[] = M('user as u')->where("u.id = {$uuid}")->find();
+        }
+        return $users;
+    }
+
     /**
     *  微信登录 获取用户个人信息
     */

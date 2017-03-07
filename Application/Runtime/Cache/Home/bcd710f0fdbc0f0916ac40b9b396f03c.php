@@ -542,17 +542,16 @@
 						<div class="s-tf-btn" onclick="shou(<?php echo ($list["fid"]); ?>)" style="margin-left: 5px;" id="bt-sc">
 							<?php  $shou = explode(',',$list['shou']); array_pop($shou); ?>
 							 <?php if(in_array($_SESSION['id'],$shou)){ ?>
-							<p>&nbsp;已收藏
+							<p id="bt-scs">&nbsp;已收藏
 							</p>
 							<?php }else{?>
-							<p>收藏
-							</p>
+							<p id="bt-scs">收藏</p>
 							<img src="/matouPCS/Public/Home/img/sc.png" style="top: 14px;">
 							<?php }?>
 							
 						</div>
 						<?php }else{ ?>
-							<div class="s-tf-btn" onclick="alert('请先登录')" style="margin-left: 5px;" id="bt-sc">
+							<div class="s-tf-btn" onclick="alert('请先登录')" style="margin-left: 5px;" >
 							<p>收藏
 							</p>
 							<img src="/matouPCS/Public/Home/img/sc.png" style="top: 14px;">
@@ -570,23 +569,17 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-<<<<<<< HEAD
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content_x" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)" >我要留言</button>
-=======
+
 							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
 							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>)" >我要留言</button>
->>>>>>> 136043e29e07447bc202eabb4449f0f66c6aae8b
+
 						</div>
 						<br>
 						<script type="text/javascript">
 							function liuyan(xsid,fid){
 								//获得基本信息id
-<<<<<<< HEAD
-								var content = $('#content_x').val();
-=======
+
 								var content = $('#contentt').val();
->>>>>>> 136043e29e07447bc202eabb4449f0f66c6aae8b
 								if(content == ''){
 									alert('滚犊子');
 								}else{;
@@ -761,8 +754,8 @@
 			});
 		});
 		function shou(fid){
-			// alert(fid);
-			if($("#bt-sc").text() == '收藏'){
+			// alert($("#bt-scs").html());
+			if($("#bt-scs").html() == '收藏'){
 				$.ajax({
 					url:"?s=/Home/Tzsc/shou/fid/"+fid,
 					type:"get",
@@ -775,8 +768,6 @@
 						alert('no');
 					}
 				});
-			}else{
-				alert('您已收藏');
 			}
 			
 		}
