@@ -720,9 +720,9 @@
 									<button onclick="liuyan(<?php echo ($_GET['id']); ?>)">发布留言</button>
 								</div>
 							</div>
-							
 							<script type="text/javascript">
 								function liuyan(id){
+									//alert(1);
 									var t = "<?php echo session('id');?>";
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
@@ -732,10 +732,29 @@
 											data:{id:id,contents:contents},
 											dataType:"json",
 											success:function(data){
-											alert(2);
+											//	alert(2);
 												var li = '';
 
 												for (var i = 0; i < data.length; i++) {
+													 var myArray=new Array()
+													 var str=data[i].zid;  
+													 myArray = str.split(","); 
+													 
+													 var c = ","; // 要计算的字符
+													 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+													 var result = str.match(regex);
+													 var count = !result ? 0 : result.length;
+													 for(var j=0;j<=count;j++){
+														 if(myArray[j]==t){
+															 var aa=1;
+								
+														 }
+													 }
+													if(aa==1){
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz-kz"></span>';
+													}else{
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz"></span>';
+													}
 													if(data[i].username==data[i].tel){
 														var use = data[i].username.substr(0,5);
 														}else{
@@ -759,9 +778,8 @@
 														}
 													}
 													
-													li+='<li><div class="left">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].ltime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].ltime+'</p><p class="dz dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].lid+'">'+data[i].zan+'</span></p></p></div></div><div class="clearfloat"></div></li>';
 												};
-												alert(li);
 												$('#li').html(li);
 												$('#contents').val('');
 											},error:function(){
@@ -806,12 +824,58 @@
 											</p>
 											<div class="bottom">
 												<p class="sj"><?php echo ($lis["ltime"]); ?></p>
-												<p class="dz dz-qx"><span class="icon-dz"></span><?php echo ($lis["zan"]); ?></p>
+														<p class="dz dz-qx">		<p onclick="zan(<?php echo ($lis["lid"]); ?>,<?php echo ($lis["zan"]); ?>)" class="dz dz-qx">
+													<?php $zan = explode(',',$lis['zid']); array_pop($zan); ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z<?php echo ($lis["lid"]); ?>" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z<?php echo ($lis["lid"]); ?>" class="icon-dz"></span>
+													<?php } ?>
+													<span id="s<?php echo ($lis["lid"]); ?>"><?php echo ($lis["zan"]); ?></span></p> 
 											</div>
 										</div>
 										<div class="clearfloat"></div>
 									</li><?php endforeach; endif; ?>
 							</ul>
+								<script type="text/javascript">
+									var a = 0;
+									function zan(lid,zan){
+									
+										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
+										if($('#z'+lid).hasClass('icon-dz')){
+									
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+lid).removeClass('icon-dz');
+													$('#z'+lid).addClass('icon-dz-kz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+lid).removeClass('icon-dz-kz');
+													$('#z'+lid).addClass('icon-dz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}
+									}
+								</script>
 							<p class="ckgd">
 							<a href="?s=/Home/Mtbu/rzbddyly/id/<?php echo ($_GET['id']); ?>">查看更多 》</a>
 							</p>
@@ -1925,106 +1989,29 @@ var p=2;
 		<br>
 		<br>
 		<br>
+		<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+	</head>
+	<body>
 		<footer>
-			<div class="f-main-c">
-				<!--<div class="f-c-1f">
-					<ul>
-						<li>
-							<h4>喜事码头客服热线</h4></li>
-						<li>
-							<p>工作时间：每天9：00-23：00</p>
-						</li>
-						<li>
-							<p>188-8888-888</p>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>关注喜事码头官方微信公众号</h4></li>
-						<li>
-							<img style="margin-left: 45px;" src="img/erweima_bottom.png" />
-						</li>
-
-					</ul>
-					<ul>
-						<li>
-							<h4>关于我们</h4></li>
-						<li>
-							<a href="#">
-								<p>关于喜事码头</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头部队</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<h4>联系我们</h4></li>
-						<li>
-							<a href="#">
-								<p>官方邮箱：xishimatou@163.com</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>通讯地址：河南省郑州市863软件园</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>码头商城</p>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<p>合伙人招募</p>
-							</a>
-						</li>
-					</ul>
-				</div>-->
-				<div class="f-c-2f">
-					<div style="width: 90%; margin: 0 auto;"><br>
-						<a href="#">i店大全</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<a href="#">鲜花礼品网</a>&nbsp;
-						<a href="#">鲜花网</a>&nbsp;
-						<a href="#">婚介</a>&nbsp;
-						<a href="#">婚礼搜索导航</a>&nbsp;
-						<a href="#">杭州婚庆网</a>&nbsp;
-						<a href="#">新娘说</a>&nbsp;
-						<a href="#">拍表网</a>&nbsp;
-						<a href="#">结婚网</a>&nbsp;
-						<a href="#">钻戒品牌</a>&nbsp;
-						<a href="#">武汉婚车租摄</a>&nbsp;
-						<a href="#">婚礼时光</a>&nbsp;
-						<a href="#">婚礼电子请帖</a>&nbsp;
-						<a href="#">小笑话</a>&nbsp;
-						<a href="#">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
+			<div class="f-content-main">
+				<div class="f-main-c">
+					<div class="f-c-1f">
+						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
+	</body>
+</html>
+
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
@@ -2158,15 +2145,7 @@ var p=2;
 			$(this).parents('li').remove();
 		});
 		//----------------------------点赞--------------------------
-		$('.dz-qx span').click(function(){
-			if($(this).hasClass('icon-dz')){
-				$(this).removeClass('icon-dz');
-				$(this).addClass('icon-dz-kz');
-			}else{
-				$(this).removeClass('icon-dz-kz');
-				$(this).addClass('icon-dz');
-			}
-		});
+
 	</script>
 
 </html>

@@ -244,7 +244,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 										<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
 							   <a href="#">商铺主页</a>
 							   <?php } ?>
@@ -254,7 +254,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>

@@ -126,7 +126,7 @@
 							<div>
 								<p class="fsl">
 								<span style="font-size: 24px; display: block; float: left; margin-top: -2px;" class="icon-fs"></span>
-								<span style="display: block; float: left;">{$dt.fen}</span>
+								<span id="gfen" style="display: block; float: left;">{$dt.fen}</span>
 							</p>
 							<p class="szd">
 								<span style="font-size: 18px;" class="icon-szd"></span>
@@ -137,8 +137,69 @@
 						</div>
 						<div class="clearfloat"></div>
 						<div class="s-f3">
-							<button id="gz-qx">关注</button>
+							<foreach name="uus" item="uuss">
+								<?php if($uuss['uid'] == $dt['id']){ ?>
+									<?php 
+										//这里处理 ‘,’
+									$uu = explode(',',$uuss['fid']);
+									      array_pop($uu);
+									      if(in_array($_SESSION['id'],$uu)){
+									?>
+										<button id="gz-qx" onclick="guanzhu({$dt['id']})">已关注</button>
+									<?php }else{ ?>
+										<?php if(empty($_SESSION['id'])){ ?>
+											<button id="gz-qx" onclick="alert('请先登录')">关注</button>
+										<?php }else{ ?>
+											<button id="gz-qx" onclick="guanzhu({$dt['id']})">关注</button>
+										<?php } ?>
+									<?php } ?>
+								<?php } ?>
+								</foreach>
 						</div>
+							 <script>
+							function guanzhu(fid){
+					
+								var fen = parseInt(document.getElementById('gfen').innerHTML);
+								if($('#gz-qx').html() == '关注') {
+									fen += 1;
+									$.ajax({
+										url:"?s=/Home/Index/guanzhu/id/"+fid,
+										type:"get",
+										success:function(data){
+											$('#gfen').html(fen);
+											$('#gz-qx').html('已关注');
+											$('#gz-qx').css('background-color','#FF5C5D');
+											$('#gz-qx').hover(function(){
+												$('#gz-qx').css('background-color','#FF5C5D');
+											})
+										},error:function(){
+											alert('no');
+										}
+									});
+									;
+								} else {
+									fen -= 1;
+									$.ajax({
+										url:"?s=/Home/Index/qguan/id/"+fid,
+										type:"get",
+										success:function(data){
+											$('#gfen').html(fen);
+											$('#gz-qx').html('关注');
+											$('#gz-qx').css('background-color','transparent');
+											$('#gz-qx').hover(function(){
+												$('#gz-qx').css('background-color','#FF5C5D');
+											},function(){
+												$('#gz-qx').css('background-color','transparent');
+											}
+											);
+										},error:function(){
+											alert('no');
+										}
+									});
+									
+								}
+							}
+						 </script>
 						<div class="s-f4">
 							<div>
 								<a href="?s=/Home/Mtbu/grbddydt/id/{$_GET['id']}">动态</a>
@@ -246,8 +307,9 @@
 								</div>
 							</div>
 							
-							<script type="text/javascript">
+						<script type="text/javascript">
 								function liuyan(id){
+									//alert(1);
 									var t = "{:session('id')}";
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
@@ -257,10 +319,29 @@
 											data:{id:id,contents:contents},
 											dataType:"json",
 											success:function(data){
-											alert(2);
+											//	alert(2);
 												var li = '';
 
 												for (var i = 0; i < data.length; i++) {
+													 var myArray=new Array()
+													 var str=data[i].zid;  
+													 myArray = str.split(","); 
+													 
+													 var c = ","; // 要计算的字符
+													 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+													 var result = str.match(regex);
+													 var count = !result ? 0 : result.length;
+													 for(var j=0;j<=count;j++){
+														 if(myArray[j]==t){
+															 var aa=1;
+								
+														 }
+													 }
+													if(aa==1){
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz-kz"></span>';
+													}else{
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz"></span>';
+													}
 													if(data[i].username==data[i].tel){
 														var use = data[i].username.substr(0,5);
 														}else{
@@ -284,9 +365,8 @@
 														}
 													}
 													
-													li+='<li><div class="left">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].ltime+'</p><p class="dz dz-qx"><span class="icon-dz"></span>1000</p></div></div><div class="clearfloat"></div></li>';
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].ltime+'</p><p class="dz dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].lid+'">'+data[i].zan+'</span></p></p></div></div><div class="clearfloat"></div></li>';
 												};
-									
 												$('#li').html(li);
 												$('#contents').val('');
 											},error:function(){
@@ -340,13 +420,61 @@
 											</p>
 											<div class="bottom">
 												<p class="sj">{$lis.ltime}</p>
-												<p class="dz dz-qx"><span class="icon-dz"></span>{$lis.zan}</p>
+														<p class="dz dz-qx">		<p onclick="zan({$lis.lid},{$lis.zan})" class="dz dz-qx">
+													<?php $zan = explode(',',$lis['zid']);
+														  array_pop($zan);
+														   ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z{$lis.lid}" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z{$lis.lid}" class="icon-dz"></span>
+													<?php } ?>
+													<span id="s{$lis.lid}">{$lis.zan}</span></p> 
 											</div>
 										</div>
 										<div class="clearfloat"></div>
 									</li>
 								</foreach>
 							</ul>
+							<script type="text/javascript">
+									var a = 0;
+									function zan(lid,zan){
+									
+										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
+										if($('#z'+lid).hasClass('icon-dz')){
+									
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+lid).removeClass('icon-dz');
+													$('#z'+lid).addClass('icon-dz-kz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+lid).removeClass('icon-dz-kz');
+													$('#z'+lid).addClass('icon-dz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}
+									}
+								</script>
 							<p class="ckgd">
 							<a href="?s=/Home/Mtbu/rzbddyly/id/{$_GET['id']}">查看更多 》</a>
 							</p>	
@@ -465,7 +593,7 @@
 							</div>
 						</div>-->
 					<!--</div>-->
-					<div id="content" class="s-c-3f">
+					<div id="conn" class="s-c-3f">
 						<foreach name="list" item="v">
 						<div class="s-c-3f-1f">
 							<!--<div class="mdhd">
@@ -505,7 +633,7 @@
 								                  </if>
 								</p>
 								<p class="zwmc">
-									职位名称：{$v.type}
+									性别:{$v.sex}
 								</p>
 								<p class="szd">所在地：{$v.addre}</p>
 								<div class="clearfloat"></div>
@@ -519,8 +647,16 @@
 									<img src="img/delete-2.png" />
 								</span>-->
 								<div class="right dz-qx">
-									<span style="font-size: 20px;" class="icon-dz"></span>
-									<p style="float: right; margin-left: 5px;">{$v.zan}</p>
+									<p onclick="zan1({$v.lid},{$v.zan})" class="dz dz-qx">
+													<?php $zan = explode(',',$lis['zid']);
+														  array_pop($zan);
+														   ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="zz{$v.lid}" style="font-size: 15px;" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="zz{$v.lid}" style="font-size: 15px;" class="icon-dz"></span>
+													<?php } ?>
+													<span style="font-size: 15px;" id="ss{$v.lid}">{$v.zan}</span></p> 
 								</div>
 								<p class="clearfloat"></p>
 							</div>
@@ -528,6 +664,43 @@
 						</div>
 					</foreach>
 					</div>
+					<script type="text/javascript">
+									var a = 0;
+									function zan1(lid,zan){
+										var zan = parseInt(document.getElementById('ss'+lid).innerHTML);
+										if($('#zz'+lid).hasClass('icon-dz')){
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#zz'+lid).removeClass('icon-dz');
+													$('#zz'+lid).addClass('icon-dz-kz');
+													$('#ss'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#zz'+lid).removeClass('icon-dz-kz');
+													$('#zz'+lid).addClass('icon-dz');
+													$('#ss'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}
+									}
+								</script>
 					<div class="s-main-b">
 					<div class="margin">
 						<button onclick="tj({$_GET['id']})" name='btn' id='btn' >点击加载更多</button>
@@ -541,19 +714,38 @@ var p=2;
   function tj(id){
 	 
 	  var t = "{:session('id')}";
-	//alert(22);
+	
 		$.ajax({
 			type:'post',
 			url:"{:U('Mtbu/grlyjzdt')}",
 			data:{k:p,id:id},
 			beforeSend:function(){
-	         $("#content").append("<div id='load'>加载中……</div>");
+	         $("#conn").append("<div id='load'>加载中……</div>");
 			},
 			success:function(data){
-				// alert(data);
+	
 				if(data!=null){				
 						//alert(1);
 						 for (var i = 0; i < data.length; i++) {
+							 var myArray=new Array()
+							 var str=data[i].zid;  
+							 myArray = str.split(","); 
+							 
+							 var c = ","; // 要计算的字符
+							 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+							 var result = str.match(regex);
+							 var count = !result ? 0 : result.length;
+							 for(var j=0;j<=count;j++){
+								 if(myArray[j]==t){
+									 var aa=1;
+		
+								 }
+							 }
+							if(aa==1){
+								var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
+							}else{
+								var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz"></span>';
+							}
 							 if(data[i].username==data[i].tel){
 									var use = data[i].username.substr(0,5);
 									}else{
@@ -577,7 +769,7 @@ var p=2;
 									}
 								}
 								
-						$("#content").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 职位名称：</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+						$("#conn").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].ltime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 	 		
 						 }
 				}else{
@@ -608,6 +800,25 @@ var p=2;
 					//alert(data);	
                  var li='';
 					for (var i = 0; i < data.length; i++) {
+						 var myArray=new Array()
+						 var str=data[i].zid;  
+						 myArray = str.split(","); 
+						 
+						 var c = ","; // 要计算的字符
+						 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+						 var result = str.match(regex);
+						 var count = !result ? 0 : result.length;
+						 for(var j=0;j<=count;j++){
+							 if(myArray[j]==t){
+								 var aa=1;
+	
+							 }
+						 }
+						if(aa==1){
+							var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
+						}else{
+							var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz"></span>';
+						}
 						if(data[i].username==data[i].tel){
 							var use = data[i].username.substr(0,5);
 							}else{
@@ -631,7 +842,7 @@ var p=2;
 							}
 						}
 						
-						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+						li+='<div  class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].ltime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 									
 						
 					};
@@ -652,6 +863,25 @@ var p=2;
 				//alert(data);	
              var li='';
 				for (var i = 0; i < data.length; i++) {
+					 var myArray=new Array()
+					 var str=data[i].zid;  
+					 myArray = str.split(","); 
+					 
+					 var c = ","; // 要计算的字符
+					 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+					 var result = str.match(regex);
+					 var count = !result ? 0 : result.length;
+					 for(var j=0;j<=count;j++){
+						 if(myArray[j]==t){
+							 var aa=1;
+
+						 }
+					 }
+					if(aa==1){
+						var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
+					}else{
+						var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz"></span>';
+					}
 					if(data[i].username==data[i].tel){
 						var use = data[i].username.substr(0,5);
 						}else{
@@ -675,7 +905,7 @@ var p=2;
 						}
 					}
 					
-					li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+					li+='<div  class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].ltime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 								
 					
 				};
@@ -705,6 +935,25 @@ var p=2;
 						if(data!=null){				
 								//alert(1);
 								 for (var i = 0; i < data.length; i++) {
+									 var myArray=new Array()
+									 var str=data[i].zid;  
+									 myArray = str.split(","); 
+									 
+									 var c = ","; // 要计算的字符
+									 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+									 var result = str.match(regex);
+									 var count = !result ? 0 : result.length;
+									 for(var j=0;j<=count;j++){
+										 if(myArray[j]==t){
+											 var aa=1;
+				
+										 }
+									 }
+									if(aa==1){
+										var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
+									}else{
+										var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz"></span>';
+									}
 									 if(data[i].username==data[i].tel){
 											var use = data[i].username.substr(0,5);
 											}else{
@@ -728,7 +977,7 @@ var p=2;
 											}
 										}
 										
-								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].ltime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 			 		
 								 }
 						}else{
@@ -748,60 +997,80 @@ var p=2;
 	  var pd=2;
 	  function tj2(id){
 			 
-			 
-			// alert(id);
-				$.ajax({
-					type:'post',
-					url:"{:U('Mtbu/grlyjzdt')}",
-					data:{k:pd,id:id},
-					beforeSend:function(){
-			         $("#ha").append("<div id='load'>加载中……</div>");
-					},
-					success:function(data){
-						// alert(data);
-						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									 if(data[i].username==data[i].tel){
-											var use = data[i].username.substr(0,5);
-											}else{
-										     var use = data[i].username;
-											}
-									   if(t==data[i].uid){
-											if(data[i].bdlx==1){
-												var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else if(data[i].bdlx==6){
-												var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else{
-												var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-											}
-										}else{
-											if(data[i].bdlx==1){
-												var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else if(data[i].bdlx==6){
-												var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else{
-												var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-											}
-										}
-										
-								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">'+data[i].zan+'</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
+		  var t = "{:session('id')}";
+		
+			$.ajax({
+				type:'post',
+				url:"{:U('Mtbu/grlyjzdt')}",
+				data:{k:p,id:id},
+				beforeSend:function(){
+		         $("#ha").append("<div id='load'>加载中……</div>");
+				},
+				success:function(data){
+		
+					if(data!=null){				
+							//alert(1);
+							 for (var i = 0; i < data.length; i++) {
+								 var myArray=new Array()
+								 var str=data[i].zid;  
+								 myArray = str.split(","); 
+								 
+								 var c = ","; // 要计算的字符
+								 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+								 var result = str.match(regex);
+								 var count = !result ? 0 : result.length;
+								 for(var j=0;j<=count;j++){
+									 if(myArray[j]==t){
+										 var aa=1;
+			
+									 }
 								 }
-						}else{
-							 //alert(22);
-							 document.getElementById('btn1').innerHTML = '加载完毕';
-			 				flag=true;	
-						}	
-			 },
-			 	complete:function(){
-			           $("#load").remove();
-					},
-				 	dataType:'json'
-				 	});
-			 	pd++;
-		// alert(p);
-		  }
+								if(aa==1){
+									var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
+								}else{
+									var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz"></span>';
+								}
+								 if(data[i].username==data[i].tel){
+										var use = data[i].username.substr(0,5);
+										}else{
+									     var use = data[i].username;
+										}
+								   if(t==data[i].uid){
+										if(data[i].bdlx==1){
+											var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+										}else if(data[i].bdlx==6){
+											var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+										}else{
+											var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+										}
+									}else{
+										if(data[i].bdlx==1){
+											var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+										}else if(data[i].bdlx==6){
+											var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+										}else{
+											var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+										}
+									}
+									
+							$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别:'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].ltime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+		 		
+							 }
+					}else{
+						 //alert(22);
+						 document.getElementById('btn').innerHTML = '加载完毕';
+		 				flag=true;	
+					}	
+		 },
+		 	complete:function(){
+		           $("#load").remove();
+				},
+			 	dataType:'json'
+			 	});
+		 	pd++;
+	// alert(p);
+	  }
+
 </script>
 		</section>
 		<br>
@@ -948,15 +1217,7 @@ var p=2;
 			}
 		});
 		//----------------------------点赞--------------------------
-		$('.dz-qx span').click(function(){
-			if($(this).hasClass('icon-dz')){
-				$(this).removeClass('icon-dz');
-				$(this).addClass('icon-dz-kz');
-			}else{
-				$(this).removeClass('icon-dz-kz');
-				$(this).addClass('icon-dz');
-			}
-		});
+
 		//----------------------------删除动态/需求--------------------------
 		$('.delete').click(function() {
 			//			alert(123);
