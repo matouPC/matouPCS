@@ -134,7 +134,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -570,23 +570,18 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-<<<<<<< HEAD
 							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content_x" placeholder="留言吧"></textarea>
 							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)" >我要留言</button>
-=======
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>)" >我要留言</button>
->>>>>>> 136043e29e07447bc202eabb4449f0f66c6aae8b
+
+
 						</div>
 						<br>
 						<script type="text/javascript">
 							function liuyan(xsid,fid){
 								//获得基本信息id
-<<<<<<< HEAD
+
 								var content = $('#content_x').val();
-=======
-								var content = $('#contentt').val();
->>>>>>> 136043e29e07447bc202eabb4449f0f66c6aae8b
+
 								if(content == ''){
 									alert('滚犊子');
 								}else{;
