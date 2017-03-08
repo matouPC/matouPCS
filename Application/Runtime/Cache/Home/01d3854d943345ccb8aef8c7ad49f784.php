@@ -217,7 +217,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -881,7 +881,12 @@
 						<ul>
 							<!-- 热门部队 -->
 							<?php if(is_array($listn)): foreach($listn as $key=>$listns): ?><li>
-									<a href="?s=/Home/Mtbu/rzbdzy/id/<?php echo ($listns["pid"]); ?>">
+									<?php if($_SESSION['id'] == $listn['uid']){ ?>
+										<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($listns["uid"]); ?>">
+									<?php }else{ ?>
+										<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($listns["uid"]); ?>">
+									<?php } ?>
+									
 										<div class="tj">
 											<img src="/matouPCS/Public/Home/img/bdmc.png" width="101px" height="101px">
 											<div class="tj_01">

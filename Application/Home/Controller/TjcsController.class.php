@@ -33,7 +33,7 @@ class TjcsController extends Controller
         	$id=$v['id'];
         }
     }
-        $shop=M('shop as c')->join('user as u on c.uid = u.id')->where("c.id=$id")->select();
+        $shop=M('shop as c')->join('user as u on c.uid = u.id')->where("c.id=$id")->find();
         $shangpin=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id")->select();
         $list = M('shop_liuyan as s')->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         //var_dump($shangpin);die;
@@ -43,7 +43,31 @@ class TjcsController extends Controller
         $this->display('Tjcs/spxq');
     
     }
-   public function usave(){
+    public function spxq_shou($id){
+
+        $uid = $_SESSION['id'];//当前用户的id
+        $ob = M('shop')->where("id = {$id}")->find();
+
+        if(!empty($ob)){
+            $shou['shou'] = '';
+            $shou = M('shop')->where("id = {$id}")->find();
+            $shou['shou'] .= $uid.',';
+            // $fids['uid'] = $uid;
+            // $fids['fid'] = $shou['uid'];//被收藏的用户id
+            // $fids['type_xx'] = 1;
+            // $fids['type_xs'] = 1;
+            // $fids['content_xx'] = '收藏应赏';
+            // $xd = M("user_xx")->add($fids);
+            // if($xd > 0){
+                $dd = M('shop')->where("id = {$id}")->save($shou);
+                if($dd > 0){
+                    echo '收藏成功';
+                }
+            }
+        // }
+        
+    }
+    public function usave(){
         //创建商品基本信息
         $_POST['uid'] = $_SESSION['id'];
         $product = M('shop');

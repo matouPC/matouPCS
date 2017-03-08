@@ -132,7 +132,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -416,85 +416,39 @@
 					<div class="con">
 						<div class="s-main-b">
 							<ul>
-								<li>
-									<div class="xialai">
-										<span class="xll1">
-											<p class="xs1">删除</p>
-										</span>
-									</div>
-									<div class="spxx">
-										<img src="img/yhmc.png">
-										<p class="spxx_01">用户名称用户名称</p>
-										<p class="spxx_02"></p>
-										<form>
-											<p class="spxx_03">留言</p>
-											
-										</form>
-									</div>
-									<div class="spxx_00">
-										<p>
-											二战时，美国军方委托着名的心理学家桂尔福研发一套心理测验，希望能用这套东西挑选出最优秀的人来担任飞行员。 结果很惨，通过这套测试的飞行员，训练时的表现很亮眼，可是一上战场，所驾驶的飞机大多被击落，死亡率非常高。 桂尔福在反思时发现那些战绩辉煌，身经百战打不死的飞行员，多半是从那些退役的“老鸟”中挑选出来的。 他非常纳闷儿，为什么精密的心理测量，却比不上“老鸟”的直觉呢？其中的问题在哪儿呢？
-										</p>
-									</div>
-									<div class="spxx_sj">
-										<p class="spxx_sj_r">2016-12-12</p>
-										<p class="spxx_hf">
-											回复
-										</p>
-									</div>
-									<div class="no">
-										<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
-									<button class="hf">回复</button>
-									<div class="clear"></div>
-									</div>
-								</li>
-
-								<li>
-									<div class="xialai">
-										<span class="xll1">
-											<p class="xs1">删除</p>
-										</span>
-									</div>
-									<div class="spxx">
-										<img src="img/yhmc.png">
-										<p class="spxx_01">用户名称用户名称</p>
-										<p class="spxx_02"></p>
-										<p class="spxx_03">收藏应赏</p>
-										<div class="spxx_img">
-												<img src="img/heart.png" />
-											</div>
-										<p class="spxx_04">
-											收藏
-										</p>
-									</div>
-									<div class="spxx_sj">
-										<p class="spxx_sj_r">2016-12-12</p>
-									</div>
-								</li>
-								<li>
-									<div class="xialai">
-										<span class="xll1">
-											<p class="xs1">删除</p>
-										</span>
-									</div>
-									<div class="spxx">
-										<img src="img/yhmc.png">
-										<p class="spxx_01">用户名称用户名称</p>
-										<p class="spxx_02"></p>
-										<form>
-											<p class="spxx_03">回复</p>
-											<textarea name="" cols="" rows="" placeholder="留言留言留言留言留言留言留言。。。" class="lyhf"></textarea>
-										</form>
-									</div>
-									<div class="spxx_00">
-										<p>
-											二战时，美国军方委托着名的心理学家桂尔福研发一套心理测验，希望能用这套东西挑选出最优秀的人来担任飞行员。 结果很惨，通过这套测试的飞行员，训练时的表现很亮眼，可是一上战场，所驾驶的飞机大多被击落，死亡率非常高。 桂尔福在反思时发现那些战绩辉煌，身经百战打不死的飞行员，多半是从那些退役的“老鸟”中挑选出来的。 他非常纳闷儿，为什么精密的心理测量，却比不上“老鸟”的直觉呢？其中的问题在哪儿呢？
-										</p>
-									</div>
-									<div class="spxx_sj">
-										<p class="spxx_sj_r">2016-12-12</p>
-									</div>
-								</li>
+								<!-- 给部队的留言 -->
+								<?php if(is_array($list)): foreach($list as $key=>$lists): ?><li>
+										<div class="xialai">
+											<span class="xll1">
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="spxx">
+											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+											<p class="spxx_02"></p>
+											<form>
+												<p class="spxx_03">留言</p>
+												
+											</form>
+										</div>
+										<div class="spxx_00">
+											<p>
+												<?php echo ($lists["content_xx"]); ?>
+											</p>
+										</div>
+										<div class="spxx_sj">
+											<p class="spxx_sj_r">2016-12-12</p>
+											<p class="spxx_hf">
+												回复
+											</p>
+										</div>
+										<div class="no">
+											<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
+										<button class="hf">回复</button>
+										<div class="clear"></div>
+										</div>
+									</li><?php endforeach; endif; ?>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>
@@ -580,9 +534,9 @@
 </html>
 
 	</body>
-	<script src="js/jquery-1.8.3.min.js"></script>
-	<script src="js/textarea.js"></script>
-	<script src="js/scrolltopcontrol.js"></script>
-	<script src="js/showWin.js"></script>
+	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
+	<script src="/matouPCS/Public/Home/js/textarea.js"></script>
+	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
+	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
 
 </html>

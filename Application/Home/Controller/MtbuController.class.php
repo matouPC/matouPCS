@@ -146,7 +146,7 @@ class MtbuController extends Controller
         //认证部队
         $this->display('Mtbu/rzbd');
     }
-    public function rzbdzy()
+    public function rzbdzy($id)
     {
     //认证部队主页
 
@@ -732,11 +732,19 @@ class MtbuController extends Controller
         $data['uid'] = $_SESSION['id'];//用户的id
         $data['content'] = $_POST['content'];//留言的内容
         $data['time'] = date('Y-m-d H:i:s',time());//留言的事件
+       
+        $fids['uid'] = $_SESSION['id'];
+        $fids['fid'] = $uid;//被收藏的用户id
+        $fids['type_xx'] = 2;
+        $fids['content_xx'] = $_POST['content'];
+        $xd = M("user_xx_bd")->add($fids);
+        if($xd > 0){
         $ob = M('foree_liuyan')->add($data);
-        if($ob > 0){
-            $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$fid}")->order('f.lid desc')->limit('0,3')->select(); 
-            $this->ajaxReturn($li);
-        }
+            if($ob > 0){
+                $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$fid}")->order('f.lid desc')->limit('0,3')->select(); 
+                $this->ajaxReturn($li);
+            }
+        }  
        
     }
     public function rzbd_liu_zan($lid,$zan){
@@ -1443,11 +1451,11 @@ class MtbuController extends Controller
     }
     public function spbddydt($id)
     {
-    
+        
         //商铺部队对外动态 
     	$uid=I('id');
     	//$uid = $_SESSION['id'];
-    	$sp = M('shop')->where("uid ={$uid} and status=2")->select();//我的商铺
+    	$sp = M('shop')->where("uid ={$uid} and status = '2'")->select();//我的商铺
     	foreach ($sp as $v){
     		$id=$v['id'];
     	}
@@ -1508,17 +1516,25 @@ class MtbuController extends Controller
         foreach ($sp as $v){
         	$id=$v['id'];
         }
-
         $data['sid'] = $id;//用户的id
         $data['uid'] = $_SESSION['id'];//用户的id
         $data['contents'] = $_POST['contents'];//留言的内容
         $data['stime'] = date('Y-m-d H:i:s',time());//留言的事件
-        $ob = M('shop_liuyan')->add($data);
-        if($ob > 0){
-    
-              $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
-            $this->ajaxReturn($list);
+
+
+        $fids['uid'] = $_SESSION['id'];
+        $fids['fid'] = $uid;//被收藏的用户id
+        $fids['type_xx'] = 1;
+        $fids['content_xx'] = $_POST['contents'];
+        $xd = M("user_xx_sp")->add($fids);
+        if($xd > 0){
+            $ob = M('shop_liuyan')->add($data);
+            if($ob > 0){
+                $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+                $this->ajaxReturn($list);
+            }
         }
+        
          
     }
  

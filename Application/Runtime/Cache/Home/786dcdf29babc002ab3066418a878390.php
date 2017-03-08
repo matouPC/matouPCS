@@ -131,7 +131,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -535,33 +535,7 @@
 													<p class="spxx_sj_r">2016-12-12</p>
 												</div>
 											</li>
-									<?php } ?>
-									<!-- 收藏闲置 -->
-									 <?php  if($lists['type_xx'].$lists['type_xs'] == '16'){?>
-									 			<li>
-													<div class="xialai">
-														<span class="xll1">
-
-															<p class="xs1">删除</p>
-														</span>
-													</div>
-													<div class="spxx">
-														<img src="/matouPCS/Public/Home/img/yhmc.png">
-														<p class="spxx_01">用户名称用户名称</p>
-														<p class="spxx_02"></p>
-														<p class="spxx_03">收藏闲置</p>
-														<div class="spxx_img">
-																<img src="/matouPCS/Public/Home/img/heart.png" />
-															</div>
-														<p class="spxx_04">
-															收藏
-														</p>
-													</div>
-													<div class="spxx_sj">
-														<p class="spxx_sj_r">2016-12-12</p>
-													</div>
-												</li>
-									 <?php } endforeach; endif; ?>
+									<?php } endforeach; endif; ?>
 								<!-- 报名悬赏 -->
 								<?php $num = 0; ?>
 								<?php if(is_array($arr)): foreach($arr as $key=>$arrs): ?><li>
@@ -698,7 +672,7 @@
 														<!-- <p class="yhmc_01_02"></p> -->
 														<p class="yhmc_01_03">报名</p>
 														<!-- <p class="yhmc_01_04">摄影师</p> -->
-														<!-- <p class="yhmc_01_04">期望赏金：300-800元/天</p> -->
+														<p class="yhmc_01_04">期望赏金：私聊</p>
 														<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
 														<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
 														<div class="clear"></div>
