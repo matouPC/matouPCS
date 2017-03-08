@@ -96,19 +96,30 @@ class ZpdtController extends Controller
     }
     public function xqyp_shou($id){//应聘->收藏
         $uid = $_SESSION['id'];
-        $ob = M('employ')->where("id = {$id}")->find();
+        $ob = M('employ')->where("eid = {$id}")->find();
         
         if(empty($ob)){
             $data['id'] = $id;
             $db = M('employ')->add($data);
         }
         $shou['em_shou'] = '';
-        $shou = M('employ')->where("id = {$id}")->find();
+        $shou = M('employ')->where("eid = {$id}")->find();
         $shou['em_shou'] .= $uid.',';
-        $dd = M('employ')->where("id = {$id}")->save($shou);
-        if($dd > 0){
-            echo '收藏成功';
+        $fids['uid'] = $uid;
+        $fids['fid'] = $shou['uid'];//被收藏的用户id
+        $fids['type_xx'] = 1;
+        $fids['type_xs'] = 3;
+        // $fids['tid'] = $lis['pid'];
+        // $fids['wid'] = $lis['wid'];
+        $fids['content_xx'] = '收藏应聘';
+        $xd = M("user_xx")->add($fids);
+        if($xd > 0){
+            $dd = M('employ')->where("eid = {$id}")->save($shou);
+            if($dd > 0){
+                echo '收藏成功';
+            }
         }
+        
     }
     
 

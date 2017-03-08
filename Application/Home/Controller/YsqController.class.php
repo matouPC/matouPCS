@@ -25,6 +25,8 @@ class YsqController extends Controller
     }
     public function txysgo(){
         //执行填写 
+        // echo '<pre>';
+        // var_dump($_POST);die;
         $post = array_keys($_POST);
         $files = array_keys($_FILES);
         $num = 0;
@@ -57,8 +59,10 @@ class YsqController extends Controller
         $data['content'] = $_POST['content'];
         $data['skilled'] = $_POST['skilled'];
         $data['uid'] = $_SESSION['id'];
+        // var_dump($data);die;
         $ob = $did = M('due')->order("did desc")->add($data);
         if($ob > 0){
+            // echo '添加成功';die;
             $im['pubtime'] = date("Y-m-d",time());
             $im['pid'] = $did;
             $im['imagename_z'] = '';
@@ -174,6 +178,8 @@ class YsqController extends Controller
     public function xqys($id){
         //应赏详情
         $list = M('due as d')->join('dueimage as m on d.did = m.pid')->join('duevideo as e on d.did = e.pid')->join('user as u on d.uid = u.id')->join('due_dang as a on d.did = a.pid')->where("d.did = {$id}")->find();
+        // echo '<pre>';
+        // var_dump($list);die;
         $this->assign('list',$list);
         $this->display('Ysq/xqys');
     }

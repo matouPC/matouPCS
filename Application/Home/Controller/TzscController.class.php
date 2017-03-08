@@ -169,10 +169,22 @@ class TzscController extends Controller
         $shou['shou'] = '';
         $shou = M('flea')->where("fid = {$fid}")->find();
         $shou['shou'] .= $uid.',';
-        $dd = M('flea')->where("fid = {$fid}")->save($shou);
-        if($dd > 0){
-            echo '收藏成功';
+        $fids['uid'] = $uid;
+        $fids['fid'] = $shou['uid'];//被收藏的用户id
+        $fids['type_xx'] = 1;
+        $fids['type_xs'] = 6;
+        $fids['tid'] = $lis['pid'];
+        $fids['wid'] = $lis['wid'];
+        $fids['content_xx'] = '收藏闲置';
+        $xd = M("user_xx")->add($fids);
+        if($xd > 0){
+            $dd = M('flea')->where("fid = {$fid}")->save($shou);
+            if($dd > 0){
+                echo '收藏成功';
+            }
         }
+        
+        
     }
     public function qgfbwc(){
         //求购发布完成
