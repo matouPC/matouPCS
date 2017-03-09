@@ -494,7 +494,12 @@
 							<!-- 热门部队 -->
 							<foreach name="listn" item="listns">
 								<li>
-									<a href="?s=/Home/Mtbu/rzbdzy/id/{$listns.pid}">
+									<?php if($_SESSION['id'] == $listn['uid']){ ?>
+										<a href="?s=/Home/Mtbu/rzbddydt/id/{$listns.uid}">
+									<?php }else{ ?>
+										<a href="?s=/Home/Mtbu/rzbddydt/id/{$listns.uid}">
+									<?php } ?>
+									
 										<div class="tj">
 											<img src="__PUBLIC__/Home/img/bdmc.png" width="101px" height="101px">
 											<div class="tj_01">

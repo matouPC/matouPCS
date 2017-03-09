@@ -544,8 +544,12 @@
 											<p class="tj_01_02">收藏量：
 												<b style="color:#ccc; font-weight:500"><?php echo ($shop["collect"]); ?></b>
 											</p>
-
-											<button id="btn" class="tj_01_03" onclick="change()">收藏商铺</button>
+											<?php $shou = explode(",",$shop['shou']);array_pop($shou); if(in_array($_SESSION['id'],$shou)){ ?>
+												<button id="btns" class="tj_01_03" onclick="change(<?php echo ($_GET['id']); ?>)">取消收藏</button>
+											<?php }else{ ?>
+												<button id="btns" class="tj_01_03" onclick="change(<?php echo ($_GET['id']); ?>)">收藏商铺</button>
+											<?php } ?>
+											
 											<!--<p class="tj_01_03" style="margin-top:10px;">
 												<button id="btn" onclick="change()">关注</button>
 											</p>-->
@@ -634,9 +638,13 @@
 							<script type="text/javascript">
 								function liuyan(id){
 									var p=id;
+<<<<<<< HEAD
 									//alert(p);
+=======
+>>>>>>> e68f8276d68e538a66dbd665bd4a306ce2123c44
 									var t = "<?php echo session('id');?>";
 									var contents = $('#contents').val();
+									alert(contents);
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
 											url:"?s=/Home/Mtbu/spbddyly_liuyan",
@@ -644,13 +652,19 @@
 											data:{id:p,contents:contents},
 											dataType:"json",
 											success:function(data){
+<<<<<<< HEAD
 									//	alert(2);
+=======
+>>>>>>> e68f8276d68e538a66dbd665bd4a306ce2123c44
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
+<<<<<<< HEAD
 													 
+=======
+>>>>>>> e68f8276d68e538a66dbd665bd4a306ce2123c44
 													 var c = ","; // 要计算的字符
 													 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
 													 var result = str.match(regex);
@@ -916,12 +930,20 @@
 		});
 
 		//收藏商铺
-		function change() {
-			var mark = document.getElementById('btn').innerText;
+		function change(id) {
+			var mark = document.getElementById('btns').innerText;
 			if(mark == '收藏商铺') {
-				document.getElementById('btn').innerText = "取消收藏";
+				$.ajax({
+					url:'?s=/Home/Tjcs/spxq_shou/id/'+id,
+					type:'get',
+					success:function(data){
+						document.getElementById('btns').innerText = "取消收藏";
+					},error:function(){
+						alert('no');
+					}
+				});
 			} else {
-				document.getElementById('btn').innerText = "收藏商铺";
+				document.getElementById('btns').innerText = "收藏商铺";
 			};
 		};
 		

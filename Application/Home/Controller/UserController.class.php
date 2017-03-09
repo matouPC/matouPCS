@@ -711,13 +711,14 @@ class UserController extends Controller
     public function xqxx(){
         // echo '<pre>';
         $uid = $_SESSION['id'];
-        $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1'")->select();
+        $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1'")->order("x.id desc")->select();
+
         $lijb = M('reward1 as e')->where("e.uid = {$uid}")->select();//悬赏基本信息
         $li = M('reward2')->where("usid = {$uid}")->select();//悬赏详情信息
 
         $lijb_zp = M('recruit1 as e')->where("e.uid = {$uid}")->select();//招聘基本信息
         $li_zp = M('recruit2')->where("usid = {$uid}")->select();//招聘详情信息
-
+ 
         $lijb_qg = M('flea')->where("uid = {$uid} and type = '1'")->select();
         //悬赏
         foreach ($lijb as $key => $value) {//基本信息
@@ -762,12 +763,18 @@ class UserController extends Controller
     *  部队消息
     */
     public function bdxx(){
+        $uid = $_SESSION['id'];
+        $list = M("user_xx_bd as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2'")->select();//留言
+        $this->assign('list',$list);
         $this->display();
     }
     /**
     *  商铺消息
     */
     public function spxx(){
+        $uid = $_SESSION['id'];
+        $list = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '1'")->select();//留言
+        $this->assign('list',$list);
         $this->display();
     }
     /**

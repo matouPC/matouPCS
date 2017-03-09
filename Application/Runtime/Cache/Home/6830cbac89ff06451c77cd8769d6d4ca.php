@@ -523,7 +523,7 @@
 									<input type="text" name="address" id="address" class="white-in" style="width: 178px; height: 18px;" value="<?php echo ($v["addre"]); ?>" />
 								</li>
 						
-								<div class="clearfloat"></div>`
+								<div class="clearfloat"></div>
 							</ul>
 						</form>
 							<div class="clearfloat"></div>
@@ -561,7 +561,7 @@
 									<div class="wc">
 										<img src="/matouPCS/Public/Home/img/alert-wc.png" />
 									</div>
-									<button id="bdwc">绑定微信</button>
+									<button id="bdwc" onclick="bdwc()">绑定微信</button>
 								</li>
 								<li>
 									<div class="QQ">
@@ -743,15 +743,18 @@
 			}, 300);
 		});
 		//绑定微信
-		$('#bdwc').click(function(){
-			if($(this).html() == '绑定微信') {
-				$(this).html('解除绑定');
-				$(this).css('background-color','#FF5C5D');
-			} else {
-				$(this).html('绑定微信');
-				$(this).css('background-color','#999999');
+		// $('#bdwc').click(function(){
+			function bdwc(){
+				if($('#bdwc').html() == '绑定微信') {
+					$('#bdwc').html('解除绑定');
+					$('#bdwc').css('background-color','#FF5C5D');
+				} else {
+					$('#bdwc').html('绑定微信');
+					$('#bdwc').css('background-color','#999999');
+				}
 			}
-		});
+			
+		// });
 		//绑定QQ
 		$('#bdQQ').click(function(){
 			if($(this).html() == '绑定QQ') {
