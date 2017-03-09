@@ -246,7 +246,13 @@
 										</div>-->
 										<div class="f2t">
 											<img src="__PUBLIC__/Home/img/yhmc.png" width="120" height="120">
-											<p class="f2t_01">用户{$listnews.username|substr=0,5}</p>
+											<p class="f2t_01">
+											<if condition="$lis[username]==$lis[tel]">
+							                      	用户：{$listnews.username|substr=0,5}
+								                 </if>
+								               <if condition="$lis[username]!=$lis[tel]">
+								                用户：{$listnews.username}
+								                  </if></p>
 										</div>
 										<div class="f2r-ul-c1">
 											<p>{$listnews.name}</p>
@@ -310,9 +316,32 @@
 								<foreach name="user" item="users">  
 									<li>
 										<div class="tj">
-											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+									<php>if($_SESSION['id'] == $users['uid']){</php>
+									  <if condition="$users[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$users.uid}">		<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<elseif condition="$users[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$users[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<elseif condition="$users[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+									</if>
+                                       <php>}</php>			
 											<div class="tj_01">
-												<a href="?s=/Home/Mtbu/grbdzy"><p class="tj_01_01">用户{$users.username|substr=0,5}</p>
+												<a href="?s=/Home/Mtbu/grbdzy">
+												<p class="tj_01_01">
+	                                             <if condition="$users[username]==$users[tel]">
+							                      	用户{$users.username|substr=0,5}
+								                 </if>
+								               <if condition="$users[username]!=$users[tel]">
+								                用户{$users.username}
+								                  </if></p>
 												<p class="tj_01_02">粉丝数量：<b id="fen{$users.id}"style="color:#666666; font-weight:500">
 													{$users.fen}
 												</b>

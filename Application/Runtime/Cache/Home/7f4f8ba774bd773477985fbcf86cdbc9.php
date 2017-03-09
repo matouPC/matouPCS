@@ -633,7 +633,9 @@
 										</div>-->
 										<div class="f2t">
 											<img src="/matouPCS/Public/Home/img/yhmc.png" width="120" height="120">
-											<p class="f2t_01">用户<?php echo (substr($listnews["username"],0,5)); ?></p>
+											<p class="f2t_01">
+											<?php if($lis[username]==$lis[tel]): ?>用户：<?php echo (substr($listnews["username"],0,5)); endif; ?>
+								               <?php if($lis[username]!=$lis[tel]): ?>用户：<?php echo ($listnews["username"]); endif; ?></p>
 										</div>
 										<div class="f2r-ul-c1">
 											<p><?php echo ($listnews["name"]); ?></p>
@@ -693,9 +695,24 @@
 							<ul>
 								<?php if(is_array($user)): foreach($user as $key=>$users): ?><li>
 										<div class="tj">
-											<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+									<?php if($_SESSION['id'] == $users['uid']){ ?>
+									  <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($users["uid"]); ?>">		<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+								<?php elseif($users[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a><?php endif; ?>
+									<?php }else{ ?>
+                                        <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+								<?php elseif($users[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a><?php endif; ?>
+                                       <?php } ?>			
 											<div class="tj_01">
-												<a href="?s=/Home/Mtbu/grbdzy"><p class="tj_01_01">用户<?php echo (substr($users["username"],0,5)); ?></p>
+												<a href="?s=/Home/Mtbu/grbdzy">
+												<p class="tj_01_01">
+	                                             <?php if($users[username]==$users[tel]): ?>用户<?php echo (substr($users["username"],0,5)); endif; ?>
+								               <?php if($users[username]!=$users[tel]): ?>用户<?php echo ($users["username"]); endif; ?></p>
 												<p class="tj_01_02">粉丝数量：<b id="fen<?php echo ($users["id"]); ?>"style="color:#666666; font-weight:500">
 													<?php echo ($users["fen"]); ?>
 												</b>

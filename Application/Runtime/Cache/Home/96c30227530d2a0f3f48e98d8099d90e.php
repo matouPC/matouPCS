@@ -787,9 +787,9 @@
 						<ul>
 							<?php if(is_array($listnn)): foreach($listnn as $key=>$listnns): ?><li>
 								<?php if($_SESSION['id'] == $listnns['uid']){ ?>
-										<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($listnns["id"]); ?>">
+										<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($listnns["uid"]); ?>">
 									<?php }else{ ?>
-										<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($listnns["id"]); ?>">
+										<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($listnns["uid"]); ?>">
 									<?php } ?>
 									<div class="tj">
 										<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">

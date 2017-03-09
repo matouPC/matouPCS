@@ -828,7 +828,6 @@
 								function liuyan(id){
 									var p=id;
 									var t = "<?php echo session('id');?>";
-							
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({

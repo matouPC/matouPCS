@@ -288,7 +288,7 @@
 					<div class="s-c-1f">
 						<div class="s-c-1f-1f">
 							<div class="left">
-								<a href="">
+								<a href="?s=/Home/User">
 									<img src="__PUBLIC__/Home/img/tx2-3r.png" />
 								</a>
 								<div class="vip">
@@ -297,11 +297,16 @@
 							</div>
 							<div class="right">
 								<p class="yhmc">
-									<a href="">用户{$user.username|substr=0,5}</a>
+									<if condition="$user[username]==$user[tel]">
+							                      	用户：{$user.username|substr=0,5}
+								                 </if>
+								               <if condition="$user[username]!=$user[tel]">
+								                用户：{$user.username}
+								                  </if>
 								</p>
 								<p class="fssl">粉丝数量{$user.fen}</p>
 								<p>所在地：{$user.addre}</p>
-								<button>编辑</button>
+								<a href="?s=/Home/User"><button>编辑</button></a>
 							</div>
 						</div>
 						<div class="s-c-1f-2f">
@@ -320,14 +325,33 @@
 									<?php if(in_array($_SESSION['id'],$fen)){ ?>
 									<li>
 										<div class="left">
-											<a href="">
-												<img src="__PUBLIC__/Home/img/tx2-3r.png" />
-											</a>
+											<php>if($_SESSION['id'] == $guanzhus['uid']){</php>
+									  <if condition="$guanzhus[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$guanzhus.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$guanzhus[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$guanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$guanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+									</if>
+									<php>}else{</php>
+                                   <if condition="$guanzhus[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$guanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$bguanzhus[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$guanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$guanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								</if>
+                              <php>}</php>
 										</div>
 										<div class="right">
 											<p class="tt">
 												<span style="float: left;">
-													<a href="">用户{$guanzhus.username|substr=0,6}</a>
+														<if condition="$guanzhus[username]==$guanzhus[tel]">
+							                      	用户:{$guanzhus.username|substr=0,5}
+								                 </if>
+								               <if condition="$guanzhus[username]!=$guanzhus[tel]">
+								                用户:{$guanzhus.username}
+								                  </if>
 												</span>
 												<span style="float: right; text-align: right;color:#999999;">{$guanzhus.addre}</span>
 											</p>
@@ -358,14 +382,33 @@
 										?>
 											<li>
 												<div class="left">
-													<a href="">
-														<img src="__PUBLIC__/Home/img/tx2-3r.png" />
-													</a>
+								<php>if($_SESSION['id'] == $bguanzhus['uid']){</php>
+									  <if condition="$bguanzhus[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$bguanzhus.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$bguanzhus[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$bguanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$bguanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+									</if>
+									<php>}else{</php>
+                                   <if condition="$bguanzhus[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$bguanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$bguanzhus[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$bguanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$bguanzhus.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								</if>
+                              <php>}</php>
 												</div>
 												<div class="right">
-													<p class="tt">
-														<span style="float: left;">
-															<a href="">用户{$bbs['username']|substr=0,6}</a>
+											<p class="tt">
+												<span style="float: left;">
+												<if condition="$bguanzhus[username]==$bguanzhus[tel]">
+							                      	用户：{$bguanzhus.username|substr=0,5}
+								                 </if>
+								               <if condition="$bguanzhus[username]!=$bguanzhus[tel]">
+								                用户：{$bguanzhus.username}
+								                  </if>
 														</span>
 														<span style="float: right; text-align: right; color:#999999;">{$bbs.addre}</span>
 													</p>
@@ -516,9 +559,24 @@
 								<img src="__PUBLIC__/Home/img/mdhd.png" />
 							</div>
 							<div class="yhtx">
-								<a href="">
-									<img src="__PUBLIC__/Home/img/yhmc.png" />
-								</a>
+								     	<php>if($_SESSION['id'] == $v['uid']){</php>
+									  <if condition="$v[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$v.uid}">	<img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<elseif condition="$v[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$v[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<elseif condition="$v[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+									</if>
+							
+                                       <php>}</php>
 								<div class="vip">
 									<img src="__PUBLIC__/Home/img/rzlogo.png" />
 								</div>
@@ -662,12 +720,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 
 						$("#conn").append(li);
 	 		
@@ -723,12 +798,29 @@ var p=2;
 								}else{
 							     var use = data['nr'][i].username;
 								}
+	                 	  if(t==data['nr'][i].uid){
+								if(data['nr'][i].bdlx==1){
+									var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else if(data['nr'][i].bdlx==6){
+									var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else{
+									var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+								}
+							}else{
+								if(data['nr'][i].bdlx==1){
+									var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else if(data['nr'][i].bdlx==6){
+									var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+								}else{
+									var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+								}
+							}
 	                  	 for (var j= 0; j < data['tu'].length; j++) {
 							 if(data['nr'][i].did==data['tu'][j].pid){
 								p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 							 }
 						 }
-	                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+	                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 	                    	
 							
 						};
@@ -784,12 +876,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -848,12 +957,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -912,12 +1038,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -976,12 +1119,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1041,12 +1201,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1106,12 +1283,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1171,12 +1365,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	           
 						$("#ha").append(li);
 						 }
@@ -1236,12 +1447,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1300,12 +1528,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1364,12 +1609,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1428,12 +1690,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1492,12 +1771,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1556,12 +1852,29 @@ var p=2;
 									}else{
 								     var use = data['nr'][i].username;
 									}
+							  if(t==data['nr'][i].uid){
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}else{
+									if(data['nr'][i].bdlx==1){
+										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else if(data['nr'][i].bdlx==6){
+										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
+									}else{
+										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data['nr'][i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
+									}
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1625,7 +1938,7 @@ var p=2;
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
