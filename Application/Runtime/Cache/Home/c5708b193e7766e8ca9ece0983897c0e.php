@@ -751,7 +751,7 @@
 										</li>
 									<?php }} endforeach; endif; ?>
 							</ul>
-							<button onclick="window.location = 'bdzxfs-3r-xy.html'">查看更多</button>
+							<button onclick="window.location = '?s=/Home/User/bdzxfs'">查看更多</button>
 						</div>
 					</div>
 
@@ -918,9 +918,6 @@
 							</ul>
 										<div class="bottom">
 								<p class="left"><?php echo ($v["time"]); ?></p>
-								<span class="delete">
-									<img src="/matouPCS/Public/Home/img/delete-2.png" />
-								</span>
 								<div class="right dz-qx">
 										<p onclick="zan1(<?php echo ($v["did"]); ?>,<?php echo ($v["zan"]); ?>)" class="dz dz-qx">
 													<?php $zan = explode(',',$v['zid']); array_pop($zan); ?>

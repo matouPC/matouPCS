@@ -1299,6 +1299,17 @@ class UserController extends Controller
         //返回请求的结果
         return $res;
     }
-
+    public function bdzxgz(){
+    	//部队中心关注
+    	$id = $_SESSION['id'];
+    
+    	$this->display('Mtbu/bdzxgz');
+    }
+    public function bdzxfs(){
+    	//部队中心粉丝
+    	$id = $_SESSION['id'];
+    
+    	$this->display('Mtbu/bdzxfs');
+    }
     
 }

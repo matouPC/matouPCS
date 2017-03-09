@@ -457,13 +457,39 @@
 				<div class="s-main-r">
 					<div class="userin">
 						<div class="u-img">
-							<a href="#"><img src="/matouPCS/Public/Home/img/tx2-3r.png"></a>
+							   	<?php if($_SESSION['id'] == $list['uid']){ ?>
+									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+									<?php }else{ ?>
+                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($listt["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+                                       <?php } ?>
 						</div>
 						<div class="u-cont">
 							<p style="font-size: 14px;"><strong><a href="#">用户<?php echo (substr($list["username"],0,5)); ?></a></strong></p>
 							<p style="font-size: 12px;margin-top: 10px;">职位：摄影师</p>
 							<p style="font-size: 12px;margin-top: 10px;">所在地：<?php echo ($list["address"]); ?></p>
-							<button>进入Ta的主页</button>
+				  
+								   	<?php if($_SESSION['id'] == $list['uid']){ ?>
+									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a><?php endif; ?>
+									<?php }else{ ?>
+                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php elseif($lis[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($listt["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a><?php endif; ?>
+                                       <?php } ?>
+                                       
 						</div>
 					</div>
 					<br>
@@ -569,15 +595,9 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-<<<<<<< HEAD
+
 							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content_x" placeholder="留言吧"></textarea>
 							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)" >我要留言</button>
-
-=======
-
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>)" >我要留言</button>
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
 
 						</div>
 						<br>
@@ -585,12 +605,8 @@
 							function liuyan(xsid,fid){
 								//获得基本信息id
 
-<<<<<<< HEAD
 								var content = $('#content_x').val();
 
-=======
-								var content = $('#contentt').val();
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
 								if(content == ''){
 									alert('滚犊子');
 								}else{;

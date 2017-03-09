@@ -132,17 +132,17 @@
 		</div>
 		<section>
 				<div class="s-main-c">
-				<foreach name="shop" item="v">
+				
 				<div class="s-main-r">
 					<div class="s-c-1f">
 						<ul>
 							<li>
 								<a href="javascript:;">
 									<div class="tj">
-									<php>if($_SESSION['id'] == $v['uid']){</php>
-									<a href="?s=/Home/Mtbu/spbddndt/id/{$v.uid}">
+									<php>if($_SESSION['id'] == $shop['uid']){</php>
+									<a href="?s=/Home/Mtbu/spbddndt/id/{$shop.uid}">
 									<php>}else{</php>
-                                       <a href="?s=/Home/Mtbu/spbddydt/id/{$v.uid}">
+                                       <a href="?s=/Home/Mtbu/spbddydt/id/{$shop.uid}">
                                        <php>}</php>
 										
 										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
@@ -151,10 +151,10 @@
 										
 										
 										<div class="tj_01">
-											<p class="tj_01_01">{$v.shopname}</p>
-											<p class="tj_01_02">商铺类型：<b style="color:#ccc; font-weight:500">{$v.type}</b></p>
+											<p class="tj_01_01">{$shop.shopname}</p>
+											<p class="tj_01_02">商铺类型：<b style="color:#ccc; font-weight:500">{$shop.type}</b></p>
 											<p class="tj_01_02">收藏量：
-												<b style="color:#ccc; font-weight:500">{$v.collect}</b>
+												<b style="color:#ccc; font-weight:500">{$shop.collect}</b>
 											</p>
 
 											<button id="btn" class="tj_01_03" onclick="change()">收藏商铺</button>
@@ -172,24 +172,24 @@
 						<div class="s-c-f1">
 							<div class="s-c-f1-01">
 								<p class="s-c-f1-01-01">商铺地址</p>
-								<p class="s-c-f1-01-02">{$v.address}</p>
+								<p class="s-c-f1-01-02">{$shop.address}</p>
 							</div>
 							<div class="s-c-f1-02">
 								<p class="s-c-f1-01-01">主营商品</p>
-								<p class="s-c-f1-02-02">{$v.zysp}
+								<p class="s-c-f1-02-02">{$shop.zysp}
 								</p>
 							</div>
 							<div class="s-c-f1-03">
 								<p class="s-c-f1-03-01">手机号</p>
-								<p class="s-c-f1-03-02">{$v.tel}</p>
+								<p class="s-c-f1-03-02">{$shop.tel}</p>
 								<p class="s-c-f1-03-01" style="margin-top:10px;">QQ号</p>
-								<p class="s-c-f1-03-02">{$v.qq}</p>
+								<p class="s-c-f1-03-02">{$shop.qq}</p>
 								<p class="s-c-f1-03-01" style="margin-top:8px;">{$v.wangzhan}</p>
-								<p class="s-c-f1-03-03">{$v.lianjie}</p>
+								<p class="s-c-f1-03-03">{$shop.lianjie}</p>
 							</div>
 						</div>
 					</div>
-               </foreach>
+     
 				</div>
 
 				<div class="s-main-l">
@@ -239,28 +239,72 @@
 						<textarea id="contents" name="contents"></textarea>
 							</div>
 							<div class="s-c-4f-2f">
-								<button onclick="liuyan({$_GET['id']})" class="right">
-									发留言
+							
+								<button onclick="liuyan({$shop.uid})"  class="right">
+									<p style="text-align:center">发留言</p>
 								</button>
 							</div>						
 						</div>
-						<script type="text/javascript">
+							<script type="text/javascript">
 								function liuyan(id){
-									//alert(1);
+									var p=id;
+									//alert(p);
+									var t = "{:session('id')}";
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
 											url:"?s=/Home/Mtbu/spbddyly_liuyan",
 											type:"post",
-											data:{id:id,contents:contents},
+											data:{id:p,contents:contents},
 											dataType:"json",
 											success:function(data){
-											//	alert(2);
+									//	alert(2);
 												var li = '';
-
 												for (var i = 0; i < data.length; i++) {
+													 var myArray=new Array()
+													 var str=data[i].zid;  
+													 myArray = str.split(","); 
+													 
+													 var c = ","; // 要计算的字符
+													 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+													 var result = str.match(regex);
+													 var count = !result ? 0 : result.length;
+													 for(var j=0;j<=count;j++){
+														 if(myArray[j]==t){
+															 var aa=1;
+								
+														 }
+													 }
+													if(aa==1){
+														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
+													}else{
+														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz"></span>';
+													}
+													if(data[i].username==data[i].tel){
 													var use = data[i].username.substr(0,5);
-													li+=' <div class="s-c-3f-1f"><div><div class="yhtx"><a href=""><img src="__PUBLIC__/Home/img/yhmc.png" /></a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">用户'+use+'</a></p><p class="zwmc"> 职位名称： </p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+' </p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="__PUBLIC__/Home/img/delete-2.png" /></span>--><div class="right dz-qx"><span style="font-size: 20px;" class="icon-dz"></span><p style="float: right; margin-left: 5px;">1000000000</p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+													}else{
+												     var use = data[i].username;
+													}
+													if(t==data[i].uid){
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>';	
+														}
+													}else{
+														if(data[i].bdlx==1){
+															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>';
+														}else if(data[i].bdlx==6){
+															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>';
+														}else{
+															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>';	
+														}
+													}
+													
+													
+													li+=' <div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">用户'+use+'</a></p><p class="zwmc">性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+' </p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="__PUBLIC__/Home/img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -269,7 +313,7 @@
 											}
 										});
 									}else{
-										alert('no');
+										alert('请填写留言内容在提交');
 									}
 								}
 							</script>
@@ -283,9 +327,23 @@
 							<div>
 						
 								<div class="yhtx">
-									<a href="">
-										<img src="__PUBLIC__/Home/img/yhmc.png" />
-									</a>
+								    	<php>if($_SESSION['id'] == $lis['uid']){</php>
+									  <if condition="$lis[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$lis.uid}">	<img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<elseif condition="$lis[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$lis[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<elseif condition="$lis[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
+									</if>
+                                       <php>}</php>
 									<div class="vip">
 										<img src="__PUBLIC__/Home/img/rzlogo.png" />
 									</div>
@@ -295,7 +353,7 @@
 									<a href="">用户{$lis.username|substr=0,5}</a>
 								</p>
 								<p class="zwmc">
-									职位名称：{$lis.type}
+									性别：{$lis.sex}
 								</p>
 								<p class="szd">所在地：{$lis.addre}</p>
 								<div class="clearfloat"></div>
@@ -309,9 +367,55 @@
 									<img src="__PUBLIC__/Home/img/delete-2.png" />
 								</span>-->
 								<div class="right dz-qx">
-									<span style="font-size: 20px;" class="icon-dz"></span>
-									<p style="float: right; margin-left: 5px;">1000000000</p>
+									<p onclick="zan({$lis.id},{$lis.zan})" class="dz dz-qx">
+													<?php $zan = explode(',',$lis['zid']);
+														  array_pop($zan);
+														   ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z{$lis.id}" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z{$lis.id}" class="icon-dz"></span>
+													<?php } ?>
+													<span id="s{$lis.id}">{$lis.zan}</span></p> 
 								</div>
+									<script type="text/javascript">
+									var a = 0;
+									function zan(lid,zan){
+								
+										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
+										if($('#z'+lid).hasClass('icon-dz')){
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+lid).removeClass('icon-dz');
+													$('#z'+lid).addClass('icon-dz-kz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+lid).removeClass('icon-dz-kz');
+													$('#z'+lid).addClass('icon-dz');
+													$('#s'+lid).html(zan);
+												},error:function(){
+													alert('no');
+												}
+											});
+											
+										}
+									}
+								</script>
 								<p class="clearfloat"></p>
 							</div>
 							<div class="clearfloat"></div>
@@ -422,15 +526,7 @@
 		};
 		
 		//----------------------------点赞--------------------------
-		$('.dz-qx span').click(function(){
-			if($(this).hasClass('icon-dz')){
-				$(this).removeClass('icon-dz');
-				$(this).addClass('icon-dz-kz');
-			}else{
-				$(this).removeClass('icon-dz-kz');
-				$(this).addClass('icon-dz');
-			}
-		});
+	
 	</script>
 
 </html>

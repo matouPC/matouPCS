@@ -204,7 +204,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -501,18 +501,18 @@
 									<input type="text" class="white-in" id="username" name="username" style="width: 178px; height: 18px;" value="<?php echo ($v["username"]); ?>" />
 								</li>
 								<li>
-								<?php if($v[sex]=='男'): ?><input class="magic-radio" type="radio" name="sex" id="r1" value="男" checked>
+								<?php if($v[sex]=='1'): ?><input class="magic-radio" type="radio" name="sex" id="r1" value="男" checked>
 									<label for="r1">男</label>
 									<?php else: ?>
 									<input class="magic-radio" type="radio" name="sex" id="r1" value="男" >
 									<label for="r1">男</label><?php endif; ?>
 								
-										<?php if($v[sex]=='女'): ?><input class="magic-radio" type="radio" name="sex" id="r2" value="女" checked>
+										<?php if($v[sex]=='2'): ?><input class="magic-radio" type="radio" name="sex" id="r2" value="女" checked>
 									<label for="r2">女</label>
 									<?php else: ?>
 									<input class="magic-radio" type="radio" name="sex" id="r2" value="女" >
 									<label for="r2">女</label><?php endif; ?>
-										<?php if($v[sex]=='保密'): ?><input class="magic-radio" type="radio" name="sex" id="r3" value="保密" checked>
+										<?php if($v[sex]=='3'): ?><input class="magic-radio" type="radio" name="sex" id="r3" value="保密" checked>
 									<label for="r3">保密</label>
 									<?php else: ?>
 									<input class="magic-radio" type="radio" name="sex" id="r3" value="保密" >
@@ -768,7 +768,7 @@
 			$('#tel').css('display','block');
 		});
 		function tj(id){
-			// alert(id);
+			
 			    var username = $("#username").val();  
 			    var password = $("#upass").val();
 			    var address= $("#address").val();
@@ -778,8 +778,17 @@
 			    var password2 = $("#password2").val(); 
 			    var xingbie = document.xingbie;
 			    var sex= xingbie.sex.value;
+			  
+			    if(sex=='男'){
+			    	sex=1;
+			    }else if(sex=='女'){
+			    	sex=2;
+			    }else{
+			    	sex=3;
+			    }
 			    //== alert(password);
-		        if(password2==password1 && password2 != '' && password1 != ''){
+		        if(password2==password1){
+		        	alert(1);
 			    $.ajax({  
 			        type: "POST",  
 			         url:"/matouPCS/index.php/Home/User/usave/",
