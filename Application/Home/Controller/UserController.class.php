@@ -1345,5 +1345,43 @@ class UserController extends Controller
     
     	$this->display('Mtbu/bdzxfs');
     }
-    
+    public function usaveimage(){
+            $id = $_SESSION['id'];
+        	$img = M('user');
+        	$arr = $img->where("id=$id")->select();
+        	foreach ($arr as $v){
+        		@unlink("./Public/upload/".$v['pubtime']."/".$v['imagename']);//删除图片
+        	
+        	}
+        	date_default_timezone_set('prc');
+        	$pubtime = date("Y-m-d",time());
+        	//var_dump($pubtime);die;
+        		$upload = new \Think\Upload();
+        		//设置
+        		$upload->maxSize = 111245600;//设置附件上传大小
+        		$upload->exts    = array('jpg','gif','png','jpeg');//设置附件上传类型
+        		$upload->rootPath= './Public/upload/';//设置附件上传根目录
+        		//$upload->saveName= array('uniqid','');
+        		//保存          把图片保存至公共文件夹下的upload文件夹下
+        		$reArr = $upload->upload();
+        		/*         var_dump($reArr);
+        		 exit(); */
+        			foreach ($reArr as $v){
+        				//s实现缩略图
+        				//$image = new \Think\Image();
+        				//打开图片保存的位置
+        				//$image->open("./public/upload/".$v['savepath'].$v['savename']);
+        				//修改图片的宽高   并保存到原地址
+        				//$image->thumb(75, 50)->save("./public/upload/".$v['savepath']."s_".$v['savename']);
+        				 
+        				$reImage = $img->where(array('id'=>$id))->save(array('imagename'=>$v['savename'] , 'pubtime'=>$pubtime));
+        			}
+        			//根据写入表productimage表中的数据所返回的值进行判断
+        			if($reImage){
+        				$this->redirect("User/index") ;
+        			}
+        		
+        
+    } 
+
 }

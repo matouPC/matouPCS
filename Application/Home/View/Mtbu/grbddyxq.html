@@ -93,7 +93,11 @@
 						</div>-->
 						<div class="s-f1">
 							<div class="yhtx">
-								<img src="__PUBLIC__/Home/img/yhmc.png">
+								      <if condition="$dt[imagename]==''">
+											<img src="__PUBLIC__/Home/img/yhmc.png">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$dt.pubtime}/{$dt.imagename}"   style="width: 137px; height: 144px;border-radius:50%"/>
+                                    </if>
 								<div class="vip">
 									<img src="__PUBLIC__/Home/img/rzlogo.png" />
 								</div>

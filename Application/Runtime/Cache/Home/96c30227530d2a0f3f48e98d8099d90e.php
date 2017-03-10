@@ -746,7 +746,7 @@
 							<?php if(is_array($datan)): foreach($datan as $key=>$dataa): ?><li>
 									<a href="?s=/Home/Zpdt1/xqzp/id/<?php echo ($dataa["rid"]); ?>">
 										<div class="yh-admin">
-											<img src="/matouPCS/Public/Home/hye/<?php echo ($dataa["imagename"]); ?>" />
+											<img src="/matouPCS/Public/Home/img/bdmc.png" >
 										</div>
 										<p style="display:block; overflow: hidden; margin-top: -5px; margin-left: 10px; float:left; width: 180px; height: 20px; font-size:14px;">
 											部队名称

@@ -832,7 +832,12 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 										<li>
 										<a href="?s=/Home/Tzsc/xqxz/id/{$tiaos.fid}">
 											<div class="tsuimg">
-												<img src="__PUBLIC__/Home/img/flea_people.png" />
+										<if condition="$tiaos[imagename]==''">
+										<img src="__PUBLIC__/Home/img/flea_people.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$tiaos.pubtime}/{$tiaos.imagename}"  alt="" />
+                                    </if>
+											
 											</div>
 											<div class="tscontent1">
 												<div class="tscontent1-a">
@@ -857,7 +862,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 										<li>
 										<a href="?s=/Home/Tzsc/xqqg/id/{$tiaos.fid}">
 											<div class="tsuimg">
-												<img src="__PUBLIC__/Home/img/flea_people.png" />
+												<if condition="$tiaos[imagename]==''">
+										<img src="__PUBLIC__/Home/img/flea_people.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$tiaos.pubtime}/{$tiaos.imagename}"  alt="" />
+                                    </if>
 											</div>
 											<div class="tscontent1">
 												<div class="tscontent1-a">
@@ -1004,7 +1013,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 					</div>
 					<span style="height: 50px;display: block;"></span>
 
-				<include file="Public/foot"/>
+				<include file="Public/footer"/>
 	</body>
 
 	<script>

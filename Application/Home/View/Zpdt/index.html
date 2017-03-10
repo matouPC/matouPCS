@@ -351,10 +351,15 @@
 							<!-- 推荐应聘 -->
 							<foreach name="listn" item="listns">
 								<li>
-									<a href="#">
+									<a href="?s=/Home/Zpdt/xqyp/id/{$listns.eid}">
 										<div class="yp">
 											<div class="xg">
-												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											<if condition="$listns[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$listns.pubtime}/{$listns.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                    </if>
+												
 												<div class="xg_01">
 													<p class="xg_01_01">{$listns.name}</p>
 													<p class="xg_01_01">{$listns.age}岁</p>

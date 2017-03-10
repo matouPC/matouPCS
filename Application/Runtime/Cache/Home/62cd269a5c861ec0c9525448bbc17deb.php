@@ -461,18 +461,36 @@
 				<div class="s-main-r">
 					<div class="userin">
 						<div class="u-img">
-						<?php if($_SESSION['id'] == $list['uid']){ ?>
-									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+				  	<?php if($_SESSION['id'] == $list['uid']){ ?>
+									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>"  style="border-radius:50%"/><?php endif; ?>
+								</a>
 								<?php elseif($list[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>">  
+								<?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>" style="border-radius:50%" /><?php endif; ?></a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>"  style="border-radius:50%"/><?php endif; ?></a><?php endif; ?>
 									<?php }else{ ?>
-                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php elseif($list[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>" style="border-radius:50%"/><?php endif; ?></a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>">  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>" style="border-radius:50%"/><?php endif; ?></a><?php endif; ?>
                                        <?php } ?>
 						</div>
 						<div class="u-cont">
@@ -671,9 +689,8 @@
 				<div class="f-main-c">
 					<div class="f-c-1f">
 						
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
 			</div>

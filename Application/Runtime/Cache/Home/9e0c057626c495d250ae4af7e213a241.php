@@ -207,7 +207,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -483,7 +483,9 @@
 						</div>-->
 						<div class="s-f1">
 							<div class="yhtx">
-								<img src="/matouPCS/Public/Home/img/yhmc.png">
+									      <?php if($user[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($user["pubtime"]); ?>/<?php echo ($user["imagename"]); ?>"   style="width: 137px; height: 144px;border-radius:50%"/><?php endif; ?>
 								<div class="vip">
 									<img src="/matouPCS/Public/Home/img/rzlogo.png" />
 								</div>
@@ -2225,9 +2227,8 @@ var p=2;
 				<div class="f-main-c">
 					<div class="f-c-1f">
 						
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
 			</div>

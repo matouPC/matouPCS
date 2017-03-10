@@ -240,12 +240,17 @@
 							<ul>
 								<foreach name="listnew" item="listnews">
 								<li>
-									<a href="?s=/Home/Tzsc/xqqg/id/{$listnews.id}">
+									<a href="?s=/Home/Tzsc/xqqg/id/{$listnews.fid}">
 										<!--<div class="f2r-ul-cz">
 											<img src="img/red.png" />
 										</div>-->
 										<div class="f2t">
-											<img src="__PUBLIC__/Home/img/yhmc.png" width="120" height="120">
+										  <if condition="$listnews[imagename]==''">
+									<img src="__PUBLIC__/Home/img/yhmc.png" width="120" height="120">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$listnews.pubtime}/{$listnews.imagename}" style="border-radius:50%" width="120" height="120"/>
+                                    </if>
+											
 											<p class="f2t_01">
 											<if condition="$lis[username]==$lis[tel]">
 							                      	用户：{$listnews.username|substr=0,5}
@@ -318,19 +323,46 @@
 										<div class="tj">
 									<php>if($_SESSION['id'] == $users['uid']){</php>
 									  <if condition="$users[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddndt/id/{$users.uid}">		<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$users.uid}">
+								  <if condition="$$users[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                    </if>
+								</a>
 								<elseif condition="$users[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddndt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                    </if>
+                                    </a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                    </if></a>
 									</if>
 									<php>}else{</php>
                                         <if condition="$users[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddydt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}" style="border-radius:50%" width="101" height="101" />
+                                    </if></a>
 								<elseif condition="$users[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddydt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                    </if></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/{$users.uid}">	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}" style="border-radius:50%" width="101" height="101" />
+                                    </if></a>
 									</if>
                                        <php>}</php>			
 											<div class="tj_01">

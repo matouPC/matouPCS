@@ -722,8 +722,11 @@
 							<?php if(is_array($xxoo)): foreach($xxoo as $key=>$listn): ?><li>
 									<a href="?s=/Home/Ysq/xqys/id/<?php echo ($listn["did"]); ?>">
 										<div class="yp">
-											<div class="xg">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											<div class="xg">		
+			                 <?php if($listn[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($listn["pubtime"]); ?>/<?php echo ($listn["imagename"]); ?>"   width="101" height="101" style="border-radius:50%"/><?php endif; ?>
+											
 												<div class="xg_01">
 													<p class="xg_01_01"><?php echo ($listn["name"]); ?></p>
 													<p class="xg_01_01"><?php echo ($listn["age"]); ?>岁</p>

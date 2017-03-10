@@ -100,7 +100,11 @@
 								<button>编辑个人资料</button>
 							</div></a>
 							<div class="yhtx">
-								<img src="__PUBLIC__/Home/img/yhmc.png">
+									      <if condition="$user[imagename]==''">
+											<img src="__PUBLIC__/Home/img/yhmc.png">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$user.pubtime}/{$user.imagename}"   style="width: 137px; height: 144px;border-radius:50%"/>
+                                    </if>
 								<div class="vip">
 									<img src="__PUBLIC__/Home/img/rzlogo.png" />
 								</div>

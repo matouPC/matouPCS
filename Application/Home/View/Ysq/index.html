@@ -335,8 +335,13 @@
 								<li>
 									<a href="?s=/Home/Ysq/xqys/id/{$listn.did}">
 										<div class="yp">
-											<div class="xg">
-												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											<div class="xg">		
+			                 <if condition="$listn[imagename]==''">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$listn.pubtime}/{$listn.imagename}"   width="101" height="101" style="border-radius:50%"/>
+                                    </if>
+											
 												<div class="xg_01">
 													<p class="xg_01_01">{$listn.name}</p>
 													<p class="xg_01_01">{$listn.age}岁</p>

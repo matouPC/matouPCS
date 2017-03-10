@@ -738,10 +738,13 @@
 						<ul>
 							<!-- 推荐应聘 -->
 							<?php if(is_array($listn)): foreach($listn as $key=>$listns): ?><li>
-									<a href="#">
+									<a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($listns["eid"]); ?>">
 										<div class="yp">
 											<div class="xg">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											<?php if($listns[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($listns["pubtime"]); ?>/<?php echo ($listns["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?>
+												
 												<div class="xg_01">
 													<p class="xg_01_01"><?php echo ($listns["name"]); ?></p>
 													<p class="xg_01_01"><?php echo ($listns["age"]); ?>岁</p>
