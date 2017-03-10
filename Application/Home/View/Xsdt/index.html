@@ -425,9 +425,9 @@
 							<foreach name="listn" item="listns">
 								<li>
 									<?php if($_SESSION['id'] == $listns['uid']){ ?>
-										<a href="?s=/Home/Mtbu/rzbddndt/id/{$listns.id}">
+										<a href="?s=/Home/Mtbu/rzbddndt/id/{$listns.uid}">
 									<?php }else{ ?>
-										<a href="?s=/Home/Mtbu/rzbddydt/id/{$listns.id}">
+										<a href="?s=/Home/Mtbu/rzbddydt/id/{$listns.uid}">
 									<?php } ?>
 										<div class="tj">
 											<img src="__PUBLIC__/Home/img/bdmc.png" width="101px" height="101px">

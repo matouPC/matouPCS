@@ -207,7 +207,7 @@
 											<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['id']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -1023,7 +1023,12 @@
 								 <?php if($lists[username]!=$lists[tel]): echo ($lists["username"]); endif; ?>
 									</p>
 									<p class="zwmc">
-										性别：<?php echo ($lists["sex"]); ?>
+										<?php if($lists[sex]=='1'): ?>性别：男
+									 <?php elseif($lists[sex]=='2'): ?>
+                                      性别：女
+                                      <?php elseif($lists[sex]=='3'): ?>
+                                         性别：保密<?php endif; ?>
+
 									</p>
 									<p class="szd">所在地：<?php echo ($lists["addre"]); ?></p>
 									<div class="clearfloat"></div>
@@ -1113,6 +1118,13 @@ var p=2;
 				if(data!=null){				
 						//alert(1);
 						 for (var i = 0; i < data.length; i++) {
+							 if(data[i].sex=='1'){
+							    	var sex='男';
+							    }else if(data[i].sex=='2'){
+							    	var sex='女';
+							    }else{
+							    	var sex='保密';
+							    }
 							 var myArray=new Array()
 							 var str=data[i].zid;  
 							 myArray = str.split(","); 
@@ -1155,7 +1167,7 @@ var p=2;
 									}
 								}
 					
-						$("#contente").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 职位名称：</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+						$("#contente").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 	 		
 						 }
 				}else{
@@ -1186,6 +1198,13 @@ var p=2;
 					//alert(data);	
                  var li='';
 					for (var i = 0; i < data.length; i++) {
+						 if(data[i].sex=='1'){
+						    	var sex='男';
+						    }else if(data[i].sex=='2'){
+						    	var sex='女';
+						    }else{
+						    	var sex='保密';
+						    }
 						 var myArray=new Array()
 						 var str=data[i].zid;  
 						 myArray = str.split(","); 
@@ -1228,7 +1247,7 @@ var p=2;
 								}
 							}
 				
-						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 									
 						
 					};
@@ -1249,6 +1268,13 @@ var p=2;
 					//alert(data);	
                  var li='';
 					for (var i = 0; i < data.length; i++) {
+						 if(data[i].sex=='1'){
+						    	var sex='男';
+						    }else if(data[i].sex=='2'){
+						    	var sex='女';
+						    }else{
+						    	var sex='保密';
+						    }
 						 var myArray=new Array()
 						 var str=data[i].zid;  
 						 myArray = str.split(","); 
@@ -1291,7 +1317,7 @@ var p=2;
 								}
 							}
 				
-						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 									
 						
 					};
@@ -1319,6 +1345,13 @@ var p=2;
 						if(data!=null){				
 								//alert(1);
 								 for (var i = 0; i < data.length; i++) {
+									 if(data[i].sex=='1'){
+									    	var sex='男';
+									    }else if(data[i].sex=='2'){
+									    	var sex='女';
+									    }else{
+									    	var sex='保密';
+									    }
 									 var myArray=new Array()
 									 var str=data[i].zid;  
 									 myArray = str.split(","); 
@@ -1361,7 +1394,7 @@ var p=2;
 											}
 										}
 							
-								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 			 		
 								 }
 						}else{
@@ -1394,6 +1427,13 @@ var p=2;
 							if(data!=null){				
 									//alert(1);
 									 for (var i = 0; i < data.length; i++) {
+										 if(data[i].sex=='1'){
+										    	var sex='男';
+										    }else if(data[i].sex=='2'){
+										    	var sex='女';
+										    }else{
+										    	var sex='保密';
+										    }
 										 var myArray=new Array()
 										 var str=data[i].zid;  
 										 myArray = str.split(","); 
@@ -1436,7 +1476,7 @@ var p=2;
 												}
 											}
 								
-									$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
+									$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].content+'</p><div class="bottom"><p class="left">'+data[i].time+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="s'+data[i].lid+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 				 		
 									 }
 							}else{

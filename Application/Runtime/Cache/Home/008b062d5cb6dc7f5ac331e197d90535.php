@@ -754,7 +754,11 @@
 						<ul>
 							<!-- 推荐部队  -->
 							<?php if(is_array($listnn)): foreach($listnn as $key=>$listnns): ?><li>
-									<a href="?s=/Home/Mtbu/rzbdzy/id/<?php echo ($listnns["id"]); ?>">
+											<?php if($_SESSION['id'] == $listns['uid']){ ?>
+										<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($listnns["uid"]); ?>">
+									<?php }else{ ?>
+										<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($listnns["uid"]); ?>">
+									<?php } ?>
 										<div class="tj">
 											<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
 											<div class="tj_01">

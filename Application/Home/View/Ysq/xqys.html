@@ -71,13 +71,64 @@
 				<div class="s-main-r">
 					<div class="userin">
 						<div class="u-img">
-							<a href="#"><img src="__PUBLIC__/Home/img/tx2-3r.png"></a>
+					<php>if($_SESSION['id'] == $list['uid']){</php>
+									  <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+									</if>
+                                       <php>}</php>
 						</div>
 						<div class="u-cont">
-							<p style="font-size: 14px;"><strong><a href="#">用户{$list.username|substr=0,6}</a></strong></p>
-							<p style="font-size: 12px;margin-top: 10px;">职位：摄影师</p>
+							<p style="font-size: 14px;"><strong>
+							<if condition="$list[username]==$list[tel]">
+							                      用户{$list.username|substr=0,5}
+								                 </if>
+								               <if condition="$list[username]!=$list[tel]">
+								                用户{$list.username}
+								                  </if></a></strong></p>
+							<p style="font-size: 12px;margin-top: 10px;">	
+							<if condition="$list[bdlx]==1">
+								类型：个人部队
+								<elseif condition="$list[bdlx]==2"/>
+								类型：婚庆公司
+								<elseif condition="$list[bdlx]==3"/>
+								类型：工作室
+								<elseif condition="$list[bdlx]==4"/>
+								类型：影楼
+								<elseif condition="$list[bdlx]==5"/>
+								类型：表演团
+								<else/>
+								类型：商铺部队
+								</if></p>
 							<p style="font-size: 12px;margin-top: 10px;">所在地：{$list.addre}</p>
-							<button>进入Ta的主页</button>
+							   	<php>if($_SESSION['id'] == $list['uid']){</php>
+									  <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$listt.uid}"><button>进入Ta的主页</button></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+									</if>
+                                       <php>}</php>
 						</div>
 					</div>
 					<br>

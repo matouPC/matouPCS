@@ -460,13 +460,51 @@
 				<div class="s-main-r">
 					<div class="userin">
 						<div class="u-img">
-							<a href="#"><img src="/matouPCS/Public/Home/img/tx2-3r.png"></a>
+							   	<?php if($_SESSION['id'] == $list['uid']){ ?>
+									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($list[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+									<?php }else{ ?>
+                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php elseif($list[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+                                       <?php } ?>
 						</div>
 						<div class="u-cont">
-							<p style="font-size: 14px;"><strong><a href="#">用户<?php echo (substr($list["username"],0,6)); ?></a></strong></p>
-							<p style="font-size: 12px;margin-top: 10px;">职位：摄影师</p>
+							<p style="font-size: 14px;"><strong><a href="#">
+	                                     <?php if($list[username]==$list[tel]): ?>用户<?php echo (substr($list["username"],0,5)); endif; ?>
+								               <?php if($list[username]!=$list[tel]): ?>用户<?php echo ($list["username"]); endif; ?></a></strong></p>
+							<p style="font-size: 12px;margin-top: 10px;">
+							<?php if($list[bdlx]==1): ?>类型：个人部队
+								<?php elseif($list[bdlx]==2): ?>
+								类型：婚庆公司
+								<?php elseif($list[bdlx]==3): ?>
+								类型：工作室
+								<?php elseif($list[bdlx]==4): ?>
+								类型：影楼
+								<?php elseif($list[bdlx]==5): ?>
+								类型：表演团
+								<?php else: ?>
+								类型：商铺部队<?php endif; ?></p>
 							<p style="font-size: 12px;margin-top: 10px;">所在地：<?php echo ($list["address"]); ?></p>
-							<button>进入Ta的主页</button>
+				  
+								   	<?php if($_SESSION['id'] == $list['uid']){ ?>
+									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php elseif($list[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a><?php endif; ?>
+									<?php }else{ ?>
+                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php elseif($list[bdlx]=='6'): ?>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($listt["uid"]); ?>"><button>进入Ta的主页</button></a>
+								<?php else: ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>"><button>进入Ta的主页</button></a><?php endif; ?>
+                                       <?php } ?>
 						</div>
 					</div>
 					<br>

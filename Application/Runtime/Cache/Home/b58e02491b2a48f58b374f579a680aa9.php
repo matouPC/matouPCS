@@ -636,7 +636,7 @@
 									var p=id;
 									var t = "<?php echo session('id');?>";
 									var contents = $('#contents').val();
-									alert(contents);
+									alert(id);
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
 											url:"?s=/Home/Mtbu/spbddyly_liuyan",
@@ -646,6 +646,13 @@
 											success:function(data){
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													 if(data[i].sex=='1'){
+													    	var sex='男';
+													    }else if(data[i].sex=='2'){
+													    	var sex='女';
+													    }else{
+													    	var sex='保密';
+													    }
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -688,7 +695,7 @@
 													}
 													
 													
-													li+=' <div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">用户'+use+'</a></p><p class="zwmc">性别：'+data[i].sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+' </p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+													li+=' <div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">用户'+use+'</a></p><p class="zwmc">性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+' </p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -732,7 +739,11 @@
 									<a href="">用户<?php echo (substr($lis["username"],0,5)); ?></a>
 								</p>
 								<p class="zwmc">
-									职位名称：<?php echo ($lis["type"]); ?>
+								  <?php if($lis[sex]=='1'): ?>性别：女
+									 <?php elseif($lis[sex]=='2'): ?>
+                                      性别：男
+                                      <?php elseif($lis[sex]=='3'): ?>
+                                         性别：保密<?php endif; ?>
 								</p>
 								<p class="szd">所在地：<?php echo ($lis["addre"]); ?></p>
 								<div class="clearfloat"></div>
