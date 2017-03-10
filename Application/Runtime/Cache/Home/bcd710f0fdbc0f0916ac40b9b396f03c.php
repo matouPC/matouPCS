@@ -569,41 +569,24 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-<<<<<<< HEAD
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content_x" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)" >我要留言</button>
-
-=======
-
 							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>)" >我要留言</button>
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
-
+							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)" >我要留言</button>
 						</div>
 						<br>
 						<script type="text/javascript">
 							function liuyan(xsid,fid){
 								//获得基本信息id
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-								var content = $('#content_x').val();
-
-=======
->>>>>>> ecac97798ff9fa7ada481945b7e21c9e572fe0b9
 								var content = $('#contentt').val();
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
 								if(content == ''){
 									alert('滚犊子');
-								}else{;
+								}else{
 									$.ajax({
 										url:"?s=/Home/User/liuyan",
 										type:"post",
 										data:{xsid:xsid,content:content,fid:fid},
 										dataType:"json",
 										success:function(data){
-											// alert(data);
+											console.log(data);
 											$('#content').val('');
 											var content = '';
 											for (var i = 0; i < data.length; i++) {
@@ -644,9 +627,8 @@
 				<div class="f-main-c">
 					<div class="f-c-1f">
 						
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<a href="http://www.miitbeian.gov.cn"><p>豫ICP备16015506号</p></a>
 					</div>
 				</div>
 			</div>

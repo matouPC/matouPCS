@@ -694,7 +694,7 @@ $('.spxx_hf').click(function(){
 	
 	function tel(){
 		var tel = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：2016-12-10</p><p class="xqxx_01_02">活动地点：郑州</p><p class="xqxx_01_03">悬赏内容：摄影、主持人</p></div><div class="yhmc"><div id="xl_01" class="yhmc_01"><img src="img/yhmc.png"><p class="yhmc_01_01">用户名称</p><p class="yhmc_01_01">1年经验</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">回复</p><p class="yhmc_01_04">电聊</p><a class="yhmc_01_07">查看号码</a><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div><div class="clearfloat"></div></div></li>';
-		$('.s-main-b ul').append(tel);	
+		$('#zp0').append(tel);	
 		$(".xs1").click(function(event) {
 			$(this).parents('li').remove();
 			event.stopPropagation();
@@ -720,7 +720,19 @@ $('.spxx_hf').click(function(){
 		});
 		xiala();
 	}
+// 小电聊
+function dl(id,uid){
+	if (window.confirm('确定支付三个码头币进行查看么？')) 
+	{
+		// alert($('#xp'+uid).val());
+		$('#dh'+uid).html($('#xp'+uid).val());
+	};
+}
+//小拒绝
+function jj(id){
+	alert(id);
 
+}
 //		--------------------------------------------------部队消息-----------------------------------------------------------
 
 $(".xs1").click(function() {

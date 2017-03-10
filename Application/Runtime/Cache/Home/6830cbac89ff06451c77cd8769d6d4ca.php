@@ -753,7 +753,6 @@
 					$('#bdwc').css('background-color','#999999');
 				}
 			}
-			
 		// });
 		//绑定QQ
 		$('#bdQQ').click(function(){

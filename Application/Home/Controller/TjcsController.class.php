@@ -52,19 +52,19 @@ class TjcsController extends Controller
             $shou['shou'] = '';
             $shou = M('shop')->where("id = {$id}")->find();
             $shou['shou'] .= $uid.',';
-            // $fids['uid'] = $uid;
-            // $fids['fid'] = $shou['uid'];//被收藏的用户id
-            // $fids['type_xx'] = 1;
+            $fids['uid'] = $uid;
+            $fids['fid'] = $shou['uid'];//被收藏的用户id
+            $fids['type_xx'] = 2;
             // $fids['type_xs'] = 1;
-            // $fids['content_xx'] = '收藏应赏';
-            // $xd = M("user_xx")->add($fids);
-            // if($xd > 0){
+            $fids['content_xx'] = '收藏商铺';
+            $xd = M("user_xx_sp")->add($fids);
+            if($xd > 0){
                 $dd = M('shop')->where("id = {$id}")->save($shou);
                 if($dd > 0){
                     echo '收藏成功';
                 }
             }
-        // }
+        }
         
     }
     public function usave(){

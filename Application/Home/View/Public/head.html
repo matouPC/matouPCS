@@ -37,11 +37,18 @@
 							<li id="select-xx" style="width: 45px;">
 								<php>if($_SESSION['id'] != ''){</php>
 								<a href="#">消息</a>
+								<div class="news">
+									<img src="__PUBLIC__/Home/img/news.png" />
+								</div>
 								<div class="str"></div>
 								<div class="select-xx">
+								
 									<ul>
 										<li>	
 											<a href="?s=/Home/User/xqxx">需求消息</a>
+											<div class="newss">
+												<img src="__PUBLIC__/Home/img/news.png" />
+											</div>
 										</li>
 										<li>
 											<a href="?s=/Home/User/bdxx">部队消息</a>
@@ -52,6 +59,7 @@
 									</ul>
 								</div>
 								<?php }else{ ?>
+
 								<a href="#" onclick="alert('请先登录')">消息</a>
 								<div class="str"></div>
 								<div class="select-xx" style="display:none;">

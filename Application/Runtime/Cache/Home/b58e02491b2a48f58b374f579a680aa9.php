@@ -549,10 +549,6 @@
 											<?php }else{ ?>
 												<button id="btns" class="tj_01_03" onclick="change(<?php echo ($_GET['id']); ?>)">收藏商铺</button>
 											<?php } ?>
-											
-											<!--<p class="tj_01_03" style="margin-top:10px;">
-												<button id="btn" onclick="change()">关注</button>
-											</p>-->
 										</div>
 
 									</div>
@@ -829,9 +825,8 @@
 				<div class="f-main-c">
 					<div class="f-c-1f">
 						
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<a href="http://www.miitbeian.gov.cn"><p>豫ICP备16015506号</p></a>
 					</div>
 				</div>
 			</div>

@@ -422,8 +422,9 @@
 					<div class="con">
 						<div class="s-main-b">
 							<ul>
-								<?php if(is_array($list)): foreach($list as $key=>$lists): if($lists['type_xx'].$lists['type_xs'] == '36' || $lists['type_xx'].$lists['type_xs'] == '37'){ ?>
-									<li><h1><?php echo ($lists['status_xx'] == 1 ? '未读' : '已读'); ?></h1>
+								<!-- 闲置留言 -->
+								<?php if(is_array($list)): foreach($list as $key=>$lists): if($_SESSION['id'] == $lists['uid'] || $_SESSION['id'] == $lists['fid']){ ?>
+									<li>
 										<div class="xialai">
 											<span class="xll1">
 												<p class="xs1">删除</p>
@@ -435,7 +436,63 @@
 											<p class="spxx_02"></p>
 											<form>
 												<p class="spxx_03">
-													<?php  if($lists['type_xx'].$lists['type_xs'] == '36'){ echo '闲置留言'; }else if($lists['type_xx'].$lists['type_xs'] == '37'){ echo '求购留言'; }else if($lists['type_xx'].$lists['type_xs'] == '14'){ echo '报名悬赏'; }else{ echo $lists['type_xx'].$lists['type_xs']; }?>
+													闲置留言
+												</p>
+												
+											</form>
+										</div>
+										<div class="spxx_00">
+											<p>
+												<?php echo ($lists["content_xx"]); ?>
+											</p>
+										</div>
+										<?php if(is_array($list_hui)): foreach($list_hui as $key=>$list_huis): if($list_huis['tid'] == $lists['id']){ ?>
+											<div class="spxx">
+												<img src="/matouPCS/Public/Home/img/yhmc.png">
+												<p class="spxx_01"><?php echo ($list_huis["username"]); ?></p>
+												<p class="spxx_02"></p>
+												<form>
+													<p class="spxx_03">
+														回复
+													</p>
+												</form>
+											</div>
+											<div class="spxx_00">
+												<p>
+													<?php echo ($list_huis["content_hf"]); ?>
+												</p>
+											</div>
+											<?php } endforeach; endif; ?>
+
+										<div class="spxx_sj">
+											<p class="spxx_sj_r">2016-12-12</p>
+											<p class="spxx_hf">
+												回复
+											</p>
+										</div>
+										<div class="no">
+											<input type="hidden" id="uid" value="<?php echo ($uid); ?>">
+											<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
+										<button class="hf" onclick="liuyan_xz(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
+										<div class="clear"></div>
+										</div>
+									</li>
+									<?php  } endforeach; endif; ?>
+								<!-- 求购留言 -->
+								<?php if(is_array($list_q)): foreach($list_q as $key=>$lists): ?><li>
+										<div class="xialai">
+											<span class="xll1">
+
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="spxx">
+											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+											<p class="spxx_02"></p>
+											<form>
+												<p class="spxx_03">
+													求购留言
 												</p>
 												
 											</form>
@@ -453,92 +510,85 @@
 										</div>
 										<div class="no">
 											<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
-										<button class="hf">回复</button>
+										<button class="hf" >回复</button>
 										<div class="clear"></div>
 										</div>
-									</li>
-									<?php } ?>
-									<!-- 收藏应赏 -->
-									<?php if($lists['type_xx'].$lists['type_xs'] == '11'){ ?>
-											<li>
-												<div class="xialai">
-													<span class="xll1">
+									</li><?php endforeach; endif; ?>
+								<!-- 求购收藏 -->
+								<?php if(is_array($list_qs)): foreach($list_qs as $key=>$lists): ?><li>
+										<div class="xialai">
+											<span class="xll1">
 
-														<p class="xs1">删除</p>
-													</span>
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="spxx">
+											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+											<p class="spxx_02"></p>
+											<p class="spxx_03">求购收藏</p>
+											<div class="spxx_img">
+													<img src="/matouPCS/Public/Home/img/heart.png" />
 												</div>
-												<div class="spxx">
-													<img src="/matouPCS/Public/Home/img/yhmc.png">
-													<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
-													<p class="spxx_02"></p>
-													<p class="spxx_03">收藏应赏</p>
-													<div class="spxx_img">
-															<img src="/matouPCS/Public/Home/img/heart.png" />
-														</div>
-													<p class="spxx_04">
-														收藏
-													</p>
-												</div>
-												<div class="spxx_sj">
-													<p class="spxx_sj_r">2016-12-12</p>
-												</div>
-											</li>
-									<?php } ?>
-										<!-- 收藏应聘 -->
-									<?php  if($lists['type_xx'].$lists['type_xs'] == '13'){ ?>
-												<li>
-												<div class="xialai">
-													<span class="xll1">
+											<p class="spxx_04">
+												收藏
+											</p>
+										</div>
+										<div class="spxx_sj">
+											<p class="spxx_sj_r">2016-12-12</p>
+										</div>
+									</li><?php endforeach; endif; ?>
+								<!-- 应聘收藏 -->
+								<?php if(is_array($list_yps)): foreach($list_yps as $key=>$lists): ?><li>
+										<div class="xialai">
+											<span class="xll1">
 
-														<p class="xs1">删除</p>
-													</span>
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="spxx">
+											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+											<p class="spxx_02"></p>
+											<p class="spxx_03">应聘收藏</p>
+											<div class="spxx_img">
+													<img src="/matouPCS/Public/Home/img/heart.png" />
 												</div>
-												<div class="spxx">
-													<img src="/matouPCS/Public/Home/img/yhmc.png">
-													<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
-													<p class="spxx_02"></p>
-													<p class="spxx_03">收藏应聘</p>
-													<div class="spxx_img">
-															<img src="/matouPCS/Public/Home/img/heart.png" />
-														</div>
-													<p class="spxx_04">
-														收藏
-													</p>
-												</div>
-												<div class="spxx_sj">
-													<p class="spxx_sj_r">2016-12-12</p>
-												</div>
-											</li>
-									<?php } ?>
-									<!-- 闲置收藏 -->
-									<?php  if($lists['type_xx'].$lists['type_xs'] == '16'){ ?>
-												<li>
-												<div class="xialai">
-													<span class="xll1">
+											<p class="spxx_04">
+												收藏
+											</p>
+										</div>
+										<div class="spxx_sj">
+											<p class="spxx_sj_r">2016-12-12</p>
+										</div>
+									</li><?php endforeach; endif; ?>
+								<!-- 应赏收藏 -->
+								<?php if(is_array($list_yss)): foreach($list_yss as $key=>$lists): ?><li>
+										<div class="xialai">
+											<span class="xll1">
 
-														<p class="xs1">删除</p>
-													</span>
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="spxx">
+											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+											<p class="spxx_02"></p>
+											<p class="spxx_03">应赏收藏</p>
+											<div class="spxx_img">
+													<img src="/matouPCS/Public/Home/img/heart.png" />
 												</div>
-												<div class="spxx">
-													<img src="/matouPCS/Public/Home/img/yhmc.png">
-													<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
-													<p class="spxx_02"></p>
-													<p class="spxx_03">收藏闲置</p>
-													<div class="spxx_img">
-															<img src="/matouPCS/Public/Home/img/heart.png" />
-														</div>
-													<p class="spxx_04">
-														收藏
-													</p>
-												</div>
-												<div class="spxx_sj">
-													<p class="spxx_sj_r">2016-12-12</p>
-												</div>
-											</li>
-									<?php } endforeach; endif; ?>
+											<p class="spxx_04">
+												收藏
+											</p>
+										</div>
+										<div class="spxx_sj">
+											<p class="spxx_sj_r">2016-12-12</p>
+										</div>
+									</li><?php endforeach; endif; ?>
 								<!-- 报名悬赏 -->
 								<?php $num = 0; ?>
-								<?php if(is_array($arr)): foreach($arr as $key=>$arrs): ?><li>
+								<?php if(is_array($arr)): foreach($arr as $key=>$arrs): ?><li id="zp<?php echo ($num); ?>">
 										<div class="xialai">
 											<span class="xll1">
 												<p class="xs1">删除</p>
@@ -556,7 +606,7 @@
 											<dl>
 												<?php for ($i=0; $i < count($arrs['xs']['uu']); $i++) {?>
 												<dd>
-													<a href="">
+													<!-- <a href=""> -->
 														<div id="xl_01" class="yhmc_01">
 														<img src="/matouPCS/Public/Home/img/yhmc.png">
 														<p class="yhmc_01_01"><?php echo $arrs['xs']['uu'][$i]['username']; ?></p>
@@ -564,14 +614,16 @@
 														<p class="yhmc_01_02"></p>
 														<p class="yhmc_01_03">报名</p>
 														<p class="yhmc_01_04">期望赏金：私聊</p>
-														<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-														<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
+														<p class="yhmc_01_04">电话号码：<span id="dh<?php echo $arrs['xs']['uu'][$i]['id'];?>"><?php echo substr($arrs['xs']['uu'][$i]['tel'],0,3).'XXXX'. substr($arrs['xs']['uu'][$i]['tel'],7,11); ?></span></p>
+														<input type="hidden" id="xp<?php echo $arrs['xs']['uu'][$i]['id']; ?>" value="<?php echo $arrs['xs']['uu'][$i]['tel']?>">
+														<button id="btn_c_01" class="yhmc_01_05" onclick="jj(<?php echo $arrs['xs']['wid']; ?>);">拒接</button>
+														<button id="btn_c_02" class="yhmc_01_05" onclick="dl(<?php echo $arrs['xs']['wid']; ?>,<?php echo $arrs['xs']['uu'][$i]['id']; ?>);">电聊</button>
 														<div class="clear"></div>
 														<div class="yhmc-date">
 															<span>2012-12-12</span>
 														</div>
 													</div>
-													</a>
+													<!-- </a> -->
 												</dd>
 												<?php } ?>
 											</dl>
@@ -589,6 +641,11 @@
 										</div>
 									</li>
 									<?php $num++; endforeach; endif; ?>
+								<?php if(!empty($arrs)){ ?>
+									<div class="djjzgd">
+										<button>点击加载更多</button>
+									</div>
+								<?php } ?>
 								<!-- 报名招聘 -->
 								<?php $num_zp = 10; ?>
 								<?php if(is_array($arr_zp)): foreach($arr_zp as $key=>$arr_zps): ?><li>
@@ -643,6 +700,11 @@
 									</div>
 								</li>
 								<?php $num_zp++; endforeach; endif; ?>
+							<?php if(!empty($arr_zps)){ ?>
+									<div class="djjzgd">
+										<button>点击加载更多</button>
+									</div>
+								<?php } ?>
 							<!-- 报名求购 --><?php $numqg = 200; ?>
 								<?php if(is_array($arr_qg)): foreach($arr_qg as $key=>$arr_qgs): ?><li>
 										<div class="xialai">
@@ -700,6 +762,11 @@
 
 									</li>
 									<?php $numqg++; endforeach; endif; ?>
+									<?php if(!empty($arr_qgs)){ ?>
+									<div class="djjzgd">
+										<button>点击加载更多</button>
+									</div>
+								<?php } ?>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>
@@ -707,9 +774,9 @@
 					<div class="clearfloat"></div>
 				</div>
 				<div class="clearfloat"></div>
-				<div class="djjzgd">
+				<!-- <div class="djjzgd">
 					<button>点击加载更多</button>
-				</div>
+				</div> -->
 			</div>
 
 		</section>
@@ -789,4 +856,5 @@
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
+	<script src="/matouPCS/Public/Home/js/xqly.js"></script>
 </html>

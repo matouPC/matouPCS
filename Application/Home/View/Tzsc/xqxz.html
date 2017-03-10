@@ -187,41 +187,24 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-<<<<<<< HEAD
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content_x" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan({$list.fid},{$list.uid})" >我要留言</button>
-
-=======
-
 							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan({$list.fid})" >我要留言</button>
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
-
+							<button class="lybtn" onclick="liuyan({$list.fid},{$list.uid})" >我要留言</button>
 						</div>
 						<br>
 						<script type="text/javascript">
 							function liuyan(xsid,fid){
 								//获得基本信息id
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-								var content = $('#content_x').val();
-
-=======
->>>>>>> ecac97798ff9fa7ada481945b7e21c9e572fe0b9
 								var content = $('#contentt').val();
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
 								if(content == ''){
 									alert('滚犊子');
-								}else{;
+								}else{
 									$.ajax({
 										url:"?s=/Home/User/liuyan",
 										type:"post",
 										data:{xsid:xsid,content:content,fid:fid},
 										dataType:"json",
 										success:function(data){
-											// alert(data);
+											console.log(data);
 											$('#content').val('');
 											var content = '';
 											for (var i = 0; i < data.length; i++) {

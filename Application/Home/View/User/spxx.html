@@ -65,28 +65,30 @@
 										</div>
 									</li>
 								</foreach>
-								<li>
-									<div class="xialai">
-										<span class="xll1">
-											<p class="xs1">删除</p>
-										</span>
-									</div>
-									<div class="spxx">
-										<img src="__PUBLIC__/Home/img/yhmc.png">
-										<p class="spxx_01">用户名称用户名称</p>
-										<p class="spxx_02"></p>
-										<p class="spxx_03">收藏应赏</p>
-										<div class="spxx_img">
-												<img src="__PUBLIC__/Home/img/heart.png" />
-											</div>
-										<p class="spxx_04">
-											收藏
-										</p>
-									</div>
-									<div class="spxx_sj">
-										<p class="spxx_sj_r">2016-12-12</p>
-									</div>
-								</li>
+								<foreach name="li" item="lis">
+									<li>
+										<div class="xialai">
+											<span class="xll1">
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="spxx">
+											<img src="__PUBLIC__/Home/img/yhmc.png">
+											<p class="spxx_01">{$lis.username}</p>
+											<p class="spxx_02"></p>
+											<p class="spxx_03">{$lis.content_xx}</p>
+											<div class="spxx_img">
+													<img src="__PUBLIC__/Home/img/heart.png" />
+												</div>
+											<p class="spxx_04">
+												收藏
+											</p>
+										</div>
+										<div class="spxx_sj">
+											<p class="spxx_sj_r">2016-12-12</p>
+										</div>
+									</li>
+								</foreach>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>

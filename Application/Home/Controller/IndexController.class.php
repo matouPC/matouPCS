@@ -92,6 +92,8 @@ class IndexController extends Controller
                 session_start();
                 $_SESSION['username'] = $ob['tel'];
                 $_SESSION['id'] = $ob['id'];
+                // session_id($ob['id']);
+                 // session_id() = $xb['id'];
                 //增加粉丝的方法
                 $uid = $_SESSION['id'];//当前用户的id
                 $ji = M('user_fen')->where(" uid = {$uid}")->find();
@@ -104,6 +106,7 @@ class IndexController extends Controller
                 session_start();
                 $_SESSION['username'] = $xb['tel'];
                 $_SESSION['id'] = $xb['id'];
+                // session_id('xx') = $xb['id'];
                 //增加粉丝的方法
                 $uid = $_SESSION['id'];//当前用户的id
                 $ji = M('user_fen')->where(" uid = {$uid}")->find();

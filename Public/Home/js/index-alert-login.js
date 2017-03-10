@@ -9,6 +9,7 @@ $('.content-3f').click(function(){
         type:"post",
         data:{username:user,password:pass},
         success:function(data){
+            // console.log(data);
             if(data == 'y'){
                 location.reload();
             }else if(data == 'n'){

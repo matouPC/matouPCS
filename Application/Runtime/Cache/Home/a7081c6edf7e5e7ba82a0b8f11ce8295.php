@@ -451,28 +451,28 @@
 										<div class="clear"></div>
 										</div>
 									</li><?php endforeach; endif; ?>
-								<li>
-									<div class="xialai">
-										<span class="xll1">
-											<p class="xs1">删除</p>
-										</span>
-									</div>
-									<div class="spxx">
-										<img src="/matouPCS/Public/Home/img/yhmc.png">
-										<p class="spxx_01">用户名称用户名称</p>
-										<p class="spxx_02"></p>
-										<p class="spxx_03">收藏应赏</p>
-										<div class="spxx_img">
-												<img src="/matouPCS/Public/Home/img/heart.png" />
-											</div>
-										<p class="spxx_04">
-											收藏
-										</p>
-									</div>
-									<div class="spxx_sj">
-										<p class="spxx_sj_r">2016-12-12</p>
-									</div>
-								</li>
+								<?php if(is_array($li)): foreach($li as $key=>$lis): ?><li>
+										<div class="xialai">
+											<span class="xll1">
+												<p class="xs1">删除</p>
+											</span>
+										</div>
+										<div class="spxx">
+											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<p class="spxx_01"><?php echo ($lis["username"]); ?></p>
+											<p class="spxx_02"></p>
+											<p class="spxx_03"><?php echo ($lis["content_xx"]); ?></p>
+											<div class="spxx_img">
+													<img src="/matouPCS/Public/Home/img/heart.png" />
+												</div>
+											<p class="spxx_04">
+												收藏
+											</p>
+										</div>
+										<div class="spxx_sj">
+											<p class="spxx_sj_r">2016-12-12</p>
+										</div>
+									</li><?php endforeach; endif; ?>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>

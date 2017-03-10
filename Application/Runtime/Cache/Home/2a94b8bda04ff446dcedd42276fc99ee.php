@@ -131,11 +131,18 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							<li id="select-xx" style="width: 45px;">
 								<?php if($_SESSION['id'] != ''){ ?>
 								<a href="#">消息</a>
+								<div class="news">
+									<img src="/matouPCS/Public/Home/img/news.png" />
+								</div>
 								<div class="str"></div>
 								<div class="select-xx">
+								
 									<ul>
 										<li>	
 											<a href="?s=/Home/User/xqxx">需求消息</a>
+											<div class="newss">
+												<img src="/matouPCS/Public/Home/img/news.png" />
+											</div>
 										</li>
 										<li>
 											<a href="?s=/Home/User/bdxx">部队消息</a>
@@ -146,6 +153,7 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									</ul>
 								</div>
 								<?php }else{ ?>
+
 								<a href="#" onclick="alert('请先登录')">消息</a>
 								<div class="str"></div>
 								<div class="select-xx" style="display:none;">
@@ -1431,9 +1439,8 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 				<div class="f-main-c">
 					<div class="f-c-1f">
 						
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<a href="http://www.miitbeian.gov.cn"><p>豫ICP备16015506号</p></a>
 					</div>
 				</div>
 			</div>
