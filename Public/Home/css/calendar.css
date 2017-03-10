@@ -69,6 +69,11 @@
 .calendar .date-items li {
     float: left;
 }
+
+.calendar-display{
+	cursor: pointer;
+}
+
 .date-items li{
     width: 280px !important;
     margin: 0px !important;
@@ -88,6 +93,11 @@
     font-size: 28px;
     text-indent: 10px;
 }
+
+.calendar-display{
+	cursor: pointer;
+}
+
 .view-month .calendar-hd {
     padding: 10px;
 }

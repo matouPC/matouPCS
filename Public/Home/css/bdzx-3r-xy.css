@@ -16,12 +16,17 @@ a {
 	/*display: block;*/
 	list-style: none;
 	text-decoration: inherit;
-	color: #000000;
+	color: #333;
 }
-
-div {
+p{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*div {
 	position: relative;
-}
+}*/
 
 button {
 	cursor: pointer;
@@ -236,6 +241,7 @@ button {
 
 .h-c-2f img {
 	width: 100%;
+	height: 100%;
 }
 
 .s-f2-l {
@@ -449,7 +455,7 @@ color: #fff;
 	text-align: right;
 	height: 15px;
 	line-height: 15px;
-	width: 100px;
+	/*width: 100px;*/
 	margin-top: 20px;
 	margin-right: 20px;
 	overflow: hidden;
@@ -507,18 +513,36 @@ color: #fff;
 	display: block;
 	width: 164px;
 	overflow: hidden;
-	margin-top:20px;
 }
 
 .s-c-1f-3f ul li .right .tt {
 	height: 20px;
+	line-height: 20px;
 	color: #000000;
 	font-size: 14px;
 }
-
+.s-c-1f-3f ul li .right .middle{
+	height: 20px;
+	line-height: 20px;
+	color: #999999;
+	font-size: 14px;
+}
+.s-c-1f-3f ul li .right .bottom{
+	height: 20px;
+	line-height: 20px;
+	color: #BFBFBF;
+	font-size: 14px;
+}
+.s-c-1f-3f ul li .right .bottom span{
+	/*width: 40%;*/
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	display: block;
+}
 .tt span {
 	display: block;
-	width: 50%;
+	width: 100%;
 	overflow: hidden;
 }
 
@@ -569,7 +593,7 @@ color: #fff;
 	text-align: right;
 	height: 15px;
 	line-height: 15px;
-	width: 100px;
+	/*width: 100px;*/
 	margin-top: 20px;
 	margin-right: 20px;
 	overflow: hidden;
@@ -693,6 +717,7 @@ color: #fff;
 	padding: 0 10px;
 	/*overflow: hidden;*/
 	cursor: pointer;
+	position: relative;
 }
 
 .s-c-2f-3f .left ul {
@@ -782,122 +807,134 @@ color: #fff;
 	height: auto;
 	position: relative;
 }
-
-.s-c-3f .mdhd {
+.s-c-3f .mdhd{
 	width: 93px;
 	height: 83px;
 	position: absolute;
-	z-index: 555;
+	z-index: 111;
 	right: -2px;
-	top: 0;
+	top: -1px;
 }
-
-
 /*-------------------------------s-c-3f-1f--------------------------------*/
-
-.s-c-3f-1f {
+.s-c-3f-1f{
 	width: 810px;
 	height: auto;
 	border: solid #CCCCCC 1px;
 	margin: 20px 0;
 	padding: 10px 20px 15px 20px;
+	position: relative;
 }
-
-.s-c-3f-1f .yhtx {
+.s-c-3f-1f .yhtx{
 	width: 61px;
 	height: 60px;
 	float: left;
 	margin-left: -10px;
+	position: relative;
 }
-
-.s-c-3f-1f p {
+.s-c-3f-1f .yhtx .vip{
+	width: 18px;
+	height: 21px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.s-c-3f-1f p{
 	display: block;
 	font-size: 14px;
 	color: black;
-	height: 60;
+	height: 60px;
 	line-height: 60px;
 	overflow: hidden;
 	float: left;
 }
-
-.s-c-3f-1f .yhmc {
-	width: 100px;
+.s-c-3f-1f .yhmc{
+	/*width: 100px;*/
 	height: 60px;
 	margin-left: 20px;
 }
-
-.s-c-3f-1f .szd {
-	width: 150px;
+.s-c-3f-1f .szd{
+	/*width: 150px;*/
+	float: right;
 	height: 60px;
-	margin-left: 350px;
+	margin-right: 200px;
 }
-
-.s-c-3f-1f .dtnr {
+.s-c-3f-1f .dtnr{
 	width: 800px;
 	/*margin: auto;*/
 	margin: 10px 6px 5px 6px;
 	height: 60px;
 	line-height: 20px;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	display: -webkit-box;
+	white-space: normal;
 }
-
-.s-c-3f-1f ul li .pic img {
+.s-c-3f-1f ul li .pic img{
 	width: 100%;
+	height: 100%;
 }
-
-.s-c-3f-1f ul {
+.s-c-3f-1f ul{
 	width: 810px;
 	height: auto;
 	margin: auto;
 }
-
-.s-c-3f-1f ul li {
+.s-c-3f-1f ul li{
 	display: block;
 	float: left;
-	margin: 0 5px;
+	margin:0 5px;
 	margin-bottom: 20px;
 	width: 260px;
 	height: 145px;
 }
-
-
 /*.s-c-3f-1f ul li:last-child{
 	margin-right: 0px;
 }*/
-
-.s-c-3f-1f ul li .pic {
+.s-c-3f-1f ul li .pic{
 	width: 260px;
 	height: 145px;
 }
-
-.s-c-3f-1f .bottom {
+.s-c-3f-1f .bottom{
 	width: 800px;
 	height: 20px;
 	margin-left: 5px;
 	overflow: hidden;
 }
-
-.s-c-3f-1f .bottom p {
+.s-c-3f-1f .bottom p{
 	display: block;
-	width: 150px;
+	/*width: 150px;*/
 	color: #BFBFBF;
 	height: 20px;
 	line-height: 20px;
 }
-
-.s-c-3f-1f .bottom .left {
+.s-c-3f-1f .bottom .left{
 	float: left;
 }
-
-.s-c-3f-1f .bottom .right {
+.s-c-3f-1f .bottom .delete{
+	display:block;
+	margin-left: 10px;
+	float: left;
+	width: 16px;
+	height: 17px;
+}
+.s-c-3f-1f .bottom .delete:hover{
+	cursor:pointer;
+}
+.s-c-3f-1f .bottom .right{
 	float: right;
+	display: block;
 	text-align: right;
+	font-size: 14px;
+	color: #BFBFBF;
+	height: 20px;
+	line-height: 20px;
 }
-
-.s-c-3f-1f:hover {
-	border: solid #FF5C5D 1px;
+.s-c-3f-1f .bottom .right span:hover{
+	cursor: pointer;
+	color: #FF5C5D;
 }
-
-
+.s-c-3f-1f:hover{
+	border:solid #FF5C5D 1px;
+}
 /*-------------------------------s-main-b--------------------------------*/
 
 .s-main-b {
@@ -924,7 +961,9 @@ color: #fff;
 	font-size: 14px;
 	border-radius: 8px;
 }
-
+.s-main-b button:hover{
+	color: #FF9291;
+}
 
 /*-------------------------------footer-------------------------------*/
 
@@ -979,3 +1018,66 @@ color: #fff;
 
 
 /*------------------------------header------------------------------*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../font/icomoon.eot?o0r7zb');
+  src:  url('../font/icomoon.eot?o0r7zb#iefix') format('embedded-opentype'),
+    url('../font/icomoon.ttf?o0r7zb') format('truetype'),
+    url('../font/icomoon.woff?o0r7zb') format('woff'),
+    url('../font/icomoon.svg?o0r7zb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dz:before {
+  content: "\e900";
+}
+.icon-dz-kz:before {
+  content: "\e901";
+  color: #FF5C5D;
+}
+.icon-fs:before {
+  content: "\e902";
+}
+.icon-gzjy:before {
+  content: "\e903";
+}
+.icon-gzsj:before {
+  content: "\e904";
+}
+.icon-lx:before {
+  content: "\e905";
+}
+.icon-man:before {
+  content: "\e906";
+}
+.icon-woman:before {
+  content: "\e907";
+}
+.icon-date:before {
+  content: "\e908";
+}
+.icon-sc:before {
+  content: "\e909";
+}
+.icon-szd:before {
+  content: "\e90a";
+}
+.icon-zw:before {
+  content: "\e90b";
+}

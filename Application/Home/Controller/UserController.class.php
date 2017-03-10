@@ -21,9 +21,8 @@ class UserController extends Controller
         $userYs_zp =  M("dueimage")->select();//照片遍历
         $userYs_sp =  M("duevideo")->select();//视频遍历
         //收藏的应聘
-        // $userYp = M('user as u')->join('employ as e on u.id = e.uid')->select();   //
         $userYp = M('user as u')->join('employ as e on u.id = e.uid')->join("employwork as w on e.eid = w.pid")->select();   //工作经历
-       
+        
         $userYps = array();
         foreach ($userYp as $value) {
             $shou = explode(',',$value['em_shou']);

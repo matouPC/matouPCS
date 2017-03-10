@@ -46,20 +46,32 @@ body {
 
 .s-ft-f {
 	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	/*background: #CD5C5C;*/
+	height: auto;
 }
 
 .Catalog {
-	width: 200px;
+	width: auto;
 	height: 26px;
+	float: left;
+	border-left: solid 4px #FF5C5C;
+	padding-left: 6px;
+}
+
+.Catalog h2{
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 31px;
 	float: left;
 }
 
+.Catalog span{
+	color: #b3b3b3;
+	font-size: 14px;
+	margin-left: 2px;
+	line-height: 35px;
+}
+
 .More {
-	width: 70px;
-	height: 20px;
 	float: right;
 }
 
@@ -67,7 +79,7 @@ body {
 	line-height: 17px;
 	font-size: 14px;
 	color: #999999;
-	padding-top: -10px;
+	line-height: 35px;
 }
 
 .More p a:hover {
@@ -107,8 +119,7 @@ body {
 
 nav .border {
 	width: 1200px;
-	height: 2px;
-	background: #ff5c5d;
+	border-top: solid 2px #FF5C5D;
 	margin: 0 auto;
 	margin-bottom: 7px;
 }
@@ -118,6 +129,8 @@ nav .border {
 
 .h-c-2f {
 	width: 100%;
+	border: 0px !important;
+	margin: 0px !important;
 }
 
 .h-f2-l {
@@ -199,7 +212,7 @@ img {
 	float: left;
 }
 
-.h-f2-c-dec a p {
+.h-f2-c-dec a strong {
 	padding-left: 10px;
 	color: #999;
 }
@@ -249,7 +262,9 @@ img {
 
 .h-c-3f {
 	width: 100%;
-	/*background: #DEB887;*/
+	height: auto !important;
+	margin: 0px !important;
+	padding: 0px !important;
 }
 
 .h-f3-c {
@@ -266,13 +281,16 @@ img {
 .h-f3-c ul li {
 	float: left;
 	width: 16.6%;
+	text-align: center;
+	margin-top: -10px;
+	height: 45px;
+	line-height: 45px;
 }
 
 .h-f3-c ul li a {
 	display: block;
 	width: 100%;
 	height: 45px;
-	line-height: 45px;
 	color: #000;
 	font-size: 14px;
 	/*background: #66CDAA;*/
@@ -452,7 +470,7 @@ margin-bottom: 40px;
 .s-c-1f {
 	width: 100%;
 	height: 200px;
-	height: 460px;
+	height: auto;
 	/*background: darkcyan;*/
 }
 .s-f1-l {
@@ -547,10 +565,11 @@ margin-bottom: 40px;
 	padding: 10px;
 	height: 18px;
 }
-.s-f1-r-1f-word h2 {
+.s-f1-r-1f-word .h2 {
 	font-size: 20px;
 	text-align: center;
 	font-family: NewFont;
+	font-weight: bold;
 }
 #lqmtb {
 	width: 110px;
@@ -590,10 +609,13 @@ margin-bottom: 40px;
 	border: solid 1px #d9d9d9;
 	cursor: pointer;
 }
-.s-f1-r-2f table tr td:hover {
+.s-f1-r-2f table tr td:hover{
 	background-color: #F5F5F5;
+}
+.s-f1-r-2f table tr td:hover span{
 	color: #FF5C5D;
 }
+
 .s-f1-r-2f .s-f1-r-6 {
 	width: 27px;
 	height: 30px;
@@ -621,22 +643,25 @@ margin-bottom: 40px;
 	text-align: center;
 	margin-bottom: 8px;
 }
-.s-f1-r-3f h2 {
+.s-f1-r-3f .h2 {
 	font-size: 18px;
 	text-align: center;
 	font-family: NewFont;
+	font-weight: bold;
 }
 .s-c-2f {
 	width: 100%;
-	height: 440px;
-	margin-top: 50px;
+	height: auto;
+	margin-top: 30px;
 }
 .s-f2-l {
-	width: 980px;
-	height: 400px;
+	width: 980px !important;
+	height: 400px !important;
 	float: left;
 	overflow: hidden;
 	font-size: 14px !important;
+	background-color: white !important;
+	margin-top: 5px !important;
 }
 .s-f2-l ul {
 	width: 100%;
@@ -718,21 +743,27 @@ margin-bottom: 40px;
 }
 .s-f2-r {
 	margin-left: 20px;
-	height: 398px;
-	width: 198px;
+	height: 400px !important;
+	width: 200px !important;
 	border: solid 1px #cccccc;
-	background: url("../img/reword_pic .png") no-repeat;
+	background: url("../img/reword_pic .png") no-repeat !important;
 	float: right;
+	border-radius: 0px !important;
+	position: relative !important;
+	top: 5px !important;
+	right: 0px !important;
+	border: 0px !important;
 }
 .s-f2-r-1f {
 	margin-top: 75px;
 	width: 100%;
 	height: 25px;
 }
-.s-f2-r-1f h2 {
+.s-f2-r-1f h3 {
 	text-align: center;
 	font-family: NewFont;
 	font-size: 28px;
+	font-weight: bold;
 }
 .s-f2-r-2f {
 	width: 100%;
@@ -772,16 +803,16 @@ margin-bottom: 40px;
 /*------3f-------*/
 .s-c-3f {
 	width: 100%;
-	height: 604px;
-	margin-top: 50px;
+	height: auto;
+	margin-top: 30px;
 	/*background: yellowgreen;*/
 }
 .s-f3-l {
-	width: 1000px;
-	height: 445px;
+	width: 980px;
+	height: 427px;
 	float: right;
-	margin-right: -10px;
-	/*background: #00FFFF;*/
+	margin-right: -9px;
+	margin-top: -2px;
 }
 .s-f3-l ul {
 	width: 100%;
@@ -789,9 +820,7 @@ margin-bottom: 40px;
 }
 .s-f3-l ul li {
 	float: left;
-	/*width: 20%;*/
-	
-	margin: 10px;
+	margin: 7.5px;
 }
 .s-f3-l ul li a {
 	display: block;
@@ -888,7 +917,7 @@ margin-bottom: 40px;
 .s-f3-r {
 	width: 200px;
 	height: 420px;
-	margin-top: 10px;
+	margin-top: 5px;
 	float: left;
 	background: #fff;
 }
@@ -955,11 +984,14 @@ margin-bottom: 40px;
 .ljyp {
 	width: 110px;
 	height: 35px;
+	padding-top: 10px;
 }
-.s-f3-r-3f button {
+.s-f3-r-3f a {
+	display: block;
 	cursor: pointer;
 	width: 110px;
 	height: 35px;
+	line-height: 34px;
 	outline: none;
 	border: none;
 	border-radius: 5px;
@@ -973,14 +1005,14 @@ margin-bottom: 40px;
 .s-f3-x {
 	width: 100%;
 	height: 120px;
-	/*background: #DEB887;*/
+	margin-top: 15px;
 }
 
 /*------4f-------*/
 .s-c-4f {
 	width: 100%;
-	height: 568px;
-	margin-top: 50px;
+	height: auto;
+	margin-top: 30px;
 	/*background: burlywood;*/
 }
 
@@ -988,9 +1020,8 @@ margin-bottom: 40px;
 .s-f4-r {
 	width: 200px;
 	height: 380px;
-	margin-top: 13px;
-	float: left;
-	margin-left: 20px;
+	margin-top: 5px;
+	float: right;
 	background: url("../img/wharf_force_pic.png") no-repeat;
 }
 .s-f4-r-1f {
@@ -1067,7 +1098,8 @@ margin-bottom: 40px;
 	border-left: #cccccc 1px solid;
 	border-right: #cccccc 1px solid;
 }
-.s-f4-r-4f button {
+.s-f4-r-4f a {
+	display: block;
 	cursor: pointer;
 	width: 110px;
 	height: 35px;
@@ -1077,6 +1109,7 @@ margin-bottom: 40px;
 	background-color: #FF6B6B;
 	color: white;
 	font-size: 14px;
+	line-height: 34px;
 }
 
 /*��ͷ�����ұ�������*/
@@ -1138,8 +1171,8 @@ margin-bottom: 40px;
 /*------5f-------*/
 .s-c-5f {
 	width: 100%;
-	height: 635px;
-	margin-top: 50px;
+	height: auto;
+	margin-top: 30px;
 	/*background: cyan;*/
 }
 
@@ -1147,7 +1180,7 @@ margin-bottom: 40px;
 .s-f5-l {
 	width: 200px;
 	height: 450px;
-	margin-top: 30px;
+	margin-top: 5px;
 	float: left;
 	background: url("../img/wharfmall_pic.png") no-repeat;
 }
@@ -1234,7 +1267,8 @@ margin-bottom: 40px;
 	border-right: #cccccc 1px solid;
 	border-bottom: #cccccc 1px solid;
 }
-.s-f5-l-4f button {
+.s-f5-l-4f a {
+	display: block;
 	cursor: pointer;
 	width: 110px;
 	height: 35px;
@@ -1244,6 +1278,7 @@ margin-bottom: 40px;
 	background-color: #FF6B6B;
 	color: white;
 	font-size: 14px;
+	line-height: 34px;
 }
 
 /*��ͷ�̳����������*/
@@ -1283,13 +1318,14 @@ margin-bottom: 40px;
 /*------6f-------*/
 .s-c-6f {
 	width: 100%;
-	height: 388px;
-	margin-top: 50px;
+	height: auto;
+	margin-top: 30px;
 }
 .s-f6-l {
-	width: 500px;
-	height: 388px;
+	width: auto;
+	height: auto;
 	float: left;
+	margin-top: 5px;
 }
 .tsul {
 	display: block;
@@ -1359,7 +1395,6 @@ margin-bottom: 40px;
 	width: 100%;
 }
 .s-f6-l ul {
-	margin-top: 25px;
 	height: 388px;
 }
 .s-f6-l ul li {
@@ -1380,20 +1415,18 @@ margin-bottom: 40px;
 	margin-left: 10px;
 }
 .s-f6-r {
-	width: 600px;
-	height: 388px;
+	width: auto;
+	height: auto;
 	float: right;
-	/*	background: #48D1CC;*/
+	margin-top: -6px;
 }
 .f6-l-o1 {
-	width: 100%;
-	height: 194px;
+	width: 560px;
+	height: auto;
 }
 .f6-l-o1 ul {
 	display: block;
-	margin-top: 20px;
 	width: 100%;
-	margin-left: 30px;
 }
 .f6-l-o1 ul li {
 	float: left;
@@ -1416,11 +1449,16 @@ margin-bottom: 40px;
 	transition: .5s transform;
 	transform: translateZ(0);
 }
-.f6-l-o1 ul li p a {
+.f6-l-o1 ul li div a {
 	color: #333333;
 	margin: 0 auto;
-	font-size: 16px;
 }
+
+.f6-l-o1 ul li div h3{
+	font-size: 16px;
+	text-align: center;
+}
+
 .f6-l-o2 {
 	width: 100%;
 	height: 194px;
@@ -1455,6 +1493,11 @@ margin-bottom: 40px;
 .f4-o1-1 {
 	height: 230px;
 }
+
+.f4-o1-1 h5{
+	font-size: 12px;
+}
+
 .f4-o1-1 div {
 	width: 180px;
 	margin: 0 auto;
@@ -1524,6 +1567,17 @@ margin-bottom: 40px;
 	padding-left: 5%;
 	padding-right: 5%;
 }
+
+.f-c-1f h6{
+	float: left;
+	font-size: 12px;
+	color: #fff;
+	line-height: 17px;
+	text-align: center;
+	padding: 5px;
+	margin-top: 2px;
+}
+
 .f-c-1f a {
 	color: #fff;
 	line-height: 30px;
@@ -1539,10 +1593,9 @@ margin-bottom: 40px;
 /*troops开始*/
 .troops {
 	width: 980px;
-	height: 390px;
+	height: auto;
 	float: left;
-	margin-top: 13px;
-	margin-bottom: 6px;
+	margin-top: 5px;
 }
 .company {
 	width: 230px;
@@ -1661,11 +1714,8 @@ margin-bottom: 40px;
 /*wharf开始*/
 .wharf {
 	width: 980px;
-	height: 465px;
+	height: 456px;
 	float: right;
-	/*margin-left: 20px;*/
-	
-	margin-top: 25px;
 }
 .mtscc {
 	width: 218px;

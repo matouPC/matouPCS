@@ -28,6 +28,7 @@ body {
 	background-position: left top;
 	background-repeat: repeat;
 	background-attachment: scroll;
+	position: relative;
 }
 
 .clearfix:after {

@@ -1,3 +1,4 @@
+
     var cNode =document.getElementById('type').getElementsByTagName('dd');
     for( var i=0; i<cNode.length; i++){
         cNode[i].index= i;
@@ -148,45 +149,48 @@ for( var i=0; i<rzbd.length; i++){
 }
 //从一级点进来的搜索事件
 // if($('#type').val() ){}
-var ty = document.getElementById('types');
-switch (ty.value){
-    case '1':
-        setCookie('type','经理\\店长');
+// var ty = document.getElementById('types');
+// switch (ty.value){
+//     case '1':
+//         setCookie('type','经理\\店长');
         
-        $('#jl').attr('class','seled');
-        break;
-    case '2':
-        setCookie('type','营业员');
-         $('#yy').attr('class','seled');
-        break;
-    case '3':
-        setCookie('type','化妆师');
-         $('#hz').attr('class','seled');
-        break;
-    case '4':
-        setCookie('type','数码师');
-         $('#sm').attr('class','seled');
-        break;
-    case '5':
-        setCookie('type','视频剪辑师');
-         $('#sp').attr('class','seled');
-        break;
-    case '6':
-        setCookie('type','摄像师');
-         $('#sx').attr('class','seled');
-        break;
-    case '7':
-        setCookie('type','摄影师');
-         $('#sy').attr('class','seled');
-        break;
-    case '8':
-        setCookie('type','策划师');
-         $('#ch').attr('class','seled');
-        break;
-        $('#bx').html('<a>不限</a>');
-}
-
+//         $('#jl').attr('class','seled');
+//         break;
+//     case '2':
+//         setCookie('type','营业员');
+//          $('#yy').attr('class','seled');
+//         break;
+//     case '3':
+//         setCookie('type','化妆师');
+//          $('#hz').attr('class','seled');
+//         break;
+//     case '4':
+//         setCookie('type','数码师');
+//          $('#sm').attr('class','seled');
+//         break;
+//     case '5':
+//         setCookie('type','视频剪辑师');
+//          $('#sp').attr('class','seled');
+//         break;
+//     case '6':
+//         setCookie('type','摄像师');
+//          $('#sx').attr('class','seled');
+//         break;
+//     case '7':
+//         setCookie('type','摄影师');
+//          $('#sy').attr('class','seled');
+//         break;
+//     case '8':
+//         setCookie('type','策划师');
+//          $('#ch').attr('class','seled');
+//         break;
+//         $('#bx').html('<a>不限</a>');
+// }
 //招聘大厅搜索分页
+$('#dd_tzh').click(function(){
+    setCookie('address','');
+    getPage(1);
+});
 var url_ajax = "?s=/Home/Box/zpdt";//这个路径是真正显示列表的
    $(function() {
         $("#ajax_lists").delegate(".pager a", "click", function() {

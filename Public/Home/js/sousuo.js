@@ -136,6 +136,10 @@ $('#daTe').click(function(){
     setCookie('date','');
     getPage(1);
 });
+$('#dq_tzh').click(function(){
+    setCookie('address','');
+    getPage(1);
+});
 //获取地址
 // function address(address){
 //     setCookie('address',address);
@@ -149,14 +153,63 @@ function onbeforeunload_handler(){
     setCookie("sex",'');//性别
     setCookie("age",'');//年龄
     setCookie("date",'');//活动时间
-    setCookie("address",'');//活动时间     
+    setCookie("address",'');//活动时间    
     return warning;      
 }
 
 $('#submits').click(function(){
     alert($('#city').val());
 });
+// 选择日期
+$('#dd').calendar({
+    trigger: '#dt',
+    zIndex: 999,
+    format: 'yyyy-mm-dd',
+    onSelected: function(view, date, data) {
+        console.log('event: onSelected');
+        
+    },
+    onClose: function(view, date, data) {
+        console.log('event: onClose')
+        console.log('view:' + view)
+        console.log('date:' + date)
+        console.log('data:' + (data || 'None'));
+    }
+});
+var url_ajax = "?s=/Home/Box/orders";//这个路径是真正显示列表的
+   $(function() {
+        $("#ajax_lists").delegate(".pager a", "click", function() {
+            var page = $(this).attr("data-page");
+            getPage(page);
+        })
+        getPage(1);
+    })
+    function getPage(page,type) {
+         $("#ajax_lists").html("<h1>请稍等。。。</h1>");
+         var type = getCookie("type");//类型
+         var sex = getCookie("sex");//性别
+         var age = getCookie("age");//年龄
+         var date = getCookie("date");//活动时间
+         var address = getCookie("address");//活动时间
+         var re = getCookie("re");//热门
 
+         $.get(url_ajax, {p: page,type:type,sex:sex,age:age,date:date,address:address,re:re}, function(data) {
+            $('#ajax_lists').html(data);
+            // alert(data);
+        })
+    }
+//刷新或关闭浏览器清除搜索使用的cookie值
+window.onbeforeunload = onbeforeunload_handler;  
+function onbeforeunload_handler(){      
+    var warning="确认退出sssssssssss?";
+    setCookie("type",'');//类型
+    setCookie("sex",'');//性别
+    setCookie("age",'');//年龄
+    setCookie("date",'');//活动时间
+    setCookie("bd",'');//活动时间   
+    setCookie("address",'');//活动时间   
+    return warning;      
+}
 function setCookie(cookieName, cookieValue, cookieExpires) {
     try {
         cookieName = cookieName.trim();

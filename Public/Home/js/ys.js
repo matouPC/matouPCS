@@ -115,6 +115,28 @@ for( var i=0; i<bd.length; i++){
       getPage(1);
     }
 }
+// $('#dq_tzh').click(function(){
+    
+// });
+function dq_tzh(){
+    setCookie('date','');
+     getPage(1);
+}
+$('#dd').calendar({
+    trigger: '#dt',
+    zIndex: 999,
+    format: 'yyyy-mm-dd',
+    onSelected: function(view, date, data) {
+        console.log('event: onSelected');
+        
+    },
+    onClose: function(view, date, data) {
+        console.log('event: onClose')
+        console.log('view:' + view)
+        console.log('date:' + date)
+        console.log('data:' + (data || 'None'));
+    }
+});
 //加载列表项
 var url_ajax = "?s=/Home/Box/ysdt";//这个路径是真正显示列表的
 $(function() {

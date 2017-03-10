@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>码头商城</title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/2rank.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
+	</head>
+
+	<body>
+		<header>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
+					<div class="h-c-2f">
+						<div class="s-f2-l-f">
+							<div class="f2-l-1-f">
+								<a href="?s=/Home/Index">
+									<img alt="码头商城" src="__PUBLIC__/Home/img/logo.png" />
+								</a>
+							</div>
+							<div class="f2-l-3-f">
+								<h1>码头商城</h1>
+							</div>
+						</div>
+						<div class="s-f2-r-f">
+							<div class="demo">
+									<ul>
+										<li><input type="text" id="tt" value="" class="text" autocomplete="off" /></li>
+										<li><input type="submit" value="搜索" class="button" /></li>
+										<li>
+											<a href="" class="button2">供应商入驻商城</a>
+										</li>
+										<div class="clear"></div>
+									</ul>
+							</div>
+						</div>
+					</div>
+					<div class="h-c-4f">
+						<img src="__PUBLIC__/Home/img/banner.png" />
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="s-main-c">
+				<div class="s-main-l">
+					<div class="s-c-1f">
+						<p class="title">
+							<a href="#">所有分类</a>>
+							<span>找到相关100.5万相关结果</span>
+						</p>
+						<div class="clear"></div>
+					</div>
+					<div class="s-c-2f">
+						<div id="filter">
+							<dl>
+								<dt>类型</dt>
+								<dd>
+									<div class="gray">
+										<a>不限</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>销售</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>租赁</a>
+									</div>
+								</dd>
+								<div class="clear"></div>
+							</dl>
+							<dl>
+								<dt>物品</dt>
+								<dd>
+									<div class="gray">
+										<a>不限</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>音响</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>舞台</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>灯光</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>屏幕</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>泡泡机</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>彩妆饰品</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>摄影摄影器材</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>婚纱礼服</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>婚车</a>
+									</div>
+								</dd>
+								<dd>
+									<div>
+										<a>其他</a>
+									</div>
+								</dd>
+								<div class="clear"></div>
+							</dl>
+							<dl id="xz-price">
+								<dt>价格</dt>
+								<dd>
+									<div class="gray">
+										<a>不限</a>
+									</div>
+								</dd>
+								<dd>
+									<div class="txjg">
+										<input type="number">
+										<span>-</span>
+										<input type="number">&nbsp;元
+										<button>
+											ok
+										</button>
+									</div>
+								</dd>
+								<div class="clear"></div>
+							</dl>
+							<dl id="xz-dq">
+								<dt>地区</dt>
+								<dd>
+									<div class="gray">
+										<a>不限</a>
+									</div>
+								</dd>
+								<dd>
+									<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
+								</dd>
+								<div class="clear"></div>
+							</dl>
+						</div>
+						<div class="px">
+							<p>排序：</p>
+							<div class="hot">
+								热门
+							</div>
+							<div class="new">
+								最新
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="s-c-3f">
+						<div class="f3-c-1">
+							<div class="f3-c-user">
+								<div class="f3-c-user-img">
+									<img src="img/bdmc.png" />
+								</div>
+								<div class="f3-c-user-xx">
+									<p class="spmc">
+										商铺名称
+									</p>
+									<p>
+										经销商
+									</p>
+									<p>
+										收藏量100
+									</p>
+									<p>
+										郑州
+									</p>
+									<p class="clearfloat"></p>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<div class="f3-ul-cz">
+											<img src="img/123.png" />
+										</div>
+										<img src="img/yhmc-big.png" alt="商铺名称" />
+										<div class="f3-ul-c1">
+											<p class="red">￥500元</p>
+											<p  class="lll">浏览量:200次</p>
+											<p class="spxq">
+												我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我
+											</p>
+										</div>
+										<div class="f3-ul-c2">
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="f3-ul-cz">
+											<img src="img/123.png" />
+										</div>
+										<img src="img/yhmc-big.png" alt="商铺名称" />
+										<div class="f3-ul-c1">
+											<p class="red">￥500元</p>
+											<p  class="lll">浏览量:200次</p>
+											<p class="spxq">
+												我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我
+											</p>
+										</div>
+										<div class="f3-ul-c2">
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="f3-ul-cz">
+											<img src="img/123.png" />
+										</div>
+										<img src="img/yhmc-big.png" alt="商铺名称" />
+										<div class="f3-ul-c1">
+											<p class="red">￥500元</p>
+											<p  class="lll">浏览量:200次</p>
+											<p class="spxq">
+												我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我
+											</p>
+										</div>
+										<div class="f3-ul-c2">
+										</div>
+									</a>
+								</li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+					</div>
+					<div class="s-c-3f">
+						<div class="f3-c-1">
+							<div class="f3-c-user">
+								<div class="f3-c-user-img">
+									<img src="img/bdmc.png" />
+								</div>
+								<div class="f3-c-user-xx">
+									<p class="spmc">
+										商铺名称
+									</p>
+									<p>
+										经销商
+									</p>
+									<p>
+										收藏量100
+									</p>
+									<p>
+										郑州
+									</p>
+									<p class="clearfloat"></p>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a href="#">
+										<div class="f3-ul-cz">
+											<img src="img/123.png" />
+										</div>
+										<img src="img/yhmc-big.png" alt="商铺名称" />
+										<div class="f3-ul-c1">
+											<p class="red">￥500元</p>
+											<p  class="lll">浏览量:200次</p>
+											<p class="spxq">
+												我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我
+											</p>
+										</div>
+										<div class="f3-ul-c2">
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="f3-ul-cz">
+											<img src="img/123.png" />
+										</div>
+										<img src="img/yhmc-big.png" alt="商铺名称" />
+										<div class="f3-ul-c1">
+											<p class="red">￥500元</p>
+											<p  class="lll">浏览量:200次</p>
+											<p class="spxq">
+												我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我
+											</p>
+										</div>
+										<div class="f3-ul-c2">
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<div class="f3-ul-cz">
+											<img src="img/123.png" />
+										</div>
+										<img src="img/yhmc-big.png" alt="商铺名称" />
+										<div class="f3-ul-c1">
+											<p class="red">￥500元</p>
+											<p  class="lll">浏览量:200次</p>
+											<p class="spxq">
+												我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我我
+											</p>
+										</div>
+										<div class="f3-ul-c2">
+										</div>
+									</a>
+								</li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+					</div>
+					<div class="djjzgd">
+						<button>点击加载更多</button>
+					</div>
+				</div>
+				<div class="s-main-r">
+					<div class="s-r-3f">
+						<div>
+							<a href="javascript://">
+								<h2>推荐出租</h2>
+							</a>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="s-r-2f">
+						<ul>
+							<li>
+								<a href="#">
+									<img src="img/yhmc-big.png" alt="商铺名称" />
+									<div class="f2r-ul-c1">
+										<strong>摄像机</strong>
+										<p class="right red">￥500元/天</p>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="f2r-ul-c2">
+										<p>商铺名称：</p>
+										<p class="right">郑州</p>
+										<div class="clearfloat"></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="img/yhmc-big.png" alt="商铺名称" />
+									<div class="f2r-ul-c1">
+										<strong>摄像机</strong>
+										<p class="right red">￥500元/天</p>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="f2r-ul-c2">
+										<p>商铺名称：</p>
+										<p class="right">郑州</p>
+										<div class="clearfloat"></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="img/yhmc-big.png" alt="商铺名称" />
+									<div class="f2r-ul-c1">
+										<strong>摄像机</strong>
+										<p class="right red">￥500元/天</p>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="f2r-ul-c2">
+										<p>商铺名称：</p>
+										<p class="right">郑州</p>
+										<div class="clearfloat"></div>
+									</div>
+								</a>
+							</li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+					<div class="s-r-3f">
+						<div>
+							<a href="javascript://">
+								<h2>推荐商铺</h2>
+							</a>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="s-r-4f">
+					<ul>
+						<li>
+							<a href="#">
+								<div class="tj">
+									<div class="tj-img">
+										<img src="img/bdmc.png" width="101" height="101">
+									</div>
+									<div class="tj_01">
+										<strong class="tj_01_01">部队名称</strong>
+										<p class="tj_01_02">
+											<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+										</p>
+										<p class="tj_01_02">
+											<span class="black-333">粉丝数量：</span> 110
+										</p>
+										<p class="tj_01_02">
+											<span class="black-333">所在地点：</span> 郑州
+										</p>
+									</div>
+									<div class="clear"></div>
+									<div>
+										<p class="tj_01_04">
+											<span class="black-333">主营产品：</span>
+											<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="tj">
+									<div class="tj-img">
+										<img src="img/bdmc.png" width="101" height="101">
+									</div>
+									<div class="tj_01">
+										<strong class="tj_01_01">部队名称</strong>
+										<p class="tj_01_02">
+											<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+										</p>
+										<p class="tj_01_02">
+											<span class="black-333">粉丝数量：</span> 110
+										</p>
+										<p class="tj_01_02">
+											<span class="black-333">所在地点：</span> 郑州
+										</p>
+									</div>
+									<div class="clear"></div>
+									<div>
+										<p class="tj_01_04">
+											<span class="black-333">主营产品：</span>
+											<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="tj">
+									<div class="tj-img">
+										<img src="img/bdmc.png" width="101" height="101">
+									</div>
+									<div class="tj_01">
+										<strong class="tj_01_01">部队名称</strong>
+										<p class="tj_01_02">
+											<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+										</p>
+										<p class="tj_01_02">
+											<span class="black-333">粉丝数量：</span> 110
+										</p>
+										<p class="tj_01_02">
+											<span class="black-333">所在地点：</span> 郑州
+										</p>
+									</div>
+									<div class="clear"></div>
+									<div>
+										<p class="tj_01_04">
+											<span class="black-333">主营产品：</span>
+											<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+										</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<div class="clear"></div>
+					</ul>
+
+				</div>
+				</div>
+			</div>
+			<div class="clearfloat"></div>
+		</section>
+		<?php	include'2rank-footer.php';?>
+		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+		<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
+		<script src="__PUBLIC__/Home/js/City_data.js"></script>
+		<script src="__PUBLIC__/Home/js/areadata.js"></script>
+		<script src="__PUBLIC__/Home/js/2rank.js"></script>
+		<script src="__PUBLIC__/Home/js/showwin2.js"></script>
+	</body>
+
+</html>

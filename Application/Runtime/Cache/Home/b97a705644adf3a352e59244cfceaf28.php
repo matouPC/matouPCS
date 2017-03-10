@@ -7,79 +7,6 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/datePicker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
-		<style>
-			.s-f1-r ul li a .img {
-				margin-top: 15px;
-				margin-right: 10px;
-				float: right;
-			}
-			.select-yfb {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-yfb ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-yfb ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-xx ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-xx ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -473,8 +400,8 @@
 	</body>
 </html>
 
-					<div class="h-c-2f">
-						<div class="s-f2-l">
+					<div class="">
+						<div>
 							<div class="f2-l-1">
 								<a href="?s=/Home/Index">
 									<img src="/matouPCS/Public/Home/img/logo.png">
@@ -497,7 +424,7 @@
 						</div>
 					</div>
 					<div class="h-c-3f">
-						<img src="/matouPCS/Public/Home/img/banner1.png" />
+						<img src="/matouPCS/Public/Home/img/banner.png" />
 					</div>
 				</div>
 			</div>
@@ -812,9 +739,8 @@
 				<div class="f-main-c">
 					<div class="f-c-1f">
 						
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<p>© 20016－2017 xishimatou.com, all rights reserved 郑州码头网络技术有限公司 </p>
+						<p>豫ICP备16015506号 喜事码头</p>
 					</div>
 				</div>
 			</div>

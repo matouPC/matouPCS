@@ -53,18 +53,44 @@
 				/*background: coral;*/
 			}
 			
-			.tyint li {
-				/*width: 690px;*/
+			.tyintb {
+				display: block;
+				width: 100%;
+				height: auto;
+				margin: 0 auto;
+				font-size: 14px;
+				position: relative;
+				/*background: coral;*/
+			}
+			
+			.tyintb li {
 				height: 30px;
 				display: block!important;
 				padding-top: 10px;
 				border: 0px solid #fff!important;
 			}
 			
+			.tyint li {
+				height: 30px;
+				display: block!important;
+				padding-top: 10px;
+				border: 0px solid #fff!important;
+			}
+			
+			.tyintblih140 {
+				height: 140px!important;
+			}
+			
 			.litl {
 				width: 85px;
 				height: 30px;
-				/*background: chartreuse;*/
+				float: left;
+				line-height: 0px;
+			}
+			
+			.litlb {
+				height: 140px;
+				height: 30px;
 				float: left;
 				line-height: 0px;
 			}
@@ -72,14 +98,31 @@
 			.litr {
 				width: 360px;
 				height: 30px;
-				/*background: blanchedalmond;*/
 				padding-left: 10px;
 				float: left;
 				position: relative;
 				line-height: 30px;
 			}
 			
-			.litr .xztp {
+			.litrb {
+				width: 360px;
+				height: auto!important;
+				padding-left: 10px;
+				float: left;
+				position: relative;
+				line-height: 30px;
+			}
+			
+			.litrc {
+				width: 590px;
+				height: 140px;
+				padding-left: 10px;
+				float: left;
+				position: relative;
+				line-height: 30px;
+			}
+			
+			.litrc .xztp {
 				width: 140px;
 				height: 140px;
 				float: left;
@@ -95,9 +138,10 @@
 			.liti {
 				width: auto;
 				height: auto;
-				position: relative;
-				top: -24px;
-				left: 110px;
+				position: absolute;
+				top: 4px;
+				left: 123px;
+				z-index: -1;
 				cursor: pointer;
 			}
 			
@@ -139,7 +183,7 @@
 				text-align: right;
 			}
 			
-			.w150t{
+			.w150t {
 				width: 138px;
 				height: 28px;
 				border: solid 1px #DEDEDE;
@@ -153,6 +197,14 @@
 				height: 28px;
 				border: 1px solid #DEDEDE;
 				padding-left: 10px;
+			}
+			
+			.w200tb {
+				width: 338px;
+				height: 28px;
+				
+				padding-left: 10px;
+				border: 1px solid #DEDEDE;
 			}
 			
 			.w200s {
@@ -200,7 +252,7 @@
 			}
 			
 			.w95t {
-				width: 85px;
+				width: 118px;
 				height: 28px;
 				border: 1px solid #DEDEDE;
 				padding-left: 10px;
@@ -238,6 +290,7 @@
 				padding-left: 10px;
 				left: 0 !important;
 				top: 30px !important;
+				cursor: pointer;
 			}
 			
 			.lidel {
@@ -257,9 +310,11 @@
 				/*margin-top: 10px;*/
 				/*border: 1px solid #FF5C5D;*/
 			}
-			.addmation1 li{
+			
+			.addmation1 li {
 				position: relative;
 			}
+			
 			.addmation li {
 				width: 848px;
 				height: auto;
@@ -271,9 +326,6 @@
 			}
 			
 			.addmation li:hover {
-				/*border-top:1px solid  #FF5C5D;;*/
-				/*border-left: 1px solid #FF5C5D;
-				border-right:1px solid #FF5C5D ;*/
 				border: 1px solid #FF5C5D;
 			}
 			
@@ -289,4 +341,8 @@
 			#mhllx {
 				width: 100;
 				height: 0px!important;
+			}
+			
+			.upload {
+				display: none;
 			}

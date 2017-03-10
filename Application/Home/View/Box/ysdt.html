@@ -1,22 +1,35 @@
 <!-- 应赏大厅的局部 -->
 <ul>
 	<foreach name="list" item="lists">
+		<li>
 		<a href="?s=/Home/Ysq/xqys/id/{$lists.did}">
-			<li>
-				<div class="tx">
+			<div class="s-l-1f">
+				<div class="yhtx">
 					<img src="__PUBLIC__/Home/img/yhmc.png" />
 				</div>
-				<p class="yhmc">用户{$lists.username|substr=0,5}</p>
-				<p class="price-f">
-					{$lists.price}元/天
+				<p class="yhmc">
+					用户{$lists.username|substr=0,5}
 				</p>
-				<p class="hddd">所在地: <?php $listss = explode(',',$lists['address']); echo $listss[0]; ?></p>
-				<div class="details">
-					<p>{$lists.name}</p>
-					<p class="age-f">{$lists.age}岁</p>
-					<!--<p style="margin-left: 20px; color: #999999;"></p>-->
-					<p class="grjj">{$lists.content}</p>
-					<p>职位:{$lists.type_d}</p>
+				<p class="jg">
+					薪资：
+					<span class="red">{$lists.price}元/天</span>
+				</p>
+				<p class="szd">
+					所在地：<?php $listss = explode(',',$lists['address']); echo $listss[0]; ?>
+				</p>
+				<div class="clearfloat"></div>
+			</div>
+			<div class="s-l-2f">
+				<div class="middle">
+					<p class="black-333">{$lists.name}</p>
+					<p class="age">{$lists.age}</p>
+					<p class="grjj">
+						<span class="black-333">个人简介：</span> {$lists.content}
+					</p>
+					<div class="clearfloat"></div>
+				</div>
+				<div>
+					<p class="black-333">职位:{$lists.type_d}</p>
 					<?php $imgnum = explode(',',$lists['imagename_z']);
 					      $vidnum = explode(',',$lists['imagename_v']);
 					      $dang = explode(',',$lists['dangdate']);
@@ -31,18 +44,29 @@
 						   $vidnums = count($vidnum);
 						   $sss = count($ss);
 						   ?>
-					<p class="zpzp">照片作品：{$imgnums}个</p>
-					<p class="spzp">视频作品：{$vidnums}个</p>
+					<p class="zpzp">
+						<span class="black-333">照片作品：</span> {$imgnums}个
+					</p>
+					<p class="spzp">
+						<span class="black-333">视频作品：</span> {$vidnums}个
+					</p>
 					<p class="dq">
-						档期:<?php echo $dang[0];echo $dangs[0];?>&nbsp;&nbsp;......
+						<span class="black-333">档期：</span> <?php echo $dang[0];echo $dangs[0];?>&nbsp;&nbsp;......
 					</p>
-					<p class="sc">
-						<a href="">已有{$sss}人收藏</a>
-					</p>
-					<p class="sjfb">{$lists.date}发布</p>
+					<div class="clearfloat"></div>
 				</div>
-			</li>
+			</div>
+			<div class="s-l-3f">
+				<div class="left">
+					已有{$sss}人收藏
+				</div>
+				<div class="right">
+					{$lists.date}
+				</div>
+				<div class="clearfloat"></div>
+			</div>
 		</a>
+	</li>
 	</foreach>
 <div class="pager">{$page}</div>
 </ul>

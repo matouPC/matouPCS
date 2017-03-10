@@ -39,7 +39,7 @@ body {
 	width: 802px;
 	height: 400px;
 	margin: auto;
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	left: 0px;
 	right: 0px;
@@ -165,6 +165,10 @@ body {
 	cursor: pointer;
 }
 
+.f2-l-2-f h1{
+	font-size: 18px;
+}
+
 .f2-l-2-f:hover {
 	color: white;
 	background-color: #FF5C5D;
@@ -216,6 +220,10 @@ body {
 	cursor: pointer;
 }
 
+.f2-l-3-f h1{
+	font-size: 18px;
+}
+
 .f2-l-3-f:hover {
 	background-color: #FF5C5D;
 	color: white;
@@ -241,7 +249,7 @@ img {
 
 .demo {
 	width: 720px;
-	margin: 25px auto;
+	margin: 34px auto;
 }
 
 .demo h2 {
@@ -286,8 +294,10 @@ img {
 }
 
 .button2 {
-	width: 135px;
-	height: 32px;
+	display: block;
+	width: 133px;
+	height: 30px;
+	text-align: center;
 	margin-left: 30px;
 	padding: 0;
 	padding-top: 2px\9;
@@ -297,6 +307,8 @@ img {
 	cursor: pointer;
 	border: 1px solid #cdcdcd;
 	color: #fff;
+	font-size: 13px;
+	line-height: 30px;
 }
 
 
@@ -307,7 +319,7 @@ img {
 	height: 120px;
 	/*background: #00BFFF;*/
 	margin: 0 auto;
-	padding: 10px 0;
+	padding: 32px 0;
 	border-bottom: 1px solid #999999;
 }
 
@@ -531,6 +543,10 @@ img {
 	margin-top: 10px;
 }
 
+.s-c-1f-z img{
+	margin-top: 20px;
+}
+
 .s-c-1f p {
 	float: left;
 	display: block;
@@ -625,7 +641,7 @@ img {
 	width: 610px;
 	height: 46px;
 	margin: 0 auto;
-	/*background: #00BFFF;*/
+	margin-top: 10px;
 }
 
 .s-f2l-c1 ul li {
@@ -648,6 +664,10 @@ img {
 	display: block;
 	line-height: 45px;
 	text-align: center;
+}
+
+.s-f2l-c1 ul li a h3{
+	font-size: 16px;
 }
 
 .s-f2l-c1 ul li a:hover{
@@ -1189,7 +1209,7 @@ dd {
 .user_01_03 {
 	width: 254px;
 	height: 48px;
-	margin-top: 10px !important;
+	margin-top: 5px !important;
 	line-height: 16px;
 	color: #999999;
 	overflow: hidden;
@@ -1264,6 +1284,11 @@ dd {
 	position: relative;
 }
 
+.f3-c-user-img img{
+	width: 100%;
+	height: 100%;
+}
+
 .f3-c-user-xx {
 	width: 740px;
 	height: 39px;
@@ -1335,7 +1360,7 @@ dd {
 }
 
 .f3-ul-c1 .lll {
-	color: #DEDEDE;
+	color: #BFBFBF;
 	float: right;
 }
 
@@ -1961,6 +1986,14 @@ dd {
 	float: right;
 }
 
+.f2r-ul-c1 strong {
+	display: block;
+	float: left;
+	font-size: 14px;
+	margin-top: 5px;
+	color: #333333;
+}
+
 .f2r-ul-c1 p {
 	display: block;
 	float: left;
@@ -2064,11 +2097,19 @@ dd {
 }
 
 .s-r-3f div a {
-	width: 132px;
+	width: 107px;
+	height: 55px;
 	display: block;
+	padding-left: 15px;
 	float: left;
-	padding-top: 10px;
-	/*margin-left:-15px ;*/
+	line-height: 55px;
+	color: white;
+	background: url(../img/rightj.png) no-repeat;
+	margin-top: 10px;
+}
+
+.s-r-3f div a h2{
+	font-size: 20px;
 }
 
 
@@ -2099,6 +2140,11 @@ dd {
 	margin: 12px 15px;
 }
 
+.tj-img img{
+	width: 100%;
+	height: 100%;
+}
+
 .tj_01 {
 	width: 124px;
 	height: 110px;
@@ -2118,6 +2164,7 @@ dd {
 	height: 20px;
 	line-height: 20px;
 	overflow: hidden;
+	display: block;
 }
 
 .tj_01_02 {
@@ -2306,7 +2353,7 @@ dd {
 
 .f-c-1f {
 	width: 1200px;
-	height: auto;
+	height: 90px;
 	margin: 0 auto;
 	/*background: #C1E2B3;*/
 }
