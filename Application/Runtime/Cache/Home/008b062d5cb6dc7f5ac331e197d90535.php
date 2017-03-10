@@ -730,10 +730,18 @@
 							<?php if(is_array($xxoo)): foreach($xxoo as $key=>$listn): ?><li>
 									<a href="?s=/Home/Ysq/xqys/id/<?php echo ($listn["did"]); ?>">
 										<div class="yp">
+<<<<<<< HEAD
 											<div class="xg">
 												<div class="xg-img">
 													<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
 												</div>
+=======
+											<div class="xg">		
+			                 <?php if($listn[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($listn["pubtime"]); ?>/<?php echo ($listn["imagename"]); ?>"   width="101" height="101" style="border-radius:50%"/><?php endif; ?>
+											
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 												<div class="xg_01">
 													<div class="xg_01_01">
 														<p><?php echo ($listn["name"]); ?></p>

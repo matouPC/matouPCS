@@ -1259,7 +1259,10 @@
 										<li>
 										<a href="?s=/Home/Tzsc/xqxz/id/<?php echo ($tiaos["fid"]); ?>">
 											<div class="tsuimg">
-												<img src="/matouPCS/Public/Home/img/flea_people.png" />
+										<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($tiaos["pubtime"]); ?>/<?php echo ($tiaos["imagename"]); ?>"  alt="" /><?php endif; ?>
+											
 											</div>
 											<div class="tscontent1">
 												<div class="tscontent1-a">
@@ -1281,7 +1284,9 @@
 										<li>
 										<a href="?s=/Home/Tzsc/xqqg/id/<?php echo ($tiaos["fid"]); ?>">
 											<div class="tsuimg">
-												<img src="/matouPCS/Public/Home/img/flea_people.png" />
+												<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($tiaos["pubtime"]); ?>/<?php echo ($tiaos["imagename"]); ?>"  alt="" /><?php endif; ?>
 											</div>
 											<div class="tscontent1">
 												<div class="tscontent1-a">
@@ -1386,8 +1391,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+<<<<<<< HEAD
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
+=======
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank-footer.css" />
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 	</head>
 	<body>
 		<footer>
@@ -1398,14 +1407,22 @@
 							<ul>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
 										<h5>喜事码头客服热线</h5>
+=======
+										<h4>喜事码头客服热线</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>工作时间:每天9:00-23:00</p>
 										<p>188-8888-888</p>
 									</div>
 								</li>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
 										<h5>关注喜事码头微信公众号</h5>
+=======
+										<h4>关注喜事码头微信公众号</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>
 											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
 										</p>
@@ -1413,7 +1430,11 @@
 								</li>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
 										<h5>关于我们</h5>
+=======
+										<h4>关于我们</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>
 											<a href="#">关于喜事码头</a>
 										</p>
@@ -1430,7 +1451,11 @@
 								</li>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
 										<h5>联系我们</h5>
+=======
+										<h4>联系我们</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>官方邮箱:xishimatou@163.com</p>
 										<p>通讯地址:河南省郑州市863软件园</p>
 									</div>
@@ -1442,6 +1467,7 @@
 				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
+<<<<<<< HEAD
 						<h6>友情链接：</h6>
 						<a href="#">友情链接</a>
 						<a href="#">友情链接</a>
@@ -1461,6 +1487,12 @@
 						<a href="#">友情链接</a>
 						<p>© 20016－2017 xishimatou.com, all rights reserved 郑州码头网络技术有限公司 </p>
 						<p>豫ICP备16015506号 喜事码头</p>
+=======
+						
+						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
+						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
+						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 					</div>
 				</div>
 			</div>

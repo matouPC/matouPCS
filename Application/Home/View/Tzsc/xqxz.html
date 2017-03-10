@@ -71,19 +71,49 @@
 						<div class="u-img">
 							   	<php>if($_SESSION['id'] == $list['uid']){</php>
 									  <if condition="$list[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  style="border-radius:50%"/>
+                                    </if>
+								</a>
 								<elseif condition="$list[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}">  
+								<if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%" />
+                                    </if></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  style="border-radius:50%"/>
+                                    </if></a>
 									</if>
 									<php>}else{</php>
                                         <if condition="$list[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  alt="" />
+                                    </if></a>
 								<elseif condition="$list[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%"/>
+                                    </if></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}">  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%"/>
+                                    </if></a>
 									</if>
                                        <php>}</php>
 						</div>
@@ -240,36 +270,16 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-<<<<<<< HEAD
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan({$list.fid},{$list.uid})" >我要留言</button>
-=======
-
 							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content_x" placeholder="留言吧"></textarea>
 							<button class="lybtn" onclick="liuyan({$list.fid},{$list.uid})" >我要留言</button>
 
->>>>>>> 706bcda07b6b78ee01ffa618e087c090c5e2e8f0
 						</div>
 						<br>
 						<script type="text/javascript">
 							function liuyan(xsid,fid){
 								//获得基本信息id
-<<<<<<< HEAD
-								var content = $('#contentt').val();
-=======
-<<<<<<< HEAD
-=======
 
 								var content = $('#content_x').val();
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> ecac97798ff9fa7ada481945b7e21c9e572fe0b9
-								var content = $('#contentt').val();
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
->>>>>>> e68f8276d68e538a66dbd665bd4a306ce2123c44
->>>>>>> 706bcda07b6b78ee01ffa618e087c090c5e2e8f0
 								if(content == ''){
 									alert('滚犊子');
 								}else{

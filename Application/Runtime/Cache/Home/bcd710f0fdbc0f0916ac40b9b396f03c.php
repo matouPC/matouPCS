@@ -458,17 +458,35 @@
 					<div class="userin">
 						<div class="u-img">
 							   	<?php if($_SESSION['id'] == $list['uid']){ ?>
-									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>"  style="border-radius:50%"/><?php endif; ?>
+								</a>
 								<?php elseif($list[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>">  
+								<?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>" style="border-radius:50%" /><?php endif; ?></a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>"  style="border-radius:50%"/><?php endif; ?></a><?php endif; ?>
 									<?php }else{ ?>
-                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+                                        <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php elseif($list[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($list["uid"]); ?>">
+								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>" style="border-radius:50%"/><?php endif; ?></a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>"><img src="/matouPCS/Public/Home/img/tx2-3r.png" /></a><?php endif; ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>">  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($list["pubtime"]); ?>/<?php echo ($list["imagename"]); ?>" style="border-radius:50%"/><?php endif; ?></a><?php endif; ?>
                                        <?php } ?>
 						</div>
 						<div class="u-cont">
@@ -608,36 +626,16 @@
 							<p>留言区</p>
 						</div>
 						<div class="s-2f-c2">
-<<<<<<< HEAD
-							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="contentt" placeholder="留言吧"></textarea>
-							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)" >我要留言</button>
-=======
-
 							<textarea style="resize: none;width: 832px;height: 102px; padding:8px;color: #333; border: solid 1px #DEDEDE;"  id="content_x" placeholder="留言吧"></textarea>
 							<button class="lybtn" onclick="liuyan(<?php echo ($list["fid"]); ?>,<?php echo ($list["uid"]); ?>)" >我要留言</button>
 
->>>>>>> 706bcda07b6b78ee01ffa618e087c090c5e2e8f0
 						</div>
 						<br>
 						<script type="text/javascript">
 							function liuyan(xsid,fid){
 								//获得基本信息id
-<<<<<<< HEAD
-								var content = $('#contentt').val();
-=======
-<<<<<<< HEAD
-=======
 
 								var content = $('#content_x').val();
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> ecac97798ff9fa7ada481945b7e21c9e572fe0b9
-								var content = $('#contentt').val();
->>>>>>> 6cd88e7931464c4ca860f2fdbe30c951f7add0ac
->>>>>>> e68f8276d68e538a66dbd665bd4a306ce2123c44
->>>>>>> 706bcda07b6b78ee01ffa618e087c090c5e2e8f0
 								if(content == ''){
 									alert('滚犊子');
 								}else{
@@ -689,7 +687,7 @@
 					<div class="f-c-1f">
 						
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
-						<a href="http://www.miitbeian.gov.cn"><p>豫ICP备16015506号</p></a>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
 			</div>

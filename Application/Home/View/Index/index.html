@@ -829,7 +829,12 @@
 										<li>
 										<a href="?s=/Home/Tzsc/xqxz/id/{$tiaos.fid}">
 											<div class="tsuimg">
-												<img src="__PUBLIC__/Home/img/flea_people.png" />
+										<if condition="$tiaos[imagename]==''">
+										<img src="__PUBLIC__/Home/img/flea_people.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$tiaos.pubtime}/{$tiaos.imagename}"  alt="" />
+                                    </if>
+											
 											</div>
 											<div class="tscontent1">
 												<div class="tscontent1-a">
@@ -854,7 +859,11 @@
 										<li>
 										<a href="?s=/Home/Tzsc/xqqg/id/{$tiaos.fid}">
 											<div class="tsuimg">
-												<img src="__PUBLIC__/Home/img/flea_people.png" />
+												<if condition="$tiaos[imagename]==''">
+										<img src="__PUBLIC__/Home/img/flea_people.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$tiaos.pubtime}/{$tiaos.imagename}"  alt="" />
+                                    </if>
 											</div>
 											<div class="tscontent1">
 												<div class="tscontent1-a">
@@ -955,11 +964,17 @@
 						</div>
 						<div class="clearf"></div>
 					</div>
+<<<<<<< HEAD
 					<div class="clearf"></div>
 				</div>
 			</div>
 		</section>
 		<include file="Public/foot"/>
+=======
+					<span style="height: 50px;display: block;"></span>
+
+				<include file="Public/footer"/>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 	</body>
 	<script type="text/javascript" src="j__PUBLIC__/Home/s/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/jquery.leoweather.min.js"></script>

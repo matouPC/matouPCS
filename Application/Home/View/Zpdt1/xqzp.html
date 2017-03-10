@@ -72,21 +72,51 @@
 				<div class="s-main-r">
 					<div class="userin">
 						<div class="u-img">
-							   	<php>if($_SESSION['id'] == $list['uid']){</php>
+						  	<php>if($_SESSION['id'] == $list['uid']){</php>
 									  <if condition="$list[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  style="border-radius:50%"/>
+                                    </if>
+								</a>
 								<elseif condition="$list[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}">  
+								<if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%" />
+                                    </if></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  style="border-radius:50%"/>
+                                    </if></a>
 									</if>
 									<php>}else{</php>
                                         <if condition="$list[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  alt="" />
+                                    </if></a>
 								<elseif condition="$list[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%"/>
+                                    </if></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}">  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%"/>
+                                    </if></a>
 									</if>
                                        <php>}</php>
 						</div>

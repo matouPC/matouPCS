@@ -36,6 +36,7 @@ class IndexController extends Controller
     	$this->assign('stu_one',$list_one);
     	// $this->assign('stu_two',$list_two);
     	// $this->assign('stu_three',$list_three);
+    	//个人中心首页
 
     	$this->assign('budui',$budui);
 

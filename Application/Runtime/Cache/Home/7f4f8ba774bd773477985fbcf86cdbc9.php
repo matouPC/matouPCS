@@ -627,12 +627,15 @@
 						<div class="s-r-2f">
 							<ul>
 								<?php if(is_array($listnew)): foreach($listnew as $key=>$listnews): ?><li>
-									<a href="?s=/Home/Tzsc/xqqg/id/<?php echo ($listnews["id"]); ?>">
+									<a href="?s=/Home/Tzsc/xqqg/id/<?php echo ($listnews["fid"]); ?>">
 										<!--<div class="f2r-ul-cz">
 											<img src="img/red.png" />
 										</div>-->
 										<div class="f2t">
-											<img src="/matouPCS/Public/Home/img/yhmc.png" width="120" height="120">
+										  <?php if($listnews[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" width="120" height="120">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($listnews["pubtime"]); ?>/<?php echo ($listnews["imagename"]); ?>" style="border-radius:50%" width="120" height="120"/><?php endif; ?>
+											
 											<p class="f2t_01">
 											<?php if($lis[username]==$lis[tel]): ?>用户：<?php echo (substr($listnews["username"],0,5)); endif; ?>
 								               <?php if($lis[username]!=$lis[tel]): ?>用户：<?php echo ($listnews["username"]); endif; ?></p>
@@ -696,17 +699,32 @@
 								<?php if(is_array($user)): foreach($user as $key=>$users): ?><li>
 										<div class="tj">
 									<?php if($_SESSION['id'] == $users['uid']){ ?>
-									  <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($users["uid"]); ?>">		<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+									  <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($users["uid"]); ?>">
+								  <?php if($$users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?>
+								</a>
 								<?php elseif($users[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?>
+                                    </a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a><?php endif; ?>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?></a><?php endif; ?>
 									<?php }else{ ?>
-                                        <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+                                        <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>" style="border-radius:50%" width="101" height="101" /><?php endif; ?></a>
 								<?php elseif($users[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a>
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?></a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($users["uid"]); ?>">	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"></a><?php endif; ?>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>" style="border-radius:50%" width="101" height="101" /><?php endif; ?></a><?php endif; ?>
                                        <?php } ?>			
 											<div class="tj_01">
 												<a href="?s=/Home/Mtbu/grbdzy">

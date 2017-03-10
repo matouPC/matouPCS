@@ -636,7 +636,7 @@
 									var p=id;
 									var t = "<?php echo session('id');?>";
 									var contents = $('#contents').val();
-									alert(id);
+								//	alert(id);
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
 											url:"?s=/Home/Mtbu/spbddyly_liuyan",
@@ -837,7 +837,7 @@
 					<div class="f-c-1f">
 						
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
-						<a href="http://www.miitbeian.gov.cn"><p>豫ICP备16015506号</p></a>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
 			</div>

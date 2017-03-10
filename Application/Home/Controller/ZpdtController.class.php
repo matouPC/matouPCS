@@ -10,7 +10,7 @@ class ZpdtController extends Controller
     	//应聘区
     	$list = M('user as u')->join('employ as e on u.id = e.uid')->join('employwork as m on e.eid = m.pid')->order('e.eid desc')->select();
         //推荐应聘
-        $listn = M('employ as e')->join('employwork as m on e.eid = m.pid')->order('collect desc')->limit('0,3')->select();
+        $listn = M('employ as e')->field( "e.*,u.pubtime,u.imagename" )->join('user as u on u.id = e.uid')->order('collect desc')->limit('0,3')->select();
         //推荐部队
         // $listNew = M('forcee as f')->join('user as u on u.id = f.uid')->order('f.collect desc')->limit('0,3')->select();
         $listNew = M('forcee')->order('collect desc')->limit('0,3')->select();

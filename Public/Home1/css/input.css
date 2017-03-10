@@ -1,0 +1,348 @@
+			input {
+				background: none;
+				outline: none;
+				border: 0px;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			input[type="number"] {
+				-moz-appearance: textfield;
+			}
+			
+			select {
+				/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+				border: solid 1px #DEDEDE;
+				/*很关键：将默认的select选择框样式清除*/
+				appearance: none;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				/*在选择框的最右侧中间显示小箭头图片*/
+				background: url(../img/select.png) no-repeat scroll right center transparent;
+				/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+				padding-right: 14px;
+			}
+			/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+			
+			select::-ms-expand {
+				display: none;
+			}
+			
+			.clearfloat {
+				clear: both;
+			}
+			
+			.cf {
+				clear: both;
+				width: 0!important;
+				height: 0!important;
+				margin: 0px!important;
+				padding: 0px!important;
+			}
+			
+			.tyint {
+				display: block;
+				width: 550px;
+				height: auto;
+				margin: 0 auto;
+				font-size: 14px;
+				position: relative;
+				/*background: coral;*/
+			}
+			
+			.tyintb {
+				display: block;
+				width: 100%;
+				height: auto;
+				margin: 0 auto;
+				font-size: 14px;
+				position: relative;
+				/*background: coral;*/
+			}
+			
+			.tyintb li {
+				height: 30px;
+				display: block!important;
+				padding-top: 10px;
+				border: 0px solid #fff!important;
+			}
+			
+			.tyint li {
+				height: 30px;
+				display: block!important;
+				padding-top: 10px;
+				border: 0px solid #fff!important;
+			}
+			
+			.tyintblih140 {
+				height: 140px!important;
+			}
+			
+			.litl {
+				width: 85px;
+				height: 30px;
+				float: left;
+				line-height: 0px;
+			}
+			
+			.litlb {
+				height: 140px;
+				height: 30px;
+				float: left;
+				line-height: 0px;
+			}
+			
+			.litr {
+				width: 360px;
+				height: 30px;
+				padding-left: 10px;
+				float: left;
+				position: relative;
+				line-height: 30px;
+			}
+			
+			.litrb {
+				width: 360px;
+				height: auto!important;
+				padding-left: 10px;
+				float: left;
+				position: relative;
+				line-height: 30px;
+			}
+			
+			.litrc {
+				width: 590px;
+				height: 140px;
+				padding-left: 10px;
+				float: left;
+				position: relative;
+				line-height: 30px;
+			}
+			
+			.litrc .xztp {
+				width: 140px;
+				height: 140px;
+				float: left;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			
+			.xztp img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.liti {
+				width: auto;
+				height: auto;
+				position: absolute;
+				top: 4px;
+				left: 123px;
+				z-index: -1;
+				cursor: pointer;
+			}
+			
+			.liti1 {
+				width: 28px;
+				height: 20px;
+				position: relative;
+				top: -26px;
+				left: 110px;
+				z-index: -1;
+				cursor: pointer;
+			}
+			
+			.liti2 {
+				width: 28px;
+				height: 20px;
+				position: relative;
+				top: -46px;
+				left: 285px;
+				cursor: pointer;
+				z-index: -1;
+			}
+			
+			.litx {
+				display: block;
+				float: left;
+				height: 30px;
+				font-size: 16px;
+				line-height: 30px;
+				color: #FF5C5D;
+			}
+			
+			.litc {
+				display: block;
+				height: 30px;
+				font-size: 14px;
+				line-height: 30px;
+				float: right;
+				text-align: right;
+			}
+			
+			.w150t {
+				width: 138px;
+				height: 28px;
+				border: solid 1px #DEDEDE;
+				z-index: 11;
+				cursor: pointer;
+				padding-left: 10px;
+			}
+			
+			.w200t {
+				width: 188px;
+				height: 28px;
+				border: 1px solid #DEDEDE;
+				padding-left: 10px;
+			}
+			
+			.w200tb {
+				width: 338px;
+				height: 28px;
+				
+				padding-left: 10px;
+				border: 1px solid #DEDEDE;
+			}
+			
+			.w200s {
+				width: 200px;
+				height: 28px;
+				border: 1px solid #DEDEDE;
+				padding-left: 10px;
+			}
+			
+			.w200s {
+				width: 200px;
+				height: 30px;
+				border: 1px solid #DEDEDE;
+			}
+			
+			.w36 {
+				width: 34px;
+				height: 30px;
+				line-height: 30px;
+				margin-left: 20px;
+				float: left;
+			}
+			
+			.w41 {
+				/*width: 41px;*/
+				height: 30px;
+				line-height: 30px;
+				margin-left: 20px;
+				float: left;
+			}
+			
+			.w75s {
+				width: 53px;
+				height: 28px;
+				padding: 0 10px;
+				border: 1px solid #DEDEDE;
+			}
+			
+			.w95s {
+				width: 130px;
+				height: 30px;
+				float: left;
+				border: 1px solid #DEDEDE;
+				padding-left: 10px;
+			}
+			
+			.w95t {
+				width: 118px;
+				height: 28px;
+				border: 1px solid #DEDEDE;
+				padding-left: 10px;
+			}
+			
+			.w75t {
+				width: 63px;
+				height: 28px;
+				border: 1px solid #DEDEDE;
+				padding-left: 10px;
+			}
+			
+			.w209 {
+				width: 197px;
+				height: 28px;
+				color: #999;
+				margin-left: 9px;
+				padding-left: 10px;
+				background: #bfbfbf;
+				border: solid #DEDEDE 1px;
+			}
+			
+			.w340 {
+				width: 328px;
+				height: 66px;
+				border: 1px solid #DEDEDE;
+				resize: none;
+				padding: 10px;
+			}
+			
+			#dt {
+				width: 140px;
+				height: 28px;
+				border: 1px solid #DEDEDE;
+				padding-left: 10px;
+				left: 0 !important;
+				top: 30px !important;
+				cursor: pointer;
+			}
+			
+			.lidel {
+				width: 16px;
+				height: 16px;
+				/*background: coral;*/
+				position: absolute;
+				right: -150px;
+				top: 10px;
+				cursor: pointer;
+			}
+			
+			.addmation1 {
+				width: 850px;
+				height: auto;
+				margin: 0 auto;
+				/*margin-top: 10px;*/
+				/*border: 1px solid #FF5C5D;*/
+			}
+			
+			.addmation1 li {
+				position: relative;
+			}
+			
+			.addmation li {
+				width: 848px;
+				height: auto;
+				display: block;
+				margin: 0 auto;
+				margin-top: 10px;
+				border-top: 1px solid #fff;
+				border-bottom: 1px solid #999;
+			}
+			
+			.addmation li:hover {
+				border: 1px solid #FF5C5D;
+			}
+			
+			#addfgx {
+				width: 850px!important;
+				height: 1px!important;
+				position: relative;
+				z-index: 999;
+				left: -206px;
+				border: 1px solid #999;
+			}
+			
+			#mhllx {
+				width: 100;
+				height: 0px!important;
+			}
+			
+			.upload {
+				display: none;
+			}
