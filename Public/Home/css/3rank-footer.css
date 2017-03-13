@@ -21,9 +21,10 @@ a {
 /*-------footer------*/
 
 footer {
-	margin-top: 50px;
+	margin-top: 150px;
 	font-size: 12px !important;
 	text-align: center;
+	width: 100%;
 }
 
 .f-content-main {

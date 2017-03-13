@@ -18,6 +18,7 @@ class BoxController extends CommonController {
         $date = $_GET['date'];//活动时间
         $address = $_GET['address'];//活动地点
         $re = $_GET['re'];//热门  排序
+        // var_dump($address);die;
         // 类型 性别 年龄 活动时间 活动地点         
         if($type != '' && $sex != '' && $age != '' && $date != '' && $address != ''){
             $where = "r.type = '{$type}' and r.sex = '{$sex}' and r.age = '{$age}'";
@@ -117,7 +118,7 @@ class BoxController extends CommonController {
           }else{
               $count = M("reward1")->count();
           }
-          $Page = new \Think\PageAjax($count,10);
+          $Page = new \Think\PageAjax($count,20);
           if(!empty($where) && !empty($jwhere)){
                 $list = M('reward1 as e')->join('user as u on e.uid = u.id')->join("reward2 as r on r.pid = e.psid")->where($where.' and '.$jwhere)->order(" e.psid desc ")->limit($Page->firstRow.','.$Page->listRows)->select();
             }else if(!empty($where)){
@@ -257,7 +258,7 @@ class BoxController extends CommonController {
             $jwhere = "e.address = '{$address}'";
         }
         $count = M('due as d')->where($where)->count();
-        $Page = new \Think\PageAjax($count,10);//分页开始
+        $Page = new \Think\PageAjax($count,20);//分页开始
         if(!empty($where) && !empty($bd)){//部队和条件都存在的情况
             $list = M('due as d')->join('user as u on d.uid = u.id')->join('dueimage as m on d.did = m.pid')->join('duevideo as v on d.did = v.pid')->join('due_dang as a on a.pid = d.did')->join("forcee as f on f.uid = u.id")->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
         }else if(!empty($bd)){//只有部队存在的情况 利用join多查询了认证部队的表
@@ -486,7 +487,7 @@ class BoxController extends CommonController {
         }else{
             $count = M('recruit1')->count();
         }
-        $Page = new \Think\PageAjax($count,10);//分页开始
+        $Page = new \Think\PageAjax($count,20);//分页开始
         //分析条件是否为空的条件
         if(!empty($where) && !empty($jwhere) && !empty($address)){/*****************************/
              $data = M('recruit2 as r')->join("forcee as f on f.uid = r.usid")->where($jwhere.' and '.$where)->select();
@@ -685,7 +686,7 @@ class BoxController extends CommonController {
         //     $where = "e.address = '{$address}'";
         // }
         $count = M('employ')->count();
-        $Page = new \Think\PageAjax($count,10);//分页开始
+        $Page = new \Think\PageAjax($count,20);//分页开始
         if(!empty($where) && !empty($address) && !empty($zuo)){
             $lists = M('user as u')->join('employvideo as v on v.pid = r.eid')->join('employimage as m on r.eid = m.pid')->join('employ as r on u.id = r.uid')->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
             $list = $this->addre_yp($address,$lists);

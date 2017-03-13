@@ -1,178 +1,146 @@
+<!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>悬赏大厅</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/xsdt1-xy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/datePicker.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/hzw-city-picker.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/2rank.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/calendar.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
-		
-		<!-- <link rel="stylesheet" type="text/css" href="http://www.sucaihuo.com/jquery/css/common.css" /> -->
-		<style>
-			.s-f1-r ul li a .img {
-				margin-top: 15px;
-				margin-right: 10px;
-				float: right;
-			}
-			#xz-date{
-				position: relative;
-			}
-
-			.sjxz {
-				position: absolute;
-				top: 10px;
-				left: 111px;
-			}
-			.select-yfb {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-yfb ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			
-			.select-yfb ul li a {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			
-			.select-xx {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-xx ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-xx ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			
-			.select-xx ul li a {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-		</style>
 	</head>
-	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	
+
 	<body onbeforeunload="checkLeave()">
-		
+		<div class="show-bg"></div>
 		<header>
-		<include file="Public/header"/>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
 					<div class="h-c-2f">
-						<div class="s-f2-l">
-							<div class="f2-l-1">
-								<a href="?s=/Home/Index">
-									<img src="__PUBLIC__/Home/img/logo.png" />
+						<div class="s-f2-l-f">
+							<div class="f2-l-1-f">
+								<a href="indexstore.php">
+									<img src="__PUBLIC__/Home/img/logo.png" alt="喜事码头" />
 								</a>
 							</div>
-							<div class="f2-l-2">悬赏大厅</div>
+							<div class="f2-l-3-f">
+								<h1>悬赏大厅</h1>
+							</div>
 							<a href="?s=/Home/Ysq">
-								<div class="f2-l-3">应赏区</div>
+								<div class="f2-l-2-f">
+									<h1>应赏区</h1>
+								</div>
 							</a>
 						</div>
-						<div class="s-f2-r">
+						<div class="s-f2-r-f">
 							<div class="demo">
-								<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
-									<ul>
-										<li><input type="text" id="tt" value="" class="text" style="text-align: left;" autocomplete="off" /></li>
-										<li><input type="submit" value="搜索" class="button" /></li>
-										<li><input type="submit" value="商家认证部队" class="button2" /></li>
+								<ul>
+									<li><input type="text" id="tt" value="" class="text" autocomplete="off" /></li>
+									<li><input type="submit" value="搜索" class="button" /></li>
+									<li><button id="fbxq" type="submit" class="button2">发布需求</button></li>
 
-									</ul>
-								</form>
+								</ul>
 							</div>
 						</div>
 					</div>
-					<div class="h-c-3f">
-						<img src="__PUBLIC__/Home/img/banner1.png" />
+					<div class="h-c-4f">
+						<img src="__PUBLIC__/Home/img/banner.png" />
 					</div>
 				</div>
 			</div>
 		</header>
-		<div class="spdl" id="spdl" title="消息">
-			<div class="titlena">
-				<img src="__PUBLIC__/Home/img/swtitle.png">
-				<div class="rhide">
-					<img src="__PUBLIC__/Home/img/hide.png">
-				</div>
+		<!--发布需求-->
+		<div class="fbxq">
+			<div class="fbxq-close">
+				<img src="__PUBLIC__/Home/img/alert-close.png" />
 			</div>
-			<div class="fbtype">
-				<a>类型：</a>
-				<a href="#">
-					<p id="fbp1">婚礼喜事</p>
-				</a>
-				<a href="#" style="margin-left: 24px;">
-					<p id="fbp2">门面活动</p>
-				</a>
+			<div class="fbxq-title">
+				请选择您的需求
 			</div>
-			<div class="spfx"></div>
-			<div class="content">
-				<textarea style="resize: none; width: 420px; height: 100px;border-radius: 15px;margin-left: 40px; border: 0;padding: 10px;"></textarea>
-			</div>
-			<div class="swbtn">
-				<div class="swbtn-c">
-					<div>
-						<img src="__PUBLIC__/Home/img/addp.png" />
+			<div class="clear"></div>
+			<ul>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyxs.png" />
 					</div>
-					<div style="margin-left: 10px;">
-						<img src="__PUBLIC__/Home/img/adds.png" />
+					<div class="fbxq-1f">
+						悬赏
 					</div>
-					<button class="tjbtn" id="tjbtn">发布</button>
-				</div>
-			</div>
+					<div class="fbxq-2f">
+						<span class="red">临时雇佣</span>
+						主持人、摄影摄像师、化妆师、策划师等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyys.png" />
+					</div>
+					<div class="fbxq-1f">
+						应赏
+					</div>
+					<div class="fbxq-2f">
+						主持人、摄影摄像师、化妆师、策划师等婚庆从业者发布
+						<span class="red">兼职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyzp.png" />
+					</div>
+					<div class="fbxq-1f">
+						招聘
+					</div>
+					<div class="fbxq-2f">
+						<span class="red">长期雇佣</span>
+						摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyyp.png" />
+					</div>
+					<div class="fbxq-1f">
+						应聘
+					</div>
+					<div class="fbxq-2f">
+						摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者发布
+						<span class="red">全职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyqg.png" />
+					</div>
+					<div class="fbxq-1f">
+						求购二手
+					</div>
+					<div class="fbxq-2f">
+						如果您想要购买二手物品，点击这里填写求购要求，让卖家主动找到您
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyxz.png" />
+					</div>
+					<div class="fbxq-1f">
+						处理闲置
+					</div>
+					<div class="fbxq-2f">
+						如果您想要出售你的闲置，点击这里填写闲置信息，让买家主动找到您
+					</div>
+				</li>
+				<div class="clear"></div>
+			</ul>
 		</div>
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-l">
 					<div class="s-c-1f">
-						<p style="position: relative;top: 10px;">
-							<a href="#" style="font-size: 16px;">所有分类</a>>
-							<a href="#" style="font-size: 14px; color: #999;">找到相关{$num}条相关结果</a>
+						<p class="title">
+							<a href="#">所有分类</a>>
+							<span>找到相关100.5万相关结果</span>
 						</p>
+						<div class="clear"></div>
 					</div>
 					<div class="s-c-2f">
 						<div id="filter">
@@ -280,7 +248,7 @@
 									</div>
 								</dd>
 							</dl>
-							<!-- <dl id="">
+							<!-- <dl>
 								<dt>赏金/天</dt>
 								<dd>
 									<div class="gray">
@@ -312,12 +280,13 @@
 										<a>6000元以上</a>
 									</div>
 								</dd>
+								<div class="clear"></div>
 							</dl> -->
 							<dl id="xz-date">
 								<dt>活动时间</dt>
 								<dd>
-									<div class="gray">
-										<a id="daTe">不限</a>
+									<div class="gray" id="daTe">
+										<a>不限</a>
 									</div>
 								</dd>
 								<dd>
@@ -329,62 +298,45 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
-								<dt>活动地点</dt>
+							<script type="text/javascript">
+							
+							    </script>
+							<dl id="xz-dq">
+								<dt>地区</dt>
 								<dd>
-									<div id="ceshi">
-										<form name="xxoo">
-											<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
-										</form>
+									<div class="gray"id="dq_tzh">
+										<a>不限</a>
 									</div>
 								</dd>
+								<dd>
+									<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
+								</dd>
+								<div class="clear"></div>
 							</dl>
-							<script type="text/javascript">
-							var url_ajax = "?s=/Home/Box/orders";//这个路径是真正显示列表的
-							   $(function() {
-							        $("#ajax_lists").delegate(".pager a", "click", function() {
-							            var page = $(this).attr("data-page");
-							            getPage(page);
-							        })
-							        getPage(1);
-							    })
-							    function getPage(page,type) {
-							         $("#ajax_lists").html("<h1>请稍等。。。</h1>");
-							         var type = getCookie("type");//类型
-							         var sex = getCookie("sex");//性别
-							         var age = getCookie("age");//年龄
-							         var date = getCookie("date");//活动时间
-							         var address = getCookie("address");//活动时间
-							         var re = getCookie("re");//热门
-							         $.get(url_ajax, {p: page,type:type,sex:sex,age:age,date:date,address:address,re:re}, function(data) {
-							            $('#ajax_lists').html(data);
-							        })
-							    }
-							    </script>
-									<div class="px">
-								<p>排序：</p>
-								<div class="hot">
-									最新
-								</div>
-								<div class="new">
-									热门
-								</div>
+						</div>
+						<div class="px">
+							<p>排序：</p>
+							<div class="hot">
+								热门
+							</div>
+							<div class="new">
+								最新
 							</div>
 						</div>
+						<div class="clear"></div>
 					</div>
-					<script type="text/javascript">
-						
-            		</script>
-					<div class="s-c-3f"  id="ajax_lists">
-						
+					<div class="s-c-3f" >
+						<div class="s-c-2f-2f" id='ajax_lists'>
+						</div>
 					</div>
 				</div>
-				<script type="text/javascript"></script>
 				<div class="s-main-r">
-					<div class="s-r-1f">
+					<div class="s-r-3f">
 						<div>
-							<a href="#"><img src="__PUBLIC__/Home/img/tzxs.png" /></a>
-							<a class="clearfloat"></a>
+							<a href="javascript://">
+								<h2>推荐悬赏</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
 					<div class="s-r-2f">
@@ -411,13 +363,15 @@
 								</li>
 							</foreach>
 							<li class="clearfloat" style="border: 0; height: 0px; width: 0px; background: rgba(255,255,255,0.0); "></li>
+							<div class="clear"></div>
 						</ul>
 					</div>
 					<div class="s-r-3f">
 						<div>
-							<a href="#"><img src="__PUBLIC__/Home/img/tjbd.png" /></a>
-							<!--<a href="#"><img src="img/tjcz.png" /></a>-->
-							<a class="clearfloat"></a>
+							<a href="javascript://">
+								<h2>推荐商铺</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
 					<div class="s-r-4f">
@@ -445,7 +399,7 @@
 									</a>
 								</li>
 							</foreach>
-							<!--<li class="clearfloat"></li>-->
+							<div class="clear"></div>
 						</ul>
 
 					</div>
@@ -453,179 +407,15 @@
 			</div>
 			<div class="clearfloat"></div>
 		</section>
-	<include file="Public/footer"/>
+		<include file="Public/footer"/>
 	</body>
-	
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
+	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
-	<script src="__PUBLIC__/Home/js/calendar.js"></script>
 	<script src="__PUBLIC__/Home/js/City_data.js"></script>
-	<script src="__PUBLIC__/Home/js/sousuo.js"></script>
-	<script src="__PUBLIC__/Home/js/areadata.js"></script>
+	<script src="__PUBLIC__/Home/js/calendar.js"></script>
+	
 	<script src="__PUBLIC__/Home/js/2rank.js"></script>
-	<script type="text/javascript">
-		
-
-		
-			//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
-			$("#filter dt+dd a").attr("class", "seled");
-			/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
-			                                                     不然后面通过$("#filter a[class='seled']")访问不到class样式为seled的a标签。*/
-
-			//为filter下的所有a标签添加单击事件
-			$("#filter a").click(function() {
-				$(this).parents("dl").children("dd").each(function() {
-					//下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
-					//$(this).children("div").children("a").removeClass("seled");
-					//$(this).find("a").removeClass("seled");
-					$('a', this).removeClass("seled");
-				});
-
-				$(this).attr("class", "seled");
-
-				//				alert(RetSelecteds()); //返回选中结果
-			});
-
-		function RetSelecteds() {
-			var result = "";
-			$("#filter a[class='seled']").each(function() {
-				result += $(this).html() + "\n";
-			});
-			return result;
-		}
-		//		$('#date').click(function(){
-		//				alert(RetSelecteds()+$('#date').val()+$('#city').val());
-		//			})
-		//热门
-		$('.px .hot').click(function() {
-			$('.px .hot').css('background-color', '#ff5c5d');
-			$('.px .new').css('background-color', '#999999');
-			 getPage(1);
-		})
-		$('.px .new').click(function() {
-			setCookie('re',1);
-			$('.px .new').css('background-color', '#ff5c5d');
-			$('.px .hot').css('background-color', '#999999');
-			getPage(1);
-		})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		//查看号码
-		$(function() {
-			$("#find").click(function() {
-				//				alert("充值")
-				$("#spdl").show();
-				$("#find").css("background", "#ff5c5d");
-			});
-			$("#spdl-ok").click(function() {
-
-			});
-			$("#spdl-esc").click(function() {
-				$(".spdl").hide();
-			});
-		});
-		//弹窗
-		$(function() {
-			$("#fbp1").css("border", "2px solid #ff5c5d");
-			$("#fbp2").click(function() {
-					$("#fbp2").css("border", "2px solid #ff5c5d");
-					$("#fbp1").css("border", "2px solid  #f2f2f2");
-				}),
-				$("#fbp1").click(function() {
-					$("#fbp1").css("border", "2px solid #ff5c5d");
-					$("#fbp2").css("border", "2px solid  #f2f2f2");
-				});
-			$(".rhide").click(function() {
-				$("#spdl").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-			$("#tjbtn").click(function() {
-				$("#spdl").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-		});
-		//-------------------------------日期----------------------------------------
-			$('#dd').calendar({
-				trigger: '#dt',
-				zIndex: 999,
-				format: 'yyyy-mm-dd',
-				onSelected: function(view, date, data) {
-					console.log('event: onSelected');
-					
-				},
-				onClose: function(view, date, data) {
-					console.log('event: onClose')
-					console.log('view:' + view)
-					console.log('date:' + date)
-					console.log('data:' + (data || 'None'));
-				}
-			});
-			// alert($('#dt').val());
-		// 	var flag = true;
-		// 	function checkLeave(){
-		// 　　　　window.event.returnValue="确定离开当前页面吗？";
-		// 			setCookie("type",'');//类型
-		// 			setCookie("sex",'');//性别
-		// 			setCookie("age",'');//年龄
-		// 			setCookie("date",'');//活动时间
-		// 			setCookie("address",'');//活动时间
-		// 			 if (flag) {
-		// 	            var evt = window.event || arguments[0];
-		// 	            var userAgent = navigator.userAgent;
-		// 	            if (userAgent.indexOf("MSIE") > 0) {
-		// 	              var n = window.event.screenX - window.screenLeft;
-		// 	              var b = n > document.documentElement.scrollWidth - 20;
-		// 	              if (b && window.event.clientY < 0 || window.event.altKey) {
-		// 	                window.event.returnValue = ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-		// 		                setCookie("type",'');//类型
-		// 						setCookie("sex",'');//性别
-		// 						setCookie("age",'');//年龄
-		// 						setCookie("date",'');//活动时间
-		// 						setCookie("address",'');//活动时间
-
-		// 	              }else {
-		// 	              	setCookie("type",'');//类型
-		// 					setCookie("sex",'');//性别
-		// 					setCookie("age",'');//年龄
-		// 					setCookie("date",'');//活动时间
-		// 					setCookie("address",'');//活动时间
-		// 	                return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-		// 	              }
-		// 	            }else if (userAgent.indexOf("Firefox") > 0) {
-		// 	            	alert('火狐');
-		// 	            	setCookie("type",'');//类型
-		// 					setCookie("sex",'');//性别
-		// 					setCookie("age",'');//年龄
-		// 					setCookie("date",'');//活动时间
-		// 					setCookie("address",'');//活动时间
-		// 	               return ("该操作将会导致非正常退出系统(正确退出系统方式：点击退出系统按钮)，您是否确认?");
-		// 	            }
-		// 	          }
-		// 　　　}
-		      
-	</script>
-
+	<script src="__PUBLIC__/Home/js/showwin2.js"></script>
+	<script src="__PUBLIC__/Home/js/sousuo.js"></script>
+	
 </html>

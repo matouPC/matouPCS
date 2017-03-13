@@ -93,7 +93,7 @@ function shortMessagraxc() {
 			$("#btn_yzm").attr("disabled", true);
 			$("#btn_yzm").val("" + count + "s");
 			if(count == 0) {
-				$("#btn_yzm").val("���»�ȡ").removeAttr("disabled");
+				$("#btn_yzm").val("重新获取").removeAttr("disabled");
 				clearInterval(countdown);
 			}
 			count--;
@@ -102,12 +102,12 @@ function shortMessagraxc() {
 };
 $(function() {
 	$('#login-alert').click(function() {
-		$('body').css('overflow', 'hidden');
+		$('body').css('overflow','hidden');
 		$('.alert').fadeIn();
 		$('.alert-black').fadeIn();
 	});
 	$('.alert-close').click(function() {
-		$('body').css('overflow', 'auto');
+		$('body').css('overflow','auto');
 		$('.alert').fadeOut();
 		$('.alert-black').fadeOut();
 	});
@@ -138,14 +138,13 @@ $(function() {
 		}
 	}
 });
-
 $(function() {
-	$(".action").click(function() {
-		$('.action').css('background-color', '#ff5c5d');
+	$(".action").click(function(){
+		$('.action').css('background-color','#ff5c5d');
 	});
 	$("#find").click(function() {
 		//								alert("充值")
-		$('body').css('overflow', 'hidden');
+		$('body').css('overflow','hidden');
 		$("#spdlb").fadeIn();
 		$(".show-bg").fadeIn();
 		$("#find").css("background-color", "#ff5c5d");
@@ -169,34 +168,29 @@ $(function() {
 			$("#fbp2").css("border", "2px solid  #f2f2f2");
 		});
 	$(".rhideb").click(function() {
-		$("#photo_upload_box_outside").fadeOut(500, function() {
-		$(".li_upload").remove();
-	});
-		$('body').css('overflow', 'auto');
+		photo_upload_close();
+		$('body').css('overflow','auto');
 		$("#spdlb").fadeOut();
 		$(".show-bg").fadeOut();
 		$("#find").css("background-color", "#999");
 		$("#find").css("color", "#fff");
-		$('#find').hover(function() {
-			$(this).css('background-color', '#ff5c5d');
-		}, function() {
-			$(this).css('background-color', '#999');
+		$('#find').hover(function(){
+			$(this).css('background-color','#ff5c5d');
+		},function(){
+			$(this).css('background-color','#999');
 		});
 	});
 	$("#tjbtn").click(function() {
-		$("#photo_upload_box_outside").fadeOut(500, function() {
-		$(".li_upload").remove();
-	});
-		
-		$('body').css('overflow', 'auto');
+		photo_upload_close()
+		$('body').css('overflow','auto');
 		$("#spdlb").fadeOut();
 		$(".show-bg").fadeOut();
 		$("#find").css("background-color", "#999");
 		$("#find").css("color", "#fff");
-		$('#find').hover(function() {
-			$(this).css('background-color', '#ff5c5d');
-		}, function() {
-			$(this).css('background-color', '#999');
+		$('#find').hover(function(){
+			$(this).css('background-color','#ff5c5d');
+		},function(){
+			$(this).css('background-color','#999');
 		});
 	});
 });
@@ -243,12 +237,12 @@ $('#select-sp').hover(function() {
 
 
 //上传图片开始
-var tu = '';
+
 var upload_total = 9; //最多上传数量
 var uploader = new plupload.Uploader({ //创建实例的构造方法
 	runtimes: 'gears,html5,html4,silverlight,flash', //上传插件初始化选用那种方式的优先级顺序
 	browse_button: ['btn', 'btn2'], // 上传按钮
-	url: "/matouPCS/ajax.php", //远程上传地址
+	url: "ajax.php", //远程上传地址
 	flash_swf_url: 'plupload/Moxie.swf', //flash文件地址
 	silverlight_xap_url: 'plupload/Moxie.xap', //silverlight文件地址
 	filters: {
@@ -261,7 +255,6 @@ var uploader = new plupload.Uploader({ //创建实例的构造方法
 		]
 	},
 	multi_selection: true, //true:ctrl多文件上传, false 单文件上传
-	
 	init: {
 		FilesAdded: function(up, files) { //文件上传前
 			var length_has_upload = $("#ul_pics").children("li").length;
@@ -285,24 +278,15 @@ var uploader = new plupload.Uploader({ //创建实例的构造方法
 			});
 			$("#" + file.id).find(".percent").text(percent + "%");
 		},
-		
 		FileUploaded: function(up, file, info) { //文件上传成功的时候触发
-			
 			showPhotoUploadBox($('#btn'));
 			var uploaded_length = $(".img_common").length;
-			
 			if(uploaded_length <= upload_total) {
-				i++;
 				var data = eval("(" + info.response + ")"); //解析返回的json数据
 				$("#" + file.id).html("<input type='hidden'name='pic[]' value='" + data.pic + "'/><input type='hidden'name='pic_name[]' value='" + data.name + "'/>\n\
                 <img class='img_common' src='" + data.pic + "'/><span class='picbg'></span><a class='pic_close' onclick=delPic('" + data.pic + "','" + file.id + "')></a>");
-				tu+= data.name+',';
 			}
 			showUploadBtn();
-			  setCookie('tu',tu);
-			  Close();
-			
-			
 		},
 		Error: function(up, err) { //上传出错的时候触发
 			alert(err.message);
@@ -312,7 +296,7 @@ var uploader = new plupload.Uploader({ //创建实例的构造方法
 uploader.init();
 
 function delPic(pic, file_id) { //删除图片 参数1图片路径  参数2 随机数
-	$.post("/matouPCS/del.php", {
+	$.post("del.php", {
 		pic: pic
 	}, function(data) {
 		$("#" + file_id).remove();
@@ -381,47 +365,3 @@ $('.show-bg').click(function(){
 			html += '</li>';
 			return html;
 		}
-		
-		
-		function Close() {
-		    $('.aui_state_box').remove();
-		}
-
-		function setCookie(cookieName, cookieValue, cookieExpires) {
-		    try {
-		        cookieName = cookieName.trim();
-		        cookieValue = escape(cookieValue);
-		        var nowDate = new Date();
-		        nowDate.setTime(new Date().getTime() + 7 * 24 * 60 * 60 * 1000);
-		        var cookieExpiresTime = nowDate.toGMTString();
-		        if (cookieExpires !== undefined && cookieExpires !== "" && cookieExpires > 0) {
-		            nowDate.setTime(new Date().getTime() + cookieExpires);
-		            cookieExpiresTime = nowDate.toGMTString();
-		        }
-		        document.cookie = cookieName + "=" + cookieValue
-		            + "; expires=" + cookieExpiresTime;
-		    } catch (e) {
-		    }
-		}
-		function getCookie(cookieName) {
-		    try {
-		        cookieName = cookieName.trim();
-		        var cookieValue = document.cookie;
-		        var cookieStartAt = cookieValue.indexOf("" + cookieName + "=");
-		        if (cookieStartAt === -1) {
-		            cookieValue = "";
-		        } else {
-		            cookieStartAt = cookieValue.indexOf("=", cookieStartAt) + 1;
-		            var cookieEndAt = cookieValue.indexOf(";", cookieStartAt);
-		            if (cookieEndAt === -1) {
-		                cookieEndAt = cookieValue.length;
-		            }
-		            cookieValue = unescape(cookieValue.substring(cookieStartAt, cookieEndAt));
-		        }
-		        return cookieValue;
-		    } catch (e) {
-		    }
-		    return "";
-		}
-
-

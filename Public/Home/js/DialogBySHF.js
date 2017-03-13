@@ -16,6 +16,7 @@
         //关闭弹出框
         Close: function () {
             $("#DialogBySHFLayer,#DialogBySHF").remove();
+            $('body').css('overflow','auto');
         }
 
     };
@@ -161,3 +162,20 @@
         }
     })
 })(jQuery);
+
+//----------------------------查看码头币--------------------------
+		$(document).ready(function () {
+        $("#btnConfirm").click(function () {
+            $.DialogBySHF.Confirm({ Width: 350, Height: 200, Title: "提示信息", Content: '查看号码需要2个码头币', ConfirmFun: test});
+        	$('body').css('overflow','hidden');
+        })
+    })
+    function test() {
+    	$('body').css('overflow','hidden');
+        if(1>0){
+        	$.DialogBySHF.Alert({ Width: 350, Height: 200, Title: "成功", Content: '号码准备就绪，你可以联系Ta了' });
+        	$('.tel').html('15666666666');
+        }else{
+        	$.DialogBySHF.Alert({ Width: 350, Height: 200, Title: "失败", Content: '余额不足' });
+        }
+    }

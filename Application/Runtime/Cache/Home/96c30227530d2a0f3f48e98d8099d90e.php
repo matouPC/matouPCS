@@ -1,92 +1,16 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>招聘大厅</title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zpdt1-cc.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/datePicker.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
-		<style>
-			.s-f1-r ul li a .img {
-				margin-top: 15px;
-				margin-right: 10px;
-				float: right;
-			}
-			.select-yfb {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-yfb ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-yfb ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-xx ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-xx ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-		</style>
 	</head>
-	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<body onbeforeunload="checkLeave()">
-	<!-- 用隐藏域 接受get值  用来搜索 -->
-	<input type="hidden" id="types" value="<?php echo ($_GET['type']); ?>">
+
+	<body>
+		<div class="show-bg"></div>
 		<header>
 			<!DOCTYPE html>
 <html>
@@ -477,43 +401,133 @@
 	</body>
 </html>
 
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<?php	include '2rank-header.php';?>
 						<div class="h-c-2f">
-						<div class="s-f2-l">
-							<div class="f2-l-1">
-								<a href="?s=/Home/Index">
-									<img src="/matouPCS/Public/Home/img/logo.png" />
+							<div class="s-f2-l-f">
+								<div class="f2-l-1-f">
+									<a href="?s=/Home/Index">
+										<img src="/matouPCS/Public/Home/img/logo.png" alt="喜事码头" />
+									</a>
+								</div>
+								<div class="f2-l-3-f">
+									<h1>招聘大厅</h1>
+								</div>
+								<a href="?s=/Home/Zpdt">
+									<div class="f2-l-2-f">
+										<h1>应聘区</h1>
+									</div>
 								</a>
 							</div>
-							<div class="f2-l-2">招聘大厅</div>
-							<a href="?s=/Home/Zpdt">
-								<div class="f2-l-3">应聘区</div>
-							</a>
-						</div>
-						<div class="s-f2-r">
-							<div class="demo">
-								<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
+							<div class="s-f2-r-f">
+								<div class="demo">
 									<ul>
-										<li><input type="text" id="tt" value="" class="text" style="text-align: left;" autocomplete="off" /></li>
+										<li><input type="text" id="tt" value="" class="text" autocomplete="off" /></li>
 										<li><input type="submit" value="搜索" class="button" /></li>
-										<li><input type="submit" value="商家认证部队" class="button2" /></li>
+										<li><button id="fbxq" type="submit" class="button2">发布需求</button></li>
 
 									</ul>
-								</form>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="h-c-3f">
-						<img src="/matouPCS/Public/Home/img/banner1.png" />
-					</div>
+						<div class="h-c-4f">
+							<img src="/matouPCS/Public/Home/img/banner.png" />
+						</div>
 				</div>
 			</div>
 		</header>
+		<!--发布需求-->
+		<div class="fbxq">
+			<div class="fbxq-close">
+				<img src="img/alert-close.png" />
+			</div>
+			<div class="fbxq-title">
+				请选择您的需求
+			</div>
+			<div class="clear"></div>
+			<ul>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyxs.png" />
+					</div>
+					<div class="fbxq-1f">
+						悬赏
+					</div>
+					<div class="fbxq-2f">
+						<span class="red">临时雇佣</span> 主持人、摄影摄像师、化妆师、策划师等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyys.png" />
+					</div>
+					<div class="fbxq-1f">
+						应赏
+					</div>
+					<div class="fbxq-2f">
+						主持人、摄影摄像师、化妆师、策划师等婚庆从业者发布
+						<span class="red">兼职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyzp.png" />
+					</div>
+					<div class="fbxq-1f">
+						招聘
+					</div>
+					<div class="fbxq-2f">
+						<span class="red">长期雇佣</span> 摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyyp.png" />
+					</div>
+					<div class="fbxq-1f">
+						应聘
+					</div>
+					<div class="fbxq-2f">
+						摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者发布
+						<span class="red">全职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyqg.png" />
+					</div>
+					<div class="fbxq-1f">
+						求购二手
+					</div>
+					<div class="fbxq-2f">
+						如果您想要购买二手物品，点击这里填写求购要求，让卖家主动找到您
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="img/wyxz.png" />
+					</div>
+					<div class="fbxq-1f">
+						处理闲置
+					</div>
+					<div class="fbxq-2f">
+						如果您想要出售你的闲置，点击这里填写闲置信息，让买家主动找到您
+					</div>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-l">
 					<div class="s-c-1f">
-						<a href="#">所有分类</a>>
-						<a href="#">找到相关<?php echo $xiang; ?>条相关结果</a>
+						<p class="title">
+							<a href="#">所有分类</a>>
+							<span>找到相关100.5万相关结果</span>
+						</p>
+						<div class="clear"></div>
 					</div>
 					<div class="s-c-2f">
 						<div id="filter">
@@ -646,7 +660,7 @@
 									</div>
 								</dd>
 							</dl>
-                            
+
 							<!-- <dl>
 								<dt>薪资/月</dt>
 								<dd>
@@ -669,12 +683,13 @@
 										<a>5000元-8000元</a>
 									</div>
 								</dd>
-								
+
 								<dd>
 									<div>
 										<a>8000元以上</a>
 									</div>
 								</dd>
+								<div class="clear"></div>
 							</dl> -->
 							<dl id="rzbd">
 								<dt>招聘方</dt>
@@ -707,7 +722,7 @@
 							<dl id="address">
 								<dt>活动地点</dt>
 								<dd>
-									<div class="gray">
+									<div class="gray" id='dd_tzh'>
 										<a>不限</a>
 									</div>
 								</dd>
@@ -719,68 +734,89 @@
 									</div>
 								</dd>
 							</dl>
-							<div class="px">
-								<p>排序：</p>
-								<div class="hot">
-									热门
-								</div>
-								<div class="new">
-									最新
-								</div>
+						</div>
+						<div class="px">
+							<p>排序：</p>
+							<div class="hot">
+								热门
+							</div>
+							<div class="new">
+								最新
 							</div>
 						</div>
+						<div class="clear"></div>
 					</div>
-					<div class="s-c-3f" id="ajax_lists">
-						
+					<script type="text/javascript">
+					</script>
+					<div class="s-c-3f">
+						<div class="s-c-4f-2f" id="ajax_lists">
+
+						</div>
 					</div>
 				</div>
 				<div class="s-main-r">
-					<div class="s-r-1f">
+					<div class="s-r-3f">
 						<div>
-							<a href="#"><img src="/matouPCS/Public/Home/img/tjzp.png" /></a>
-							<a class="clearfloat"></a>
+							<a href="javascript://">
+								<h2>推荐招聘</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
-					<div class="s-r-2f">
+					<div class="s-r-5f">
 						<ul>
 							<?php if(is_array($datan)): foreach($datan as $key=>$dataa): ?><li>
+<<<<<<< HEAD
+									<a href="#">
+										<div>
+											<div class="yh-admin">
+												<img src="/matouPCS/Public/Home/img/tjzp_01.png" />
+											</div>
+											<div class="s-r-5f-right">
+												<strong class="bdmc">
+													<?php echo ($dataa["forcename"]); ?>
+												</strong>
+												<div class="clear"></div>
+												<div class="s-r-5f-2f">
+													<p>经理/店长</p>
+													<p><?php echo ($dataa["sex"]); ?></p>
+													<p><?php echo ($dataa["age"]); ?>岁</p>
+													<div class="clear"></div>
+												</div>
+												<p class="xz">
+													薪资：<span class="red"><?php echo ($dataa["price"]); ?>k/月</span>
+												</p>
+											</div>
+											<div class="clear"></div>
+=======
 									<a href="?s=/Home/Zpdt1/xqzp/id/<?php echo ($dataa["rid"]); ?>">
 										<div class="yh-admin">
 											<img src="/matouPCS/Public/Home/img/bdmc.png" >
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										</div>
-										<p style="display:block; overflow: hidden; margin-top: -5px; margin-left: 10px; float:left; width: 180px; height: 20px; font-size:14px;">
-											部队名称
-										</p>
-										<p style="display:block; float: left; overflow: hidden; line-height: 30px; margin-left: 10px; float:left; width: 68px; height: 30px; font-size:14px;">
-											<?php echo ($dataa["forcename"]); ?>
-										</p>
-										<p style="display:block; float: left; overflow: hidden; margin-left: 25px; float:left; width: 30px; height: 30px; line-height: 30px; font-size:14px;">
-											<?php echo ($dataa["sex"]); ?>
-										</p>
-										<p style="display:block; overflow: hidden;  float:right; width: 50px; height: 30px; line-height: 30px; font-size:14px;">
-											<?php echo ($dataa["age"]); ?>岁
-										</p>
-										<p style="display:block; overflow: hidden; margin-left: 10px; float:left; width: 50px; height: 20px; font-size:14px;">
-											薪资：
-										</p>
-										<p style="color: #FF5C5D; overflow: hidden; font-size: 14px; display: block; width: 130px; height: 20px; float: left;"><?php echo ($dataa["price"]); ?>元/月</p>
-										<p style="font-size: 14px; color: #999999; width: 265px; height: 44px; line-height: 24px; overflow: hidden;">
-											具体要求 : &nbsp;<?php echo ($dataa["content"]); ?>
+										<p class="gwyq">
+											<span class="black-333">岗位要求：</span>
+											<span class="text49">
+												 <?php echo ($dataa["content"]); ?>...
+											</span>
 										</p>
 										<?php $numBao = explode(',',$dataa['zhao']); array_pop($numBao); $numBaos = count($numBao);?>
-										<p style="font-size: 14px; display: block; width: 80px; float: left; color: #CCCCCC; margin-top: 10px;">应聘人数<?php echo ($numBaos); ?></p>
-										<p style="font-size: 14px;display: block; width: 100px; float: right; color: #CCCCCC; margin-top: 10px;"><?php echo ($dataa["address"]); ?></p>
+										<div class="bottom">
+											<p class="left">报名数<?php echo ($numBaos); ?></p>
+											<p class="right">工作地点：<?php echo ($dataa["address"]); ?></p>
+											<div class="clear"></div>
+										</div>
 									</a>
 								</li><?php endforeach; endif; ?>
-							
-							<li class="clearfloat" style="border: 0; height: 0px; width: 0px; background: rgba(255,255,255,0.0); "></li>
+							<div class="clear"></div>
 						</ul>
 					</div>
 					<div class="s-r-3f">
 						<div>
-							<a href="#"><img src="/matouPCS/Public/Home/img/tjbd.png" /></a>
-							<!--<a href="#"><img src="img/tjcz.png" /></a>-->
-							<a class="clearfloat"></a>
+							<a href="javascript://">
+								<h2>推荐部队</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
 					<div class="s-r-4f">
@@ -792,31 +828,41 @@
 										<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($listnns["uid"]); ?>">
 									<?php } ?>
 									<div class="tj">
-										<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+										<div class="tj-img">
+											<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+										</div>
 										<div class="tj_01">
-											<p class="tj_01_01" style="100px"><?php echo ($listnns["forcename"]); ?></p>
-											<p class="tj_01_02" style="100px">部队类型：<b style="color:#666666; font-weight:500"><?php echo ($listnns["type"]); ?></b></p>
-											<p class="tj_01_02" style="100px">粉丝数量：<b style="color:#666666; font-weight:500">110</b></p>
-											<p class="tj_01_02" style="100px">
-												所在地点：<b style="color:#666666; font-weight:500"><?php echo ($listnns["address"]); ?></b>
+											<strong class="tj_01_01"><?php echo ($listnns["forcename"]); ?></strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> <?php echo ($listnns["type_bd"]); ?>
 											</p>
-
-											<p style="font-size: 12px; color:#666666; margin-left:-120px; margin-top:14px; display:block;width: 255px;height:50px;overflow: hidden;">
-												<?php echo ($listnns["content"]); ?>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> <?php echo ($listnns["address"]); ?>
 											</p>
 										</div>
-
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36"><?php echo ($listnns["content"]); ?> </span>
+											</p>
+										</div>
 									</div>
 								</a>
 							</li><?php endforeach; endif; ?>
-							<!--<li class="clearfloat"></li>-->
+
+							<div class="clear"></div>
 						</ul>
+
 					</div>
 				</div>
 			</div>
-			<div class="clearfloat"></div>
+			<div class="clear"></div>
 		</section>
-	<!DOCTYPE html>
+		<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -877,9 +923,8 @@
 				<div class="f-main-c">
 					<div class="f-c-1f">
 						
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+						<p>© 20016－2017 xishimatou.com, all rights reserved 郑州码头网络技术有限公司 </p>
+						<p>豫ICP备16015506号 喜事码头</p>
 					</div>
 				</div>
 			</div>
@@ -888,88 +933,12 @@
 </html>
 
 	</body>
-	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
-	<script src="/matouPCS/Public/Home/js/jquery.date_input.pack.js"></script>
-	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
-	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
+	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
-	<script src="/matouPCS/Public/Home/js/zp.js"></script>
-	<script type="text/javascript">
-
-		$(function() {
-			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
-			$("#filter a").hover(
-				function() {
-					$(this).addClass("seling");
-				},
-				function() {
-					$(this).removeClass("seling");
-				}
-			);
-
-			//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
-			$("#filter dt+dd a").attr("class", "seled");
-			/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
-			                                                     不然后面通过$("#filter a[class='seled']")访问不到class样式为seled的a标签。*/
-
-			//为filter下的所有a标签添加单击事件
-			$("#filter a").click(function() {
-				$(this).parents("dl").children("dd").each(function() {
-					//下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
-					//$(this).children("div").children("a").removeClass("seled");
-					//$(this).find("a").removeClass("seled");
-					$('a', this).removeClass("seled");
-				});
-
-				$(this).attr("class", "seled");
-
-				//				alert(RetSelecteds()); //返回选中结果
-			});
-			//返回选中结果
-		});
-
-		function RetSelecteds() {
-			var result = "";
-			$("#filter a[class='seled']").each(function() {
-				result += $(this).html() + "\n";
-			});
-			return result;
-		}
-		//		$('#date').click(function(){
-		//				alert(RetSelecteds()+$('#date').val()+$('#city').val());
-		//			})
-		$('.px .hot').click(function() {
-			$('.px .hot').css('background-color', '#ff5c5d');
-			$('.px .new').css('background-color', '#999999');
-		})
-		$('.px .new').click(function() {
-			$('.px .new').css('background-color', '#ff5c5d');
-			$('.px .hot').css('background-color', '#999999');
-		})
-		//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height:'150px'
-			}, 300);
-		},function(){
-				$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height:'0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height:'75px'
-			}, 300);
-		},function(){
-			$('.select-xx').stop().animate({
-				height:'0px'
-			}, 300);
-		});
-	</script>
+	<script src="/matouPCS/Public/Home/js/City_data.js "></script>
+	<script src="/matouPCS/Public/Home/js/areadata.js "></script>
+	<script src="/matouPCS/Public/Home/js/2rank.js"></script>
+	<script src="/matouPCS/Public/Home/js/showwin2.js "></script>
+	<script src="/matouPCS/Public/Home/js/zp.js "></script>
 
 </html>

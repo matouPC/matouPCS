@@ -1,94 +1,21 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>首页</title>
 		<!--		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />-->
 		<!--IE7,8兼容-->
 		<!--<meta http-equiv="x-ua-compatible" content="ie=7" />-->
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/index.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin.css" />
-
-		<style>
-			.h-f1-r ul li a .img {
-				margin-top: 15px;
-				margin-right: 10px;
-				float: right;
-			}
-			
-			.select-yfb {
-				width: 70px;
-				height: 0px;
-				background-color: #f0f0f0;
-				position: absolute;
-				top: 35px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul {
-				width: 70px;
-				height: 150px;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			
-			.select-yfb ul li a {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			
-			.select-xx {
-				width: 70px;
-				height: 0px;
-				background-color: #f0f0f0;
-				position: absolute;
-				top: 35px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-xx ul {
-				width: 70px;
-				height: 150px;
-				overflow: hidden;
-			}
-			
-			.select-xx ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			
-			.select-xx ul li a {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			
-			input,
-			button,
-			select,
-			textarea {
-				outline: none
-			}
-			
-			textarea {
-				resize: none
-			}
-		</style>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
 	</head>
-
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://xishimatou.com" charset="utf-8"></script>
-<script type="text/javascript"
-src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data-callback="true"></script>
+	<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://xishimatou.com" charset="utf-8"></script>
+	<script type="text/javascript"
+	src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data-callback="true"></script>
 	<body>
 		<div class="show-bg"></div>
 		<header>
@@ -530,109 +457,105 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 	</body>
 </html>
 
-			<div class="h-content-main">
-				<div class="h-main-c">
+				<div class="h-content-main">
+					<div class="h-main-c">
 
-					<div class="h-c-2f">
-						<div class="h-f2-l">
-							<img src="/matouPCS/Public/Home/img/logo.png" />
-						</div>
-						<div class="h-f2-c">
-							<div class="demo">
-								<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
-									<ul>
-										<li><input type="text" id="tt" value="" class="text" style="text-align: left;" placeholder="请输入您要查询的内容或关键字" autocomplete="off" /></li>
-										<li><input type="submit" value="" class="button" /></li>
-										<li class="clearfloat"></li>
-									</ul>
-								</form>
+						<div class="h-c-2f">
+							<div class="h-f2-l">
+								<img alt="喜事码头" src="/matouPCS/Public/Home/img/logo.png" />
+								<h1 class="none">喜事码头</h1>
 							</div>
-							<div class="h-f2-c-dec">
-								<a>热门搜索：</a>
-								<a href="#">
-									<p>关键字</p>
-								</a>
-								<a href="#">
-									<p>关键字</p>
-								</a>
-								<a href="#">
-									<p>关键字</p>
-								</a>
-								<a href="#">
-									<p>关键字</p>
-								</a>
-								<a href="#">
-									<p>关键字</p>
-								</a>
-								<a href="#">
-									<p>关键字</p>
-								</a>
+							<div class="h-f2-c">
+								<div class="demo">
+									<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
+										<ul>
+											<li><input type="text" id="tt" value="" class="text" placeholder="请输入您要查询的内容或关键字" autocomplete="off" /></li>
+											<li><input type="submit" value="" class="button" /></li>
+											<li class="clearfloat"></li>
+										</ul>
+									</form>
+								</div>
+								<div class="h-f2-c-dec">
+									<a>热门搜索：</a>
+									<a href="#">
+										<strong>关键字</strong>
+									</a>
+									<a href="#">
+										<strong>关键字</strong>
+									</a>
+									<a href="#">
+										<strong>关键字</strong>
+									</a>
+									<a href="#">
+										<strong>关键字</strong>
+									</a>
+									<a href="#">
+										<strong>关键字</strong>
+									</a>
+									<a href="#">
+										<strong>关键字</strong>
+									</a>
+								</div>
 							</div>
+							<div class="h-f2-r">
+								<p class="fwrx">24小时服务热线</p>
+								<p class="fwrx-tel">188-8888-888</p>
+							</div>
+							<div class="clearf"></div>
 						</div>
-						<div class="h-f2-r">
-							<p style="margin-top: 25px;">24小时服务热线</p>
-							<p style="margin-top: 12px; color: #FF5C5D; font-size: 18px;">188-8888-888</p>
-						</div>
-						<div class="clearf"></div>
-					</div>
-					<div class="h-c-3f">
-						<div class="h-f3-c">
-							<ul>
-								<li>
-									<a href="#" style="color: #ff5c5d; font-size: 18px; font-weight:bold;">首页</a>
-								</li>
-								<li>
-									<a href="?s=/Home/Xsdt" id="xsdt-a">悬赏大厅</a>
-								</li>
-								<li>
-									<a id="zpdt-a" href="?s=/Home/Zpdt1/index/type/0">招聘大厅</a>
-								</li>
-								<li>
-									<a id="tzsc-a" href="?s=/Home/Tzsc">跳蚤市场</a>
-								</li>
-								<li>
-									<a id="mtbd-a" href="?s=/Home/Mtbu">码头部队</a>
-								</li>
-								<li>
-									<a id="mtsc-a" href="?s=/Home/Tjcs">码头商城</a>
-								</li>
-								<li class="clearf"></li>
-							</ul>
+						<div class="h-c-3f">
+							<div class="h-f3-c">
+								<ul>
+									<li>
+										<a href="#" style="color: #ff5c5d; font-size: 18px; font-weight:bold;">首页</a>
+									</li>
+									<li>
+										<a href="?s=/Home/Xsdt" id="xsdt-a">悬赏大厅</a>
+									</li>
+									<li>
+										<a id="zpdt-a" href="?s=/Home/Zpdt1/index/type/0">招聘大厅</a>
+									</li>
+									<li>
+										<a id="tzsc-a" href="?s=/Home/Tzsc">跳蚤市场</a>
+									</li>
+									<li>
+										<a id="mtbd-a" href="?s=/Home/Mtbu">码头部队</a>
+									</li>
+									<li>
+										<a id="mtsc-a" href="?s=/Home/Tjcs">码头商城</a>
+									</li>
+									<div class="clear"></div>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!--登录注册开始-->
-			
-			<!--登录注册结束-->
-			<nav>
-				<div style="width: 100%;height: 2px;background: #ff5c5d;"></div>
-			</nav>
+				<nav>
+					<div class="border"></div>
+				</nav>
 		</header>
-
-		
 		<div class="spdlc" id="spdlc" title="消息">
 			<div class="titlenac">
-				<img src="/matouPCS/Public/Home/img/swtitle.png">
+				<img src="img/swtitle.png">
 				<div class="rhidec">
-					<img src="/matouPCS/Public/Home/img/hide.png">
+					<img src="img/hide.png">
 				</div>
 			</div>
 			<div class="fbtypec">
 			</div>
-			<!--<div class="spfxc"></div>-->
-
 			<div class="contentc">
-				<div class="cca" id="cca" >个人</div>
-				<div class="ccb" id="ccb"><p class="ccrc">婚庆公司<br>影楼<br>工作室<br>表演团体</p></div>
+				<div class="cca" id="cca">个人</div>
+				<div class="ccb" id="ccb">
+					<p class="ccrc">婚庆公司<br>影楼<br>工作室<br>表演团体</p>
+				</div>
 			</div>
-			<div class="spfxb" style="margin-top: 200px;"></div>
-			
+			<div class="clear"></div>
+			<div class="spfxb"></div>
+
 			<div class="contentimg">
-				<img src="/matouPCS/Public/Home/img/xzjs.png" />
+				<img src="img/xzjs.png" />
 			</div>
 		</div>
-		<div style="width: 1200px;height: 7px;background: #fff; margin:  0 auto;"></div>
 		<section>
 			<div class="s-conten-main">
 				<div class="s-main-c">
@@ -685,19 +608,87 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							</div>
 						</div>
 						<div class="s-f1-r">
-							<div class="s-f1-r-1f" id="ydl">
+							<div class="s-f1-r-1f">
 								<div class="center s-f1-r-1f-word">
-									<h2>发现更多好服务</h2>
+									<p class="h2">发现更多好服务</p>
 								</div>
-								<?php if(empty($_SESSION['username'])){ ?>
-									<div id="login" class="center login ">
-										<div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div>
-										<span>用户登录</span>
-									</div>
-								<?php }else{ ?>
-									<div class="center login"><div class="img"><img src="/matouPCS/Public/Home/img/login.png" alt="" /></div><span><?php echo ($_SESSION['username']); ?></span></div>
-								<?php } ?>
+								<div id="lqmtb" class="center">
+									<div class="img"><img src="img/M.png" alt="" /></div>
+									<span>领取码头币</span>
+								</div>
+								<!--领取码头币开始-->
+								<div class="gold-black">
+									<div class="gold-white">
+										<div class="gold-title">
+											<img src="img/gold-title.png" />
+										</div>
+										<div id="vertical" class="brand vertical">
+											<a href="javascript://">
+												<img alt="" src="img/gold2.png" />
+												<div class="info">
+													15个码头币
+												</div>
+											</a>
+											<a href="javascript://">
+												<img alt="" src="img/gold1.png" />
+												<div class="info">
+													10个码头币
+												</div>
+											</a>
+											<a href="javascript://">
+												<img alt="" src="img/gold2.png" />
+												<div class="info">
+													20个码头币
+												</div>
+											</a>
+											<a href="javascript://">
+												<img alt="" src="img/gold1.png" />
+												<div class="info">
+													10个码头币
+												</div>
+											</a>
+											<div class="fanpai">
+												<div class="fanpai-xz">
+													<img src="img/fanpai.png" />
+												</div>
+												<p>
+													（查看码头币规则）
+												</p>
+											</div>
+											<a href="javascript://">
+												<img alt="" src="img/gold1.png" />
+												<div class="info">
+													10个码头币
+												</div>
+											</a>
+											<a href="javascript://">
+												<img alt="" src="img/gold2.png" />
+												<div class="info">
+													20个码头币
+												</div>
+											</a>
+											<a href="javascript://">
+												<img alt="" src="img/gold1.png" />
+												<div class="info">
+													30个码头币
+												</div>
+											</a>
+											<a href="javascript://">
+												<img alt="" src="img/gold2.png" />
+												<div class="info">
+													15个码头币
+												</div>
+											</a>
+											<div class="clear"></div>
+											<div class="gold-close">
+												<button id="gold-close">关闭</button>
+											</div>
+										</div>
 
+										<div class="clear"></div>
+									</div>
+								</div>
+								<!--领取码头币结束-->
 							</div>
 							<div class="s-f1-r-2f">
 								<table cellpadding="0" cellspacing="0">
@@ -710,9 +701,9 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 												<span class="s-f1-r-word"><a id="findc" href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
 											<?php }else{ ?>
 												<?php if(in_array($_SESSION['id'],$ren)){ ?>
-												<span class="s-f1-r-word"><a id="findc" href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a  href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
 												<?php }else{ ?>
-												<span class="s-f1-r-word"><a id="findc" href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
+												<span class="s-f1-r-word"><a  href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
 												<?php } ?>
 												<!-- <span class="s-f1-r-word"><a href="?s=/Home/Xsdt/txxs">发布悬赏</a></span> -->
 											<?php } ?>
@@ -782,29 +773,26 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							</div>
 							<div class="s-f1-r-3f">
 								<div class="s-f1-r-3f-wx center">
-									<img src="/matouPCS/Public/Home/img/erweima_top.png" alt="" />
+									<img src="img/erweima_top.png" alt="" />
 								</div>
 								<p>关注喜事码头官方公众号</p>
-								<h2>有更多惊喜等着你哟</h2>
+								<p class="h2">有更多惊喜等着你哟</p>
 							</div>
 						</div>
 						<div class="clearf"></div>
 					</div>
-					<span style="height: 50px;display: block;"></span>
-
 					<div class="s-c-2f">
 						<div id="xsdt" class="s-ft-f">
-							<div class="Catalog">
-								<a href="?s=/Home/Xsdt"><img src="/matouPCS/Public/Home/img/Catalog.png" width="198" height="26"></a>
-							</div>
-
+							<a href="?s=/Home/Xsdt"><div class="Catalog">
+								<h2>悬赏大厅/</h2>
+								<span>REWARD</span>
+							</div></a>
 							<div class="More">
 								<p>
-									<a href="?s=/Home/Xsdt">更多>>
-										<!--<img src="img/more.png" width="17" height="17">--></a>
+									<a href="?s=/Home/Xsdt">更多>></a>
 								</p>
 							</div>
-
+							<div class="clear"></div>
 						</div>
 						<div class="s-f2-l">
 							<div class="s-f2-l">
@@ -847,20 +835,20 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 						</div>
 						<div class="clearf"></div>
 					</div>
-					<span style="height: 50px;display: block;"></span>
 
 					<div class="s-c-3f">
 						<div id="zpdt" class="s-ft-f">
 
-							<div class="Catalog">
-								<a href="?s=/Home/Zpdt1/index/type/0"><img src="/matouPCS/Public/Home/img/Catalog_02.png" width="198" height="26"></a>
-							</div>
+							<a href="?s=/Home/Zpdt1/index/type/0"><div class="Catalog">
+								<h2>招聘大厅/</h2>
+								<span>RECRUIT HALL</span>
+							</div></a>
 							<div class="More">
 								<p>
-									<a href="?s=/Home/Zpdt1/index/type/0">更多>></a>
+									<a href="?s=/Home/Zpdt1">更多>></a>
 								</p>
 							</div>
-
+							<div class="clear"></div>
 						</div>
 						<div class="s-f3-r">
 							<div class="s-f3-r-1f">招贤纳士</div>
@@ -1051,26 +1039,27 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<li class="clearf"></li>
 							</ul>
 							<ul class="clearf"></ul>
-						</div>
+						</div>>
+						<div class="clear"></div>
 						<div class="s-f3-x">
 							<img src="/matouPCS/Public/Home/img/bannerfgx1.png" />
 						</div>
 						<div class="clearf"></div>
 					</div>
-					<span style="height: 50px;display: block;"></span>
 
 					<div class="s-c-4f">
 						<div id="mtbd" class="s-ft-f">
-
+							<a href="?s=/Home/Mtbu">
 							<div class="Catalog">
-								<a href="?s=/Home/Mtbu"><img src="/matouPCS/Public/Home/img/Catalog_01.png" width="198" height="26"></a>
-							</div>
+								<h2>码头部队/</h2>
+								<span>WHARF FORCE</span>
+							</div></a>
 							<div class="More">
 								<p>
 									<a href="?s=/Home/Mtbu">更多>></a>
 								</p>
 							</div>
-
+							<div class="clear"></div>
 						</div>
 
 						<div class="troops">
@@ -1122,18 +1111,26 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							<div class="s-f4-r-2f">
 								<ul>
 									<li class="s-f4-r-2f-1">
-										<a href="">部队类型</a>
+										<a href="">
+											<h4>部队类型</h4>
+										</a>
 									</li>
 									<li class="s-f4-r-2f-2">
-										<a href="">部队类型</a>
+										<a href="">
+											<h4>部队类型</h4>
+										</a>
 									</li>
 								</ul>
 								<ul>
 									<li class="s-f4-r-2f-3">
-										<a href="">部队类型</a>
+										<a href="">
+											<h4>部队类型</h4>
+										</a>
 									</li>
 									<li class="s-f4-r-2f-1">
-										<a href="">部队类型</a>
+										<a href="">
+											<h4>部队类型</h4>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -1144,23 +1141,24 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								<p class="p3">婚礼喜事</p>
 							</div>
 							<div class="s-f4-r-4f">
-								<a href="?s=/Home/Mtbu/rzbd"><div style="width: 110px; height: 35px;" class="center">
-									<button>立即加入</button>
-								</div></a>
+								<div class="center ljyp">
+									<a href="">立即加入</a>
+								</div>
 							</div>
 						</div>
+						<div class="clear"></div>
 						<div class="s-f3-x">
 							<img src="/matouPCS/Public/Home/img/bannerfgx2.png" />
 						</div>
 						<div class="clearf"></div>
 					</div>
-					<span style="height: 50px;display: block;"></span>
 
 					<div class="s-c-5f">
 						<div id="mtsc" class="s-ft-f">
 
 							<a href="?s=/Home/Tjcs"><div class="Catalog">
-								<img src="/matouPCS/Public/Home/img/Catalog_03.png" width="198" height="26">
+								<h2>码头商城/</h2>
+								<span>WHARF HALL</span>
 							</div></a>
 
 							<div class="More">
@@ -1168,11 +1166,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									<a href="?s=/Home/Tjcs">更多>></a>
 								</p>
 							</div>
-
+							<div class="clear"></div>
 						</div>
 						<div class="s-f5-l">
 							<div class="s-f5-l-1f">
-					码头商城
+								码头商城
 							</div>
 							<div class="s-f5-l-2f">
 								<ul>
@@ -1233,27 +1231,26 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							</ul>
 						</div>
 
+						<div class="clear"></div>
 						<div class="s-f3-x">
 							<img src="/matouPCS/Public/Home/img/bannerfgx3.png" />
 						</div>
 						<div class="clearf"></div>
 					</div>
-					<span style="height: 50px;display: block;"></span>
 
 					<div class="s-c-6f">
 						<div id="tzsc" class="s-ft-f">
 
-							<div class="Catalog">
-								<a href="?s=/Home/Tzsc">
-									<img src="/matouPCS/Public/Home/img/Catalog_04.png" width="198" height="26">
-								</a>
-							</div>
+							<a href="?s=/Home/Tzsc"><div class="Catalog">
+								<h2>跳蚤市场/</h2>
+								<span>FLEA MARKET</span>
+							</div></a>
 							<div class="More">
 								<p>
 									<a href="?s=/Home/Tzsc">更多>></a>
 								</p>
 							</div>
-
+							<div class="clear"></div>
 						</div>
 						<div class="s-f6-l">
 
@@ -1310,133 +1307,96 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 									<?php } endforeach; endif; ?>
 								<li class="clearf"></li>
 							</ul>
-							<!--<ul>
-								<li>
-									<a href="#">
-										<div>
-											<div class="" style="float: left;">
-												<img src="img/flea_people.png" style="width: 90%;">
-											</div>
-											<p style="line-height: 38px; font-size: 16px;"><strong><span id="">求购音响一台</span>&nbsp;预算:<span>￥800</span></strong></p>
-											<p><span id="">要求:可以播在电脑、手机上的、音量要大、九成新...</span>&nbsp;&nbsp;<span id="" style="font-size: 12px;">报名人数10人</span></p>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<div>
-											<div class="" style="float: left;">
-												<img src="img/flea_people.png" style="width: 90%;">
-											</div>
-											<p style="line-height: 38px; font-size: 16px;"><strong><span id="">求购音响一台</span>&nbsp;预算:<span>￥800</span></strong></p>
-											<p><span id="">要求:可以播在电脑、手机上的、音量要大、九成新...</span>&nbsp;&nbsp;<span id="" style="font-size: 12px;">报名人数10人</span></p>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<div>
-											<div class="" style="float: left;">
-												<img src="img/flea_people.png" style="width: 90%;">
-											</div>
-											<p style="line-height: 38px; font-size: 16px;"><strong><span id="">求购音响一台</span>&nbsp;预算:<span>￥800</span></strong></p>
-											<p><span id="">要求:可以播在电脑、手机上的、音量要大、九成新...</span>&nbsp;&nbsp;<span id="" style="font-size: 12px;">报名人数10人</span></p>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<div>
-										<div class="" style="float: left;">
-												<img src="img/flea_people.png" style="width: 90%;">
-											</div>
-											<p style="line-height: 38px; font-size: 16px;"><strong><span id="">求购音响一台</span>&nbsp;预算:<span>￥800</span></strong></p>
-											<p><span id="">要求:可以播在电脑、手机上的、音量要大、九成新...</span>&nbsp;&nbsp;<span id="" style="font-size: 12px;">报名人数10人</span></p>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<div>
-											<div class="" style="float: left;">
-												<img src="img/flea_people.png" style="width: 90%;">
-											</div>
-											<p style="line-height: 38px; font-size: 16px; color: #4d4d4D!important;"><span id="" style="font-size: 16px!important;display: block; width: 80;">一台</span>&nbsp;&nbsp;&nbsp;预算:￥800
-												<span style="float: right;" id=""><img src="img/gray_small_position.png">&nbsp;郑州</span>
-											</p>
-											<p style="color: #999;"><span id="">要求:可以播在电脑、手机上的、音量要大、九成新...</span>&nbsp;&nbsp;<span id="" style="font-size: 12px; color: #CCC;">报名人数10人</span></p>
-										</div>
-									</a>
-								</li>
-								<li class="clearf"></li>
-							</ul>-->
 						</div>
 						<div class="s-f6-r">
 							<div class="f6-l-o1">
 								<ul>
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea.png" width="124" height="124"></a>
-										<p>
-											<a href="#">摄影器材</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>摄影器材</h3>
+											</a>
+										</div>
 									</li>
 
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea_01.png" width="124" height="124"></a>
-										<p>
-											<a href="#">摄像器材</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>摄像器材</h3>
+											</a>
+										</div>
 									</li>
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea_02.png" width="124" height="124"></a>
-										<p>
-											<a href="#">音响</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>音响</h3>
+											</a>
+										</div>
 									</li>
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea_03.png" width="124" height="124"></a>
-										<p>
-											<a href="#">灯光</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>灯光</h3>
+											</a>
+										</div>
 									</li>
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea_04.png" width="124" height="124"></a>
-										<p>
-											<a href="#">婚纱</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>婚纱</h3>
+											</a>
+										</div>
 									</li>
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea_05.png" width="124" height="124"></a>
-										<p>
-											<a href="#">礼服</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>礼服</h3>
+											</a>
+										</div>
 									</li>
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea_06.png" width="124" height="124"></a>
-										<p>
-											<a href="#">舞台桁架</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>舞台桁架</h3>
+											</a>
+										</div>
 									</li>
 									<li>
 										<a href="#"><img src="/matouPCS/Public/Home/img/Flea_07.png" width="124" height="124"></a>
-										<p>笔记本</a>
-										</p>
+										<div>
+											<a href="#">
+												<h3>笔记本</h3>
+											</a>
+										</div>
 									</li>
-									<li class="clearf"></li>
+									<div class="clear"></div>
 								</ul>
 							</div>
-							<!--<div class="f6-l-o2">2</div>-->
 						</div>
 						<div class="clearf"></div>
 					</div>
-					<span style="height: 50px;display: block;"></span>
-
-				<!DOCTYPE html>
+					<div class="clearf"></div>
+				</div>
+			</div>
+		</section>
+		<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+<<<<<<< HEAD
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
+=======
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank-footer.css" />
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 	</head>
 	<body>
 		<footer>
@@ -1447,14 +1407,22 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 							<ul>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
+										<h5>喜事码头客服热线</h5>
+=======
 										<h4>喜事码头客服热线</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>工作时间:每天9:00-23:00</p>
 										<p>188-8888-888</p>
 									</div>
 								</li>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
+										<h5>关注喜事码头微信公众号</h5>
+=======
 										<h4>关注喜事码头微信公众号</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>
 											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
 										</p>
@@ -1462,7 +1430,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								</li>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
+										<h5>关于我们</h5>
+=======
 										<h4>关于我们</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>
 											<a href="#">关于喜事码头</a>
 										</p>
@@ -1479,7 +1451,11 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 								</li>
 								<li class="f4-o1-1">
 									<div>
+<<<<<<< HEAD
+										<h5>联系我们</h5>
+=======
 										<h4>联系我们</h4>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 										<p>官方邮箱:xishimatou@163.com</p>
 										<p>通讯地址:河南省郑州市863软件园</p>
 									</div>
@@ -1491,10 +1467,32 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
+<<<<<<< HEAD
+						<h6>友情链接：</h6>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<p>© 20016－2017 xishimatou.com, all rights reserved 郑州码头网络技术有限公司 </p>
+						<p>豫ICP备16015506号 喜事码头</p>
+=======
 						
 						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
 						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
 						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 					</div>
 				</div>
 			</div>
@@ -1503,134 +1501,12 @@ src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data
 </html>
 
 	</body>
-
-	<script>
-		//描点
-		//	$('#xsdt-a').click(function(){
-		//		$("html,body").animate({scrollTop: $('#xsdt').offset().top}, 1000);
-		//	})
-		//	$('#zpdt-a').click(function(){
-		//		$("html,body").animate({scrollTop: $('#zpdt').offset().top}, 1000);
-		//	})
-		//	$('#tzsc-a').click(function(){
-		//		$("html,body").animate({scrollTop: $('#tzsc').offset().top}, 1000);
-		//	})
-		//	$('#mtbd-a').click(function(){
-		//		$("html,body").animate({scrollTop: $('#mtbd').offset().top}, 1000);
-		//	})
-		//	$('#mtsc-a').click(function(){
-		//		$("html,body").animate({scrollTop: $('#mtsc').offset().top}, 1000);
-		//	})
-		//    鼠标动态开始
-		var hh = 30; //图片实际高度减去div高度
-		var pp = 2; //每次移动幅度（像素）
-		var ss = 50; //每次移动时间（毫秒）
-		var fx = true; //移动方向
-		var tp = document.getElementById("tp"); //图片对象
-		var b = document.getElementById('s-f2-r-button');
-
-		function gd() {
-			var tt = parseInt(tp.style.top);
-			fx = fx ? tt > -hh : tt >= 0;
-			tp.style.top = tt + (fx ? -pp : pp) + "px";
-			if(tt <= -15 && tt >= -30) {
-				b.style.backgroundColor = '#ff9393';
-				b.style.color = '#ffffff';
-			} else {
-				b.style.backgroundColor = '#cccccc';
-				b.style.color = '#ff6b6b';
-			}
-			var timer1 = setTimeout(gd, ss);
-			b.onmouseover = function() {
-				tp.style.top = '0';
-				clearInterval(timer1);
-				b.style.backgroundColor = '#cccccc';
-				b.style.color = '#ff6b6b';
-			}
-			b.onmouseout = function() {
-				tp.style.top = '0';
-				gd();
-			}
-		}
-		gd();
-		//    鼠标动态结束
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			//幻灯片调用
-			slider.init({
-				'id': $('#PicSlide'),
-				way: 'left',
-				interval: 4000
-			});
-		});
-	</script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 464,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-		
-		//收藏
-		$(function() {
-			$(".company_01_01 img").hover(
-					function() {
-						$(this).attr("src", "/matouPCS/Public/Home/img/scb.png");
-					},
-				function() {
-					$(this).attr("src", "/matouPCS/Public/Home/img/sca.png");
-				}
-			);
-		});
-
-		$(function() {
-			$(".mtscc p img").hover(
-				function() {
-				$(".mtscc p img").attr("src", "/matouPCS/Public/Home/img/scb.png");
-			},
-			function() {
-				$(".mtscc p img").attr("src", "/matouPCS/Public/Home/img/sca.png");
-			}
-				);
-		});
-		$(function() {
-			$(".content_01_01 img").hover(
-				function() {
-				$(this).attr("src", "/matouPCS/Public/Home/img/scb.png");
-			},
-			function() {
-				$(this).attr("src", "/matouPCS/Public/Home/img/sca.png");
-			}
-				);
-		});
-	</script>
+	<script type="text/javascript" src="j/matouPCS/Public/Home/s/jquery-1.8.3.min.js"></script>
+	<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/indexstore.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
+	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
+	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
+	<script src="/matouPCS/Public/Home/js/showwin2.js"></script>
 
 </html>

@@ -1,40 +1,56 @@
-<?php if (!defined('THINK_PATH')) exit(); if(is_array($list)): foreach($list as $key=>$lists): ?><br>
-	<div class="f3-c-1">
+<?php if (!defined('THINK_PATH')) exit(); if(is_array($list)): foreach($list as $key=>$lists): ?><li>
 		<a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($lists["eid"]); ?>">
-			<img src="/matouPCS/Public/Home/img/yhmc.png" height="60" width="61">
-			<?php $add = explode(',',$lists['address']); ?>
-			<h3 class="app_01">工作地点:<?php echo $add[0];?></h3>
-			<h3 class="app_01_01">用户<?php echo (substr($lists["username"],0,5)); ?></h3>
-			<ul>
-				<li class="app_01_h"><?php echo ($lists["name"]); ?></li>
-				<li class="app_01_h1 app_01_h2">年龄:<?php echo ($lists["ages"]); ?>岁</li>
-				<li class="app_01_h app_01_h2">工作经验：</li>
-				<li class="app_01_h1"><?php echo ($lists["worktimes"]); ?>年</li>
-				<li class="app_01_h app_01_h2">个人简介：</li>
-				<li class="app_01_h1 app_01_oh"><?php echo ($lists["content"]); ?></li>
-				<li class="app_01_h3"><?php echo ($lists["type"]); ?></li>
-			</ul>
-			<br/>
-			<ul class="app_02">
-				<?php $i = 0; ?>
-				<?php if(is_array($work)): foreach($work as $key=>$works): if($works['pid'] == $lists['id']){ ?>
-					<?php $i++; ?>
-						<?php if($i > 1){ break; }else{ ?>
-						<li class="app_01_h">工作时间：</li>
-						<li class="app_01_h1"><?php echo ($works["worktime"]); ?></li>
-						<li class="app_01_h app_01_h2">所在公司：</li>
-						<li class="app_01_h1" style="width:114px; height:18px; overflow:hidden;"><?php echo ($works["workname"]); ?></li>
-						<li class="app_01_h app_01_h2">职位：</li>
-						<li class="app_01_h1"><?php echo ($works["typew"]); ?>...</li>
-						<?php } ?>
-						<?php } endforeach; endif; ?>
-			</ul>
-			<br/>
-			<ul class="app_03">
+			<div class="s-l-1f">
+				<div class="yhtx">
+					<img src="/matouPCS/Public/Home/img/yhmc.png" />
+				</div>
+				<p class="yhmc">
+					用户<?php echo (substr($lists["username"],0,5)); ?>
+				</p>
+				<?php $add = explode(',',$lists['address']); ?>
+				<p class="szd">
+					工作地点：<?php echo $add[0];?>
+				</p>
+				<div class="clearfloat"></div>
+			</div>
+			<div class="s-l-2f">
+				<div class="middle">
+					<p class="black-333"><?php echo ($lists["name"]); ?><</p>
+					<p class="age"><?php echo ($lists["ages"]); ?></p>
+					<p class="gzjy">
+						<span class="black-333">工作经验：</span> <?php echo ($lists["worktimes"]); ?>年
+					</p>
+					<p class="grjj">
+						<span class="black-333">个人简介：</span> <?php echo ($lists["content"]); ?>
+					</p>
+					<p class="ypzw">
+						<span class="black-333">应聘职位：</span> <?php echo ($lists["type"]); ?>
+					</p>
+					<div class="clearfloat"></div>
+				</div>
+				<div>
+					<p class="gzsj">
+						<span class="black-333">工作时间：</span> <?php echo ($works["worktime"]); ?>
+					</p>
+					<p class="szgs">
+						<span class="black-333">所在公司：</span> <?php echo ($works["workname"]); ?>
+					</p>
+					<p class="zw">
+						<span class="black-333">职位：</span> <?php echo ($works["typew"]); ?>
+					</p>
+					<div class="clearfloat"></div>
+				</div>
+			</div>
+			<div class="s-l-3f">
 				<?php $shou = explode(',',$lists['em_shou']); array_pop($shou); $shous = count($shou); ?>
-				<li class="">已有<?php echo ($shous); ?>人收藏</li>
-				<li class="app_03_01" style="float:right; margin-right:24px;"><?php echo ($lists["date"]); ?>发布</li>
-			</ul>
+				<div class="left">
+					已有<?php echo ($shous); ?>人收藏
+				</div>
+				<div class="right">
+					<?php echo ($lists["date"]); ?>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
 		</a>
-	</div><?php endforeach; endif; ?>
+	</li><?php endforeach; endif; ?>
 <div class="pager"><?php echo ($page); ?></div>

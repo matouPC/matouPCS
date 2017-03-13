@@ -203,9 +203,9 @@ button{
 				height: 25px;
 				line-height: 25px !important;
 			}
-/*-------------------------------h-c-2f-------------------------------*/
+/*-------------------------------h-c-3f-------------------------------*/
 
-.h-c-2f {
+.h-c-3f {
 	width: 1200px;
 	height: 119px;
 	/*background: #C12E2A;*/
@@ -215,17 +215,17 @@ button{
 	padding-bottom: 10px;
 	border-bottom: solid 1px #999999;
 }
-.h-c-2f img{
+.h-c-3f img{
 	width: 100%;
 }
-.s-f2-l {
+.s-f3-l {
 	width: 40%;
 	height: 119px;
 	float: left;
 	background: #008B8B;
 }
 
-.s-f2-r {
+.s-f3-r {
 	width: 260px;
 	height: 36px;
 	position: absolute;
@@ -236,14 +236,14 @@ button{
 	background: rgba(0,0,0,0);
 }
 
-.s-f2-r1{
+.s-f3-r1{
 	width: 25px;
 	height: 25px;
 	position: absolute;
 	right: 20px;
 	top: 6px;
 }
-.s-f2-r1 img{
+.s-f3-r1 img{
 	width: 100%;
 }
 /*-------------------------------h-c-3f-------------------------------*/
@@ -394,7 +394,7 @@ button{
 	text-align: right;
 	height: 15px;
 	line-height: 15px;
-	width: 100px;
+	/*width: 100px;*/
 	margin-top: 20px;
 	margin-right: 20px;
 	overflow: hidden;
@@ -482,7 +482,7 @@ button{
 	cursor: pointer;
 }
 .s-c-1f-3f button:hover{
-	background-color: #FF9291;
+	background-color: #FF5C5D;
 }
 /*-------------------------------s-c-1f-4f-------------------------------*/
 .s-c-1f-4f{
@@ -502,7 +502,7 @@ button{
 	text-align: right;
 	height: 15px;
 	line-height: 15px;
-	width: 100px;
+	/*width: 100px;*/
 	margin-top: 20px;
 	margin-right: 20px;
 	overflow: hidden;

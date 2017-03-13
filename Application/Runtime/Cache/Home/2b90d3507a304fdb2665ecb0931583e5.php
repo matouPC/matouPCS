@@ -1,87 +1,13 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>悬赏填写</title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/txxs-3r-zy.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/tx.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/input.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/upimage.css" />
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style-type: none;
-			}
-			
-			a,
-			img {
-				border: 0;
-			}
-			
-			.demo {
-				width: 720px;
-				margin: 35px auto;
-			}
-			
-			.demo h2 {
-				font-size: 16px;
-				color: #3366cc;
-				height: 30px;
-			}
-			
-			.demo li {
-				float: left;
-			}
-			
-			.text,
-			.button {
-				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
-			}
-			
-			.text {
-				width: 425px;
-				height: 22px;
-				padding: 4px 7px;
-				padding: 6px 7px 2px\9;
-				font: 16px arial;
-				border: 1px solid #cdcdcd;
-				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
-				vertical-align: top;
-				outline: none;
-				margin: 0 -1px 0 0;
-			}
-			
-			.button {
-				width: 79px;
-				height: 32px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-			
-			.button2 {
-				width: 135px;
-				height: 32px;
-				margin-left: 30px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-		</style>
 	</head>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
 	<body>
@@ -635,16 +561,88 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
 	</head>
 	<body>
 		<footer>
 			<div class="f-content-main">
+				<div class="ttm">
+					<div class="s-c-7f">
+						<div class="f7-o1">
+							<ul>
+								<li class="f4-o1-1">
+									<div>
+										<h5>喜事码头客服热线</h5>
+										<p>工作时间:每天9:00-23:00</p>
+										<p>188-8888-888</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h5>关注喜事码头微信公众号</h5>
+										<p>
+											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
+										</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h5>关于我们</h5>
+										<p>
+											<a href="#">关于喜事码头</a>
+										</p>
+										<p>
+											<a href="#">加入我们</a>
+										</p>
+										<p>
+											<a href="#">网站地图</a>
+										</p>
+										<p>
+											<a href="#">合伙人招募</a>
+										</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h5>联系我们</h5>
+										<p>官方邮箱:xishimatou@163.com</p>
+										<p>通讯地址:河南省郑州市863软件园</p>
+									</div>
+								</li>
+								<li class="clearf"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
+<<<<<<< HEAD
+						<h6>友情链接：</h6>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
+						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
+						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+=======
 						
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
 						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
+>>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 					</div>
 				</div>
 			</div>

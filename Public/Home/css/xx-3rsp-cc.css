@@ -216,10 +216,12 @@ a {
 /*-------------------------------h-c-2f-------------------------------*/
 
 .h-c-2f {
-	width: 1200px;
-	height: auto;
+	width: 1200px !important;
+	height: auto !important;
 	margin: 0 auto;
-	position: relative;
+	padding: 0px !important;
+	position: relative !important;
+	border: 0px !important;
 }
 
 .h-c-2f img {
@@ -351,7 +353,7 @@ a {
 }
 
 .s-main-t p {
-	font-size: 18px;
+	font-size: 16px;
 	text-align: center;
 	line-height: 50px;
 }
@@ -893,6 +895,7 @@ a {
 .yhmc dl {
 	overflow: hidden;
 	height: 0px;
+	margin-top: 10px;
 }
 
 .yhmc_01 {
@@ -900,7 +903,7 @@ a {
 	height: 76px;
 	border-radius: 6px;
 	background: #f2f2f2;
-	margin-top: 10px;
+	margin-bottom: 10px;
 	position: relative;
 }
 

@@ -127,7 +127,7 @@ function shortMessagraxc() {
 			$("#btn_yzm").attr("disabled", true);
 			$("#btn_yzm").val("" + count + "s");
 			if(count == 0) {
-				$("#btn_yzm").val("���»�ȡ").removeAttr("disabled");
+				$("#btn_yzm").val("重新获取").removeAttr("disabled");
 				clearInterval(countdown);
 			}
 			count--;
@@ -236,7 +236,10 @@ $(function() {
 });
 
 //上传图片开始
-
+$('#btn').click(function(){
+	var photo = '<div class="photo_upload_box_outside" id="photo_upload_box_outside" tabindex="2000"><div class="photo_upload_box"><a class="photo_upload_close"href="javascript:void(0);"onclick="photo_upload_close()"></a><h1>本地上传</h1><p class="upload_num">共<span id="uploaded_length">0</span>张，还能上传<span id="upload_other">9</span>张</p><ul id="ul_pics" class="ul_pics clearfix"><li id="local_upload"><img src="img/local_upload.png" id="btn2"/></li></ul><div class="arrow_layer"><span class="arrow_top_area"><i class="arrow_top_bg"></i><em class="arrow_top"></em></span></div></div></div>';
+	$('body').append(photo);
+});
 var upload_total = 9; //最多上传数量
 var uploader = new plupload.Uploader({ //创建实例的构造方法
 	runtimes: 'gears,html5,html4,silverlight,flash', //上传插件初始化选用那种方式的优先级顺序

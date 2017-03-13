@@ -225,7 +225,6 @@ $(function() {
 });
 
 $(function() {
-	//$("#cca").val("aaa");
 	$("#cca").click(function() {
 		$("#cca").css("border", "2px solid #ff5c5d");
 		$("#ccb").css("border", "2px solid #ccc");
@@ -241,28 +240,22 @@ $(function() {
 });
 //		-----------------------------------------------------填写页面-------------------------------------------------------------
 
+$('.bdsz li').click(function() {
+	$(this).parents('.s-main-r').children('.bdsz').each(function() {
+		$('li', this).removeClass('selected-con');
+	});
+	$(this).attr('class', 'selected-con');
+});
+
 //		--------------------------------------------------填写日期组件-----------------------------------------------------------
-//$('#dd').calendar({
-//			trigger: '#dt',
-//			zIndex: 999,
-//			format: 'yyyy-mm-dd',
-//			onSelected: function(view, date, data) {
-//				console.log('event: onSelected')
-//			},
-//			onClose: function(view, date, data) {
-//				console.log('event: onClose')
-//				console.log('view:' + view)
-//				console.log('date:' + date)
-//				console.log('data:' + (data || 'None'));
-//			}
-//		});
+
 //		--------------------------------------------------填写悬赏Add-----------------------------------------------------------
 $(function() {
 	var i = 0;
-	$("#hfx3-1").click(function() {
+	$("#hfx3-1-xs").click(function() {
 		$(".txfg1-c2-1").hide();
 		$(".txfg1").css("height", "auto");
-		$(".txfg1").css("border-bottom", "0px");
+		//		$(".txfg1").css("border-bottom", "0px");
 		$(".addmation").append('<li><ul class="tyint"><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">悬赏职位</p><p class="cf"></p></div><div class="litr"><select class="w95s"><option selected="selected">请选择职位</option><option>灯光</option></select> <input class="w209" disabled="disabled" type="text" placeholder="填写职业名称" /><div class="lidel" id="lidel"><img src="img/delete-2.png" /></div></div><div class="cf"></div></li><li><div class="msex"><div class="litl"><p class="litx">*</p><p class="litc">性&nbsp;别</p><p class="cf"></p></div><div class="litr"><div class="w36"><input type="radio" checked="checked" name="r' + i + '" />男</div><div class="w36"><input type="radio" name="r' + i + '" />女</div><div class="w41"><input type="radio" name="r' + i + '" />不限</div></div><div class="cf"></div></div></li><li><div class="mage"><div class="litl"><p class="litx">*</p><p class="litc">年&nbsp;龄</p><p class="cf"></p></div><div class="litr"><input type="number" class="w75s" />&nbsp;岁 </div><div class="cf"></div></div></li><li><div class="mxz"><div class="litl"><p class="litx">*</p><p class="litc">赏&nbsp;金</p><p class="cf"></p></div><div class="litr"><input class="w75t" type="text" />-<input class="w75t" type="text" />&nbsp;k/天</div><div class="cf"></div></div></li><li><div class="msex"><div class="litl"><p class="litx">*</p><p class="litc">报销路费</p><p class="cf"></p></div><div class="litr"><div class="w36"><input class="" name="radio' + i + '" type="radio" checked="checked" />是</div><div class="w36"><input name="radio' + i + '" class="" type="radio" />否</div></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">具体要求</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
 			$(".lidel").on("click", function() {
 				$(this).parent().parent().parent().parent().parent().remove();
@@ -425,13 +418,18 @@ function closeShadeImg() {
 	$(".shadeImg").fadeOut(500);
 }
 
+//删除视频
+$('.delete-sp').click(function() {
+	$(this).parents('li').remove();
+});
+
 //		--------------------------------------------------填写应聘Add-----------------------------------------------------------
 $(function() {
 	var i = 0;
 	$("#hfx3-1").click(function() {
 		$(".txfg1-c2-1").hide();
 		$(".txfg1").css("height", "auto");
-		$(".txfg1").css("border-bottom", "0px");
+		//		$(".txfg1").css("border-bottom", "0px");
 		$(".addmation1").append('<li><div class="delete-gzjl"><img src="img/delete-2.png" /></div><ul class="tyint"><li><div class="mhdsj"><div class="litl"><p class="litx">*</p><p class="litc">活动时间</p><p class="cf"></p></div><div class="litr"><input class="w150t" type="text" name="" id="dt' + i + '" value="" />&nbsp;到&nbsp;<input class="w150t" type="text" name="" id="da' + i + '" value="" /><div class="liti1"><img src="img/jxrq.png" /></div><div class="liti2"><img src="img/jxrq.png" /></div></div><div id="dd' + i + '" style="left: 14px !important; top:42px !important"></div><div id="db' + i + '" style="left: 182px !important; top:42px !important"></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">所在公司</p><p class="cf"></p></div><div class="litr"><input class="w200t" type="text" /></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">担任职位</p><p class="cf"></p></div><div class="litr"><input class="w200t" type="text" /></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作描述</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
 			$(".delete-gzjl").on("click", function() {
 				$(this).parent().remove();
@@ -484,7 +482,7 @@ $(function() {
 var dq = 0;
 $('#hfx3-3').click(function() {
 	$('#tc .txfg1-c2-1').hide();
-	$('.addmation-dq').append('<li><input id="da' + dq + '" type="text" readonly="readonly" placeholder="请选择时间" /><select><option selected="selected">请选择</option><option>上午</option><option>中午</option><option>下午</option><option>晚上</option></select><div class="delete-2"><img src="img/delete-2.png" /></div><div id="db' + dq + '" style="left: 0 !important; top:30px !important"></div></li>');
+	$('.addmation-dq').append('<li><input id="da' + dq + '" type="text" readonly="readonly" placeholder="请选择时间" /><select><option selected="selected">请选择</option><option>上午</option><option>中午</option><option>下午</option><option>晚上</option></select><div class="delete-2"><img src="img/delete-2.png" /></div><div id="db' + dq + '" style="left: 0 !important; top:40px !important"></div></li>');
 	//		删除档期
 	$('.delete-2').click(function() {
 		$(this).parents('li').remove();
@@ -518,6 +516,14 @@ $("#tab-jbxx").click(function() {
 	}, 600);
 	return false;
 });
+
+$('#tab-dq').click(function() {
+	$("html,body").animate({
+		scrollTop: $("#tc").offset().top
+	}, 600);
+	return false;
+});
+
 $("#tap").click(function() {
 	//					$("html,body").animate({scrollTop: $($.attr(this, 'href')).offset().top}, 1200);
 	$("html,body").animate({
@@ -542,10 +548,10 @@ $("#tab-spzp").click(function() {
 
 $(function() {
 	var i = 0;
-	$("#hfx3-1").click(function() {
+	$("#hfx3-1-zp").click(function() {
 		$(".txfg1-c2-1").hide();
 		$(".txfg1").css("height", "auto");
-		$(".txfg1").css("border-bottom", "0px");
+		//				$(".txfg1").css("border-bottom", "0px");
 		$(".addmation").append('<li><ul class="tyint"><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">招聘职位</p><p class="cf"></p></div> <div class="litr"><select style="width: 132px; height: 30px;" class="w95s"><option></option><option>灯光</option></select> <input class="w209" disabled="disabled" type="text" placeholder="填写职业名称" /><div class="lidel" id="lidel"><img src="img/delete-2.png" /></div></div><div class="cf"></div></li><li><div class="msex"><div class="litl"><p class="litx">*</p><p class="litc">性&nbsp;别</p><p class="cf"></p></div><div class="litr"><div class="w36"><input name="sex' + i + '" class="" type="radio" /> 男</div><div class="w36"><input class="" name="sex' + i + '" type="radio" /> 女</div><div class="w41"><input class="" name="sex' + i + '" type="radio" /> 不限</div></div><div class="cf"></div></div></li><li><div class="mage"><div class="litl"><p class="litx">*</p><p class="litc">年&nbsp;龄</p><p class="cf"></p></div><div class="litr"><input type="number" class="w75s" />&nbsp;岁 </div><div class="cf"></div></div></li><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">工作经验</p><p class="cf"></p></div><div class="litr"><select style="width: 132px; height: 30px;" class="w95s"><option></option><option>灯光</option></select>&nbsp;年 </div><div class="cf"></div></li><li><div class="mxz"><div class="litl"><p class="litx">*</p><p class="litc">薪&nbsp;资</p><p class="cf"></p></div><div class="litr"><input class="w75t" type="number" />-<input class="w75t" type="number" />&nbsp;k/月</div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作内容</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">岗位要求</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
 			$(".lidel").on("click", function() {
 				$(this).parent().parent().parent().parent().parent().remove();
@@ -556,63 +562,6 @@ $(function() {
 				}
 			});
 		i++;
-	});
-});
-
-//		--------------------------------------------------详情页面-----------------------------------------------------------
-
-//		--------------------------------------------------详情求购-----------------------------------------------------------
-
-//		--------------------------------------------------查看号码-----------------------------------------------------------
-//查看号码
-$(function() {
-	$("#sp").click(function() {
-		alert("充值")
-		$("#spdl").show();
-	});
-	$("#spdl-ok").click(function() {
-		$("#spdl-p").text("联系电话：1566666666");
-		$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
-		if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
-			//					$("#id").value = "5"
-			//					c = c-1
-			setTimeout(function() {
-				$(".spdl").hide();
-			}, 3000);
-		}
-	});
-	$("#spdl-esc").click(function() {
-		$(".spdl").hide();
-	});
-});
-//报名
-$("#bt-p").click(function() {
-	$(".xqbta a").css("font-size", "12px");
-	$(".xqbta").css("background", "#ccc");
-	$(".xqbta a").text("已有10人报名");
-});
-
-$(function() {
-	$("#fbp1").css("border", "2px solid #ff5c5d");
-	$("#fbp2").click(function() {
-			$("#fbp2").css("border", "2px solid #ff5c5d");
-			$("#fbp1").css("border", "2px solid  #f2f2f2");
-		}),
-		$("#fbp1").click(function() {
-			$("#fbp1").css("border", "2px solid #ff5c5d");
-			$("#fbp2").css("border", "2px solid  #f2f2f2");
-		});
-	$(".rhideb").click(function() {
-		$("#spdlb").hide();
-		$(".show-bg").hide();
-		$("#find").css("background", "#bfbfbf");
-		$("#find").css("color", "#fff");
-	});
-	$("#tjbtn").click(function() {
-		$("#spdlb").fhide();
-		$(".show-bg").hide();
-		$("#find").css("background", "#bfbfbf");
-		$("#find").css("color", "#fff");
 	});
 });
 
@@ -666,73 +615,60 @@ $('.spxx-lb ul li').click(function() {
 	}, 300);
 });
 
-
-// $('#xx_01').on('click', function() {
-	function xx_01(id){
-		if($('#xx_01'+id).hasClass('act')) {
-			$('#xx_01'+id).removeClass('act');
-			$("#xx_01"+id+" img").css('transform', 'rotate(0deg)');
-			$('#xx_01'+id+' span').html('查看详情');
-			$('#yhmc'+id+' dl').stop().animate({
+$(function() {
+	var yhmc_height = $('.yhmc dl div').height();
+	$('#xx_01').on('click', function() {
+		if($(this).hasClass('act')) {
+			$(this).removeClass('act');
+			$("#xx_01 img").css('transform', 'rotate(0deg)');
+			$('#xx_01 span').html('查看详情');
+			$('.yhmc dl').stop().animate({
 				height: '0px'
 			}, 1000);
 		} else {
-			$('#xx_01'+id).addClass('act');
-			$("#xx_01"+id+" img").css('transform', 'rotate(180deg)');
-			$('#xx_01'+id+' span').html('收起');
-			$('#yhmc'+id+' dl').stop().animate({
-				height: '430px'
+			$(this).addClass('act');
+			$("#xx_01 img").css('transform', 'rotate(180deg)');
+			$('#xx_01 span').html('收起');
+			$('.yhmc dl').stop().animate({
+				height: yhmc_height + 'px'
 			}, 1000);
 		}
-	}
-		
-	// });
-
-$('.spxx_hf').click(function(){
-		$(this).parents('li').children('.no').show();
 	});
-	
-	function tel(){
-		var tel = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：2016-12-10</p><p class="xqxx_01_02">活动地点：郑州</p><p class="xqxx_01_03">悬赏内容：摄影、主持人</p></div><div class="yhmc"><div id="xl_01" class="yhmc_01"><img src="img/yhmc.png"><p class="yhmc_01_01">用户名称</p><p class="yhmc_01_01">1年经验</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">回复</p><p class="yhmc_01_04">电聊</p><a class="yhmc_01_07">查看号码</a><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div><div class="clearfloat"></div></div></li>';
-		$('#zp0').append(tel);	
-		$(".xs1").click(function(event) {
-			$(this).parents('li').remove();
-			event.stopPropagation();
-		});
-		xiala();
-		return false;
-	}
-	
-	function xiala(){
-		$(".xll1").hover(function() {
-			$(this).children('.xs1').show();
-		},function(){
-			$(this).children('.xs1').hide();
-		});
-	}
-	
-	function reject(){
-		var reject = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：2016-12-10</p><p class="xqxx_01_02">活动地点：郑州</p><p class="xqxx_01_03">悬赏内容：摄影、主持人</p></div><div class="yhmc"><div id="xl_01" class="yhmc_01"><img src="img/yhmc.png"><p class="yhmc_01_01">用户名称</p><p class="yhmc_01_01">1年经验</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">回复</p><p class="yhmc_01_06">拒绝</p><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div><div class="clearfloat"></div></div></li>';
-		$('.s-main-b ul').append(reject);
-		$(".xs1").click(function(event) {
-			$(this).parents('li').remove();
-			event.stopPropagation();
-		});
-		xiala();
-	}
-// 小电聊
-function dl(id,uid){
-	if (window.confirm('确定支付三个码头币进行查看么？')) 
-	{
-		// alert($('#xp'+uid).val());
-		$('#dh'+uid).html($('#xp'+uid).val());
-	};
-}
-//小拒绝
-function jj(id){
-	alert(id);
+});
 
+$('.spxx_hf').click(function() {
+	$(this).parents('li').children('.no').show();
+});
+
+function tel() {
+	var tel = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：2016-12-10</p><p class="xqxx_01_02">活动地点：郑州</p><p class="xqxx_01_03">悬赏内容：摄影、主持人</p></div><div class="yhmc"><div id="xl_01" class="yhmc_01"><img src="img/yhmc.png"><p class="yhmc_01_01">用户名称</p><p class="yhmc_01_01">1年经验</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">回复</p><p class="yhmc_01_04">电聊</p><a class="yhmc_01_07">查看号码</a><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div><div class="clearfloat"></div></div></li>';
+	$('.s-main-b ul').append(tel);
+	$(".xs1").click(function(event) {
+		$(this).parents('li').remove();
+		event.stopPropagation();
+	});
+	xiala();
+	return false;
 }
+
+function xiala() {
+	$(".xll1").hover(function() {
+		$(this).children('.xs1').show();
+	}, function() {
+		$(this).children('.xs1').hide();
+	});
+}
+
+function reject() {
+	var reject = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：2016-12-10</p><p class="xqxx_01_02">活动地点：郑州</p><p class="xqxx_01_03">悬赏内容：摄影、主持人</p></div><div class="yhmc"><div id="xl_01" class="yhmc_01"><img src="img/yhmc.png"><p class="yhmc_01_01">用户名称</p><p class="yhmc_01_01">1年经验</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">回复</p><p class="yhmc_01_06">拒绝</p><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div><div class="clearfloat"></div></div></li>';
+	$('.s-main-b ul').append(reject);
+	$(".xs1").click(function(event) {
+		$(this).parents('li').remove();
+		event.stopPropagation();
+	});
+	xiala();
+}
+
 //		--------------------------------------------------部队消息-----------------------------------------------------------
 
 $(".xs1").click(function() {
@@ -773,8 +709,129 @@ function changec() {
 		document.getElementById('btn_c').innerText = "收藏";
 	};
 };
-//		--------------------------------------------------详情页面-----------------------------------------------------------
-//		--------------------------------------------------详情页面-----------------------------------------------------------
-//		--------------------------------------------------详情页面-----------------------------------------------------------
-//		--------------------------------------------------详情页面-----------------------------------------------------------
-//		--------------------------------------------------详情页面-----------------------------------------------------------
+
+//商铺主页
+$(document).ready(function() {
+	$(".con").eq(0).show();
+	$(".s-f2l-c1 ul li a").click(function() {
+		var num = $(".s-f2l-c1 ul li a").index(this);
+		$(".con").hide();
+		$(".con").eq(num).show().slblings().hide();
+	})
+});
+//收藏商铺
+$('.tj_01_03').click(function() {
+	if($(this).html() == '收藏商铺') {
+		$(this).html('取消收藏');
+		$(this).addClass('qxsc');
+	} else {
+		$(this).html('收藏商铺');
+		$(this).removeClass('qxsc');
+	}
+});
+
+$('.2fb .s-f2l-c1 li').click(function() {
+	$(this).parents('.2fb').children('.s-f2l-c1').each(function() {
+		$('li', this).removeClass('selected-tab');
+	});
+	$(this).attr('class', 'selected-tab');
+});
+//----------------------------点赞--------------------------
+$('.dz-qx span').click(function() {
+	if($(this).hasClass('icon-dz')) {
+		$(this).removeClass('icon-dz');
+		$(this).addClass('icon-dz-kz');
+	} else {
+		$(this).removeClass('icon-dz-kz');
+		$(this).addClass('icon-dz');
+	}
+});
+
+//----------------------------工作室下拉--------------------------	
+$('.gzs').hover(function() {
+	$('.gzs-xl').css('border', '1px');
+	$('.gzs-xl').css('border-style', 'solid');
+	$('.gzs-xl').css('border-color', '#FF5C5D');
+	$('.gzs-xl').stop().animate({
+		height: '100px'
+	}, 300);
+}, function() {
+	$('.gzs-xl').css('border', '0px');
+	$('.gzs-xl').stop().animate({
+		height: '0px'
+	}, 300);
+});
+
+$('.gzs-xl span').click(function() {
+	$('.gzs p').html($(this).html());
+	$('.gzs-xl').css('border', '0px');
+	$('.gzs-xl').stop().animate({
+		height: '0px'
+	}, 300);
+});
+
+//----------------------------remove tab切换样式--------------------------
+$('.parents .left a').click(function() {
+	$(this).parents('.parents').children('.left').each(function() {
+		$('a', this).removeClass('selected');
+	});
+	$(this).addClass('selected');
+});
+//----------------------------上一步/下一步--------------------------
+$('#jbxx').click(function() {
+	$('.con1').css('display', 'none');
+	$('.con2').css('display', 'block');
+	$('#con-jbxx').removeClass('selected-con');
+	$('#con-tjzp').attr('class', 'selected-con');
+});
+
+$('#syb').click(function() {
+	$('.con1').css('display', 'block');
+	$('.con2').css('display', 'none');
+	$('#con-tjzp').removeClass('selected-con');
+	$('#con-jbxx').attr('class', 'selected-con');
+});
+
+$('#zpxx').click(function() {
+	$('.list-b').attr('src', 'img/list-2-red.png');
+});
+
+//查看号码
+$(function() {
+	$("#sp").click(function() {
+		alert("充值")
+		$("#spdl").show();
+	});
+	$("#spdl-ok").click(function() {
+		$("#spdl-p").text("联系电话：1566666666");
+		$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
+		if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
+			//					$("#id").value = "5"
+			//					c = c-1
+			setTimeout(function() {
+				$(".spdl").hide();
+			}, 3000);
+		}
+	});
+	$("#spdl-esc").click(function() {
+		$(".spdl").hide();
+	});
+});
+//报名
+$("#bt-p").click(function() {
+	$(".xqbta a").css("font-size", "12px");
+	$(".xqbta").css("background", "#ccc");
+	$(".xqbta a").text("已有10人报名");
+});
+
+//已发布页面
+$('.scwc').click(function() {
+	$(this).parents('li').children('.yfb').children('.yfb_01').children('.yfb_01_03').html('已完成');
+	$(this).parents('.change').html('<div class="delete-yfb"><img src="img/delete-2.png" /></div>');
+	$('.delete-yfb').click(function() {
+		$(this).parents('li').remove();
+	});
+});
+$('.delete-yfb').click(function() {
+	$(this).parents('li').remove();
+});
