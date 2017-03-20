@@ -766,7 +766,7 @@
 					<div class="s-r-5f">
 						<ul>
 							<?php if(is_array($datan)): foreach($datan as $key=>$dataa): ?><li>
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD
 									<a href="#">
 										<div>
 											<div class="yh-admin">
@@ -788,11 +788,11 @@
 												</p>
 											</div>
 											<div class="clear"></div>
-=======
+======= -->
 									<a href="?s=/Home/Zpdt1/xqzp/id/<?php echo ($dataa["rid"]); ?>">
 										<div class="yh-admin">
 											<img src="/matouPCS/Public/Home/img/bdmc.png" >
->>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
+<!-- >>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c -->
 										</div>
 										<p class="gwyq">
 											<span class="black-333">岗位要求：</span>

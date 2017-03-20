@@ -1,0 +1,787 @@
+[ 2017-03-15T14:46:35+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001994s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0869s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.1212s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0125s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0592s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0297s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0515s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0127s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000483s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000573s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.171674s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.171776s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001305s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001355s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001756s ]
+
+[ 2017-03-15T14:46:50+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1386 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1270 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1281 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001151s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001236s ]
+
+[ 2017-03-15T14:46:51+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0598s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0506s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0120s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  ORDER BY f.collect desc LIMIT 0,2   [ RunTime:0.0657s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000237s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 128 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 212 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 214 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 222 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 224 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 891 行.
+NOTIC: [8] Undefined index: uid D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 891 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 901 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093290s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2017-03-15T14:46:53+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/bddz&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001651s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0142s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0114s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000320s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000827s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.181835s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.182036s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001749s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001886s ]
+
+[ 2017-03-15T14:47:03+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0125s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '婚庆公司' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0092s ]
+
+[ 2017-03-15T14:47:05+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0084s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '表演团' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0065s ]
+
+[ 2017-03-15T14:47:06+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000503s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0132s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '婚庆公司' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0136s ]
+
+[ 2017-03-15T14:47:08+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0144s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '表演团' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0098s ]
+
+[ 2017-03-15T14:47:09+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0045s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '工作室' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0037s ]
+
+[ 2017-03-15T14:47:10+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0053s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0054s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0051s ]
+
+[ 2017-03-15T14:47:19+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0118s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0087s ]
+
+[ 2017-03-15T14:47:28+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0102s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0092s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0072s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0067s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000221s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022404s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000595s ]
+
+[ 2017-03-15T14:47:29+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0073s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0077s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0052s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0047s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000247s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024539s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024579s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2017-03-15T14:47:30+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0071s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0062s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0045s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0044s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023363s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023420s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000793s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000886s ]
+
+[ 2017-03-15T14:47:39+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1386 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1270 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1281 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2017-03-15T14:48:23+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Tjcs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+SQL: SHOW COLUMNS FROM `commodity` [ RunTime:0.1432s ]
+SQL: SELECT * FROM commodity as c INNER JOIN comimage as m on c.id = m.psid INNER JOIN shop as s on c.pid = s.id   [ RunTime:0.0438s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0121s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0122s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000453s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\b97a705644adf3a352e59244cfceaf28.php 第 40 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\b97a705644adf3a352e59244cfceaf28.php 第 124 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\b97a705644adf3a352e59244cfceaf28.php 第 126 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\b97a705644adf3a352e59244cfceaf28.php 第 134 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\b97a705644adf3a352e59244cfceaf28.php 第 136 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\b97a705644adf3a352e59244cfceaf28.php 第 637 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078490s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000902s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000965s ]
+
+[ 2017-03-15T14:48:26+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0121s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0142s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0120s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0063s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0066s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000468s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000558s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041596s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041665s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2017-03-15T14:48:28+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1386 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1270 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1281 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000745s ]
+
+[ 2017-03-15T14:48:29+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0116s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0116s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  ORDER BY f.collect desc LIMIT 0,2   [ RunTime:0.0120s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000425s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000519s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 128 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 212 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 214 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 222 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 224 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 891 行.
+NOTIC: [8] Undefined index: uid D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 891 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\01d3854d943345ccb8aef8c7ad49f784.php 第 901 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029322s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000966s ]
+
+[ 2017-03-15T14:48:30+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/bddz&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0140s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0105s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017039s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017136s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000812s ]
+
+[ 2017-03-15T14:48:33+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0131s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0117s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0102s ]
+
+[ 2017-03-15T14:48:34+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0043s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0034s ]
+
+[ 2017-03-15T14:48:35+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0115s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0047s ]
+
+[ 2017-03-15T14:48:36+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0123s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0126s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0095s ]
+
+[ 2017-03-15T14:48:37+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0072s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0060s ]
+
+[ 2017-03-15T14:48:38+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0138s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0086s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0064s ]
+
+[ 2017-03-15T14:48:39+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0041s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0033s ]
+
+[ 2017-03-15T14:48:40+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0118s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0062s ]
+
+[ 2017-03-15T14:48:41+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0045s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0035s ]
+
+[ 2017-03-15T14:48:42+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0113s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0072s ]
+
+[ 2017-03-15T14:48:43+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0120s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '工作室' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0106s ]
+
+[ 2017-03-15T14:48:44+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0114s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0088s ]
+
+[ 2017-03-15T14:48:45+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0071s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0057s ]
+
+[ 2017-03-15T14:48:46+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0115s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0055s ]
+
+[ 2017-03-15T14:48:48+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0114s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0073s ]
+
+[ 2017-03-15T14:48:49+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0112s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0078s ]
+
+[ 2017-03-15T14:48:50+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0060s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0051s ]
+
+[ 2017-03-15T14:48:51+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0129s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '婚庆公司' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0115s ]
+
+[ 2017-03-15T14:48:52+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzhq.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `forcee` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0070s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( type_bd='婚庆公司'  ) ORDER BY f.id desc LIMIT 3,3   [ RunTime:0.0066s ]
+
+[ 2017-03-15T14:48:53+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Mtbu/dongtaidi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0124s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( f.type_bd = '工作室' ) ORDER BY f.id LIMIT 0,3   [ RunTime:0.0103s ]
+
+[ 2017-03-15T14:48:54+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzgz.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0141s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `forcee` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0065s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid INNER JOIN user as u on u.id = f.uid  WHERE ( type_bd='工作室'  ) ORDER BY f.id desc LIMIT 3,3   [ RunTime:0.0057s ]
+
+[ 2017-03-15T14:48:55+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0112s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0074s ]
+
+[ 2017-03-15T14:48:56+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0111s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0061s ]
+
+[ 2017-03-15T14:48:57+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0110s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0067s ]
+
+[ 2017-03-15T14:48:58+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0063s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0053s ]
+
+[ 2017-03-15T14:48:59+08:00 ] 127.0.0.1 /matouPCS/index.php/Home/Mtbu/buduijzre.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dongtai` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `dongtai` [ RunTime:0.0036s ]
+SQL: SELECT * FROM dongtai as d INNER JOIN user as u on d.uid = u.id INNER JOIN dongimage as i on d.did = i.pid  ORDER BY d.did desc LIMIT 0,2   [ RunTime:0.0030s ]
+

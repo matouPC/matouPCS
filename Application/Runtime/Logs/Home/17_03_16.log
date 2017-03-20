@@ -1,0 +1,1005 @@
+[ 2017-03-16T12:10:39+08:00 ] 127.0.0.1 /matouPCS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019141s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001942s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0442s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.1158s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0068s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0512s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0673s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0973s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0119s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000635s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000783s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.181387s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.181583s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001798s ]
+
+[ 2017-03-16T12:10:42+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1386 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1257 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1270 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1281 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000595s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000631s ]
+
+[ 2017-03-16T12:10:45+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt1/index/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0739s ]
+SQL: SELECT * FROM `recruit1`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0694s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0052s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\matouPCS\Application\Home\Controller\Zpdt1Controller.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0047s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0204s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000518s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000676s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 41 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 125 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 135 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 137 行.
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.138845s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.138962s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002754s ]
+
+[ 2017-03-16T12:10:47+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recruit1` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `recruit2`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0112s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0071s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined index: date D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 38 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054731s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000997s ]
+
+[ 2017-03-16T12:27:54+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=%E8%90%A5%E4%B8%9A%E5%91%98&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0123s ]
+SQL: SELECT COUNT(*) AS tp_count FROM recruit2 as r WHERE ( r.type = '营业员' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM recruit2 as r WHERE ( r.type = '营业员' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0104s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN recruit2 as r on r.pid = e.rid INNER JOIN forcee as f on f.uid = u.id  WHERE ( r.type = '营业员' ) ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0063s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 551 行.
+NOTIC: [8] Undefined variable: newList D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 576 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012826s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012907s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001064s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001132s ]
+
+[ 2017-03-16T12:27:58+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=%E7%BB%8F%E7%90%86%5C%E5%BA%97%E9%95%BF&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM recruit2 as r WHERE ( r.type = '经理\\店长' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM recruit2 as r WHERE ( r.type = '经理\\店长' )  [ RunTime:0.0007s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 551 行.
+NOTIC: [8] Undefined variable: newList D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 576 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000898s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2017-03-16T12:28:00+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=%E6%95%B0%E7%A0%81%E5%B8%88&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0490s ]
+SQL: SELECT COUNT(*) AS tp_count FROM recruit2 as r WHERE ( r.type = '数码师' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM recruit2 as r WHERE ( r.type = '数码师' )  [ RunTime:0.0005s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 551 行.
+NOTIC: [8] Undefined variable: newList D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 576 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012724s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012807s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000913s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2017-03-16T12:28:02+08:00 ] 127.0.0.1 /matouPCS/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0143s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0060s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0059s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000250s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2017-03-16T12:28:06+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=%E7%BB%8F%E7%90%86%5C%E5%BA%97%E9%95%BF&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0126s ]
+SQL: SELECT COUNT(*) AS tp_count FROM recruit2 as r WHERE ( r.type = '经理\\店长' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM recruit2 as r WHERE ( r.type = '经理\\店长' )  [ RunTime:0.0007s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 551 行.
+NOTIC: [8] Undefined variable: newList D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 576 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025844s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001711s ]
+
+[ 2017-03-16T12:28:21+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=%E5%85%B6%E4%BB%96&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM recruit2 as r WHERE ( r.type = '其他' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM recruit2 as r WHERE ( r.type = '其他' )  [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 551 行.
+NOTIC: [8] Undefined variable: newList D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 576 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013045s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013126s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000960s ]
+
+[ 2017-03-16T12:28:24+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0126s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recruit1` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `recruit2`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0065s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0065s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+NOTIC: [8] Undefined index: date D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 38 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012267s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012339s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000938s ]
+
+[ 2017-03-16T12:30:02+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt1/index/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001104s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `recruit1`  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0115s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\matouPCS\Application\Home\Controller\Zpdt1Controller.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0070s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0062s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 41 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 125 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 135 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 137 行.
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.092606s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001751s ]
+
+[ 2017-03-16T12:30:03+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001522s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0133s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recruit1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `recruit2`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0121s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0085s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8] Undefined index: date D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 38 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010613s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001132s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001194s ]
+
+[ 2017-03-16T12:30:10+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=%E8%90%A5%E4%B8%9A%E5%91%98&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001115s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM recruit2 as r WHERE ( r.type = '营业员' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM recruit2 as r WHERE ( r.type = '营业员' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0113s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN recruit2 as r on r.pid = e.rid INNER JOIN forcee as f on f.uid = u.id  WHERE ( r.type = '营业员' ) ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0113s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 551 行.
+NOTIC: [8] Undefined variable: newList D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 564 行.
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+NOTIC: [8] Undefined variable: newLists D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 576 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000378s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025974s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026131s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001595s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001716s ]
+
+[ 2017-03-16T12:31:03+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt1/index/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `recruit1`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0124s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0134s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\matouPCS\Application\Home\Controller\Zpdt1Controller.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0100s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0049s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 41 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 125 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 135 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 137 行.
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021864s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021917s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000713s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000768s ]
+
+[ 2017-03-16T12:31:05+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003105s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recruit1` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `recruit2`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0082s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0056s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Undefined index: date D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 38 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006657s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006694s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000491s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000521s ]
+
+[ 2017-03-16T12:31:36+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt1/index/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001874s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `recruit1`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0034s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0048s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\matouPCS\Application\Home\Controller\Zpdt1Controller.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0040s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0032s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 41 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 125 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 135 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 137 行.
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016164s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000579s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000631s ]
+
+[ 2017-03-16T12:31:38+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recruit1` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `recruit2`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0102s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0066s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+NOTIC: [8] Undefined index: date D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 38 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013910s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000864s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2017-03-16T12:33:01+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt1/index/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `recruit1`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0119s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0085s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\matouPCS\Application\Home\Controller\Zpdt1Controller.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0064s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0059s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 41 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 125 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 135 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 137 行.
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018796s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000717s ]
+
+[ 2017-03-16T12:33:03+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recruit1` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `recruit2`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0070s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0070s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+NOTIC: [8] Undefined index: date D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 38 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013638s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013713s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001064s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001130s ]
+
+[ 2017-03-16T14:38:11+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001160s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0818s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as e on u.id = e.uid INNER JOIN employwork as m on e.eid = m.pid  ORDER BY e.eid desc  [ RunTime:0.0607s ]
+SQL: SHOW COLUMNS FROM `employ` [ RunTime:0.0039s ]
+SQL: SELECT e.*,u.pubtime,u.imagename FROM employ as e INNER JOIN user as u on u.id = e.uid  ORDER BY collect desc LIMIT 0,3   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `forcee` ORDER BY collect desc LIMIT 0,3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 43 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 129 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 137 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 139 行.
+NOTIC: [8] Undefined index: age D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 728 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 767 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 779 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 767 行.
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c6f5ece1e5a5ad37acc83b018538f66a.php 第 779 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048709s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001180s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001235s ]
+
+[ 2017-03-16T14:38:13+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/ypq&p=1&type=&sex=&age=&worktime=&address=&zuo=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+NOTIC: [8] Undefined index: rzbd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 604 行.
+SQL: SHOW COLUMNS FROM `employ` [ RunTime:0.0118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `employ` LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php 第 703 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0041s ]
+SQL: SELECT * FROM user as u INNER JOIN employ as r on u.id = r.uid  LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `employwork` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `employwork`  [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 715 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined variable: works D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\573e1f7726feca95ac89cd9c617b50e6.php 第 33 行.
+NOTIC: [8] Undefined variable: works D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\573e1f7726feca95ac89cd9c617b50e6.php 第 36 行.
+NOTIC: [8] Undefined variable: works D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\573e1f7726feca95ac89cd9c617b50e6.php 第 39 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043529s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2017-03-16T15:45:39+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0158s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0079s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0084s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0067s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025460s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001058s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001128s ]
+
+[ 2017-03-16T15:45:45+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1386 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1270 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1281 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2017-03-16T15:45:46+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt1/index/type/0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `recruit1`  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0987s ]
+SQL: SELECT * FROM recruit2 as  r INNER JOIN recruit1 as e on r.pid = e.rid  INNER JOIN  user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY r.id desc LIMIT 0,3   [ RunTime:0.0093s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\matouPCS\Application\Home\Controller\Zpdt1Controller.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `forcee` [ RunTime:0.0090s ]
+SQL: SELECT * FROM forcee as f INNER JOIN forceimage as r on f.id = r.pid  ORDER BY f.collect desc LIMIT 0,3   [ RunTime:0.0144s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 41 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 125 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 135 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 137 行.
+NOTIC: [2] include(2rank-header.php): failed to open stream: No such file or directory D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [2] include(): Failed opening '2rank-header.php' for inclusion (include_path='.;C:\php\pear') D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 406 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\96c30227530d2a0f3f48e98d8099d90e.php 第 825 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026766s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002787s ]
+
+[ 2017-03-16T15:45:48+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Box/zpdt&p=1&type=&sex=&age=&worktime=&rzbd=&address=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recruit1` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `recruit2`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0037s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id INNER JOIN forcee as f on f.uid = u.id  ORDER BY e.rid desc LIMIT 0,20   [ RunTime:0.0039s ]
+NOTIC: [2] Missing argument 1 for Think\PageAjax::show(), called in D:\phpStudy\WWW\matouPCS\Application\Home\Controller\BoxController.class.php on line 574 and defined D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 77 行.
+NOTIC: [8] Undefined variable: url_replace D:\phpStudy\WWW\matouPCS\ThinkPHP\Library\Think\PageAjax.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: date D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 38 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2b51774f85e06f5bcc90569668a884c3.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015956s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000524s ]
+
+[ 2017-03-16T15:45:51+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Zpdt1/xqzp/id/50
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `recruit1` [ RunTime:0.0068s ]
+SQL: SELECT * FROM recruit1 as e INNER JOIN user as u on e.uid = u.id  WHERE ( e.rid = 50 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `recruit2` [ RunTime:0.0083s ]
+SQL: SELECT * FROM recruit2 as r INNER JOIN recruit1 as e on r.pid = e.rid  WHERE ( r.pid = 50 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000313s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000405s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 41 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 125 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 127 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 135 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 137 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 463 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 480 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 484 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 490 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 497 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 497 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 498 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 498 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 500 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 501 行.
+NOTIC: [8] Undefined index: address D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 511 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 513 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 520 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 521 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\c512f97467e6dbd0e2f8ba4913579175.php 第 588 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.230922s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.231066s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001478s ]
+
+[ 2017-03-16T15:48:58+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+SQL: SHOW COLUMNS FROM `reward2` [ RunTime:0.0044s ]
+SQL: SELECT * FROM reward2 as  r INNER JOIN reward1 as e on r.pid = e.psid  INNER JOIN  user as u on e.uid = u.id  ORDER BY e.psid desc LIMIT 0,21   [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0107s ]
+SQL: SELECT * FROM user as u INNER JOIN forcee as f on f.uid = u.id  WHERE ( f.status = 2 ) ORDER BY f.collect desc LIMIT 0,4   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `shop` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `shop` ORDER BY collect desc LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0056s ]
+SQL: SELECT * FROM flea as f INNER JOIN user as u on f.uid = u.id  WHERE ( tz_status = '1' ) ORDER BY f.fid desc LIMIT 0,5   [ RunTime:0.0053s ]
+NOTIC: [8] Undefined variable: ren D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: fbys D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 49 行.
+NOTIC: [8] Undefined variable: fbyp D:\phpStudy\WWW\matouPCS\Application\Home\Controller\IndexController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 50 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 59 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 179 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 181 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 189 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 191 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1088 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1288 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 1262 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028910s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028961s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000860s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000951s ]
+
+[ 2017-03-16T15:49:02+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000838s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1386 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1270 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1281 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001839s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001975s ]
+
+[ 2017-03-16T15:49:04+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/Tzsc/xqxz/id/79
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `flea` [ RunTime:0.0041s ]
+SQL: SELECT * FROM flea as f INNER JOIN fleaimage as m on f.fid = m.pid INNER JOIN user as u on f.uid = u.id  WHERE ( f.fid = 79 and tz_status = '1' ) LIMIT 1   [ RunTime:0.0551s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0048s ]
+SQL: SELECT * FROM user as u INNER JOIN liuyan as l on u.id = l.uid INNER JOIN flea as f on l.xsid = f.fid  WHERE ( l.xsid = 79 and tz_status = '1' ) ORDER BY l.lid desc LIMIT 0,3   [ RunTime:0.0136s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: username D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 40 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 124 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 126 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 134 行.
+NOTIC: [8] Undefined variable: sp D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 136 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 460 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 477 行.
+NOTIC: [8] Use of undefined constant imagename - assumed 'imagename' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 478 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 494 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 494 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 495 行.
+NOTIC: [8] Use of undefined constant tel - assumed 'tel' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 495 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 497 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 510 行.
+NOTIC: [8] Use of undefined constant bdlx - assumed 'bdlx' D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 517 行.
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\matouPCS\Application\Runtime\Cache\Home\bcd710f0fdbc0f0916ac40b9b396f03c.php 第 598 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047440s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047522s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2017-03-16T15:49:16+08:00 ] 127.0.0.1 /matouPCS/?s=/Home/User/wxcode/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::get() should be compatible with Think\Controller::get($name = '') D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1386 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1266 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1270 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `user` WHERE ( weixin = '' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: wxAdd D:\phpStudy\WWW\matouPCS\Application\Home\Controller\UserController.class.php 第 1281 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000714s ]
+

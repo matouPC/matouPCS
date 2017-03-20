@@ -400,29 +400,7 @@
 	</body>
 </html>
 
-					<div class="">
-						<div>
-							<div class="f2-l-1">
-								<a href="?s=/Home/Index">
-									<img src="/matouPCS/Public/Home/img/logo.png">
-								</a>
-							</div>
-							<div class="f2-l-2">码头商城</div>
-							<!--<div class="f2-l-3">应赏区</div>-->
-						</div>
-						<div class="s-f2-r">
-							<div class="demo">
-								<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
-									<ul>
-										<li><input type="text" id="tt" value="" class="text" style="text-align: left;" autocomplete="off" /></li>
-										<li><input type="submit" value="搜索" class="button" /></li>
-										<li><input type="submit" value="商家认证部队" class="button2" /></li>
-
-									</ul>
-								</form>
-							</div>
-						</div>
-					</div>
+					
 					<div class="h-c-3f">
 						<img src="/matouPCS/Public/Home/img/banner.png" />
 					</div>

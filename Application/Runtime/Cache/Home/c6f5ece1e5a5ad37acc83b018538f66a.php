@@ -715,28 +715,12 @@
 						<ul>
 							<!-- 推荐应聘 -->
 							<?php if(is_array($listn)): foreach($listn as $key=>$listns): ?><li>
-<<<<<<< HEAD
 								<a href="#">
 									<div class="yp">
 										<div class="xg">
 											<div class="xg-img">
 												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
-=======
-									<a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($listns["eid"]); ?>">
-										<div class="yp">
-											<div class="xg">
-											<?php if($listns[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
-                                      <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($listns["pubtime"]); ?>/<?php echo ($listns["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?>
-												
-												<div class="xg_01">
-													<p class="xg_01_01"><?php echo ($listns["name"]); ?></p>
-													<p class="xg_01_01"><?php echo ($listns["age"]); ?>岁</p>
-													<p class="xg_01_01"><?php echo ($listns["type"]); ?></p>
-													<p class="xg_01_02">&nbsp;工作经验：<b style="color:#666666; font-weight:500;"><?php echo ($listns["worktimes"]); ?>年</b></p>
-													<p class="xg_01_03">个人简介：<b style="color:#666666; font-weight:500;"><?php echo ($listns["content"]); ?></b></p>
-												</div>
->>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
+
 											</div>
 											<div class="xg_01">
 												<div class="xg_01_01">
