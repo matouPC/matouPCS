@@ -8,13 +8,18 @@ class TjcsController extends Controller
     public function index()
     {
     	//码头商品
+    	$shop=M('shop')->where('status=2')->limit('0,3')->select();
     	$data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
+    	//推荐商品
+    	$datas = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->where('leixing=1')->order('c.id desc')->limit('0,3')->select();
     	//推荐部队部队
-    	$listNew = M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->order('f.collect desc')->limit('0,3
-    		')->select();
+    	$listNew = M('shop as f')->join('user as u on u.id = f.uid')->order('f.collect desc')->where('status=2')->order('f.id desc')->limit('0,3')->select();
     	// $this->assign('list',$list);
     	$num = count($data);
+    	$this->assign('shop',$shop);
+        $this->assign('datas',$datas);
     	$this->assign('data',$data);
+    	
     	$this->assign('listn',$listNew);
     	$this->assign('num',$num);
 
@@ -34,12 +39,14 @@ class TjcsController extends Controller
         }
     }
         $shop=M('shop as c')->join('user as u on c.uid = u.id')->where("c.id=$id")->find();
-        $shangpin=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id")->select();
-        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+        $shangpinz=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id and leixing=1")->select();
+        $shangpins=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id and leixing=2")->select();
+        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         //var_dump($shangpin);die;
         $this->assign('list',$list);
         $this->assign('shop',$shop);
-        $this->assign('shangpin',$shangpin);
+        $this->assign('shangpinz',$shangpinz);
+        $this->assign('shangpins',$shangpins);
         $this->display('Tjcs/spxq');
     
     }
@@ -141,9 +148,9 @@ class TjcsController extends Controller
            {
             //商品详情
      
-            $shop = M('shop as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->where('s.status=2')->order('s.id desc')->limit('0,2')->select();
+            $shop = M('shop as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->where('s.status=2')->order('s.id desc')->find();
     
-            $this->assign('shop',$shop);
+            $this->assign('v',$shop);
             $this->display('Tjcs/spcjcg');
            
            }   
@@ -157,4 +164,13 @@ class TjcsController extends Controller
             $this->display('Tjcs/spcjcg1');
              
            }  
+           public function usaveimg(){
+           	$data['imagename'] =I('imagename');
+           	$id = $_SESSION['id'];
+           	$img = M('shop');
+           	$ob = $img->where("id = {$id}")->save($data);
+           	if($ob){
+           		echo 'y';
+           	}
+           }
 }

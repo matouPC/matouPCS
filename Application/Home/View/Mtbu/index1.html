@@ -4,449 +4,1130 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>码头部队</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/mtbu-zy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/datePicker.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/hzw-city-picker.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<style>
-			.s-f1-r ul li a .img {
-				margin-top: 15px;
-				margin-right: 10px;
-				float: right;
-			}
-			.select-yfb {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-yfb ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-yfb ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-xx ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-xx ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-		</style>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/2rank.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.fs.boxer.css" />
 	</head>
 
 	<body>
 		<header>
-			<include file="Public/header"/>
-					<div class="h-c-2f">
-						<div class="s-f2-l">
-							<div class="f2-l-1">
-								<a href="?s=/Home/Index">
-									<img src="__PUBLIC__/Home/img/logo.png" />
-								</a>
+			<div class="h-content-main">
+				<div class="h-main-c">
+				·<include file="Public/header"/>
+						<div class="h-c-2f">
+							<div class="s-f2-l-f">
+								<div class="f2-l-1-f">
+									<a href="?s=/Home/Index">
+										<img src="__PUBLIC__/Home/img/logo.png" alt="喜事码头" />
+									</a>
+								</div>
+								<div class="f2-l-3-f">
+									<h1>码头部队</h1>
+								</div>
 							</div>
-							<div class="f2-l-2">码头部队</div>
-							<!--<div class="f2-l-3">应赏区</div>-->
-						</div>
-						<div class="s-f2-r">
-							<div class="demo">
-								<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
-									<ul>
-										<li><input type="text" id="tt" value="" class="text" style="text-align: left;" autocomplete="off" /></li>
-										<li><input type="submit" value="搜索" class="button" /></li>
-										<li><input type="submit" value="商家认证部队" class="button2" /></li>
-
-									</ul>
-								</form>
+							<div class="s-f2-r-f">
+								<div class="demo">
+									
+										<ul>
+											<li><input type="text" id="tt" value="" class="text" autocomplete="off" /></li>
+											<li><input type="submit" value="搜索" class="button" /></li>
+											<li>
+												<a href="" class="button2">商家认证部队</a>
+											</li>
+											<div class="clear"></div>
+										</ul>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="h-c-3f">
-						<img src="__PUBLIC__/Home/img/banner.png" />
-					</div>
+						<div class="h-c-4f">
+							<img src="__PUBLIC__/Home/img/banner.png" />
+						</div>
 				</div>
 			</div>
 		</header>
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-l">
-					<div class="s-c-1f">
-						<p style="float: left; display: block; width: 60px; line-height: 30px; font-size: 14px; margin-right: 30px;">所在地区</p>
-						<input style="width: 100px;background: #fefefe;border: 1px solid #bbb;font-size: 12px !important;color: #333;padding: 7px;border-radius: 3px;text-align: center;" id="city" type="text" placeholder="点击选择地点">
+					<div class="s-c-1f-z">
+						<p>所在地区</p>
+						<input type="text" id="xz-city" placeholder="请选择所在地" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
 						<img src="__PUBLIC__/Home/img/mtbutitle.png" />
 					</div>
+							<script type="text/javascript">				
+							var url_ajax = "?s=/Home/Box/bddz";//这个路径是真正显示列表的
+							    function getPage() {
+							    	alert(getCookie("add"));
+							         $("#xxoos").html("<h1>请稍等。。。</h1>");
+							         var address = getCookie("add");//活动时间
+							         $.get(url_ajax, {address:address}, function(data) {
+							        	   //	alert(data);
+							            $('#xxoos').html(data);
+							        })
+							    }
+							    getPage();
+							    </script>
+					
 					<div class="s-c-2f">
-						<div style="width: 850px;">
-							<div class="s-f2l-c1">
+						<div class="s-f2l-c1">
+							<ul>
+								<li>
+									<a class="selected-tab" href="javascript://">
+										<h3>热门动态</h3>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:// " onclick="gzs(1)">
+										<h3>工作室</h3>
+									</a>
+								</li>
+								<li>
+									<a href="javascript://"onclick="gzs(2)">
+										<h3>婚庆公司</h3>
+									</a>
+								</li>
+								<li>
+									<a href="javascript://"onclick="gzs(3)">
+										<h3>影楼</h3>
+									</a>
+								</li>
+								<li>
+									<a href="javascript://"onclick="gzs(4)">
+										<h3>表演团</h3>
+									</a>
+								</li>
+								<div class="clear"></div>
+							</ul>
+						</div>
+					</div>
+
+				<div class="con">
+						<div class="s-c-3f">
+							<div class="s-c-3f-1f">
+								<div class="yhtx">
+									<a href="">
+										<img src="img/yhmc.png" />
+									</a>
+									<div class="vip">
+										<img src="img/rzlogo.png" />
+									</div>
+								</div>
+								<p class="yhmc">
+									<a href="">用户名称</a>
+								</p>
+								<p class="zw">职位名称：摄影师</p>
+								<p class="szd">所在地：郑州</p>
+								<p class="dtnr">
+									动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容
+								</p>
 								<ul>
 									<li>
-										<a class="selected-tab" href="javascript://">热门动态</a>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
 									</li>
 									<li>
-										<a href="javascript://">工作室</a>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
 									</li>
 									<li>
-										<a href="javascript://">表演团</a>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
 									</li>
 									<li>
-										<a href="javascript://">婚庆公司</a>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
 									</li>
 									<li>
-										<a href="javascript://">影楼</a>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
 									</li>
+									<li>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<div class="clear"></div>
+								</ul>
+								<div class="bottom">
+									<p class="left">2016-12-12</p>
+									<div class="right dz-qx">
+										<span class="icon-dz"></span>
+										<p>1000000000</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="s-c-3f-1f">
+								<div class="yhtx">
+									<a href="">
+										<img src="img/yhmc.png" />
+									</a>
+									<div class="vip">
+										<img src="img/rzlogo.png" />
+									</div>
+								</div>
+								<p class="yhmc">
+									<a href="">用户名称</a>
+								</p>
+								<p class="zw">职位名称：摄影师</p>
+								<p class="szd">所在地：郑州</p>
+								<p class="dtnr">
+									动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容动态内容
+								</p>
+								<ul>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/banner_big01.png">
+											<div class="pic">
+												<img src="img/banner_big01.png" />
+											</div>
+										</a>
+									</li>
+									<li>
+										<a rel="gallery1" class="boxer" href="img/yhmc-big.png">
+											<div class="pic">
+												<img src="img/yhmc-big.png" />
+											</div>
+										</a>
+									</li>
+									<div class="clear"></div>
+								</ul>
+								<div class="bottom">
+									<p class="left">2016-12-12</p>
+									<div class="right dz-qx">
+										<span class="icon-dz"></span>
+										<p>1000000000</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
+					</div>
+					<div class="con">
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+							
+								<ul id='xxoo1'>
+									
+								</ul>
+				
+						</div>
+						</div>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
+					</div>
+					<div class="con">
+								<div class="s-c-3f">
+							<div class="f3-t-1">
+									<ul id="xxoo2">
+								
+									<div class="clear"></div>
 								</ul>
 							</div>
 						</div>
-					</div>
-					<br>
-					<div class="con">
-						<foreach name="list" item="lists">
-							<div class="s-c-3f">
-								<div class="f3-c-1">
-									<div class="s-f3l-c1">
-										<div class="s-f3l-c1-1">
-											<img src="__PUBLIC__/Home/img/yhmc.png" />
-										</div>
-										<div class="s-f3l-c1-2">
-											<p>{$lists.username}</p>
-										</div>
-										<div class="s-f3l-c1-3">
-											<p>所在地：{$lists.address}</p>
-										</div>
-										<div class="s-f3l-c1-4">
-											<div class="s-f3l-c1-4t">
-												{$lists.content}
-											</div>
-										</div>
-									</div>
-									<div class="s-f3l-c2">
-										<ul>
-											<li>
-												<a href="#">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</a>
-											</li>
-										</ul>
-									</div>
-									<div class="s-f3l-c3">
-										<div class="s-f3l-c3-1">
-											<p>图标志点赞&nbsp;100</p>
-										</div>
-										<div class="s-f3l-c3-2">
-											<p>2016.12.12发布</p>
-										</div>
-									</div>
-
-								</div>
-							</div>
-							<br>
-						</foreach>
-						
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
 					</div>
 					<div class="con">
 						<div class="s-c-3f">
 							<div class="f3-t-1">
 								<ul>
-									<foreach name="listg" item="listgs">
-										<li><a href="#">
+									<li>
+										<a href="#">
 											<div class="f3-t-1-c1">
-												<img src="__PUBLIC__/Home/img/bdmc.png" />
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
 											</div>
 											<div class="f3-t-1-c2">
-												<p>{$listgs.forcename}</p>
+												<strong>部队名称</strong>
 											</div>
-											<div class="f3-t-1-c3l"><p>部队类型：{$listgs.type}</p></div>
-											<div class="f3-t-1-c3r"><p>粉丝数量</p></div>
-											<div class="f3-t-1-c4"><p>{$listgs.content}</p></div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
 											<div class="f3-t-1-c5">
-												<p>所在地：{$listgs.address}</p>
+												<p>所在地：郑州</p>
 											</div>
-										</a></li>
-									</foreach>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<div class="clear"></div>
 								</ul>
 							</div>
 						</div>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
 					</div>
 					<div class="con">
-						333
+						<div class="s-c-3f">
+							<div class="f3-t-1">
+								<ul>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="f3-t-1-c1">
+												<img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" />
+											</div>
+											<div class="f3-t-1-c2">
+												<strong>部队名称</strong>
+											</div>
+											<div class="f3-t-1-c3l">
+												<p>部队类型</p>
+											</div>
+											<div class="f3-t-1-c3r">
+												<p>粉丝数量100</p>
+											</div>
+											<div class="clear"></div>
+											<div class="f3-t-1-c4">
+												<p>
+													<span class="black-333">部队介绍：</span>
+													<span class="text72">
+														部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p>
+													</span>
+											</div>
+											<div class="f3-t-1-c5">
+												<p>所在地：郑州</p>
+											</div>
+											<div class="clearfloat"></div>
+										</a>
+									</li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+						</div>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
 					</div>
-					<div class="con">
-						444
-					</div>
-					<div class="con">
-						555
-					</div>
-					<!--<div class="s-c-3f2">
-
-					</div>-->
 				</div>
 				<div class="s-main-r">
 					<div class="s-r-3f">
 						<div>
-							<a href="#"><img src="__PUBLIC__/Home/img/rmbd.png" /></a>
-							<!--<a href="#"><img src="img/tjcz.png" /></a>-->
-							<a class="clearfloat"></a>
+							<a href="javascript://">
+								<h2>推荐出租</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
 
 					<div class="s-r-4f">
 						<ul>
-							<foreach name="listn" item="listns">
-								<li><a href="#">
+							<li>
+								<a href="#">
 									<div class="tj">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										<div class="tj-img">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										</div>
 										<div class="tj_01">
-											<p class="tj_01_01" style="100px">{$listns.forcename}</p>
-											<p class="tj_01_02" style="100px">部队类型：<b style="color:#666666; font-weight:500">{$listns.type}</b></p>
-											<p class="tj_01_02" style="100px">粉丝数量：<b style="color:#666666; font-weight:500">110</b></p>
-											<p class="tj_01_02" style="100px">
-												所在地点：<b style="color:#666666; font-weight:500">{$listns.address}</b>
+											<strong class="tj_01_01">部队名称</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
 											</p>
-											
-											<p style="font-size: 12px; color:#999; margin-left:-120px; margin-top:14px; display:block;width: 255px;height:50px;overflow: hidden;">
-												{$listns.content}
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> 郑州
 											</p>
 										</div>
-
-									</div></a>
-								</li>
-							</foreach>
-							<!--<li class="clearfloat"></li>-->
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="tj">
+										<div class="tj-img">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										</div>
+										<div class="tj_01">
+											<strong class="tj_01_01">部队名称</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> 郑州
+											</p>
+										</div>
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="tj">
+										<div class="tj-img">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										</div>
+										<div class="tj_01">
+											<strong class="tj_01_01">部队名称</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> 郑州
+											</p>
+										</div>
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="tj">
+										<div class="tj-img">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										</div>
+										<div class="tj_01">
+											<strong class="tj_01_01">部队名称</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> 郑州
+											</p>
+										</div>
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="tj">
+										<div class="tj-img">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										</div>
+										<div class="tj_01">
+											<strong class="tj_01_01">部队名称</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> 郑州
+											</p>
+										</div>
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="tj">
+										<div class="tj-img">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										</div>
+										<div class="tj_01">
+											<strong class="tj_01_01">部队名称</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> 婚庆公司婚庆公司
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> 郑州
+											</p>
+										</div>
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品 主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品主营产品</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<div class="clear"></div>
 						</ul>
 
 					</div>
 				</div>
+				<div class="clear"></div>
+			</div>
 			</div>
 			<div class="clearfloat"></div>
 		</section>
-		<br>
-		<br>
-		<br>
-		<include file="Public/footer"/>
-
-		<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-		<script src="__PUBLIC__/Home/js/jquery.date_input.pack.js"></script>
-		<script src="__PUBLIC__/Home/js/city-data.js"></script>
-		<script src="__PUBLIC__/Home/js/hzw-city-picker.min.js"></script>
-		<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$(".con").eq(0).show();
-				$(".s-f2l-c1 ul li a").click(function() {
-					var num = $(".s-f2l-c1 ul li a").index(this);
-					$(".con").hide();
-					$(".con").eq(num).show().slblings().hide();
-				})
-			});
-			$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-//----------------------------remove tab切换样式--------------------------
-			$('.s-c-2f a').click(function(){
-				$(this).parents('div').children('.s-f2l-c1').each(function(){
-					$('a',this).removeClass('selected-tab');
-				});
-				$(this).attr('class','selected-tab');
-			});
-			//			地址选择
-			var cityPicker = new HzwCityPicker({
-				data: data,
-				target: 'city',
-				valType: 'k-v',
-				hideCityInput: {
-					name: 'city',
-					id: 'city'
-				},
-				hideProvinceInput: {
-					name: 'province',
-					id: 'province'
-				}
-
-			});
-			cityPicker.init();
-
-			$(function() {
-				//日期
-				$('#date').date_input();
-				//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
-				$("#filter a").hover(
-					function() {
-						$(this).addClass("seling");
-					},
-					function() {
-						$(this).removeClass("seling");
+	function gzs(id){
+		 var address = getCookie("add");//活动时间 
+	alert(id);	
+	//	alert(address);
+				$.ajax({
+					url:"?s=/Home/Mtbu/dongtaidi",
+					type:"post",
+					data:{id:id,address:address},
+					dataType:"json",
+					success:function(data){
+						
+	                   var li='';
+						for (var i = 0; i < data.length; i++) {
+						
+							li+='<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" alt="部队名称" /></div><div class="f3-t-1-c2"><strong>部队名称</strong></div><div class="f3-t-1-c3l"><p>部队类型</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="clear"></div><div class="f3-t-1-c4"><p><span class="black-333">部队介绍：</span><span class="text72"> 部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍部队介绍</p></span></div><div class="f3-t-1-c5"><p>所在地：郑州</p></div><div class="clearfloat"></div></a></li>';
+										
+							
+						};
+						
+						$('#xxoo'+id).html(li);
+						$('#xxoo'+id).val('');
+					},error:function(){
+						alert('no');
 					}
-				);
-
-				//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
-				$("#filter dt+dd a").attr("class", "seled");
-				/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
-				                                                     不然后面通过$("#filter a[class='seled']")访问不到class样式为seled的a标签。*/
-
-				//为filter下的所有a标签添加单击事件
-				$("#filter a").click(function() {
-					$(this).parents("dl").children("dd").each(function() {
-						//下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
-						//$(this).children("div").children("a").removeClass("seled");
-						//$(this).find("a").removeClass("seled");
-						$('a', this).removeClass("seled");
-					});
-
-					$(this).attr("class", "seled");
-
-					//				alert(RetSelecteds()); //返回选中结果
 				});
-				//返回选中结果
-			});
-
-			function RetSelecteds() {
-				var result = "";
-				$("#filter a[class='seled']").each(function() {
-					result += $(this).html() + "\n";
-				});
-				return result;
-			}
-			//		$('#date').click(function(){
-			//				alert(RetSelecteds()+$('#date').val()+$('#city').val());
-			//			})
-			$('.px .hot').click(function() {
-				$('.px .hot').css('background-color', '#ff5c5d');
-				$('.px .new').css('background-color', '#999999');
-			})
-			$('.px .new').click(function() {
-				$('.px .new').css('background-color', '#ff5c5d');
-				$('.px .hot').css('background-color', '#999999');
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height:'150px'
-			}, 300);
-		},function(){
-				$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height:'0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height:'75px'
-			}, 300);
-		},function(){
-			$('.select-xx').stop().animate({
-				height:'0px'
-			}, 300);
-		});
+			
+		}
 		</script>
+	<script type="text/javascript">
+	 var c=2;
+	  
+	  function tj(){	
+	      var address = getCookie("add");//活动时间
+		//alert(address);
+				$.ajax({
+					type:'post',
+					url:"{:U('Mtbu/buduijzre')}",
+					data:{k:c,address:address},
+					beforeSend:function(){
+			         $("#content").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						// alert(data);
+						if(data!=null){				
+								//alert(1);
+								
+								 for (var i = 0; i < data.length; i++) {
+									 var use = data[i].username.substr(0,5);
+								$("#content").append('<div class="s-c-3f"><div class="rmdtct"><ul class="rmdt"><li><div class="rmdt-1f"><div class="rmdt-1fc1"><p><img src="__PUBLIC__/Home/img/pltx.png" /></p><p>'+use+'</p><p>logo</p><p class="rmdtcmap">所在地：'+data[i].addre+'</p><p class="rmdtcjs">'+data[i].content+'</p></div></div></li><li><div class="rmdt-2f"><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="clearfloat "></div></div></li><li><div class="rmdt-3f"><p class="rmdtcdz">'+data[i].zan+'</p><p class="rmdtcfb">'+data[i].time+'发布</p><p class="clearfloat"></p><br></div></li></ul></div></div><br>');
+			 		
+								 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btn').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	c++;
+		// alert(p);
+		  }  
+		 var w=2;
+		  function tj1(){	
+			   var address = getCookie("add");//活动时间
+			//	 alert(1);
+					$.ajax({
+						type:'post',
+						url:"{:U('Mtbu/buduijzgz')}",
+						data:{k:w,address:address},
+						beforeSend:function(){
+				         $("#xxoo1").append("<div id='load'>加载中……</div>");
+						},
+						success:function(data){
+							// alert(data);
+							if(data!=null){				
+									//alert(1);
+									
+									 for (var i = 0; i < data.length; i++) {
+							
+									$("#xxoo1").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+				 		
+									 }
+							}else{
+								 //alert(22);
+								 document.getElementById('btn1').innerHTML = '加载完毕';
+				 				flag=true;	
+							}	
+				 },
+				 	complete:function(){
+				           $("#load").remove();
+						},
+					 	dataType:'json'
+					 	});
+				 	w++;
+			// alert(p);
+			  }  
+			 var t=2;
+			  function tj2(){
+				   var address = getCookie("add");//活动时间
+					//alert(2);
+						$.ajax({
+							type:'post',
+							url:"{:U('Mtbu/buduijzby')}",
+							data:{k:w,address:address},
+							beforeSend:function(){
+					         $("#xxoo2").append("<div id='load'>加载中……</div>");
+							},
+							success:function(data){
+							//	alert(data);
+								if(data!=null){				
+										//alert(1);
+										
+										 for (var i = 0; i < data.length; i++) {
+								
+										$("#xxoo2").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+					 		
+										 }
+								}else{
+									 //alert(22);
+									 document.getElementById('btn2').innerHTML = '加载完毕';
+					 				flag=true;	
+								}	
+					 },
+					 	complete:function(){
+					           $("#load").remove();
+							},
+						 	dataType:'json'
+						 	});
+					 	t++;
+				// alert(p);
+				  } 
+				 var r=2;
+				  function tj3(){	
+					   var address = getCookie("add");//活动时间; 
+					//	 alert(1);
+							$.ajax({
+								type:'post',
+								url:"{:U('Mtbu/buduijzhq')}",
+								data:{k:w,address:address},
+								beforeSend:function(){
+						         $("#xxoo3").append("<div id='load'>加载中……</div>");
+								},
+								success:function(data){
+									// alert(data);
+									if(data!=null){				
+											//alert(1);
+											
+											 for (var i = 0; i < data.length; i++) {
+									
+											$("#xxoo3").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+						 		
+											 }
+									}else{
+										 //alert(22);
+										 document.getElementById('btn3').innerHTML = '加载完毕';
+						 				flag=true;	
+									}	
+						 },
+						 	complete:function(){
+						           $("#load").remove();
+								},
+							 	dataType:'json'
+							 	});
+						 	r++;
+					// alert(p);
+					  } 
+					 var e=2;
+					  function tj4(){
+						   var address = getCookie("add");
+							// alert(1);
+								$.ajax({
+									type:'post',
+									url:"{:U('Mtbu/buduijzyl')}",
+									data:{k:e,address:address},
+									beforeSend:function(){
+							         $("#xxoo4").append("<div id='load'>加载中……</div>");
+									},
+									success:function(data){
+										// alert(data);
+										if(data!=null){				
+												//alert(1);
+												
+												 for (var i = 0; i < data.length; i++) {
+										
+												$("#xxoo4").append('<li><a href="#"><div class="f3-t-1-c1"><img src="__PUBLIC__/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+							 		
+												 }
+										}else{
+											 //alert(22);
+											 document.getElementById('btn4').innerHTML = '加载完毕';
+							 				flag=true;	
+										}	
+							 },
+							 	complete:function(){
+							           $("#load").remove();
+									},
+								 	dataType:'json'
+								 	});
+							 	e++;
+						// alert(p);
+						  } 
+	  </script>
+		<include file="Public/foote"/>
+		<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+      <script src="__PUBLIC__/Home/js/City_data.js"></script>
+        <script src="__PUBLIC__/Home/js/bddz.js"></script>
+	  	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>	
+	  		<script src="__PUBLIC__/Home/js/2rank.js"></script>
+		  <script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 	</body>
 
 </html>

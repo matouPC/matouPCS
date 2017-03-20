@@ -54,18 +54,16 @@
                           <li><a href="/matouPCS/index.php/Admin/Force"><i class="icon-font">&#xe005;</i>码头部队管理</a></li>
                           <li><a href="/matouPCS/index.php/Admin/Shop"><i class="icon-font">&#xe005;</i>码头商城管理</a></li>
                           <li><a href="/matouPCS/index.php/Admin/Flea"><i class="icon-font">&#xe005;</i>跳蚤市场管理</a></li>
-                       
-                        
                          <li><a href="/matouPCS/index.php/Admin/Friend"><i class="icon-font">&#xe052;</i>友情链接</a></li>
                          <li><a href="/matouPCS/index.php/Admin/Us"><i class="icon-font">&#xe052;</i>关于我们</a></li>
                     
                     </ul>
-                </li>\
+                </li>
                 <li>
                     <a href="#"><i class="icon-font">&#xe018;</i>用户管理</a>
                     <ul class="sub-menu">
                      <li><a href="/matouPCS/index.php/Admin/User"><i class="icon-font">&#xe005;</i>用户信息管理</a></li>
-                     <li><a href="/matouPCS/index.php/Admin/Bdzx"><i class="icon-font">&#xe005;</i>部队中心管理</a></li>
+                     <li><a href="/matouPCS/index.php/Admin/Bdzx"><i class="icon-font">&#xe005;</i>认证部队中心管理</a></li>
                       <li><a href="/matouPCS/index.php/Admin/Liuyan"><i class="icon-font">&#xe004;</i>留言管理</a></li>
                   
                     </ul>
@@ -114,7 +112,7 @@
                             <th></th>
                             <th></th>
 
-                            <th colspan="9" style="color:red">基本信息</th>
+                            <th colspan="10" style="color:red">基本信息</th>
                         </tr>
                         <tr>
                             <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
@@ -122,6 +120,7 @@
                              <th>发布人</th>
                              <th>活动时间</th>
                             <th>活动地点</th>
+                            <th>发布时间</th>
                             <th>电话</th>
                             <th>qq</th>
                             <th>活动详情</th> 
@@ -136,7 +135,7 @@
                                  <td><?php echo ($v["username"]); ?></td>
                              <td><?php echo ($v["time"]); ?></td>
                             <td><?php echo ($v["address"]); ?></td>
-                         
+                          <td><?php echo ($v["data"]); ?></td>
                               <td><?php echo ($v["tels"]); ?></td>
                               <td><?php echo ($v["qqs"]); ?></td>
                            <td><?php echo (substr($v["content"],0,9)); ?>..</td>
@@ -144,7 +143,7 @@
                              <td> <a class=" link-update" href="/matouPCS/index.php/Admin/Reward/tem?psid=<?php echo ($v["psid"]); ?>">悬赏详情</a></td>
                             <td>
                                 <a class=" link-update" href="/matouPCS/index.php/Admin/Reward/update?psid=<?php echo ($v["psid"]); ?>">修改信息</a>    
-                               <a class="link-del"   onclick="shanchu(<?php echo ($v["psid"]); ?>)">删除</a>
+                               <a class="link-del"   href="javascript:void(0)"  onclick="shanchu(<?php echo ($v["psid"]); ?>)">删除</a>
 	                  
                             </td>
                

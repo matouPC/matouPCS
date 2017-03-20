@@ -79,9 +79,9 @@
 							</li>
 							<li style="width: 58px;">
 								<php>if(empty($_SESSION['username'])){</php>
-									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏夹</a>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏报名</a>
 								<php>}else{</php>
-									<a href="?s=/Home/User/scj">收藏夹</a>
+									<a href="?s=/Home/User/scj">收藏报名</a>
 								<php>}</php>
 								<div class="str"></div>
 							</li>
@@ -388,11 +388,9 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
-				//  alert(tu);
-
 				    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/Index/usave1",
+				         url:"/matouPCS/index.php/Home/user/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
 				

@@ -36,7 +36,7 @@ $('.s-main-c-1f .left-xq').hover(function() {
 	$('.s-main-c-1f .left-xq img').css('transform', 'rotate(180deg)');
 	$('.s-main-c-1f .left-xq ul').css('background-color', '#FF5C5D');
 	$('.select-xq').stop().animate({
-		height: '155px'
+		height: '200px'
 	}, 300);
 }, function() {
 	$('.s-main-c-1f .left-xq img').css('transition-duration', '.5s');

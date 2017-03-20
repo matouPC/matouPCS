@@ -1,121 +1,132 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>跳蚤市场</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/tzsc-cc.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/datePicker.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/hzw-city-picker.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<style>
-			.s-f1-r ul li a .img {
-				margin-top: 15px;
-				margin-right: 10px;
-				float: right;
-			}
-			.select-yfb {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-yfb ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-yfb ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-xx ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-xx ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-		</style>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/2rank.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
 	</head>
 
 	<body>
+		<div class="show-bg"></div>
 		<header>
-			<include file="Public/header"/>
-					<div class="h-c-2f">
-						<div class="">
-							<div class="f2-l-1">
-								<a href="?s=/Home/Index">
-									<img src="__PUBLIC__/Home/img/logo.png" />									
-								</a>
-							</div>
-							<div class="f2-l-2">跳蚤市场</div>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
+						<div class="h-c-2f">
+							<div class="s-f2-l-f">
+								<div class="f2-l-1-f">
+									<a href="indexstore.php">
+										<img src="__PUBLIC__/Home/img/logo.png" alt="喜事码头" />
+									</a>
+								</div>
+								<div class="f2-l-3-f">
+									<h1>跳蚤市场</h1>
+								</div>
 
-						</div>
-						<div class="s-f2-r">
-							<div class="demo">
-								<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
+							</div>
+							<div class="s-f2-r-f">
+								<div class="demo">
 									<ul>
-										<li><input type="text" id="tt" value="" class="text" style="text-align: left;" autocomplete="off" /></li>
+										<li><input type="text" id="tt" value="" class="text" autocomplete="off" /></li>
 										<li><input type="submit" value="搜索" class="button" /></li>
-										<li><input type="submit" value="商家认证部队" class="button2" /></li>
-
+										<li><button id="fbxq" type="submit" class="button2">发布需求</button></li>
+										<div class="clear"></div>
 									</ul>
-								</form>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="h-c-3f">
-						<img src="__PUBLIC__/Home/img/banner.png" />
-					</div>
+						<div class="h-c-4f">
+							<img src="__PUBLIC__/Home/img/banner.png" />
+						</div>
 				</div>
 			</div>
 		</header>
+		<!--发布需求-->
+		<div class="fbxq">
+			<div class="fbxq-close">
+				<img src="__PUBLIC__/Home/img/alert-close.png" />
+			</div>
+			<div class="fbxq-title">
+				请选择您的需求
+			</div>
+			<div class="clear"></div>
+			<ul>
+				<li>
+					<div class="fbxq-img">
+						<img src="__PUBLIC__/Home/img/wyxs.png" />
+					</div>
+					<div class="fbxq-1f">
+						悬赏
+					</div>
+					<div class="fbxq-2f">
+						<span class="red">临时雇佣</span> 主持人、摄影摄像师、化妆师、策划师等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="__PUBLIC__/Home/img/wyys.png" />
+					</div>
+					<div class="fbxq-1f">
+						应赏
+					</div>
+					<div class="fbxq-2f">
+						主持人、摄影摄像师、化妆师、策划师等婚庆从业者发布
+						<span class="red">兼职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="__PUBLIC__/Home/img/wyzp.png" />
+					</div>
+					<div class="fbxq-1f">
+						招聘
+					</div>
+					<div class="fbxq-2f">
+						<span class="red">长期雇佣</span> 摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="__PUBLIC__/Home/img/wyyp.png" />
+					</div>
+					<div class="fbxq-1f">
+						应聘
+					</div>
+					<div class="fbxq-2f">
+						摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者发布
+						<span class="red">全职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="__PUBLIC__/Home/img/wyqg.png" />
+					</div>
+					<div class="fbxq-1f">
+						求购二手
+					</div>
+					<div class="fbxq-2f">
+						如果您想要购买二手物品，点击这里填写求购要求，让卖家主动找到您
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="__PUBLIC__/Home/img/wyxz.png" />
+					</div>
+					<div class="fbxq-1f">
+						处理闲置
+					</div>
+					<div class="fbxq-2f">
+						如果您想要出售你的闲置，点击这里填写闲置信息，让买家主动找到您
+					</div>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
 		<section>
-			<div class="s-main-c">
+				<div class="s-main-c">
 				<div class="s-main-l">
 					<div class="s-c-1f">
 						<a href="#">所有分类</a>>
@@ -201,7 +212,7 @@
 										<a>不限</a>
 									</div>
 								</dd>
-								<dd>
+									<dd>
 									<div style="color: #000000;">
 										<input type="number" id="nu1" style="width: 65px; margin-top: 17px; border: solid 1px #CCCCCC; float:left;">
 										<span style="font-size:25px; display:block; width:20px; height:30px; color: #999999; float :left; margin-top:-1px; text-align:center;">-</span>
@@ -212,175 +223,192 @@
 									</div>
 								</dd>
 							</dl>
-							<div class="px">
-								<p>排序：</p>
-								<div class="hot">
-									热门
-								</div>
-								<div class="new">
-									最新
-								</div>
+							<dl id="xz-dq">
+								<dt>地区</dt>
+								<dd>
+									<div class="gray">
+										<a>不限</a>
+									</div>
+								</dd>
+								<dd>
+									<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
+								</dd>
+								<div class="clear"></div>
+							</dl>
+						</div>
+						<div class="px">
+							<p>排序：</p>
+							<div class="hot">
+								热门
+							</div>
+							<div class="new">
+								最新
 							</div>
 						</div>
+						<div class="clear"></div>
 					</div>
-					<div class="s-c-3f" id="lists">
-
-					</div>
+				<div class="s-c-3f" id="lists">
+			</div>
+			
 				</div>
 				<div class="s-main-r">
-					<div class="s-r-1f">
+					<div class="s-r-3f">
 						<div>
-							<a id="tjqg" href="javascript://"><img src="__PUBLIC__/Home/img/tjqg.png" /></a>
-							<!-- <a id="tjxz" href="javascript://"><img src="__PUBLIC__/Home/img/tjxz.png" /></a> -->
-							<a class="clearfloat"></a>
+							<a id="tjqg" href="javascript://">
+								<h2>推荐求购</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
 					<div class="tab-r">
 						<div class="s-r-2f">
 							<ul>
-								<foreach name="listnew" item="listnews">
+									<foreach name="listnew" item="listnews">
 								<li>
 									<a href="?s=/Home/Tzsc/xqqg/id/{$listnews.fid}">
-										<!--<div class="f2r-ul-cz">
-											<img src="img/red.png" />
-										</div>-->
 										<div class="f2t">
-										  <if condition="$listnews[imagename]==''">
+											<div class="f2t-img">
+													  <if condition="$listnews[imagename]==''">
 									<img src="__PUBLIC__/Home/img/yhmc.png" width="120" height="120">
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$listnews.pubtime}/{$listnews.imagename}" style="border-radius:50%" width="120" height="120"/>
+                                      	<img src="/matouPCS/Tu/upload/{$listnews.imagename}" style="border-radius:50%" width="120" height="120"/>
                                     </if>
-											
+											</div>
 											<p class="f2t_01">
-											<if condition="$lis[username]==$lis[tel]">
+													<if condition="$lis[username]==$lis[tel]">
 							                      	用户：{$listnews.username|substr=0,5}
 								                 </if>
 								               <if condition="$lis[username]!=$lis[tel]">
 								                用户：{$listnews.username}
-								                  </if></p>
+								                  </if></p></p>
 										</div>
 										<div class="f2r-ul-c1">
-											<p>{$listnews.name}</p>
-											<!--<p><strong>商品名称:摄像机</strong></p>   -->
-											<p style="width: 50px; color:#ff0000; float:right;">￥500元</p>
+											<strong>{$listnews.name}</strong>
+											<p class="right red">预算￥{$listnews.price}元</p>
+											<div class="clear"></div>
 										</div>
-										<br>
-
-										<p class="user_01_03">{$listnews.content}</p>
+										<p class="user_01_03">
+											<span class="black-333">商品介绍：</span>
+											<span class="text69">
+												{$listnews.content}
+											</span>
+										</p>
 										<div class="f2r-ul-c2">
-											<p>已有{$listnews.collect}人收藏</p>
-											<p style="width: 25px;">{$listnews.address}</p>
+							<?php 
+					                  $bao = explode(',',$lists['bao']);
+						           array_pop($bao);
+						               $baos = count($bao); ?>
+				              	          <p class="left">已有<?php echo $baos;?>人报名</p>
+										<p class="right">{$listnews.address}</p>
+											<div class="clear"></div>
 										</div>
 									</a>
 								</li>
 								</foreach>
-								<br/>
-								<!--<li class="clearfloat" style="border: 0; background: rgba(255,255,255,0.0); "></li>-->
+								<div class="clear"></div>
 							</ul>
-						</div><br>
-					</div>
-					<!-- 推荐闲置 -->
-					<div class="tab-r" style="display: none;">
-						<div class="s-r-2f">
-							<ul>
-								<foreach name="listx" item="listxs">
-									<li>
-										<a href="?s=/Home/Tzsc/xqxz">
-											<!--<div class="f2r-ul-cz">
-												<img src="img/red.png" />
-											</div>-->
-											<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-											<div class="f2r-ul-c1">
-												<p>商铺名称:{$listxs.name}</p>
-												<!--<p><strong>商品名称:摄像机</strong></p>   -->
-												<p style="width: 50px; color:#ff0000; float:right;">￥{$listxs.price}元</p>
-											</div>
-											<br>
-
-											<p class="user_01_03">{$listxs.content}</p>
-											<div class="f2r-ul-c2">
-												<p>已有{$listxs.collect}人收藏</p>
-												<p style="width: 25px;">{$listxs.address}</p>
-											</div>
-										</a>
-									</li>
-								</foreach>
-								<!--<li class="clearfloat" style="border: 0; background: rgba(255,255,255,0.0); "></li>-->
-							</ul>
-						</div><br>
+						</div>
 					</div>
 					<div class="s-r-3f">
-							<div>
-								<a href="#"><img src="__PUBLIC__/Home/img/tjkh.png" /></a>
-								<!--<a href="#"><img src="img/tjcz.png" /></a>-->
-								<a class="clearfloat"></a>
-							</div>
+						<div>
+							<a href="javascript://">
+								<h2>推荐用户</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
+					</div>
 					<div class="s-r-4f">
-							<ul>
-								<foreach name="user" item="users">  
-									<li>
-										<div class="tj">
+						<ul>
+							<foreach name="user" item="users">
+							<li>
+								<a href="javascript:;">
+									<div class="tj">
 									<php>if($_SESSION['id'] == $users['uid']){</php>
 									  <if condition="$users[bdlx]=='1'">
 								<a href="?s=/Home/Mtbu/grbddndt/id/{$users.uid}">
 								  <if condition="$$users[imagename]==''">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+									<div class="tj-img">
+												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                      <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                  </div>
                                     </if>
 								</a>
 								<elseif condition="$users[bdlx]=='6'"/>
 								<a href="?s=/Home/Mtbu/spbddndt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											<div class="tj-img">
+												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                    <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                  </div>
                                     </if>
                                     </a>
 								<else/>
 								<a href="?s=/Home/Mtbu/rzbddndt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											<div class="tj-img">
+												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
-                                    </if></a>
+                                        <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                  </div>
+                                    </if>
+                                    </a>
 									</if>
 									<php>}else{</php>
                                         <if condition="$users[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddydt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+								    <a href="?s=/Home/Mtbu/grbddydt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
+											<div class="tj-img">
+												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}" style="border-radius:50%" width="101" height="101" />
-                                    </if></a>
+                                         <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                  </div>
+                                    </if>
+                                    </a>
 								<elseif condition="$users[bdlx]=='6'"/>
 								<a href="?s=/Home/Mtbu/spbddydt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										<div class="tj-img">
+												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
-                                    </if></a>
+                                         <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                  </div>
+                                    </if>
+                                    </a>
 								<else/>
 								<a href="?s=/Home/Mtbu/rzbddydt/id/{$users.uid}">	  <if condition="$users[imagename]==''">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										<div class="tj-img">
+												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$users.pubtime}/{$users.imagename}" style="border-radius:50%" width="101" height="101" />
-                                    </if></a>
+                                         <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/{$users.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                  </div>
+                                    </if>
+                                    </a>
 									</if>
-                                       <php>}</php>			
-											<div class="tj_01">
-												<a href="?s=/Home/Mtbu/grbdzy">
-												<p class="tj_01_01">
-	                                             <if condition="$users[username]==$users[tel]">
+                                       <php>}</php>
+								
+										
+										<div class="tj_01">
+											<strong class="tj_01_01">
+											<if condition="$users[username]==$users[tel]">
 							                      	用户{$users.username|substr=0,5}
 								                 </if>
 								               <if condition="$users[username]!=$users[tel]">
 								                用户{$users.username}
-								                  </if></p>
-												<p class="tj_01_02">粉丝数量：<b id="fen{$users.id}"style="color:#666666; font-weight:500">
-													{$users.fen}
-												</b>
-												</p>
-												<p class="tj_01_02">所在地：
-													<b style="color:#666666; font-weight:500">{$users.addre}</b>
-												</p></a>
+								                  </if></strong>
+											<p class="tj_01_02" ><span class="black-333">粉丝数量：</span><b id="fen{$users.id}">{$users.fen}</b></p>
+											<p class="tj_01_02"><span class="black-333">所在地：</span>{$users.addre}
+											</p>
+           
 												<foreach name="uus" item="uuss">
 													<?php if($uuss['uid'] == $users['id']){ ?>
 														<?php 
@@ -395,22 +423,22 @@
 														<?php } ?>
 													<?php } ?>
 												</foreach>
-											</div>
-
 										</div>
-									</li>
-								</foreach>
-							</ul>
-						</div>
+										<div class="clear"></div>
+									</div>
+								</a>
+							</li>
+							</foreach>
+						</ul>
+
+					</div>
 				</div>
 			</div>
 			<div class="clearfloat"></div>
 		</section>
-		<br>
-		<br>
-		<br>
-		<include file="Public/footer"/>
+			<include file="Public/foote"/>
 	</body>
+	
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
 	<script src="__PUBLIC__/Home/js/jquery.date_input.pack.js"></script>
@@ -418,134 +446,7 @@
 	<script src="__PUBLIC__/Home/js/hzw-city-picker.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 	<script src="__PUBLIC__/Home/js/tz.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".tab-r").eq(0).show();
-			$(".s-main-r .s-r-1f div a").click(function() {
-				var num = $(".s-main-r .s-r-1f div a").index(this);
-				$(".tab-r").hide();
-				$(".tab-r").eq(num).show().slblings().hide();
-			})
-		})
-		
-		$("#tjqg").click(function() {
-//				alert("11");
-				$("#tjqg img").attr('src','/matouPCS/Public/Home/img/tjqg-hong.png');
-				$("#tjxz img").attr('src','/matouPCS/Public/Home/img/tjxz-hui.png');
-			});
-			$("#tjxz").click(function() {
-//				alert("11");
-				$("#tjqg img").attr('src','/matouPCS/Public/Home/img/tjqg-hui.png');
-				$("#tjxz img").attr('src','/matouPCS/Public/Home/img/tjxz-hong.png');
-			});
-		$(function() {
-
-			$("#tt").bigAutocomplete({
-				width: 440,
-				data: [{
-					title: "中国好声音",
-					result: {
-						ff: "qq"
-					}
-				}, {
-					title: "中国移动网上营业厅"
-				}, {
-					title: "中国银行"
-				}, {
-					title: "中国移动"
-				}, {
-					title: "中国好声音第三期"
-				}, {
-					title: "中国好声音 第一期"
-				}, {
-					title: "中国电信网上营业厅"
-				}, {
-					title: "中国工商银行"
-				}, {
-					title: "中国好声音第二期"
-				}, {
-					title: "中国地图"
-				}],
-
-			});
-
-		})
-
-		//			地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-
-		});
-		cityPicker.init();
-
-		$(function() {
-			//日期
-			$('#date').date_input();
-			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
-			$("#filter a").hover(
-				function() {
-					$(this).addClass("seling");
-				},
-				function() {
-					$(this).removeClass("seling");
-				}
-			);
-
-			//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
-			$("#filter dt+dd a").attr("class", "seled");
-			/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
-			                                                     不然后面通过$("#filter a[class='seled']")访问不到class样式为seled的a标签。*/
-
-			//为filter下的所有a标签添加单击事件
-			$("#filter a").click(function() {
-				$(this).parents("dl").children("dd").each(function() {
-					//下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
-					//$(this).children("div").children("a").removeClass("seled");
-					//$(this).find("a").removeClass("seled");
-					$('a', this).removeClass("seled");
-				});
-
-				$(this).attr("class", "seled");
-
-				//				alert(RetSelecteds()); //返回选中结果
-			});
-			//返回选中结果
-		});
-
-		function RetSelecteds() {
-			var result = "";
-			$("#filter a[class='seled']").each(function() {
-				result += $(this).html() + "\n";
-			});
-			return result;
-		}
-		//		$('#date').click(function(){
-		//				alert(RetSelecteds()+$('#date').val()+$('#city').val());
-		//			})
-		$('.px .hot').click(function() {
-			$('.px .hot').css('background-color', '#ff5c5d');
-			$('.px .new').css('background-color', '#999999');
-			getPage(1);
-		})
-		$('.px .new').click(function() {
-			$('.px .new').css('background-color', '#ff5c5d');
-			$('.px .hot').css('background-color', '#999999');
-			getPage(1);
-		})
-	</script>
-    <!--点击取消关注-->
-    <script type="text/javascript">
-//点击关注与点击取消关注
+<script type="text/javascript">
 function change(id) {
 	//拿到被关注用户id 由于值会丢 决定选择使用cookie
     var mark = document.getElementById('btn'+id+'').innerHTML;
@@ -580,43 +481,5 @@ function change(id) {
 		// document.getElementById('btn'+id+'').innerHTML = "关注"; 
     };
 };
-//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height:'150px'
-			}, 300);
-		},function(){
-				$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height:'0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height:'75px'
-			}, 300);
-		},function(){
-			$('.select-xx').stop().animate({
-				height:'0px'
-			}, 300);
-		});
-		// 如果没有登录 就提示请先登录
-		$('#btn').click(function(){
-			alert('请先登录！');
-		});
 </script>
-<!--<script type="text/javascript">
-function change() {
-    var mark = document.getElementById('btn_01').innerText;
-    if (mark == '关注') {
-        document.getElementById('btn_01').innerText = "已关注";
-    }
-    else {
-        document.getElementById('btn_01').innerText = "关注";
-    }
-}</script>-->
-
 </html>

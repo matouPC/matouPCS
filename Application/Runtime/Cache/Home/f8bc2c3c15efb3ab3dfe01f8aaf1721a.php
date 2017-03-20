@@ -1,56 +1,56 @@
-<?php if (!defined('THINK_PATH')) exit();?>   	
-
-		
-						<?php if(is_array($list)): foreach($list as $key=>$lists): ?><div class="s-c-3f">
-								<div class="rmdtct">
-									<ul class="rmdt">
-										<li>
-											<div class="rmdt-1f">
-												<div class="rmdt-1fc1">
-													<p><img src="/matouPCS/Public/Home/img/pltx.png" /></p>
-													<p>用户<?php echo (substr($lists["username"],0,5)); ?></p>
-													<p>logo</p>
-													<p class="rmdtcmap">所在地：<?php echo ($lists["addre"]); ?>&nbsp;</p>
-													<p class="rmdtcjs"><?php echo ($lists["content"]); ?></p>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-2f">
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-												</div>
-												<div class="clearfloat "></div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-3f">
-												<p class="rmdtcdz">点赞&nbsp;100</p>
-												<p class="rmdtcfb">2016.12.12发布</p>
-												<p class="clearfloat"></p>
-												<br>
-											</div>
-										</li>
-									</ul>
+<?php if (!defined('THINK_PATH')) exit();?>	           	<div id="contentt"  class="s-c-3f">
+	               	<?php if(is_array($dongtai)): foreach($dongtai as $key=>$v): ?><div class="s-c-3f-1f">
+								<div class="yhtx">
+								<?php if($_SESSION['id'] == $v['uid']){ ?>
+										<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($v["uid"]); ?>">
+									<?php }else{ ?>
+										<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($v["uid"]); ?>">
+									<?php } ?>
+									
+											 <?php if($v[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($v["imagename"]); ?>"  width="60" height="60" style="border-radius:50%"/><?php endif; ?>
+									</a>
+									<div class="vip">
+										<img src="/matouPCS/Public/Home/img/rzlogo.png" />
+									</div>
 								</div>
-							</div>
-							<br><?php endforeach; endif; ?>
-			
-						<div style="text-align:center;" class="margin">
+								<p class="yhmc">
+								 <?php if($v[username]==$v[tel]): echo (substr($v["username"],0,5)); endif; ?>
+							<?php if($v[username]!=$v[tel]): echo ($v["username"]); endif; ?>
+								</p>
+								<p class="zw">职位名称：<?php echo ($v["type_u"]); ?></p>
+								<p class="szd">所在地：<?php echo ($v["addre"]); ?></p>
+								<p class="dtnr">
+								<?php echo ($v["content"]); ?>
+								</p>
+								<ul>
+									<?php if(is_array($img)): foreach($img as $key=>$vd): if($v[did]==$vd[pid]): ?><li>
+									<a rel="gallery1" class="boxer" href="/matouPCS/Uploads/<?php echo ($vd["imagename"]); ?>">
+										<div class="pic">
+											<img src="/matouPCS/Uploads/<?php echo ($vd["imagename"]); ?>" />
+										</div>
+									</a>
+								</li><?php endif; endforeach; endif; ?>
+									<div class="clear"></div>
+								</ul>
+								<div class="bottom">
+									<p class="left"><?php echo ($v["time"]); ?></p>
+									<div class="right dz-qx">
+										<p onclick="zan1(<?php echo ($v["did"]); ?>,<?php echo ($v["zan"]); ?>)" class="dz dz-qx">
+													<?php $zan = explode(',',$v['zid']); array_pop($zan); ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z<?php echo ($v["did"]); ?>" style="font-size: 17px;" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z<?php echo ($v["did"]); ?>" style="font-size: 17px;" class="icon-dz"></span>
+													<?php } ?>
+													<span style="font-size: 17px;" id="s<?php echo ($v["did"]); ?>"><?php echo ($v["zan"]); ?></span></p> 
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+							</div><?php endforeach; endif; ?>
+						</div>
+						<div class="djjzgd">
 							<button onclick="tj()" name='btn' id='btn' >点击加载更多</button>
 						</div>

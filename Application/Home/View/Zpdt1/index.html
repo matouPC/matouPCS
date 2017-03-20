@@ -379,50 +379,51 @@
 						<ul>
 							<foreach name="datan" item="dataa">
 								<li>
-<<<<<<< HEAD
-									<a href="#">
-										<div>
-											<div class="yh-admin">
-												<img src="__PUBLIC__/Home/img/tjzp_01.png" />
-											</div>
-											<div class="s-r-5f-right">
-												<strong class="bdmc">
-													{$dataa.forcename}
-												</strong>
-												<div class="clear"></div>
-												<div class="s-r-5f-2f">
-													<p>经理/店长</p>
-													<p>{$dataa.sex}</p>
-													<p>{$dataa.age}岁</p>
-													<div class="clear"></div>
-												</div>
-												<p class="xz">
-													薪资：<span class="red">{$dataa.price}k/月</span>
-												</p>
-											</div>
-											<div class="clear"></div>
-=======
-									<a href="?s=/Home/Zpdt1/xqzp/id/{$dataa.rid}">
+								<a href="?s=/Home/Zpdt1/xqzp/id/{$dataa.rid}">
+									<div>
 										<div class="yh-admin">
-											<img src="__PUBLIC__/Home/img/bdmc.png" >
->>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
+										 <if condition="$dataa[imagename]==''">
+											<img src="__PUBLIC__/Home/img/tjzp_01.png" />
+                                      <else />
+                                      	<img src="/matouPCS/Tu/upload/{$dataa.imagename}"  style="border-radius:50%"/>
+                                    </if>
+										
 										</div>
-										<p class="gwyq">
-											<span class="black-333">岗位要求：</span>
-											<span class="text49">
-												 {$dataa.content}...
-											</span>
-										</p>
-										<?php $numBao = explode(',',$dataa['zhao']);
+										<div class="s-r-5f-right">
+											<strong class="bdmc">
+												{$dataa.forcename}
+											</strong>
+											<div class="clear"></div>
+											<div class="s-r-5f-2f">
+												<p>{$dataa.type}</p>
+												<if condition="$$dataa[sex]=='1'">
+												<p>{$dataa.sex}</p>
+												<p>{$dataa.age}</p>
+												<div class="clear"></div>
+											</div>
+											<p class="xz">
+												薪资：<span class="red">{$dataa.price}/月</span>
+											</p>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<p class="gwyq">
+										<span class="black-333">岗位要求：</span>
+										<span class="text49">
+										 {$dataa.content}
+										</span>
+									</p>
+							<?php $numBao = explode(',',$dataa['zhao']);
 											  array_pop($numBao);
 											  $numBaos = count($numBao);?>
 										<div class="bottom">
 											<p class="left">报名数{$numBaos}</p>
 											<p class="right">工作地点：{$dataa.address}</p>
 											<div class="clear"></div>
-										</div>
-									</a>
-								</li>
+									</div>
+								</a>
+							</li>
+								
 							</foreach>
 							<div class="clear"></div>
 						</ul>
@@ -446,7 +447,11 @@
 									<?php } ?>
 									<div class="tj">
 										<div class="tj-img">
-											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+																<if condition="$listnns[logo]==''">  
+                                	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                   <else />
+                                     <img style="border-radius:50%" width="101" height="101" src="/MatouPCS/Tu/upload/{$listnns.logo}"  /> 
+                                   </if>
 										</div>
 										<div class="tj_01">
 											<strong class="tj_01_01">{$listnns.forcename}</strong>
@@ -480,7 +485,7 @@
 			</div>
 			<div class="clear"></div>
 		</section>
-		<include file="Public/footer"/>
+		<include file="Public/foote"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>

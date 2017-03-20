@@ -737,15 +737,7 @@ $('.2fb .s-f2l-c1 li').click(function() {
 	$(this).attr('class', 'selected-tab');
 });
 //----------------------------点赞--------------------------
-$('.dz-qx span').click(function() {
-	if($(this).hasClass('icon-dz')) {
-		$(this).removeClass('icon-dz');
-		$(this).addClass('icon-dz-kz');
-	} else {
-		$(this).removeClass('icon-dz-kz');
-		$(this).addClass('icon-dz');
-	}
-});
+
 
 //----------------------------工作室下拉--------------------------	
 $('.gzs').hover(function() {
@@ -799,12 +791,14 @@ $('#zpxx').click(function() {
 //查看号码
 $(function() {
 	$("#sp").click(function() {
-		alert("充值")
+		//				alert("充值")
 		$("#spdl").show();
 	});
 	$("#spdl-ok").click(function() {
-		$("#spdl-p").text("联系电话：1566666666");
+		var xp = $('#xp').val();
+		$("#spdl-p").text("联系电话："+xp);
 		$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
+		//				<input type="text"  class="time" id="stime">
 		if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
 			//					$("#id").value = "5"
 			//					c = c-1

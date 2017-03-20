@@ -4,21 +4,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>招聘详情</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/xqzp-3r-zy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/xq-3r-zy.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin.css" />
 	</head>
 
 	<body>
-		<div class="show-bg"></div>
 		<header>
-		
-				<include file="Public/header"/>
+			<div class="h-content-main">
+				<div class="h-main-c">
+							<include file="Public/header"/>
 					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<img src="__PUBLIC__/Home/img/navbg2.png" alt="" />
 						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<input placeholder="搜索全站" type="text" class="find3" />
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" />
+								<img src="__PUBLIC__/Home/img/ss-t.png" alt="" />
 							</div>
 						</div>
 					</div>
@@ -33,38 +33,6 @@
 			<button class="spdl-ok" id="spdl-ok">确定</button>
 			<button class="spdl-esc" id="spdl-esc">取消</button>
 		</div>
-		<div class="spdlb" id="spdlb" title="消息">
-			<div class="titlenab">
-				<img src="__PUBLIC__/Home/img/swtitle.png">
-				<div class="rhideb">
-					<img src="__PUBLIC__/Home/img/hide.png">
-				</div>
-			</div>
-			<div class="fbtypeb">
-				<a>类型：</a>
-				<a href="#">
-					<p id="fbp1">婚礼喜事</p>
-				</a>
-				<a href="#" style="margin-left: 24px;">
-					<p id="fbp2">门面活动</p>
-				</a>
-			</div>
-			<div class="spfxb"></div>
-			<div class="contentb">
-				<textarea style="resize: none; width: 420px; height: 100px;border-radius: 15px;margin-left: 40px; border: 0;padding: 10px;"></textarea>
-			</div>
-			<div class="swbtnb">
-				<div class="swbtn-cb">
-					<div>
-						<img src="__PUBLIC__/Home/img/addp.png" />
-					</div>
-					<div style="margin-left: 10px;">
-						<img src="__PUBLIC__/Home/img/adds.png" />
-					</div>
-					<button class="tjbtnb" id="tjbtn">发布</button>
-				</div>
-			</div>
-		</div>
 		<section>
 
 			<div class="s-main-c">
@@ -72,13 +40,13 @@
 				<div class="s-main-r">
 					<div class="userin">
 						<div class="u-img">
-						  	<php>if($_SESSION['id'] == $list['uid']){</php>
+								<php>if($_SESSION['id'] == $list['uid']){</php>
 									  <if condition="$list[bdlx]=='1'">
 								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}">
 								  <if condition="$list[imagename]==''">
 										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  style="border-radius:50%"/>
+                                        	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
                                     </if>
 								</a>
 								<elseif condition="$list[bdlx]=='6'"/>
@@ -86,14 +54,14 @@
 								<if condition="$list[imagename]==''">
 										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%" />
+                                        	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
                                     </if></a>
 								<else/>
 								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}">
 								  <if condition="$list[imagename]==''">
 										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  style="border-radius:50%"/>
+                                      	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
                                     </if></a>
 									</if>
 									<php>}else{</php>
@@ -102,48 +70,35 @@
 								  <if condition="$list[imagename]==''">
 										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}"  alt="" />
+                                      	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
                                     </if></a>
 								<elseif condition="$list[bdlx]=='6'"/>
 								<a href="?s=/Home/Mtbu/spbddydt/id/{$list.uid}">
 								  <if condition="$list[imagename]==''">
 										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%"/>
+                                      	  	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
                                     </if></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}">  <if condition="$list[imagename]==''">
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}">  
+								<if condition="$list[imagename]==''">
 										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
                                       <else />
-                                      	<img src="__PUBLIC__/upload/{$list.pubtime}/{$list.imagename}" style="border-radius:50%"/>
+                                    	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
                                     </if></a>
 									</if>
                                        <php>}</php>
 						</div>
 						<div class="u-cont">
-							<p style="font-size: 14px;"><strong><a href="#">
-	                                     <if condition="$list[username]==$list[tel]">
+							<p class="tfs14"><strong><if condition="$list[username]==$list[tel]">
 							                      用户{$list.username|substr=0,5}
 								                 </if>
 								               <if condition="$list[username]!=$list[tel]">
 								                用户{$list.username}
-								                  </if></a></strong></p>
-							<p style="font-size: 12px;margin-top: 10px;">
-							<if condition="$list[bdlx]==1">
-								类型：个人部队
-								<elseif condition="$list[bdlx]==2"/>
-								类型：婚庆公司
-								<elseif condition="$list[bdlx]==3"/>
-								类型：工作室
-								<elseif condition="$list[bdlx]==4"/>
-								类型：影楼
-								<elseif condition="$list[bdlx]==5"/>
-								类型：表演团
-								<else/>
-								类型：商铺部队
-								</if></p>
-							<p style="font-size: 12px;margin-top: 10px;">所在地：{$list.address}</p>
-				  
+								                  </if></strong></p>
+							<p class="tfs12">职位：{$list.type_u}</p>
+								<p style="font-size: 12px;margin-top: 10px;">所在地：{$list.addre}</p>
+							
 								   	<php>if($_SESSION['id'] == $list['uid']){</php>
 									  <if condition="$list[bdlx]=='1'">
 								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}"><button>进入Ta的主页</button></a>
@@ -163,20 +118,20 @@
                                        <php>}</php>
 						</div>
 					</div>
-					<br>
+					
 					<div class="bdsz">
 						<div class="bdsz-bt">
 							招聘详情
 						</div>
 						<ul>
 							<li class="selected-con">
-								<a href="javascript://">
-									基本信息
+								<a rel="nofollow" href="javascript://">
+									<h2>基本信息</h2>
 								</a>
 							</li>
 							<li>
-								<a href="javascript://">
-									招聘职位
+								<a rel="nofollow" href="javascript://">
+									<h2>招聘职位</h2>
 								</a>
 							</li>
 						</ul>
@@ -184,33 +139,31 @@
 				</div>
 				<div class="s-main-l">
 					<div class="s-c-2f">
-
-						<div class="s-2f-c1">
-							<span class="hfx"></span>
-							<p><strong>基本信息</strong></p>
+						<div class="s-c-8f-1f">
+							<h2>基本信息</h2>
 						</div>
 						<div class="s-2f-c2">
 							<div class="c2-ct1">
 								<p><span class="xqcc-c0">所在地点：</span><span class="xqcc-c3">{$list.addre}</span></p>
-								<p><span class="xqcc-c0">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</span><span class="xqcc-c3">{$list.remail}</span></p>
+								<p><span class="xqcc-c0">邮<samp class="kog14"></samp>箱：</span><span class="xqcc-c3">{$list.remail}</span></p>
 							</div>
-							<div class="c2-ct2">
+							<div class="c2-ct21">
 								<p><span class="xqcc-c0">QQ号码：</span><span class="xqcc-c3">{$list.rqq}</span></p>
-								<p id="spdl-p"><span class="xqcc-c0">联系电话：</span><span class="xqcc-c3">{$list.rtel|substr=0,3}XXXX{$list.rtel|substr=8,11}</span></p><button id="sp">查看号码 </button><input type="hidden" id="xp" value="{$list.rtel}">
+								<p id="spdl-p"><span class="xqcc-c0">联系电话：</span><span class="xqcc-c3">{$list.rtel|substr=0,3}XXXX{$list.rtel|substr=8,11}</span></p><button id="sp">查看号码 </button>
+								<input type="hidden" id="xp" value="{$list.rtel}">
 							</div>
 						</div>
-						<br>
+						
 					</div>
-					<div class="s-c-2f" style="border-bottom: 0px!important;">
-						<div class="s-2f-c1">
-							<span class="hfx"></span>
-							<p><strong>招聘职位</strong></p>
+					<div class="s-c-2fb">
+						<div class="s-c-8f-1f">
+							<h2>招聘职位</h2>
 						</div>
-						<foreach name="data" item="datas">
+          	<foreach name="data" item="datas">
 						<div class="xqwc">
 							<div class="xqcc">
 								<p class="xqcc-c">
-									<span class="xqcc-c0">招聘职位：</span><span class="xqcc-c3">{$datas.type}</span><span class="xqcc-c1">薪资：</span><span class="xqcc-c3">{$datas.price}元/月</span>
+								<span class="xqcc-c0">招聘职位：</span><span class="xqcc-c3">{$datas.type}</span><span class="xqcc-c1">薪资：</span><span class="xqcc-c3">{$datas.price}元/月</span>
 								</p>
 								<p class="xqcc-c">
 									<span class="xqcc-c0">性别：</span><span class="xqcc-c3">{$list.sex}</span><span class="xqcc-c1">年龄：</span><span class="xqcc-c3">{$datas.age}岁</span><span class="xqcc-c1">工作年龄：</span><span class="xqcc-c3">{$datas.worktime}年</span>
@@ -219,7 +172,7 @@
 								<br>
 								<p class="xqcc-c"><span class="xqcc-c0">岗位要求：</span><span class="xqcc-c2">{$datas.work}...</span></p>
 							</div>
-							<?php $zhao = explode(',',$datas['zhao']);
+						<?php $zhao = explode(',',$datas['zhao']);
 								  array_pop($zhao);
 								  $num = count($zhao);
 								   ?>      
@@ -244,218 +197,46 @@
 							<?php } ?>
 							<div class="clearfloat "></div>
 						</div>
-						<br>
 						</foreach>
-						<!-- <div class="xqwc">
-							<div class="xqcc">
-								<p class="xqcc-c">
-									<span class="xqcc-c0">招聘职位：</span><span class="xqcc-c3">摄影师</span><span class="xqcc-c1">薪资：</span><span class="xqcc-c3">3000-6000元/月</span>
-								</p>
-								<p class="xqcc-c">
-									<span class="xqcc-c0">性别：</span><span class="xqcc-c3">女</span><span class="xqcc-c1">年龄：</span><span class="xqcc-c3">25岁</span><span class="xqcc-c1">工作年龄：</span><span class="xqcc-c3">1-2年</span>
-								</p>
-								<p class="xqcc-c"><span class="xqcc-c0">工作内容：</span><span class="xqcc-c2">岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求...</span></p>
-								<br>
-								<p class="xqcc-c"><span class="xqcc-c0">岗位要求：</span><span class="xqcc-c2">岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求岗位要求...</span></p>
-							</div>
-							<div class="xqbtb">
-								<a href="#">招聘结束</a>
-							</div>
-							<div class="clearfloat "></div>
-						</div -->>
-						<br>
 						<div class="clearfloat "></div>
 					</div>
 
 					<div class="s-c-4f">
-						<div class="s-tf-btn" style="margin-right: 5px;">
+						<div class="s-tf-btn">
 							<p>分享
 							</p>
-							<img src="__PUBLIC__/Home/img/xzfx.png" />
+							<img src="__PUBLIC__/Home/img/xzfx.png" alt="" />
 						</div>
 						<div class="clearfloat "></div>
 					</div>
 					<div class="clearfloat "></div>
-
-					<br>
-					<br>
-					<div class="clearfloat "></div>
 				</div>
 				<div class="clearfloat "></div>
 		</section>
-		<br>
-		<br>
-		<br>
-	<include file="Public/foot"/>
+<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js "></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js "></script>
-	<script type="text/javascript ">
-		$(document).ready(function() {
-			$(".con ").eq(0).show();
-			$(".bdsz ul li ").click(function() {
-				var num = $(".bdsz ul li ").index(this);
-				$(".con ").hide();
-				$(".con ").eq(num).show().slblings().hide();
-			})
-		});
-		//----------------------------remove tab切换样式--------------------------
-		$('.bdsz li').click(function() {
-			$(this).parents('.s-main-r').children('.bdsz').each(function() {
-				$('li', this).removeClass('selected-con');
-			});
-			$(this).attr('class', 'selected-con');
-		});
-		$(function() {
+	<script src="__PUBLIC__/Home/js/showwin.js"></script>
+		<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js "></script>
+<script type="text/javascript">
+function zhao(id){
+	$.ajax({
+		url:"?s=/Home/Zpdt1/xqzp_zhao/id/"+id,
+		type:"get",
+		dataType:"json",
+		success:function(data){
+			$("#bt-p"+id+" a").css("font-size", "12px");
+			$("#bt-p"+id).css("background", "#ccc");
+			$("#bt-p"+id+" a").text("已有"+data+"人应聘");
+		},error:function(){
+			alert('no');
+		}
+	});
+	// alert(id);
+	// $("#bt-p"+id+" a").css("font-size","12px");
+	// $("#bt-p"+id).css("background","#ccc");
+	// $("#bt-p"+id+" a").text("已有10人应聘");
+};
 
-				$("#tt ").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音 ",
-						result: {
-							ff: "qq "
-						}
-					}, {
-						title: "中国移动网上营业厅 "
-					}, {
-						title: "中国银行 "
-					}, {
-						title: "中国移动 "
-					}, {
-						title: "中国好声音第三期 "
-					}, {
-						title: "中国好声音 第一期 "
-					}, {
-						title: "中国电信网上营业厅 "
-					}, {
-						title: "中国工商银行 "
-					}, {
-						title: "中国好声音第二期 "
-					}, {
-						title: "中国地图 "
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		//		新增
-		$(function() {
-			$("#hfx3-1").click(function() {
-				$(".txfg1-c2-1").hide();
-				//				$(".txfg1-c1-1").hide();
-				$(".txfg1").css("height", "auto");
-				$("#adds-f-c1").on("click", function() {
-					$(".s-c-3f").detach();
-					$(".txfg1").css("height", "125px");
-					$(".txfg1-c2-1").show();
-				});
-			});
-		});
-		//查看号码
-		$(function() {
-			$("#sp").click(function() {
-				//				alert("充值")
-				$("#spdl").show();
-			});
-			$("#spdl-ok").click(function() {
-				var xp = $('#xp').val();
-				$("#spdl-p").text("联系电话："+xp);
-				$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
-				//				<input type="text"  class="time" id="stime">
-				if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
-					//					$("#id").value = "5"
-					//					c = c-1
-					setTimeout(function() {
-						$(".spdl").hide();
-					}, 3000);
-				}
-			});
-			$("#spdl-esc").click(function() {
-				$(".spdl").hide();
-			});
-		});
-		//报名
-		function zhao(id){
-			$.ajax({
-				url:"?s=/Home/Zpdt1/xqzp_zhao/id/"+id,
-				type:"get",
-				dataType:"json",
-				success:function(data){
-					$("#bt-p"+id+" a").css("font-size", "12px");
-					$("#bt-p"+id).css("background", "#ccc");
-					$("#bt-p"+id+" a").text("已有"+data+"人应聘");
-				},error:function(){
-					alert('no');
-				}
-			});
-			// alert(id);
-			// $("#bt-p"+id+" a").css("font-size","12px");
-			// $("#bt-p"+id).css("background","#ccc");
-			// $("#bt-p"+id+" a").text("已有10人应聘");
-		};
-		
-		//弹窗2
-		$(function() {
-			$("#find").click(function() {
-				//								alert("充值")
-				$("#spdlb").fadeIn(350).show();
-				$(".show-bg").fadeIn(350).show();
-				$("#find").css("background", "#ff5c5d");
-			});
-			$("#spdl-okb").click(function() {
-
-			});
-			$("#spdl-escb").click(function() {
-				$(".spdlsb").hide();
-				$(".show-bg").hide();
-			});
-		});
-		$(function() {
-			$("#fbp1").css("border", "2px solid #ff5c5d");
-			$("#fbp2").click(function() {
-					$("#fbp2").css("border", "2px solid #ff5c5d");
-					$("#fbp1").css("border", "2px solid  #f2f2f2");
-				}),
-				$("#fbp1").click(function() {
-					$("#fbp1").css("border", "2px solid #ff5c5d");
-					$("#fbp2").css("border", "2px solid  #f2f2f2");
-				});
-			$(".rhideb").click(function() {
-				$("#spdlb").hide();
-				$(".show-bg").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-			$("#tjbtn").click(function() {
-				$("#spdlb").fhide();
-				$(".show-bg").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-		});
-	</script>
-
+</script>
 </html>

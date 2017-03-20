@@ -91,9 +91,7 @@
 			}
 		</style>
 	</head>
-<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-<script src="__PUBLIC__/Home/js/City_data.js"></script>
-        <script src="__PUBLIC__/Home/js/bddz.js"></script>
+
 
 	<body>
 		<header>
@@ -215,6 +213,7 @@
 					<br>
 					<div>
 					<div class="con" id="re">
+					
 					<div id="xxoos">
 					
 				</div>
@@ -230,7 +229,7 @@
 				
 						</div>
 						</div>
-			             <div style="text-align:center;" class="margin">
+						<div class="djjzgd">
 							<button onclick="tj1()" name='btn1' id='btn1' >点击加载更多</button>
 						</div>
 					</div>
@@ -243,7 +242,7 @@
 								</ul>
 							</div>
 						</div>
-						  <div style="text-align:center;" class="margin">
+						  <div class="djjzgd">
 							<button onclick="tj2()" name='btn2' id='btn2' >点击加载更多</button>
 						</div>
 					</div>
@@ -258,7 +257,7 @@
 								</ul>
 							</div>
 						</div>
-						  <div style="text-align:center;" class="margin">
+						  <div class="djjzgd">
 							<button onclick="tj3()" name='btn3' id='btn3' >点击加载更多</button>
 						</div>
 					</div>
@@ -271,7 +270,7 @@
 								</ul>
 							</div>
 						</div>
-						  <div style="text-align:center;" class="margin">
+					<div class="djjzgd">
 							<button onclick="tj4()" name='btn4' id='btn4' >点击加载更多</button>
 						</div>
 					</div>
@@ -280,7 +279,44 @@
 					</div>-->
 				</div>
 				</div>
-  <script type="text/javascript">
+  	<script type="text/javascript">
+									var a = 0;
+									function zan1(did,zan){
+						
+										var zan = parseInt(document.getElementById('s'+did).innerHTML);
+										if($('#z'+did).hasClass('icon-dz')){
+											zan += 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_gt_zan/did/"+did+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('点赞成功');
+													$('#z'+did).removeClass('icon-dz');
+													$('#z'+did).addClass('icon-dz-kz');
+													$('#s'+did).html(zan);
+												},error:function(){
+													alert('n2o');
+												}
+											});
+											
+										}else{
+											zan -= 1;
+											$.ajax({
+												url:"?s=/Home/Mtbu/rzbd_gt_zan/did/"+did+"/zan/"+zan,
+												type:"get",
+												success:function(data){
+													alert('取消成功');
+													$('#z'+did).removeClass('icon-dz-kz');
+													$('#z'+did).addClass('icon-dz');
+													$('#s'+did).html(zan);
+												},error:function(){
+													alert('n4o');
+												}
+											});
+											
+										}
+									}
+		
 	function gzs(id){
 		 var address = getCookie("add");//活动时间 
 	//	alert(id);	
@@ -313,24 +349,64 @@
 	 var c=2;
 	  
 	  function tj(){	
+		  var t = "{:session('id')}";
 	      var address = getCookie("add");//活动时间
-		//alert(address);
+		alert(1);
 				$.ajax({
 					type:'post',
 					url:"{:U('Mtbu/buduijzre')}",
 					data:{k:c,address:address},
 					beforeSend:function(){
-			         $("#content").append("<div id='load'>加载中……</div>");
+			         $("#contentt").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						// alert(data);
-						if(data!=null){				
-								//alert(1);
-								
-								 for (var i = 0; i < data.length; i++) {
-									 var use = data[i].username.substr(0,5);
-								$("#content").append('<div class="s-c-3f"><div class="rmdtct"><ul class="rmdt"><li><div class="rmdt-1f"><div class="rmdt-1fc1"><p><img src="__PUBLIC__/Home/img/pltx.png" /></p><p>'+use+'</p><p>logo</p><p class="rmdtcmap">所在地：'+data[i].addre+'</p><p class="rmdtcjs">'+data[i].content+'</p></div></div></li><li><div class="rmdt-2f"><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="rmdt-img1"><img src="__PUBLIC__/Home/img/yhmc-big.png" /></div><div class="clearfloat "></div></div></li><li><div class="rmdt-3f"><p class="rmdtcdz">'+data[i].zan+'</p><p class="rmdtcfb">'+data[i].time+'发布</p><p class="clearfloat"></p><br></div></li></ul></div></div><br>');
-			 		
+				
+						if(data!=null){		
+							
+	               	 for (var i = 0; i < data['nr'].length; i++) {
+	               		 var myArray=new Array()
+						 var str=data['nr'][i].zid;  
+						 myArray = str.split(","); 
+						 
+						 var c = ","; // 要计算的字符
+						 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
+						 var result = str.match(regex);
+						 var count = !result ? 0 : result.length;
+						 for(var j=0;j<=count;j++){
+							 if(myArray[j]==t){
+								 var aa=1;
+	
+							 }
+						 }
+						if(aa==1){
+							var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
+						}else{
+							var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
+						}
+						if(data['nr'][i].uid==t){
+							var href='<a href="?s=/Home/Mtbu/spbddndt/id/'+data['nr'][i].uid+'">';
+						}else{
+							var href='<a href="?s=/Home/Mtbu/spbddydt/id/'+data['nr'][i].uid+'">';
+						}
+	               		 if(data['nr'][i].imagename==''){
+	               			var img='<img src="__PUBLIC__/Home/img/yhmc.png" />';
+	               		 }else{
+	               			var img='<img src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'"  width="60" height="60" style="border-radius:50%"/>';
+	               		 }
+	               	    if(data['nr'][i].username==data['nr'][i].tel){
+							var use = data['nr'][i].username.substr(0,5);
+							}else{
+						     var use = data['nr'][i].username;
+							}	
+	               	 var p='';
+	                	 for (var j= 0; j < data['tu'].length; j++) {
+							 if(data['nr'][i].did==data['tu'][j].pid){
+
+								p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
+							 }
+						 }
+	               		$("#contentt").append('<div class="s-c-3f-1f"><div class="yhtx">'+href+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zw">职位名称： '+data['nr'][i].type_u+'<</p><p class="szd">所在地： '+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'<div class="clear"></div></ul><div class="bottom"><p class="left"> '+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><div class="clear"></div></div><div class="clear"></div></div></div>');
+				 		
 								 }
 						}else{
 							 //alert(22);
@@ -487,40 +563,55 @@
 						// alert(p);
 						  } 
 	  </script>
-				<div class="s-main-r">
+					<div class="s-main-r">
 					<div class="s-r-3f">
 						<div>
-							<a href="#"><img src="__PUBLIC__/Home/img/rmbd.png" /></a>
-							<!--<a href="#"><img src="img/tjcz.png" /></a>-->
-							<a class="clearfloat"></a>
+							<a href="javascript://">
+								<h2>热门部队</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
 
 					<div class="s-r-4f">
 						<ul>
 							<!-- 热门部队 -->
-							<foreach name="listn" item="listns">
-								<li>
-									<?php if($_SESSION['id'] == $listn['uid']){ ?>
+							
+								<div class="s-r-4f">
+						<ul>
+						<foreach name="listn" item="listns">
+							<li>
+									<?php if($_SESSION['id'] == $listns['uid']){ ?>
 										<a href="?s=/Home/Mtbu/rzbddydt/id/{$listns.uid}">
 									<?php }else{ ?>
 										<a href="?s=/Home/Mtbu/rzbddydt/id/{$listns.uid}">
 									<?php } ?>
-									
-										<div class="tj">
-											<img src="__PUBLIC__/Home/img/bdmc.png" width="101px" height="101px">
-											<div class="tj_01">
-												<p class="tj_01_01" style="width: 100px;color: #333;">{$listns.forcename}</p>
-												<p class="tj_01_02" style="width: 100px；color:#666666!important;">部队类型：{$listns.type}</p>
-												<p class="tj_01_02" style="width: 100px；color:#666666!important; ">粉丝数量：110</p>
-												<p class="tj_01_02" style="width: 100px；color:#666666!important;">所在地点：{$listns.address}</p>
-												<p style="font-size: 12px; color:#999; margin-left:-120px; margin-top:14px; display:block;width: 255px;height:50px;overflow: hidden;">
-													{$listns.content}
-												</p>
-											</div>
+									<div class="tj">
+										<div class="tj-img">
+											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
 										</div>
-									</a>
-								</li>
+										<div class="tj_01">
+											<strong class="tj_01_01">{$listns.forcename}</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> {$listns.type}
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> {$listns.fen}
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> {$listns.address}
+											</p>
+										</div>
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">{$listns.content}</span>
+											</p>
+										</div>
+									</div>
+								</a>
+							</li>
 							</foreach>
 
 							<!--<li class="clearfloat"></li>-->
@@ -534,10 +625,11 @@
 		<br>
 		<br>
 		<br>
-		<include file="Public/footer"/>
-		
-		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-		
+		<include file="Public/foote"/>
+		<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+      <script src="__PUBLIC__/Home/js/City_data.js"></script>
+        <script src="__PUBLIC__/Home/js/bddz.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>	
 		<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {

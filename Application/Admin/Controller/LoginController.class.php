@@ -32,7 +32,7 @@ class LoginController extends Controller{
 			$password = I('password');
 	
 			//M为快捷方式    指定表名
-			$mOb=M('admin');
+			$mOb=M('user');
 			///根据得到的账号和密码和数据库查询到的数据比对    不能防注入
 			//$arr=$mOb->where("username='$username' and password='$password'")->find();
 			//对账号密码进行占位预处理  %s为预处理字符串

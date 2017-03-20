@@ -4,7 +4,12 @@
 			<a href="?s=/Home/Zpdt1/xqzp/id/<?php echo ($lists["rid"]); ?>">
 				<div class="s-l-1f">
 					<div class="yhtx">
-						<img style="width:60px;" src="/matouPCS/Public/Home/hye/<?php echo ($lists["imagename"]); ?>" />
+					
+                                  <?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
+                                   <?php else: ?>
+                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>"  /><?php endif; ?>
+					
+						
 					</div>
 					<p class="yhmc">
 						用户<?php echo (substr($lists["username"],0,5)); ?>
@@ -25,7 +30,7 @@
 					<?php for ($i=0; $i < 3; $i++) { ?>
 					<?php  if($list[$i] != ''){?>
 					<div class="middle">
-						<p class="black-333">摄影师</p>
+						<p class="black-333"><?php echo $lists[$i]['type']?></p>
 						<p class="age"><?php echo $lists[$i]['age']?></p>
 						<p class="gwyq">
 							<span class="black-333">岗位要求：</span> <?php echo $lists[$i]['content'].substr(0,10)?>
@@ -34,7 +39,7 @@
 							<span class="black-333">薪资：</span> <?php echo $lists[$i]['price']?>元/天
 						</p>
 						<?php $ying = explode(',',$lists[$i]['zhao']); array_pop($ying); $yings = count($ying);?>
-						<p class="bm"<?php echo $yings;?>
+						<p class="bm"><?php echo $yings;?>
 					<?php echo $lists[$i]['date']?>发布人报名</p>
 						<div class="clearfloat"></div>
 					</div>

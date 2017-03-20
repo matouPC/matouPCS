@@ -4,111 +4,40 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>认证部队</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/rzbdsz-3r-xy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style-type: none;
-			}
-			
-			a,
-			img {
-				border: 0;
-			}
-			
-			.demo {
-				width: 720px;
-				margin: 35px auto;
-			}
-			
-			.demo h2 {
-				font-size: 16px;
-				color: #3366cc;
-				height: 30px;
-			}
-			
-			.demo li {
-				float: left;
-			}
-			
-			.text,
-			.button {
-				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
-			}
-			
-			.text {
-				width: 425px;
-				height: 22px;
-				padding: 4px 7px;
-				padding: 6px 7px 2px\9;
-				font: 16px arial;
-				border: 1px solid #cdcdcd;
-				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
-				vertical-align: top;
-				outline: none;
-				margin: 0 -1px 0 0;
-			}
-			
-			.button {
-				width: 79px;
-				height: 32px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-			
-			.button2 {
-				width: 135px;
-				height: 32px;
-				margin-left: 30px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-		</style>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/main-tx.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/cropper.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/troop.css" />
 	</head>
 
 	<body>
 		<header>
-		<include file="Public/header"/>
-					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
-						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
-							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" />
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
+						<div class="h-c-2f">
+							<img src="__PUBLIC__/Home/img/navbg2.png" alt="" />
+							<div class="s-f2-r">
+								<input type="text" placeholder="搜索全站" />
+								<div class="s-f2-r1">
+									<img src="__PUBLIC__/Home/img/ss-t.png" alt="" />
+								</div>
 							</div>
 						</div>
-					</div>
-					<!--<div class="h-c-3f">
-						<img src="img/banner.png" />
-					</div>-->
 				</div>
 			</div>
 		</header>
 		<section>
 			<div class="s-main-c">
-				<div class="s-main-l">
-					<!--<div class="s-c-1f">
-						<a href="#">所有分类</a>>
-						<a href="#">找到相关100.5万相关结果</a>
-					</div>-->
-					<div class="con">
-						<div class="s-c-2f">
-							<div class="s-c-2f-1f">基本信息</div>
-							<div class="s-c-2f-2f">
+				<div class="s-main-l right-tx">
+					<div class="con1">
+						<div class="s-c-8f">
+							<div class="s-c-8f-1f">
+								<h2>基本信息</h2>
+							</div>
+							<div class="s-c-8f-2f rzjbxx">
 								<ul class="ul-l">
 									<li><span class="red">* </span>营业执照名称</li>
 									<li><span class="red">* </span>法定代表人</li>
@@ -122,29 +51,38 @@
 								</ul>
 								<ul class="ul-r">
 									<li>
-										<input type="text" class="gray-in" />
+										<input type="text" placeholder="请输入真实营业执照" class="gray-in" />
 									</li>
 									<li>
-										<input type="text" class="gray-in" />
+										<input type="text" placeholder="请输入真实法定代表人姓名" class="gray-in" />
 									</li>
 									<li>
-										<input type="text" class="gray-in" />
+										<input type="text" class="gray-in" placeholder="请输入门店的简称、别称" />
 									</li>
 									<li>
-										<input type="text" style="width: 58px; float: left;" class="white-in" placeholder="请选择" />
-										<input type="text" class="white-in" style="width: 266px; float: right; margin-right: 2px;" placeholder="请选择详细地址" />
+										<input type="text" class="white-in xz-city" readonly="readonly" placeholder="请选择" onclick="appendCity(this,'danxuan')" value="" data-value="" />
+										<input type="text" class="white-in xxdz" placeholder="请填写详细地址（不超过18个字）" />
 									</li>
 									<li>
-										<input type="text" class="white-in" style="width: 200px;" placeholder="请输入联系电话" />
+										<input type="text" class="white-in lxdh" placeholder="请输入联系电话" />
 									</li>
 									<li>
-										<input type="text" class="white-in" style="width: 200px;" placeholder="请输入QQ" />
+										<input type="text" class="white-in lxdh" placeholder="请输入QQ" />
 									</li>
 									<li class="parents" style="height: 138px;">
 										<div class="left">
 											<a class="selected" href="javascript://">婚庆公司</a>
 											<a href="javascript://">影楼</a>
-											<a href="javascript://">工作室</a>
+											<a class="gzs" href="javascript://">
+												<p>工作室</p>
+												<div class="gzs-xl">
+													<span>婚礼策划G</span>
+													<span>摄影摄像G</span>
+													<span>主持团队G</span>
+													<span>化妆团队G</span>
+													<span>其他G</span>
+												</div>
+											</a>
 											<a href="javascript://">表演团队</a>
 										</div>
 										<div class="right">
@@ -159,294 +97,225 @@
 										<textarea placeholder="请输入部队简介..."></textarea>
 									</li>
 									<li>
-										<input type="text" class="white-in" style="width: 356px;" placeholder="请输入链接地址" />
+										<input type="text" class="white-in" style="width: 354px;" placeholder="请输入链接地址" />
 									</li>
 								</ul>
 								<ul class="clearfloat"></ul>
 							</div>
 							<div class="bjtx">
-								<div class="border"></div>
+								<div class="sctx-y">
+									<div class="container" id="crop-avatar">
+										<div id="sctx" class="avatar-view" title="点击上传头像">
+											<img src="__PUBLIC__/Home/img/yhmc.png" alt="" alt="" />
+										</div>
+										<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+											<div class="modal-dialog modal-lg">
+												<div class="modal-content">
+													<form class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
+														<div class="modal-header">
+															<button class="close" data-dismiss="modal" type="button">&times;</button>
+															<h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
+														</div>
+														<div class="modal-body">
+															<div class="avatar-body">
+																<!-- Upload image and data -->
+																<div class="avatar-upload">
+																	<input class="avatar-src" name="avatar_src" type="hidden" />
+																	<input class="avatar-data" name="avatar_data" type="hidden" />
+																	<label for="avatarInput">头像上传</label>
+																	<input class="avatar-input" id="avatarInput" name="avatar_file" type="file" />
+																</div>
+																<!-- Crop and preview -->
+																<div class="row">
+																	<div class="col-md-9">
+																		<div class="avatar-wrapper"></div>
+																	</div>
+																	<div class="col-md-3">
+																		<div class="avatar-preview preview-lg"></div>
+																		<div class="avatar-preview preview-md">
+																		</div>
+																	</div>
+																</div>
+																<div class="row avatar-btns">
+																	<div class="col-md-9">
+																		<div class="btn-group">
+																			<button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees">向左转</button>
+																		</div>
+																		<div class="btn-group">
+																			<button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees">向右转</button>
+																		</div>
+																	</div>
+																	<div class="col-md-3">
+																		<button class="btn btn-primary btn-block avatar-save" type="submit">完成</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+										<!-- /.modal -->
+
+										<!-- Loading state -->
+										<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+									</div>
+								</div>
 								<div class="tx-button">
-									<button>编辑头像</button>
+									<button onclick="document.getElementById('sctx').click();">编辑头像</button>
 								</div>
 							</div>
 							<div class="clearfloat"></div>
 							<button id="jbxx" class="button-bc">下一步</button>
 						</div>
 					</div>
-					<div class="con" style="display: none;">
-						<div class="s-c-2f">
-							<div class="s-c-2f-1f">
-								<p>照片作品/</p><span>最多上传12张照片</span>
-								<span class="right">									
+					<div class="con2" style="display: none;">
+						<div class="s-c-8f">
+							<div class="s-c-8f-1f">
+								<h2>照片作品/</h2><span>最多上传12张照片</span>
+								<span class="right" onclick="document.getElementById('myFile').click()">									
 									添加照片
 									<div class="tjsp">
-										<img src="__PUBLIC__/Home/img/tj-sp.png" />
+										<img src="__PUBLIC__/Home/img/tj-sp.png" alt="" />
 									</div>
 								</span>
 							</div>
-							<div class="s-c-2f-2f-f">
-								<ul>
-									<li class="na1">
-										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
-										<div class="na1bg">
-											<a href="javascript://">
-												<div class="bj">
-													<img src="__PUBLIC__/Home/img/bj.png" />
-												</div>
-												<p>编辑</p>
-											</a>
-											<a href="javascript://">
-												<div class="delete-1">
-													<img src="__PUBLIC__/Home/img/delete-1.png" />
-												</div>
-												<p style=" float: right; margin-right: 30px;">删除</p>
-											</a>
-										</div>
-									</li>
-									<li class="na1">
-										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
-										<div class="na1bg">
-											<a href="javascript://">
-												<div class="bj">
-													<img src="__PUBLIC__/Home/img/bj.png" />
-												</div>
-												<p>编辑</p>
-											</a>
-											<a href="javascript://">
-												<div class="delete-1">
-													<img src="__PUBLIC__/Home/img/delete-1.png" />
-												</div>
-												<p style=" float: right; margin-right: 30px;">删除</p>
-											</a>
-										</div>
-									</li>
-									<li class="na1">
-										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
-										<div class="na1bg">
-											<a href="javascript://">
-												<div class="bj">
-													<img src="__PUBLIC__/Home/img/bj.png" />
-												</div>
-												<p>编辑</p>
-											</a>
-											<a href="javascript://">
-												<div class="delete-1">
-													<img src="__PUBLIC__/Home/img/delete-1.png" />
-												</div>
-												<p style=" float: right; margin-right: 30px;">删除</p>
-											</a>
-										</div>
-									</li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="s-c-3f">
-							<div class="s-c-2f-1f">
-								<p>视频作品/</p><span>最多上传3个视频文件</span>
-								<span class="right">
-									添加视频
-									<div class="tjsp">
-										<img src="__PUBLIC__/Home/img/tj-sp.png" />
+							<div class="s-c-8f-2f-f">
+								<div class="dianji">
+									<div class="gth">
+										<img src="__PUBLIC__/Home/img/gth.png" alt="">
 									</div>
-								</span>
-							</div>
-							<div class="s-c-3f-2f-f">
-								<ul>
-									<li>
-										<div class="na2">
-											<img src="__PUBLIC__/Home/img/tx2-3r.png" />
-											<div class="na2bg">
-												<a href="javascript://">编辑视频封面</a>
-											</div>
-										</div>
-										<div class="input-h">
-											<div class="input-bt">
-												<input type="text" placeholder="请输入视频标题" />
-											</div>
-											<div class="input-dz">
-												<input type="text" placeholder="输入视频链接地址" />
-											</div>
-										</div>
-										<div class="delete-2">
-											<img src="__PUBLIC__/Home/img/delete-2.png" />
-										</div>
-									</li>
-									<li>
-										<div class="na2">
-											<div class="tjtp">
-												<img src="__PUBLIC__/Home/img/tjtp.png" />
-											</div>
-											<p style="text-align: center; color: #999999;">
-												上传视频封面
-											</p>
-										</div>
-										<div class="input-h">
-											<div class="input-bt">
-												<input type="text" placeholder="请输入视频标题" />
-											</div>
-											<div class="input-dz">
-												<input type="text" placeholder="输入视频链接地址" />
-											</div>
-										</div>
-										<div class="delete-2">
-											<img src="__PUBLIC__/Home/img/delete-2.png" />
-										</div>
-									</li>
-									<li style="margin: 0;">
-										<div class="na2">
-											<img src="__PUBLIC__/Home/img/tx2-3r.png" />
-											<div class="na2bg">
-												<a href="javascript://">编辑视频封面</a>
-											</div>
-										</div>
-										<div class="input-h">
-											<div class="input-bt">
-												<input type="text" placeholder="请输入视频标题" />
-											</div>
-											<div class="input-dz">
-												<input type="text" placeholder="输入视频链接地址" />
-											</div>
-										</div>
-										<div class="delete-2">
-											<img src="__PUBLIC__/Home/img/delete-2.png" />
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="clearfloat"></div>
-						<div style="width: 226px; height: 30px; margin: auto; margin-bottom: 20px;">
-							<button class="button-tg">跳过</button>
-							<button class="button-wc">完成</button>
-						</div>
-					</div>
-					<!--<div class="s-c-3f">
-						<div class="f3-c-1">aa</div>
-						<br>
-						<div class="f3-c-1">aa</div>
-						<br>
-						<div class="f3-c-1">aa</div>
+									上传照片作品，让用户进一步了解您店铺的实力！
+									<div class="clearfloat"></div>
+								</div>
+								<div class="img_div">
+								</div>
+								<a class="none" href="javascript:;" class="a-upload">
+									<input type="file" name="myFile" id="myFile" multiple />点击这里上传文件
+								</a>
+								<div class="shade" onclick="javascript:closeShade()">
+									<div class="">
+										<span class="text_span">
 					
-					</div>-->
-				</div>
-				<div class="s-main-r">
-						<p style="font-size: 22px;">WEDDING PIER</p>
-						<p style="font-size: 22px;">喜事码头</p>
-						<p style="font-size: 14px; padding:10px 0;">简单&nbsp;&nbsp;&nbsp;&nbsp;方便&nbsp;&nbsp;&nbsp;&nbsp;效率</p>
-						<div class="bdsz">
-							<div class="bdsz-bt">
-								部队认证
+										</span>
+									</div>
+								</div>
+
+								<div class="shadeImg" onclick="javascript:closeShadeImg()">
+									<div class="">
+										<img class="showImg" src="" alt="" />
+									</div>
+								</div>
 							</div>
-							<ul>
-								<li class="selected-con">
-									<a href="javascript://">
-										基本信息
-										<img class="list-a" src="__PUBLIC__/Home/img/list-2-gray.png" style="position: absolute; top: 76px; right: 70px;" />
-									</a>
-								</li>
-								<li>
-									<a href="javascript://">
-										添加作品
-										<img class="list-b" src="__PUBLIC__/Home/img/list-2-gray.png" style="position: absolute; top: 116px; right: 70px;" />
-									</a>
-								</li>
-							</ul>
+						</div>
+						<div class="s-c-9f">
+							<div class="s-c-8f-1f">
+								<h2>视频作品/</h2><span>最多上传3个视频文件</span>
+							</div>
+							<div class="s-c-9f-2f-f">
+								<ul>
+									<li>
+										<div class="na2">
+											<div class="picture1">
+												<img id="pic1" src="__PUBLIC__/Home/img/scsp.png" alt="">
+												<input class="none" id="upload1" name="file" accept="image/jpg,image/jpeg,image/png" type="file" />
+											</div>
+										</div>
+										<div class="input-h">
+											<div class="input-bt">
+												<input type="text" placeholder="请输入视频标题" />
+											</div>
+											<div class="input-dz">
+												<input type="text" placeholder="输入视频链接地址" />
+											</div>
+										</div>
+										<div class="delete-2">
+											<img src="__PUBLIC__/Home/img/delete-2.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="na2">
+											<div class="picture2">
+												<img id="pic2" src="__PUBLIC__/Home/img/scsp.png" alt="">
+												<input id="upload2" name="file" accept="image/jpg,image/jpeg,image/png" type="file" class="none" />
+											</div>
+										</div>
+										<div class="input-h">
+											<div class="input-bt">
+												<input type="text" placeholder="请输入视频标题" />
+											</div>
+											<div class="input-dz">
+												<input type="text" placeholder="输入视频链接地址" />
+											</div>
+										</div>
+										<div class="delete-2">
+											<img src="__PUBLIC__/Home/img/delete-2.png" alt="" />
+										</div>
+									</li>
+									<li class="last-child">
+										<div class="na2">
+											<div class="picture3">
+												<img id="pic3" src="__PUBLIC__/Home/img/scsp.png" alt="">
+												<input id="upload3" name="file" accept="image/jpg,image/jpeg,image/png" type="file" class="none" />
+											</div>
+										</div>
+										<div class="input-h">
+											<div class="input-bt">
+												<input type="text" placeholder="请输入视频标题" />
+											</div>
+											<div class="input-dz">
+												<input type="text" placeholder="输入视频链接地址" />
+											</div>
+										</div>
+										<div class="delete-2">
+											<img src="__PUBLIC__/Home/img/delete-2.png" alt="" />
+										</div>
+									</li>
+									<div class="clearfloat"></div>
+								</ul>
+							</div>
+						</div>
+						<div class="bz">
+							<button id="syb" class="button-tg">上一步</button>
+							<button class="button-wc" onclick="window.location = 'rzbdsh-3r-xy.php'">完成</button>
 						</div>
 					</div>
+				</div>
+				<div class="s-main-r left">
+					<p class="px-22">WEDDING PIER</p>
+					<h1 class="px-22">喜事码头</h1>
+					<p class="px-14">简单&nbsp;&nbsp;&nbsp;&nbsp;方便&nbsp;&nbsp;&nbsp;&nbsp;效率</p>
+					<div class="bdsz">
+						<div class="bdsz-bt">
+							认证部队
+						</div>
+						<ul>
+							<li id="con-jbxx" class="selected-con">
+								<a href="javascript://">
+									<h2>基本信息</h2>
+								</a>
+							</li>
+							<li id="con-tjzp">
+								<a href="javascript://">
+									<h2>添加作品</h2>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="clearfloat"></div>
 		</section>
 		<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".con").eq(0).show();
-			$(".bdsz ul li").click(function() {
-				var num = $(".bdsz ul li").index(this);
-				$(".con").hide();
-				$(".con").eq(num).show().slblings().hide();
-			})
-		});
-		//----------------------------remove tab切换样式--------------------------
-		$('.parents .left a').click(function() {
-			$(this).parents('.parents').children('.left').each(function() {
-				$('a', this).removeClass('selected');
-			});
-			$(this).attr('class', 'selected');
-		});
-		$('.bdsz li').click(function() {
-			$(this).parents('.s-main-r').children('.bdsz').each(function() {
-				$('li', this).removeClass('selected-con');
-			});
-			$(this).attr('class', 'selected-con');
-		});
-		//----------------------------保存对勾变色--------------------------
-		$('#jbxx').click(function(){
-			$('.list-a').attr('src','/matouPCS/Public/Home/img/list-2-red.png');
-		});
-		$('#zpxx').click(function(){
-			$('.list-b').attr('src','/matouPCS/Public/Home/img/list-2-red.png');
-		});
-		
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-	</script>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/City_data.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/areadata.js"></script>
+	<script src="__PUBLIC__/Home/js/main-tx.js"></script>
+	<script src="__PUBLIC__/Home/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/Home/js/cropper.min.js"></script>
+	<script src="__PUBLIC__/Home/js/showwin2.js"></script>
+	<script src="__PUBLIC__/Home/js/troop.js"></script>
+	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 
 </html>

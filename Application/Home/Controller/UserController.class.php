@@ -145,17 +145,14 @@ class UserController extends Controller
         //用户中心
              $id = $_SESSION['id'];
             $data['username'] = $_POST['username'];
-            $data['tel'] = $_POST['tel'];
-            $data['sex'] = $_POST['sex'];
-            $data['address'] = $_POST['address'];
-            //$data['password'] = $_POST['password'];
-            $data['password'] = $_POST['password1'];
-            //$data['password2'] = $_POST['password2'];
+            $data['type_u'] = $_POST['zhiye'];
+            $data['addre'] = $_POST['address'];
             $arr = M('user')->where("id=$id")->select();//查图片位置
             foreach ($arr as $v){
                 $password=$v['password'];   
         }
         if($password==$_POST['password']){
+        	$data['password'] = $_POST['password1'];
             $data =  M('user') ->where("id = {$id}")->save($data);
             $this->ajaxReturn($data);
         }else if($_POST['password']==""){
@@ -1382,5 +1379,43 @@ class UserController extends Controller
         		
         
     } 
+    public function usaveimg(){
+    	$data['imagename'] =I('imagename');
+    	$id = $_SESSION['id'];
+    	$img = M('user');
+    	$ob = $img->where("id = {$id}")->save($data);
+    if($ob){
+    	echo 'y';
+    }
+    }
+    
+    
 
+    public function usave1(){
+    	//echo '<pre>';
+    	//var_dump($_FILES['upload1']);die;
+    	$tu=I('tu');
+    	//var_dump($tu);die;
+    	$data['uid'] =  $_SESSION['id'];
+    	$data['content'] =  $_POST['content'];
+    	$data['type'] =  $_POST['type'];
+    	$data['time']=date("Y-m-d ",time());
+    	$id = M('dongtai')->add($data);
+    	$tu1=rtrim($tu, ",");
+    	$array = explode("," ,$tu1);
+    //	var_dump($array);die;
+    	$form=M('dongimage');
+    	$data['pid']=$id;
+    	foreach ($array as $v){
+    		$data['imagename'] = $v;
+    		 
+    		$fu = $form->add($data);
+    
+    	}
+    
+    
+    }
+    
+    
+    
 }

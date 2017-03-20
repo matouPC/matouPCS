@@ -1,117 +1,48 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>跳蚤市场</title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/tzsc-cc.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/datePicker.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/hzw-city-picker.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
-		<style>
-			.s-f1-r ul li a .img {
-				margin-top: 15px;
-				margin-right: 10px;
-				float: right;
-			}
-			.select-yfb {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-yfb ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-yfb ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-yfb ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx {
-				width: 70px;
-				/*height: 100px;*/
-				height: 0px;
-				background-color: white;
-				position: absolute;
-				/*background-color: #008B8B;*/
-				border-left: solid 1px #E6E6E6;
-				border-right: solid 1px #E6E6E6;
-				border-bottom: solid 1px #E6E6E6;
-				/*right: 200px;*/
-				top: 34px;
-				z-index: 555;
-				overflow: hidden;
-			}
-			
-			.select-xx ul {
-				width: 70px;
-				height: 150px;
-				/*background-color: #008B8B;*/
-				overflow: hidden;
-			}
-			
-			.select-xx ul li {
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-			.select-xx ul li a{
-				width: 70px;
-				height: 25px;
-				line-height: 25px !important;
-			}
-		</style>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 	</head>
 
 	<body>
+		<div class="show-bg"></div>
 		<header>
-			<!DOCTYPE html>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-	
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
 	</head>
+
 	<body>
 		<div class="show-bg"></div>
 		<header>
 			<div class="h-c-1f">
-						<div class="h-c-1f">
-							<div class="h-f1-lzy">
-								<div class="home">
-									<img src="/matouPCS/Public/Home/img/home.png" />
-								</div>
-								<p>
-									<a href="?s=/Home/index">首页</a>
-								</p>
-							</div>
-							<div class="h-f1-rzy">
-								<ul>
+				<div class="h-c-1f">
+					<div class="h-f1-lzy">
+						<div class="home">
+							<img src="/matouPCS/Public/Home/img/home.png" />
+						</div>
+						<p>
+							<a href="?s=/Home/index">首页</a>
+						</p>
+					</div>
+					<div class="h-f1-rzy">
+						<ul>
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
-										<a id="login-alert" href="#">
+										<a href="?s=/Home/User">
 											<div class="dltx">
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 											</div>
@@ -121,40 +52,88 @@
 								<a id="login-alert" href="#">请注册\登录</a>
 								<?php } ?>
 									</li>
-								
-								<li id="select-xx" style="width: 45px;">
-								<a href="#">消息</a>
+							<li id="select-xx">
+							<?php if($_SESSION['id'] != ''){ ?>
+								<a rel="nofollow" href="#">消息</a>
+								<div class="news">
+									<img src="/matouPCS/Public/Home/img/news.png" />
+								</div>
 								<div class="str"></div>
 								<div class="select-xx">
 									<ul>
-										<li>	
-											<a href="?s=/Home/User/xqxx">需求消息</a>
+										<li>
+												<a href="?s=/Home/User/xqxx">需求消息
+											<div class="newss">
+												<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
 										</li>
 										<li>
-											<a href="">部队消息</a>
+								    	<a href="?s=/Home/User/bdxx">
+												部队消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
 										</li>
 										<li>
-											<a href="">商铺消息</a>
+											<a href="?s=/Home/User/spxx">
+												商铺消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
 										</li>
 									</ul>
 								</div>
-							</li>
-							<li style="width: 58px;">
-								<?php if(empty($_SESSION['username'])){ ?>
-									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏夹</a>
 								<?php }else{ ?>
-									<a href="?s=/Home/User/scj">收藏夹</a>
+
+								<a href="#" onclick="alert('请先登录')">消息</a>
+								<div class="str"></div>
+								<div class="select-xx" style="display:none;">
+									<ul>
+											<li>
+												<a href="?s=/Home/User/xqxx">需求消息
+											<div class="newss">
+												<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+										<li>
+								    	<a href="?s=/Home/User/bdxx">
+												部队消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="?s=/Home/User/spxx">
+												商铺消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<?php } ?>
+							</li>
+							<li>
+								<?php if(empty($_SESSION['username'])){ ?>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏报名</a>
+								<?php }else{ ?>
+									<a href="?s=/Home/User/scj">收藏报名</a>
 								<?php } ?>
 								<div class="str"></div>
 							</li>
-							<?php if(!empty($_SESSION['id'])){ ?>
-								<li id="select-yfb" style="width: 70px;">
-									<a href="#">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
-									<div class="str"></div>
-									<div class="select-yfb">
-								
-											<ul>
-												<li>
+								<?php if(!empty($_SESSION['id'])){ ?>
+							<li id="select-yfb">
+								<a rel="nofollow" href="#">&nbsp;&nbsp;已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
+								<div class="str"></div>
+								<div class="select-yfb">
+									<ul>
+									<li>
 													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
@@ -172,29 +151,35 @@
 												<li>
 													<a href="?s=/Home/User/user_xz">闲置</a>
 												</li>
-											</ul>
+									</ul>
 								</div>
 							</li>
-							<?php }else{ ?>
+									<?php }else{ ?>
 									<li id="select-yfb" style="width: 70px;">
-									<a href="javascript:alert('您还没有登录！')">已发布</a>
-								</li>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
+									<div class="str"></div>
+									<div class="select-yfb" style="display:none;">
+								
+											<ul>
+											
+											</ul>
+								</div>
 								<?php } ?>
-							<li style="width: 68px;">
-								<?php if(empty($_SESSION['username'])){ ?>
+							<li class="bdzx-top">
+							<?php if(empty($_SESSION['username'])){ ?>
 								<a href="javascript:void(0)" onclick="alert('请先登录')">部队中心</a>
 								<?php }else{ ?>
 								<a href="?s=/Home/User/bdzx">部队中心</a>
 								<?php } ?>
 								<div class="str"></div>
 							</li>
-							<li id="select-sp">
+						<li id="select-sp">
 								<a href="#">商铺中心<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
 								<div class="str"></div>
 								<div class="select-sp">
 									<ul>
 										<li>
-										<?php if($sp['status']==1){?>
+							<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
@@ -204,7 +189,7 @@
                                 
 										</li>
 										<li>
-											<?php if($sp['status']==1){?>
+									<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
@@ -284,12 +269,13 @@
 									<div class="content-5f">
 										<p>使用其它方式登录</p>
 										<div class="alert-QQ">
-											<a href="">
+											<a href="javascript:void(0)" onclick="windowDl()">
+												<!-- <span  id="qqLoginBtn"></span> -->
 												<img src="/matouPCS/Public/Home/img/alert-QQ.png">
 											</a>
 										</div>
 										<div class="alert-wc">
-											<a href="">
+											 <a href="javascript:void(0)" onclick="wxLogin()"> <!--微信登录 -->
 												<img src="/matouPCS/Public/Home/img/alert-wc.png">
 											</a>
 										</div>
@@ -420,17 +406,14 @@
 					<button class="tjbtnb" id="tjbtn" onclick="tj()">发布</button>
 				</div>
 			</div>
-		
 		</div>
 	<script>
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
-				//  alert(tu);
-
-				    $.ajax({  
+		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/Index/usave1",
+				         url:"/matouPCS/index.php/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
 				
@@ -460,9 +443,8 @@
                 </div>
             </div>
         </div>
+    
 		<!--上传图片结束-->
-		
-		
 		<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/City_data.js"></script>
@@ -470,40 +452,123 @@
 		<script src="/matouPCS/Public/Home/js/sinaFaceAndEffec.js"></script>
 		<script src="/matouPCS/Public/Home/plupload/plupload.full.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/header-index.js"></script>
+		<script src="/matouPCS/Public/Home/js/index-alert-login.js"></script>
+		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://www.xishimatou.com;" charset="utf-8"></script>
+		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	</body>
 </html>
+						<div class="h-c-2f">
+							<div class="s-f2-l-f">
+								<div class="f2-l-1-f">
+									<a href="indexstore.php">
+										<img src="/matouPCS/Public/Home/img/logo.png" alt="喜事码头" />
+									</a>
+								</div>
+								<div class="f2-l-3-f">
+									<h1>跳蚤市场</h1>
+								</div>
 
-					<div class="h-c-2f">
-						<div class="">
-							<div class="f2-l-1">
-								<a href="?s=/Home/Index">
-									<img src="/matouPCS/Public/Home/img/logo.png" />									
-								</a>
 							</div>
-							<div class="f2-l-2">跳蚤市场</div>
-
-						</div>
-						<div class="s-f2-r">
-							<div class="demo">
-								<form action="http://www.jsfoot.com/e/search/index.php" method="post" name="searchform" id="searchform" class="searchinfo">
+							<div class="s-f2-r-f">
+								<div class="demo">
 									<ul>
-										<li><input type="text" id="tt" value="" class="text" style="text-align: left;" autocomplete="off" /></li>
+										<li><input type="text" id="tt" value="" class="text" autocomplete="off" /></li>
 										<li><input type="submit" value="搜索" class="button" /></li>
-										<li><input type="submit" value="商家认证部队" class="button2" /></li>
-
+										<li><button id="fbxq" type="submit" class="button2">发布需求</button></li>
+										<div class="clear"></div>
 									</ul>
-								</form>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="h-c-3f">
-						<img src="/matouPCS/Public/Home/img/banner.png" />
-					</div>
+						<div class="h-c-4f">
+							<img src="/matouPCS/Public/Home/img/banner.png" />
+						</div>
 				</div>
 			</div>
 		</header>
+		<!--发布需求-->
+		<div class="fbxq">
+			<div class="fbxq-close">
+				<img src="/matouPCS/Public/Home/img/alert-close.png" />
+			</div>
+			<div class="fbxq-title">
+				请选择您的需求
+			</div>
+			<div class="clear"></div>
+			<ul>
+				<li>
+					<div class="fbxq-img">
+						<img src="/matouPCS/Public/Home/img/wyxs.png" />
+					</div>
+					<div class="fbxq-1f">
+						悬赏
+					</div>
+					<div class="fbxq-2f">
+						<span class="red">临时雇佣</span> 主持人、摄影摄像师、化妆师、策划师等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="/matouPCS/Public/Home/img/wyys.png" />
+					</div>
+					<div class="fbxq-1f">
+						应赏
+					</div>
+					<div class="fbxq-2f">
+						主持人、摄影摄像师、化妆师、策划师等婚庆从业者发布
+						<span class="red">兼职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="/matouPCS/Public/Home/img/wyzp.png" />
+					</div>
+					<div class="fbxq-1f">
+						招聘
+					</div>
+					<div class="fbxq-2f">
+						<span class="red">长期雇佣</span> 摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="/matouPCS/Public/Home/img/wyyp.png" />
+					</div>
+					<div class="fbxq-1f">
+						应聘
+					</div>
+					<div class="fbxq-2f">
+						摄影摄像师、化妆师、策划师、剪辑师、设计师、店长、营业员等婚庆从业者发布
+						<span class="red">全职简历</span>
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="/matouPCS/Public/Home/img/wyqg.png" />
+					</div>
+					<div class="fbxq-1f">
+						求购二手
+					</div>
+					<div class="fbxq-2f">
+						如果您想要购买二手物品，点击这里填写求购要求，让卖家主动找到您
+					</div>
+				</li>
+				<li>
+					<div class="fbxq-img">
+						<img src="/matouPCS/Public/Home/img/wyxz.png" />
+					</div>
+					<div class="fbxq-1f">
+						处理闲置
+					</div>
+					<div class="fbxq-2f">
+						如果您想要出售你的闲置，点击这里填写闲置信息，让买家主动找到您
+					</div>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
 		<section>
-			<div class="s-main-c">
+				<div class="s-main-c">
 				<div class="s-main-l">
 					<div class="s-c-1f">
 						<a href="#">所有分类</a>>
@@ -589,7 +654,7 @@
 										<a>不限</a>
 									</div>
 								</dd>
-								<dd>
+									<dd>
 									<div style="color: #000000;">
 										<input type="number" id="nu1" style="width: 65px; margin-top: 17px; border: solid 1px #CCCCCC; float:left;">
 										<span style="font-size:25px; display:block; width:20px; height:30px; color: #999999; float :left; margin-top:-1px; text-align:center;">-</span>
@@ -600,144 +665,160 @@
 									</div>
 								</dd>
 							</dl>
-							<div class="px">
-								<p>排序：</p>
-								<div class="hot">
-									热门
-								</div>
-								<div class="new">
-									最新
-								</div>
+							<dl id="xz-dq">
+								<dt>地区</dt>
+								<dd>
+									<div class="gray">
+										<a>不限</a>
+									</div>
+								</dd>
+								<dd>
+									<input type="text" id="xz-city" placeholder="请选择地区" readonly="readonly" value="" data-value="" onclick="appendCity(this,'danxuan')">
+								</dd>
+								<div class="clear"></div>
+							</dl>
+						</div>
+						<div class="px">
+							<p>排序：</p>
+							<div class="hot">
+								热门
+							</div>
+							<div class="new">
+								最新
 							</div>
 						</div>
+						<div class="clear"></div>
 					</div>
-					<div class="s-c-3f" id="lists">
-
-					</div>
+				<div class="s-c-3f" id="lists">
+			</div>
+			
 				</div>
 				<div class="s-main-r">
-					<div class="s-r-1f">
+					<div class="s-r-3f">
 						<div>
-							<a id="tjqg" href="javascript://"><img src="/matouPCS/Public/Home/img/tjqg.png" /></a>
-							<!-- <a id="tjxz" href="javascript://"><img src="/matouPCS/Public/Home/img/tjxz.png" /></a> -->
-							<a class="clearfloat"></a>
+							<a id="tjqg" href="javascript://">
+								<h2>推荐求购</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
 					</div>
 					<div class="tab-r">
 						<div class="s-r-2f">
 							<ul>
-								<?php if(is_array($listnew)): foreach($listnew as $key=>$listnews): ?><li>
+									<?php if(is_array($listnew)): foreach($listnew as $key=>$listnews): ?><li>
 									<a href="?s=/Home/Tzsc/xqqg/id/<?php echo ($listnews["fid"]); ?>">
-										<!--<div class="f2r-ul-cz">
-											<img src="img/red.png" />
-										</div>-->
 										<div class="f2t">
-										  <?php if($listnews[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" width="120" height="120">
+											<div class="f2t-img">
+													  <?php if($listnews[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" width="120" height="120">
                                       <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($listnews["pubtime"]); ?>/<?php echo ($listnews["imagename"]); ?>" style="border-radius:50%" width="120" height="120"/><?php endif; ?>
-											
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($listnews["imagename"]); ?>" style="border-radius:50%" width="120" height="120"/><?php endif; ?>
+											</div>
 											<p class="f2t_01">
-											<?php if($lis[username]==$lis[tel]): ?>用户：<?php echo (substr($listnews["username"],0,5)); endif; ?>
-								               <?php if($lis[username]!=$lis[tel]): ?>用户：<?php echo ($listnews["username"]); endif; ?></p>
+													<?php if($lis[username]==$lis[tel]): ?>用户：<?php echo (substr($listnews["username"],0,5)); endif; ?>
+								               <?php if($lis[username]!=$lis[tel]): ?>用户：<?php echo ($listnews["username"]); endif; ?></p></p>
 										</div>
 										<div class="f2r-ul-c1">
-											<p><?php echo ($listnews["name"]); ?></p>
-											<!--<p><strong>商品名称:摄像机</strong></p>   -->
-											<p style="width: 50px; color:#ff0000; float:right;">￥500元</p>
+											<strong><?php echo ($listnews["name"]); ?></strong>
+											<p class="right red">预算￥<?php echo ($listnews["price"]); ?>元</p>
+											<div class="clear"></div>
 										</div>
-										<br>
-
-										<p class="user_01_03"><?php echo ($listnews["content"]); ?></p>
+										<p class="user_01_03">
+											<span class="black-333">商品介绍：</span>
+											<span class="text69">
+												<?php echo ($listnews["content"]); ?>
+											</span>
+										</p>
 										<div class="f2r-ul-c2">
-											<p>已有<?php echo ($listnews["collect"]); ?>人收藏</p>
-											<p style="width: 25px;"><?php echo ($listnews["address"]); ?></p>
+							<?php  $bao = explode(',',$lists['bao']); array_pop($bao); $baos = count($bao); ?>
+				              	          <p class="left">已有<?php echo $baos;?>人报名</p>
+										<p class="right"><?php echo ($listnews["address"]); ?></p>
+											<div class="clear"></div>
 										</div>
 									</a>
 								</li><?php endforeach; endif; ?>
-								<br/>
-								<!--<li class="clearfloat" style="border: 0; background: rgba(255,255,255,0.0); "></li>-->
+								<div class="clear"></div>
 							</ul>
-						</div><br>
-					</div>
-					<!-- 推荐闲置 -->
-					<div class="tab-r" style="display: none;">
-						<div class="s-r-2f">
-							<ul>
-								<?php if(is_array($listx)): foreach($listx as $key=>$listxs): ?><li>
-										<a href="?s=/Home/Tzsc/xqxz">
-											<!--<div class="f2r-ul-cz">
-												<img src="img/red.png" />
-											</div>-->
-											<img src="/matouPCS/Public/Home/img/yhmc-big.png" />
-											<div class="f2r-ul-c1">
-												<p>商铺名称:<?php echo ($listxs["name"]); ?></p>
-												<!--<p><strong>商品名称:摄像机</strong></p>   -->
-												<p style="width: 50px; color:#ff0000; float:right;">￥<?php echo ($listxs["price"]); ?>元</p>
-											</div>
-											<br>
-
-											<p class="user_01_03"><?php echo ($listxs["content"]); ?></p>
-											<div class="f2r-ul-c2">
-												<p>已有<?php echo ($listxs["collect"]); ?>人收藏</p>
-												<p style="width: 25px;"><?php echo ($listxs["address"]); ?></p>
-											</div>
-										</a>
-									</li><?php endforeach; endif; ?>
-								<!--<li class="clearfloat" style="border: 0; background: rgba(255,255,255,0.0); "></li>-->
-							</ul>
-						</div><br>
+						</div>
 					</div>
 					<div class="s-r-3f">
-							<div>
-								<a href="#"><img src="/matouPCS/Public/Home/img/tjkh.png" /></a>
-								<!--<a href="#"><img src="img/tjcz.png" /></a>-->
-								<a class="clearfloat"></a>
-							</div>
+						<div>
+							<a href="javascript://">
+								<h2>推荐用户</h2>
+							</a>
+							<div class="clear"></div>
 						</div>
+					</div>
 					<div class="s-r-4f">
-							<ul>
-								<?php if(is_array($user)): foreach($user as $key=>$users): ?><li>
-										<div class="tj">
+						<ul>
+							<?php if(is_array($user)): foreach($user as $key=>$users): ?><li>
+								<a href="javascript:;">
+									<div class="tj">
 									<?php if($_SESSION['id'] == $users['uid']){ ?>
 									  <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($users["uid"]); ?>">
-								  <?php if($$users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+								  <?php if($$users[imagename]==''): ?><div class="tj-img">
+												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?>
+                                      <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" />
+                                  </div><?php endif; ?>
 								</a>
 								<?php elseif($users[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><div class="tj-img">
+												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?>
+                                    <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" />
+                                  </div><?php endif; ?>
                                     </a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><div class="tj-img">
+												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?></a><?php endif; ?>
+                                        <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" />
+                                  </div><?php endif; ?>
+                                    </a><?php endif; ?>
 									<?php }else{ ?>
-                                        <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                        <?php if($users[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><div class="tj-img">
+												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>" style="border-radius:50%" width="101" height="101" /><?php endif; ?></a>
+                                         <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" />
+                                  </div><?php endif; ?>
+                                    </a>
 								<?php elseif($users[bdlx]=='6'): ?>
-								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><div class="tj-img">
+												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?></a>
+                                         <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" />
+                                  </div><?php endif; ?>
+                                    </a>
 								<?php else: ?>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($users["uid"]); ?>">	  <?php if($users[imagename]==''): ?><div class="tj-img">
+												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+											</div>
                                       <?php else: ?>
-                                      	<img src="/matouPCS/Public/upload/<?php echo ($users["pubtime"]); ?>/<?php echo ($users["imagename"]); ?>" style="border-radius:50%" width="101" height="101" /><?php endif; ?></a><?php endif; ?>
-                                       <?php } ?>			
-											<div class="tj_01">
-												<a href="?s=/Home/Mtbu/grbdzy">
-												<p class="tj_01_01">
-	                                             <?php if($users[username]==$users[tel]): ?>用户<?php echo (substr($users["username"],0,5)); endif; ?>
-								               <?php if($users[username]!=$users[tel]): ?>用户<?php echo ($users["username"]); endif; ?></p>
-												<p class="tj_01_02">粉丝数量：<b id="fen<?php echo ($users["id"]); ?>"style="color:#666666; font-weight:500">
-													<?php echo ($users["fen"]); ?>
-												</b>
-												</p>
-												<p class="tj_01_02">所在地：
-													<b style="color:#666666; font-weight:500"><?php echo ($users["addre"]); ?></b>
-												</p></a>
+                                         <div class="tj-img">
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($users["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" />
+                                  </div><?php endif; ?>
+                                    </a><?php endif; ?>
+                                       <?php } ?>
+								
+										
+										<div class="tj_01">
+											<strong class="tj_01_01">
+											<?php if($users[username]==$users[tel]): ?>用户<?php echo (substr($users["username"],0,5)); endif; ?>
+								               <?php if($users[username]!=$users[tel]): ?>用户<?php echo ($users["username"]); endif; ?></strong>
+											<p class="tj_01_02" ><span class="black-333">粉丝数量：</span><b id="fen<?php echo ($users["id"]); ?>"><?php echo ($users["fen"]); ?></b></p>
+											<p class="tj_01_02"><span class="black-333">所在地：</span><?php echo ($users["addre"]); ?>
+											</p>
+           
 												<?php if(is_array($uus)): foreach($uus as $key=>$uuss): if($uuss['uid'] == $users['id']){ ?>
 														<?php  $uu = explode(',',$uuss['fid']); array_pop($uu); if(in_array($_SESSION['id'],$uu)){ ?>
 															<button id="btn<?php echo ($users["id"]); ?>"  onclick="change(<?php echo ($users["id"]); ?>)" class="tj_01_03 xs">已关注</button>
@@ -745,20 +826,19 @@
 															<button id="btn<?php echo ($users["id"]); ?>"  onclick="change(<?php echo ($users["id"]); ?>)" class="tj_01_03 xs">关注</button>
 														<?php } ?>
 													<?php } endforeach; endif; ?>
-											</div>
-
 										</div>
-									</li><?php endforeach; endif; ?>
-							</ul>
-						</div>
+										<div class="clear"></div>
+									</div>
+								</a>
+							</li><?php endforeach; endif; ?>
+						</ul>
+
+					</div>
 				</div>
 			</div>
 			<div class="clearfloat"></div>
 		</section>
-		<br>
-		<br>
-		<br>
-		<!DOCTYPE html>
+			<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -818,9 +898,8 @@
 				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
-						
-						<p>© 20016－2017 xishimatou.com, all rights reserved 郑州码头网络技术有限公司 </p>
-						<p>豫ICP备16015506号 喜事码头</p>
+							<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
 			</div>
@@ -829,6 +908,7 @@
 </html>
 
 	</body>
+	
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.date_input.pack.js"></script>
@@ -836,134 +916,7 @@
 	<script src="/matouPCS/Public/Home/js/hzw-city-picker.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/tz.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".tab-r").eq(0).show();
-			$(".s-main-r .s-r-1f div a").click(function() {
-				var num = $(".s-main-r .s-r-1f div a").index(this);
-				$(".tab-r").hide();
-				$(".tab-r").eq(num).show().slblings().hide();
-			})
-		})
-		
-		$("#tjqg").click(function() {
-//				alert("11");
-				$("#tjqg img").attr('src','/matouPCS/Public/Home/img/tjqg-hong.png');
-				$("#tjxz img").attr('src','/matouPCS/Public/Home/img/tjxz-hui.png');
-			});
-			$("#tjxz").click(function() {
-//				alert("11");
-				$("#tjqg img").attr('src','/matouPCS/Public/Home/img/tjqg-hui.png');
-				$("#tjxz img").attr('src','/matouPCS/Public/Home/img/tjxz-hong.png');
-			});
-		$(function() {
-
-			$("#tt").bigAutocomplete({
-				width: 440,
-				data: [{
-					title: "中国好声音",
-					result: {
-						ff: "qq"
-					}
-				}, {
-					title: "中国移动网上营业厅"
-				}, {
-					title: "中国银行"
-				}, {
-					title: "中国移动"
-				}, {
-					title: "中国好声音第三期"
-				}, {
-					title: "中国好声音 第一期"
-				}, {
-					title: "中国电信网上营业厅"
-				}, {
-					title: "中国工商银行"
-				}, {
-					title: "中国好声音第二期"
-				}, {
-					title: "中国地图"
-				}],
-
-			});
-
-		})
-
-		//			地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-
-		});
-		cityPicker.init();
-
-		$(function() {
-			//日期
-			$('#date').date_input();
-			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
-			$("#filter a").hover(
-				function() {
-					$(this).addClass("seling");
-				},
-				function() {
-					$(this).removeClass("seling");
-				}
-			);
-
-			//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
-			$("#filter dt+dd a").attr("class", "seled");
-			/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
-			                                                     不然后面通过$("#filter a[class='seled']")访问不到class样式为seled的a标签。*/
-
-			//为filter下的所有a标签添加单击事件
-			$("#filter a").click(function() {
-				$(this).parents("dl").children("dd").each(function() {
-					//下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
-					//$(this).children("div").children("a").removeClass("seled");
-					//$(this).find("a").removeClass("seled");
-					$('a', this).removeClass("seled");
-				});
-
-				$(this).attr("class", "seled");
-
-				//				alert(RetSelecteds()); //返回选中结果
-			});
-			//返回选中结果
-		});
-
-		function RetSelecteds() {
-			var result = "";
-			$("#filter a[class='seled']").each(function() {
-				result += $(this).html() + "\n";
-			});
-			return result;
-		}
-		//		$('#date').click(function(){
-		//				alert(RetSelecteds()+$('#date').val()+$('#city').val());
-		//			})
-		$('.px .hot').click(function() {
-			$('.px .hot').css('background-color', '#ff5c5d');
-			$('.px .new').css('background-color', '#999999');
-			getPage(1);
-		})
-		$('.px .new').click(function() {
-			$('.px .new').css('background-color', '#ff5c5d');
-			$('.px .hot').css('background-color', '#999999');
-			getPage(1);
-		})
-	</script>
-    <!--点击取消关注-->
-    <script type="text/javascript">
-//点击关注与点击取消关注
+<script type="text/javascript">
 function change(id) {
 	//拿到被关注用户id 由于值会丢 决定选择使用cookie
     var mark = document.getElementById('btn'+id+'').innerHTML;
@@ -998,43 +951,5 @@ function change(id) {
 		// document.getElementById('btn'+id+'').innerHTML = "关注"; 
     };
 };
-//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height:'150px'
-			}, 300);
-		},function(){
-				$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height:'0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height:'75px'
-			}, 300);
-		},function(){
-			$('.select-xx').stop().animate({
-				height:'0px'
-			}, 300);
-		});
-		// 如果没有登录 就提示请先登录
-		$('#btn').click(function(){
-			alert('请先登录！');
-		});
 </script>
-<!--<script type="text/javascript">
-function change() {
-    var mark = document.getElementById('btn_01').innerText;
-    if (mark == '关注') {
-        document.getElementById('btn_01').innerText = "已关注";
-    }
-    else {
-        document.getElementById('btn_01').innerText = "关注";
-    }
-}</script>-->
-
 </html>

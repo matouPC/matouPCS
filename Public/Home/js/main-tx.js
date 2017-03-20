@@ -298,9 +298,26 @@
 
     cropDone: function () {
       this.$avatarForm.get(0).reset();
-      this.$avatar.attr('src', this.url);
+      this.$avatar.attr('src',"http://127.0.0.1/matouPCS/Tu/"+this.url);
       this.stopCropper();
       this.$avatarModal.modal('hide');
+      var aaa = this.url;
+      var bbb = aaa.split("/")[1];
+      //alert(bbb);
+      $.ajax({  
+	        type: "POST",  
+	         url:"/matouPCS/index.php/Home/User/usaveimg/",
+	         data: {"imagename":bbb},  
+
+	        success: function(data){ 
+	        	if(data=='y'){
+	        	
+	        	}
+	      
+        },error:function(){
+     			alert('no');
+     		}
+     	});
     },
 
     alert: function (msg) {
@@ -314,6 +331,7 @@
       this.$avatarUpload.after($alert);
     }
   };
+
 
   $(function () {
     return new CropAvatar($('#crop-avatar'));

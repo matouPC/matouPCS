@@ -3,10 +3,18 @@
 		<a href="?s=/Home/Zpdt/xqyp/id/{$lists.eid}">
 			<div class="s-l-1f">
 				<div class="yhtx">
-					<img src="__PUBLIC__/Home/img/yhmc.png" />
+					<if condition="$lists[imagename]==''">  
+                                   <img src="__PUBLIC__/Home/img/yhmc.png"/>
+                                   <else />
+                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/{$lists.imagename}"  /> 
+                                   </if>
 				</div>
 				<p class="yhmc">
+				<if condition="$lists[tel]==$lists[username]">  
 					用户{$lists.username|substr=0,5}
+					<else />
+					用户{$lists.username}
+					</if>
 				</p>
 				<?php $add = explode(',',$lists['address']); ?>
 				<p class="szd">
@@ -16,7 +24,7 @@
 			</div>
 			<div class="s-l-2f">
 				<div class="middle">
-					<p class="black-333">{$lists.name}<</p>
+					<p class="black-333">{$lists.name}</p>
 					<p class="age">{$lists.ages}</p>
 					<p class="gzjy">
 						<span class="black-333">工作经验：</span> {$lists.worktimes}年

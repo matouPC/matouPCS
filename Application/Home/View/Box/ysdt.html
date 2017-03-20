@@ -5,10 +5,18 @@
 		<a href="?s=/Home/Ysq/xqys/id/{$lists.did}">
 			<div class="s-l-1f">
 				<div class="yhtx">
-					<img src="__PUBLIC__/Home/img/yhmc.png" />
+					<if condition="$lists[imagename]==''">  
+                                   <img src="__PUBLIC__/Home/img/yhmc.png"/>
+                                   <else />
+                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/{$lists.imagename}"  /> 
+                                   </if>
 				</div>
 				<p class="yhmc">
+					<if condition="$lists[tel]==$lists[username]">  
 					用户{$lists.username|substr=0,5}
+					<else />
+					用户{$lists.username}
+					</if>
 				</p>
 				<p class="jg">
 					薪资：
@@ -22,14 +30,14 @@
 			<div class="s-l-2f">
 				<div class="middle">
 					<p class="black-333">{$lists.name}</p>
-					<p class="age">{$lists.age}</p>
+					<p class="age">年龄：{$lists.age}</p>
 					<p class="grjj">
 						<span class="black-333">个人简介：</span> {$lists.content}
 					</p>
 					<div class="clearfloat"></div>
 				</div>
 				<div>
-					<p class="black-333">职位:{$lists.type_d}</p>
+					<p class="black-333">{$lists.type_d}</p>
 					<?php $imgnum = explode(',',$lists['imagename_z']);
 					      $vidnum = explode(',',$lists['imagename_v']);
 					      $dang = explode(',',$lists['dangdate']);

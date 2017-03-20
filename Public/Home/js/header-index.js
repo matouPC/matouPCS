@@ -301,6 +301,8 @@ function delPic(pic, file_id) { //删除图片 参数1图片路径  参数2 随�
 	}, function(data) {
 		$("#" + file_id).remove();
 		showUploadBtn();
+		  setCookie('tu',tu);
+		  Close();
 	})
 }
 
@@ -365,3 +367,48 @@ $('.show-bg').click(function(){
 			html += '</li>';
 			return html;
 		}
+		
+		function Close() {
+		    $('.aui_state_box').remove();
+		}
+
+		function setCookie(cookieName, cookieValue, cookieExpires) {
+		    try {
+		        cookieName = cookieName.trim();
+		        cookieValue = escape(cookieValue);
+		        var nowDate = new Date();
+		        nowDate.setTime(new Date().getTime() + 7 * 24 * 60 * 60 * 1000);
+		        var cookieExpiresTime = nowDate.toGMTString();
+		        if (cookieExpires !== undefined && cookieExpires !== "" && cookieExpires > 0) {
+		            nowDate.setTime(new Date().getTime() + cookieExpires);
+		            cookieExpiresTime = nowDate.toGMTString();
+		        }
+		        document.cookie = cookieName + "=" + cookieValue
+		            + "; expires=" + cookieExpiresTime;
+		    } catch (e) {
+		    }
+		}
+		function getCookie(cookieName) {
+		    try {
+		        cookieName = cookieName.trim();
+		        var cookieValue = document.cookie;
+		        var cookieStartAt = cookieValue.indexOf("" + cookieName + "=");
+		        if (cookieStartAt === -1) {
+		            cookieValue = "";
+		        } else {
+		            cookieStartAt = cookieValue.indexOf("=", cookieStartAt) + 1;
+		            var cookieEndAt = cookieValue.indexOf(";", cookieStartAt);
+		            if (cookieEndAt === -1) {
+		                cookieEndAt = cookieValue.length;
+		            }
+		            cookieValue = unescape(cookieValue.substring(cookieStartAt, cookieEndAt));
+		        }
+		        return cookieValue;
+		    } catch (e) {
+		    }
+		    return "";
+		}
+	
+		
+		
+		

@@ -3,20 +3,20 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>商铺创建-创建成功</title>
-		<link rel="stylesheet" href="__PUBLIC__/css/cjspcg-3r-cc.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<link rel="stylesheet" href="__PUBLIC__/css/showWin.css" />
+		<title>创建商铺-审核</title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/cjspcg-3r-cc.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
 	</head>
 
 	<body>
-		<div class="show-bg"></div>
 		<header>
-		<include file="Public/header"/>
+			<div class="h-content-main">
+				<div class="h-main-c">
+				<include file="Public/header"/>
 					<div class="h-c-2f">
 						<img src="__PUBLIC__/Home/img/navbg2.png" />
 						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<input type="text" placeholder="搜索全站"/>
 							<div class="s-f2-r1">
 								<img src="__PUBLIC__/Home/img/ss-t.png" />
 							</div>
@@ -25,38 +25,6 @@
 				</div>
 			</div>
 		</header>
-		<div class="spdlb" id="spdlb" title="消息">
-			<div class="titlenab">
-				<img src="__PUBLIC__/Home/img/swtitle.png">
-				<div class="rhideb">
-					<img src="__PUBLIC__/Home/img/hide.png">
-				</div>
-			</div>
-			<div class="fbtypeb">
-				<a>类型：</a>
-				<a href="#">
-					<p id="fbp1">婚礼喜事</p>
-				</a>
-				<a href="#" style="margin-left: 24px;">
-					<p id="fbp2">门面活动</p>
-				</a>
-			</div>
-			<div class="spfxb"></div>
-			<div class="contentb">
-				<textarea style="resize: none; width: 420px; height: 100px;border-radius: 15px;margin-left: 40px; border: 0;padding: 10px;"></textarea>
-			</div>
-			<div class="swbtnb">
-				<div class="swbtn-cb">
-					<div>
-						<img src="__PUBLIC__/Home/img/addp.png" />
-					</div>
-					<div style="margin-left: 10px;">
-						<img src="__PUBLIC__/Home/img/adds.png" />
-					</div>
-					<button class="tjbtnb" id="tjbtn">发布</button>
-				</div>
-			</div>
-		</div>
 
 		<section>
 			<div class="s-main-c">
@@ -64,135 +32,69 @@
 					<div class="s-c-1f">
 						<ul class="s-1f_00">
 							<li class="s-1f_01">WEDDING&nbsp;PIER</li>
-							<li class="s-1f_02">喜事码头</li>
+							<li class="s-1f_02">
+								<h1>喜事码头</h1>
+							</li>
 							<li class="s-1f_03">简单&nbsp;&nbsp;方便&nbsp;&nbsp;效率</li>
 						</ul>
 					</div>
 					<div class="cjsp_bt">
 						<ul>
 							<li class="cjsp_bt_01">
-								<a href="#">创建商铺</a>
+								审核中
 							</li>
-							<li class="cjsp_bt_02">
-								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>		
-							<li class="cjsp_bt_03">
-								<a href="#"><img src="__PUBLIC__/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;审核中...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 						</ul>
 					</div>
 				</div>
 				<div class="s-main-l">
 					<div class="s-c-2f">
-					
+						<a href="#">
+							<a href="?s=/Home/Tjcs" class="zk">
+								进入码头商城
+							</a>
+						</a>
 					</div>
-						<foreach name="shop" item="v">
 					<div class="s-c-3f">
-					
 						<ul class="sc3f-ul">
-					
 							<li>
-									
-										<php>if($_SESSION['id'] == $v['uid']){</php>
-									<a href="?s=/Home/Mtbu/spbddndt/id/{$v.id}">
-									<php>}else{</php>
-                                       <a href="?s=/Home/Mtbu/spbddydt/id/{$v.id}"">
-                                       <php>}</php>
-										
+								<a href="#">
 									<div class="sc3f-ulc1">
 										<span class="ulc1">
-											<img src="__PUBLIC__/Home/img/bdmc.png" />
+											<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
 										</span>
 										<span class="ulc2">
-											<p class="p18">{$v.shopname}</p>
-											<p class="p14" style="margin-top: 10px!important;">{$v.type}</p>
-											<p class="p14">粉丝{$v.fen}</p>
-											<p class="p14">所在地点：{$v.address|substr=0,6}</p>
+											<strong class="p18 black-333">{$v.shopname}</strong>
+											<p class="p14 bdlx">
+												<span class="black-333">类型：</span>
+												{$v.type}
+											</p>
+											<p class="p14">
+												<span class="black-333">粉丝数：</span>
+											{$v.fen}
+											</p>
+											<p class="p14">
+												<span class="black-333">所在地：</span>
+												{$v.address|substr=0,9}
+											</p>
 											<p class="clearfloat"></p>
 										</span>
 										<span class="clearfloat"></span>
 									</div>
 									<div class="sc3f-ulc2">
-										<p>主要商品:{$v.zysp}</p>
+										<p><span class="black-333">商铺介绍：</span>{$v.zysp}</p>
 									</div>
 									<div class="clearfloat"></div>
 								</a>
-						
 							</li>
-						
 						</ul>
-						
-					</div>
-								</foreach>
-					<div class="s-c-4f">
-						<a href="?s=/Home/Tjcs">进入码头部队商城</a>
 					</div>
 				</div>
 				<div class="clearfloat"></div>
 			</div>
 		</section>
-		<br>
-		<br>
-		<br>
-<include file="Public/foot"/>
+		<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script src="__PUBLIC__/Home/showWin.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-	</script>
-
+	<script src="__PUBLIC__/Home/js/showwin2.js"></script>
+	<script src="__PUBLIC__/Home/js/troop.js"></script>
 </html>
