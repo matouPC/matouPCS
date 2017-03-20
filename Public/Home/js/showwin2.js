@@ -138,14 +138,6 @@ $(function() {
 });
 
 //----------------------------点赞--------------------------
-$('.dz-qx span').click(function() {
-	if($(this).hasClass('icon-dz')) {
-		$(this).removeClass('icon-dz');
-		$(this).addClass('icon-dz-kz');
-	} else {
-		$(this).removeClass('icon-dz-kz');
-		$(this).addClass('icon-dz');
-	}
-});
+
 
 

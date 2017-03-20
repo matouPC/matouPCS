@@ -4,10 +4,14 @@
 		<a href="?s=/Home/Ysq/xqys/id/<?php echo ($lists["did"]); ?>">
 			<div class="s-l-1f">
 				<div class="yhtx">
-					<img src="/matouPCS/Public/Home/img/yhmc.png" />
+					<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
+                                   <?php else: ?>
+                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>"  /><?php endif; ?>
 				</div>
 				<p class="yhmc">
-					用户<?php echo (substr($lists["username"],0,5)); ?>
+					<?php if($lists[tel]==$lists[username]): ?>用户<?php echo (substr($lists["username"],0,5)); ?>
+					<?php else: ?>
+					用户<?php echo ($lists["username"]); endif; ?>
 				</p>
 				<p class="jg">
 					薪资：
@@ -21,14 +25,14 @@
 			<div class="s-l-2f">
 				<div class="middle">
 					<p class="black-333"><?php echo ($lists["name"]); ?></p>
-					<p class="age"><?php echo ($lists["age"]); ?></p>
+					<p class="age">年龄：<?php echo ($lists["age"]); ?></p>
 					<p class="grjj">
 						<span class="black-333">个人简介：</span> <?php echo ($lists["content"]); ?>
 					</p>
 					<div class="clearfloat"></div>
 				</div>
 				<div>
-					<p class="black-333">职位:<?php echo ($lists["type_d"]); ?></p>
+					<p class="black-333"><?php echo ($lists["type_d"]); ?></p>
 					<?php $imgnum = explode(',',$lists['imagename_z']); $vidnum = explode(',',$lists['imagename_v']); $dang = explode(',',$lists['dangdate']); $dangs = explode(',',$lists['dangs']); $ss = explode(',',$lists['due_shou']); array_pop($imgnum); array_pop($vidnum); array_pop($dang); array_pop($dangs); array_pop($ss); $imgnums = count($imgnum); $vidnums = count($vidnum); $sss = count($ss); ?>
 					<p class="zpzp">
 						<span class="black-333">照片作品：</span> <?php echo ($imgnums); ?>个

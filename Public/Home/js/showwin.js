@@ -426,11 +426,14 @@ $('.delete-sp').click(function() {
 //		--------------------------------------------------填写应聘Add-----------------------------------------------------------
 $(function() {
 	var i = 0;
+	var a = 0;
 	$("#hfx3-1").click(function() {
+		a+=1;
 		$(".txfg1-c2-1").hide();
 		$(".txfg1").css("height", "auto");
 		//		$(".txfg1").css("border-bottom", "0px");
-		$(".addmation1").append('<li><div class="delete-gzjl"><img src="img/delete-2.png" /></div><ul class="tyint"><li><div class="mhdsj"><div class="litl"><p class="litx">*</p><p class="litc">活动时间</p><p class="cf"></p></div><div class="litr"><input class="w150t" type="text" name="" id="dt' + i + '" value="" />&nbsp;到&nbsp;<input class="w150t" type="text" name="" id="da' + i + '" value="" /><div class="liti1"><img src="img/jxrq.png" /></div><div class="liti2"><img src="img/jxrq.png" /></div></div><div id="dd' + i + '" style="left: 14px !important; top:42px !important"></div><div id="db' + i + '" style="left: 182px !important; top:42px !important"></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">所在公司</p><p class="cf"></p></div><div class="litr"><input class="w200t" type="text" /></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">担任职位</p><p class="cf"></p></div><div class="litr"><input class="w200t" type="text" /></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作描述</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
+		if(a <= 3){
+		$(".addmation1").append('<li><div class="delete-gzjl"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div><ul class="tyint"><li><div class="mhdsj"><div class="litl"><p class="litx">*</p><p class="litc">活动时间</p><p class="cf"></p></div><div class="litr"><input readonly="readonly" class="w150t" type="text"  id="dt'+i+'" name="workdate1'+a+'" value="" />&nbsp;到&nbsp;<input readonly="readonly" class="w150t" type="text" name="workdate2'+a+'" id="da'+i+'" value="" /><div class="liti1"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div><div class="liti2"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div></div><div id="dd'+i+'" style="left: 14px !important; top:42px !important"></div><div id="db'+i+'" style="left: 182px !important; top:42px !important"></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">所在公司</p><p class="cf"></p></div><div class="litr"><input class="w200t" name="workname'+a+'" type="text" /></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">担任职位</p><p class="cf"></p></div><div class="litr"><input class="w200t" name="ty'+a+'" type="text" /></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作描述</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="miao'+a+'" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
 			$(".delete-gzjl").on("click", function() {
 				$(this).parent().remove();
 				if($(".s-main-l").css("height") == "524px") {
@@ -444,6 +447,9 @@ $(function() {
 					$('.txfg1-c2-1').css('display', 'block');
 				}
 			});
+		}else{
+			alert('不好意思,每次最多只能添加3条');
+		}
 		//-------------------------------日期----------------------------------------
 		$('#dd' + i).calendar({
 			trigger: '#dt' + i,
@@ -480,9 +486,11 @@ $(function() {
 
 //		档期新增
 var dq = 0;
+var dang = 0;
 $('#hfx3-3').click(function() {
+	dang += 1;
 	$('#tc .txfg1-c2-1').hide();
-	$('.addmation-dq').append('<li><input id="da' + dq + '" type="text" readonly="readonly" placeholder="请选择时间" /><select><option selected="selected">请选择</option><option>上午</option><option>中午</option><option>下午</option><option>晚上</option></select><div class="delete-2"><img src="img/delete-2.png" /></div><div id="db' + dq + '" style="left: 0 !important; top:40px !important"></div></li>');
+	$('.addmation-dq').append('<li><input id="da' + dq + '" type="text" name="dang_time'+dang+'" readonly="readonly" placeholder="请选择时间" /><select name="dangB'+dang+'"><option  selected="selected">请选择</option><option>上午</option><option>中午</option><option>下午</option><option>晚上</option></select><div class="delete-2"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div><div id="db' + dq + '" style="left: 0 !important; top:40px !important"></div></li>');
 	//		删除档期
 	$('.delete-2').click(function() {
 		$(this).parents('li').remove();
@@ -547,12 +555,13 @@ $("#tab-spzp").click(function() {
 //		--------------------------------------------------填写招聘Add-----------------------------------------------------------
 
 $(function() {
-	var i = 0;
-	$("#hfx3-1-zp").click(function() {
+	var i = 1;
+	$("#hfx3-1-zps").click(function() {
 		$(".txfg1-c2-1").hide();
 		$(".txfg1").css("height", "auto");
 		//				$(".txfg1").css("border-bottom", "0px");
-		$(".addmation").append('<li><ul class="tyint"><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">招聘职位</p><p class="cf"></p></div> <div class="litr"><select style="width: 132px; height: 30px;" class="w95s"><option></option><option>灯光</option></select> <input class="w209" disabled="disabled" type="text" placeholder="填写职业名称" /><div class="lidel" id="lidel"><img src="img/delete-2.png" /></div></div><div class="cf"></div></li><li><div class="msex"><div class="litl"><p class="litx">*</p><p class="litc">性&nbsp;别</p><p class="cf"></p></div><div class="litr"><div class="w36"><input name="sex' + i + '" class="" type="radio" /> 男</div><div class="w36"><input class="" name="sex' + i + '" type="radio" /> 女</div><div class="w41"><input class="" name="sex' + i + '" type="radio" /> 不限</div></div><div class="cf"></div></div></li><li><div class="mage"><div class="litl"><p class="litx">*</p><p class="litc">年&nbsp;龄</p><p class="cf"></p></div><div class="litr"><input type="number" class="w75s" />&nbsp;岁 </div><div class="cf"></div></div></li><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">工作经验</p><p class="cf"></p></div><div class="litr"><select style="width: 132px; height: 30px;" class="w95s"><option></option><option>灯光</option></select>&nbsp;年 </div><div class="cf"></div></li><li><div class="mxz"><div class="litl"><p class="litx">*</p><p class="litc">薪&nbsp;资</p><p class="cf"></p></div><div class="litr"><input class="w75t" type="number" />-<input class="w75t" type="number" />&nbsp;k/月</div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作内容</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">岗位要求</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
+		if(i <= 3){
+		$(".addmation").append('<li><ul class="tyint"><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">招聘职位</p><p class="cf"></p></div> <div class="litr"><select class="w95s"  name="type'+i+'" id="xtype'+i+'" style="width:105px;" onchange="gradeChange'+i+'()"><option>经理\\店长</option><option>营业员</option><option>数码师/设计</option><option>视频剪辑师</option><option>摄影师</option><option>摄像师</option><option>化妆师</option><option>策划师</option><option>其他</option></select><span class="types'+i+'"></span><div class="lidel" id="lidel"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div></div><div class="cf"></div></li><li><div class="msex"><div class="litl"><p class="litx">*</p><p class="litc">性&nbsp;别</p><p class="cf"></p></div><div class="litr"><div class="w36"><input class=""  name="sex'+i+'" value="1" checked = "checked" type="radio" />男</div><div class="w36"><input class="" name="sex'+i+'" value="2" type="radio" />女</div><div class="w41"><input class="" name="sex'+i+'" value="3" type="radio" />不限</div></div><div class="cf"></div></div></li><li><div class="mage"><div class="litl"><p class="litx">*</p><p class="litc">年&nbsp;龄</p><p class="cf"></p></div><div class="litr"><select class="w75s" style="width:72px;" name="age'+i+'" ><option>不限</option><option>18-25</option><option>25-30</option><option>30-35</option><option>>35</option></select>&nbsp;岁 </div><div class="cf"></div></div></li><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">工作经验</p><p class="cf"></p></div><div class="litr"><select class="w95s" style="width:72px;" name="timework'+i+'"><option>不限</option><option>1-2</option><option>2-5</option><option>5-10</option><option>>10</option></select>&nbsp;年 </div><div class="cf"></div></li><li><div class="mxz"><div class="litl"><p class="litx">*</p><p class="litc">薪&nbsp;资</p><p class="cf"></p></div><div class="litr"><input class="w75t" type="text" name="price1'+i+'" /> — <input class="w75t" name="price2'+i+'" type="text" />&nbsp;元/月</div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作内容</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="content'+i+'" type="text"></textarea></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">岗位要求</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="yaoqiu'+i+'" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
 			$(".lidel").on("click", function() {
 				$(this).parent().parent().parent().parent().parent().remove();
 				if($(".s-main-l").css("height") == "388px") {
@@ -561,10 +570,36 @@ $(function() {
 					$(".txfg1").css("border-bottom", "1px solid #999");
 				}
 			});
+			}else{
+				alert('不好意思,每次最多只能添加3条');
+			}
 		i++;
 	});
 });
-
+function gradeChange3(){
+    var checkText=$("#xtype3").find("option:selected").text();
+    if(checkText == '其他'){
+    	$('.types3').html('<input class="w209" type="text" name="zymc1" placeholder="填写职业名称" />');
+    }else{
+    	$('.types3').html('<input class="w209" type="hidden" name="zymc1" placeholder="填写职业名称" />');
+    }
+}
+function gradeChange1(){
+    var checkText=$("#xtype1").find("option:selected").text();
+    if(checkText == '其他'){
+    	$('.types1').html('<input class="w209" type="text" name="zymc2" placeholder="填写职业名称" />');
+    }else{
+    	$('.types1').html('<input class="w209" type="hidden" name="zymc2" placeholder="填写职业名称" />');
+    }
+}
+function gradeChange2(){
+    var checkText=$("#xtype2").find("option:selected").text();
+    if(checkText == '其他'){
+    	$('.types2').html('<input class="w209" type="text" name="zymc3" placeholder="填写职业名称" />');
+    }else{
+    	$('.types2').html('<input class="w209" type="hidden" name="zymc3" placeholder="填写职业名称" />');
+    }
+}
 //		--------------------------------------------------消息页面-----------------------------------------------------------
 //需求
 $('#xqxx-lb').hover(function() {
@@ -737,15 +772,7 @@ $('.2fb .s-f2l-c1 li').click(function() {
 	$(this).attr('class', 'selected-tab');
 });
 //----------------------------点赞--------------------------
-$('.dz-qx span').click(function() {
-	if($(this).hasClass('icon-dz')) {
-		$(this).removeClass('icon-dz');
-		$(this).addClass('icon-dz-kz');
-	} else {
-		$(this).removeClass('icon-dz-kz');
-		$(this).addClass('icon-dz');
-	}
-});
+
 
 //----------------------------工作室下拉--------------------------	
 $('.gzs').hover(function() {
@@ -799,12 +826,15 @@ $('#zpxx').click(function() {
 //查看号码
 $(function() {
 	$("#sp").click(function() {
-		alert("充值")
+		//				alert("充值")
+		alert(123);
 		$("#spdl").show();
 	});
 	$("#spdl-ok").click(function() {
-		$("#spdl-p").text("联系电话：1566666666");
+		var xp = $('#xp').val();
+		$("#spdl-p").text("联系电话："+xp);
 		$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
+		//				<input type="text"  class="time" id="stime">
 		if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
 			//					$("#id").value = "5"
 			//					c = c-1
@@ -834,4 +864,70 @@ $('.scwc').click(function() {
 });
 $('.delete-yfb').click(function() {
 	$(this).parents('li').remove();
+});
+//应聘的照片作品
+var i = 0;
+$("#hfx3-1_zp").click(function() {
+	i+=1;
+	$(".p12").hide();
+	$(".dianji").hide();
+	$("#ypzps").append('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="ypimg'+i+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
+		$(".refcc").on("click", function() {
+			if($(".s-c-3f").css("height") == "10px") {
+				$(".p12").show();
+			}
+			$(this).parent().parent().remove();
+		});
+	$(".photobt").change(function(e) {
+		var that = this;
+		//				console.log($(that).parent());
+		var $os = $(that).siblings(".click1");
+		//				console.log($os.length);
+		var files = this.files;
+		var img = new Image();
+		var reader = new FileReader();
+		reader.readAsDataURL(files[0]);
+		reader.onload = function(e) {
+			var mb = (e.total / 1024) / 1024;
+			if(mb >= 2) {
+				alert('文件大小大于2M');
+				return;
+			}
+			img.src = this.result;
+//					img.style.width = "100%";
+			
+			$os.css({
+//						width: "100%"
+//						height: "100%"
+			});
+			$os.html("");
+			$os.append($(img));
+		}
+		if($os.html() != "") {} else {
+			var $de = $(that).siblings(".remm");
+			var $bg = $(that).siblings("")
+			$(".addimg").hide();
+			$de.show();
+			$(".photobg2").show();
+			
+		}
+		var $im = $(that).siblings("img");
+		var addimg = document.getElementsByClassName("click1 img").innerHTML;
+		window.localStorage.setItem("ai", addimg);
+		//				console.log(window.localStorage.setItem("ai", addimg));
+		$(".remm").click(function() {
+			$(this).hide();
+			var that = this;
+			var $os = $(that).siblings(".click1");
+			$($os).parent().parent().parent()	.remove();
+			if($(".txfg1-a").css("height") > "110px"){
+				alert("1");
+				$(".txfg1-c2-1-a").css("display","block");
+				$(".txfg1-a").css("height","126px")
+			}else{
+				alert("2");
+			}
+		});
+		return(that);
+	});
 });

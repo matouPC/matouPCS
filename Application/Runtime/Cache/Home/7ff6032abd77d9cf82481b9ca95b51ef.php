@@ -6,10 +6,14 @@
             <a href="?s=/Home/xsdt/xqxs/id/<?php echo ($list[$i]['psid']); ?>">
                 <div class="s-l-1f">
                     <div class="yhtx">
-                        <img src="/matouPCS/Public/Home/img/yhmc.png" />
+                       <?php if($list[$i][imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
+                                   <?php else: ?>
+                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($list[$i]["imagename"]); ?>"  /><?php endif; ?>
                     </div>
                     <p class="yhmc">
-                       用户<?php echo (substr($list[$i]['username'],0,6)); ?>
+                     <?php if($list[$i][tel]==$list[$i][username]): ?>用户<?php echo (substr($list[$i]["username"],0,5)); ?>
+					<?php else: ?>
+					用户<?php echo ($list[$i]["username"]); endif; ?>
                     </p>
                     <p class="hdsj">
                         活动时间：<?php echo ($list[$i]['time']); ?>

@@ -4,26 +4,29 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>发布求购</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/qgfbwc-3r-zy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/fbwc.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin.css" />
 	</head>
 
 	<body>
 		<header>
-			<include file="Public/header"/>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
 					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<img src="__PUBLIC__/Home/img/navbg2.png" alt="" />
 						<div class="s-f2-r">
-								<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);"/>
+							<input placeholder="搜索全站" type="text" class="find3"  />
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png"/>
+								<img src="__PUBLIC__/Home/img/ss-t.png" alt="" />
 							</div>
 						</div>
 					</div>
 					<div class="h-c-3f">
-						<img src="__PUBLIC__/Home/img/navbg4.png" />
-						<a href="?s=/Home/Tzsc/xqqg/id/{$id}"><div class="h-f3-c1">查看求购详情页</div></a>
-						<!--<div class="h-f3-c2"><a href="#">进入跳骚市场</a></div>-->
+						<img src="__PUBLIC__/Home/img/navbg4.png" alt="" />
+						<a href="#">
+							<a href="?s=/Home/Tzsc/xqqg/id/{$id}" class="h-f3-c1">查看求购详情页</a>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -33,106 +36,130 @@
 				<div class="s-main-r">
 					<div class="s-c-1f">
 						<a href="?s=/Home/Tzsc">
-							<img src="__PUBLIC__/Home/img/jrtssc.png" />
+							<img src="__PUBLIC__/Home/img/jrtssc.png" alt="" />
 						</a>
 					</div>
-
 				</div>
 				<div class="s-main-l">
-					<!--<div class="s-c-2f">
-						aaa
-					</div>-->
-					
 					<div class="s-c-3f">
 						<div class="user">
 							<foreach name="list" item="lists">
-							<div class="user_01">
-								<a href="?s=/Home/Tzsc/xqxz/id/{$lists.fid}">
-									<img src="__PUBLIC__/Home/img/yhmc-big.png" width="260" height="145">
-									<div class="user_01_01">
+								<div class="user_01">
+									<a href="?s=/Home/Tzsc/xqxz/id/{$lists.fid}">
+										<div class="xztp">
+											<img src="__PUBLIC__/Home/img/yhmc-big.png" alt="">
+										</div>
+										<div class="user_01_01">
+											<div class="user_01_02">
+												<p>{$lists.name}</p><span>￥{$lists.price}元</span></div>
+											<p class="user_01_03">{$lists.content}</p>
+											<?php $shou = explode(',',$lists['shou']);
+												  array_pop($shou);
+												  $shou_num = count($shou); ?>
+											<p class="user_01_04">已有{$shou_num}人收藏</p>
+											<p class="user_01_05">{$lists.address}</p>
+										</div>
+									</a>
+								</div>
+							</foreach>
+							<!-- <div class="user_01">
+								<a href="#">
+									<div class="user_02">
+										<div class="wptp">
+											<img src="img/bdmc.png" alt="">
+										</div>
+										<p>闲置：音响</p>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="user_01_01b">
 										<div class="user_01_02">
-											<p>闲置：{$lists.name}</p><span>￥{$lists.price}元</span></div>
-										<p class="user_01_03">{$lists.content}</p>
-										<p class="user_01_04">已有{$lists.collect}人收藏</p>
-										<p class="user_01_05">{$lists.address}</p>
+											<p>音响</p><span>预算￥500元</span></div>
+										<p class="user_01_03b">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
+										<p class="user_01_04">已有20人收藏</p>
+										<p class="user_01_05">郑州</p>
+										<div class="clearfloat"></div>
 									</div>
 								</a>
 							</div>
-							</foreach>
-								
-							
+
+							<div class="user_01">
+								<a href="#">
+									<div class="xztp">
+										<img src="img/yhmc-big.png" alt="">
+									</div>
+									<div class="user_01_01">
+										<div class="user_01_02">
+											<p>闲置：音响</p><span>￥500元</span></div>
+										<p class="user_01_03">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。</p>
+										<p class="user_01_04">已有20人收藏</p>
+										<p class="user_01_05">郑州</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="user_01">
+								<a href="#">
+									<div class="user_02">
+										<div class="wptp">
+											<img src="img/bdmc.png" alt="">
+										</div>
+										<p>闲置：音响</p>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="user_01_01b">
+										<div class="user_01_02">
+											<p>音响</p><span>预算￥500元</span></div>
+										<p class="user_01_03b">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
+										<p class="user_01_04">已有20人收藏</p>
+										<p class="user_01_05">郑州</p>
+										<div class="clearfloat"></div>
+									</div>
+								</a>
+							</div>
+
+							<div class="user_01">
+								<a href="#">
+									<div class="xztp">
+										<img src="img/yhmc-big.png" alt="">
+									</div>
+									<div class="user_01_01">
+										<div class="user_01_02">
+											<p>闲置：音响</p><span>￥500元</span></div>
+										<p class="user_01_03">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。</p>
+										<p class="user_01_04">已有20人收藏</p>
+										<p class="user_01_05">郑州</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="user_01">
+								<a href="#">
+									<div class="user_02">
+										<div class="wptp">
+											<img src="img/bdmc.png" alt="">
+										</div>
+										<p>闲置：音响</p>
+										<div class="clearfloat"></div>
+									</div>
+									<div class="user_01_01b">
+										<div class="user_01_02">
+											<p>音响</p><span>预算￥500元</span></div>
+										<p class="user_01_03b">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
+										<p class="user_01_04">已有20人收藏</p>
+										<p class="user_01_05">郑州</p>
+										<div class="clearfloat"></div>
+									</div>
+								</a>
+							</div> -->
+							<div class="clearfloat"></div>
 						</div>
 						<br>
 					</div>
 				</div>
-			<div class="clearfloat"></div>
-				
+				<div class="clearfloat"></div>
 			</div>
-
 		</section>
-		<br>
-		<br>
-		<br>
-	<include file="Public/footer"/>
+		<include file="Public/footer"/>
 	</body>
-	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-	</script>
-
+	<script src="js/scrolltopcontrol.js"></script>
 </html>

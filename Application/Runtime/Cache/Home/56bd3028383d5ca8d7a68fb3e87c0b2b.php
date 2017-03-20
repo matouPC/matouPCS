@@ -3,116 +3,49 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>商铺创建-管理信息</title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/spgl-3rxx-cc.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/css/showWin.css" />
-
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style-type: none;
-			}
-			
-			a,
-			img {
-				border: 0;
-			}
-			
-			.demo {
-				width: 720px;
-				margin: 35px auto;
-			}
-			
-			.demo h2 {
-				font-size: 16px;
-				color: #3366cc;
-				height: 30px;
-			}
-			
-			.demo li {
-				float: left;
-			}
-			
-			.text,
-			.button {
-				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
-			}
-			
-			.text {
-				width: 425px;
-				height: 22px;
-				padding: 4px 7px;
-				padding: 6px 7px 2px\9;
-				font: 16px arial;
-				border: 1px solid #cdcdcd;
-				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
-				vertical-align: top;
-				outline: none;
-				margin: 0 -1px 0 0;
-			}
-			
-			.button {
-				width: 79px;
-				height: 32px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-			
-			.button2 {
-				width: 135px;
-				height: 32px;
-				margin-left: 30px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-		</style>
+		<title>商铺创建</title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/tx.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/inputimg.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showWin.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/main-tx.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/cropper.min.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 	</head>
 
 	<body>
-		<div class="show-bg"></div>
 		<header>
-		<!DOCTYPE html>
+			<div class="h-content-main">
+				<div class="h-main-c">
+				<!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-	
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
 	</head>
+
 	<body>
 		<div class="show-bg"></div>
 		<header>
 			<div class="h-c-1f">
-						<div class="h-c-1f">
-							<div class="h-f1-lzy">
-								<div class="home">
-									<img src="/matouPCS/Public/Home/img/home.png" />
-								</div>
-								<p>
-									<a href="?s=/Home/index">首页</a>
-								</p>
-							</div>
-							<div class="h-f1-rzy">
-								<ul>
+				<div class="h-c-1f">
+					<div class="h-f1-lzy">
+						<div class="home">
+							<img src="/matouPCS/Public/Home/img/home.png" />
+						</div>
+						<p>
+							<a href="?s=/Home/index">首页</a>
+						</p>
+					</div>
+					<div class="h-f1-rzy">
+						<ul>
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
-										<a id="login-alert" href="#">
+										<a href="?s=/Home/User">
 											<div class="dltx">
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 											</div>
@@ -122,40 +55,88 @@
 								<a id="login-alert" href="#">请注册\登录</a>
 								<?php } ?>
 									</li>
-								
-								<li id="select-xx" style="width: 45px;">
-								<a href="#">消息</a>
+							<li id="select-xx">
+							<?php if($_SESSION['id'] != ''){ ?>
+								<a rel="nofollow" href="#">消息</a>
+								<div class="news">
+									<img src="/matouPCS/Public/Home/img/news.png" />
+								</div>
 								<div class="str"></div>
 								<div class="select-xx">
 									<ul>
-										<li>	
-											<a href="?s=/Home/User/xqxx">需求消息</a>
+										<li>
+												<a href="?s=/Home/User/xqxx">需求消息
+											<div class="newss">
+												<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
 										</li>
 										<li>
-											<a href="">部队消息</a>
+								    	<a href="?s=/Home/User/bdxx">
+												部队消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
 										</li>
 										<li>
-											<a href="">商铺消息</a>
+											<a href="?s=/Home/User/spxx">
+												商铺消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
 										</li>
 									</ul>
 								</div>
-							</li>
-							<li style="width: 58px;">
-								<?php if(empty($_SESSION['username'])){ ?>
-									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏夹</a>
 								<?php }else{ ?>
-									<a href="?s=/Home/User/scj">收藏夹</a>
+
+								<a href="#" onclick="alert('请先登录')">消息</a>
+								<div class="str"></div>
+								<div class="select-xx" style="display:none;">
+									<ul>
+											<li>
+												<a href="?s=/Home/User/xqxx">需求消息
+											<div class="newss">
+												<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+										<li>
+								    	<a href="?s=/Home/User/bdxx">
+												部队消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="?s=/Home/User/spxx">
+												商铺消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<?php } ?>
+							</li>
+							<li>
+								<?php if(empty($_SESSION['username'])){ ?>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏报名</a>
+								<?php }else{ ?>
+									<a href="?s=/Home/User/scj">收藏报名</a>
 								<?php } ?>
 								<div class="str"></div>
 							</li>
-							<?php if(!empty($_SESSION['id'])){ ?>
-								<li id="select-yfb" style="width: 70px;">
-									<a href="#">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
-									<div class="str"></div>
-									<div class="select-yfb">
-								
-											<ul>
-												<li>
+								<?php if(!empty($_SESSION['id'])){ ?>
+							<li id="select-yfb">
+								<a rel="nofollow" href="#">&nbsp;&nbsp;已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
+								<div class="str"></div>
+								<div class="select-yfb">
+									<ul>
+									<li>
 													<a href="?s=/Home/User/userXs">悬赏</a>
 												</li>
 												<li>
@@ -173,29 +154,35 @@
 												<li>
 													<a href="?s=/Home/User/user_xz">闲置</a>
 												</li>
-											</ul>
+									</ul>
 								</div>
 							</li>
-							<?php }else{ ?>
+									<?php }else{ ?>
 									<li id="select-yfb" style="width: 70px;">
-									<a href="javascript:alert('您还没有登录！')">已发布</a>
-								</li>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
+									<div class="str"></div>
+									<div class="select-yfb" style="display:none;">
+								
+											<ul>
+											
+											</ul>
+								</div>
 								<?php } ?>
-							<li style="width: 68px;">
-								<?php if(empty($_SESSION['username'])){ ?>
+							<li class="bdzx-top">
+							<?php if(empty($_SESSION['username'])){ ?>
 								<a href="javascript:void(0)" onclick="alert('请先登录')">部队中心</a>
 								<?php }else{ ?>
 								<a href="?s=/Home/User/bdzx">部队中心</a>
 								<?php } ?>
 								<div class="str"></div>
 							</li>
-							<li id="select-sp">
+						<li id="select-sp">
 								<a href="#">商铺中心<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
 								<div class="str"></div>
 								<div class="select-sp">
 									<ul>
 										<li>
-										<?php if($sp['status']==1){?>
+							<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
@@ -205,7 +192,7 @@
                                 
 										</li>
 										<li>
-											<?php if($sp['status']==1){?>
+									<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
@@ -285,12 +272,13 @@
 									<div class="content-5f">
 										<p>使用其它方式登录</p>
 										<div class="alert-QQ">
-											<a href="">
+											<a href="javascript:void(0)" onclick="windowDl()">
+												<!-- <span  id="qqLoginBtn"></span> -->
 												<img src="/matouPCS/Public/Home/img/alert-QQ.png">
 											</a>
 										</div>
 										<div class="alert-wc">
-											<a href="">
+											 <a href="javascript:void(0)" onclick="wxLogin()"> <!--微信登录 -->
 												<img src="/matouPCS/Public/Home/img/alert-wc.png">
 											</a>
 										</div>
@@ -421,17 +409,14 @@
 					<button class="tjbtnb" id="tjbtn" onclick="tj()">发布</button>
 				</div>
 			</div>
-		
 		</div>
 	<script>
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
-				//  alert(tu);
-
-				    $.ajax({  
+		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/Index/usave1",
+				         url:"/matouPCS/index.php/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
 				
@@ -461,9 +446,8 @@
                 </div>
             </div>
         </div>
+    
 		<!--上传图片结束-->
-		
-		
 		<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/City_data.js"></script>
@@ -471,249 +455,196 @@
 		<script src="/matouPCS/Public/Home/js/sinaFaceAndEffec.js"></script>
 		<script src="/matouPCS/Public/Home/plupload/plupload.full.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/header-index.js"></script>
+		<script src="/matouPCS/Public/Home/js/index-alert-login.js"></script>
+		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://www.xishimatou.com;" charset="utf-8"></script>
+		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	</body>
 </html>
-
-					<div class="h-c-2f">
-						<img src="/matouPCS/Public/Home/img/navbg2.png" />
-						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
-							<div class="s-f2-r1">
-								<img src="/matouPCS/Public/Home/img/ss-t.png" />
+						<div class="h-c-2f">
+							<img src="/matouPCS/Public/Home/img/navbg2.png" alt="" />
+							<div class="s-f2-r">
+								<input placeholder="搜索全站" type="text" class="find3" />
+								<div class="s-f2-r1">
+									<img src="/matouPCS/Public/Home/img/ss-t.png" alt="" />
+								</div>
 							</div>
 						</div>
-					</div>
 				</div>
 			</div>
 		</header>
-		<div class="spdlb" id="spdlb" title="消息">
-			<div class="titlenab">
-				<img src="/matouPCS/Public/Home/img/swtitle.png">
-				<div class="rhideb">
-					<img src="/matouPCS/Public/Home/img/hide.png">
-				</div>
-			</div>
-			<div class="fbtypeb">
-				<a>类型：</a>
-				<a href="#">
-					<p id="fbp1">婚礼喜事</p>
-				</a>
-				<a href="#" style="margin-left: 24px;">
-					<p id="fbp2">门面活动</p>
-				</a>
-			</div>
-			<div class="spfxb"></div>
-			<div class="contentb">
-				<textarea style="resize: none; width: 420px; height: 100px;border-radius: 15px;margin-left: 40px; border: 0;padding: 10px;"></textarea>
-			</div>
-			<div class="swbtnb">
-				<div class="swbtn-cb">
-					<div>
-						<img src="/matouPCS/Public/Home/img/addp.png" />
-					</div>
-					<div style="margin-left: 10px;">
-						<img src="/matouPCS/Public/Home/img/adds.png" />
-					</div>
-					<button class="tjbtnb" id="tjbtn">发布</button>
-				</div>
-			</div>
-		</div>
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-r">
-					<div class="s-c-1f">
-						<ul class="s-1f_00">
-							<li class="s-1f_01">WEDDING&nbsp;PIER</li>
-							<li class="s-1f_02">喜事码头</li>
-							<li class="s-1f_03">简单&nbsp;&nbsp;方便&nbsp;&nbsp;效率</li>
-						</ul>
-					</div>
-					<div class="cjsp_bt">
-					<ul>
-							<li class="cjsp_bt_01">
-								<a href="#">商铺创建</a>
+					<p class="tfs22">WEDDING PIER</p>
+					<h1 class="tfs22">喜事码头</h1>
+					<p class="tfs14">简单<samp class="kog10"></samp>方便<samp class="kog10"></samp>效率</p>
+					<div class="bdsz">
+						<div class="bdsz-bt">
+							创建商铺
+						</div>
+						<ul>
+							<li id="con-jbxx" class="selected-con">
+								<a rel="nofollow" href="javascript://">
+									<h2>基本信息</h2>
+								</a>
 							</li>
-							<li class="cjsp_bt_03">
-								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;基本信息</a>&nbsp;&nbsp;&nbsp;</li>
-							<li class="cjsp_bt_02">
-								<a href="#"><img src="/matouPCS/Public/Home/img/r_01.png" width="20" height="20">&nbsp;&nbsp;等待审核</a>&nbsp;&nbsp;&nbsp;</li>
+							<li id="con-tjzp">
+								<a rel="nofollow" href="javascript://">
+									<h2>等待审核</h2>
+								</a>
+							</li>
 						</ul>
 					</div>
-
 				</div>
 				<div class="s-main-l">
-					
-						<div class="s-c-2f">
-							<ul>
-								<li class="cjsp_cz">&nbsp;<img style="position: relative;top: 2px;" src="/matouPCS/Public/Home/img/cjsp_01.png">&nbsp;&nbsp;<strong>基本信息</strong></li>
-							</ul>
-						</div>
-						<div class="s-c-3f">
-						<form action="?s=/Home/Tjcs/usave" method="post" id="myform" enctype="multipart/form-data">
-							<div class="spgl_xx">
-								<div class="spgl_xx_00">
-									<em>*</em>
-									<p>营业执照名称</p>
-									<input name="charter" id="charter" type="text" placeholder="" class="spgl_input_00" maxlength="20" >
-								</div>
-								<div class="spgl_xx_00">
-									<em style="margin-left:16px;">*</em>
-									<p>法定代表人</p>
-									<input name="representative" id="representative" type="text" placeholder="" class="spgl_input_00" maxlength="20" >
-								</div>
-								<div class="spgl_xx_00">
-									<em style="margin-left:33px;">*</em>
-									<p>商铺名称</p>
-									<input name="shopname" id="shopname" type="text" placeholder="" class="spgl_input_00" maxlength="20" >
-								</div>
-								<div class="spgl_xx_00">
-									<em style="margin-left:33px;">*</em>
-									<p>商铺类型</p>
-									<select  name="type" id="type" class="spgl_input_02116">
-										<option>销售商</option>
-										<option>租赁商</option>
-										<option>婚车租赁</option>
-									</select>
-									<!--<input name="" type="text" placeholder=""  maxlength="11"  >-->
-								</div>
-								<div class="spgl_xx_00">
-									<em style="margin-left:33px;">*</em>
-									<p>详细地址</p>
-									<input id="city" type="text" placeholder="点击选择地点" />
-									<input name="address" id="address" type="text" placeholder="请输入详细地址" class="spgl_input_01" maxlength="20">
-								</div>
-								<div class="spgl_xx_00">
-									<em style="margin-left:33px;">*</em>
-									<p>联系电话</p>
-									<input name="tel" id="tel"  type="text" placeholder="" class="spgl_input_02" maxlength="11">
-								</div>
-								<div class="spgl_xx_00">
-									<p style="margin-left:89px;">QQ</p>
-									<input name="qq" type="text" placeholder="" class="spgl_input_02" maxlength="12">
-								</div>
-
-								<div class="spgl_xx_01">
-									<em style="margin-left:33px;">*</em>
-									<p>主营商品</p>
-									<textarea name="zysp" id="zysp" cols="" rows="" placeholder="请输入商品名称，用间隔号隔开。。。。。。" class="spgl_input_03"></textarea>
-								</div>
-								<div class="spgl_xx_00">
-									<em style="margin-left:33px;">&nbsp;&nbsp;</em>
-									<p>网店链接</p>
-									<select  name="wangzhan" id="city2">
-										<option>淘宝</option>
-										<option>天猫</option>
-										<option>阿里巴巴</option>
-									</select>
-									<input name="lianjie" type="text" placeholder="请输入链接地址" class="spgl_input_01" maxlength="20">
-								</div>
-
+			
+					<div class="con1">
+						<div class="s-c-8f">
+							<form  id="myform" >
+							<div class="s-c-8f-1f">
+								<h2>基本信息</h2>
 							</div>
-							</form>
-							<div class="spgl_x1">
-								<div class="spgl_x1_00"></div>
-								<input class="s-c-tj_01" type="submit" value="上传店铺头像">
+							<div class="s-c-8f-2f rzjbxx">
+								<ul class="ul-l">
+									<li><span class="red">* </span>营业执照名称</li>
+									<li><span class="red">* </span>法定代表人</li>
+									<li><span class="red">* </span>商铺名称</li>
+									<li><span class="red">* </span>详细地址</li>
+									<li><span class="red">* </span>联系电话</li>
+									<li><span class="red">* </span>QQ</li>
+									<li><span class="red">* </span>商铺类型</li>
+									<li style="height: 110px;"><span class="red">* </span>主营产品</li>
+									<li><span class="red">* </span>网店链接</li>
+								</ul>
+								<ul class="ul-r">
+									<li>
+										<input type="text"  id="charter"  name="charter"  placeholder="请输入真实营业执照" class="gray-in" />
+									</li>
+									<li>
+										<input type="text"  id="representative"  name="representative"  placeholder="请输入真实法定代表人姓名" class="gray-in" />
+									</li>
+									<li>
+										<input type="text" id="shopname"  name="shopname"class="gray-in" placeholder="请输入门店的简称、别称" />
+									</li>
+									<li>
+										<input type="text" id="address"  name="address" class="white-in xz-city" readonly="readonly" placeholder="请选择" onclick="appendCity(this,'danxuan')" value="" data-value="" />
+										<input type="text" id="xaddress"  name="xaddress"class="white-in xxdz" placeholder="请填写详细地址（不超过18个字）" />
+									</li>
+									<li>
+										<input type="text" id="tel" name="tel" class="white-in lxdh" placeholder="请输入联系电话" />
+									</li>
+									<li>
+										<input type="text" id="qq"  name="qq"  class="white-in lxdh" placeholder="请输入QQ" />
+									</li>
+									<li class="parents" >
+										<input  name="type"  type="radio"  checked="checked" value='销售商'/>销售商
+										<input name="type" type="radio" value='租赁商'/>租赁商
+										<input name="type" type="radio" value='销售/租赁'/>销售/租赁
+										<input name="type" type="radio" value='婚车租赁'/>婚车租赁
+										<div class="clearfloat"></div>
+									</li>
+									<li style="height: 110px;">
+										<textarea  id="zysp" name="zysp"  placeholder="请输入部队简介..."></textarea>
+									</li>
+									<li>
+										<select class="lj" name="wangzhan"  id="city2">
+											<option>淘宝</option>
+											<option>天猫</option>
+										</select>
+										<input type="text" id="lianjie" name="lianjie" class="white-in xxdz" placeholder="请输入链接地址" />
+									</li>
+								</ul>
+								<ul class="clearfloat"></ul>
 							</div>
-						</div>
+								</form>
+							<div class="bjtx">
+								<div class="sctx-y">
+									<div class="container" id="crop-avatar">
+										<div id="sctx" class="avatar-view" title="点击上传头像">
+											<img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+										</div>
+										<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+											<div class="modal-dialog modal-lg">
+												<div class="modal-content">
+													<form action="/matouPCS/Tu/crop.php" class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
+														<div class="modal-header">
+															<button class="close" data-dismiss="modal" type="button">&times;</button>
+															<h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
+														</div>
+														<div class="modal-body">
+															<div class="avatar-body">
+																<!-- Upload image and data -->
+																<div class="avatar-upload">
+																	<input class="avatar-src" name="avatar_src" type="hidden" />
+																	<input class="avatar-data" name="avatar_data" type="hidden" />
+																	<label for="avatarInput">头像上传</label>
+																	<input class="avatar-input" id="avatarInput" name="avatar_file" type="file" />
+																</div>
+																<!-- Crop and preview -->
+																<div class="row">
+																	<div class="col-md-9">
+																		<div class="avatar-wrapper"></div>
+																	</div>
+																	<div class="col-md-3">
+																		<div class="avatar-preview preview-lg"></div>
+																		<div class="avatar-preview preview-md">
+																		</div>
+																	</div>
+																</div>
+																<div class="row avatar-btns">
+																	<div class="col-md-9">
+																		<div class="btn-group">
+																			<button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees">向左转</button>
+																		</div>
+																		<div class="btn-group">
+																			<button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees">向右转</button>
+																		</div>
+																	</div>
+																	<div class="col-md-3">
+																		<button class="btn btn-primary btn-block avatar-save"  >完成</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+												</form>
+												</div>
+											</div>
+										</div>
+										<!-- /.modal -->
 
-						<div class="s-c-4f">
-							<input class="s-c-tj" type="submit" onclick="tj()" value="保存">
+										<!-- Loading state -->
+										<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+									</div>
+								</div>
+								<div class="tx-button">
+									<button onclick="document.getElementById('sctx').click();">编辑头像</button>
+								</div>
+							</div>
+						
+							<div class="clearfloat"></div>
+							<button class="button-bc" onclick="tj()">完成 </button>
 						</div>
-					
+					</div>
+				
 				</div>
 				<div class="clearfloat"></div>
 			</div>
 		</section>
-		<br>
-		<br>
-		<br>
-<!DOCTYPE html>
+		<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
 	</head>
 	<body>
 		<footer>
 			<div class="f-content-main">
-				<div class="ttm">
-					<div class="s-c-7f">
-						<div class="f7-o1">
-							<ul>
-								<li class="f4-o1-1">
-									<div>
-										<h5>喜事码头客服热线</h5>
-										<p>工作时间:每天9:00-23:00</p>
-										<p>188-8888-888</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h5>关注喜事码头微信公众号</h5>
-										<p>
-											<img src="img/erweima_top.png" />
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h5>关于我们</h5>
-										<p>
-											<a href="#">关于喜事码头</a>
-										</p>
-										<p>
-											<a href="#">加入我们</a>
-										</p>
-										<p>
-											<a href="#">网站地图</a>
-										</p>
-										<p>
-											<a href="#">合伙人招募</a>
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h5>联系我们</h5>
-										<p>官方邮箱:xishimatou@163.com</p>
-										<p>通讯地址:河南省郑州市863软件园</p>
-									</div>
-								</li>
-								<li class="clearf"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
-<<<<<<< HEAD
-						<h6>友情链接：</h6>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
-=======
 						
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
 						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
->>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 					</div>
 				</div>
 			</div>
@@ -723,128 +654,25 @@
 
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="/matouPCS/Public/Home/js/city-data.js"></script>
-	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
-	<script src="/matouPCS/Public/Home/showWin.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-			$("#tt").bigAutocomplete({
-				width: 440,
-				data: [{
-					title: "中国好声音",
-					result: {
-						ff: "qq"
-					}
-				}, {
-					title: "中国移动网上营业厅"
-				}, {
-					title: "中国银行"
-				}, {
-					title: "中国移动"
-				}, {
-					title: "中国好声音第三期"
-				}, {
-					title: "中国好声音 第一期"
-				}, {
-					title: "中国电信网上营业厅"
-				}, {
-					title: "中国工商银行"
-				}, {
-					title: "中国好声音第二期"
-				}, {
-					title: "中国地图"
-				}],
-
-			});
-
-		})
-
-		//			地址选择
-		var cityPicker = new HzwCityPicker({
-			data: data,
-			target: 'city',
-			valType: 'k-v',
-			hideCityInput: {
-				name: 'city',
-				id: 'city'
-			},
-			hideProvinceInput: {
-				name: 'province',
-				id: 'province'
-			}
-
-		});
-		cityPicker.init();
-
-		$(function() {
-			//日期
-			$('#date').date_input();
-			//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
-			$("#filter a").hover(
-				function() {
-					$(this).addClass("seling");
-				},
-				function() {
-					$(this).removeClass("seling");
-				}
-			);
-
-			//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
-			$("#filter dt+dd a").attr("class", "seled");
-			/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
-			                                                     不然后面通过$("#filter a[class='seled']")访问不到class样式为seled的a标签。*/
-
-			//为filter下的所有a标签添加单击事件
-			$("#filter a").click(function() {
-				$(this).parents("dl").children("dd").each(function() {
-					//下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
-					//$(this).children("div").children("a").removeClass("seled");
-					//$(this).find("a").removeClass("seled");
-					$('a', this).removeClass("seled");
-				});
-
-				$(this).attr("class", "seled");
-
-				//				alert(RetSelecteds()); //返回选中结果
-			});
-			//返回选中结果
-		});
-
-		//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		
+	<script src="/matouPCS/Public/Home/js/main-sp.js"></script>
+	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
+	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
+	<script src="/matouPCS/Public/Home/js/bootstrap.min.js"></script>
+	<script src="/matouPCS/Public/Home/js/cropper.min.js"></script>
+	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
+	<script src="/matouPCS/Public/Home/js/sousuo.js"></script>
+	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
+			
+	<script>
 		 function tj(){		 	
 			    var  	charter = $("#charter").val();  
 			    var representative = $("#representative").val();
 			    var shopname= $("#shopname").val();
 			    var tel = $("#tel").val(); 
-			    var type = $("#type").val();
 			    var address = $("#address").val(); 
 			    var zysp = $("#zysp").val(); 
-			    //alert(charter);
-			    if(charter==''||representative==''||shopname==''||tel==''||type==''||address==''||zysp==''){
+			alert(type);
+			    if(charter==''||representative==''||shopname==''||tel==''||address==''||zysp==''){
 			    	alert("请完善信息再提交");
 			    }else{
 				 $.ajax({
@@ -870,5 +698,4 @@
 		
 		
 	</script>
-
 </html>

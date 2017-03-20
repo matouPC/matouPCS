@@ -70,6 +70,7 @@
 		
 		//添加商品2
 		$("#hfx3-2").click(function() {
+			alert(123);
 			$(".p12").hide();
 			$(".txfg2 ul").append('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
 				$(".refcc").on("click", function() {
@@ -134,6 +135,7 @@
 //添加商品3
 		// var yps = $('.dm{$i}');
 			function userYp(){
+				alert(456);
 			var yp = document.getElementById("lists").getElementsByTagName("li").length;
 			yp+=1;
 			$(".dianji").hide();
@@ -229,6 +231,7 @@
 		// $("#hfx3-1-u").click(function() {
 			
 		function hfx3(){ //应赏图片的方法this
+			alert(456);
 			var im = document.getElementById("this").getElementsByTagName("li").length;
 			im++;
 			if( im > 9 ){

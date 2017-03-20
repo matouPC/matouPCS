@@ -559,8 +559,8 @@ class BoxController extends CommonController {
             }
             $newList[] = $value;
         }
-            // echo '<pre>';
-            // var_dump($newList);die;
+
+            
             foreach ($newList as $key => $value) {
                 // var_dump(count($value));
                 for ($i=0; $i < 1; $i++) { //此处是符合这个条件的 有且只有一个
@@ -784,10 +784,14 @@ class BoxController extends CommonController {
     {
     	//码头部队
     	 
-    	$list =M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit('0,2')->select();
-    	//热门部队
-    	
-    	$this->assign('list',$list);
+     $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('forcee as s on s.uid = u.id')-> field( "u.*,d.*,s.status")->where('status=2')->order('d.did desc')->limit(0,2)->select();
+        $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
+        $uuid = $_SESSION['id'];
+        if($uuid == ''){
+        	$uuid = 0;
+        }
+        $this->assign('img',$img);
+        $this->assign('dongtai',$dongtai);
 
     
     	$this->display('Box/bddz');

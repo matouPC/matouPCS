@@ -4,72 +4,38 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>应聘详情页</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/ypfbwc-3r-zy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/fbwc.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin.css" />
 	</head>
 
 	<body>
-		<div class="show-bg"></div>
 		<header>
-			<include file="Public/header"/>
-					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
-						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
-							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" />
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
+						<div class="h-c-2f">
+							<img src="__PUBLIC__/Home/img/navbg2.png" />
+							<div class="s-f2-r">
+								<input type="text" placeholder="搜索全站" class="find3" />
+								<div class="s-f2-r1">
+									<img src="__PUBLIC__/Home/img/ss-t.png" />
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="h-c-3f">
-						<img src="__PUBLIC__/Home/img/navbg4.png" />
-						<a href="?s=/Home/Zpdt/xqyp/id/{$id}">
-							<div class="h-f3-c1">查看应聘详情页</div>
-						</a>
-						<div class="h-f3-c2">
-							<!--<a href="#">进入跳骚市场</a>-->
+						<div class="h-c-3f">
+							<img src="__PUBLIC__/Home/img/navbg4.png" />
+							<a href="#">
+								<a href="?s=/Home/Zpdt/xqyp/id/{$id}" class="h-f3-c1">查看应聘详情页</a>
+							</a>
 						</div>
-					</div>
 				</div>
 			</div>
 		</header>
-		<div class="spdlb" id="spdlb" title="消息">
-			<div class="titlenab">
-				<img src="__PUBLIC__/Home/img/swtitle.png">
-				<div class="rhideb">
-					<img src="__PUBLIC__/Home/img/hide.png">
-				</div>
-			</div>
-			<div class="fbtypeb">
-				<a>类型：</a>
-				<a href="#">
-					<p id="fbp1">婚礼喜事</p>
-				</a>
-				<a href="#" style="margin-left: 24px;">
-					<p id="fbp2">门面活动</p>
-				</a>
-			</div>
-			<div class="spfxb"></div>
-			<div class="contentb">
-				<textarea style="resize: none; width: 420px; height: 100px;border-radius: 15px;margin-left: 40px; border: 0;padding: 10px;"></textarea>
-			</div>
-			<div class="swbtnb">
-				<div class="swbtn-cb">
-					<div>
-						<img src="__PUBLIC__/Home/img/addp.png" />
-					</div>
-					<div style="margin-left: 10px;">
-						<img src="__PUBLIC__/Home/img/adds.png" />
-					</div>
-					<button class="tjbtnb" id="tjbtn">发布</button>
-				</div>
-			</div>
-		</div>
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-r">
 					<div class="s-c-1f">
-						<a href="?s=/Home/Zpdt1">
+						<a href="?s=/Home/Zpdt1/index/type/0">
 							<img src="__PUBLIC__/Home/img/zpdt-3.png" />
 						</a>
 					</div>
@@ -83,7 +49,12 @@
 									<a href="">
 										<div>
 											<div class="tx">
-												<img src="__PUBLIC__/Home/img/yhmc.png" />
+												<if condition="$lists[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:50px;" src="/MatouPCS/Tu/upload/{$lists.imagename}" alt="" />
+			                                   </if>
+												
 											</div>
 											<p class="yhmc">用户{$lists.username|substr=0,6}</p>
 											<!--<p class="hdsj"></p>-->
@@ -92,148 +63,43 @@
 											<p class="hddd">工作地点：{$lists.addre}</p>
 											<div class="clearfloat"></div>
 										</div>
-
 										<div class="details">
-											<div>
 											<foreach name="data" item="datas">
 												<php>if($lists['rid'] == $datas['pid']){</php>
+												<div>
 													<p>{$datas.type}</p>
-												<p class="sex"><span class="xqcc-c0">{$datas.sex}</span></p>
-												<p class="age"><span class="xqcc-c0">{$datas.age}</span></p>
-												<p class="jtyq"><span class="xqcc-c0">具体要求：</span>{$datas.content}</p>
-												<p class="price">{$datas.price}k/天</p>
-												<?php $bao = explode(',',$datas['zhao']);
+													<p class="sex"><span class="xqcc-c0">{$datas.sex}</span></p>
+													<p class="age"><span class="xqcc-c0">{$datas.age}</span></p>
+													<p class="jtyq"><span class="xqcc-c0">具体要求：</span>{$datas.content}</p>
+													<p class="price">{$datas.price}k/天</p>
+													<?php $bao = explode(',',$datas['zhao']);
 													  array_pop($bao);
 													  $bao_num = count($bao);
 												 ?>
-												<p class="bm">{$bao_num}人报名</p>
+													<p class="bm">{$bao_num}人报名</p>
+													<div class="clearfloat"></div>
+												</div>
 												<php>}</php>
 											</foreach>
-											<div class="clearfloat"></div>
-											</div>
 										</div>
-
 										<div>
-											<p class="sjfb">{$lists.date}发布</p>
+											<p class="sc">
+												已有10人收藏
+											</p>
+											<p class="sjfb">{$lists.date}</p>
 											<div class="clearfloat"></div>
 										</div>
 									</a>
 								</li>
 							</foreach>
 						</ul>
-						<br>
-					<br>
-					<br>
 					</div>
-
 				</div>
 				<div class="clearfloat"></div>
-
 			</div>
-
 		</section>
-		<br>
-		<br>
-		<br>
-	<include file="Public/foot"/>
+		<include file="Public/foot"/>
 	</body>
-	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		//弹窗2
-		$(function() {
-			$("#find").click(function() {
-				//								alert("充值")
-				$("#spdlb").fadeIn(350).show();
-				$(".show-bg").fadeIn(350).show();
-				$("#find").css("background", "#ff5c5d");
-			});
-			$("#spdl-okb").click(function() {
-
-			});
-			$("#spdl-escb").click(function() {
-				$(".spdlsb").hide();
-				$(".show-bg").hide();
-			});
-		});
-		$(function() {
-			$("#fbp1").css("border", "2px solid #ff5c5d");
-			$("#fbp2").click(function() {
-					$("#fbp2").css("border", "2px solid #ff5c5d");
-					$("#fbp1").css("border", "2px solid  #f2f2f2");
-				}),
-				$("#fbp1").click(function() {
-					$("#fbp1").css("border", "2px solid #ff5c5d");
-					$("#fbp2").css("border", "2px solid  #f2f2f2");
-				});
-			$(".rhideb").click(function() {
-				$("#spdlb").hide();
-				$(".show-bg").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-			$("#tjbtn").click(function() {
-				$("#spdlb").fhide();
-				$(".show-bg").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-		});
-	</script>
+	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 
 </html>

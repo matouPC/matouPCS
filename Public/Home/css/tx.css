@@ -1222,7 +1222,7 @@ select {
 	margin-top: 20px;
 	position: relative;
 	min-height: 50px;
-	border-bottom: solid 1px #CCCCCC;
+	/*border-bottom: solid 1px #CCCCCC;*/
 }
 
 .s-c-2f-2f-f img {

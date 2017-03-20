@@ -10,16 +10,16 @@
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
 	</head>
 
-	<body onbeforeunload="checkLeave()">
+	<body>
 		<div class="show-bg"></div>
 		<header>
 			<div class="h-content-main">
-				<div class="h-main-c">
-					<include file="Public/header"/>
+				<div class="h-main-c">		
+				<include file="Public/header"/>
 					<div class="h-c-2f">
 						<div class="s-f2-l-f">
 							<div class="f2-l-1-f">
-								<a href="indexstore.php">
+									<a href="?s=/Home/index">
 									<img src="__PUBLIC__/Home/img/logo.png" alt="喜事码头" />
 								</a>
 							</div>
@@ -355,9 +355,10 @@
 										<p>活动地点：{$newlist.address}</p>
 									</div>
 									<div class="detail">
-										<p>
-											{$newlist.content}
-										</p>
+									<span class="black-333">具体要求：</span>
+											<span class="text48">
+										{$newlist.content}
+											</span>
 									</div>
 								</a>
 								</li>
@@ -377,27 +378,42 @@
 					<div class="s-r-4f">
 						<ul>
 							<foreach name="listn" item="listns">
-								<li>
-									<?php if($_SESSION['id'] == $listns['uid']){ ?>
+							<li>
+										<?php if($_SESSION['id'] == $listns['uid']){ ?>
 										<a href="?s=/Home/Mtbu/rzbddndt/id/{$listns.uid}">
 									<?php }else{ ?>
 										<a href="?s=/Home/Mtbu/rzbddydt/id/{$listns.uid}">
 									<?php } ?>
-										<div class="tj">
-											<img src="__PUBLIC__/Home/img/bdmc.png" width="101px" height="101px">
-											<div class="tj_01">
-												<p class="tj_01_01" style="width: 100px;color: #333;">{$listns.forcename}</p>
-												<p class="tj_01_02" style="width: 100px；color:#666666!important;">部队类型：{$listns.type}</p>
-												<p class="tj_01_02" style="width: 100px；color:#666666!important; ">粉丝数量：110</p>
-												<p class="tj_01_02" style="width: 100px；color:#666666!important;">所在地点：{$listns.address}</p>
-												<p style="font-size: 12px; color:#999; margin-left:-116px; margin-top:14px; display:block;width: 255px;height:50px;overflow: hidden;">
-													{$listns.content}
-												</p>
-											</div>
-
+									<div class="tj">
+										<div class="tj-img">
+								<if condition="$listns[imagename]==''">  
+                                  			<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                   <else />
+                                     <img style="border-radius:50%;width: 101px;height:101"  src="/MatouPCS/Tu/upload/{$listns.imagename}"  /> 
+                                   </if>
+								
 										</div>
-									</a>
-								</li>
+										<div class="tj_01">
+											<strong class="tj_01_01">{$listns.forcename}</strong>
+											<p class="tj_01_02">
+												<span class="black-333">部队类型：</span> {$listns.type}
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">粉丝数量：</span> 110
+											</p>
+											<p class="tj_01_02">
+												<span class="black-333">所在地点：</span> {$listns.address}
+											</p>
+										</div>
+										<div class="clear"></div>
+										<div>
+											<p class="tj_01_04">
+												<span class="black-333">主营产品：</span>
+												<span class="text36">{$listns.content}	</p>
+										</div>
+									</div>
+								</a>
+							</li>
 							</foreach>
 							<div class="clear"></div>
 						</ul>
@@ -407,7 +423,7 @@
 			</div>
 			<div class="clearfloat"></div>
 		</section>
-		<include file="Public/footer"/>
+		<include file="Public/foote"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>

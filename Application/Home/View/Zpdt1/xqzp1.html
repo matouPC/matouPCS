@@ -4,91 +4,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>招聘详情</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/xqzp-3r-zy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style-type: none;
-			}
-			
-			a,
-			img {
-				border: 0;
-			}
-			
-			.demo {
-				width: 720px;
-				margin: 35px auto;
-			}
-			
-			.demo h2 {
-				font-size: 16px;
-				color: #3366cc;
-				height: 30px;
-			}
-			
-			.demo li {
-				float: left;
-			}
-			
-			.text,
-			.button {
-				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
-			}
-			
-			.text {
-				width: 425px;
-				height: 22px;
-				padding: 4px 7px;
-				padding: 6px 7px 2px\9;
-				font: 16px arial;
-				border: 1px solid #cdcdcd;
-				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
-				vertical-align: top;
-				outline: none;
-				margin: 0 -1px 0 0;
-			}
-			
-			.button {
-				width: 79px;
-				height: 32px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-			
-			.button2 {
-				width: 135px;
-				height: 32px;
-				margin-left: 30px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-		</style>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/xq-3r-zy.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin.css" />
 	</head>
 
 	<body>
 		<header>
-		<include file="Public/header"/>
+			<div class="h-content-main">
+				<div class="h-main-c">
+							<include file="Public/header"/>
 					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<img src="__PUBLIC__/Home/img/navbg2.png" alt="" />
 						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<input placeholder="搜索全站" type="text" class="find3" />
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" />
+								<img src="__PUBLIC__/Home/img/ss-t.png" alt="" />
 							</div>
 						</div>
 					</div>
@@ -110,29 +40,98 @@
 				<div class="s-main-r">
 					<div class="userin">
 						<div class="u-img">
-							<a href="#"><img src="__PUBLIC__/Home/img/tx2-3r.png"></a>
+								<php>if($_SESSION['id'] == $list['uid']){</php>
+									  <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                        	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
+                                    </if>
+								</a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}">  
+								<if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                        	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
+                                    </if></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
+                                    </if></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
+                                    </if></a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$list.uid}">
+								  <if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                      	  	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
+                                    </if></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}">  
+								<if condition="$list[imagename]==''">
+										<img src="__PUBLIC__/Home/img/tx2-3r.png" />
+                                      <else />
+                                    	<img src="/MatouPCS/Tu/upload/{$list.imagename}"  alt="" />
+                                    </if></a>
+									</if>
+                                       <php>}</php>
 						</div>
 						<div class="u-cont">
-							<p style="font-size: 14px;"><strong><a href="#">用户{$list.username|substr=0,5}</a></strong></p>
-							<p style="font-size: 12px;margin-top: 10px;">粉丝数量</p>
-							<p style="font-size: 12px;margin-top: 10px;">所在地：{$list.address}</p>
-							<button>关注</button>
+							<p class="tfs14"><strong><if condition="$list[username]==$list[tel]">
+							                      用户{$list.username|substr=0,5}
+								                 </if>
+								               <if condition="$list[username]!=$list[tel]">
+								                用户{$list.username}
+								                  </if></strong></p>
+							<p class="tfs12">职位：{$list.type_u}</p>
+								<p style="font-size: 12px;margin-top: 10px;">所在地：{$list.addre}</p>
+							
+								   	<php>if($_SESSION['id'] == $list['uid']){</php>
+									  <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+									</if>
+									<php>}else{</php>
+                                        <if condition="$list[bdlx]=='1'">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+								<elseif condition="$list[bdlx]=='6'"/>
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$listt.uid}"><button>进入Ta的主页</button></a>
+								<else/>
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$list.uid}"><button>进入Ta的主页</button></a>
+									</if>
+                                       <php>}</php>
 						</div>
 					</div>
-					<br>
+					
 					<div class="bdsz">
 						<div class="bdsz-bt">
 							招聘详情
 						</div>
 						<ul>
 							<li class="selected-con">
-								<a href="javascript://">
-									基本信息
+								<a rel="nofollow" href="javascript://">
+									<h2>基本信息</h2>
 								</a>
 							</li>
 							<li>
-								<a href="javascript://">
-									招聘职位
+								<a rel="nofollow" href="javascript://">
+									<h2>招聘职位</h2>
 								</a>
 							</li>
 						</ul>
@@ -140,210 +139,104 @@
 				</div>
 				<div class="s-main-l">
 					<div class="s-c-2f">
-						<foreach>
-						<div class="s-2f-c1">
-							<span class="hfx"></span>
-							<p>基本信息</p>
+						<div class="s-c-8f-1f">
+							<h2>基本信息</h2>
 						</div>
 						<div class="s-2f-c2">
 							<div class="c2-ct1">
-								<p>所在地点：{$list.addre}</p>
-								<p>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：{$list.remail}</p>
+								<p><span class="xqcc-c0">所在地点：</span><span class="xqcc-c3">{$list.addre}</span></p>
+								<p><span class="xqcc-c0">邮<samp class="kog14"></samp>箱：</span><span class="xqcc-c3">{$list.remail}</span></p>
 							</div>
-							<div class="c2-ct2">
-								<p>QQ号码：{$list.rqq}</p>
-								<p>联系电话：<span id="spdl-p">{$list.rtel|substr=0,3}XXXX{$list.rtel|substr=8,11}<span></p><button id="sp">查看号码 </button>
+							<div class="c2-ct21">
+								<p><span class="xqcc-c0">QQ号码：</span><span class="xqcc-c3">{$list.rqq}</span></p>
+								<p id="spdl-p"><span class="xqcc-c0">联系电话：</span><span class="xqcc-c3">{$list.rtel|substr=0,3}XXXX{$list.rtel|substr=8,11}</span></p><button id="sp">查看号码 </button>
 								<input type="hidden" id="xp" value="{$list.rtel}">
 							</div>
 						</div>
-						<br>
+						
 					</div>
-					<div class="s-c-2f">
-						<div class="s-2f-c1">
-							<span class="hfx"></span>
-							<p>招聘职位</p>
+					<div class="s-c-2fb">
+						<div class="s-c-8f-1f">
+							<h2>招聘职位</h2>
 						</div>
-						<foreach name="data" item="datas">
-							<div class="s-2f-c3">
-								<div class="s-2f-c3-1">
-									<button class="bmbt-a">我要报名</button>
-									<samp class="s-2f-c3-1-1"><p>招聘职位：{$datas.type}</p>
-									<p>薪资：{$datas.price}元/月</p></samp>
-									<samp class="s-2f-c3-1-1"><p>性别：{$list.sex}</p>
-									<p>年龄：{$datas.age}岁</p>
-									<p>工作经验：{$datas.worktime}年</p>
-									</samp>
-									<samp class="s-2f-c3-1-1">
-										<p style="width: auto !important;">工作内容：</p>
-										<p class="s-2f-c3-1-gzq">{$datas.content}</p>
-									</samp>
-									<samp class="s-2f-c3-1-1">
-										<p style="width: auto !important;">岗位要求：</p>
-										<p class="s-2f-c3-1-gzq">{$datas.work}</p>
-							<div class="gzqfgx"></div>
-									</samp>
-									<samp class="clearfloat"></samp>
-									<div class="clearfloat "></div>
+          	<foreach name="data" item="datas">
+						<div class="xqwc">
+							<div class="xqcc">
+								<p class="xqcc-c">
+								<span class="xqcc-c0">招聘职位：</span><span class="xqcc-c3">{$datas.type}</span><span class="xqcc-c1">薪资：</span><span class="xqcc-c3">{$datas.price}元/月</span>
+								</p>
+								<p class="xqcc-c">
+									<span class="xqcc-c0">性别：</span><span class="xqcc-c3">{$list.sex}</span><span class="xqcc-c1">年龄：</span><span class="xqcc-c3">{$datas.age}岁</span><span class="xqcc-c1">工作年龄：</span><span class="xqcc-c3">{$datas.worktime}年</span>
+								</p>
+								<p class="xqcc-c"><span class="xqcc-c0">工作内容：</span><span class="xqcc-c2">{$datas.content}...</span></p>
+								<br>
+								<p class="xqcc-c"><span class="xqcc-c0">岗位要求：</span><span class="xqcc-c2">{$datas.work}...</span></p>
+							</div>
+						<?php $zhao = explode(',',$datas['zhao']);
+								  array_pop($zhao);
+								  $num = count($zhao);
+								   ?>      
+								  <?php if($datas['zhao_st'] == '2'){ ?>
+								<div class="xqbta" style="background:#ccc;">
+									<a href="#">招聘已结束</a>
 								</div>
-								<div class="clearfloat "></div>
+							<?php }else if(in_array($_SESSION['id'],$zhao)){ ?>
+							<div class="xqbta" id="bt-p{$datas.id}" style="background:#ccc;" id="bt-p{$listNews.wid}">
+								<a href="#" style="font-size:12px;">已有{$num}人应聘</a>
 							</div>
-							<br>
-						</foreach>
-						<div class="s-2f-c3">
-							<div class="s-2f-c3-1">
-								<button class="bmbt-b">我要报名</button>
-								<samp class="s-2f-c3-1-1"><p>招聘职位：摄影师</p>
-								<p>薪资：3000-6000元/月</p></samp>
-								<samp class="s-2f-c3-1-1"><p>性别：女</p>
-								<p>年龄：25岁</p>
-								<p>工作经验：1-2年</p>
-								</samp>
-								<samp class="s-2f-c3-1-1">
-									<p style="width: auto !important;">工作内容：</p>
-									<p class="s-2f-c3-1-gzq">工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容</p>
-								</samp>
-								<samp class="s-2f-c3-1-1">
-									<p style="width: auto !important;">岗位要求：</p>
-									<p class="s-2f-c3-1-gzq">工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容工作内容</p>
-								</samp>
-								<samp class="clearfloat"></samp>
-								<div class="clearfloat "></div>
-							</div>
+							<?php }else{ ?>
+								<?php if(empty($_SESSION['id'])){ ?>
+								<div class="xqbta" onclick="alert('请先登录')" id="bt-p{$datas.id}">
+									<a href="#">我要应聘</a>
+								</div>
+								<?php }else{ ?>
+								<div class="xqbta" onclick="zhao({$datas.id})" id="bt-p{$datas.id}">
+									<a href="#">我要应聘</a>
+								</div>
+								<?php } ?>
+							<?php } ?>
 							<div class="clearfloat "></div>
 						</div>
+						</foreach>
 						<div class="clearfloat "></div>
 					</div>
 
 					<div class="s-c-4f">
-						<div class="s-tf-btn" style="margin-right: 5px;">
+						<div class="s-tf-btn">
 							<p>分享
 							</p>
-							<img src="__PUBLIC__/Home/img/xzfx.png" />
+							<img src="__PUBLIC__/Home/img/xzfx.png" alt="" />
 						</div>
 						<div class="clearfloat "></div>
 					</div>
 					<div class="clearfloat "></div>
-
-					<br>
-					<br>
-					<div class="clearfloat "></div>
 				</div>
 				<div class="clearfloat "></div>
 		</section>
-		<br>
-		<br>
-		<br>
-		<include file="Public/foot"/>
+<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js "></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js "></script>
-	<script type="text/javascript ">
-		$(document).ready(function() {
-			$(".con ").eq(0).show();
-			$(".bdsz ul li ").click(function() {
-				var num = $(".bdsz ul li ").index(this);
-				$(".con ").hide();
-				$(".con ").eq(num).show().slblings().hide();
-			})
-		});
-		//----------------------------remove tab切换样式--------------------------
-		$('.bdsz li').click(function() {
-			$(this).parents('.s-main-r').children('.bdsz').each(function() {
-				$('li', this).removeClass('selected-con');
-			});
-			$(this).attr('class', 'selected-con');
-		});
-		$(function() {
+	<script src="__PUBLIC__/Home/js/showwin.js"></script>
+		<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js "></script>
+<script type="text/javascript">
+function zhao(id){
+	$.ajax({
+		url:"?s=/Home/Zpdt1/xqzp_zhao/id/"+id,
+		type:"get",
+		dataType:"json",
+		success:function(data){
+			$("#bt-p"+id+" a").css("font-size", "12px");
+			$("#bt-p"+id).css("background", "#ccc");
+			$("#bt-p"+id+" a").text("已有"+data+"人应聘");
+		},error:function(){
+			alert('no');
+		}
+	});
+	// alert(id);
+	// $("#bt-p"+id+" a").css("font-size","12px");
+	// $("#bt-p"+id).css("background","#ccc");
+	// $("#bt-p"+id+" a").text("已有10人应聘");
+};
 
-				$("#tt ").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音 ",
-						result: {
-							ff: "qq "
-						}
-					}, {
-						title: "中国移动网上营业厅 "
-					}, {
-						title: "中国银行 "
-					}, {
-						title: "中国移动 "
-					}, {
-						title: "中国好声音第三期 "
-					}, {
-						title: "中国好声音 第一期 "
-					}, {
-						title: "中国电信网上营业厅 "
-					}, {
-						title: "中国工商银行 "
-					}, {
-						title: "中国好声音第二期 "
-					}, {
-						title: "中国地图 "
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		//		新增
-		$(function() {
-			$("#hfx3-1").click(function() {
-				$(".txfg1-c2-1").hide();
-				//				$(".txfg1-c1-1").hide();
-				$(".txfg1").css("height", "auto");
-				$("#adds-f-c1").on("click", function() {
-					$(".s-c-3f").detach();
-					$(".txfg1").css("height", "125px");
-					$(".txfg1-c2-1").show();
-				});
-			});
-		});
-		//查看号码
-		$(function() {
-			$("#sp").click(function() {
-				//				alert("充值")
-				$("#spdl").show();
-			});
-			$("#spdl-ok").click(function() {
-				var xp = $('#xp').val();
-				$("#spdl-p").text(xp);
-				$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
-				//				<input type="text"  class="time" id="stime">
-				if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
-					//					$("#id").value = "5"
-					//					c = c-1
-					setTimeout(function() {
-						$(".spdl").hide();
-					}, 3000);
-				}
-			});
-			$("#spdl-esc").click(function() {
-				$(".spdl").hide();
-			});
-		});
-	</script>
-
+</script>
 </html>

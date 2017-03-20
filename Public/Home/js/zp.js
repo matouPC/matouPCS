@@ -227,3 +227,24 @@ function onbeforeunload_handler(){
     $('#types').val('');
     return warning;      
 }
+
+//报名招聘
+function zhao(id){
+  $.ajax({
+    url:"?s=/Home/Zpdt1/xqzp_zhao/id/"+id,
+    type:"get",
+    dataType:"json",
+    success:function(data){
+      $("#bt-p"+id+" a").css("font-size", "12px");
+      $("#bt-p"+id).css("background", "#ccc");
+      $("#bt-p"+id+" a").text("已有"+data+"人应聘");
+    },error:function(){
+      alert('no');
+    }
+  });
+  // alert(id);
+  // $("#bt-p"+id+" a").css("font-size","12px");
+  // $("#bt-p"+id).css("background","#ccc");
+  // $("#bt-p"+id+" a").text("已有10人应聘");
+};
+//消耗码头币

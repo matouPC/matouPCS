@@ -1,0 +1,58 @@
+	           
+	               	<foreach name="dongtai" item="v">
+							<div class="s-c-3f-1f">
+								<div class="yhtx">
+									<a href="">
+										<img src="__PUBLIC__/Home/img/yhmc.png" />
+									</a>
+									<div class="vip">
+										<img src="__PUBLIC__/Home/img/rzlogo.png" />
+									</div>
+								</div>
+								<p class="yhmc">
+								 <if condition="$v[username]==$v[tel]">
+							 {$v.username|substr=0,5}
+						    </if>
+							<if condition="$v[username]!=$v[tel]">
+							{$v.username}
+							 </if>
+								</p>
+								<p class="zw">职位名称：摄影师</p>
+								<p class="szd">所在地：{$v.addre}</p>
+								<p class="dtnr">
+								{$v.content}
+								</p>
+								<ul>
+									<foreach name='img' item='vd'>
+								<if condition="$v[did]==$vd[pid]">
+								<li>
+									<a rel="gallery1" class="boxer" href="/matouPC/Uploads/{$vd.imagename}">
+										<div class="pic">
+											<img src="/matouPCS/Uploads/{$vd.imagename}" />
+										</div>
+									</a>
+								</li>
+							</if>
+								</foreach>
+									<div class="clear"></div>
+								</ul>
+								<div class="bottom">
+									<p class="left">{$v.time}</p>
+									<div class="right dz-qx">
+										<p onclick="zan1({$v.did},{$v.zan})" class="dz dz-qx">
+													<?php $zan = explode(',',$v['zid']);
+														  array_pop($zan);
+														   ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z{$v.did}" style="font-size: 17px;" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z{$v.did}" style="font-size: 17px;" class="icon-dz"></span>
+													<?php } ?>
+													<span style="font-size: 17px;" id="s{$v.did}">{$v.zan}</span></p> 
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</foreach>
+						

@@ -4,88 +4,61 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>招聘详情页</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/zpfbwc-3r-zy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/fbwc.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin.css" />
 	</head>
 
 	<body>
-		<div class="show-bg"></div>
 		<header>
-			<include file="Public/header"/>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
 					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<img src="__PUBLIC__/Home/img/navbg2.png" alt="" />
 						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<input type="text" placeholder="搜索全站" class="find3" />
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" />
+								<img src="img/ss-t.png" alt="" />
 							</div>
 						</div>
 					</div>
 					<div class="h-c-3f">
-						<img src="__PUBLIC__/Home/img/navbg4.png" />
-						<a href="?s=/Home/Zpdt1/xqzp/id/{$id}">
-							<div class="h-f3-c1">查看招聘详情页</div>
+						<img src="__PUBLIC__/Home/img/navbg4.png" alt="" />
+						<a href="#">
+							<a href="?s=/Home/Zpdt1/xqzp/id/{$id}" class="h-f3-c1">查看招聘详情页</a>
 						</a>
-						<div class="h-f3-c2">
-							<!--<a href="#">进入跳骚市场</a>-->
-						</div>
 					</div>
 				</div>
 			</div>
 		</header>
-		<div class="spdlb" id="spdlb" title="消息">
-			<div class="titlenab">
-				<img src="__PUBLIC__/Home/img/swtitle.png">
-				<div class="rhideb">
-					<img src="__PUBLIC__/Home/img/hide.png">
-				</div>
-			</div>
-			<div class="fbtypeb">
-				<a>类型：</a>
-				<a href="#">
-					<p id="fbp1">婚礼喜事</p>
-				</a>
-				<a href="#" style="margin-left: 24px;">
-					<p id="fbp2">门面活动</p>
-				</a>
-			</div>
-			<div class="spfxb"></div>
-			<div class="contentb">
-				<textarea style="resize: none; width: 420px; height: 100px;border-radius: 15px;margin-left: 40px; border: 0;padding: 10px;"></textarea>
-			</div>
-			<div class="swbtnb">
-				<div class="swbtn-cb">
-					<div>
-						<img src="__PUBLIC__/Home/img/addp.png" />
-					</div>
-					<div style="margin-left: 10px;">
-						<img src="__PUBLIC__/Home/img/adds.png" />
-					</div>
-					<button class="tjbtnb" id="tjbtn">发布</button>
-				</div>
-			</div>
-		</div>
+		
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-r">
 					<div class="s-c-1f">
 						<a href="?s=/Home/Zpdt/index/type/0">
-							<img src="__PUBLIC__/Home/img/jrypq.png"/>
+							<img src="__PUBLIC__/Home/img/jrypq.png" alt=""/>
 						</a>
 					</div>
-
 				</div>
 				<div class="s-main-l">
-					<div class="s-c-3f">
-						<foreach name="list" item="lists">
-							<br>
-							<div class="f3-c-1" style="margin-top: -20px!important;">
-								<a href="?s=/Home/Zpdt1/xqzp/id/{$lists.id}">
-									<img src="__PUBLIC__/Home/img/yhmc.png" height="60" width="61">
-
+					<div class="s-c-3f-zp">
+						<div class="f3-c-1">
+							<foreach name="list" item="lists">
+								<a href="?s=/Home/Zpdt/xqyp/id/{$lists.eid}">
+									<div>
+										<div class="tx">
+											<if condition="$lists[imagename]==''">  
+			                                  		<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img src="/MatouPCS/Tu/upload/{$lists.imagename}" alt="" />
+			                                   </if>
+									</div>
+									<p class="app_01_01">{$lists.name}</p>
 									<p class="app_01">所在地：{$lists.addre}</p>
-									<p class="app_01_01">用户{$lists.username|substr=0,3}</p>
-									<ul>
+									<div class="clearfloat"></div>
+									</div>
+									<ul  class="zplistul">
 										<li class="app_01_h">{$lists.name}</li>
 										<li class="app_01_h1 app_01_h2"><span class="xqcc-c0">{$lists.ages}岁</span></li>
 										<li class="app_01_h app_01_h2">工作经验：</li>
@@ -93,133 +66,36 @@
 										<li class="app_01_h app_01_h2">个人简介：</li>
 										<li class="app_01_h1 app_01_oh">{$lists.content}</li>
 										<li class="app_01_h3">{$lists.type}</li>
+										<div class="clearfloat"></div>
 									</ul>
-									<br/>
-									<ul class="app_02">
-										<li class="app_01_h">工作时间：</li>
-										<li class="app_01_h1">{$lists.worktime}</li>
-										<li class="app_01_h app_01_h2">所在公司：</li>
-										<li class="app_01_h1" style="width:114px; height:18px; overflow:hidden;">{$lists.workname}</li>
-										<li class="app_01_h app_01_h2">职位：</li>
-										<li class="app_01_h1">{$lists.typew}</li>
-									</ul>
-									<br/>
+									<foreach name="list_gz" item="list_gzs">
+										<php>if($list_gzs['pid'] == $lists['eid']){</php>
+										<ul class="app_02">
+											<li class="app_01_h">工作时间：</li>
+											<li class="app_01_h1">{$list_gzs.worktime}</li>
+											<li class="app_01_h app_01_h2">所在公司：</li>
+											<li class="app_01_h1">{$list_gzs.workname}</li>
+											<li class="app_01_h app_01_h2">职位：</li>
+											<li class="app_01_h1">{$list_gzs.typew}</li>
+											<div class="clearfloat"></div>
+										</ul>
+										<php>}</php>
+									</foreach>
 									<ul class="app_03">
-										<li class="">已有{$lists.collect}人收藏</li>
-										<li class="app_03_01" style="float:right; margin-right:24px;">2016.12.12发布</li>
+										<li class="">已有10人收藏</li>
+										<li class="app_03_01">{$lists.date}</li>
+										<div class="clearfloat"></div>
 									</ul>
 								</a>
-							</div>	
-						</foreach>					
+							</foreach>
+						</div>
 					</div>
 				</div>
 				<div class="clearfloat"></div>
-
 			</div>
-
 		</section>
-		<br>
-		<br>
-		<br>
 		<include file="Public/foot"/>
 	</body>
-	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		//弹窗2
-		$(function() {
-			$("#find").click(function() {
-				//								alert("充值")
-				$("#spdlb").fadeIn(350).show();
-				$(".show-bg").fadeIn(350).show();
-				$("#find").css("background", "#ff5c5d");
-			});
-			$("#spdl-okb").click(function() {
-
-			});
-			$("#spdl-escb").click(function() {
-				$(".spdlsb").hide();
-				$(".show-bg").hide();
-			});
-		});
-		$(function() {
-			$("#fbp1").css("border", "2px solid #ff5c5d");
-			$("#fbp2").click(function() {
-					$("#fbp2").css("border", "2px solid #ff5c5d");
-					$("#fbp1").css("border", "2px solid  #f2f2f2");
-				}),
-				$("#fbp1").click(function() {
-					$("#fbp1").css("border", "2px solid #ff5c5d");
-					$("#fbp2").css("border", "2px solid  #f2f2f2");
-				});
-			$(".rhideb").click(function() {
-				$("#spdlb").hide();
-				$(".show-bg").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-			$("#tjbtn").click(function() {
-				$("#spdlb").hide();
-				$(".show-bg").hide();
-				$("#find").css("background", "#bfbfbf");
-				$("#find").css("color", "#fff");
-			});
-		});
-	</script>
+	<script src="js/scrolltopcontrol.js"></script>
 
 </html>

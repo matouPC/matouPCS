@@ -6,6 +6,8 @@
 		<title>招聘填写</title>
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/txzp-3r-zy.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/input.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
 		<style type="text/css">
 			* {
 				margin: 0;
@@ -79,7 +81,7 @@
 			}
 		</style>
 	</head>
-
+	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<body>
 		<header>
 			<include file="Public/header"/>
@@ -109,13 +111,11 @@
 							<li class="selected-con">
 								<a href="javascript://">
 									基本信息
-									<img class="list-b" src="__PUBLIC__/Home/img/list-2-gray.png" style="position: absolute; top: 76px; right: 70px;" />
 								</a>
 							</li>
 							<li>
-								<a href="javascript://">
+								<a href="javascript://" id="tap">
 									招聘职位
-									<img class="list-d" src="__PUBLIC__/Home/img/list-2-gray.png" style="position: absolute; top: 116px; right: 70px;" />
 								</a>
 							</li>
 						</ul>
@@ -125,138 +125,192 @@
 					<div class="s-c-2f">
 						<div class="s-2f-c1">
 							<span class="hfx"></span>
-							<p>基本信息</p>
+							<p><strong>基本信息</strong></p>
 						</div>
 						<div class="s-2f-c2">
-							<ul>
+							<ul class="tyint">
 								<li>
-									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;工作地点&nbsp;</div>
-									<div class="s-2f-c2ul-r">
-										<select style="width: 134px;height: 30px;border: 1px solid #dedede;position: relative;top: -2px;">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-										<input type="text" style="width: 233px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">
+									<div class="mprofession">
+										<div class="litl">
+											<p class="litx">*</p>
+											<p class="litc">工作地点</p>
+											<p class="cf"></p>
+										</div>
+										<div class="litr">
+											<input type="text" class="w95s" readonly="readonly" name="address" id="address" value="" data-value="" onclick="appendCity(this,'danxuan')" placeholder="请选择">
+											<input id="xsdz" disabled="disabled"  class="w209" type="text" placeholder="填写详细地址" />
+										</div>
+										<div class="cf"></div>
+								</li>
+								<li>
+									<div class="mphone">
+										<div class="litl">
+											<p class="litx">*</p>
+											<p class="litc">联系电话</p>
+											<p class="cf"></p>
+										</div>
+										<div class="litr"><input class="w200t" id="tel" type="text"  maxlength="11" placeholder="请输入你的电话" /></div>
+										<div class="cf"></div>
 									</div>
 								</li>
 								<li>
-									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;联系电话&nbsp;</div>
-									<div class="s-2f-c2ul-r">
-										<input type="text" style="width: 200px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">
+									<div class="mqq">
+										<div class="litl">
+											<p class="litx"></p>
+											<p class="litc">Q&nbsp;Q</p>
+											<p class="cf"></p>
+										</div>
+										<div class="litr"><input class="w200t" id="qq" maxlength="10" type="text" placeholder="请输入您的QQ" /></div>
+										<div class="cf"></div>
 									</div>
 								</li>
 								<li>
-									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;Q&nbsp;Q&nbsp;</div>
-									<div class="s-2f-c2ul-r">
-										<input type="text" style="width: 200px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">
-									</div>
-								</li>
-								<li>
-									<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;邮&nbsp;箱&nbsp;</div>
-									<div class="s-2f-c2ul-r">
-										<input type="text" style="width: 373px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">
+									<div class="memail">
+										<div class="litl">
+											<p class="litc">邮&nbsp;箱</p>
+											<p class="cf"></p>
+										</div>
+										<div class="litr"><input class="w200t" id="email" type="email" placeholder="请输入您的邮箱" /></div>
+										<div class="cf"></div>
 									</div>
 								</li>
 							</ul>
+							</div>
 						</div>
-					</div>
 
-					<div class="txfg1">
-						<div class="txfg1-c1-1">
-							<span class="hfx2"></span>
-							<p><strong>招聘职位/<samp>最多添加3个职位</samp></strong></p>
-							<span class="hfx3" id="hfx3-1"><img src="__PUBLIC__/Home/img/tj-sp.png" />添加职位</span>
+						<div class="txfg1" id="ta">
+							<div class="txfg1-c1-1">
+								<span class="hfx2"></span>
+								<p><strong>招聘职位/</strong><samp style="color: #ff5c5d;font-size: 12px;">最多添加3个职位</samp></p>
+								<span class="hfx3" id="hfx3-1"><img src="__PUBLIC__/Home/img/tj-sp.png" />添加职位</span>
+							</div>
+							<div class="txfg1-c2-1"><img src="__PUBLIC__/Home/img/gth.png" /><span class="txfgts">点击右上角"添加职位"完善招聘职位信息</span></div>
+							<ul>
+								<form name="myform" class="addmation">
+									<input type="hidden" name="address" value="">
+									<input type="hidden" name="tel" value="">
+									<input type="hidden" name="qq" value="">
+									<input type="hidden" name="email" value="">
+									<input type="hidden" name="add" value="">
+								</form>
+								<script type="text/javascript">
+									
+
+								</script>
+							</ul>
 						</div>
-						<div class="txfg1-c2-1">点击右上角"添加职位"完善职位要求</div>
-					</div>
-					<!--<div class="s-c-3f">
-							<div class="s-2f-c1">
-								<div class="del-f-c" id="del-f-c1">
-									<img src="img/delete-2.png" />
+						<!--<ul class="tyint">
+							<li>
+								<div class="mprofession">
+									<div class="litl">
+										<p class="litx">*</p>
+										<p class="litc">招聘职位</p>
+										<p class="cf"></p>
+									</div>
+									<div class="litr">
+										<select class="w95s">
+											<option></option>
+											<option>灯光</option>
+										</select> <input class="w209" type="text" placeholder="填写职业名称" />
+										<div class="lidel" id="lidel"><img src="img/delete-2.png" /></div>
+									</div>
+									<div class="cf"></div>
+							</li>
+							<li>
+								<div class="msex">
+									<div class="litl">
+										<p class="litx">*</p>
+										<p class="litc">性&nbsp;别</p>
+										<p class="cf"></p>
+									</div>
+									<div class="litr">
+										<div class="w36"><input class="" type="radio" />男</div>
+										<div class="w36"><input class="" type="radio" />女</div>
+										<div class="w41"><input class="" type="radio" />不限</div>
+									</div>
+									<div class="cf"></div>
 								</div>
-							</div>
-							<div class="s-2f-c2">
-								<ul>
-									<li>
-										<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;招聘职位&nbsp;</div>
-										<div class="s-2f-c2ul-r">
-											<select style="width: 132px;height: 30px;border: 1px solid #dedede;position: relative;top: -2px;">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-											</select>
-											<input type="text" style="width: 205px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;left: 10px;">
-										</div>
-									</li>
-									<li>
-										<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;性&nbsp;别&nbsp;</div>
-										<div class="s-2f-c2ul-r">
-											<samp style="display: block;width: 60px;margin-top:2px;float: left;margin-left: 30px;">
-												<input type="radio" style="margin-right: 8px;"/>男
-											</samp>
-											<samp style="display: block;width: 60px;margin-top:2px;float: left;">
-													<input type="radio" style="margin-right: 8px;"/>女
-												</samp>
-											<samp style="display: block;width: 60px;margin-top:2px;float: left;">
-													<input type="radio" style="margin-right: 8px;"/>不限
-											</samp>
-										</div>
-									</li>
-									<li>
-										<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;年&nbsp;龄&nbsp;</div>
-										<div class="s-2f-c2ul-r">
-											<select style="width:75px;height: 30px;border: 1px solid #dedede;position: relative;top: -2px;">
-												<option>1</option>
-												<option>2</option>
-											</select>&nbsp;岁
-										</div>
-									</li>
-									<li>
-										<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;工作经验&nbsp;</div>
-										<div class="s-2f-c2ul-r">
-											<select style="width: 132px;height: 30px;border: 1px solid #dedede;position: relative;top: -2px;">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-											</select>&nbsp;年
-										</div>
-									</li>
-									<li>
-										<div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;薪&nbsp;资&nbsp;</div>
-										<div class="s-2f-c2ul-r">
-											<input type="text" style="width: 100px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;"><span style="font-size: 20px;">-</span><input type="text" style="width: 100px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">&nbsp;元/月
-										</div>
-									</li>
-									<li>
-										<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;具体要求&nbsp;</div>
-										<div class="s-2f-c2ul-r">
-											<textarea style="width: 348px;height: 110px;border: 1px solid #dedede;position: relative;top: -0px;resize: none;"></textarea>
-										</div>
-									</li>
-									<li style="margin-top: 90px;">
-										<div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;具体要求&nbsp;</div>
-										<div class="s-2f-c2ul-r">
-											<textarea style="width: 348px;height: 110px;border: 1px solid #dedede;position: relative;top: -0px;resize: none;"></textarea>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>-->
+							</li>
+							<li>
+								<div class="mage">
+									<div class="litl">
+										<p class="litx">*</p>
+										<p class="litc">年&nbsp;龄</p>
+										<p class="cf"></p>
+									</div>
+									<div class="litr">
+										<select class="w75s">
+											<option>1</option>
+										</select>&nbsp;岁 </div>
+									<div class="cf"></div>
+								</div>
+							</li>
+							<li>
+								<div class="mprofession">
+									<div class="litl">
+										<p class="litx">*</p>
+										<p class="litc">工作经验</p>
+										<p class="cf"></p>
+									</div>
+									<div class="litr">
+										<select class="w95s">
+											<option></option>
+											<option>灯光</option>
+										</select>&nbsp;年
+									</div>
+									<div class="cf"></div>
+							</li>
+							<li>
+								<div class="mxz">
+									<div class="litl">
+										<p class="litx">*</p>
+										<p class="litc">薪&nbsp;资</p>
+										<p class="cf"></p>
+									</div>
+									<div class="litr"><input class="w75t" type="text" />-<input class="w75t" type="text" />&nbsp;k/月</div>
+									<div class="cf"></div>
+								</div>
+							</li>
+							<li style="height: auto!important;">
+								<div class="mzwjs" style="height: auto!important;">
+									<div class="litl">
+										<p class="litx">*</p>
+										<p class="litc">工作内容</p>
+										<p class="cf"></p>
+									</div>
+									<div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div>
+									<div class="cf"></div>
+								</div>
+							</li>
+							<li style="height: auto!important;">
+								<div class="mzwjs" style="height: auto!important;">
+									<div class="litl">
+										<p class="litx">*</p>
+										<p class="litc">岗位要求</p>
+										<p class="cf"></p>
+									</div>
+									<div class="litr" style="height: auto!important;"><textarea class="w340" type="text"></textarea></div>
+									<div class="cf"></div>
+								</div>
+							</li>
+							<li id="mhllx"></li>
+						</ul>-->
+						<div class="clearfloat "></div>
+
+						<div class="s-tf-btn" onclick="submit()">确认发布</div>
+					</div>
 					<div class="clearfloat "></div>
-
-					<div class="s-tf-btn">确认发布</div>
-				</div>
-				<div class="clearfloat "></div>
 		</section>
-
 		<br>
 		<br>
 		<br>
-	<include file="Public/foot"/>
+		<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js "></script>
+	<script src="__PUBLIC__/Home/js/City_data.js"></script>
+	<script src="__PUBLIC__/Home/js/areadata.js"></script>
+	<script src="__PUBLIC__/Home/js/zp.js"></script>
 	<script type="text/javascript ">
 		$(document).ready(function() {
 			$(".con ").eq(0).show();
@@ -328,26 +382,84 @@
 				height: '0px'
 			}, 300);
 		});
-		//		新增
+		//		新增 
+		var i = 0;
 		$(function() {
-			var i = 0;
-			var a = 0;
 			$("#hfx3-1").click(function() {
-				i++;
-				a++;
+				i += 1;
 				$(".txfg1-c2-1").hide();
 				$(".txfg1").css("height", "auto");
-				$(".txfg1").append('<div class="s-c-3f"><div class="s-2f-c1"><div class="del-f-c" id="del-f-c1"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div></div><div class="s-2f-c2"><ul><li><div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;招聘职位&nbsp;</div><div class="s-2f-c2ul-r"><select style="width: 132px;height: 30px;border: 1px solid #dedede;position: relative;top: -2px;"><option>1</option><option>2</option><option>3</option></select><input type="text" style="width: 205px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;left: 10px;"></div></li><li><div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;性&nbsp;别&nbsp;</div><div class="s-2f-c2ul-r"><samp style="display: block;width: 60px;margin-top:2px;float: left;margin-left: 30px;"><input type="radio" style="margin-right: 8px;"/>男 </samp><samp style="display: block;width: 60px;margin-top:2px;float: left;"><input type="radio" style="margin-right: 8px;"/>女 </samp><samp style="display: block;width: 60px;margin-top:2px;float: left;"><input type="radio" style="margin-right: 8px;"/>不限 </samp></div></li><li><div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;年&nbsp;龄&nbsp;</div><div class="s-2f-c2ul-r"><select style="width:75px;height: 30px;border: 1px solid #dedede;position: relative;top: -2px;"><option>1</option><option>2</option></select>&nbsp;岁 </div></li><li><div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;工作经验&nbsp;</div><div class="s-2f-c2ul-r"><select style="width: 132px;height: 30px;border: 1px solid #dedede;position: relative;top: -2px;"><option>1</option><option>2</option><option>3</option></select>&nbsp;年 </div></li><li><div class="s-2f-c2ul-l"><samp style="display: block;width: 30px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;薪&nbsp;资&nbsp;</div><div class="s-2f-c2ul-r"><input type="text" style="width: 100px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;"><span style="font-size: 20px;">-</span><input type="text" style="width: 100px;height: 28px;border: 1px solid #dedede;position: relative;top: -2px;">&nbsp;元/月 </div></li><li><div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;具体要求&nbsp;</div><div class="s-2f-c2ul-r"><textarea style="width: 348px;height: 110px;border: 1px solid #dedede;position: relative;top: -0px;resize: none;"></textarea></div></li><li style="margin-top: 90px;"><div class="s-2f-c2ul-l"><samp style="display: block;width: 5px;height: 30px;float: left;text-align: left;">*</samp>&nbsp;具体要求&nbsp;</div><div class="s-2f-c2ul-r"><textarea style="width: 348px;height: 110px;border: 1px solid #dedede;position: relative;top: -0px;resize: none;"></textarea></div></li></ul></div></div>');
-				$("#del-f-c1").on("click", function() {
-					$(".s-c-3f").remove();
-//					alert("第" + i + "楼层" + "第" + a + "垃圾");
-					$(".txfg1").css("height", "125px");
-					$(".txfg1-c2-1").show();
-
-				});
+				$(".txfg1").css("border-bottom", "0px");
+				if(i <= 3){
+					$(".addmation").append('<li><ul class="tyint"><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">招聘职位</p><p class="cf"></p></div> <div class="litr"><select class="w95s"  name="type'+i+'" id="xtype'+i+'" style="width:105px;" onchange="gradeChange'+i+'()"><option>经理\\店长</option><option>营业员</option><option>数码师/设计</option><option>视频剪辑师</option><option>摄影师</option><option>摄像师</option><option>化妆师</option><option>策划师</option><option>其他</option></select><span class="types'+i+'"></span><div class="lidel" id="lidel"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div></div><div class="cf"></div></li><li><div class="msex"><div class="litl"><p class="litx">*</p><p class="litc">性&nbsp;别</p><p class="cf"></p></div><div class="litr"><div class="w36"><input class=""  name="sex'+i+'" value="1" checked = "checked" type="radio" />男</div><div class="w36"><input class="" name="sex'+i+'" value="2" type="radio" />女</div><div class="w41"><input class="" name="sex'+i+'" value="3" type="radio" />不限</div></div><div class="cf"></div></div></li><li><div class="mage"><div class="litl"><p class="litx">*</p><p class="litc">年&nbsp;龄</p><p class="cf"></p></div><div class="litr"><select class="w75s" style="width:72px;" name="age'+i+'" ><option>不限</option><option>18-25</option><option>25-30</option><option>30-35</option><option>>35</option></select>&nbsp;岁 </div><div class="cf"></div></div></li><li><div class="mprofession"><div class="litl"><p class="litx">*</p><p class="litc">工作经验</p><p class="cf"></p></div><div class="litr"><select class="w95s" style="width:72px;" name="timework'+i+'"><option>不限</option><option>1-2</option><option>2-5</option><option>5-10</option><option>>10</option></select>&nbsp;年 </div><div class="cf"></div></li><li><div class="mxz"><div class="litl"><p class="litx">*</p><p class="litc">薪&nbsp;资</p><p class="cf"></p></div><div class="litr"><input class="w75t" type="text" name="price1'+i+'" /> — <input class="w75t" name="price2'+i+'" type="text" />&nbsp;元/月</div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作内容</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="content'+i+'" type="text"></textarea></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">岗位要求</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="yaoqiu'+i+'" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
+						$(".lidel").on("click", function() {
+							i-=1;
+							$(this).parent().parent().parent().parent().parent().remove();
+							if($(".s-main-l").css("height") == "388px") {
+								//							alert("605")
+								$(".txfg1-c2-1").show();
+								$(".txfg1").css("border-bottom", "1px solid #999");
+							}
+						});
+					}else{
+						alert('滚犊子');
+					}
 			});
-
 		});
+
+		//		H-S-CONTENT滑动跳转
+		$(function() {
+			//				拿到点击按钮
+			$("#tap").click(function() {
+				//					$("html,body").animate({scrollTop: $($.attr(this, 'href')).offset().top}, 1200);
+				$("html,body").animate({
+					scrollTop: $("#ta").offset().top
+				}, 600);
+				return false;
+			});
+		});
+		function submit(){
+			var form = document.myform;
+			if(document.getElementById('address').value == '' || document.getElementById('tel').value == ''  || document.getElementById('qq').value == '' || document.getElementById('email').value == ''){
+				alert('滚犊子');
+			}else{
+			form.address.value = document.getElementById('address').value;
+			form.ad.value = document.getElementById('ad').value;
+			form.add.value = document.getElementById('xsdz').value;
+			form.tel.value = document.getElementById('tel').value;
+			form.qq.value = document.getElementById('qq').value;
+			form.email.value = document.getElementById('email').value;
+			form.action = "?s=/Home/Zpdt/txzpgo";
+			form.method="post";
+			form.submit();
+			}
+		}
+		
+	function gradeChange1(){
+	    var checkText=$("#xtype1").find("option:selected").text();
+	    if(checkText == '其他'){
+	    	$('.types1').html('<input class="w209" type="text" name="zymc1" placeholder="填写职业名称" />');
+	    }else{
+	    	$('.types1').html('<input class="w209" type="hidden" name="zymc1" placeholder="填写职业名称" />');
+	    }
+	}
+	function gradeChange2(){
+	    var checkText=$("#xtype2").find("option:selected").text();
+	    if(checkText == '其他'){
+	    	$('.types2').html('<input class="w209" type="text" name="zymc2" placeholder="填写职业名称" />');
+	    }else{
+	    	$('.types2').html('<input class="w209" type="hidden" name="zymc2" placeholder="填写职业名称" />');
+	    }
+	}
+	function gradeChange3(){
+	    var checkText=$("#xtype3").find("option:selected").text();
+	    if(checkText == '其他'){
+	    	$('.types3').html('<input class="w209" type="text" name="zymc3" placeholder="填写职业名称" />');
+	    }else{
+	    	$('.types3').html('<input class="w209" type="hidden" name="zymc3" placeholder="填写职业名称" />');
+	    }
+	}
+
 	</script>
 
 </html>

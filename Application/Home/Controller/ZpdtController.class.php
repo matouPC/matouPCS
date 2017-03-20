@@ -55,7 +55,7 @@ class ZpdtController extends Controller
                 $xsdt1['age'] = $_POST['age2'];
                 $xsdt1['type'] = $_POST['type2'];
                 $xsdt1['worktime'] = $_POST['timework2'];
-                $xsdt['price'] = $_POST['price12'].'-'.$_POST['price22'];
+                $xsdt1['price'] = $_POST['price12'].'-'.$_POST['price22'];
                 $xsdt1['type'] = $_POST['type2'];
                 $xsdt1['content'] = $_POST['content2'];
                 $xsdt1['work'] = $_POST['yaoqiu2'];
@@ -69,7 +69,7 @@ class ZpdtController extends Controller
                 $xsdt2['age'] = $_POST['age3'];
                 $xsdt2['type'] = $_POST['type3'];
                 $xsdt2['worktime'] = $_POST['timework3'];
-                $xsdt['price'] = $_POST['price13'].'-'.$_POST['price23'];
+                $xsdt2['price'] = $_POST['price13'].'-'.$_POST['price23'];
                 $xsdt2['type'] = $_POST['type3'];
                 $xsdt2['content'] = $_POST['content3'];
                 $xsdt2['work'] = $_POST['yaoqiu3'];
@@ -121,13 +121,13 @@ class ZpdtController extends Controller
         }
         
     }
-    
-
     public function zpfb(){
         //招聘发布完成
-        $list = M('user as u')->join('employ as e on u.id = e.uid')->join('employwork as m on e.eid = m.pid')->order('e.eid desc')->limit('0,3')->select();
+        $list = M('user as u')->join('employ as e on u.id = e.uid')->order('e.eid desc')->limit('0,3')->select();
+        $list_gz = M('employwork')->select();
         $id = M('recruit1')->order('rid desc')->find();
         $this->assign('list',$list);
+        $this->assign('list_gz',$list_gz);
         $this->assign('id',$id['rid']);
         $this->display('Zpdt1/zpfbwc');
     }

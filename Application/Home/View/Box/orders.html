@@ -6,10 +6,18 @@
             <a href="?s=/Home/xsdt/xqxs/id/{$list[$i]['psid']}">
                 <div class="s-l-1f">
                     <div class="yhtx">
-                        <img src="__PUBLIC__/Home/img/yhmc.png" />
+                       <if condition="$list[$i][imagename]==''">  
+                                   <img src="__PUBLIC__/Home/img/yhmc.png"/>
+                                   <else />
+                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/{$list[$i].imagename}"  /> 
+                                   </if>
                     </div>
                     <p class="yhmc">
-                       用户{$list[$i]['username']|substr=0,6}
+                     <if condition="$list[$i][tel]==$list[$i][username]">  
+					用户{$list[$i].username|substr=0,5}
+					<else />
+					用户{$list[$i].username}
+					</if>
                     </p>
                     <p class="hdsj">
                         活动时间：{$list[$i]['time']}

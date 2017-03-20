@@ -22,7 +22,7 @@
 										<img src="__PUBLIC__/Home/img/logo.png" alt="喜事码头" />
 									</a>
 								</div>
-								<a href="?s=/Home/Zpdt1">
+								<a href="?s=/Home/Zpdt1/index/type/0">
 									<div class="f2-l-2-f">招聘大厅</div>
 								</a>
 								<div class="f2-l-3-f">应聘区</div>
@@ -327,14 +327,25 @@
 						<ul>
 							<!-- 推荐应聘 -->
 							<foreach name="listn" item="listns">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
 							<li>
-								<a href="#">
+									<a href="?s=/Home/Zpdt/xqyp/id/{$listns.eid}">
 									<div class="yp">
 										<div class="xg">
 											<div class="xg-img">
+<<<<<<< HEAD
 												<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
 
+=======
+													<if condition="$listns[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                      <else />
+                                      	<img src="/matouPCS/Tu/upload/{$listns.imagename}"  style="border-radius:50%" width="101" height="101" />
+                                    </if>
+>>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
 											</div>
 											<div class="xg_01">
 												<div class="xg_01_01">
@@ -387,7 +398,11 @@
 									<?php } ?>
 									<div class="tj">
 										<div class="tj-img">
-											<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+									<if condition="$listnns[logo]==''">  
+                                	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                   <else />
+                                     <img style="border-radius:50%" width="101" height="101" src="/MatouPCS/Tu/upload/{$listnns.logo}"  /> 
+                                   </if>
 										</div>
 										<div class="tj_01">
 											<strong class="tj_01_01">{$listnns.forcename}</strong>
@@ -420,7 +435,7 @@
 			</div>
 			<div class="clearfloat"></div>
 		</section>
-		<include file="Public/footer"/>
+		<include file="Public/foote"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/City_data.js"></script>

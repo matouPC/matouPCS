@@ -100,9 +100,9 @@
 							</li>
 							<li style="width: 58px;">
 								<?php if(empty($_SESSION['username'])){ ?>
-									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏夹</a>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">收藏报名</a>
 								<?php }else{ ?>
-									<a href="?s=/Home/User/scj">收藏夹</a>
+									<a href="?s=/Home/User/scj">收藏报名</a>
 								<?php } ?>
 								<div class="str"></div>
 							</li>
@@ -409,11 +409,9 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
-				//  alert(tu);
-
 				    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/Index/usave1",
+				         url:"/matouPCS/index.php/Home/user/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
 				
@@ -1141,9 +1139,10 @@
 								<p class="p3">婚礼喜事</p>
 							</div>
 							<div class="s-f4-r-4f">
-								<div class="center ljyp">
-									<a href="">立即加入</a>
-								</div>
+							<a href="?s=/Home/Mtbu/rzbd"><div style="width: 110px; height: 35px;" class="center">
+								立即加入
+								</div></a>
+							</div>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -1196,14 +1195,12 @@
 								<p class="p3">免费入驻</p>
 								<p class="p4">全国宣传</p>
 							</div>
-							<a href="?s=/Home/Tjcs/spcj" >
-
 							<div class="s-f5-l-4f">
-								<div style="width: 110px; height: 35px;" class="center">
-									<button>立即入驻</button>
+									<div style="width: 110px; height: 35px;" class="center">
+							<a href="?s=/Home/Tjcs/spcj" >立即入驻</a>
 								</div>
 							</div>
-						</a>
+						
 						</div>
 
 						<div class="wharf">
@@ -1447,9 +1444,8 @@
 				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
-						
-						<p>© 20016－2017 xishimatou.com, all rights reserved 郑州码头网络技术有限公司 </p>
-						<p>豫ICP备16015506号 喜事码头</p>
+						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
 			</div>
@@ -1457,6 +1453,10 @@
 	</body>
 </html>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
 	</body>
 	<script type="text/javascript" src="j/matouPCS/Public/Home/s/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>

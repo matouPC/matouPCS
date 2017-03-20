@@ -203,5 +203,7 @@ class TzscController extends Controller
         $this->assign('list',$list);
         $this->display('Tzsc/xzfbwc');
     }
-
+ 
+  
+    
 }

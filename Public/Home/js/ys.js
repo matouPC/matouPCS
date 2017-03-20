@@ -168,3 +168,53 @@ function onbeforeunload_handler(){
     setCookie("bd",'');//活动时间   
     return warning;      
 }
+//form的提交
+    function submit(){
+            var form = document.myform;         
+            form.action = "?s=/Home/Ysq/txysgo";
+            form.method="post";
+            form.submit();
+        }
+// 应赏详情
+    //查看号码
+        $(function() {
+            $("#sp").click(function() {
+                //              alert("充值")
+                $("#spdl").show();
+            });
+            $("#spdl-ok").click(function() {
+                var xp = $('#xp').val();
+                $("#spdl-p").text("联系电话："+xp);
+                $("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
+                //              <input type="text"  class="time" id="stime">
+                if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
+                    //                  $("#id").value = "5"
+                    //                  c = c-1
+                    setTimeout(function() {
+                        $(".spdl").hide();
+                    }, 3000);
+                }
+            });
+            $("#spdl-esc").click(function() {
+                $(".spdl").hide();
+            });
+        });
+// 应赏详情-》收藏
+function shou(did){
+    if(window.confirm('确定收藏?')){
+        $.ajax({
+            url:"?s=/Home/Ysq/xqys_shou/did/"+did,
+            type:"get",
+            success:function(data){
+                alert(data);
+                $("#bt-sc").text("已收藏");
+                $("#bt-sc").css("text-align","center");
+                $("#bt-sc img").hide();
+            },error:function(){
+                alert('no');
+            }
+        });
+    }
+    
+    
+};

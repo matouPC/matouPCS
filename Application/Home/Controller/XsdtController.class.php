@@ -132,7 +132,7 @@ class XsdtController extends Controller
     }
     public function xsfb(){
         //悬赏发布完成
-        $xxoo = M('due as d')->join('user as u on d.uid = u.id')->order('d.collect desc')->limit('0,3')->select();
+        $xxoo = M('due as d')->join('user as u on d.uid = u.id')->join('due_dang as a on a.pid = d.did')->order('d.collect desc')->limit('0,3')->select();
         $id = M('reward1')->order('psid desc')->find();
         $this->assign('list',$xxoo);
         $this->assign('wid',$id['psid']);

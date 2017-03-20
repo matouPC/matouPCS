@@ -178,8 +178,6 @@ class YsqController extends Controller
     public function xqys($id){
         //应赏详情
         $list = M('due as d')->join('dueimage as m on d.did = m.pid')->join('duevideo as e on d.did = e.pid')->join('user as u on d.uid = u.id')->join('due_dang as a on d.did = a.pid')->where("d.did = {$id}")->find();
-        // echo '<pre>';
-        // var_dump($list);die;
         $this->assign('list',$list);
         $this->display('Ysq/xqys');
     }
@@ -210,7 +208,7 @@ class YsqController extends Controller
     }
     public function ysxqwc(){
         //应赏发布完成
-        $list = M('reward1 as e')->join('user as u on e.uid = u.id')->select();
+        $list = M('reward1 as e')->join('user as u on e.uid = u.id')->order('e.psid desc')->limit('0,3')->select();
         //相关多少条
         $id = M('due')->order('did desc')->find();
         $data = M('reward2 as r')->join('reward1 as e on r.pid = e.psid')->select();

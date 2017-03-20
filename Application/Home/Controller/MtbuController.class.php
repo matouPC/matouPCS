@@ -53,7 +53,7 @@ class MtbuController extends Controller
     	//$uid = $_SESSION['id'];
     	$address=I('address');
     	
-    	$p=1;
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
     	$total=M('dongtai')->count();//数据记录总数
     	$num=2;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
@@ -62,12 +62,19 @@ class MtbuController extends Controller
     		exit();
     	}//超过最大页数，退出if
     	if($address==''){
-    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->limit($limitpage,$num)->order('d.did desc')->select();
+    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('forcee as s on s.uid = u.id')-> field( "u.*,d.*,s.status")->where('status=2')->limit($limitpage,$num)->order('d.did desc')->select();
     	}else{
-    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("addre='{$address}'")->limit($limitpage,$num)->order('d.did desc')->select();
+    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('forcee as s on s.uid = u.id')-> field( "u.*,d.*,s.status")->where("addre='{$address} and status=2'")->limit($limitpage,$num)->order('d.did desc')->select();
     	}
-    	//$this->ajaxReturn($data);
-    	$this->ajaxReturn($data);
+        $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->select();
+    	$dongtai['nr'] = $data;
+    	$dongtai['tu'] = $img;
+    	if(count($data)>0){
+    	$this->ajaxReturn($dongtai);
+    	}else{
+        $this->ajaxReturn($data);
+    	}
+    	
     
     }
     public function buduijzgz(){
@@ -1043,7 +1050,7 @@ class MtbuController extends Controller
         }
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
         //var_dump($dt);die;
-         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
 
          $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
          $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
@@ -1128,7 +1135,7 @@ class MtbuController extends Controller
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
-    	$data=M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->join('shop as p on p.id = s.sid')->where("s.sid = {$id}")->limit($limitpage,$num)->order('s.id desc')->select();
+    	$data=M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->join('shop as p on p.id = s.sid')->where("s.sid = {$id}")->limit($limitpage,$num)->order('s.id desc')->select();
     	//echo $data;die;
     	$this->ajaxReturn($data);
     
@@ -1148,7 +1155,7 @@ class MtbuController extends Controller
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     //超过最大页数，退出
-    	$data=M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->join('shop as p on p.id = s.sid')->where("s.sid = {$id}")->limit($limitpage,$num)->order('s.zan desc')->select();
+    	$data=M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->join('shop as p on p.id = s.sid')->where("s.sid = {$id}")->limit($limitpage,$num)->order('s.zan desc')->select();
     	//echo $data;die;
     	$this->ajaxReturn($data);
     	
@@ -1280,7 +1287,7 @@ class MtbuController extends Controller
     		$id=$v['id'];
     	}
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
-         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
        //  var_dump($list);die;
         $sp = M('shop')->where("id = {$id}")->select();//我的商铺
         $this->assign('sp',$sp);
@@ -1299,9 +1306,9 @@ class MtbuController extends Controller
     	}
     	$where = I('where');
     	if($where=='z'){
-    	$list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+    	$list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
     	}else{
-    		$list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.zan desc')->limit('0,3')->select();
+    		$list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.zan desc')->limit('0,3')->select();
     	}
           $this->ajaxReturn($list);
     }
@@ -1315,7 +1322,7 @@ class MtbuController extends Controller
     		$id=$v['id'];
     	}
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
-        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         $sp = M('shop')->where("id = {$id}")->select();//我的商铺
         $user = M('shop as s')->join('user as u on u.id = s.uid')->where("s.id = {$id}")->limit('3')->find();
         //基本悬赏信息
@@ -1460,7 +1467,7 @@ class MtbuController extends Controller
     		$id=$v['id'];
     	}
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
-        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
@@ -1491,7 +1498,7 @@ class MtbuController extends Controller
     	}
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
         $sp = M('shop')->where("id = {$id}")->select();//我的商铺
-        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         $uuid = $_SESSION['id'];
         if($uuid == ''){
         	$uuid = 0;
@@ -1530,7 +1537,7 @@ class MtbuController extends Controller
         if($xd > 0){
             $ob = M('shop_liuyan')->add($data);
             if($ob > 0){
-                $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+                $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
                 $this->ajaxReturn($list);
             }
         }
@@ -1561,15 +1568,19 @@ class MtbuController extends Controller
         $jbzp = M('shop as s')->join('recruit1 as e on s.uid = e.uid')->where("s.id = {$id}")->select();
         //详情招聘信息
         $jbzpData = M('shop as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
+        
         //基本应聘信息
-        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->select();
+        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->select();
+        //应聘详情信息
+        $jbypx = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->select();
         //基本闲置
         $jbxz = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->select();
+        $jbxzimg = M('fleaimage')->select();
         //基本求购
         $jbqg = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 2")->select();
-     
+
         //留言
-        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.sex,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
         $uuid = $_SESSION['id'];
         if($uuid == ''){
@@ -1588,8 +1599,10 @@ class MtbuController extends Controller
         $this->assign('jbzp',$jbzp);
         $this->assign('jbzpData',$jbzpData);
         $this->assign('jbyp',$jbyp);
+        $this->assign('jbypx',$jbypx);
         $this->assign('jbxz',$jbxz);
         $this->assign('jbqg',$jbqg);
+        $this->assign('jbxzimg',$jbxzimg);
         $this->assign('dt',$dt);
         $this->assign('sp',$sp);
         $this->display('Mtbu/spbddyxq');

@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/txyp-3r-zy.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/input.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/calendar.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/zyzn_1.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/upimg.css" />
 		<style type="text/css">
 			* {
 				margin: 0;
@@ -83,13 +86,11 @@
 
 	<body>
 		<header>
-		<include file="Public/header"/>
-						<div class="clearfloat"></div>
-					</div>
+			<include file="Public/header"/>
 					<div class="h-c-2f">
 						<img src="__PUBLIC__/Home/img/navbg2.png" />
 						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<input placeholder="搜索全站" type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0); color: white;" />
 							<div class="s-f2-r1">
 								<img src="__PUBLIC__/Home/img/ss-t.png" />
 							</div>
@@ -109,22 +110,22 @@
 							填写应聘
 						</div>
 						<ul>
-							<li class="selected-con">
+							<li id="tab-jbxx" class="selected-con">
 								<a href="javascript://">
 									基本信息
 								</a>
 							</li>
-							<li>
-								<a href="javascript://" id="tap">
+							<li id="tap">
+								<a href="javascript://">
 									工作经历
 								</a>
 							</li>
-							<li>
+							<li id="tab-zpzp">
 								<a href="javascript://">
 									照片作品
 								</a>
 							</li>
-							<li>
+							<li id="tab-spzp">
 								<a href="javascript://">
 									视频作品
 								</a>
@@ -132,23 +133,23 @@
 						</ul>
 					</div>
 				</div>
+				<form name="myform" enctype="multipart/form-data">
 				<div class="s-main-l">
 					<div class="s-c-2f">
 						<div class="s-2f-c1">
 							<span class="hfx"></span>
 							<strong><p>基本信息</p></strong>
 						</div>
-						<form name="jiben">
 						<div class="s-2f-c2">
 							<ul class="tyint">
 								<li>
 									<div class="mname">
 										<div class="litl">
 											<p class="litx">*</p>
-											<p class="litc">姓&nbsp;名</p>
+											<p class="litc">姓&nbsp;&nbsp;&nbsp;&nbsp;名</p>
 											<p class="cf"></p>
 										</div>
-										<div class="litr"><input name="name" class="w200t" type="text" /></div>
+										<div class="litr"><input name="name" id="uname" class="w200t" type="text" /></div>
 										<div class="cf"></div>
 									</div>
 								</li>
@@ -156,12 +157,12 @@
 									<div class="msex">
 										<div class="litl">
 											<p class="litx">*</p>
-											<p class="litc">性&nbsp;别</p>
+											<p class="litc">性&nbsp;&nbsp;&nbsp;&nbsp;别</p>
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<div class="w36"><input class="" name="sex" value="1" checked="checked" type="radio" /> 男</div>
-											<div class="w36"><input class="" name="sex" value="0" type="radio" /> 女</div>
+											<div class="w36"><input class="" id="sex1" name="sex" value="1" type="radio" /> 男</div>
+											<div class="w36"><input class="" id="sex0" name="sex" value="0" type="radio" /> 女</div>
 										</div>
 										<div class="cf"></div>
 									</div>
@@ -170,11 +171,11 @@
 									<div class="mage">
 										<div class="litl">
 											<p class="litx">*</p>
-											<p class="litc">年&nbsp;龄</p>
+											<p class="litc">年&nbsp;&nbsp;&nbsp;&nbsp;龄</p>
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<input class="w75t" name="age"  type="text" />&nbsp;岁
+											<input class="w75t" name="age" id="uage" type="number" />&nbsp;岁
 										</div>
 										<div class="cf"></div>
 									</div>
@@ -183,13 +184,12 @@
 									<div class="mmap">
 										<div class="litl">
 											<p class="litx">*</p>
-											<p class="litc">地&nbsp;区</p>
+											<p class="litc">所在地</p>
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<select class="w200s" name="address">
-												<option value="1">1</option>
-											</select>
+											<input type="text" class="w95s" id="uaddress" readonly="readonly" name="address" id="xz-city" value="" data-value="" onclick="appendCity(this,'danxuan')" placeholder="请选择">
+											<input id="xsdz" name="add" class="w209" id="uadd" type="text" placeholder="填写详细地址" />
 										</div>
 										<div class="cf"></div>
 									</div>
@@ -202,7 +202,7 @@
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<select class="w95s" name="type" id="xtype" onchange="gradeChange()">
+											<select class="w95s" name="type" id="xtype" onchange="gradeChange()" style="width:100px;">
 												<option>-请选择-</option><option>经理/店长</option><option>营业员</option><option>数码师/设计</option><option>视频剪辑师</option><option>摄影师</option><option>摄像师</option><option>化妆师</option><option>策划师</option><option>其他</option>
 											</select>
 											<span class="types"></span>
@@ -227,14 +227,14 @@
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<select class="w200s" style="width:110px;" name="price">
+											<select class="w200s" id="uprice" style="width:110px;" name="price">
 												<option>-请选择-</option>
 												<option>不限</option>
 												<option>2000-4000</option>
 												<option>4000-6000</option>
 												<option>6000-8000</option>
 												<option>> 8000</option>
-											</select> 元/月
+											</select> k/月
 										</div>
 										<div class="cf"></div>
 									</div>
@@ -247,10 +247,7 @@
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<!-- <select class="w95s" name="worktime">
-												<option value="1">1</option>
-											</select>&nbsp;年 -->
-											<input name="worktime"  class="w200t" maxlength="2" style="width:50px;" type="number" /> 年
+											<input name="worktime"  id="uworktime"  class="w200t" maxlength="2" style="width:50px;" type="number" /> 年
 										</div>
 										<div class="cf"></div>
 									</div>
@@ -262,17 +259,18 @@
 											<p class="litc">联系电话</p>
 											<p class="cf"></p>
 										</div>
-										<div class="litr"><input name="tel" maxlength="11" class="w200t" type="text" /></div>
+										<div class="litr"><input name="tel" id="utel" class="w200t" type="text" /></div>
 										<div class="cf"></div>
 									</div>
 								</li>
 								<li>
 									<div class="mqq">
 										<div class="litl">
+											<p class="litx">*</p>
 											<p class="litc">Q&nbsp;Q</p>
 											<p class="cf"></p>
 										</div>
-										<div class="litr"><input class="w200t" name="qq" type="text" /></div>
+										<div class="litr"><input name="qq" id="uqq" class="w200t" type="text" /></div>
 										<div class="cf"></div>
 									</div>
 								</li>
@@ -283,65 +281,147 @@
 											<p class="litc">自我介绍</p>
 											<p class="cf"></p>
 										</div>
-										<div class="litr" style="height: auto!important;"><textarea class="w340" name="content" type="text"></textarea></div>
+										<div class="litr" style="height: auto!important;"><textarea class="w340" id="ucontent" name="content" type="text"></textarea></div>
 										<div class="cf"></div>
 									</div>
 								</li>
-								<li>
+								<!--<li>
 									<div class="mhllx"></div>
-								</li>
+								</li>-->
 							</ul>
 							</div>
-						</form>
 						</div>
 
 						<div class="txfg1" id="ta">
 							<div class="txfg1-c1-1">
 								<span class="hfx2"></span>
-								<p><strong>工作经历/</strong><samp style="color: #ff5c5d;font-size: 12px;">最多添加3个工作经历</samp></p>
+								<p><strong>工作经历/</strong><samp style="color: #ff5c5d;font-size: 12px;">最多上传3个工作经历</samp></p>
 								<span class="hfx3" id="hfx3-1"><img src="__PUBLIC__/Home/img/tj-sp.png" />新增经历</span>
 							</div>
-							<div class="txfg1-c2-1"><img src="__PUBLIC__/Home/img/gth.png" /><span class="txfgts">完善工作经历，展现工作能力及内容，让HR更理解你！</span></div>
-							<ul>
-								<form name="myform" class="addmation1">
-									<input type="hidden" name="names" value="">
-									<input type="hidden" name="sexs" value="">
-									<input type="hidden" name="add" value="">
-									<input type="hidden" name="types" value="">
-									<input type="hidden" name="prices" value="">
-									<input type="hidden" name="worktimes" value="">
-									<input type="hidden" name="tels" value="">
-									<input type="hidden" name="qqs" value="">
-									<input type="hidden" name="con" value="">
-									<input type="hidden" name="ag" value="">
-								</form>
-								<script type="text/javascript">
-								
-									// form.names.value = document.getElementById('name').value;
-								</script>
-							</ul>
-						</div>
-						<div class="txfg1">
-							<div class="txfg1-c1-1">
-								<span class="hfx2"></span>
-								<p><strong>照片作品/</strong><samp style="color: #ff5c5d;font-size: 12px;">最多添加12张照片</samp><samp style="color: #ff5c5d;font-size: 12px;"></samp></p>
-								<span class="hfx3" id="hfx3-1"><img src="__PUBLIC__/Home/img/tj-sp.png" />新增照片</span>
-							</div>
-							<div class="txfg1-c2-1"><img src="__PUBLIC__/Home/img/gth.png" /><span class="txfgts">上传照片作品，展现个人作品及能力，让HR更理解你！</span></div>
-							<ul class="addmation">
+							<div class="txfg1-c2-1"><img src="__PUBLIC__/Home/img/gth.png" /><span class="txfgts">点击右上角"新增经历"完善工作经历</span></div>
+							
+								<ul class="addmation1">
+									<input type="hidden" name="uuname">
 
-							</ul>
+								</ul>
+							
 						</div>
-						<div class="txfg1">
-							<div class="txfg1-c1-1">
-								<span class="hfx2"></span>
-								<p><strong>视频作品/</strong><samp style="color: #ff5c5d;font-size: 12px;">最多添加3个视频</samp></p>
-								<span class="hfx3" id="hfx3-1"><img src="__PUBLIC__/Home/img/tj-sp.png" />新增视频</span>
+						<div class="s-c-2f">
+							<div id="tb" class="s-c-2f-1f">
+								<p>照片作品/</p><span>最多上传12张照片</span>
+								<span class="right" onclick="userYp()" id="hfx3-3">									
+									添加照片
+									<div class="tjsp">
+										<img src="__PUBLIC__/Home/img/tj-sp.png" />
+									</div>
+								</span>
 							</div>
-							<div class="txfg1-c2-1"><img src="__PUBLIC__/Home/img/gth.png" /><span class="txfgts">上传视频作品，展现个人作品及能力，让HR更理解你！</span></div>
-							<ul class="addmation">
+							<div class="s-c-2f-2f-f" id="zp">
+								<div style="font-size: 14px; color: #999999; height: 30px; z-index: -1; line-height: 30px; width: 100%; text-align: center; position: absolute; top: 0;" class="dianji">
+									<div class="gth">
+										<img src="__PUBLIC__/Home/img/gth.png">
+									</div>
+									点击右上角"添加视频"完善作品
+									<div class="clearfloat"></div>
+								</div>
+								<ul>
+								</ul>
+								<div class="shade" onclick="javascript:closeShade()">
+									<div class="">
+										<span class="text_span">
+					
+										</span>
+									</div>
+								</div>
 
-							</ul>
+								<div class="shadeImg" onclick="javascript:closeShadeImg()">
+									<div class="">
+										<img class="showImg" src="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="s-c-3f">
+							<div id="tc" class="s-c-2f-1f">
+								<p>视频作品/</p><span>最多上传3个视频文件</span>
+								<!--<span class="right">
+									添加视频
+									<div class="tjsp">
+										<img src="img/tj-sp.png" />
+									</div>
+								</span>-->
+							</div>
+							<div class="s-c-3f-2f-f">
+								<ul>
+									<li>
+										<div class="na2">
+											<div class="picture1">
+												<img id="pic1" src="__PUBLIC__/Home/img/scsp.png">
+												<input id="upload1" name="file1" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
+											</div>
+											<!--<div class="na2bg">
+												<a onclick="document.getElementById('pic1').click()" href="javascript://">编辑视频封面</a>
+											</div>-->
+										</div>
+										<div class="input-h">
+											<div class="input-bt">
+												<input type="text" name="title1" placeholder="请输入视频标题" />
+											</div>
+											<div class="input-dz">
+												<input type="text" name="video1" placeholder="输入视频链接地址" />
+											</div>
+										</div>
+										<div class="delete-2">
+											<img src="__PUBLIC__/Home/img/delete-2.png" />
+										</div>
+									</li>
+									<li>
+										<div class="na2">
+											<div class="picture2">
+												<img id="pic2" src="__PUBLIC__/Home/img/scsp.png">
+												<input id="upload2" name="file2" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
+											</div>
+											<!--<div class="na2bg">
+												<a onclick="document.getElementById('pic1').click()" href="javascript://">编辑视频封面</a>
+											</div>-->
+										</div>
+										<div class="input-h">
+											<div class="input-bt">
+												<input type="text" name="title2" placeholder="请输入视频标题" />
+											</div>
+											<div class="input-dz">
+												<input type="text" name="video2" placeholder="输入视频链接地址" />
+											</div>
+										</div>
+										<div class="delete-2">
+											<img src="__PUBLIC__/Home/img/delete-2.png" />
+										</div>
+									</li>
+									<li style="margin: 0;">
+										<div class="na2">
+											<div class="picture3">
+												<img id="pic3" src="__PUBLIC__/Home/img/scsp.png">
+												<input id="upload3" name="file3" accept="image/jpg,image/jpeg,image/png" type="file" style="display: none" />
+											</div>
+											<!--<div class="na2bg">
+												<a onclick="document.getElementById('pic1').click()" href="javascript://">编辑视频封面</a>
+											</div>-->
+										</div>
+										<div class="input-h">
+											<div class="input-bt">
+												<input type="text" name="title3" placeholder="请输入视频标题" />
+											</div>
+											<div class="input-dz">
+												<input type="text" name="video3" placeholder="输入视频链接地址" />
+											</div>
+										</div>
+										<div class="delete-2">
+											<img src="__PUBLIC__/Home/img/delete-2.png" />
+										</div>
+									</li>
+									<div class="clearfloat"></div>
+								</ul>
+							</div>
 						</div>
 
 						<!--<ul class="tyint">
@@ -398,8 +478,10 @@
 						</ul>-->
 						<div class="clearfloat "></div>
 
+						</form>
 						<div class="s-tf-btn" onclick="submit()">确认发布</div>
 					</div>
+					
 					<div class="clearfloat "></div>
 		</section>
 		<br>
@@ -409,6 +491,10 @@
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js "></script>
+	<script src="__PUBLIC__/Home/js/City_data.js"></script>
+	<script src="__PUBLIC__/Home/js/calendar.js"></script>
+	<script src="__PUBLIC__/Home/js/txyp.js"></script>
+	<script src="__PUBLIC__/Home/js/dz.js"></script>
 	<script type="text/javascript ">
 		$(document).ready(function() {
 			$(".con ").eq(0).show();
@@ -481,62 +567,223 @@
 			}, 300);
 		});
 		//		新增
-		var i = 0;
 		$(function() {
+			var i = 0;
+			var a = 0;
 			$("#hfx3-1").click(function() {
-				i+=1;
+				a+=1;
 				$(".txfg1-c2-1").hide();
 				$(".txfg1").css("height", "auto");
 				$(".txfg1").css("border-bottom", "0px");
-				if(i <= 3){
-				$(".addmation1").append('<li><ul class="tyint"><li><div class="mhdsj"><div class="litl"><p class="litx">*</p><p class="litc">工作时间</p><p class="cf"></p></div><div class="litr"><input class="w150t" name="workdate1'+i+'" type="text" value="" />&nbsp;到&nbsp;<input class="w150t" type="text" name="workdate2'+i+'" id="" value="" /><div class="liti1"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div><div class="liti2"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">所在公司</p><p class="cf"></p></div><div class="litr"><input class="w200t" name="workname'+i+'" type="text" /></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">担任职位</p><p class="cf"></p></div><div class="litr"><input class="w200t" name="ty'+i+'" type="text" /></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作描述</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea name="miao'+i+'" class="w340" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
-					$(".lidel").on("click", function() {
-						i-=1;
-						$(this).parent().parent().parent().parent().parent().remove();
+				if(a > 3){
+					alert('滚犊子(最多3条)');
+				}else{
+				$(".addmation1").append('<li><div class="delete-gzjl"><img src="/matouPCS/Public/Home/img/delete-2.png" /></div><ul class="tyint"><li><div class="mhdsj"><div class="litl"><p class="litx">*</p><p class="litc">活动时间</p><p class="cf"></p></div><div class="litr"><input readonly="readonly" class="w150t" type="text"  id="dt'+i+'" name="workdate1'+a+'" value="" />&nbsp;到&nbsp;<input readonly="readonly" class="w150t" type="text" name="workdate2'+a+'" id="da'+i+'" value="" /><div class="liti1"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div><div class="liti2"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div></div><div id="dd'+i+'" style="left: 14px !important; top:42px !important"></div><div id="db'+i+'" style="left: 182px !important; top:42px !important"></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">所在公司</p><p class="cf"></p></div><div class="litr"><input class="w200t" name="workname'+a+'" type="text" /></div><div class="cf"></div></div></li><li><div class="memail"><div class="litl"><p class="litx">*</p><p class="litc">担任职位</p><p class="cf"></p></div><div class="litr"><input class="w200t" name="ty'+a+'" type="text" /></div><div class="cf"></div></div></li><li style="height: auto!important;"><div class="mzwjs" style="height: auto!important;"><div class="litl"><p class="litx">*</p><p class="litc">工作描述</p><p class="cf"></p></div><div class="litr" style="height: auto!important;"><textarea class="w340" name="miao'+a+'" type="text"></textarea></div><div class="cf"></div></div></li><li id="mhllx"></li></ul></li>'),
+					$('#dt'+i).val();
+					$(".delete-gzjl").on("click", function() {
+						$(this).parent().remove();
 						if($(".s-main-l").css("height") == "524px") {
 							//							alert("605")
 							$(".txfg1-c2-1").show();
 							$(".txfg1").css("border-bottom", "1px solid #999");
 						}
+						if($('.addmation1').has('li').length > 0) {
+							$('.txfg1-c2-1').css('display', 'none');
+						} else {
+							$('.txfg1-c2-1').css('display', 'block');
+						}
 					});
-				}else{
-					alert('滚犊子');
 				}
+					//-------------------------------日期----------------------------------------
+		$('#dd'+i).calendar({
+			trigger: '#dt'+i,
+			zIndex: 999,
+			format: 'yyyy-mm-dd',
+			onSelected: function(view, date, data) {
+				console.log('event: onSelected')
+			},
+			onClose: function(view, date, data) {
+				console.log('event: onClose')
+				console.log('view:' + view)
+				console.log('date:' + date)
+				console.log('data:' + (data || 'None'));
+			}
+		});
+		$('#db'+i).calendar({
+			trigger: '#da'+i,
+			zIndex: 999,
+			format: 'yyyy-mm-dd',
+			onSelected: function(view, date, data) {
+				console.log('event: onSelected')
+			},
+			onClose: function(view, date, data) {
+				console.log('event: onClose')
+				console.log('view:' + view)
+				console.log('date:' + date)
+				console.log('data:' + (data || 'None'));
+			}
+		});
+		i++;
 			});
 
 		});
-		//		H-S-CONTENT滑动跳转
+		
+		//图片上传预览    IE是用了滤镜。
 		$(function() {
-			//				拿到点击按钮
-			$("#tap").click(function() {
-				//					$("html,body").animate({scrollTop: $($.attr(this, 'href')).offset().top}, 1200);
-				$("html,body").animate({
-					scrollTop: $("#ta").offset().top
-				}, 600);
-				return false;
+			$("#pic1").click(function() {
+				$("#upload1").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+				$("#upload1").on("change", function() {
+					var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
+					if(objUrl) {
+						$("#pic1").attr("src", objUrl); //将图片路径存入src中，显示出图片
+					}
+				});
+			});
+			var src = $('.picture1').find("img").attr("src");
+			if(src != '') {
+				$('.na2bg').css('display', 'block');
+			}
+		});
+
+		//建立一個可存取到該file的url
+		function getObjectURL(file) {
+			var url = null;
+			if(window.createObjectURL != undefined) { // basic
+				url = window.createObjectURL(file);
+			} else if(window.URL != undefined) { // mozilla(firefox)
+				url = window.URL.createObjectURL(file);
+			} else if(window.webkitURL != undefined) { // webkit or chrome
+				url = window.webkitURL.createObjectURL(file);
+			}
+			return url;
+		}
+		$(function() {
+			$("#pic2").click(function() {
+				$("#upload2").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+				$("#upload2").on("change", function() {
+					var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
+					if(objUrl) {
+						$("#pic2").attr("src", objUrl); //将图片路径存入src中，显示出图片
+					}
+				});
 			});
 		});
-		function submit(){
-			var form = document.myform;
-			var jiben = document.jiben;
-			if(jiben.name.value == '' || jiben.sex.value == '' || jiben.address.value == '' ||  jiben.type.value == '' || jiben.price.value == '' || jiben.worktime.value == '' || jiben.tel.value == '' || jiben.qq.value == '' || jiben.content.value == ''){
-				alert('滚犊子');
-			}else{
-				form.names.value = jiben.name.value;
-				form.sexs.value = jiben.sex.value;
-				form.add.value = jiben.address.value;
-				form.types.value = jiben.type.value;
-				form.prices.value = jiben.price.value;
-				form.worktimes.value = jiben.worktime.value;
-				form.tels.value = jiben.tel.value;
-				form.ag.value = jiben.age.value;
-				form.qqs.value = jiben.qq.value;
-				form.con.value = jiben.content.value;
-				form.action = "?s=/Home/Zpdt1/txypgo";
-				form.method = "post";
-				form.submit();
+		$(function() {
+			$("#pic3").click(function() {
+				$("#upload3").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+				$("#upload3").on("change", function() {
+					var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
+					if(objUrl) {
+						$("#pic3").attr("src", objUrl); //将图片路径存入src中，显示出图片
+					}
+				});
+			});
+		});
+
+		$(function() {
+			var objUrl;
+			var img_html;
+			$("#myFile").change(function() {
+				var img_div = $(".img_div");
+				var filepath = $("input[name='myFile']").val();
+				for(var i = 0; i < this.files.length; i++) {
+					objUrl = getObjectURL(this.files[i]);
+					var extStart = filepath.lastIndexOf(".");
+					var ext = filepath.substring(extStart, filepath.length).toUpperCase();
+
+					if(ext != ".BMP" && ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
+						$(".shade").fadeIn(500);
+						$(".text_span").text("图片限于bmp,png,gif,jpeg,jpg格式");
+						this.value = "";
+						$(".img_div").html("");
+						return false;
+					} else {
+						img_html = "<div class='isImg'><img src='" + objUrl + "' onclick='javascript:lookBigImg(this)' style='height: 100%; width: 100%;' /><div class='na1bg' onclick='javascript:removeImg(this)'><div class='delete-1'><img src='img/delete-1.png' /></div>删除</div></div>";
+						img_div.append(img_html);
+					}
+				}
+				var file_size = 0;
+				var all_size = 0;
+				for(j = 0; j < this.files.length; j++) {
+					file_size = this.files[j].size;
+					all_size = all_size + this.files[j].size;
+					var size = all_size / 1024;
+					if(size > 500) {
+						$(".shade").fadeIn(500);
+						$(".text_span").text("上传的图片大小不能超过100k！");
+						this.value = "";
+						$(".img_div").html("");
+						return false;
+					}
+				}
+				return true;
+			});
+
+			function getObjectURL(file) {
+				var url = null;
+				if(window.createObjectURL != undefined) { // basic
+					url = window.createObjectURL(file);
+				} else if(window.URL != undefined) { // mozilla(firefox)
+					url = window.URL.createObjectURL(file);
+				} else if(window.webkitURL != undefined) { // webkit or chrome
+					url = window.webkitURL.createObjectURL(file);
+				}
+				//console.log(url);
+				return url;
 			}
+		});
+
+		function removeImg(r) {
+			$(r).parent().remove();
 		}
+
+		function lookBigImg(b) {
+			$(".shadeImg").fadeIn(500);
+			$(".showImg").attr("src", $(b).attr("src"))
+		}
+
+		function closeShade() {
+			$(".shade").fadeOut(500);
+		}
+
+		function closeShadeImg() {
+			$(".shadeImg").fadeOut(500);
+		}
+		
+		//H-S-CONTENT滑动跳转
+		$("#tab-jbxx").click(function() {
+			$("html,body").animate({
+				scrollTop: $("#jbxx").offset().top
+			}, 600);
+			return false;
+		});
+		$("#tap").click(function() {
+			//					$("html,body").animate({scrollTop: $($.attr(this, 'href')).offset().top}, 1200);
+			$("html,body").animate({
+				scrollTop: $("#ta").offset().top
+			}, 600);
+			return false;
+		});
+		$("#tab-zpzp").click(function() {
+			$("html,body").animate({
+				scrollTop: $("#tb").offset().top
+			}, 600);
+			return false;
+		});
+		$("#tab-spzp").click(function() {
+			$("html,body").animate({
+				scrollTop: $("#tc").offset().top
+			}, 600);
+			return false;
+		});
+		//提交发布
+		function submit(){
+			var myform = document.myform;
+			myform.action = "?s=/Home/Zpdt1/txypgo";
+			myform.method = "post";
+			myform.submit();
+		}
+
 	</script>
 
 </html>

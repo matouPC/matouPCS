@@ -1,61 +1,70 @@
-   	
-
-		
-						<foreach name="list" item="lists">
-							<div class="s-c-3f">
-								<div class="rmdtct">
-									<ul class="rmdt">
-										<li>
-											<div class="rmdt-1f">
-												<div class="rmdt-1fc1">
-													<p><img src="__PUBLIC__/Home/img/pltx.png" /></p>
-													<p>用户{$lists.username|substr=0,5}</p>
-													<p>logo</p>
-													<p class="rmdtcmap">所在地：{$lists.addre}&nbsp;</p>
-													<p class="rmdtcjs">{$lists.content}</p>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-2f">
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="rmdt-img1">
-													<img src="__PUBLIC__/Home/img/yhmc-big.png" />
-												</div>
-												<div class="clearfloat "></div>
-											</div>
-										</li>
-										<li>
-											<div class="rmdt-3f">
-												<p class="rmdtcdz">点赞&nbsp;100</p>
-												<p class="rmdtcfb">2016.12.12发布</p>
-												<p class="clearfloat"></p>
-												<br>
-											</div>
-										</li>
-									</ul>
+	           	<div id="contentt"  class="s-c-3f">
+	               	<foreach name="dongtai" item="v">
+							<div class="s-c-3f-1f">
+								<div class="yhtx">
+								<php>if($_SESSION['id'] == $v['uid']){</php>
+										<a href="?s=/Home/Mtbu/spbddndt/id/{$v.uid}">
+									<php>}else{</php>
+										<a href="?s=/Home/Mtbu/spbddydt/id/{$v.uid}">
+									<php>}</php>
+									
+											 <if condition="$v[imagename]==''">
+										<img src="__PUBLIC__/Home/img/yhmc.png" />
+                                      <else />
+                                      	<img src="/matouPCS/Tu/upload/{$v.imagename}"  width="60" height="60" style="border-radius:50%"/>
+                                    </if>
+									</a>
+									<div class="vip">
+										<img src="__PUBLIC__/Home/img/rzlogo.png" />
+									</div>
 								</div>
+								<p class="yhmc">
+								 <if condition="$v[username]==$v[tel]">
+							 {$v.username|substr=0,5}
+						    </if>
+							<if condition="$v[username]!=$v[tel]">
+							{$v.username}
+							 </if>
+								</p>
+								<p class="zw">职位名称：{$v.type_u}</p>
+								<p class="szd">所在地：{$v.addre}</p>
+								<p class="dtnr">
+								{$v.content}
+								</p>
+								<ul>
+									<foreach name='img' item='vd'>
+								<if condition="$v[did]==$vd[pid]">
+								<li>
+									<a rel="gallery1" class="boxer" href="/matouPCS/Uploads/{$vd.imagename}">
+										<div class="pic">
+											<img src="/matouPCS/Uploads/{$vd.imagename}" />
+										</div>
+									</a>
+								</li>
+							</if>
+								</foreach>
+									<div class="clear"></div>
+								</ul>
+								<div class="bottom">
+									<p class="left">{$v.time}</p>
+									<div class="right dz-qx">
+										<p onclick="zan1({$v.did},{$v.zan})" class="dz dz-qx">
+													<?php $zan = explode(',',$v['zid']);
+														  array_pop($zan);
+														   ?>
+													<?php if(in_array($_SESSION['id'],$zan)){ ?>
+													<span id="z{$v.did}" style="font-size: 17px;" class="icon-dz-kz"></span>
+													<?php }else{ ?>
+													<span id="z{$v.did}" style="font-size: 17px;" class="icon-dz"></span>
+													<?php } ?>
+													<span style="font-size: 17px;" id="s{$v.did}">{$v.zan}</span></p> 
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
 							</div>
-							<br>
 						</foreach>
-			
-						<div style="text-align:center;" class="margin">
+						</div>
+						<div class="djjzgd">
 							<button onclick="tj()" name='btn' id='btn' >点击加载更多</button>
 						</div>
-				
-				
-					   	

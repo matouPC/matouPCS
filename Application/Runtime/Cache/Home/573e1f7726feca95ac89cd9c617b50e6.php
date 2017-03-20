@@ -2,10 +2,14 @@
 		<a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($lists["eid"]); ?>">
 			<div class="s-l-1f">
 				<div class="yhtx">
-					<img src="/matouPCS/Public/Home/img/yhmc.png" />
+					<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
+                                   <?php else: ?>
+                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>"  /><?php endif; ?>
 				</div>
 				<p class="yhmc">
-					用户<?php echo (substr($lists["username"],0,5)); ?>
+				<?php if($lists[tel]==$lists[username]): ?>用户<?php echo (substr($lists["username"],0,5)); ?>
+					<?php else: ?>
+					用户<?php echo ($lists["username"]); endif; ?>
 				</p>
 				<?php $add = explode(',',$lists['address']); ?>
 				<p class="szd">
@@ -15,7 +19,7 @@
 			</div>
 			<div class="s-l-2f">
 				<div class="middle">
-					<p class="black-333"><?php echo ($lists["name"]); ?><</p>
+					<p class="black-333"><?php echo ($lists["name"]); ?></p>
 					<p class="age"><?php echo ($lists["ages"]); ?></p>
 					<p class="gzjy">
 						<span class="black-333">工作经验：</span> <?php echo ($lists["worktimes"]); ?>年

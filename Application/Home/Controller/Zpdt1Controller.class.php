@@ -27,7 +27,6 @@ class Zpdt1Controller extends Controller
     }
     public function txypgo(){
         // //执行填写应聘
-        // var_dump($_POST);die;
         date_default_timezone_set('prc');
         $data['name'] = $_POST['name'];
         $data['sex'] = $_POST['sex'];
@@ -72,8 +71,6 @@ class Zpdt1Controller extends Controller
                 $xsdt['pid'] = $id;
                 $db = M('employwork')->add($xsdt);
             }
-
-            if($db > 0){
                 // $this->ypfbwc();
                 // echo '添加成功';die;
                 $img['pubtimes'] = date('Y-m-d',time());
@@ -96,9 +93,9 @@ class Zpdt1Controller extends Controller
                         $this->ypUpload($_FILES['ypimg'.$i.'']);
                         $yp_img['imagenames'] .= "./Uploads/".date("Y-m-d",time()).'/'.$_FILES['ypimg'.$i.'']['name'].',';
                     }
+                
                     $img_add = M("employimage")->where("pid = {$id}")->save($yp_img);
-                    if($img_add > 0){
-                        // echo '执行成功';
+                        
                         $img_v['pubtime'] = date('Y-m-d',time());
                         $img_v['pid'] = $id;
                         $img_v['video'] = $_POST['video1'].','.$_POST['video2'].','.$_POST['video3'].',';
@@ -109,6 +106,7 @@ class Zpdt1Controller extends Controller
                         // }
                         $img_v['imagename_v'] = './Uploads/'.date('Y-m-d',time()).'/'.$_FILES['file1']['name'].','.'./Uploads/'.date('Y-m-d',time()).'/'.$_FILES['file2']['name'].','.'./Uploads/'.date('Y-m-d',time()).'/'.$_FILES['file3']['name'].',';
                         $ypimage_v = M('employvideo')->add($img_v);
+
                         if($ypimage_v > 0){
                             if(!empty($_FILES['file1'])){
                                 $this->ypUpload($_FILES['file1']);
@@ -117,12 +115,13 @@ class Zpdt1Controller extends Controller
                             } else if(!empty($_FILES['file3'])){
                                 $this->ypUpload($_FILES['file3']);
                             }
+
                         }
-                    }
                 }
-            }
-           $this->ypfbwc();
+           
         }
+        $this->ypfbwc();
+        // $this->success('ok');
     }
      public function ypUpload($yszp){
         $upload = new \Think\Upload($yszp);// 实例化上传类
@@ -194,11 +193,11 @@ class Zpdt1Controller extends Controller
       $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->order('e.rid desc')->limit('0,3')->select();
       $data = M('recruit2 as r')->join('recruit1 as e on r.pid = e.rid')->select();
       //获得应聘最大的id
-      $id = M('employ')->order('id desc')->find();
+      $pid = M('employ')->order('eid desc')->find();
 
       $this->assign('list',$list);
       $this->assign('data',$data);
-      $this->assign('id',$id['id']);
+      $this->assign('id',$pid['eid']);
 
       $this->display('Zpdt/ypfbwc');
     }
