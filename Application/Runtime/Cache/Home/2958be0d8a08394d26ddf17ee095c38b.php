@@ -66,6 +66,8 @@
 												<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
+<<<<<<< HEAD
+=======
 										</li>
 										<li>
 								    	<a href="?s=/Home/User/bdxx">
@@ -97,6 +99,7 @@
 												<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
+>>>>>>> 75a1fd4e0dadec15a7e41d58d844c35085cf4868
 										</li>
 										<li>
 								    	<a href="?s=/Home/User/bdxx">
@@ -116,6 +119,40 @@
 										</li>
 									</ul>
 								</div>
+<<<<<<< HEAD
+								<?php }else{ ?>
+
+								<a href="#" onclick="alert('请先登录')">消息</a>
+								<div class="str"></div>
+								<div class="select-xx" style="display:none;">
+									<ul>
+											<li>
+												<a href="?s=/Home/User/xqxx">需求消息
+											<div class="newss">
+												<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+										<li>
+								    	<a href="?s=/Home/User/bdxx">
+												部队消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="?s=/Home/User/spxx">
+												商铺消息
+												<div class="newss">
+													<img src="/matouPCS/Public/Home/img/news.png" />
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+=======
+>>>>>>> 75a1fd4e0dadec15a7e41d58d844c35085cf4868
 								<?php } ?>
 							</li>
 							<li>
