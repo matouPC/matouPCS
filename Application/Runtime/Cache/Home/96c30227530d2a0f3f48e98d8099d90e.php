@@ -12,7 +12,9 @@
 	<body>
 		<div class="show-bg"></div>
 		<header>
-			<!DOCTYPE html>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<!DOCTYPE html>
 <html>
 
 	<head>
@@ -455,9 +457,6 @@
 		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	</body>
 </html>
-			<div class="h-content-main">
-				<div class="h-main-c">
-					<?php	include '2rank-header.php';?>
 						<div class="h-c-2f">
 							<div class="s-f2-l-f">
 								<div class="f2-l-1-f">

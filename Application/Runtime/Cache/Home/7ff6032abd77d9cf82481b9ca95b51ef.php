@@ -6,7 +6,7 @@
             <a href="?s=/Home/xsdt/xqxs/id/<?php echo ($list[$i]['psid']); ?>">
                 <div class="s-l-1f">
                     <div class="yhtx">
-                       <?php if($list[$i][imagename]==''): ?><img src="/matouPCs/Public/Home/img/yhmc.png"/>
+                       <?php if($list[$i][imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
                                      <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($list[$i]["imagename"]); ?>"  /><?php endif; ?>
                     </div>

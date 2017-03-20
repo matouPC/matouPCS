@@ -4,7 +4,7 @@
 		<a href="?s=/Home/Ysq/xqys/id/<?php echo ($lists["did"]); ?>">
 			<div class="s-l-1f">
 				<div class="yhtx">
-					<?php if($lists[imagename]==''): ?><img src="/matouPCs/Public/Home/img/yhmc.png"/>
+					<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
                                      <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>"  /><?php endif; ?>
 				</div>

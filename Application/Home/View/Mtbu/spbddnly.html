@@ -4,167 +4,68 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>商铺部队</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/spbddnly-3r-xy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<!--<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">-->
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style-type: none;
-			}
-			
-			a,
-			img {
-				border: 0;
-			}
-			
-			.demo {
-				width: 720px;
-				margin: 35px auto;
-			}
-			
-			.demo h2 {
-				font-size: 16px;
-				color: #3366cc;
-				height: 30px;
-			}
-			
-			.demo li {
-				float: left;
-			}
-			
-			.text,
-			.button {
-				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
-			}
-			
-			.text {
-				width: 425px;
-				height: 22px;
-				padding: 4px 7px;
-				padding: 6px 7px 2px\9;
-				font: 16px arial;
-				border: 1px solid #cdcdcd;
-				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
-				vertical-align: top;
-				outline: none;
-				margin: 0 -1px 0 0;
-			}
-			
-			.button {
-				width: 79px;
-				height: 32px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-			
-			.button2 {
-				width: 135px;
-				height: 32px;
-				margin-left: 30px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-		</style>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/troop.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/component.css" />
 	</head>
 
 	<body>
 		<header>
-			<include file="Public/header"/>
-					<div class="h-c-2f">
-						<!--<img src="img/navbg3.png" />-->
-						<!--<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
-							<div class="s-f2-r1">
-								<img src="img/ss-t.png" />
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<?php	include '2rank-header.php';?>
+						<div class="h-c-3f">
+							<div id="large-header" class="large-header">
+								<div class="tbbj">
+									<img src="__PUBLIC__/Home/img/demo-2-bg.jpg" />
+								</div>
+								<canvas id="demo-canvas"></canvas>
 							</div>
-						</div>-->
-
-						<div class="s-f1">
-							<div class="bjzl">
-							<a style="width: 120px;" href="?s=/Home/User">
-								<button>编辑个人资料</button>
-								</a>
-							</div>
-							<div class="yhtx">
-									      <if condition="$dt[imagename]==''">
-											<img src="__PUBLIC__/Home/img/yhmc.png">
-                                      <else />
-                                      	<img src="__PUBLIC__/upload/{$dt.pubtime}/{$dt.imagename}"   style="width: 137px; height: 144px;border-radius:50%"/>
-                                    </if>
-								<div class="vip">
-									<img src="__PUBLIC__/Home/img/rzlogo.png" />
+							<div class="s-f1">
+								<div class="bjzl">
+									<a href="">编辑个人资料</a>
+								</div>
+								<div class="yhtx">
+									<img src="__PUBLIC__/Home/img/yhmc.png" alt="">
+									<div class="vip">
+										<img src="__PUBLIC__/Home/img/rzlogo.png" />
+									</div>
+								</div>
+								<div class="rzbd">
+									<a href="">认证部队</a>
 								</div>
 							</div>
-							
-						</div>
 							<div class="s-f2">
-							<p class="yhmc">
-								<if condition="$dt[username]==$dt[tel]">
-								<a href="">{$dt.username|substr=0,6}</a>
-								</if>
-								<if condition="$dt[username]!=$dt[tel]">
-								<a href="">{$dt.username}</a>
-								</if>
-							</p>
-							<p style="text-align: center;">
-								<if condition="$dt[bdlx]==1">
-								（个人部队）
-								<elseif condition="$dt[bdlx]==2"/>
-								（婚庆公司）
-								<elseif condition="$dt[bdlx]==3"/>
-								（工作室）
-								<elseif condition="$dt[bdlx]==4"/>
-								（影楼）
-								<elseif condition="$dt[bdlx]==5"/>
-								（表演团）
-								<else/>
-								（商铺部队）
-								</if>
-							</p>
-							<div>
-								<p class="fsl">
-								<span style="font-size: 24px; display: block; float: left; margin-top: -2px;" class="icon-fs"></span>
-								<span style="display: block; float: left;">{$dt.fen}</span>
-							</p>
-							<p class="szd">
-								<span style="font-size: 18px;" class="icon-szd"></span>
-								<span style="display: block; float: right; line-height: 20px;">{$dt.address|substr=0,6}</span>
-							</p>
-							<p class="clearfloat"></p>
+								<p class="yhmc">
+									<a href="">用户名称</a>
+								</p>
+								<p class="center">
+									（摄影师）
+								</p>
+								<div>
+									<p class="fsl">
+										<span class="icon-fs"></span> 1000
+									</p>
+									<p class="szd">
+										<span class="szd-word">郑州</span>
+										<span class="icon-szd szd-top"></span>
+									</p>
+									<p class="clearfloat"></p>
+								</div>
+							</div>
+							<div class="clearfloat"></div>
+							<div class="s-f3">
+								<button class="dn" disabled="disabled">关注</button>
+							</div>
+							<div class="s-f4">
+								<div class="spbd">
+									<a rel="nofollow" style="width: 120px;" href="">基本信息</a>
+									<a href="spbddndt-3r-xy.php">动态</a>
+									<a href="spbddnxq-3r-xy.php">需求</a>
+									<a style="width: 105px;" class="red" href="spbddnly-3r-xy.php">留言区</a>
+								</div>
 							</div>
 						</div>
-						<div class="clearfloat"></div>
-						<div class="s-f3">
-							<button disabled="disabled">关注</button>
-						</div>
-						<div class="s-f4">
-							<div>
-								<a style="width: 120px;" href="?s=/Home/Tjcs/spxq/uid/{$_GET['id']}">商品</a>
-								<a  href="?s=/Home/Mtbu/spbddndt/id/{$_GET['id']}">动态</a>
-								<a href="?s=/Home/Mtbu/spbddnxq/id/{$_GET['id']}">需求</a>
-								<a style="width: 105px;color: #FF5C5D;" href="?s=/Home/Mtbu/spbddnly/id/{$_GET['id']}">留言区</a>
-							</div>
-						</div>
-					</div>
-					<!--<div class="h-c-3f">
-						<img src="img/navbg4.png" />
-						<a href="#"><div class="h-f3-c1">BTN</div></a>
-						<div class="h-f3-c2"><a href="#">进入跳骚市场</a></div>
-					</div>-->
 				</div>
 			</div>
 		</header>
@@ -172,72 +73,12 @@
 			<div class="s-main-c">
 				<div class="s-main-c-1f">
 					<div class="left">
-						<!--<div class="left-dt">
-							<p>全部动态</p>
-							<img src="img/xxjt.png" />
-							<div class="select-dt">
-								<ul>
-									<li style="padding-top: 5px;">
-										<a href="javascript://">全部动态</a>
-									</li>
-									<li>
-										<a href="javascript://">活动动态</a>
-									</li>
-								</ul>
-							</div>
-						</div>-->
-						<!--<div class="left-xq">
-						<p>全部需求</p>
-						<img src="img/xxjt.png" />
-						<div class="select-xq">
-							<ul>
-								<li style="padding-top: 5px;">
-									<a href="javascript://">悬赏需求</a>
-								</li>
-								<li>
-									<a href="javascript://">应赏需求</a>
-								</li>
-								<li>
-									<a href="javascript://">应聘需求</a>
-								</li>
-								<li>
-									<a href="javascript://">求购二手</a>
-								</li>
-								<li>
-									<a href="javascript://">处理闲置</a>
-								</li>
-							</ul>
-						</div>
-					</div>-->
 					</div>
-					<div id="paixu" class="center">
+					<div class="center">
 						<p>排序：</p>
-						<a  class="selected" href="javascript://">最新</a>
-						<a  href="javascript://">热门</a>
+						<a class="selected" href="javascript://">热门</a>
+						<a href="javascript://">最新</a>
 					</div>
-								<script>
-                    var cNode =document.getElementById('paixu').getElementsByTagName('a');
-                            for( var i=0; i<cNode.length; i++){
-                                cNode[i].index= i;
-                                //用来计算点击次数
-                                var paixu = 0;
-                                cNode[i].onclick = function(){
-                                   paixu+=1; 
-                                    if(this.index == 0){
-                                        this.index = 'z';  
-                                    }else if(this.index == 1){
-                                        this.index = 'r';
-                                    }
-                                 paixus = this.index;
-                           
-                              // $('#every').click();
-                          // alert(where);
-                              // // 这里才是最终的搜索条件
-                               id=	{$_GET['id']};
-                              remen(paixus,id);  
-                                }
-                            }
-                        </script>
 					<div class="right">
 						<input type="text" placeholder="搜索全站" />
 						<div class="ss-t">
@@ -250,730 +91,226 @@
 						<div class="s-c-1f-3f">
 							<div class="top">
 								<div class="lyq">
-									<button>留 言 区</button>
+									<h2>留 言 区</h2>
 								</div>
 								<div class="textarea">
-									<textarea id="contents" name="contents"></textarea>
+									<textarea></textarea>
 								</div>
 								<div class="fbly">
-									<button onclick="liuyan({$_GET['id']})">发布留言</button>
+									<button>发布留言</button>
 								</div>
 							</div>
-							
-						<script type="text/javascript">
-								function liuyan(id){
-									var p=id;
-									var t = "{:session('id')}";
-								
-									var contents = $('#contents').val();
-									if(contents.replace(/\s+/g, "")){
-										$.ajax({
-											url:"?s=/Home/Mtbu/spbddyly_liuyan",
-											type:"post",
-											data:{id:p,contents:contents},
-											dataType:"json",
-											success:function(data){
-											//	alert(2);
-												var li = '';
-												for (var i = 0; i < data.length; i++) {
-													 var myArray=new Array()
-													 var str=data[i].zid;  
-													 myArray = str.split(","); 
-													 
-													 var c = ","; // 要计算的字符
-													 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
-													 var result = str.match(regex);
-													 var count = !result ? 0 : result.length;
-													 for(var j=0;j<=count;j++){
-														 if(myArray[j]==t){
-															 var aa=1;
-								
-														 }
-													 }
-													if(aa==1){
-														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
-													}else{
-														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz"></span>';
-													}
-													if(data[i].username==data[i].tel){
-													var use = data[i].username.substr(0,5);
-													}else{
-												     var use = data[i].username;
-													}
-													if(t==data[i].uid){
-														if(data[i].bdlx==1){
-															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
-														}else if(data[i].bdlx==6){
-															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
-														}else{
-															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
-														}
-													}else{
-														if(data[i].bdlx==1){
-															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
-														}else if(data[i].bdlx==6){
-															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
-														}else{
-															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
-														}
-													}
-													
-													
-													li+='<li><div class="left">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].stime+'</p><p class="dz dz-qx"><p onclick="zan('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].id+'">'+data[i].zan+'</span></p></p></div></div><div class="clearfloat"></div></li>';
-												};
-												$('#li').html(li);
-												$('#contents').val('');
-											},error:function(){
-												alert('no');
-											}
-										});
-									}else{
-										alert('请填写留言内容在提交');
-									}
-								}
-							</script>
-								<ul id="li">
-								<foreach name="list" item="lis">
-									<li>
-										<div class="left">
-										       	<php>if($_SESSION['id'] == $lis['uid']){</php>
-									  <if condition="$lis[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddndt/id/{$lis.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
-								<elseif condition="$lis[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
-								<else/>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
-									</if>
-									<php>}else{</php>
-                                        <if condition="$lis[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
-								<elseif condition="$lis[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
-								<else/>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
-									</if>
-                                       <php>}</php>
-
-											<div class="vip">
-												<img src="__PUBLIC__/Home/img/rzlogo.png" />
-											</div>
+							<ul>
+								<li>
+									<div class="left-tx">
+										<a href="">
+											<img src="__PUBLIC__/Home/img/tx2-3r.png" alt="" />
+										</a>
+										<div class="vip">
+											<img src="__PUBLIC__/Home/img/rzlogo.png" />
 										</div>
-										<div class="right">
-											<p class="tt">
-												<span style="float: left;">
-															<if condition="$lis[username]==$lis[tel]">
-							                      	{$lis.username|substr=0,5}
-								                 </if>
-								               <if condition="$lis[username]!=$lis[tel]">
-								                {$lis.username}
-								                  </if>
-												</span>
-												<span style="float: right; text-align: right;">{$lis.addre}</span>
-											</p>
-											<p class="grjj">
-												{$lis.contents}
-											</p>
-											<div class="bottom">
-												<p class="sj">{$lis.time}</p>
-												<p onclick="zan({$lis.id},{$lis.zan})" class="dz dz-qx">
-													<?php $zan = explode(',',$lis['zid']);
-														  array_pop($zan);
-														   ?>
-													<?php if(in_array($_SESSION['id'],$zan)){ ?>
-													<span id="z{$lis.id}" class="icon-dz-kz"></span>
-													<?php }else{ ?>
-													<span id="z{$lis.id}" class="icon-dz"></span>
-													<?php } ?>
-													<span id="s{$lis.id}">{$lis.zan}</span></p> >
-											</div>
+									</div>
+									<div class="right-xx">
+										<p class="tt">
+											<span class="left">
+												<a href="">用户名称</a>
+											</span>
+											<span class="right">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+										<div class="bottom">
+											<p class="sj">4小时前</p>
+											<p class="dz dz-qx"><span class="icon-dz"></span>1000</p>
 										</div>
-										<div class="clearfloat"></div>
-									</li>
-								</foreach>
+									</div>
+									<div class="clearfloat"></div>
+								</li>
+								<li>
+									<div class="left-tx">
+										<a href="">
+											<img src="__PUBLIC__/Home/img/tx2-3r.png" alt="" />
+										</a>
+										<div class="vip">
+											<img src="__PUBLIC__/Home/img/rzlogo.png" />
+										</div>
+									</div>
+									<div class="right-xx">
+										<p class="tt">
+											<span class="left">
+												<a href="">用户名称</a>
+											</span>
+											<span class="right">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+										<div class="bottom">
+											<p class="sj">4小时前</p>
+											<p class="dz dz-qx"><span class="icon-dz"></span>1000</p>
+										</div>
+									</div>
+									<div class="clearfloat"></div>
+								</li>
+								<li>
+									<div class="left-tx">
+										<a href="">
+											<img src="__PUBLIC__/Home/img/tx2-3r.png" alt="" />
+										</a>
+										<div class="vip">
+											<img src="__PUBLIC__/Home/img/rzlogo.png" />
+										</div>
+									</div>
+									<div class="right-xx">
+										<p class="tt">
+											<span class="left">
+												<a href="">用户名称</a>
+											</span>
+											<span class="right">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+										<div class="bottom">
+											<p class="sj">4小时前</p>
+											<p class="dz dz-qx"><span class="icon-dz"></span>1000</p>
+										</div>
+									</div>
+									<div class="clearfloat"></div>
+								</li>
 							</ul>
-							<script type="text/javascript">
-									var a = 0;
-									function zan(lid,zan){
-								
-										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
-										if($('#z'+lid).hasClass('icon-dz')){
-											zan += 1;
-											$.ajax({
-												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
-												type:"get",
-												success:function(data){
-													alert('点赞成功');
-													$('#z'+lid).removeClass('icon-dz');
-													$('#z'+lid).addClass('icon-dz-kz');
-													$('#s'+lid).html(zan);
-												},error:function(){
-													alert('no');
-												}
-											});
-											
-										}else{
-											zan -= 1;
-											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
-												type:"get",
-												success:function(data){
-													alert('取消成功');
-													$('#z'+lid).removeClass('icon-dz-kz');
-													$('#z'+lid).addClass('icon-dz');
-													$('#s'+lid).html(zan);
-												},error:function(){
-													alert('no');
-												}
-											});
-											
-										}
-									}
-								</script>
 							<p class="ckgd">
-								<a href="?s=/Home/Mtbu/spbddnly/id/{$_GET['id']}">查看更多 》</a>
+								<a href="spbddnly-3r-xy.php">查看更多 》</a>
 							</p>
 						</div>
 					</div>
-					<div class="s-c-2f">
-						<div class="s-c-2f-main">
-							<div class="s-c-2f-1f">
+					<div class="s-c-5f">
+						<div class="s-c-5f-main">
+							<div class="s-c-5f-1f">
 								<div class="title">
-							码 头 商 铺
+									<h2>码 头 商 铺</h2>
 								</div>
 								<div class="bj">
-								<a style="width: 120px;" href="?s=/Home/Mtbu/spgl/uid/{$_GET['id']}">
-									<img src="__PUBLIC__/Home/img/bj-gray.png" />
+									<a href="">
+										<img src="__PUBLIC__/Home/img/bj-gray.png" />
 									</a>
 								</div>
 								<div class="clearfloat"></div>
 							</div>
-							<foreach name="sp" item="v">
-							<div class="s-c-2f-2f">
-								<p>商铺名称</p>
-								<p style="color: #000;">{$v.shopname}</p>
-								<p>商铺地址</p>
-								<p style="color: #000; padding-bottom: 15px; border-bottom: solid #CCCCCC 1px;">{$v.address}</p>
-								<p style="margin-top: 15px;">主营商品：</p>
-								<p class="zysp">{$v.zysp}</p>
-								<hr style="border:none; border-top: solid #CCCCCC 1px ;">
-								<p style="margin-top: 15px;">手机号</p>
-								<p style="color: #000;">{$v.tel}</p>
-								<p>QQ号</p>
-								<p style="color: #000;">{$v.qq}</p>
-								<p>网店</p>
-								<p style="color: #000;">{$v.wangzhan}</p>
+							<div class="s-c-5f-2f">
+								<p class="black-333">商铺名称</p>
+								<p>商铺名称商铺名称</p>
+								<p class="black-333">商铺地址</p>
+								<p class="spdz">商铺地址商铺地址</p>
+								<p class="zycp-f black-333">主营商品：</p>
+								<span class="zysp">主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品主营商品</span>
+								<hr class="hx">
+								<p class="zycp-f black-333">手机号</p>
+								<p>137*******02</p>
+								<p class="black-333 black-333">QQ号</p>
+								<p>989898989</p>
+								<p class="black-333">网店</p>
+								<p>淘宝</p>
 							</div>
-						
 							<p class="ckgd">
-						<a  href="?s=/Home/Tjcs/spxq/uid/{$_GET['id']}">进入商铺 》</a>
+								<a href="">进入商铺 》</a>
 							</p>
-							</foreach>
 						</div>
 					</div>
 				</div>
-				<div id="re" class="s-main-l">
-					<div id="contentt" class="s-c-3f">
-					<foreach name="list" item="v">
+				<div class="s-main-l">
+					<div class="s-c-3f">
 						<div class="s-c-3f-1f">
-							<!--<div class="mdhd">
-								<img src="img/mdhd.png" />
-							</div>-->
 							<div>
-							
 								<div class="yhtx">
-								       	<php>if($_SESSION['id'] == $v['uid']){</php>
-									  <if condition="$v[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddndt/id/{$v.uid}">	<img src="__PUBLIC__/Home/img/yhmc.png" /></a>
-								<elseif condition="$v[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddndt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
-								<else/>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
-									</if>
-									<php>}else{</php>
-                                        <if condition="$v[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
-								<elseif condition="$v[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
-								<else/>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/{$v.uid}"><img src="__PUBLIC__/Home/img/yhmc.png" /></a>
-									</if>
-							
-                                       <php>}</php>
-								
+									<a href="">
+										<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+									</a>
 									<div class="vip">
 										<img src="__PUBLIC__/Home/img/rzlogo.png" />
 									</div>
 									<div class="clearfloat"></div>
 								</div>
 								<p class="yhmc">
-								<if condition="$v[username]==$v[tel]">
-							   	{$v.username|substr=0,5}
-								   </if>
-								 <if condition="$v[username]!=$v[tel]">
-								  {$v.username}
-							     </if>
+									<a href="">用户名称</a>
 								</p>
 								<p class="zwmc">
-									  <if condition="$v[sex]=='1'">
-									性别：男
-									 <elseif condition="$v[sex]=='2'"/>
-                                      性别：女
-                                      <elseif condition="$v[sex]=='3'"/>
-                                         性别：保密
-                                    </if>
+									职位名称：摄影师
 								</p>
-								<p class="szd">所在地：{$v.addre}</p>
+								<p class="szd">所在地：郑州</p>
 								<div class="clearfloat"></div>
 							</div>
 							<p class="dtnr">
-							{$v.contents}
-						   </p>
+								留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容
+							</p>
 							<div class="bottom">
-								<p class="left">{$v.stime}</p>
-								<!--<span class="delete">
-									<img src="img/delete-2.png" />
-								</span>-->
+								<p class="left">4小时前</p>
+								<span class="delete">
+									<img src="__PUBLIC__/Home/img/delete-2.png" />
+								</span>
 								<div class="right dz-qx">
-									<p onclick="zan1({$v.id},{$v.zan})" class="dz dz-qx">
-													<?php $zan = explode(',',$v['zid']);
-														  array_pop($zan);
-														   ?>
-													<?php if(in_array($_SESSION['id'],$zan)){ ?>
-													<span id="zz{$v.id}" style="font-size: 15px;"class="icon-dz-kz"></span>
-													<?php }else{ ?>
-													<span id="zz{$v.id}" style="font-size: 15px;" class="icon-dz"></span>
-													<?php } ?>
-													<span style="font-size: 15px;" id="ss{$v.id}">{$v.zan}</span></p> 
+									<span class="icon-dz"></span>
+									<p>1000000000</p>
 								</div>
 								<p class="clearfloat"></p>
 							</div>
 							<div class="clearfloat"></div>
 						</div>
-						</foreach>
+						<div class="s-c-3f-1f">
+							<div>
+								<div class="yhtx">
+									<a href="">
+										<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+									</a>
+									<div class="vip">
+										<img src="__PUBLIC__/Home/img/rzlogo.png" />
+									</div>
+									<div class="clearfloat"></div>
+								</div>
+								<p class="yhmc">
+									<a href="">用户名称</a>
+								</p>
+								<p class="zwmc">
+									职位名称：摄影师
+								</p>
+								<p class="szd">所在地：郑州</p>
+								<div class="clearfloat"></div>
+							</div>
+							<p class="dtnr">
+								留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容
+							</p>
+							<div class="bottom">
+								<p class="left">4小时前</p>
+								<span class="delete">
+									<img src="__PUBLIC__/Home/img/delete-2.png" />
+								</span>
+								<div class="right dz-qx">
+									<span class="icon-dz"></span>
+									<p>1000000000</p>
+								</div>
+								<p class="clearfloat"></p>
+							</div>
+							<div class="clearfloat"></div>
+						</div>
 					</div>
-						<script type="text/javascript">
-									var a = 0;
-									function zan1(lid,zan){
-										var zan = parseInt(document.getElementById('ss'+lid).innerHTML);
-										if($('#zz'+lid).hasClass('icon-dz')){
-											zan += 1;
-											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
-												type:"get",
-												success:function(data){
-													alert('点赞成功');
-													$('#zz'+lid).removeClass('icon-dz');
-													$('#zz'+lid).addClass('icon-dz-kz');
-													$('#ss'+lid).html(zan);
-												},error:function(){
-													alert('no');
-												}
-											});
-											
-										}else{
-											zan -= 1;
-											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
-												type:"get",
-												success:function(data){
-													alert('取消成功');
-													$('#zz'+lid).removeClass('icon-dz-kz');
-													$('#zz'+lid).addClass('icon-dz');
-													$('#ss'+lid).html(zan);
-												},error:function(){
-													alert('no');
-												}
-											});
-											
-										}
-									}
-								</script>
 					<div class="s-main-b">
 						<div class="margin">
-								<button onclick="tj({$_GET['id']})" name='btnn' id='btnn' >点击加载更多</button>
+							<button>点击加载更多</button>
 						</div>
 					</div>
 				</div>
 				<div class="clearfloat"></div>
 			</div>
 
-
-<script type="text/javascript">
-var p=2;
-  function tj(id){
-	  var t = "{:session('id')}";
-
-		$.ajax({
-			type:'post',
-			url:"{:U('Mtbu/lyjzdt')}",
-			data:{k:p,id:id},
-			beforeSend:function(){
-	         $("#content").append("<div id='load'>加载中……</div>");
-			},
-			success:function(data){
-				// alert(data);
-				if(data!=null){				
-						//alert(1);
-						 for (var i = 0; i < data.length; i++) {
-							  if(data[i].sex=='1'){
-							    	var sex='男';
-							    }else if(data[i].sex=='2'){
-							    	var sex='女';
-							    }else{
-							    	var sex='保密';
-							    }
-							 var myArray=new Array()
-							 var str=data[i].zid;  
-							 myArray = str.split(","); 
-							 
-							 var c = ","; // 要计算的字符
-							 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
-							 var result = str.match(regex);
-							 var count = !result ? 0 : result.length;
-							 for(var j=0;j<=count;j++){
-								 if(myArray[j]==t){
-									 var aa=1;
-		
-								 }
-							 }
-							if(aa==1){
-								var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
-							}else{
-								var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz"></span>';
-							}
-							 if(data[i].username==data[i].tel){
-									var use = data[i].username.substr(0,5);
-									}else{
-								     var use = data[i].username;
-									}
-							   if(t==data[i].uid){
-									if(data[i].bdlx==1){
-										var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-									}else if(data[i].bdlx==6){
-										var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-									}else{
-										var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-									}
-								}else{
-									if(data[i].bdlx==1){
-										var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-									}else if(data[i].bdlx==6){
-										var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-									}else{
-										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-									}
-								}
-								
-						$("#contentt").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc">性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-	 		
-						 }
-				}else{
-					 //alert(22);
-					 document.getElementById('btnn').innerHTML = '加载完毕';
-	 				flag=true;	
-				}	
-	 },
-	 	complete:function(){
-	           $("#load").remove();
-			},
-		 	dataType:'json'
-		 	});
-	 	p++;
-// alert(p);
-  }
-
-	function remen(paixus,id){
-		var t = "{:session('id')}";
-			$.ajax({
-				url:"?s=/Home/Mtbu/spbddnlyre",
-				type:"post",
-				data:{where:paixus,id:id},
-				dataType:"json",
-				success:function(data){
-
-                   var li='';
-					for (var i = 0; i < data.length; i++) {
-						  if(data[i].sex=='1'){
-						    	var sex='男';
-						    }else if(data[i].sex=='2'){
-						    	var sex='女';
-						    }else{
-						    	var sex='保密';
-						    }
-						 var myArray=new Array()
-						 var str=data[i].zid;  
-						 myArray = str.split(","); 
-						 
-						 var c = ","; // 要计算的字符
-						 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
-						 var result = str.match(regex);
-						 var count = !result ? 0 : result.length;
-						 for(var j=0;j<=count;j++){
-							 if(myArray[j]==t){
-								 var aa=1;
-	
-							 }
-						 }
-						if(aa==1){
-							var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
-						}else{
-							var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz"></span>';
-						}
-						 if(data[i].username==data[i].tel){
-								var use = data[i].username.substr(0,5);
-								}else{
-							     var use = data[i].username;
-								}
-						   if(t==data[i].uid){
-								if(data[i].bdlx==1){
-									var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-								}else if(data[i].bdlx==6){
-									var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-								}else{
-									var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-								}
-							}else{
-								if(data[i].bdlx==1){
-									var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-								}else if(data[i].bdlx==6){
-									var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-								}else{
-									var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-								}
-							}
-						li+='<div id="ha" class="s-c-3f-1f"><div ><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc">性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
-									
-						
-					};
-					var p ='<div id="ha">'+li+'</div><div class="s-main-b"><div class="margin"><button onclick="tj1({$_GET['id']})" name="btn1" id="btn1" >点击加载更多</button></div></div>';
-					$('#re').html(p);
-					//$('#re').val('');
-				},error:function(){
-					alert('no');
-				}
-			});
-		
-	}
-	  var pc=2;
-	  function tj1(id){
-		  var t = "{:session('id')}";;
-				$.ajax({
-					type:'post',
-					url:"{:U('Mtbu/lyjzdtre')}",
-					data:{k:pc,id:id},
-					beforeSend:function(){
-			         $("#ha").append("<div id='load'>加载中……</div>");
-					},
-					success:function(data){
-						// alert(data);
-						if(data!=null){				
-								//alert(1);
-								 for (var i = 0; i < data.length; i++) {
-									  if(data[i].sex=='1'){
-									    	var sex='男';
-									    }else if(data[i].sex=='2'){
-									    	var sex='女';
-									    }else{
-									    	var sex='保密';
-									    }
-									 var myArray=new Array()
-									 var str=data[i].zid;  
-									 myArray = str.split(","); 
-									 
-									 var c = ","; // 要计算的字符
-									 var regex = new RegExp(c, 'g'); // 使用g表示整个字符串都要匹配
-									 var result = str.match(regex);
-									 var count = !result ? 0 : result.length;
-									 for(var j=0;j<=count;j++){
-										 if(myArray[j]==t){
-											 var aa=1;
-				
-										 }
-									 }
-									if(aa==1){
-										var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
-									}else{
-										var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz"></span>';
-									}
-									 if(data[i].username==data[i].tel){
-											var use = data[i].username.substr(0,5);
-											}else{
-										     var use = data[i].username;
-											}
-									   if(t==data[i].uid){
-											if(data[i].bdlx==1){
-												var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else if(data[i].bdlx==6){
-												var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else{
-												var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-											}
-										}else{
-											if(data[i].bdlx==1){
-												var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else if(data[i].bdlx==6){
-												var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';
-											}else{
-												var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="/matouPCS/Public/Home/img/yhmc.png" /</a>';	
-											}
-										}	 
-								$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc">性别：'+sex+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
-			 		
-								 }
-						}else{
-							 //alert(22);
-							 document.getElementById('btn1').innerHTML = '加载完毕';
-			 				flag=true;	
-						}	
-			 },
-			 	complete:function(){
-			           $("#load").remove();
-					},
-				 	dataType:'json'
-				 	});
-			 	pc++;
-		// alert(p);
-		  }
-</script>
-
-
 		</section>
-		<br>
-		<br>
-		<br>
-	<include file="Public/foot"/>
+		<?php	include '3rank-footer.php';?>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-
-		//--------------------------全部动态下拉----------------------------------
-		$('.s-main-c-1f .left-dt').hover(function() {
-			$('.s-main-c-1f .left-dt img').css('transition-duration', '.5s');
-			$('.s-main-c-1f .left-dt img').css('transform', 'rotate(180deg)');
-			$('.s-main-c-1f .left-dt ul').css('background-color', '#FF5C5D');
-			$('.select-dt').stop().animate({
-				height: '65px'
-			}, 300);
-		}, function() {
-			$('.s-main-c-1f .left-dt img').css('transition-duration', '.5s');
-			$('.s-main-c-1f .left-dt img').css('transform', 'rotate(0deg)');
-			$('.s-main-c-1f .left-dt ul').css('background-color', '#999999');
-			$('.select-dt').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-
-		$('.s-main-c-1f .left-dt ul li a').click(function() {
-			$('.left-dt p').html($(this).html());
-			$('.select-dt').stop().animate({
-				height: '0px'
-			}, 300);
-			$('.s-main-c-1f .left-dt img').css('transition-duration', '.5s');
-			$('.s-main-c-1f .left-dt img').css('transform', 'rotate(0deg)');
-		});
-
-		//--------------------------全部需求下拉----------------------------------
-		$('.s-main-c-1f .left-xq').hover(function() {
-			$('.s-main-c-1f .left-xq img').css('transition-duration', '.5s');
-			$('.s-main-c-1f .left-xq img').css('transform', 'rotate(180deg)');
-			$('.s-main-c-1f .left-xq ul').css('background-color', '#FF5C5D');
-			$('.select-xq').stop().animate({
-				height: '155px'
-			}, 300);
-		}, function() {
-			$('.s-main-c-1f .left-xq img').css('transition-duration', '.5s');
-			$('.s-main-c-1f .left-xq img').css('transform', 'rotate(0deg)');
-			$('.s-main-c-1f .left-xq ul').css('background-color', '#999999');
-			$('.select-xq').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-
-		$('.s-main-c-1f .left-xq ul li a').click(function() {
-			$('.left-xq p').html($(this).html());
-			$('.select-xq').stop().animate({
-				height: '0px'
-			}, 300);
-			$('.s-main-c-1f .left-xq img').css('transition-duration', '.5s');
-			$('.s-main-c-1f .left-xq img').css('transform', 'rotate(0deg)');
-		});
-		//----------------------------remove tab切换样式--------------------------
-		$('.s-main-c-1f .center a').click(function() {
-			$(this).parents('.s-main-c-1f').children('.center').each(function() {
-				$('a', this).removeClass('selected');
-			});
-			$(this).attr('class', 'selected');
-		});
-		$('.s-c-2f-4f .zp a').click(function() {
-			$(this).parents('.s-c-2f-4f').children('.zp').each(function() {
-				$('a', this).removeClass('selected');
-			});
-			$(this).attr('class', 'selected');
-		});
-		//----------------------------删除动态/需求--------------------------
-		$('.delete').click(function(){
-//			alert(123);
-			$(this).parents('.s-c-3f-1f').remove();
-		});
-		//----------------------------点赞--------------------------
-
-	</script>
+	<script src="__PUBLIC__/Home/js/troop.js"></script>
+	<script src="__PUBLIC__/Home/js/showwin2.js"></script>
+	<script src="__PUBLIC__/Home/js/rAF.js"></script>
+	<script src="__PUBLIC__/Home/js/demo-2.js"></script>
 
 </html>

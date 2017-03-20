@@ -519,9 +519,9 @@
 										success:function(data){
 											$('#gfen').html(fen);
 											$('#gz-qx').html('已关注');
-											$('#gz-qx').css('background-color','red');
+											$('#gz-qx').css('background-color','#FF5C5D');
 											$('#gz-qx').hover(function(){
-												$('#gz-qx').css('background-color','red');
+												$('#gz-qx').css('background-color','#FF5C5D');
 											})
 										},error:function(){
 											alert('no');
@@ -538,7 +538,7 @@
 											$('#gz-qx').html('关注');
 											$('#gz-qx').css('background-color','transparent');
 											$('#gz-qx').hover(function(){
-												$('#gz-qx').css('background-color','red');
+												$('#gz-qx').css('background-color','#FF5C5D');
 											},function(){
 												$('#gz-qx').css('background-color','transparent');
 											}

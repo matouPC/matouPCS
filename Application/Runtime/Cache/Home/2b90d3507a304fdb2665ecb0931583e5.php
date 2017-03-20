@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>悬赏填写</title>
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/tx.css" />
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/showwin.css" />
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/input.css" />
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/calendar.css" />
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/zyzn_1.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/tx.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/input.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 	</head>
-	<script src="/matouPCs/Public/Home/js/jquery-1.8.3.min.js "></script>
+	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
 	<body>
 
 		<!-- <form name="myform"> -->
@@ -20,9 +20,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/sinaFaceAndEffec.css" />
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/header.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/sinaFaceAndEffec.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header.css" />
 	</head>
 
 	<body>
@@ -32,7 +32,7 @@
 				<div class="h-c-1f">
 					<div class="h-f1-lzy">
 						<div class="home">
-							<img src="/matouPCs/Public/Home/img/home.png" />
+							<img src="/matouPCS/Public/Home/img/home.png" />
 						</div>
 						<p>
 							<a href="?s=/Home/index">首页</a>
@@ -44,7 +44,7 @@
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
 											<div class="dltx">
-												<img src="/matouPCs/Public/Home/img/tx.png" />
+												<img src="/matouPCS/Public/Home/img/tx.png" />
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -56,7 +56,7 @@
 							<?php if($_SESSION['id'] != ''){ ?>
 								<a rel="nofollow" href="#">消息</a>
 								<div class="news">
-									<img src="/matouPCs/Public/Home/img/news.png" />
+									<img src="/matouPCS/Public/Home/img/news.png" />
 								</div>
 								<div class="str"></div>
 								<div class="select-xx">
@@ -64,7 +64,7 @@
 										<li>
 												<a href="?s=/Home/User/xqxx">需求消息
 											<div class="newss">
-												<img src="/matouPCs/Public/Home/img/news.png" />
+												<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
 										</li>
@@ -72,7 +72,7 @@
 								    	<a href="?s=/Home/User/bdxx">
 												部队消息
 												<div class="newss">
-													<img src="/matouPCs/Public/Home/img/news.png" />
+													<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
 										</li>
@@ -80,7 +80,7 @@
 											<a href="?s=/Home/User/spxx">
 												商铺消息
 												<div class="newss">
-													<img src="/matouPCs/Public/Home/img/news.png" />
+													<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
 										</li>
@@ -95,7 +95,7 @@
 											<li>
 												<a href="?s=/Home/User/xqxx">需求消息
 											<div class="newss">
-												<img src="/matouPCs/Public/Home/img/news.png" />
+												<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
 										</li>
@@ -103,7 +103,7 @@
 								    	<a href="?s=/Home/User/bdxx">
 												部队消息
 												<div class="newss">
-													<img src="/matouPCs/Public/Home/img/news.png" />
+													<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
 										</li>
@@ -111,7 +111,7 @@
 											<a href="?s=/Home/User/spxx">
 												商铺消息
 												<div class="newss">
-													<img src="/matouPCs/Public/Home/img/news.png" />
+													<img src="/matouPCS/Public/Home/img/news.png" />
 												</div>
 											</a>
 										</li>
@@ -129,7 +129,7 @@
 							</li>
 								<?php if(!empty($_SESSION['id'])){ ?>
 							<li id="select-yfb">
-								<a rel="nofollow" href="#">&nbsp;&nbsp;已发布<img class="img" src="/matouPCs/Public/Home/img/arrow_bottom.png"></a>
+								<a rel="nofollow" href="#">&nbsp;&nbsp;已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
 								<div class="str"></div>
 								<div class="select-yfb">
 									<ul>
@@ -156,7 +156,7 @@
 							</li>
 									<?php }else{ ?>
 									<li id="select-yfb" style="width: 70px;">
-									<a href="javascript:void(0)" onclick="alert('请先登录')">已发布<img class="img" src="/matouPCs/Public/Home/img/arrow_bottom.png"></a>
+									<a href="javascript:void(0)" onclick="alert('请先登录')">已发布<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
 									<div class="str"></div>
 									<div class="select-yfb" style="display:none;">
 								
@@ -174,7 +174,7 @@
 								<div class="str"></div>
 							</li>
 						<li id="select-sp">
-								<a href="#">商铺中心<img class="img" src="/matouPCs/Public/Home/img/arrow_bottom.png"></a>
+								<a href="#">商铺中心<img class="img" src="/matouPCS/Public/Home/img/arrow_bottom.png"></a>
 								<div class="str"></div>
 								<div class="select-sp">
 									<ul>
@@ -215,12 +215,12 @@
 			<div class="alert">
 				<div class="alert-1f">
 					<div class="alert-close">
-						<img src="/matouPCs/Public/Home/img/alert-close.png">
+						<img src="/matouPCS/Public/Home/img/alert-close.png">
 					</div>
 				</div>
 				<div class="alert-2f">
 					<div class="alert-logo">
-						<img src="/matouPCs/Public/Home/img/alert-logo.png">
+						<img src="/matouPCS/Public/Home/img/alert-logo.png">
 					</div>
 				</div>
 				<div class="alert-3f">
@@ -237,7 +237,7 @@
 								<li>
 									<div class="content-1f">
 										<div class="login-user">
-											<img src="/matouPCs/Public/Home/img/login-uesr.png">
+											<img src="/matouPCS/Public/Home/img/login-uesr.png">
 										</div>
 										<input id="login-userName" type="text" placeholder="使用用户名/手机号码">
 									</div>
@@ -246,7 +246,7 @@
 									</div>
 									<div class="content-2f">
 										<div class="login-pw">
-											<img src="/matouPCs/Public/Home/img/login-pw.png">
+											<img src="/matouPCS/Public/Home/img/login-pw.png">
 										</div>
 										<input id="login-passWord" type="password" placeholder="请输入您的密码">
 									</div>
@@ -271,17 +271,17 @@
 										<div class="alert-QQ">
 											<a href="javascript:void(0)" onclick="windowDl()">
 												<!-- <span  id="qqLoginBtn"></span> -->
-												<img src="/matouPCs/Public/Home/img/alert-QQ.png">
+												<img src="/matouPCS/Public/Home/img/alert-QQ.png">
 											</a>
 										</div>
 										<div class="alert-wc">
 											 <a href="javascript:void(0)" onclick="wxLogin()"> <!--微信登录 -->
-												<img src="/matouPCs/Public/Home/img/alert-wc.png">
+												<img src="/matouPCS/Public/Home/img/alert-wc.png">
 											</a>
 										</div>
 										<div class="alert-xl">
 											<a href="">
-												<img src="/matouPCs/Public/Home/img/alert-xl.png">
+												<img src="/matouPCS/Public/Home/img/alert-xl.png">
 											</a>
 										</div>
 									</div>
@@ -299,10 +299,10 @@
 										<span class="title">验 证 码</span>
 										<input id="yzm" type="text" maxlength="4" placeholder="请输入您的手机验证码">
 										<div class="alert-true">
-											<img src="/matouPCs/Public/Home/img/true.png">
+											<img src="/matouPCS/Public/Home/img/true.png">
 										</div>
 										<div class="alert-false">
-											<img src="/matouPCs/Public/Home/img/false.png">
+											<img src="/matouPCS/Public/Home/img/false.png">
 										</div>
 									</div>
 									<div class="register-3f">
@@ -346,9 +346,9 @@
 		<div class="spdlb" id="spdlb" title="消息">
 		
 			<div class="titlenab">
-				<img src="/matouPCs/Public/Home/img/swtitle.png">
+				<img src="/matouPCS/Public/Home/img/swtitle.png">
 				<div class="rhideb">
-					<img src="/matouPCs/Public/Home/img/hide.png">
+					<img src="/matouPCS/Public/Home/img/hide.png">
 				</div>
 			</div>
 			
@@ -395,12 +395,12 @@
 				<div class="swbtn-cb">
 					<div>
 						<a class="item" id="btn" tabindex="1">
-							<img src="/matouPCs/Public/Home/img/addp.png" />
+							<img src="/matouPCS/Public/Home/img/addp.png" />
 						</a>
 					</div>
 				
 					<div class="adds">
-						<img src="/matouPCs/Public/Home/img/adds.png" />
+						<img src="/matouPCS/Public/Home/img/adds.png" />
 					</div>
 				
 					<button class="tjbtnb" id="tjbtn" onclick="tj()">发布</button>
@@ -436,7 +436,7 @@
                 <h1>本地上传</h1>
                 <p class="upload_num">共<span id="uploaded_length">0</span>张，还能上传<span id="upload_other">9</span>张</p>
                 <ul id="ul_pics" class="ul_pics clearfix">
-                    <li id="local_upload"><img src="/matouPCs/Public/Home/img/local_upload.png" id="btn2"/></li>
+                    <li id="local_upload"><img src="/matouPCS/Public/Home/img/local_upload.png" id="btn2"/></li>
                 </ul>
                 <div class="arrow_layer">
                     <span class="arrow_top_area"><i class="arrow_top_bg"></i><em class="arrow_top"></em></span>
@@ -445,24 +445,24 @@
         </div>
     
 		<!--上传图片结束-->
-		<script src="/matouPCs/Public/Home/js/jquery-1.8.3.min.js"></script>
-		<script src="/matouPCs/Public/Home/js/jquery.leoweather.min.js"></script>
-		<script src="/matouPCs/Public/Home/js/City_data.js"></script>
-		<script src="/matouPCs/Public/Home/js/areadata.js"></script>
-		<script src="/matouPCs/Public/Home/js/sinaFaceAndEffec.js"></script>
-		<script src="/matouPCs/Public/Home/plupload/plupload.full.min.js"></script>
-		<script src="/matouPCs/Public/Home/js/header-index.js"></script>
-		<script src="/matouPCs/Public/Home/js/index-alert-login.js"></script>
+		<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
+		<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>
+		<script src="/matouPCS/Public/Home/js/City_data.js"></script>
+		<script src="/matouPCS/Public/Home/js/areadata.js"></script>
+		<script src="/matouPCS/Public/Home/js/sinaFaceAndEffec.js"></script>
+		<script src="/matouPCS/Public/Home/plupload/plupload.full.min.js"></script>
+		<script src="/matouPCS/Public/Home/js/header-index.js"></script>
+		<script src="/matouPCS/Public/Home/js/index-alert-login.js"></script>
 		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://www.xishimatou.com;" charset="utf-8"></script>
 		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 	</body>
 </html>
 					<div class="h-c-2f">
-						<img src="/matouPCs/Public/Home/img/navbg2.png" />
+						<img src="/matouPCS/Public/Home/img/navbg2.png" />
 						<div class="s-f2-r">
 							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
 							<div class="s-f2-r1">
-								<img src="/matouPCs/Public/Home/img/ss-t.png" />
+								<img src="/matouPCS/Public/Home/img/ss-t.png" />
 							</div>
 						</div>
 					</div>
@@ -511,7 +511,7 @@
 										</div>
 										<div class="litr">
 											<input class="w150t" id="dt" readonly="readonly" type="text"  name="time" value="" />
-											<div class="liti"><img src="/matouPCs/Public/Home/img/jxrq.png" /></div>
+											<div class="liti"><img src="/matouPCS/Public/Home/img/jxrq.png" /></div>
 											<div id="dd" style="left: 0 !important; top:30px !important"></div>
 										</div>
 
@@ -584,9 +584,9 @@
 							<div class="txfg1-c1-1">
 								<span class="hfx2"></span>
 								<p><strong>悬赏信息/</strong><samp style="color: #ff5c5d;font-size: 12px;">最多添加3个悬赏</samp></p>
-								<span class="hfx3" id="hfx3-1"><img src="/matouPCs/Public/Home/img/tj-sp.png" />添加悬赏</span>
+								<span class="hfx3" id="hfx3-1"><img src="/matouPCS/Public/Home/img/tj-sp.png" />添加悬赏</span>
 							</div>
-							<div class="txfg1-c2-1"><img src="/matouPCs/Public/Home/img/gth.png" /><span class="txfgts">点击右上角"添加悬赏"完善悬赏要求</span></div>
+							<div class="txfg1-c2-1"><img src="/matouPCS/Public/Home/img/gth.png" /><span class="txfgts">点击右上角"添加悬赏"完善悬赏要求</span></div>
 							<ul class="addmation">
 								<form name="myform" class="submit">
 									<input type="hidden" name="add">
@@ -615,7 +615,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCs/Public/Home/css/3rank-footer.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
 	</head>
 	<body>
 		<footer>
@@ -634,11 +634,11 @@
 
 	</body>
 	
-	<script src="/matouPCs/Public/Home/js/jquery.bigautocomplete.js "></script>
-	<script src="/matouPCs/Public/Home/js/sjs.js"></script>
-	<script type="text/javascript" src="/matouPCs/Public/Home/js/City_data.js"></script>
-	<script type="text/javascript" src="/matouPCs/Public/Home/js/dz.js"></script>
-	<script type="text/javascript" src="/matouPCs/Public/Home/js/upimage.js"></script>
+	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js "></script>
+	<script src="/matouPCS/Public/Home/js/sjs.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/City_data.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/dz.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/upimage.js"></script>
 	<script type="text/javascript ">
 		$(document).ready(function() {
 			$(".con ").eq(0).show();
