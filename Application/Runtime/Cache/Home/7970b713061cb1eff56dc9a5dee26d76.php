@@ -469,6 +469,7 @@
 				</div>
 			</div>
 		</header>
+		<form name="myform" enctype="multipart/form-data">
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-r">
@@ -508,7 +509,7 @@
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<input class="xz-city" id="xz-city" placeholder="请选择所在地" readonly="readonly" type="text" value="" data-value="" onclick="appendCity(this,'danxuan')" />
+											<input class="xz-city" id="xz-city" placeholder="请选择所在地" name="address" readonly="readonly" type="text" value="" data-value="" onclick="appendCity(this,'danxuan')" />
 										</div>
 										<div class="cf"></div>
 									</div>
@@ -520,7 +521,7 @@
 											<p class="litc">Q&nbsp;Q</p>
 											<p class="cf"></p>
 										</div>
-										<div class="litr"><input class="w200t" type="text" /></div>
+										<div class="litr"><input class="w200t" name="qq" type="text" /></div>
 										<div class="cf"></div>
 									</div>
 								</li>
@@ -531,7 +532,7 @@
 											<p class="litc">联系电话</p>
 											<p class="cf"></p>
 										</div>
-										<div class="litr"><input class="w200t" type="tel" maxlength="11" /></div>
+										<div class="litr"><input class="w200t" name="tel" type="tel" maxlength="11" /></div>
 										<div class="cf"></div>
 									</div>
 								</li>
@@ -556,20 +557,20 @@
 										</div>
 										<div class="litrc">
 											<div class="xztp">
-												<img id="pic1" src="img/local_upload.png" />
-												<input class="upload" id="upload1" name="file" accept="image/jpg,image/jpeg,image/png" type="file" />
+												<img id="pic1" src="/matouPCS/Public/Home/img/local_upload.png" />
+												<input class="upload" id="upload1" name="file1" accept="image/jpg,image/jpeg,image/png" type="file" />
 											</div>
 											<div class="xztp">
-												<img id="pic2" src="img/local_upload.png" />
-												<input class="upload" id="upload2" name="file" accept="image/jpg,image/jpeg,image/png" type="file" />
+												<img id="pic2" src="/matouPCS/Public/Home/img/local_upload.png" />
+												<input class="upload" id="upload2" name="file2" accept="image/jpg,image/jpeg,image/png" type="file" />
 											</div>
 											<div class="xztp">
-												<img id="pic3" src="img/local_upload.png" />
-												<input class="upload" id="upload3" name="file" accept="image/jpg,image/jpeg,image/png" type="file" />
+												<img id="pic3" src="/matouPCS/Public/Home/img/local_upload.png" />
+												<input class="upload" id="upload3" name="file3" accept="image/jpg,image/jpeg,image/png" type="file" />
 											</div>
 											<div style="margin: 0px;" class="xztp">
-												<img id="pic4" src="img/local_upload.png" />
-												<input class="upload" id="upload4" name="file" accept="image/jpg,image/jpeg,image/png" type="file" />
+												<img id="pic4" src="/matouPCS/Public/Home/img/local_upload.png" />
+												<input class="upload" id="upload4" name="file4" accept="image/jpg,image/jpeg,image/png" type="file" />
 											</div>
 											<div class="clearfloat"></div>
 										</div>
@@ -583,14 +584,32 @@
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<select class="w95s">
-												<option></option>
+											<select class="w95s" id="types" name="names" onchange="gradeChange()">
+												<option>-请选择-</option>
+												<option>摄像器材</option>
+												<option>摄影器材</option>
+												<option>音响</option>
 												<option>灯光</option>
+												<option>舞台桁架</option>
+												<option>婚纱</option>
+												<option>礼服</option>
+												<option>笔记本</option>
+												<option>其他</option>
 											</select>
-											<input disabled="disabled" class="w209" type="text" placeholder="填写物体具体名称" />
+											<span class="types1"></span>
 										</div>
 										<div class="cf"></div>
 								</li>
+								<script type="text/javascript">
+									function gradeChange(){
+										var checkText=$("#types").find("option:selected").text();
+									    if(checkText == '其他'){
+									    	$('.types1').html('<input class="w209" type="text" name="zymc1" placeholder="填写职业名称" />');
+									    }else{
+									    	$('.types1').html('<input class="w209" type="hidden" name="zymc1" placeholder="填写职业名称" />');
+									    }
+									}
+								</script>
 								<li>
 									<div class="mprofession">
 										<div class="litl">
@@ -599,7 +618,7 @@
 											<p class="cf"></p>
 										</div>
 										<div class="litr">
-											<input class="w95t" type="number" />&nbsp;元
+											<input class="w95t" name="price" type="number" />&nbsp;元
 										</div>
 									</div>
 									<div class="cf"></div>
@@ -611,7 +630,7 @@
 											<p class="litc">闲置简介</p>
 											<p class="cf"></p>
 										</div>
-										<div class="litrb"><textarea class="w340" type="text"></textarea></div>
+										<div class="litrb"><textarea class="w340" name="content" type="text"></textarea></div>
 										<div class="cf"></div>
 									</div>
 								</li>
@@ -622,13 +641,14 @@
 							</div>
 						</div>
 						<div class="clearfloat "></div>
-						<a href="xzfbwc-3r-zy.php" class="s-tf-btn">确认发布</a>
+						<a href="javascript:void(0)" onclick="submit()" class="s-tf-btn">确认发布</a>
 					</div>
 					<div class="clearfloat "></div>
 				</div>
 			</div>
 			<div class="clearfloat "></div>
 		</section>
+		</form>
 		<!DOCTYPE html>
 <html>
 	<head>
@@ -652,10 +672,21 @@
 </html>
 
 	</body>
-	<script src="js/jquery-1.8.3.min.js "></script>
-	<script type="text/javascript" src="js/City_data.js"></script>
-	<script src="js/areadata.js"></script>
-	<script src="js/scrolltopcontrol.js"></script>
-	<script src="js/showwin.js"></script>
-
+	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/City_data.js"></script>
+	<script src="/matouPCS/Public/Home/js/dz.js"></script>
+	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
+	<script src="/matouPCS/Public/Home/js/showwin.js"></script>
+	<script type="text/javascript">
+	function submit(){
+		var form = document.myform;
+		if(form.address.value == '' || form.qq.value == '' || form.tel.value == '' || form.names.value == '' || form.price.value == '' || form.content.value == '' ){
+			alert('滚犊子');
+		}else{
+			form.action = "?s=/Home/Tzsc/txxzgo";
+			form.method = "post";
+			form.submit();
+		}
+	}
+	</script>
 </html>

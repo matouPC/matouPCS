@@ -650,26 +650,29 @@ $('.spxx-lb ul li').click(function() {
 	}, 300);
 });
 
-$(function() {
-	var yhmc_height = $('.yhmc dl div').height();
-	$('#xx_01').on('click', function() {
-		if($(this).hasClass('act')) {
-			$(this).removeClass('act');
-			$("#xx_01 img").css('transform', 'rotate(0deg)');
-			$('#xx_01 span').html('查看详情');
-			$('.yhmc dl').stop().animate({
-				height: '0px'
-			}, 1000);
-		} else {
-			$(this).addClass('act');
-			$("#xx_01 img").css('transform', 'rotate(180deg)');
-			$('#xx_01 span').html('收起');
-			$('.yhmc dl').stop().animate({
-				height: yhmc_height + 'px'
-			}, 1000);
-		}
-	});
-});
+// $(function() {
+	function xx_01(id){
+		var yhmc_height = $('#yhmc'+id+' dl div').height();
+		// $('#xx_01'+id).on('click', function() {
+			if($('#xx_01'+id).hasClass('act')) {
+				$('#xx_01'+id).removeClass('act');
+				$("#xx_01"+id+" img").css('transform', 'rotate(0deg)');
+				$('#xx_01'+id+' span').html('查看详情');
+				$('#yhmc'+id+' dl').stop().animate({
+					height: '0px'
+				}, 1000);
+			} else {
+				$('#xx_01'+id).addClass('act');
+				$("#xx_01"+id+" img").css('transform', 'rotate(180deg)');
+				$('#xx_01'+id+' span').html('收起');
+				$('#yhmc'+id+' dl').stop().animate({
+					height: yhmc_height + 'px'
+				}, 1000);
+			}
+		// });
+	}
+	
+// });
 
 $('.spxx_hf').click(function() {
 	$(this).parents('li').children('.no').show();
@@ -718,14 +721,14 @@ $(document).ready(function() {
 
 //		--------------------------------------------------详情页面-----------------------------------------------------------
 //已完成
-function change() {
-	var mark = document.getElementById('btn').innerText;
-	if(mark == '已出售') {
-		document.getElementById('btn').innerText = "未出售";
-	} else {
-		document.getElementById('btn').innerText = "已出售";
-	}
-}
+// function change() {
+// 	var mark = document.getElementById('btn').innerText;
+// 	if(mark == '已出售') {
+// 		document.getElementById('btn').innerText = "未出售";
+// 	} else {
+// 		document.getElementById('btn').innerText = "已出售";
+// 	}
+// }
 
 function changes() {
 	var mark = document.getElementById('btn_01').innerText;
@@ -827,7 +830,6 @@ $('#zpxx').click(function() {
 $(function() {
 	$("#sp").click(function() {
 		//				alert("充值")
-		alert(123);
 		$("#spdl").show();
 	});
 	$("#spdl-ok").click(function() {
@@ -931,3 +933,20 @@ $("#hfx3-1_zp").click(function() {
 		return(that);
 	});
 });
+//报名
+function bao(id){
+	alert(id);
+	$.ajax({
+		url:"?s=/Home/Tzsc/xqqg_bao/id/"+id,
+		type:"get",
+		dataType:"json",
+		success:function(data){
+			$("#b"+id).css("font-size", "12px");
+			$(".xqbta").css("background", "#ccc");
+			$("#b"+id).text("已有"+data+"人报名");
+		},error:function(){
+			alert('no');
+		}
+	});
+	
+}

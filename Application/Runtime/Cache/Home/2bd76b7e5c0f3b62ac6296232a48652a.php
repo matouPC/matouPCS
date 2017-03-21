@@ -1,92 +1,18 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/scj-3r-xy.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style-type: none;
-			}
-			
-			a,
-			img {
-				border: 0;
-			}
-			
-			img {
-				width: 100%;
-				height: 100%;
-			}
-			
-			.demo {
-				width: 720px;
-				margin: 35px auto;
-			}
-			
-			.demo h2 {
-				font-size: 16px;
-				color: #3366cc;
-				height: 30px;
-			}
-			
-			.demo li {
-				float: left;
-			}
-			
-			.text,
-			.button {
-				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
-			}
-			
-			.text {
-				width: 425px;
-				height: 22px;
-				padding: 4px 7px;
-				padding: 6px 7px 2px\9;
-				font: 16px arial;
-				border: 1px solid #cdcdcd;
-				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
-				vertical-align: top;
-				outline: none;
-				margin: 0 -1px 0 0;
-			}
-			
-			.button {
-				width: 79px;
-				height: 32px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-			
-			.button2 {
-				width: 135px;
-				height: 32px;
-				margin-left: 30px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-		</style>
+		<title>收藏报名</title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/troop.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
 	</head>
 
 	<body>
 		<header>
-			<!DOCTYPE html>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<!DOCTYPE html>
 <html>
 
 	<head>
@@ -530,238 +456,161 @@
 	</body>
 </html>
 					<div class="h-c-2f">
-						<img src="/matouPCS/Public/Home/img/navbg2.png" />
+						<img src="/matouPCS/Public/Home/img/navbg2.png" alt="" />
 						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<input type="text" placeholder="搜索全站"/>
 							<div class="s-f2-r1">
-								<img src="/matouPCS/Public/Home/img/ss-t.png" onclick="alert('准备搜索')"/>
+								<img src="/matouPCS/Public/Home/img/ss-t.png" alt="" />
 							</div>
 						</div>
 					</div>
-					<div class="h-c-3f">
-						收藏夹
+					<div class="h-c-3f-f">
+						<h1>收藏报名</h1>
 					</div>
 				</div>
 			</div>
 		</header>
 		<section>
 			<div class="s-main-c">
-				<div class="s-c-1f">
+				<div class="s-c-1f-scj">
 					<div class="left">
-						<button class="selected">已收藏需求</button>
-						<button>已报名</button>
-						<button>已收藏商铺</button>
+						<button id="bmxq" class="selected">已报名</button>
+						<button id="scxq">已收藏需求</button>
+						<button id="sp">已收藏商铺</button>
 					</div>
 					<div class="right">
-						<button class="lb">类别</button>
+						<div id="bmxq-lb" class="lb"><p>全部</p>
+						<div class="bmxq-lb">
+								<ul>
+									<li>全部</li>
+									<li>招聘</li>
+									<li>悬赏</li>
+									<li>求购</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div style="display: none;" id="scxq-lb" class="lb"><p>全部</p>
+							<div class="scxq-lb">
+								<ul>
+									<li>全部</li>
+									<li>应赏</li>
+									<li>应聘</li>
+									<li>闲置</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div style="display: none;" id="sp-lb" class="lb"><p>全部</p>
+						<div class="sp-lb">
+								<ul>
+									<li>全部</li>
+									<li>销售商</li>
+									<li>租赁商</li>
+									<li>婚车租赁</li>
+								</ul>
+							</div>
+						</div>
+						<div class="clearfloat"></div>
 					</div>
 					<div class="clearfloat"></div>
 				</div>
-				<div class="con">
-					<div class="s-c-2f">
-						<ul>
-							<?php if(is_array($userYs)): foreach($userYs as $key=>$userYss): $userYs_s = explode(',',$userYss['due_shou']); array_pop($userYs_s); ?>
-								<?php if(in_array($_SESSION['id'],$userYs_s)){ ?>
-								<li>
-									<a href="?s=/Home/Ysq/xqys/id/<?php echo ($userYss["did"]); ?>">
-										<div class="s-c-2f-1f">
-											<div class="yhtx">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">用户<?php echo (substr($userYss["username"],0,6)); ?></p>
-											<p class="szd">所在地：<?php echo ($userYss["addre"]); ?></p>
-											<button>应赏</button>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="s-c-2f-2f">
-											<div>
-												<p><?php echo ($userYss["name"]); ?></p>
-												<p class="age"><?php echo ($userYss["age"]); ?>岁</p>
-												<p class="grjl"><strong style="color: #000; font-weight: 500;">个人简历：</strong><?php echo ($userYss["content"]); ?></p>
-												<div class="clearfloat"></div>
-											</div>
-											<div>
-												<p><?php echo ($userYss["type"]); ?></p>
-												<p class="zpzp"><strong style="color: #000; font-weight: 500;">照片作品：</strong>
-													<?php if(is_array($userYs_zp)): foreach($userYs_zp as $key=>$userYs_zp): if($userYs_zp['pid'] == $userYss['did']){ $userYs_zps = explode(',',$userYs_zp['imagename_z']); array_pop($userYs_zps); $userYs_zps = count($userYs_zps); ?>
-														<?php echo ($userYs_zps); ?>个
-														<?php } endforeach; endif; ?>
-												</p>
-												<p class="spzp"><strong style="color: #000; font-weight: 500;">视频作品：</strong>
-													<?php if(is_array($userYs_sp)): foreach($userYs_sp as $key=>$userYs_sp): if($userYs_sp['pid'] == $userYss['did']){ $userYs_sps = explode(',',$userYs_sp['imagename_v']); array_pop($userYs_sps); $userYs_sps = count($userYs_sps); ?>
-														<?php echo ($userYs_sps); ?>个
-														<?php } endforeach; endif; ?>
-												</p>
-												<?php if(is_array($userYs_dq)): foreach($userYs_dq as $key=>$userYs_dqs): if($userYs_dqs['pid'] == $userYss['did']){ ?>
-													<?php  $dangdate = explode(',',$userYs_dqs['dangdate']); $dangs = explode(',',$userYs_dqs['dangs']); array_pop($dangdate); ?>
-															<p class="dq"><strong style="color: #000; font-weight: 500;">档期：</strong>
-																<?php for ($i=0; $i < count($dangdate); $i++) { ?>
-																	<?php echo ($dangdate[$i]); echo ($dangs[$i]); ?>&nbsp;&nbsp;&nbsp;&nbsp;
-																<?php } ?></p>
-														<?php } endforeach; endif; ?>
-												<p class="jg"><?php echo ($userYss["price"]); ?>元/天</p>
-												<div class="clearfloat"></div>
-											</div>
-										</div>
-									</a>
-								</li>
-								<?php } endforeach; endif; ?>
-							<?php if(is_array($userYps)): foreach($userYps as $key=>$userYpss): ?><li>
-									<a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($userYpss["pid"]); ?>">
-										<div class="s-c-2f-1f">
-											<div class="yhtx">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">用户<?php echo (substr($userYpss["username"],0,6)); ?></p>
-											<p class="szd">所在地：<?php echo ($userYpss["addre"]); ?></p>
-											<p class="qwzw">期望职位：<?php echo ($userYpss["type"]); ?></p>
-											<button>应聘</button>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="s-c-2f-2f">
-											<div>
-												<p><?php echo ($userYpss["name"]); ?></p>
-												<p class="age"><?php echo ($userYpss["ages"]); ?></p>
-												<p class="gzjy">工作经验：<?php echo ($userYpss["worktimes"]); ?>年</p>
-												<p class="grjl" style="width: 700px;"><strong style="color: #000; font-weight: 500;">个人简历：</strong><?php echo ($userYpss["content"]); ?></p>
-												<p style="float: right; margin-right: 50px;"><?php echo ($userYpss["typew"]); ?></p>
-												<div class="clearfloat"></div>
-											</div>
-											<div>
-												<p class="gzsj"><strong style="color: #000; font-weight: 500;">工作时间：</strong><?php echo ($userYpss["worktime"]); ?></p>
-												<p class="spzp"><strong style="color: #000; font-weight: 500;">所在公司：</strong><?php echo ($userYpss["workname"]); ?> </p>
-												<p class="spzp"><strong style="color: #000; font-weight: 500;">职位：</strong><?php echo ($userYpss["<?php echo ($userYpss"]["typew"]); ?></p>
-												<!--<p class="jg">￥500-￥700天</p>-->
-												<div class="clearfloat"></div>
-											</div>
-										</div>
-									</a>
-								</li><?php endforeach; endif; ?>
-							<?php foreach ($userIdle as $userIdles) { ?>
-							 <?php $shou = explode(',',$userIdles['shou']); array_pop($shou);?>
-							 	<?php if(in_array($_SESSION['id'],$shou)){ ?>
-								<li>
-									<div href="{); ?>">
-										<a href="?s=/Home/Tzsc/xqxz/id/<?php echo ($userIdles['fid']); ?>">
-										<div class="s-c-2f-1f">
-											<div class="yhtx">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">用户<?php echo (substr($userIdles["username"],0,6)); ?></p>
-											<p class="szd">所在地：<?php echo ($userIdles["addre"]); ?></p>
-											<button>闲置</button>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="s-c-2f-2f">
-											<div>
-												<p>物品名称：<strike style="color: #999999; font-weight: 500;"><?php echo ($userIdles["name"]); ?></strike></p>
-												<p class="ys"><strong style="color: #000000; font-weight: 500;">预算：</strong>￥<?php echo ($userIdles["price"]); ?></p>
-												<div class="clearfloat"></div>
-											</div>
-											<div>
-												<!--<p class="jg">￥500-￥700天</p>-->
-												<p style="margin: 0; width: 1100px;" class="grjl"><strong style="color: #000; font-weight: 500;">个人简历：</strong><?php echo ($userIdles["content"]); ?></p>
-												<div class="clearfloat"></div>
-											</div>
-										</div>
-									</a>
-									</div>
-								</li>
-								<?php } ?>
-								<?php } ?>
-						</ul>
-					</div>
-				</div>
 				<div class="con" style="display: none;">
-					<div class="s-c-3f">
+					<div class="s-c-3f-scj">
 						<ul>
-							<li>
-								<!--<p class="hdsj">
-									活动时间：2016-12-10
-								</p>-->
-								<p class="hddd">
-									工作地点：郑州
-								</p>
-								<p class="xsnr">
-									招聘内容：摄影、主持人
-								</p>
-								<a href="">
-									<div class="nr">
-										<div class="left">
-											<div class="yhtx">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">
-												用户名称
-											</p>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="right">
-											<p class="hf">
-												未回复
-											</p>
-											<p class="rq">
-												2017-01-01
-											</p>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<!--<p class="hdsj">
-									活动时间：2016-12-10
-								</p>-->
-								<p class="hddd">
-									物品名称：摄影机
-								</p>
-								<p class="xsnr">
-									预算：<span style="color: #ff5c5d;">￥500</span>
-								</p>
-								<a href="">
-									<div class="nr">
-										<div class="left">
-											<div class="yhtx">
-												<img src="/matouPCS/Public/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">
-												用户名称
-											</p>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="right">
-											<p class="hf">
-												回复：
-											</p>
-											<p class="jj">
-												拒绝
-											</p>
-											<p class="rq">
-												2017-01-01
-											</p>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-								</a>
-							</li>
-							<?php if(is_array($userBmxs)): foreach($userBmxs as $key=>$userBmxss): ?><li>
-									<p class="hdsj">
-										活动时间：<?php echo ($userBmxss["date"]); ?>
-									</p>
+							<?php if(is_array($newUserZp)): foreach($newUserZp as $key=>$newUserZps): ?><li>
 									<p class="hddd">
-										活动地点：<?php echo ($userBmxss["address"]); ?>
+										<?php $ad_zp = explode(',',$newUserZps['address_zp']); ?>
+										工作地点：<?php echo ($ad_zp[0]); ?>
 									</p>
 									<p class="xsnr">
-										悬赏内容：摄影、主持人
+										招聘内容：<?php if(is_array($newUserZp_xq)): foreach($newUserZp_xq as $key=>$newUserZp_xqs): if($newUserZp_xqs['pid'] == $newUserZps['rid']){ ?>
+										<?php echo $newUserZp_xqs['type']; ?>
+										<?php } endforeach; endif; ?>
 									</p>
+									<div class="clear"></div>
 									<a href="">
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" />
+													<img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
 												</div>
 												<p class="yhmc">
-													用户名称
+													用户<?php echo ($newUserZps["username"]); ?>
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="right">
+												<p class="hf">
+													未回复
+												</p>
+												<p class="rq">
+													2017-01-01
+												</p>
+											</div>
+											<div class="clearfloat"></div>
+										</div>
+									</a>
+								</li><?php endforeach; endif; ?>
+							<?php if(is_array($userIdle)): foreach($userIdle as $key=>$userIdles): $shou = explode(',',$userIdles['bao']); array_pop($shou);?>
+							 	<?php if(in_array($_SESSION['id'],$shou)){ ?>
+								<li>
+									<p class="hddd">
+										物品名称：<?php echo ($userIdles["name"]); ?>
+									</p>
+									<p class="xsnr">
+										预算：<span class="red">￥<?php echo ($userIdles["price"]); ?>元</span>
+									</p>
+									<div class="clear"></div>
+									<a href="">
+										<div class="nr">
+											<div class="left">
+												<div class="yhtx">
+													<img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
+												</div>
+												<p class="yhmc">
+													用户<?php echo ($userIdles["username"]); ?>
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="right">
+												<p class="hf">
+													回复：
+												</p>
+												<p class="jj">
+													拒绝
+												</p>
+												<p class="rq">
+													2017-01-01
+												</p>
+											</div>
+											<div class="clearfloat"></div>
+										</div>
+									</a>
+								</li>
+								<?php } endforeach; endif; ?>
+							<?php if(is_array($newUserXs)): foreach($newUserXs as $key=>$newUserXss): ?><li>
+									<p class="hdsj">
+										活动时间：<?php echo ($newUserXss["time"]); ?>
+									</p>
+									<p class="hddd">
+										<?php $ad = explode(',',$newUserXss['address']); ?>
+										活动地点：<?php echo ($ad[0]); ?>
+									</p>
+									<p class="xsnr">
+										<?php if(is_array($newUserXs_xq)): foreach($newUserXs_xq as $key=>$newUserXs_xqs): if($newUserXs_xqs['pid'] == $newUserXss['psid']){ ?>
+											报名悬赏内容：<?php echo ($newUserXs_xqs["type"]); ?>
+											<?php } endforeach; endif; ?>
+									</p>
+									<div class="clear"></div>
+									<a href="">
+										<div class="nr">
+											<div class="left">
+												<div class="yhtx">
+													<img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
+												</div>
+												<p class="yhmc">
+													用户<?php echo ($newUserXss["username"]); ?>
 												</p>
 												<div class="clearfloat"></div>
 											</div>
@@ -778,233 +627,190 @@
 									</a>
 								</li><?php endforeach; endif; ?>
 						</ul>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
 					</div>
 				</div>
 				<div class="con" style="display: none;">
-					<div class="s-c-4f">
+					<div class="s-c-2f-scj">
 						<ul>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="/matouPCS/Public/Home/img/sptx.png" />
+							<?php if(is_array($userYsSc)): foreach($userYsSc as $key=>$userYsScs): $ysXq = explode(',',$userYsScs['due_shou']); array_pop($ysXq); ?>
+								<?php if(in_array($_SESSION['id'],$ysXq)){ ?>
+								<li>
+									<a href="?s=/Home/Ysq/xqys/id/<?php echo ($userYsScs["did"]); ?>">
+										<div class="s-c-2f-scj-1f">
+											<div class="yhtx">
+												<?php if($userYsScs[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($userYsScs["imagename"]); ?>" alt="" /><?php endif; ?>
+											</div>
+											<p class="yhmc"><?php echo ($userYsScs["username"]); ?></p>
+											<?php  $add_ysad = explode(',',$userYsScs['address']);?>
+											<p class="szd">所在地：<?php echo ($add_ysad[0]); ?></p>
+											<button>应赏</button>
+											<div class="clearfloat"></div>
 										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
+										<div class="s-c-2f-scj-2f">
+											<div>
+												<p><?php echo ($userYsScs["name"]); ?></p>
+												<p class="age"><?php echo ($userYsScs["age"]); ?>岁</p>
+												<p class="grjl"><span class="black-333">个人简历：</span><?php echo ($userYsScs["content"]); ?></p>
+												<div class="clearfloat"></div>
+											</div>
+											<div>
+												<p><?php echo ($userYsScs["type_d"]); ?></p>
+												<?php $imgnum = explode(',',$userYsScs['imagename_z']); $vidnum = explode(',',$userYsScs['imagename_v']); $dang = explode(',',$userYsScs['dangdate']); $dangs = explode(',',$userYsScs['dangs']); $ss = explode(',',$userYsScs['due_shou']); array_pop($imgnum); array_pop($vidnum); array_pop($dang); array_pop($dangs); array_pop($ss); $imgnums = count($imgnum); $vidnums = count($vidnum); $sss = count($ss); ?>
+												<p class="zpzp"><span class="black-333">照片作品：</span><?php echo ($imgnums); ?>个</p>
+												<p class="spzp"><span class="black-333">视频作品：</span><?php echo ($vidnums); ?>个</p>
+												<p class="dq"><span class="black-333">档期：</span><?php echo $dang[1];echo $dangs[1];?>&nbsp;&nbsp;......</p>
+												<p class="jg"><?php echo ($userYsScs["price"]); ?>元/天</p>
+												<div class="clearfloat"></div>
 											</div>
 										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
+										<div class="s-c-2f-scj-3f">
+											<p class="fbsj"><?php echo ($userYsScs["date"]); ?></p>
+											<p class="sc">已有<?php echo ($sss); ?>人收藏</p>
+											<div class="clearfloat"></div>
 										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="/matouPCS/Public/Home/img/sptx.png" />
+									</a>
+								</li>
+								<?php } endforeach; endif; ?>
+							<?php if(is_array($userYpSc)): foreach($userYpSc as $key=>$userYpScs): $ypXq = explode(',',$userYpScs['em_shou']); array_pop($ypXq); ?>
+								<?php if(in_array($_SESSION['id'],$ypXq)){ ?>
+								<li>
+									<a href="">
+										<div class="s-c-2f-scj-1f">
+											<div class="yhtx">
+												<?php if($userYsScs[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($userYsScs["imagename"]); ?>" alt="" /><?php endif; ?>
+											</div>
+											<p class="yhmc"><?php echo ($userYpScs["username"]); ?></p>
+											<p class="szd">所在地：<?php echo ($userYpScs["address"]); ?></p>
+											<p class="qwzw">期望职位：<?php echo ($userYpScs["type"]); ?></p>
+											<button>应聘</button>
+											<div class="clearfloat"></div>
 										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
+										<div class="s-c-2f-scj-2f">
+											<div>
+												<p><?php echo ($userYpScs["name"]); ?></p>
+												<p class="age"><?php echo ($userYpScs["ages"]); ?>岁</p>
+												<p class="gzjy">工作经验：<?php echo ($userYpScs["worktimes"]); ?>年</p>
+												<p class="grjl-yp"><span class="black-333">个人简历：</span><?php echo ($userYpScs["content"]); ?></p>
+												<p class="zw-yp"><?php echo ($userYpScs["type_u"]); ?></p>
+												<div class="clearfloat"></div>
+											</div>
+												<div>
+													<p class="gzsj"><span class="black-333">工作时间：</span><?php echo ($userYpSc_work[0]['worktime']); ?></p>
+													<p class="spzp"><span class="black-333">所在公司：</span><?php echo ($userYpSc_work[0]['workname']); ?></p>
+													<p class="spzp"><span class="black-333">职位：</span><?php echo ($userYpSc_work[0]['typew']); ?></p>
+													<!--<p class="jg">￥500-￥700天</p>-->
+													<div class="clearfloat"></div>
+												</div>
+										</div>
+										<div class="s-c-2f-scj-3f">
+											<p class="fbsj"><?php echo ($userYpScs["date"]); ?></p>
+											<?php $shou = explode(',',$lists['em_shou']); array_pop($shou); $shous = count($shou); ?>
+											<p class="sc">已有<?php echo ($shous); ?>人收藏</p>
+											<div class="clearfloat"></div>
+										</div>
+									</a>
+								</li>
+								<?php } endforeach; endif; ?>
+							<?php if(is_array($userXzSc)): foreach($userXzSc as $key=>$userXzScs): $xzShou = explode(',',$userXzScs['shou']); array_pop($xzShou); ?>
+								<?php if(in_array($_SESSION['id'],$xzShou)){ ?>
+								<li>
+									<a href="">
+										<div class="s-c-2f-scj-1f">
+											<div class="yhtx">
+												<?php if($userYsScs[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($userYsScs["imagename"]); ?>" alt="" /><?php endif; ?>
+											</div>
+											<p class="yhmc"><?php echo ($userXzScs["username"]); ?></p>
+											<p class="szd">所在地：<?php echo ($userXzScs["address"]); ?></p>
+											<button>闲置</button>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="s-c-2f-scj-2f">
+											<div>
+												<p>物品名称：<span class="black-333"><?php echo ($userXzScs["name"]); ?></span></p>
+												<p class="ys"><span class="black-333">报价：</span>￥<?php echo ($userXzScs["price"]); ?></p>
+												<div class="clearfloat"></div>
+											</div>
+											<div>
+												<p class="xzjj"><span class="black-333">闲置简介：</span><?php echo ($userXzScs["content"]); ?></p>
+												<div class="clearfloat"></div>
 											</div>
 										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
+										<div class="s-c-2f-scj-3f">
+											<p class="fbsj"><?php echo ($userXzScs["date"]); ?></p>
+											<?php $shou_xz = explode(',',$userXzScs['shou']); array_pop($shou_xz); $shous_xz = count($shou_xz); ?>
+											<p class="sc">已有<?php echo ($shous_xz); ?>人收藏</p>
+											<div class="clearfloat"></div>
 										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="/matouPCS/Public/Home/img/sptx.png" />
-										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
-											</div>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
-										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="/matouPCS/Public/Home/img/sptx.png" />
-										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
-											</div>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
-										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
+									</a>
+								</li>
+								<?php } endforeach; endif; ?>
 						</ul>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
+					</div>
+				</div>
+				<div class="con" style="display: none;">
+					<div class="s-c-4f-scj">
+						<ul>
+							<?php if(is_array($userSpSc)): foreach($userSpSc as $key=>$userSpScs): $spShou = explode(',',$userSpScs['shou']); array_pop($spShou); ?>
+								<?php if(in_array($_SESSION['id'],$spShou)){ ?>
+								<li>
+									<a href="">
+										<div class="left">
+											<div class="sptx">
+												<img src="img/sptx.png" alt="" />
+												<?php if($userSpScs[imagename]==''): ?><img style="width:100px;" src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:100px;" src="/MatouPCS/Tu/upload/<?php echo ($userSpScs["imagename"]); ?>" alt="" /><?php endif; ?>
+											</div>
+											<div class="sp">
+												<p><?php echo ($userSpScs["shopname"]); ?></p>
+												<div class="bottom">
+													<p class="xss"><?php echo ($userSpScs["type"]); ?></p>
+													<?php $sp_shou = explode(',',$userSpScs['shou']); array_pop($sp_shou); $sp_shou_num = count($sp_shou); ?>
+													<p class="sc">收藏<?php echo ($sp_shou_num); ?></p>
+												</div>
+											</div>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="right">
+											<p class="dpdz">
+												<span class="black-333">店铺地址：</span><?php echo ($userSpScs["address"]); ?>
+											</p>
+											<div class="clearfloat"></div>
+											<div class="bottom">
+												<p class="zysp">
+													<span class="black-333">主营商品：</span> <?php echo ($userSpScs["zysp"]); ?>
+												</p>
+											</div>
+										</div>
+										<div class="clearfloat"></div>
+									</a>
+								</li>
+								<?php } endforeach; endif; ?>
+						</ul>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
 					</div>
 				</div>
 			</div>
 
 		</section>
-		<br>
-		<br>
-		<br>
-		<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
-	</head>
-	<body>
-		<footer>
-			<div class="f-content-main">
-				<div class="f-main-c">
-					<div class="f-c-1f">
-						
-						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
-						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</body>
-</html>
-
+		<?php	include '3rank-footer.php';?>
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		//----------------------------remove tab切换样式--------------------------
-		$('.s-c-1f .left button').click(function() {
-			$(this).parents('.s-c-1f').children('.left').each(function() {
-				$('button', this).removeClass('selected');
-			});
-			$(this).attr('class', 'selected');
-		});
-		//----------------------------切换页面--------------------------
-		$(document).ready(function() {
-			$(".con").eq(0).show();
-			$(".s-c-1f .left button").click(function() {
-				var num = $(".s-c-1f .left button").index(this);
-				$(".con").hide();
-				$(".con").eq(num).show().slblings().hide();
-			});
-		});
-	</script>
-
+	<script src="/matouPCS/Public/Home/js/showwin2.js"></script>
+	<script src="/matouPCS/Public/Home/js/troop.js"></script>
+	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 </html>

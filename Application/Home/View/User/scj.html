@@ -1,352 +1,184 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/scj-3r-xy.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
-		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				list-style-type: none;
-			}
-			
-			a,
-			img {
-				border: 0;
-			}
-			
-			img {
-				width: 100%;
-				height: 100%;
-			}
-			
-			.demo {
-				width: 720px;
-				margin: 35px auto;
-			}
-			
-			.demo h2 {
-				font-size: 16px;
-				color: #3366cc;
-				height: 30px;
-			}
-			
-			.demo li {
-				float: left;
-			}
-			
-			.text,
-			.button {
-				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
-			}
-			
-			.text {
-				width: 425px;
-				height: 22px;
-				padding: 4px 7px;
-				padding: 6px 7px 2px\9;
-				font: 16px arial;
-				border: 1px solid #cdcdcd;
-				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
-				vertical-align: top;
-				outline: none;
-				margin: 0 -1px 0 0;
-			}
-			
-			.button {
-				width: 79px;
-				height: 32px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-			
-			.button2 {
-				width: 135px;
-				height: 32px;
-				margin-left: 30px;
-				padding: 0;
-				padding-top: 2px\9;
-				border: 0;
-				background-position: 0 -35px;
-				background-color: #ff5c5d;
-				cursor: pointer;
-				border: 1px solid #cdcdcd;
-				color: #fff;
-			}
-		</style>
+		<title>收藏报名</title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/troop.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
 	</head>
 
 	<body>
 		<header>
-			<include file="Public/header"/>
+			<div class="h-content-main">
+				<div class="h-main-c">
+					<include file="Public/header"/>
 					<div class="h-c-2f">
-						<img src="__PUBLIC__/Home/img/navbg2.png" />
+						<img src="__PUBLIC__/Home/img/navbg2.png" alt="" />
 						<div class="s-f2-r">
-							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<input type="text" placeholder="搜索全站"/>
 							<div class="s-f2-r1">
-								<img src="__PUBLIC__/Home/img/ss-t.png" onclick="alert('准备搜索')"/>
+								<img src="__PUBLIC__/Home/img/ss-t.png" alt="" />
 							</div>
 						</div>
 					</div>
-					<div class="h-c-3f">
-						收藏夹
+					<div class="h-c-3f-f">
+						<h1>收藏报名</h1>
 					</div>
 				</div>
 			</div>
 		</header>
 		<section>
 			<div class="s-main-c">
-				<div class="s-c-1f">
+				<div class="s-c-1f-scj">
 					<div class="left">
-						<button class="selected">已收藏需求</button>
-						<button>已报名</button>
-						<button>已收藏商铺</button>
+						<button id="bmxq" class="selected">已报名</button>
+						<button id="scxq">已收藏需求</button>
+						<button id="sp">已收藏商铺</button>
 					</div>
 					<div class="right">
-						<button class="lb">类别</button>
+						<div id="bmxq-lb" class="lb"><p>全部</p>
+						<div class="bmxq-lb">
+								<ul>
+									<li>全部</li>
+									<li>招聘</li>
+									<li>悬赏</li>
+									<li>求购</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div style="display: none;" id="scxq-lb" class="lb"><p>全部</p>
+							<div class="scxq-lb">
+								<ul>
+									<li>全部</li>
+									<li>应赏</li>
+									<li>应聘</li>
+									<li>闲置</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div style="display: none;" id="sp-lb" class="lb"><p>全部</p>
+						<div class="sp-lb">
+								<ul>
+									<li>全部</li>
+									<li>销售商</li>
+									<li>租赁商</li>
+									<li>婚车租赁</li>
+								</ul>
+							</div>
+						</div>
+						<div class="clearfloat"></div>
 					</div>
 					<div class="clearfloat"></div>
 				</div>
-				<div class="con">
-					<div class="s-c-2f">
-						<ul>
-							<foreach name="userYs" item="userYss">
-								<?php 
-								$userYs_s = explode(',',$userYss['due_shou']);
-								array_pop($userYs_s);
-								?>
-								<?php if(in_array($_SESSION['id'],$userYs_s)){ ?>
-								<li>
-									<a href="?s=/Home/Ysq/xqys/id/{$userYss.did}">
-										<div class="s-c-2f-1f">
-											<div class="yhtx">
-												<img src="__PUBLIC__/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">用户{$userYss.username|substr=0,6}</p>
-											<p class="szd">所在地：{$userYss.addre}</p>
-											<button>应赏</button>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="s-c-2f-2f">
-											<div>
-												<p>{$userYss.name}</p>
-												<p class="age">{$userYss.age}岁</p>
-												<p class="grjl"><strong style="color: #000; font-weight: 500;">个人简历：</strong>{$userYss.content}</p>
-												<div class="clearfloat"></div>
-											</div>
-											<div>
-												<p>{$userYss.type}</p>
-												<p class="zpzp"><strong style="color: #000; font-weight: 500;">照片作品：</strong>
-													<foreach name="userYs_zp" item="userYs_zp">
-														<?php if($userYs_zp['pid'] == $userYss['did']){
-																$userYs_zps = explode(',',$userYs_zp['imagename_z']);
-																array_pop($userYs_zps);
-																$userYs_zps = count($userYs_zps);
-																?>
-														{$userYs_zps}个
-														<?php } ?>
-													</foreach>
-												</p>
-												<p class="spzp"><strong style="color: #000; font-weight: 500;">视频作品：</strong>
-													<foreach name="userYs_sp" item="userYs_sp">
-														<?php if($userYs_sp['pid'] == $userYss['did']){
-																$userYs_sps = explode(',',$userYs_sp['imagename_v']);
-																array_pop($userYs_sps);
-																$userYs_sps = count($userYs_sps);
-																?>
-														{$userYs_sps}个
-														<?php } ?>
-													</foreach>
-												</p>
-												<foreach name="userYs_dq" item="userYs_dqs">
-													<?php if($userYs_dqs['pid'] == $userYss['did']){ ?>
-													<?php 
-													$dangdate = explode(',',$userYs_dqs['dangdate']);
-													$dangs = explode(',',$userYs_dqs['dangs']);
-													array_pop($dangdate); ?>
-															<p class="dq"><strong style="color: #000; font-weight: 500;">档期：</strong>
-																<?php for ($i=0; $i < count($dangdate); $i++) {  ?>
-																	{$dangdate[$i]}{$dangs[$i]}&nbsp;&nbsp;&nbsp;&nbsp;
-																<?php } ?></p>
-														<?php } ?>
-												</foreach>
-												<p class="jg">{$userYss.price}元/天</p>
-												<div class="clearfloat"></div>
-											</div>
-										</div>
-									</a>
-								</li>
-								<?php } ?>
-							</foreach>
-							<foreach name="userYps" item="userYpss">
-								<li>
-									<a href="?s=/Home/Zpdt/xqyp/id/{$userYpss.pid}">
-										<div class="s-c-2f-1f">
-											<div class="yhtx">
-												<img src="__PUBLIC__/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">用户{$userYpss.username|substr=0,6}</p>
-											<p class="szd">所在地：{$userYpss.addre}</p>
-											<p class="qwzw">期望职位：{$userYpss.type}</p>
-											<button>应聘</button>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="s-c-2f-2f">
-											<div>
-												<p>{$userYpss.name}</p>
-												<p class="age">{$userYpss.ages}</p>
-												<p class="gzjy">工作经验：{$userYpss.worktimes}年</p>
-												<p class="grjl" style="width: 700px;"><strong style="color: #000; font-weight: 500;">个人简历：</strong>{$userYpss.content}</p>
-												<p style="float: right; margin-right: 50px;">{$userYpss.typew}</p>
-												<div class="clearfloat"></div>
-											</div>
-											<div>
-												<p class="gzsj"><strong style="color: #000; font-weight: 500;">工作时间：</strong>{$userYpss.worktime}</p>
-												<p class="spzp"><strong style="color: #000; font-weight: 500;">所在公司：</strong>{$userYpss.workname} </p>
-												<p class="spzp"><strong style="color: #000; font-weight: 500;">职位：</strong>{$userYpss.{$userYpss.typew}</p>
-												<!--<p class="jg">￥500-￥700天</p>-->
-												<div class="clearfloat"></div>
-											</div>
-										</div>
-									</a>
-								</li>
-							</foreach>
-							<?php foreach ($userIdle as $userIdles) {
-							 ?>
-							 <?php $shou = explode(',',$userIdles['shou']);
-							 		array_pop($shou);?>
-							 	<?php if(in_array($_SESSION['id'],$shou)){ ?>
-								<li>
-									<div href="{}">
-										<a href="?s=/Home/Tzsc/xqxz/id/{$userIdles['fid']}">
-										<div class="s-c-2f-1f">
-											<div class="yhtx">
-												<img src="__PUBLIC__/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">用户{$userIdles.username|substr=0,6}</p>
-											<p class="szd">所在地：{$userIdles.addre}</p>
-											<button>闲置</button>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="s-c-2f-2f">
-											<div>
-												<p>物品名称：<strike style="color: #999999; font-weight: 500;">{$userIdles.name}</strike></p>
-												<p class="ys"><strong style="color: #000000; font-weight: 500;">预算：</strong>￥{$userIdles.price}</p>
-												<div class="clearfloat"></div>
-											</div>
-											<div>
-												<!--<p class="jg">￥500-￥700天</p>-->
-												<p style="margin: 0; width: 1100px;" class="grjl"><strong style="color: #000; font-weight: 500;">个人简历：</strong>{$userIdles.content}</p>
-												<div class="clearfloat"></div>
-											</div>
-										</div>
-									</a>
-									</div>
-								</li>
-								<?php } ?>
-								<?php } ?>
-						</ul>
-					</div>
-				</div>
 				<div class="con" style="display: none;">
-					<div class="s-c-3f">
+					<div class="s-c-3f-scj">
 						<ul>
-							<li>
-								<!--<p class="hdsj">
-									活动时间：2016-12-10
-								</p>-->
-								<p class="hddd">
-									工作地点：郑州
-								</p>
-								<p class="xsnr">
-									招聘内容：摄影、主持人
-								</p>
-								<a href="">
-									<div class="nr">
-										<div class="left">
-											<div class="yhtx">
-												<img src="__PUBLIC__/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">
-												用户名称
-											</p>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="right">
-											<p class="hf">
-												未回复
-											</p>
-											<p class="rq">
-												2017-01-01
-											</p>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<!--<p class="hdsj">
-									活动时间：2016-12-10
-								</p>-->
-								<p class="hddd">
-									物品名称：摄影机
-								</p>
-								<p class="xsnr">
-									预算：<span style="color: #ff5c5d;">￥500</span>
-								</p>
-								<a href="">
-									<div class="nr">
-										<div class="left">
-											<div class="yhtx">
-												<img src="__PUBLIC__/Home/img/bdmc.png" />
-											</div>
-											<p class="yhmc">
-												用户名称
-											</p>
-											<div class="clearfloat"></div>
-										</div>
-										<div class="right">
-											<p class="hf">
-												回复：
-											</p>
-											<p class="jj">
-												拒绝
-											</p>
-											<p class="rq">
-												2017-01-01
-											</p>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-								</a>
-							</li>
-							<foreach name="userBmxs" item="userBmxss">
+							<foreach name="newUserZp" item="newUserZps">
 								<li>
-									<p class="hdsj">
-										活动时间：{$userBmxss.date}
-									</p>
 									<p class="hddd">
-										活动地点：{$userBmxss.address}
+										<?php $ad_zp = explode(',',$newUserZps['address_zp']); ?>
+										工作地点：{$ad_zp[0]}
 									</p>
 									<p class="xsnr">
-										悬赏内容：摄影、主持人
+										招聘内容：<foreach name="newUserZp_xq" item="newUserZp_xqs">
+										<php>if($newUserZp_xqs['pid'] == $newUserZps['rid']){</php>
+										<?php echo $newUserZp_xqs['type']; ?>
+										<php>}</php>
+										</foreach>
 									</p>
+									<div class="clear"></div>
 									<a href="">
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="__PUBLIC__/Home/img/bdmc.png" />
+													<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
 												</div>
 												<p class="yhmc">
-													用户名称
+													用户{$newUserZps.username}
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="right">
+												<p class="hf">
+													未回复
+												</p>
+												<p class="rq">
+													2017-01-01
+												</p>
+											</div>
+											<div class="clearfloat"></div>
+										</div>
+									</a>
+								</li>
+							</foreach>
+							<foreach name="userIdle" item="userIdles">
+								 <?php $shou = explode(',',$userIdles['bao']);
+							 		array_pop($shou);?>
+							 	<?php if(in_array($_SESSION['id'],$shou)){ ?>
+								<li>
+									<p class="hddd">
+										物品名称：{$userIdles.name}
+									</p>
+									<p class="xsnr">
+										预算：<span class="red">￥{$userIdles.price}元</span>
+									</p>
+									<div class="clear"></div>
+									<a href="">
+										<div class="nr">
+											<div class="left">
+												<div class="yhtx">
+													<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+												</div>
+												<p class="yhmc">
+													用户{$userIdles.username}
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="right">
+												<p class="hf">
+													回复：
+												</p>
+												<p class="jj">
+													拒绝
+												</p>
+												<p class="rq">
+													2017-01-01
+												</p>
+											</div>
+											<div class="clearfloat"></div>
+										</div>
+									</a>
+								</li>
+								<?php } ?>
+							</foreach>
+							<foreach name="newUserXs" item="newUserXss">
+								<li>
+									<p class="hdsj">
+										活动时间：{$newUserXss.time}
+									</p>
+									<p class="hddd">
+										<?php $ad = explode(',',$newUserXss['address']); ?>
+										活动地点：{$ad[0]}
+									</p>
+									<p class="xsnr">
+										<foreach name="newUserXs_xq" item="newUserXs_xqs">
+											<php>if($newUserXs_xqs['pid'] == $newUserXss['psid']){</php>
+											报名悬赏内容：{$newUserXs_xqs.type}
+											<php>}</php>
+										</foreach>
+									</p>
+									<div class="clear"></div>
+									<a href="">
+										<div class="nr">
+											<div class="left">
+												<div class="yhtx">
+													<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+												</div>
+												<p class="yhmc">
+													用户{$newUserXss.username}
 												</p>
 												<div class="clearfloat"></div>
 											</div>
@@ -364,212 +196,235 @@
 								</li>
 							</foreach>
 						</ul>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
 					</div>
 				</div>
 				<div class="con" style="display: none;">
-					<div class="s-c-4f">
+					<div class="s-c-2f-scj">
 						<ul>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="__PUBLIC__/Home/img/sptx.png" />
+							<foreach name="userYsSc" item="userYsScs">
+								<?php $ysXq = explode(',',$userYsScs['due_shou']);
+										array_pop($ysXq);
+									 ?>
+								<?php if(in_array($_SESSION['id'],$ysXq)){ ?>
+								<li>
+									<a href="?s=/Home/Ysq/xqys/id/{$userYsScs.did}">
+										<div class="s-c-2f-scj-1f">
+											<div class="yhtx">
+												<if condition="$userYsScs[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img src="/MatouPCS/Tu/upload/{$userYsScs.imagename}" alt="" />
+			                                   </if>
+											</div>
+											<p class="yhmc">{$userYsScs.username}</p>
+											<?php   $add_ysad = explode(',',$userYsScs['address']);?>
+											<p class="szd">所在地：{$add_ysad[0]}</p>
+											<button>应赏</button>
+											<div class="clearfloat"></div>
 										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
+										<div class="s-c-2f-scj-2f">
+											<div>
+												<p>{$userYsScs.name}</p>
+												<p class="age">{$userYsScs.age}岁</p>
+												<p class="grjl"><span class="black-333">个人简历：</span>{$userYsScs.content}</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div>
+												<p>{$userYsScs.type_d}</p>
+												<?php $imgnum = explode(',',$userYsScs['imagename_z']);
+												      $vidnum = explode(',',$userYsScs['imagename_v']);
+												      $dang = explode(',',$userYsScs['dangdate']);
+												      $dangs = explode(',',$userYsScs['dangs']);
+												      $ss = explode(',',$userYsScs['due_shou']);
+													   array_pop($imgnum);
+													   array_pop($vidnum);
+													   array_pop($dang);
+													   array_pop($dangs);
+													   array_pop($ss);
+													   $imgnums = count($imgnum);
+													   $vidnums = count($vidnum);
+													   $sss = count($ss);
+													   ?>
+												<p class="zpzp"><span class="black-333">照片作品：</span>{$imgnums}个</p>
+												<p class="spzp"><span class="black-333">视频作品：</span>{$vidnums}个</p>
+												<p class="dq"><span class="black-333">档期：</span><?php echo $dang[1];echo $dangs[1];?>&nbsp;&nbsp;......</p>
+												<p class="jg">{$userYsScs.price}元/天</p>
+												<div class="clearfloat"></div>
 											</div>
 										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
+										<div class="s-c-2f-scj-3f">
+											<p class="fbsj">{$userYsScs.date}</p>
+											<p class="sc">已有{$sss}人收藏</p>
+											<div class="clearfloat"></div>
 										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="__PUBLIC__/Home/img/sptx.png" />
+									</a>
+								</li>
+								<?php } ?>
+							</foreach>
+							<foreach name="userYpSc" item="userYpScs">
+								<?php $ypXq = explode(',',$userYpScs['em_shou']);
+										array_pop($ypXq);
+									 ?>
+								<?php if(in_array($_SESSION['id'],$ypXq)){ ?>
+								<li>
+									<a href="">
+										<div class="s-c-2f-scj-1f">
+											<div class="yhtx">
+												<if condition="$userYsScs[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img src="/MatouPCS/Tu/upload/{$userYsScs.imagename}" alt="" />
+			                                   </if>
+											</div>
+											<p class="yhmc">{$userYpScs.username}</p>
+											<p class="szd">所在地：{$userYpScs.address}</p>
+											<p class="qwzw">期望职位：{$userYpScs.type}</p>
+											<button>应聘</button>
+											<div class="clearfloat"></div>
 										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
+										<div class="s-c-2f-scj-2f">
+											<div>
+												<p>{$userYpScs.name}</p>
+												<p class="age">{$userYpScs.ages}岁</p>
+												<p class="gzjy">工作经验：{$userYpScs.worktimes}年</p>
+												<p class="grjl-yp"><span class="black-333">个人简历：</span>{$userYpScs.content}</p>
+												<p class="zw-yp">{$userYpScs.type_u}</p>
+												<div class="clearfloat"></div>
+											</div>
+												<div>
+													<p class="gzsj"><span class="black-333">工作时间：</span>{$userYpSc_work[0]['worktime']}</p>
+													<p class="spzp"><span class="black-333">所在公司：</span>{$userYpSc_work[0]['workname']}</p>
+													<p class="spzp"><span class="black-333">职位：</span>{$userYpSc_work[0]['typew']}</p>
+													<!--<p class="jg">￥500-￥700天</p>-->
+													<div class="clearfloat"></div>
+												</div>
+										</div>
+										<div class="s-c-2f-scj-3f">
+											<p class="fbsj">{$userYpScs.date}</p>
+											<?php $shou = explode(',',$lists['em_shou']); 
+													  array_pop($shou);
+													  $shous = count($shou);
+												?>
+											<p class="sc">已有{$shous}人收藏</p>
+											<div class="clearfloat"></div>
+										</div>
+									</a>
+								</li>
+								<?php } ?>
+							</foreach>
+							<foreach name="userXzSc" item="userXzScs">
+								<?php $xzShou = explode(',',$userXzScs['shou']);
+									  array_pop($xzShou); 
+								?>
+								<?php if(in_array($_SESSION['id'],$xzShou)){ ?>
+								<li>
+									<a href="">
+										<div class="s-c-2f-scj-1f">
+											<div class="yhtx">
+												<if condition="$userYsScs[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img src="/MatouPCS/Tu/upload/{$userYsScs.imagename}" alt="" />
+			                                   </if>
+											</div>
+											<p class="yhmc">{$userXzScs.username}</p>
+											<p class="szd">所在地：{$userXzScs.address}</p>
+											<button>闲置</button>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="s-c-2f-scj-2f">
+											<div>
+												<p>物品名称：<span class="black-333">{$userXzScs.name}</span></p>
+												<p class="ys"><span class="black-333">报价：</span>￥{$userXzScs.price}</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div>
+												<p class="xzjj"><span class="black-333">闲置简介：</span>{$userXzScs.content}</p>
+												<div class="clearfloat"></div>
 											</div>
 										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
+										<div class="s-c-2f-scj-3f">
+											<p class="fbsj">{$userXzScs.date}</p>
+											<?php $shou_xz = explode(',',$userXzScs['shou']);
+										              array_pop($shou_xz);
+									          	  $shous_xz = count($shou_xz); ?>
+											<p class="sc">已有{$shous_xz}人收藏</p>
+											<div class="clearfloat"></div>
 										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="__PUBLIC__/Home/img/sptx.png" />
-										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
-											</div>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
-										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<div class="left">
-										<div class="sptx">
-											<img src="__PUBLIC__/Home/img/sptx.png" />
-										</div>
-										<div class="sp">
-											<p>牛牛婚纱店牛牛婚纱店</p>
-											<div class="bottom">
-												<p class="xss">销售商</p>
-												<p class="sc">收藏1000</p>
-											</div>
-										</div>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="right">
-										<p class="dpdz">
-											<strong style="color: #000000; font-weight: 500;">店铺地址：</strong>店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址店铺地址
-										</p>
-										<div class="clearfloat"></div>
-										<div class="bottom">
-											<p class="zysp">
-												<strong style="color: #000000; font-weight: 500;">主营商品：</strong> 主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品&nbsp;&nbsp;&nbsp;&nbsp;主营商品
-											</p>
-										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</a>
-							</li>
+									</a>
+								</li>
+								<?php } ?>
+							</foreach>
 						</ul>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
+					</div>
+				</div>
+				<div class="con" style="display: none;">
+					<div class="s-c-4f-scj">
+						<ul>
+							<foreach name="userSpSc" item="userSpScs">
+								<php>$spShou = explode(',',$userSpScs['shou']);
+									array_pop($spShou);
+								</php>
+								<?php if(in_array($_SESSION['id'],$spShou)){ ?>
+								<li>
+									<a href="">
+										<div class="left">
+											<div class="sptx">
+												<img src="img/sptx.png" alt="" />
+												<if condition="$userSpScs[imagename]==''">  
+			                                  			<img style="width:100px;" src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:100px;" src="/MatouPCS/Tu/upload/{$userSpScs.imagename}" alt="" />
+			                                   </if>
+											</div>
+											<div class="sp">
+												<p>{$userSpScs.shopname}</p>
+												<div class="bottom">
+													<p class="xss">{$userSpScs.type}</p>
+													<?php $sp_shou = explode(',',$userSpScs['shou']);
+															array_pop($sp_shou);
+														  $sp_shou_num = count($sp_shou);
+													 ?>
+													<p class="sc">收藏{$sp_shou_num}</p>
+												</div>
+											</div>
+											<div class="clearfloat"></div>
+										</div>
+										<div class="right">
+											<p class="dpdz">
+												<span class="black-333">店铺地址：</span>{$userSpScs.address}
+											</p>
+											<div class="clearfloat"></div>
+											<div class="bottom">
+												<p class="zysp">
+													<span class="black-333">主营商品：</span> {$userSpScs.zysp}
+												</p>
+											</div>
+										</div>
+										<div class="clearfloat"></div>
+									</a>
+								</li>
+								<?php } ?>
+							</foreach>
+						</ul>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
 					</div>
 				</div>
 			</div>
 
 		</section>
-		<br>
-		<br>
-		<br>
-		<include file="Public/foot"/>
+		<?php	include '3rank-footer.php';?>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
-	<script type="text/javascript">
-		$(function() {
-
-				$("#tt").bigAutocomplete({
-					width: 440,
-					data: [{
-						title: "中国好声音",
-						result: {
-							ff: "qq"
-						}
-					}, {
-						title: "中国移动网上营业厅"
-					}, {
-						title: "中国银行"
-					}, {
-						title: "中国移动"
-					}, {
-						title: "中国好声音第三期"
-					}, {
-						title: "中国好声音 第一期"
-					}, {
-						title: "中国电信网上营业厅"
-					}, {
-						title: "中国工商银行"
-					}, {
-						title: "中国好声音第二期"
-					}, {
-						title: "中国地图"
-					}],
-
-				});
-
-			})
-			//		下拉菜单
-		$('#select-yfb').hover(function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(180deg)');
-			$('.select-yfb').stop().animate({
-				height: '150px'
-			}, 300);
-		}, function() {
-			$('#select-yfb a img').css('transition-duration', '.5s');
-			$('#select-yfb a img').css('transform', 'rotate(0deg)');
-			$('.select-yfb').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		$('#select-xx').hover(function() {
-			$('.select-xx').stop().animate({
-				height: '75px'
-			}, 300);
-		}, function() {
-			$('.select-xx').stop().animate({
-				height: '0px'
-			}, 300);
-		});
-		//----------------------------remove tab切换样式--------------------------
-		$('.s-c-1f .left button').click(function() {
-			$(this).parents('.s-c-1f').children('.left').each(function() {
-				$('button', this).removeClass('selected');
-			});
-			$(this).attr('class', 'selected');
-		});
-		//----------------------------切换页面--------------------------
-		$(document).ready(function() {
-			$(".con").eq(0).show();
-			$(".s-c-1f .left button").click(function() {
-				var num = $(".s-c-1f .left button").index(this);
-				$(".con").hide();
-				$(".con").eq(num).show().slblings().hide();
-			});
-		});
-	</script>
-
+	<script src="__PUBLIC__/Home/js/showwin2.js"></script>
+	<script src="__PUBLIC__/Home/js/troop.js"></script>
+	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 </html>

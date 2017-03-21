@@ -326,47 +326,63 @@
 			</div>
 		</section>
 			<script type="text/javascript">
-									var a = 0;
-									function zan(lid,zan){
-								
-										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
-										if($('#z'+lid).hasClass('icon-dz')){
-											zan += 1;
-											$.ajax({
-												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
-												type:"get",
-												success:function(data){
-													alert('点赞成功');
-													$('#z'+lid).removeClass('icon-dz');
-													$('#z'+lid).addClass('icon-dz-kz');
-													$('#s'+lid).html(zan);
-												},error:function(){
-													alert('no');
-												}
-											});
-											
-										}else{
-											zan -= 1;
-											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
-												type:"get",
-												success:function(data){
-													alert('取消成功');
-													$('#z'+lid).removeClass('icon-dz-kz');
-													$('#z'+lid).addClass('icon-dz');
-													$('#s'+lid).html(zan);
-												},error:function(){
-													alert('no');
-												}
-											});
-											
-										}
-									}
-								</script>
+				var a = 0;
+				function zan(lid,zan){
+			
+					var zan = parseInt(document.getElementById('s'+lid).innerHTML);
+					if($('#z'+lid).hasClass('icon-dz')){
+						zan += 1;
+						$.ajax({
+							url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
+							type:"get",
+							success:function(data){
+								alert('点赞成功');
+								$('#z'+lid).removeClass('icon-dz');
+								$('#z'+lid).addClass('icon-dz-kz');
+								$('#s'+lid).html(zan);
+							},error:function(){
+								alert('no');
+							}
+						});
+						
+					}else{
+						zan -= 1;
+						$.ajax({
+							url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+							type:"get",
+							success:function(data){
+								alert('取消成功');
+								$('#z'+lid).removeClass('icon-dz-kz');
+								$('#z'+lid).addClass('icon-dz');
+								$('#s'+lid).html(zan);
+							},error:function(){
+								alert('no');
+							}
+						});
+						
+					}
+				}
+				//收藏商铺
+		function change(id) {  
+			var mark = document.getElementById('btns').innerText;
+			if(mark == '收藏商铺') {
+				$.ajax({
+					url:'?s=/Home/Tjcs/spxq_shou/id/'+id,
+					type:'get',
+					success:function(data){
+						document.getElementById('btns').innerText = "取消收藏";
+					},error:function(){
+						alert('no');
+					}
+				});
+			} else {
+				document.getElementById('btns').innerText = "收藏商铺";
+			};
+		};				
+		</script>
 	<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/showWin.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 
 </html>

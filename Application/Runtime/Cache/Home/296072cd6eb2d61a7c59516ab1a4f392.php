@@ -6,6 +6,8 @@
 		<title>招聘修改</title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/txzp-3r-zy.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/tx.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/input.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 		<style type="text/css">
@@ -519,38 +521,28 @@
 		<br>
 		<br>
 		<br>
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+	</head>
+	<body>
 		<footer>
-			<div class="f-main-c ">
-				<div class="f-c-2f ">
-					<div style="width: 90%; margin: 0 auto; "><br>
-						<a href="# ">i店大全</a>&nbsp;
-						<a href="# ">十大家纺排行榜</a>&nbsp;
-						<a href="# ">鲜花礼品网</a>&nbsp;
-						<a href="# ">鲜花网</a>&nbsp;
-						<a href="# ">婚介</a>&nbsp;
-						<a href="# ">婚礼搜索导航</a>&nbsp;
-						<a href="# ">杭州婚庆网</a>&nbsp;
-						<a href="# ">新娘说</a>&nbsp;
-						<a href="# ">拍表网</a>&nbsp;
-						<a href="# ">结婚网</a>&nbsp;
-						<a href="# ">钻戒品牌</a>&nbsp;
-						<a href="# ">武汉婚车租摄</a>&nbsp;
-						<a href="# ">婚礼时光</a>&nbsp;
-						<a href="# ">婚礼电子请帖</a>&nbsp;
-						<a href="# ">小笑话</a>&nbsp;
-						<a href="# ">十大家纺排行榜</a>&nbsp;
-						<br>
-						<br>
-						<p>© 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司 </p>
-						<!--<br/>-->
-						<p>京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号 </p>
-						<p>京网文[2015]2026-368号 京公网安备11010502000728 新出网证(京)字129号 </p>
+			<div class="f-content-main">
+				<div class="f-main-c">
+					<div class="f-c-1f">
+						
+						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
-
 				</div>
 			</div>
-
 		</footer>
+	</body>
+</html>
+
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js "></script>
 	<script src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js "></script>

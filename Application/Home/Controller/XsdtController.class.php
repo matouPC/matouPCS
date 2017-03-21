@@ -110,15 +110,19 @@ class XsdtController extends Controller
         $lis = M('reward2')->where("wid = {$wid}")->find();
         $lis['bao'] .= $uid;
         $lis['baodate'] .= date("Y-m-d",time()).',';
-        // $fids['uid'] = $uid;
-        // $fids['fid'] = $lis['usid'];//被收藏的用户id
+
+        $fids['bm_id'] = $lis['usid'];//被报名用户的id
+        $fids['pid'] = $wid;
+        $fids['bm_type'] = '1';
+        $fids['bm_status'] = '1';
+        $fids['bm_uid'] = $uid;
         // $fids['type_xx'] = 2;
         // $fids['type_xs'] = 4;
         // $fids['tid'] = $lis['pid'];
         // $fids['wid'] = $lis['wid'];
         // $fids['content_xx'] = '报名悬赏';
-        // $xd = M("user_xx")->add($fids);
-        // if($xd > 0){
+        $xd = M("bm_user")->add($fids);
+        if($xd > 0){
             $db = M("reward2")->where("wid = {$wid}")->save($lis);
             if($db > 0){
                 $db = M("reward2")->where("wid = {$wid}")->find();
@@ -127,7 +131,7 @@ class XsdtController extends Controller
                 $bao_num = count($bao);
                 $this->ajaxReturn($bao_num);
             }
-        // }
+        }
         
     }
     public function xsfb(){

@@ -5,10 +5,12 @@
 		<title>应赏填写</title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/txys-3r-zy.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/upimg.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/tx.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/input.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/upimg.css" />
 		<style type="text/css">
 			* {
 				margin: 0;
@@ -995,7 +997,7 @@
 							</div>
 							<div class="txfg1-c2-1"><img src="/matouPCS/Public/Home/img/gth.png" /><span class="txfgts">点击右上角"添加档期"完善档期</span></div>
 							<ul class="addmation-dq">
-								<?php  for ($i=0; $i < count($fbys_da_r); $i++) { ?>
+								<?php  for ($i=1; $i < count($fbys_da_r); $i++) { ?>
 									<li><input id="da<?php echo ($i); ?>" name="dang_time<?php echo ($i); ?>" type="text" value="<?php echo $fbys_da_r[$i]; ?>" readonly="readonly" placeholder="请选择时间" />
 										<select name="dangB<?php echo ($i); ?>">
 											<option >请选择</option>

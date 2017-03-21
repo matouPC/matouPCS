@@ -210,6 +210,11 @@
 										</div>
 									</li>
 								</foreach>
+								<php>if(!empty($list)){</php>
+									<div class="djjzgd">
+										<button>点击加载更多</button>
+									</div>
+								<php>}</php>
 								<!-- 报名悬赏 -->
 								<?php $num = 0; ?>
 								<foreach name="arr" item="arrs">
@@ -250,6 +255,18 @@
 													</div>
 													<!-- </a> -->
 												</dd>
+												<script type="text/javascript">
+												//拒绝
+													function jj(wid){
+														if(window.confirm('确定要拒绝么？')){
+															alert('已拒绝');
+														}
+													}
+												//电聊
+													function dl(wid){
+														alert(wid);
+													}
+												</script>
 												<?php } ?>
 											</dl>
 											<div class="showmore">
@@ -408,10 +425,8 @@
 					<button>点击加载更多</button>
 				</div> -->
 			</div>
-
 		</section>
-		<?php	include '3rank-footer.php';?>
-		<include file="Public/footer"/>
+		<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>

@@ -31,15 +31,56 @@ class UserController extends Controller
                 $userYps[] = $value;
             }
         }
-        //收藏的闲置
-        $userIdle = M("flea as f")->join('user as u on f.uid = u.id')->where('f.type = 2')->select();
+        //已报名求购
+        $userIdle = M("flea as f")->join('user as u on f.uid = u.id')->where('f.type = "1"')->select();
+
         //已报名 悬赏 基本信息
         $userBmxsjb = M('user as u')->join('reward1 as e on u.id = e.uid')->select();
+        //回复状态
+        $uid = $_SESSION['id'];
+        $userXs_hf = M('bm_user')->select();
         //已报名-》悬赏
         $userBmxs = M('user as u')->join('reward1 as r on u.id = r.uid')->join('reward2 as w on r.psid = w.pid')->select();
+        foreach ($userBmxs as $key => $value) {
+            // var_dump($value['bao']);
+            $userxx = A('user');
+            $xs = $userxx->stringimg($value['bao']);
+            if(in_array($_SESSION['id'],$xs)){//拿到具体报名的悬赏的详情信息
+                $newUserXs[] = $this->userXs_jb_se($value['pid']);//获得悬赏基本信息
+                // echo '<pre>';
+                // var_dump($value['wid']);
+                $wid = $value['wid'];
+                $newUserXs_xq[] = M('reward2')->where("wid = {$wid}")->find();//获得选上的详情
+            }
+        }
+
+        //已报名 招聘 基本信息
+        $userBmzpjb = M('user as u')->join('recruit1 as e on u.id = e.uid')->select();
+        //已报名-》招聘
+        $userBmzp = M('user as u')->join('recruit1 as r on u.id = r.uid')->join('recruit2 as w on r.rid = w.pid')->select();
+        foreach ($userBmzp as $key => $value) {
+            // var_dump($value['bao']);
+            $userxx = A('user');
+            $zp = $userxx->stringimg($value['zhao']);
+            if(!empty($zp)){
+            if(in_array($_SESSION['id'],$zp)){//拿到具体报名的招聘的详情信息
+                $newUserZp[] = $this->userYs_jb_se($value['pid']);//获得招聘基本信息
+                $zid = $value['id'];//
+                $newUserZp_xq[] = M('recruit2')->where("id = {$zid}")->find();//获得招聘的详情
+            }
+            }
+        }
         $this->string($userBmxs);
-        // var_dump($userYps);die;
-        $this->assign('userIdle',$userIdle);
+        //收藏的应赏
+        $userYsSc = M("due as d")->join("due_dang as g on d.did = g.pid")->join("user as u on d.uid = u.id")->join("dueimage as m on m.pid = d.did")->join("duevideo as v on d.did = v.pid")->select();
+        //收藏的应聘(不包含工作经验)
+        $userYpSc = M("employ as d")->join("employimage as g on d.eid = g.pid")->join("user as u on d.uid = u.id")->join("employvideo as m on m.pid = d.eid")->select();
+        $userYpSc_work = M("employwork")->select();//工作经验
+        //收藏的闲置
+        $userXzSc = M("flea as f")->join("user as u on u.id = f.uid")->where('f.type = "2"')->select();
+        //收藏的商铺
+        $userSpSc = M("shop")->select();
+        $this->assign('userIdle',$userIdle);//已报名 求购
         $this->assign('userYs',$userYs);
         $this->assign('userYs_dq',$userYs_dq);
         $this->assign('userYs_zp',$userYs_zp);
@@ -47,8 +88,43 @@ class UserController extends Controller
         $this->assign('userYps',$userYps);//收藏应赏
         $this->assign('userBmxsjb',$userBmxsjb);//收藏应赏=->基本信息
         $this->assign('userBmxs',$this->string($userBmxs));//悬赏报名
+
+        // var_dump($newUserXs);
+        $this->assign('newUserXs',$newUserXs);//悬赏基本
+        $this->assign('newUserXs_xq',$newUserXs_xq);//悬赏详情
+        $this->assign('userXs_hf',$userXs_hf);//悬赏详情->回复状态
+        // var_dump($newUserZp);
+        $this->assign('newUserZp',$newUserZp);//招聘基本
+        $this->assign('newUserZp_xq',$newUserZp_xq);//招聘详情
+
+        $this->assign('userYsSc',$userYsSc);//收藏的应赏
+
+        $this->assign('userYpSc',$userYpSc);//收藏的应聘
+        $this->assign('userYpSc_work',$userYpSc_work);//收藏的应聘-》工作经验
+
+
+        $this->assign('userXzSc',$userXzSc);//收藏的闲置应聘-》工作经验
+
+        $this->assign('userSpSc',$userSpSc);//收藏的商铺
+
         // $this->assign('work',$work);//应赏工作经历
         $this->display('User/scj');
+    }
+    //此方法用来查询悬赏的基本信息
+    public function userXs_jb_se($pid){
+        // var_dump($pid);
+        $li = M('reward1 as e')->join("user as u on e.uid = u.id")->where("e.psid = {$pid}")->find();
+        return $li;
+        // var_dump($usera);die;
+        // return $usera;
+    }
+    //此方法用来查询应赏的基本信息
+     public function userYs_jb_se($pid){
+        // var_dump($pid);
+        $li = M('recruit1 as e')->join("user as u on e.uid = u.id")->where("e.rid = {$pid}")->find();
+        return $li;
+        // var_dump($usera);die;
+        // return $usera;
     }
     //拿取追加字符串的方法
     public function string($userYp){

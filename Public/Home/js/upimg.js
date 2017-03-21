@@ -132,10 +132,9 @@
 				return(that);
 			});
 		});
-//添加商品3
+//添加商品3 -->已发布 应赏
 		// var yps = $('.dm{$i}');
 			function userYp(){
-				alert(456);
 			var yp = document.getElementById("lists").getElementsByTagName("li").length;
 			yp+=1;
 			$(".dianji").hide();

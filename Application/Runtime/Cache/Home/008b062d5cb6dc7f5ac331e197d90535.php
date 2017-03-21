@@ -784,21 +784,11 @@
 							<?php if(is_array($xxoo)): foreach($xxoo as $key=>$listn): ?><li>
 									<a href="?s=/Home/Ysq/xqys/id/<?php echo ($listn["did"]); ?>">
 										<div class="yp">
-<<<<<<< HEAD
-
-=======
->>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
 											<div class="xg">		
 			                 <?php if($listn[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
                                       <?php else: ?>
-<<<<<<< HEAD
-                                      	<!-- <img src="/matouPCS/Public/upload/<?php echo ($listn["pubtime"]); ?>/<?php echo ($listn["imagename"]); ?>"   width="101" height="101" style="border-radius:50%"/> -->
-                                      	<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101"><?php endif; ?>
-											
-=======
-                                      	<img src="/matouPCS/Tu/upload/<?php echo ($listn["imagename"]); ?>"   width="101" height="101" style="border-radius:50%"/>
-                                    </if>
->>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
+
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($listn["imagename"]); ?>"   width="101" height="101" style="border-radius:50%"/><?php endif; ?>
 
 												<div class="xg_01">
 													<div class="xg_01_01">

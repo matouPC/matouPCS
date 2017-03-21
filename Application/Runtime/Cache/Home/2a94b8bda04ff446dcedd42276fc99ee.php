@@ -611,68 +611,68 @@
 									<p class="h2">发现更多好服务</p>
 								</div>
 								<div id="lqmtb" class="center">
-									<div class="img"><img src="img/M.png" alt="" /></div>
+									<div class="img"><img src="/matouPCS/Public/Home/img/M.png" alt="" /></div>
 									<span>领取码头币</span>
 								</div>
 								<!--领取码头币开始-->
 								<div class="gold-black">
 									<div class="gold-white">
 										<div class="gold-title">
-											<img src="img/gold-title.png" />
+											<img src="/matouPCS/Public/Home/img/gold-title.png" />
 										</div>
 										<div id="vertical" class="brand vertical">
 											<a href="javascript://">
-												<img alt="" src="img/gold2.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold2.png" />
 												<div class="info">
 													15个码头币
 												</div>
 											</a>
 											<a href="javascript://">
-												<img alt="" src="img/gold1.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold1.png" />
 												<div class="info">
 													10个码头币
 												</div>
 											</a>
 											<a href="javascript://">
-												<img alt="" src="img/gold2.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold2.png" />
 												<div class="info">
 													20个码头币
 												</div>
 											</a>
 											<a href="javascript://">
-												<img alt="" src="img/gold1.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold1.png" />
 												<div class="info">
 													10个码头币
 												</div>
 											</a>
 											<div class="fanpai">
 												<div class="fanpai-xz">
-													<img src="img/fanpai.png" />
+													<img src="/matouPCS/Public/Home/img/fanpai.png" />
 												</div>
 												<p>
 													（查看码头币规则）
 												</p>
 											</div>
 											<a href="javascript://">
-												<img alt="" src="img/gold1.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold1.png" />
 												<div class="info">
 													10个码头币
 												</div>
 											</a>
 											<a href="javascript://">
-												<img alt="" src="img/gold2.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold2.png" />
 												<div class="info">
 													20个码头币
 												</div>
 											</a>
 											<a href="javascript://">
-												<img alt="" src="img/gold1.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold1.png" />
 												<div class="info">
 													30个码头币
 												</div>
 											</a>
 											<a href="javascript://">
-												<img alt="" src="img/gold2.png" />
+												<img alt="" src="/matouPCS/Public/Home/img/gold2.png" />
 												<div class="info">
 													15个码头币
 												</div>
@@ -1453,10 +1453,6 @@
 	</body>
 </html>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
 	</body>
 	<script type="text/javascript" src="j/matouPCS/Public/Home/s/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>

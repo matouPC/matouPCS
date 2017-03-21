@@ -8,8 +8,10 @@
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/jquery.bigautocomplete.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/input.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/calendar.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/upimage.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/tx.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/zyzn_1.css" />
 		<style type="text/css">
 			* {
 				margin: 0;
@@ -465,7 +467,7 @@
 					<div class="f-c-1f">
 						
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
-						<a href="http://www.miitbeian.gov.cn"><p>豫ICP备16015506号</p></a>
+						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
 			</div>
