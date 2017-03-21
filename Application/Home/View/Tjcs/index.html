@@ -11,11 +11,6 @@
 
 	<body>
 		<header>
-<<<<<<< HEAD
-			<include file="Public/header"/>
-					
-					<div class="h-c-3f">
-=======
 			<div class="h-content-main">
 				<div class="h-main-c">
 					<include file="Public/header"/>
@@ -44,7 +39,6 @@
 						</div>
 					</div>
 					<div class="h-c-4f">
->>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
 						<img src="__PUBLIC__/Home/img/banner.png" />
 					</div>
 				</div>
@@ -213,7 +207,7 @@
 							<foreach name="data" item="datav">
 								<if condition="$v[id]==$datav[pid]">
 								<li>
-									<a href="#">
+									<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
 										<div class="f3-ul-cz">
 											<img src="__PUBLIC__/Home/img/123.png" />
 										</div>
@@ -255,7 +249,7 @@
 						<ul>
 						<foreach name="datas" item="sp">
 							<li>
-								<a href="#">
+								<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
 									<img src="Uploads/Uploads/{$datav.pubtimes}/{$datav.imagenames}"  width="255" height="142" alt="商铺名称" />
 									<div class="f2r-ul-c1">
 										<strong>{$sp.name}</strong>

@@ -43,7 +43,7 @@
 								</if>
 								</p>
 								<p class="center">
-									{$dt.type_u}
+									({$dt.type_u})
 								</p>
 								<div>
 									<p class="fsl">
@@ -244,7 +244,7 @@
 														}
 													}
 													
-													if(data[i].imagename==''){
+													if(data[i].imagename==null){
 														var img='<img src="__PUBLIC__/Home/img/tx2-3r.png" alt="" />';
 													}else{
 												     var img = '<img  width="80" height="80" src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -483,7 +483,7 @@
 										if($('#zz'+lid).hasClass('icon-dz')){
 											zan += 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('点赞成功');
@@ -498,7 +498,7 @@
 										}else{
 											zan -= 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('取消成功');
@@ -515,7 +515,7 @@
 								</script>
 					<div class="s-main-b">
 						<div class="margin">
-							<button onclick="tj({$_GET['id']})" name='btn' id='btn' >点击加载更多</button>
+							<button onclick="tj({$_GET['id']})" name='btnn' id='btnn' >点击加载更多</button>
 						</div>
 					</div>
 				</div>
@@ -525,7 +525,6 @@
 var p=2;
   function tj(id){
 	  var t = "{:session('id')}";
-
 		$.ajax({
 			type:'post',
 			url:"{:U('Mtbu/lyjzdt')}",
@@ -534,9 +533,9 @@ var p=2;
 	         $("#content").append("<div id='load'>加载中……</div>");
 			},
 			success:function(data){
-				// alert(data);
+	
 				if(data!=null){				
-						//alert(1);
+						//
 						 for (var i = 0; i < data.length; i++) {
 						                                   												
 							 var myArray=new Array()
@@ -580,7 +579,7 @@ var p=2;
 										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 									}
 								}
-								if(data[i].imagename==''){
+								if(data[i].imagename==null){
 									var img='<img src="__PUBLIC__/Home/img/pltx.png" alt="" />';
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -656,7 +655,7 @@ var p=2;
 								var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 							}
 						}
-						if(data[i].imagename==''){
+						if(data[i].imagename==null){
 							var img='<img src="__PUBLIC__/Home/img/pltx.png" alt="" />';
 						}else{
 					     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -731,7 +730,7 @@ var p=2;
 											var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 										}
 									}
-									if(data[i].imagename==''){
+									if(data[i].imagename==null){
 										var img='<img src="__PUBLIC__/Home/img/pltx.png" alt="" />';
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';

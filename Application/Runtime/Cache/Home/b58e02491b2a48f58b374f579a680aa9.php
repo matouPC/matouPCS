@@ -791,87 +791,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
 	</head>
 	<body>
 		<footer>
 			<div class="f-content-main">
-				<div class="ttm">
-					<div class="s-c-7f">
-						<div class="f7-o1">
-							<ul>
-								<li class="f4-o1-1">
-									<div>
-										<h5>喜事码头客服热线</h5>
-										<p>工作时间:每天9:00-23:00</p>
-										<p>188-8888-888</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h5>关注喜事码头微信公众号</h5>
-										<p>
-											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h5>关于我们</h5>
-										<p>
-											<a href="#">关于喜事码头</a>
-										</p>
-										<p>
-											<a href="#">加入我们</a>
-										</p>
-										<p>
-											<a href="#">网站地图</a>
-										</p>
-										<p>
-											<a href="#">合伙人招募</a>
-										</p>
-									</div>
-								</li>
-								<li class="f4-o1-1">
-									<div>
-										<h5>联系我们</h5>
-										<p>官方邮箱:xishimatou@163.com</p>
-										<p>通讯地址:河南省郑州市863软件园</p>
-									</div>
-								</li>
-								<li class="clearf"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
-<<<<<<< HEAD
-						<h6>友情链接：</h6>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<a href="#">友情链接</a>
-						<p>© 20016－2017 xishimatou.com, all rights reserved 郑州码头网络技术有限公司 </p>
-						<p>豫ICP备16015506号 喜事码头</p>
-=======
 						
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
 						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
->>>>>>> 62a24597d1ffcff9daa0329500007464178f1d9c
 					</div>
 				</div>
 			</div>

@@ -804,6 +804,11 @@
 								<div class="title">
 									<h2>码 头 商 铺</h2>
 								</div>
+									<div class="bj">
+									<a href="?s=/Home/Mtbu/spgl/uid/<?php echo ($_GET['id']); ?>">
+										<img src="/matouPCS/Public/Home/img/bj-gray.png" />
+									</a>
+								</div>
 								<div class="clearfloat"></div>
 							</div>
 							<div class="s-c-5f-2f">
