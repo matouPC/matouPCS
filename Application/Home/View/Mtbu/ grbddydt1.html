@@ -3,86 +3,165 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>认证部队</title>
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/troop.css" />
+		<title>个人部队-个人</title>
+        <link rel="stylesheet" href="__PUBLIC__/Home/css/grbddndt-3r-xy.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.bigautocomplete.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/jquery.fs.boxer.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/style-xlb.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/component.css" />
-		<link rel="stylesheet" href="__PUBLIC__/Home/css/DialogBySHF.css" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			
+			a,
+			img {
+				border: 0;
+			}
+			
+			.demo {
+				width: 720px;
+				margin: 35px auto;
+			}
+			
+			.demo h2 {
+				font-size: 16px;
+				color: #3366cc;
+				height: 30px;
+			}
+			
+			.demo li {
+				float: left;
+			}
+			
+			.text,
+			.button {
+				background: url(http://su.bdimg.com/static/superpage/img/spis_031ddf34.png) no-repeat;
+			}
+			
+			.text {
+				width: 425px;
+				height: 22px;
+				padding: 4px 7px;
+				padding: 6px 7px 2px\9;
+				font: 16px arial;
+				border: 1px solid #cdcdcd;
+				border-color: #9a9a9a #cdcdcd #cdcdcd #9a9a9a;
+				vertical-align: top;
+				outline: none;
+				margin: 0 -1px 0 0;
+			}
+			
+			.button {
+				width: 79px;
+				height: 32px;
+				padding: 0;
+				padding-top: 2px\9;
+				border: 0;
+				background-position: 0 -35px;
+				background-color: #ff5c5d;
+				cursor: pointer;
+				border: 1px solid #cdcdcd;
+				color: #fff;
+			}
+			
+			.button2 {
+				width: 135px;
+				height: 32px;
+				margin-left: 30px;
+				padding: 0;
+				padding-top: 2px\9;
+				border: 0;
+				background-position: 0 -35px;
+				background-color: #ff5c5d;
+				cursor: pointer;
+				border: 1px solid #cdcdcd;
+				color: #fff;
+			}
+		</style>
 	</head>
 
 	<body>
 		<header>
-			<div class="h-content-main">
-				<div class="h-main-c">
-						<include file="Public/header"/>
-						<div class="h-c-3f">
-							<div id="large-header" class="large-header">
-								<div class="tbbj">
-									<img src="__PUBLIC__/Home/img/demo-2-bg.jpg" />
-								</div>
-								<canvas id="demo-canvas"></canvas>
+			<include file="Public/header"/>
+					<div class="h-c-2f">
+						<!--<img src="img/navbg3.png" />-->
+						<!--<div class="s-f2-r">
+							<input type="text" style="outline: none;border: 0;position: absolute;left: 20px;width: 195px; height: 36px;background: rgba(0,0,0,0);" />
+							<div class="s-f2-r1">
+								<img src="img/ss-t.png" />
 							</div>
-							<div class="s-f1">
-
-								<div class="yhtx">
-										<if condition="$list[imagename]==''">  
-                                   <img src="__PUBLIC__/Home/img/yhmc.png"/>
-                                   <else />
-                                     <img style="width: 120px; height: 120px;border-radius:50%" src="/MatouPCS/Tu/upload/{$list.imagename}"  /> 
-                                   </if>
-									<div class="vip">
-										<img src="__PUBLIC__/Home/img/rzlogo.png" />
-									</div>
+						</div>-->
+						<div class="s-f1">
+							<div class="yhtx">
+								      <if condition="$dt[imagename]==''">
+											<img src="__PUBLIC__/Home/img/yhmc.png">
+                                      <else />
+                                      	<img src="__PUBLIC__/upload/{$dt.pubtime}/{$dt.imagename}"   style="width: 137px; height: 144px;border-radius:50%"/>
+                                    </if>
+								<div class="vip">
+									<img src="__PUBLIC__/Home/img/rzlogo.png" />
 								</div>
 							</div>
-							<div class="s-f2">
-								<p class="yhmc">
-										<if condition="$list[username]==$list[tel]">
-								<a href="">{$list.username|substr=0,6}</a>
+						</div>
+						<div class="s-f2">
+							<p class="yhmc">
+								<if condition="$dt[username]==$dt[tel]">
+								<a href="">{$dt.username|substr=0,6}</a>
 								</if>
-								<if condition="$list[username]!=$list[tel]">
-								<a href="">{$list.username}</a>
+								<if condition="$dt[username]!=$dt[tel]">
+								<a href="">{$dt.username}</a>
 								</if>
-								</p>
-								<p class="center">
-									（{$list.type_u}）
-								</p>
-								<div>
-									<p class="fsl">
-	                        	 <span class="icon-fs"></span> <span id="gfen" style="font-size: 14px;"> {$list.fen}</span>
-									</p>
-									<p class="szd">
-										<span class="szd-word"> {$list.addre}</span>
-										<span class="icon-szd szd-top"></span>
-									</p>
-									<p class="clearfloat"></p>
-								</div>
+							</p>
+							<p style="text-align: center;">
+							<if condition="$dt[bdlx]==1">
+								（个人部队）
+								<elseif condition="$dt[bdlx]==2"/>
+								（婚庆公司）
+								<elseif condition="$dt[bdlx]==3"/>
+								（工作室）
+								<elseif condition="$dt[bdlx]==4"/>
+								（影楼）
+								<elseif condition="$dt[bdlx]==5"/>
+								（表演团）
+								<else/>
+								（商铺部队）
+								</if>
+							</p>
+							<div>
+								<p class="fsl">
+								<span style="font-size: 24px; display: block; float: left; margin-top: -2px;" class="icon-fs"></span>
+								<span id="gfen" style="display: block; float: left;">{$dt.fen}</span>
+							</p>
+							<p class="szd">
+								<span style="font-size: 18px;" class="icon-szd"></span>
+								<span style="display: block; float: right; line-height: 20px;">{$dt.address|substr=0,6}</span>
+							</p>
+							<p class="clearfloat"></p>
 							</div>
-					
-							<div class="clearfloat"></div>
-							<div class="s-f3">
-									<foreach name="uus" item="uuss">
-								<?php if($uuss['uid'] == $list['uid']){ ?>
+						</div>
+						<div class="clearfloat"></div>
+						<div class="s-f3">
+						<foreach name="uus" item="uuss">
+								<?php if($uuss['uid'] == $dt['id']){ ?>
 									<?php 
 										//这里处理 ‘,’
 									$uu = explode(',',$uuss['fid']);
 									      array_pop($uu);
 									      if(in_array($_SESSION['id'],$uu)){
 									?>
-										<button class="dy" id="gz-qx" onclick="guanzhu({$list['uid']})">已关注</button>
+										<button id="gz-qx" onclick="guanzhu({$dt['id']})">已关注</button>
 									<?php }else{ ?>
 										<?php if(empty($_SESSION['id'])){ ?>
-											<button class="dy" id="gz-qx" onclick="alert('请先登录')">关注</button>
+											<button id="gz-qx" onclick="alert('请先登录')">关注</button>
 										<?php }else{ ?>
-											<button  class="dy"  id="gz-qx" onclick="guanzhu({$list['uid']})">关注</button>
+											<button id="gz-qx" onclick="guanzhu({$dt['id']})">关注</button>
 										<?php } ?>
 									<?php } ?>
 								<?php } ?>
 							</foreach>
-							</div>
-											 <script>
+						</div>
+							 <script>
 							function guanzhu(fid){
 					
 								var fen = parseInt(document.getElementById('gfen').innerHTML);
@@ -126,38 +205,41 @@
 								}
 							}
 						 </script>
-							<div class="s-f4">
-								<div class="rzbd">
-									<a rel="nofollow" style="width: 120px;" href="">基本信息</a>
-									<a class="red" href="rzbddydt-3r-xy.php">动态</a>
-									<a href="?s=/Home/Mtbu/rzbddyxq/id/{$_GET['id']}">需求</a>
-									<a rel="nofollow" id="zp" href="">作品</a>
-									<a style="width: 105px;" href="?s=/Home/Mtbu/rzbddyly/id/{$_GET['id']}">留言区</a>
+						<div class="s-f4">
+							<div>
+								<a style="color: #FF5C5D;" href="#">动态</a>
+								<a href="?s=/Home/Mtbu/grbddyxq/id/{$_GET['id']}">需求</a>
+								<a href="?s=/Home/Mtbu/grbddyly/id/{$_GET['id']}">留言区</a>
 							</div>
 						</div>
+					</div>
+					<!--<div class="h-c-3f">
+						<img src="img/navbg4.png" />
+						<a href="#"><div class="h-f3-c1">BTN</div></a>
+						<div class="h-f3-c2"><a href="#">进入跳骚市场</a></div>
+					</div>-->
 				</div>
 			</div>
 		</header>
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-c-1f">
-					<div class="left">
-						<div class="left-dt">
-							<p>全部动态</p>
-							<img src="__PUBLIC__/Home/img/xxjt.png" />
-							<div class="select-dt">
-								<ul id="typee">
-									<li>
-										<a href="javascript://">全部动态</a>
-									</li>
-									<li>
-										<a href="javascript://">活动动态</a>
-									</li>
-								</ul>
-							</div>
+					<div class="left-dt">
+						<p>全部动态</p>
+						<img src="__PUBLIC__/Home/img/xxjt.png" />
+						<div class="select-dt">
+							<ul id="typee">
+								<li style="padding-top: 5px;">
+									<a href="javascript://">全部动态</a>
+								</li>
+								<li>
+									<a href="javascript://">活动动态</a>
+								</li>
+							</ul>
 						</div>
 					</div>
-						  <script>
+					  <script>
+	       
             var cNode =document.getElementById('typee').getElementsByTagName('li');
                     for( var i=0; i<cNode.length; i++){
                         cNode[i].index= i;
@@ -195,12 +277,16 @@
                         }
                     }
                 </script>
+					<!--<div class="left-xq">
+						<p>全部需求</p>
+						<img src="img/xxjt.png" />
+					</div>-->
 					<div id="paixu" class="center">
 						<p>排序：</p>
 						<a class="selected" href="javascript://">最新</a>
-						<a href="javascript://">热门</a>
+						<a href="javascript://">最热</a>
 					</div>
-					<script>
+						<script>
                     var cNode =document.getElementById('paixu').getElementsByTagName('a');
                             for( var i=0; i<cNode.length; i++){
                                 cNode[i].index= i;
@@ -223,9 +309,9 @@
                                    }
                                
                                 // $('#every').click();
-                       //   alert(where);
+                           //  alert(where);
                                 // // 这里才是最终的搜索条件
-                                id=	{$_GET['id']}; 
+                                 id=	{$_GET['id']};
                              ajax(where,id);  
                                     
                                 }
@@ -239,164 +325,55 @@
 					</div>
 				</div>
 				<div class="s-main-r">
-					<div class="s-c-4f">
-						<div class="s-c-4f-main">
-							<div class="s-c-4f-1f">
-								<div class="title">
-									<h2>基本信息</h2>
-								</div>
-								<div class="clearfloat"></div>
-							</div>
-							<div class="s-c-4f-2f">
-								<div class="jbxx">
-									<ul class="left">
-										<li>部队名称：</li>
-										<li>部队类型：</li>
-										<li>详细地址：</li>
-										<li>联系电话：</li>
-										<li>QQ号：</li>
-										<li style="height: 64px;">部队简介：</li>
-										<li>官网链接：</li>
-									</ul>
-									<ul class="right">
-										<li>{$list.forcename}</li>
-										<li>{$list.type_bd}</li>
-										<li>{$list.address}</li>
-										<li>
-												<span class="tel">{$list.tels|substr=0,3}XXXX{$list.tels|substr=8,11}</span>
-											<button id="btnConfirm">查看</button><input type="hidden" id="xp" value="{$list.tels}">
-										</li>
-										<li>{$list.qqs}</li>
-										<li class="bdjj">
-										{$list.content}
-										</li>
-										<li>{$list.lianjie}</li>
-									</ul>
-									<ul class="clearfloat"></ul>
-								</div>
-							</div>
-							<div class="s-c-4f-3f">
-								<div class="title">
-									<h2>作 品</h2>
-								</div>
-								<div class="clearfloat"></div>
-							</div>
-							<div class="s-c-4f-4f">
-								<div class="zp">
-									<a class="selected" href="javascript://">照片作品</a>
-									<a href="javascript://">视频作品</a>
-									<div class="clear"></div>
-								</div>
-							</div>
-							<div class="con">
-								<div class="s-c-4f-5f">
-									<div class="filter">
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-										<a rel="gallery2" class="boxer" href="__PUBLIC__/Home/img/banner_big01.png">
-											<img src="__PUBLIC__/Home/img/banner_big01.png" alt="" />
-										</a>
-									</div>
-									<div class="page">共12张（点击查看）</div>
-								</div>
-							</div>
-							<div class="con" style="display: none;">
-								<div class="s-c-4f-6f">
-									<div class="mkeFocus">
-										<div class="mkeUl">
-											<ul>
-												<li>
-													<a href="" target="_blank">
-														<img src="__PUBLIC__/Home/img/banner_small01.png" width="264" height="264" alt="" />
-														<span>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</span>
-													</a>
-												</li>
-												<li>
-													<a href="" target="_blank">
-														<img src="__PUBLIC__/Home/img/banner_small02.png" width="264" height="264" alt="" />
-														<span>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</span>
-													</a>
-												</li>
-												<li>
-													<a href="" target="_blank">
-														<img src="__PUBLIC__/Home/img/banner_small03.png" width="264" height="264" alt="" />
-														<span>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</span>
-													</a>
-												</li>
-												<li>
-													<a href="" target="_blank">
-														<img src="__PUBLIC__/Home/img/banner_small04.png" width="264" height="264" alt="" />
-														<span>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</span>
-													</a>
-												</li>
-											</ul>
-											<div class="mkeNum"><span class="mke_ns1">1</span>/<span class="mke_ns2">1</span></div>
-											<div class="mkeLbtn"></div>
-											<div class="mkeRbtn"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="s-c-1f">
+						<!--<div class="s-c-1f-1f">
+							<div class="left">
+								<img src="img/tx2-3r.png" />
+								<div class="vip">
+									<img src="img/rzlogo.png" />
+								</div>
+							</div>
+							<div class="right">
+								<p class="yhmc">用户名称</p>
+								<p class="fssl">粉丝数量</p>
+								<p>所在地：郑州</p>
+								<button>编辑</button>
+							</div>
+						</div>-->
+						<!--<div class="s-c-1f-2f">
+							<div class="left"></div>
+							<div class="right">
+								关注量：111111
+							</div>
+						</div>-->
 						<div class="s-c-1f-3f">
 							<div class="top">
 								<div class="lyq">
-									<h2>留 言 区</h2>
+									<button>留 言 区</button>
 								</div>
 								<div class="textarea">
-									<textarea id="contents"></textarea>
+									<textarea id="contents" name="contents"></textarea>
 								</div>
 								<div class="fbly">
-										<button onclick="liuyan({$_GET['id']})">发布留言</button>
+									<button onclick="liuyan({$_GET['id']})">发布留言</button>
 								</div>
 							</div>
-								<script type="text/javascript">
+							
+							<script type="text/javascript">
 								function liuyan(id){
-									var p=id;
+									//alert(1);
 									var t = "{:session('id')}";
 									var contents = $('#contents').val();
 									if(contents.replace(/\s+/g, "")){
 										$.ajax({
-											url:"?s=/Home/Mtbu/rzbddydt_liuyan",
+											url:"?s=/Home/Mtbu/grliuyan",
 											type:"post",
-											data:{id:p,content:contents},
+											data:{id:id,contents:contents},
 											dataType:"json",
 											success:function(data){
-										
+											//	alert(2);
 												var li = '';
+
 												for (var i = 0; i < data.length; i++) {
 													 var myArray=new Array()
 													 var str=data[i].zid;  
@@ -413,9 +390,9 @@
 														 }
 													 }
 													if(aa==1){
-														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz-kz"></span>';
 													}else{
-														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz"></span>';
+														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz"></span>';
 													}
 													if(data[i].username==data[i].tel){
 														var use = data[i].username.substr(0,5);
@@ -424,31 +401,23 @@
 														}
 													if(t==data[i].uid){
 														if(data[i].bdlx==1){
-															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'">';
+															var url='<a href="?s=/Home/Mtbu/grbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
 														}else if(data[i].bdlx==6){
-															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'">';
+															var url='<a href="?s=/Home/Mtbu/spbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
 														}else{
-															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'">';	
+															var url='<a href="?s=/Home/Mtbu/rzbddndt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
 														}
 													}else{
 														if(data[i].bdlx==1){
-															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'">';
+															var url='<a href="?s=/Home/Mtbu/grbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
 														}else if(data[i].bdlx==6){
-															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'">';
+															var url='<a href="?s=/Home/Mtbu/spbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';
 														}else{
-															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
+															var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>';	
 														}
 													}
 													
-													if(data[i].imagename==null){
-														var img='<img src="__PUBLIC__/Home/img/tx2-3r.png" alt="" />';
-													}else{
-												     var img = '<img  width="80" height="80" src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
-													}
-													
-													
-													li+='<li><div class="left-tx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right-xx"><p class="tt"><span class="left">用户'+use+'</span><span class="right">'+data[i].addre+'</span></p><p class="grjj">'+data[i].content+' </p><div class="bottom"><p class="sj">'+data[i].time+'</p><p class="dz dz-qx"><p onclick="zan('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].id+'">'+data[i].zan+'</span></p></p></div></div><div class="clearfloat"></div></li>';
-												
+													li+='<li><div class="left">'+url+'<div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><div class="right"><p class="tt"><span style="float: left;"><a href="">用户'+use+'</a></span><span style="float: right; text-align: right;">'+data[i].addre+'</span></p><p class="grjj">'+data[i].contents+'</p><div class="bottom"><p class="sj">'+data[i].ltime+'</p><p class="dz dz-qx"><p onclick="zan('+data[i].lid+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span  id="s'+data[i].lid+'">'+data[i].zan+'</span></p></p></div></div><div class="clearfloat"></div></li>';
 												};
 												$('#li').html(li);
 												$('#contents').val('');
@@ -457,89 +426,78 @@
 											}
 										});
 									}else{
-										alert('请填写留言内容在提交');
+										alert('no');
 									}
 								}
 							</script>
 							<ul id="li">
-									<foreach name="li" item="lis">
+								<foreach name="list" item="lis">
 									<li>
-									<div class="left-tx">
-										<php>if($_SESSION['id'] == $lis['uid']){</php>
+										<div class="left">
+																<php>if($_SESSION['id'] == $lis['uid']){</php>
 									  <if condition="$lis[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddndt/id/{$lis.uid}">	
+								<a href="?s=/Home/Mtbu/grbddndt/id/{$lis.uid}">	<img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
 								<elseif condition="$lis[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddndt/id/{$lis.uid}">
+								<a href="?s=/Home/Mtbu/spbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddndt/id/{$lis.uid}">
+								<a href="?s=/Home/Mtbu/rzbddndt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
 									</if>
 									<php>}else{</php>
                                    <if condition="$lis[bdlx]=='1'">
-								<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.uid}">
+								<a href="?s=/Home/Mtbu/grbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
 								<elseif condition="$lis[bdlx]=='6'"/>
-								<a href="?s=/Home/Mtbu/spbddydt/id/{$lis.uid}">
+								<a href="?s=/Home/Mtbu/spbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
 								<else/>
-								<a href="?s=/Home/Mtbu/rzbddydt/id/{$lis.uid}">
+								<a href="?s=/Home/Mtbu/rzbddydt/id/{$lis.uid}"><img src="__PUBLIC__/Home/img/tx2-3r.png" /></a>
 								</if>
                               <php>}</php>
-                              		 <if condition="$lis[imagename]==''">  
-                                			<img src="__PUBLIC__/Home/img/tx2-3r.png" alt="" />
-                                   <else />
-                                     <img width="80" height="80" src="/MatouPCS/Tu/upload/{$lis.imagename}"  /> 
-                                   </if>
-									
-										</a>
-										<div class="vip">
-											<img src="__PUBLIC__/Home/img/rzlogo.png" />
+											<div class="vip">
+												<img src="__PUBLIC__/Home/img/rzlogo.png" />
+											</div>
 										</div>
-									</div>
-									<div class="right-xx">
-										<p class="tt">
-											<span class="left">
+										<div class="right">
+											<p class="tt">
+												<span style="float: left;">
 													<if condition="$lis[username]==$lis[tel]">
 							                      	{$lis.username|substr=0,5}
 								                 </if>
 								               <if condition="$lis[username]!=$lis[tel]">
 								                {$lis.username}
-								                  </if>
-											</span>
-											<span class="right">{$lis.addre}</span>
-										</p>
-										<p class="grjj">
-												{$lis.content}
+								                  </if>	
+												</span>
+												<span style="float: right; text-align: right;">{$lis.addre}</span>
+											</p>
+											<p class="grjj">
+												{$lis.contents}
 											</p>
 											<div class="bottom">
-												<p class="sj">{$lis.time}</p>
-											<p class="dz dz-qx"><p onclick="zan({$lis.id},{$lis.zan})" class="dz dz-qx">
+												<p class="sj">{$lis.ltime}</p>
+												<p class="dz dz-qx">		<p onclick="zan({$lis.lid},{$lis.zan})" class="dz dz-qx">
 													<?php $zan = explode(',',$lis['zid']);
 														  array_pop($zan);
 														   ?>
 													<?php if(in_array($_SESSION['id'],$zan)){ ?>
-													<span id="z{$lis.id}" class="icon-dz-kz"></span>
+													<span id="z{$lis.lid}" class="icon-dz-kz"></span>
 													<?php }else{ ?>
-													<span id="z{$lis.id}" class="icon-dz"></span>
+													<span id="z{$lis.lid}" class="icon-dz"></span>
 													<?php } ?>
-													<span id="s{$lis.id}">{$lis.zan}</span></p> 
+													<span id="s{$lis.lid}">{$lis.zan}</span></p> 
+											</div>
 										</div>
-									</div>
-									<div class="clearfloat"></div>
-								</li>
+										<div class="clearfloat"></div>
+									</li>
 								</foreach>
 							</ul>
-							<p class="ckgd">
-							<a href="?s=/Home/Mtbu/rzbddyly/id/{$_GET['id']}">查看更多 》</a>
-							</p>
-						</div>
-					</div>
-				</div>
-					<script type="text/javascript">
+							<script type="text/javascript">
 									var a = 0;
 									function zan(lid,zan){
+									
 										var zan = parseInt(document.getElementById('s'+lid).innerHTML);
 										if($('#z'+lid).hasClass('icon-dz')){
+									
 											zan += 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('点赞成功');
@@ -554,7 +512,7 @@
 										}else{
 											zan -= 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/grbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('取消成功');
@@ -569,7 +527,124 @@
 										}
 									}
 								</script>
-				<div id="re" class="s-main-l">
+							<p class="ckgd">
+								<a href="?s=/Home/Mtbu/rzbddyly/id/{$_GET['id']}">查看更多 》</a>
+							</p>	
+							<!--<button onclick="window.location='bdzxgz-3r-xy.html'">查看更多</button>-->
+						</div>
+						<!--<div class="s-c-1f-4f">
+							<div class="left"></div>
+							<div class="right">
+								粉丝量：111111
+							</div>
+						</div>-->
+						<!--<div class="s-c-1f-3f">
+							<ul>
+								<li>
+									<div class="left">
+										<img src="img/tx2-3r.png" />
+									</div>
+									<div class="right">
+										<p class="tt">
+											<span style="float: left;">用户名称</span>
+											<span style="float: right; text-align: right;">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="left">
+										<img src="img/tx2-3r.png" />
+									</div>
+									<div class="right">
+										<p class="tt">
+											<span style="float: left;">用户名称</span>
+											<span style="float: right; text-align: right;">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="left">
+										<img src="img/tx2-3r.png" />
+									</div>
+									<div class="right">
+										<p class="tt">
+											<span style="float: left;">用户名称</span>
+											<span style="float: right; text-align: right;">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="left">
+										<img src="img/tx2-3r.png" />
+									</div>
+									<div class="right">
+										<p class="tt">
+											<span style="float: left;">用户名称</span>
+											<span style="float: right; text-align: right;">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="left">
+										<img src="img/tx2-3r.png" />
+									</div>
+									<div class="right">
+										<p class="tt">
+											<span style="float: left;">用户名称</span>
+											<span style="float: right; text-align: right;">郑州</span>
+										</p>
+										<p class="grjj">
+											个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+										</p>
+									</div>
+								</li>
+							</ul>
+							<button onclick="window.location = 'bdzxfs-3r-xy.html'">查看更多</button>
+						</div>-->
+					</div>
+
+				</div>
+					<div id="re" class="s-main-l">
+					<!--<div class="s-c-2f">
+						<p class="title">
+							结婚是个开心事，分享喜事，传递辛福！
+						</p>
+						<div class="s-c-2f-1f">
+							<textarea></textarea>
+						</div>
+						<div class="s-c-2f-2f">
+							<div class="left">
+								<div class="sctp">
+									<img src="img/sctpic.png" />
+								</div>
+								<p>上传图片</p>
+							</div>
+							<button class="right">
+								发动态
+							</button>
+						</div>
+						<!--<div class="s-c-2f-3f">
+							<div class="left">
+								<p>全部类型</p>
+								<img src="img/xxjt.png" />
+							</div>
+							<div class="right">
+								排序：热门&nbsp;&nbsp; |&nbsp;&nbsp; 最新
+							</div>
+						</div>-->
+					<!--</div>-->
 					<div id="conn" class="s-c-3f">
 						<div class="s-c-3f-1f">
 							<foreach name='dongtai' item='v'>
@@ -578,26 +653,26 @@
 							</div>
 							<div class="yhtx">
 								<a href="">
-									<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+									<img src="__PUBLIC__/Home/img/yhmc.png" />
 								</a>
 								<div class="vip">
 									<img src="__PUBLIC__/Home/img/rzlogo.png" />
 								</div>
 							</div>
 							<p class="yhmc">
-							<if condition="$v[username]==$v[tel]">
+							 <if condition="$v[username]==$v[tel]">
 							 {$v.username|substr=0,5}
 						    </if>
 							<if condition="$v[username]!=$v[tel]">
 							{$v.username}
 							 </if>
 							</p>
-						  <p class="szd">所在地：{$v.addre}</p>
+							<p class="szd">所在地：{$v.addre}</p>
 							<p class="dtnr">
 							{$v.content}
 								</p>
 							<ul>
-										<foreach name='img' item='vd'>
+									<foreach name='img' item='vd'>
 								<if condition="$v[did]==$vd[pid]">
 								<li>
 									<a rel="gallery1" class="boxer" href="/matouPC/Uploads/{$vd.imagename}">
@@ -608,12 +683,15 @@
 								</li>
 							</if>
 								</foreach>
-								<div class="clear"></div>
+								<li class="clearfloat"></li>
 							</ul>
-							<div class="bottom">
-						   <p class="left">{$v.time}</p>
+										<div class="bottom">
+								<p class="left">{$v.time}</p>
+								<span class="delete">
+									<img src="__PUBLIC__/Home/img/delete-2.png" />
+								</span>
 								<div class="right dz-qx">
-												<p onclick="zan1({$v.did},{$v.zan})" class="dz dz-qx">
+									<p onclick="zan1({$v.did},{$v.zan})" class="dz dz-qx">
 													<?php $zan = explode(',',$v['zid']);
 														  array_pop($zan);
 														   ?>
@@ -627,18 +705,11 @@
 								<p class="clearfloat"></p>
 							</div>
 							<div class="clearfloat"></div>
-								</foreach>
+						</foreach>
+						
 						</div>
 					</div>
-					<div class="s-main-b">
-						<div class="margin">
-							<button onclick="tj({$v.uid})" name='btn' id='btn' >点击加载更多</button>
-						</div>
-					</div>
-				</div>
-				<div class="clearfloat"></div>
-			</div>
-<script type="text/javascript">
+					<script type="text/javascript">
 									var a = 0;
 									function zan1(did,zan){
 						
@@ -675,10 +746,20 @@
 											
 										}
 									}
-															
-									
-				</script>
-					<script type="text/javascript">
+								</script>
+					<div class="s-main-b">
+						<div class="margin">
+							<button onclick="tj({$v.uid})" name='btn' id='btn' >点击加载更多</button>
+			
+			
+						</div>
+					</div>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+
+<script type="text/javascript">
+
 var p=2;
   function tj(id){
 
@@ -1318,15 +1399,163 @@ var p=2;
   
 </script>
 		</section>
-		<include file="Public/foot"/>
+		<br>
+		<br>
+		<br>
+	<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script src="__PUBLIC__/Home/js/jquery.bigautocomplete.js"></script>
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 	<script src="__PUBLIC__/Home/js/jquery.fs.boxer.js"></script>
-	<script src="__PUBLIC__/Home/js/showwin2.js"></script>
-	<script src="__PUBLIC__/Home/js/DialogBySHF.js"></script>
-	<script src="__PUBLIC__/Home/js/troop.js"></script>
-	<script src="__PUBLIC__/Home/js/rAF.js"></script>
-	<script src="__PUBLIC__/Home/js/demo-2.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+				$("#tt").bigAutocomplete({
+					width: 440,
+					data: [{
+						title: "中国好声音",
+						result: {
+							ff: "qq"
+						}
+					}, {
+						title: "中国移动网上营业厅"
+					}, {
+						title: "中国银行"
+					}, {
+						title: "中国移动"
+					}, {
+						title: "中国好声音第三期"
+					}, {
+						title: "中国好声音 第一期"
+					}, {
+						title: "中国电信网上营业厅"
+					}, {
+						title: "中国工商银行"
+					}, {
+						title: "中国好声音第二期"
+					}, {
+						title: "中国地图"
+					}],
+
+				});
+
+			})
+			//		下拉菜单
+		$('#select-yfb').hover(function() {
+			$('#select-yfb a img').css('transition-duration', '.5s');
+			$('#select-yfb a img').css('transform', 'rotate(180deg)');
+			$('.select-yfb').stop().animate({
+				height: '150px'
+			}, 300);
+		}, function() {
+			$('#select-yfb a img').css('transition-duration', '.5s');
+			$('#select-yfb a img').css('transform', 'rotate(0deg)');
+			$('.select-yfb').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		$('#select-xx').hover(function() {
+			$('.select-xx').stop().animate({
+				height: '75px'
+			}, 300);
+		}, function() {
+			$('.select-xx').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		//----------------------------remove tab切换样式--------------------------
+		$('.s-main-c-1f .center a').click(function() {
+			$(this).parents('.s-main-c-1f').children('.center').each(function() {
+				$('a', this).removeClass('selected');
+			});
+			$(this).attr('class', 'selected');
+		});
+		
+		//--------------------------全部动态下拉----------------------------------
+		$('.s-main-c-1f .left-dt').hover(function() {
+			$('.s-main-c-1f .left-dt img').css('transition-duration', '.5s');
+			$('.s-main-c-1f .left-dt img').css('transform', 'rotate(180deg)');
+			$('.s-main-c-1f .left-dt ul').css('background-color','#FF5C5D');
+			$('.select-dt').stop().animate({
+				height: '65px'
+			}, 300);
+		}, function() {
+			$('.s-main-c-1f .left-dt img').css('transition-duration', '.5s');
+			$('.s-main-c-1f .left-dt img').css('transform', 'rotate(0deg)');
+			$('.s-main-c-1f .left-dt ul').css('background-color','#999999');
+			$('.select-dt').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		
+		$('.s-main-c-1f .left-dt ul li a').click(function(){
+			$('.left-dt p').html($(this).html());
+			$('.select-dt').stop().animate({
+				height: '0px'
+			}, 300);
+			$('.s-main-c-1f .left-dt img').css('transition-duration', '.5s');
+			$('.s-main-c-1f .left-dt img').css('transform', 'rotate(0deg)');
+		});
+		
+		//--------------------------全部需求下拉----------------------------------
+		$('.s-main-c-1f .left-xq').hover(function() {
+			$('.s-main-c-1f .left-xq img').css('transition-duration', '.5s');
+			$('.s-main-c-1f .left-xq img').css('transform', 'rotate(180deg)');
+			$('.s-main-c-1f .left-xq ul').css('background-color','#FF5C5D');
+			$('.select-xq').stop().animate({
+				height: '155px'
+			}, 300);
+		}, function() {
+			$('.s-main-c-1f .left-xq img').css('transition-duration', '.5s');
+			$('.s-main-c-1f .left-xq img').css('transform', 'rotate(0deg)');
+			$('.s-main-c-1f .left-xq ul').css('background-color','#999999');
+			$('.select-xq').stop().animate({
+				height: '0px'
+			}, 300);
+		});
+		
+		$('.s-main-c-1f .left-xq ul li a').click(function(){
+			$('.left-xq p').html($(this).html());
+			$('.select-xq').stop().animate({
+				height: '0px'
+			}, 300);
+			$('.s-main-c-1f .left-xq img').css('transition-duration', '.5s');
+			$('.s-main-c-1f .left-xq img').css('transform', 'rotate(0deg)');
+		});
+		
+		//		关注/取消
+		$('#gz-qx').click(function() {
+			if($(this).html() == '关注') {
+				$(this).html('已关注');
+				$(this).css('background-color','#FF5C5D');
+				$(this).hover(function(){
+					$(this).css('background-color','#FF5C5D');
+				});
+			} else {
+				$(this).html('关注');
+				$(this).css('background-color','transparent');
+				$(this).hover(function(){
+					$(this).css('background-color','#FF5C5D');
+				},function(){
+					$(this).css('background-color','transparent');
+				}
+				);
+			}
+		});
+		//----------------------------点赞--------------------------
+	
+		//----------------------------图片放大--------------------------
+		$(function(){
+			$('.boxer').boxer({
+				labels: {
+				close: "关闭",
+				count: "/",
+				next: "下一个",
+				previous: "上一个"
+				}
+			});
+		});
+	</script>
 
 </html>

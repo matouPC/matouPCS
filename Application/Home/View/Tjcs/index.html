@@ -11,7 +11,10 @@
 
 	<body>
 		<header>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08d43db1fc20b9fe63eb41aa94642d1197b1d2b9
 			<div class="h-content-main">
 				<div class="h-main-c">
 					<include file="Public/header"/>
@@ -208,7 +211,7 @@
 							<foreach name="data" item="datav">
 								<if condition="$v[id]==$datav[pid]">
 								<li>
-									<a href="#">
+									<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
 										<div class="f3-ul-cz">
 											<img src="__PUBLIC__/Home/img/123.png" />
 										</div>
@@ -250,7 +253,7 @@
 						<ul>
 						<foreach name="datas" item="sp">
 							<li>
-								<a href="#">
+								<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
 									<img src="Uploads/Uploads/{$datav.pubtimes}/{$datav.imagenames}"  width="255" height="142" alt="商铺名称" />
 									<div class="f2r-ul-c1">
 										<strong>{$sp.name}</strong>

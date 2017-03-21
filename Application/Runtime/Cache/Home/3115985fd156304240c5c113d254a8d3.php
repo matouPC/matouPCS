@@ -479,7 +479,7 @@
 								<?php if($dt[username]!=$dt[tel]): ?><a href=""><?php echo ($dt["username"]); ?></a><?php endif; ?>
 								</p>
 								<p class="center">
-									<?php echo ($dt["type_u"]); ?>
+									(<?php echo ($dt["type_u"]); ?>)
 								</p>
 								<div>
 									<p class="fsl">
@@ -882,7 +882,7 @@
 										if($('#zz'+lid).hasClass('icon-dz')){
 											zan += 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('点赞成功');
@@ -897,7 +897,7 @@
 										}else{
 											zan -= 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('取消成功');
@@ -914,7 +914,7 @@
 								</script>
 					<div class="s-main-b">
 						<div class="margin">
-							<button onclick="tj(<?php echo ($_GET['id']); ?>)" name='btn' id='btn' >点击加载更多</button>
+							<button onclick="tj(<?php echo ($_GET['id']); ?>)" name='btnn' id='btnn' >点击加载更多</button>
 						</div>
 					</div>
 				</div>
@@ -924,7 +924,6 @@
 var p=2;
   function tj(id){
 	  var t = "<?php echo session('id');?>";
-
 		$.ajax({
 			type:'post',
 			url:"<?php echo U('Mtbu/lyjzdt');?>",
@@ -933,9 +932,9 @@ var p=2;
 	         $("#content").append("<div id='load'>加载中……</div>");
 			},
 			success:function(data){
-				// alert(data);
+	
 				if(data!=null){				
-						//alert(1);
+						//
 						 for (var i = 0; i < data.length; i++) {
 						                                   												
 							 var myArray=new Array()

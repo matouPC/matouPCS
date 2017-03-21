@@ -273,9 +273,11 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    	$jbypx = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     	//基本闲置
-    	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
+       $jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
+    	$jbxzimg = M('fleaimage')->select();
     	//基本求购
     	$jbqg = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 2")->order('e.fid desc')->limit('3')->select();
     	
@@ -285,7 +287,9 @@ class MtbuController extends Controller
     	$this->assign('jbzp',$jbzp);
     	$this->assign('jbzpData',$jbzpData);
     	$this->assign('jbyp',$jbyp);
+    	$this->assign('jbypx',$jbypx);
     	$this->assign('jbxz',$jbxz);
+    	$this->assign('jbxzimg',$jbxzimg);
     	$this->assign('jbqg',$jbqg);
     	$this->assign('dt',$dt);
     	$this->assign('list',$list);
@@ -357,9 +361,12 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    	$jbypx = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     	//基本闲置
+    	$jbxzimg = M('fleaimage')->select();
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
+    	
     	//基本求购
     	$jbqg = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 2")->order('e.fid desc')->limit('3')->select();
     	$uuid = $_SESSION['id'];
@@ -377,6 +384,8 @@ class MtbuController extends Controller
     	$this->assign('jbzp',$jbzp);
     	$this->assign('jbzpData',$jbzpData);
     	$this->assign('jbyp',$jbyp);
+    	$this->assign('jbypx',$jbypx);
+    	$this->assign('jbxzimg',$jbxzimg);
     	$this->assign('jbxz',$jbxz);
     	$this->assign('jbqg',$jbqg);
     	$this->assign('dt',$dt);
@@ -503,11 +512,15 @@ class MtbuController extends Controller
     	$id=$_POST['id'];
     	$rz=I('rz');
     	if($rz=='z'){
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.eid desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->limit(1)->order('e.eid desc')->select();
     	}else if($rz=='r'){
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
     	}//详情悬赏信息
-    	$this->ajaxReturn($list);
+    	$lis= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->select();
+    	$yingpin['pji'] = $list;
+    	$yingpin['pben'] = $lis;
+    	//var_dump($xuanshang);die;
+    	$this->ajaxReturn($yingpin);
     
     }
     public function grqiugou()
@@ -648,9 +661,12 @@ class MtbuController extends Controller
         //详情招聘信息
         $jbzpData = M('forcee as f')->join('recruit2 as r on f.uid = r.usid')->where(" f.id = {$id} ")->select();
         //基本应聘信息
-        $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("f.id = {$id}")->select();
+         $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->where("f.id = {$id}")->limit('0,3')->select();
+        //应聘详情信息
+          $jbypx = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("f.id = {$id}")->select();
         //基本闲置
-        $jbxz = M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 1")->select();
+         $jbxz =  M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 1")->order('e.fid desc')->limit('0,3')->select();
+          $jbxzimg = M('fleaimage')->select();
         //基本求购
         $jbqg = M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 2")->select();
         //留言
@@ -671,7 +687,9 @@ class MtbuController extends Controller
         $this->assign('jbzp',$jbzp);
         $this->assign('jbzpData',$jbzpData);
         $this->assign('jbyp',$jbyp);
+        $this->assign('jbypx',$jbypx);
         $this->assign('jbxz',$jbxz);
+        $this->assign('jbxzimg',$jbxzimg);
         $this->assign('jbqg',$jbqg);
         $this->assign('guan',$guan);
         $this->assign('uus',$uus);
@@ -686,8 +704,7 @@ class MtbuController extends Controller
     		$id=$v['id'];
     	}
         $list = M('forcee as f')->join('user as u on f.uid = u.id')->where("f.id = {$id}")->find();
-        $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();
-        // var_dump($list);die;
+        $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();;
         $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
         $this->assign('img',$img);
@@ -731,7 +748,7 @@ class MtbuController extends Controller
         date_default_timezone_set('prc');
         $uid = I('id');//商铺的id
       
-        $sp = M('forcee')->where("uid = {$uid}")->select();//我的商铺
+        $sp = M('forcee')->where("uid = {$uid}")->where("status = 2")->select();//我的商铺
         foreach ($sp as $v){
         	$fid=$v['id'];
         }
@@ -905,20 +922,16 @@ class MtbuController extends Controller
     	$num=3;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
-    	if($p>$totalpage){
-    		exit();
-    	}//超过最大页数，退出
+    //超过最大页数，退出
     	if($where=='1'){
     	$data=M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->limit($limitpage,$num)->order('f.lid desc')->select();
     	}else{
     		$data=M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->limit($limitpage,$num)->order('f.zan desc')->select();
     	}
     
-    	if(count($data)>0){
-    		//  echo 1;
+  
     		$this->ajaxReturn($data);
-    	}else{
-   }
+   
     }
     public function rzbddyxq()//$id为部队id
     {
@@ -942,9 +955,13 @@ class MtbuController extends Controller
         //详情招聘信息
         $jbzpData = M('forcee as f')->join('recruit2 as r on f.uid = r.usid')->where(" f.id = {$id} ")->limit('0,3')->select();
         //基本应聘信息
-        $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("f.id = {$id}")->limit('0,3')->select();
+         $jbyp = M('forcee as f')->join('employ as e on f.uid = e.uid')->where("f.id = {$id}")->limit('0,3')->select();
+        //应聘详情信息
+        $jbypx = M('forcee as f')->join('employ as e on f.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("f.id = {$id}")->select();
         //基本闲置
-        $jbxz = M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 1")->limit('0,3')->select();
+        $jbxz =  M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 1")->limit('0,3')->select();
+        $jbxzimg = M('fleaimage')->select();
+
         //基本求购
         $jbqg = M('forcee as f')->join("flea as e on e.uid = f.uid")->where("f.id = {$id} and e.type = 2")->limit('0,3')->select();
         //留言
@@ -967,7 +984,9 @@ class MtbuController extends Controller
         $this->assign('jbzp',$jbzp);
         $this->assign('jbzpData',$jbzpData);
         $this->assign('jbyp',$jbyp);
+        $this->assign('jbypx',$jbypx);
         $this->assign('jbxz',$jbxz);
+        $this->assign('jbxzimg',$jbxzimg);
         $this->assign('jbqg',$jbqg);
         $this->assign('guan',$guan);
         $this->assign('uus',$uus);
@@ -996,9 +1015,11 @@ class MtbuController extends Controller
     		//详情招聘信息
     		$jbzpData = M('forcee as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
     		//基本应聘信息
-    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.collect desc')->limit('3')->select();
+    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->order('e.collect desc')->limit('3')->select();
+    		$jbypx = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.collect desc')->limit('3')->select();
     		//基本闲置
     		$jbxz = M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.collect desc')->limit('3')->select();
+    		$jbxzimg = M('fleaimage')->select();
     		//基本求购
     		$jbqg = M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 2")->order('e.collect desc')->limit('3')->select();
     		$xuqiu['xji'] =  $jbxs;
@@ -1006,9 +1027,11 @@ class MtbuController extends Controller
     		$xuqiu['shang'] =  $jbys ;
     		$xuqiu['wji'] =  $jbzp ;
     		$xuqiu['wben'] =  $jbzpData   ;
-    		$xuqiu['pin'] =  $jbyp ;
+    		$xuqiu['pji'] =  $jbyp ;
+    		$xuqiu['pben'] =  $jbypx ;
     		$xuqiu['qiu'] =  $jbqg  ;
     		$xuqiu['xian'] =   $jbxz  ;
+    		$xuqiu['xianimg'] =   $jbxzimg  ;
     	}else if($where=='z') {
     		//基本悬赏信息
     		$jbxs = M('forcee as s')->join('reward1 as e on s.uid = e.uid')->where("s.id = {$id}")->order('e.psid desc')->limit('5')->select();
@@ -1022,19 +1045,23 @@ class MtbuController extends Controller
     		//详情招聘信息
     		$jbzpData = M('forcee as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
     		//基本应聘信息
-    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    		$jbyp = M('forcee as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    		$jbypx = M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     		//基本闲置
     		$jbxz = M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
+    		$jbxzimg = M('fleaimage')->select();
     		//基本求购
     		$jbqg = M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 2")->order('e.fid desc')->limit('3')->select();
-    		$xuqiu['xji'] =  $jbxs;
+    	    $xuqiu['xji'] =  $jbxs;
     		$xuqiu['xben'] =  $jbxsData ;
     		$xuqiu['shang'] =  $jbys ;
     		$xuqiu['wji'] =  $jbzp ;
-    		$xuqiu['wben'] =  $jbyp  ;
-    		$xuqiu['pin'] =  $jbxsData ;
+    		$xuqiu['wben'] =  $jbzpData   ;
+    		$xuqiu['pji'] =  $jbyp ;
+    		$xuqiu['pben'] =  $jbypx ;
     		$xuqiu['qiu'] =  $jbqg  ;
     		$xuqiu['xian'] =   $jbxz  ;
+    		$xuqiu['xianimg'] =   $jbxzimg  ;
     	}
     
     	$this->ajaxReturn($xuqiu);
@@ -1314,34 +1341,43 @@ class MtbuController extends Controller
     }
     public function spbddnxq()
     {
-        //商铺部队对内详情
+ //商铺部队对外需求详情
     	$uid=I('id');
     	//$uid = $_SESSION['id'];
     	$sp = M('shop')->where("uid ={$uid} and status=2")->select();//我的商铺
     	foreach ($sp as $v){
     		$id=$v['id'];
     	}
-        $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
-        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         $sp = M('shop')->where("id = {$id}")->select();//我的商铺
-        $user = M('shop as s')->join('user as u on u.id = s.uid')->where("s.id = {$id}")->limit('3')->find();
+        //var_dump($sp);die;
+        $user = M('shop as s')->join('user as u on u.id = s.uid')->where("s.id = {$id}")->find();
         //基本悬赏信息
-        $jbxs = M('shop as s')->join('reward1 as e on s.uid = e.uid')->where("s.id = {$id}")->order('e.psid desc')->limit('5')->select();
+        $jbxs = M('shop as s')->join('reward1 as e on s.uid = e.uid')->where("s.id = {$id}")->select();
         //详情悬赏信息
         $jbxsData = M('shop as s')->join('reward2 as r on s.uid = r.usid')->where("s.id = {$id}")->select();
         // var_dump($jbxsData);die;
         //基本应赏信息
-        $jbys = M('shop as s')->join('due as d on s.uid = d.uid')->where(" s.id = {$id} ")->order('d.did desc')->limit('3')->select();
+        $jbys = M('shop as s')->join('due as d on s.uid = d.uid')->where(" s.id = {$id} ")->select();
         //基本招聘信息
-        $jbzp = M('shop as s')->join('recruit1 as e on s.uid = e.uid')->where("s.id = {$id}")->order('e.rid desc')->limit('4')->select();
+        $jbzp = M('shop as s')->join('recruit1 as e on s.uid = e.uid')->where("s.id = {$id}")->select();
         //详情招聘信息
         $jbzpData = M('shop as s')->join('recruit2 as r on s.uid = r.usid')->where(" s.id = {$id} ")->select();
+        
         //基本应聘信息
-        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+        $jbyp = M('shop as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->select();
+        //应聘详情信息
+        $jbypx = M('shop as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->select();
         //基本闲置
-        $jbxz = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
+        $jbxz = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->select();
+        $jbxzimg = M('fleaimage')->select();
         //基本求购
-        $jbqg = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 2")->order('e.fid desc')->limit('3')->select();
+        $jbqg = M('shop as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 2")->select();
+
+        //留言
+        $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
+        $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
+
+        $this->assign('list',$list);
         $this->assign('user',$user);
         $this->assign('jbxs',$jbxs);
         $this->assign('jbxsData',$jbxsData);
@@ -1349,11 +1385,12 @@ class MtbuController extends Controller
         $this->assign('jbzp',$jbzp);
         $this->assign('jbzpData',$jbzpData);
         $this->assign('jbyp',$jbyp);
+        $this->assign('jbypx',$jbypx);
         $this->assign('jbxz',$jbxz);
         $this->assign('jbqg',$jbqg);
-        $this->assign('sp',$sp);
+        $this->assign('jbxzimg',$jbxzimg);
         $this->assign('dt',$dt);
-        $this->assign('list',$list);
+        $this->assign('sp',$sp);
         $this->display('Mtbu/spbddnxq');
     }
     public function spbddnxqre()
@@ -1617,6 +1654,7 @@ class MtbuController extends Controller
         $this->assign('jbxzimg',$jbxzimg);
         $this->assign('dt',$dt);
         $this->assign('sp',$sp);
+        
         $this->display('Mtbu/spbddyxq');
     }
     public function xqjz(){
@@ -1805,7 +1843,11 @@ class MtbuController extends Controller
     	}else if($rz=='r'){
     		$list = M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->order('s.id desc')->limit('1')->order('e.collect desc')->select();
     	}
-    	$this->ajaxReturn($list);
+       $lis = M('fleaimage')->select();
+    	$xianzhi['xian'] = $list;
+    	$xianzhi['xianimg'] = $lis;
+    	//var_dump($xuanshang);die;
+    	$this->ajaxReturn($xianzhi);;
     
     }
     public function rzxuanshang()
@@ -1867,11 +1909,16 @@ class MtbuController extends Controller
     	}
     	$rz=I('rz');
     	if($rz=='z'){
-    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.eid desc')->select();
+    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->limit(1)->order('e.eid desc')->select();
     	}else if($rz=='r'){
-    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
+    	$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->limit(1)->order('e.collect desc')->select();
     	}//详情悬赏信息
-    	$this->ajaxReturn($list);
+    	$lis =  M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->select();
+    	//基本闲置
+    	$yingpin['pji'] = $list;
+    	$yingpin['pben'] = $lis;
+    	//var_dump($xuanshang);die;
+    	$this->ajaxReturn($yingpin);
     
     }
 
@@ -2187,12 +2234,15 @@ class MtbuController extends Controller
     	$limitpage=($p-1)*$num;//每次查询取记录
 
     	if($where==1){
-    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.eid desc')->select();
+    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->limit($limitpage,$num)->order('e.eid desc')->select();
     	}else{
-    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
+    		$list= M('forcee as s')->join('employ as e on s.uid = e.uid')->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
     	}
-
-    		$this->ajaxReturn($list);
+    	$lis= M('forcee as s')->join('employ as e on s.uid = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
+    	//基本闲置
+    	$yingpin['pji'] = $list;
+    	$yingpin['pben'] = $lis;
+    	$this->ajaxReturn($yingpin);
 
     }
     public function gryingpinjz(){
@@ -2207,12 +2257,16 @@ class MtbuController extends Controller
     	$limitpage=($p-1)*$num;//每次查询取记录
  
     	if($where==1){
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.eid desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->limit($limitpage,$num)->order('e.eid desc')->select();
     	}else{
-    		$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
+    		$list= M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
     	}
     
-    		$this->ajaxReturn($list);
+    	$list= M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->limit($limitpage,$num)->order('e.collect desc')->select();
+    	//基本闲置
+    	$yingpin['pji'] = $list;
+    	$yingpin['pben'] = $lis;
+    	$this->ajaxReturn($yingpin);
     }
     public function qiugoujz(){
     	//求购加载
@@ -2329,14 +2383,15 @@ class MtbuController extends Controller
     	$limitpage=($p-1)*$num;//每次查询取记录
     //超过最大页数，退出
     	if($where==1){
-    		$list= M('focee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->limit($limitpage,$num)->order('e.fid desc')->select();
+    		$list= M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->limit($limitpage,$num)->order('e.fid desc')->select();
     	}else{
     		$list= M('forcee as s')->join("flea as e on e.uid = s.uid")->where("s.id = {$id} and e.type = 1")->limit($limitpage,$num)->order('e.collect desc')->select();
     	}
-    
-    
-    		//  echo 1;
-    		$this->ajaxReturn($list);
+    	$lis = M('fleaimage')->select();
+    	$xianzhi['xian'] = $list;
+    	$xianzhi['xianimg'] = $lis;
+    	//var_dump($xuanshang);die;
+    	$this->ajaxReturn($xianzhi);;
     
     } 
     
@@ -2357,7 +2412,11 @@ class MtbuController extends Controller
     		$list= M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->limit($limitpage,$num)->order('e.collect desc')->select();
     	}
     
-    	$this->ajaxReturn($list);
+    	$lis = M('fleaimage')->select();
+    	$xianzhi['xian'] = $list;
+    	$xianzhi['xianimg'] = $lis;
+    	//var_dump($xuanshang);die;
+    	$this->ajaxReturn($xianzhi);
  
     }
     

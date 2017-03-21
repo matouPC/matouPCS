@@ -645,7 +645,7 @@
 							</div>
 							<ul>
 							<?php if(is_array($data)): foreach($data as $key=>$datav): if($v[id]==$datav[pid]): ?><li>
-									<a href="#">
+									<a href="?s=/Home/Tjcs/spxq/id/<?php echo ($datav["id"]); ?>">
 										<div class="f3-ul-cz">
 											<img src="/matouPCS/Public/Home/img/123.png" />
 										</div>
@@ -683,7 +683,7 @@
 					<div class="s-r-2f">
 						<ul>
 						<?php if(is_array($datas)): foreach($datas as $key=>$sp): ?><li>
-								<a href="#">
+								<a href="?s=/Home/Tjcs/spxq/id/<?php echo ($datav["id"]); ?>">
 									<img src="Uploads/Uploads/<?php echo ($datav["pubtimes"]); ?>/<?php echo ($datav["imagenames"]); ?>"  width="255" height="142" alt="商铺名称" />
 									<div class="f2r-ul-c1">
 										<strong><?php echo ($sp["name"]); ?></strong>

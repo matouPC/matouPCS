@@ -480,7 +480,7 @@
 								<?php if($dt[username]!=$dt[tel]): ?><a href=""><?php echo ($dt["username"]); ?></a><?php endif; ?>
 								</p>
 								<p class="center">
-									<?php echo ($dt["type_u"]); ?>
+									(<?php echo ($dt["type_u"]); ?>)
 								</p>
 								<div>
 									<p class="fsl">

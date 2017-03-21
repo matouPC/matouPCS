@@ -1126,7 +1126,7 @@
 	<script src="/matouPCS/Public/Home/js/troop.js"></script>
 	<script src="/matouPCS/Public/Home/js/rAF.js"></script>
 	<script src="/matouPCS/Public/Home/js/demo-2.js"></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 function ajax(where,id){
 
 	//alert(where);
@@ -2304,7 +2304,6 @@ var p=2;
   var pcc=2;
   function tj5c(id,where){
 
-		alert(where);
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('Mtbu/xianzhijz');?>",
