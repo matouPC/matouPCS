@@ -19,6 +19,65 @@ class MtbuController extends Controller
 
     	$this->display();
     }
+    public function rzbdcj()
+    {
+    	/*  echo '<pre>';
+    	 var_dump($_FILES);die; */
+    	$post = array_keys($_POST);
+    	$files = array_keys($_FILES);
+    	$num = 0;
+    	$nums = 0;
+    	foreach ($files as $value) {
+    		$jie = substr($value,0,-1);
+    		if($jie == 'bdimg'){
+    			$num ++;
+    		}else{
+    			$nums ++;
+    		}
+    
+    	}
+    	$ob = $did = M('forcee')->add($_POST);
+    	
+    	for ($i=1; $i <= $num ; $i++) {
+    		 
+    		$upload=$_FILES["bdimg{$i}"];
+    		$upload = new \Think\Upload($upload);
+    		// var_dump($upload);die;
+    		$upload->maxSize   =     99999999999999 ;// 设置附件上传大小
+    		$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    		$upload->savePath  =      './Uploads/'; // 设置附件上传目录
+    		$info   =   $upload->upload(array($_FILES["bdimg{$i}"]));
+    		foreach($info as $upload){
+    			$data['imagenames'] =  $upload['savename'];
+    		}
+    		$data['pid'] =  $ob;
+    		$data['usid'] =  $_SESSION['id'];
+    		$data['pubtimes']=date("Y-m-d",time());
+    		$id= M('forceimage')->add($data);
+    	
+    	}
+    	for ($i=1; $i <= $nums ; $i++) {
+    		 
+    		$upload=$_FILES["file{$i}"];
+    		$upload = new \Think\Upload($upload);
+    		// var_dump($upload);die;
+    		$upload->maxSize   =     99999999999999 ;// 设置附件上传大小
+    		$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    		$upload->savePath  =      './Uploads/'; // 设置附件上传目录
+    		$info   =   $upload->upload(array($_FILES["file{$i}"]));
+    		foreach($info as $upload){
+    			$data['imagename'] =  $upload['savename'];
+    		}
+    		$data['types'] = $_POST["file_title{$i}"];
+    		$data['video'] = $_POST["file_video{$i}"];
+    		$data['pid'] =  $ob;
+    		$data['usid'] =  $_SESSION['id'];
+    		$data['usid'] =  $_SESSION['id'];
+    		$data['pubtime']=date("Y-m-d",time());
+    		$id= M('forcevideo')->add($data);
+    		 
+    	}
+    }
     public function dongtaidi()
     {
     	//码头部队
@@ -174,7 +233,7 @@ class MtbuController extends Controller
     	//个人基本信息遍历
     	$dt = M('user')->where("id = {$id}")->find();
     	//	var_dump($dt);die;
-    $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
+    $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$id}")->order('g.iid desc')->select();
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);
@@ -304,7 +363,7 @@ class MtbuController extends Controller
     	//个人基本信息遍历
     	$dt = M('user')->where("id = {$id}")->find();
     	//	var_dump($dt);die;
-        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
+        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.uid = {$id}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$id}")->order('g.iid desc')->select();
         $uuid = $_SESSION['id'];
         if($uuid == ''){
@@ -411,9 +470,11 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('collect desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->order('collect desc')->limit('3')->select();
+    	$jbypx = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('collect desc')->limit('3')->select();
     	//基本闲置
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('collect desc')->limit('3')->select();
+    	$jbxzimg = M('fleaimage')->select();
     	//基本求购
     	$jbqg = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 2")->order('collect desc')->limit('3')->select();
     		$xuqiu['xji'] =  $jbxs;
@@ -421,9 +482,11 @@ class MtbuController extends Controller
     		$xuqiu['shang'] =  $jbys ;
     		$xuqiu['wji'] =  $jbzp ;
     		$xuqiu['wben'] =  $jbzpData   ;
-    		$xuqiu['pin'] =  $jbyp ;
+    		$xuqiu['pji'] =  $jbyp ;
+    		$xuqiu['pben'] =  $jbypx ;
     		$xuqiu['qiu'] =  $jbqg  ;
     		$xuqiu['xian'] =   $jbxz  ;
+    		$xuqiu['xianimg'] =   $jbxzimg  ;
     	}else if($where=='z') {
     		//基本悬赏信息
     	$jbxs = M('user as s')->join('reward1 as e on s.id = e.uid')->where("s.id = {$id}")->order('e.psid desc')->limit('3')->select();
@@ -437,19 +500,23 @@ class MtbuController extends Controller
     	//详情招聘信息
     	$jbzpData = M('user as s')->join('recruit2 as r on s.id = r.usid')->where(" s.id = {$id} ")->select();
     	//基本应聘信息
-    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    	$jbyp = M('user as s')->join('employ as e on s.id = e.uid')->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
+    	$jbypx = M('user as s')->join('employ as e on s.id = e.uid')->join("employwork as r on r.pid = e.eid")->where("s.id = {$id}")->order('e.eid desc')->limit('3')->select();
     	//基本闲置
     	$jbxz = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('e.fid desc')->limit('3')->select();
+    	$jbxzimg = M('fleaimage')->select();
     	//基本求购
     	$jbqg = M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 2")->order('e.fid desc')->limit('3')->select();
-    		$xuqiu['xji'] =  $jbxs;
-    		$xuqiu['xben'] =  $jbxsData ;
-    		$xuqiu['shang'] =  $jbys ;
-    		$xuqiu['wji'] =  $jbzp ;
-    		$xuqiu['wben'] =  $jbyp  ;
-    		$xuqiu['pin'] =  $jbxsData ;
-    		$xuqiu['qiu'] =  $jbqg  ;
-    		$xuqiu['xian'] =   $jbxz  ;
+    	$xuqiu['xji'] =  $jbxs;
+    	$xuqiu['xben'] =  $jbxsData ;
+    	$xuqiu['shang'] =  $jbys ;
+    	$xuqiu['wji'] =  $jbzp ;
+    	$xuqiu['wben'] =  $jbzpData   ;
+    	$xuqiu['pji'] =  $jbyp ;
+    	$xuqiu['pben'] =  $jbypx ;
+    	$xuqiu['qiu'] =  $jbqg  ;
+    	$xuqiu['xian'] =   $jbxz  ;
+    	$xuqiu['xianimg'] =   $jbxzimg  ;
     	}
     
     	$this->ajaxReturn($xuqiu);
@@ -547,7 +614,11 @@ class MtbuController extends Controller
     	}else if($rz=='r'){
     		$list =M('user as s')->join("flea as e on e.uid = s.id")->where("s.id = {$id} and e.type = 1")->order('s.id desc')->limit('1')->order('e.collect desc')->select();
     	}
-    	$this->ajaxReturn($list);
+       $lis = M('fleaimage')->select();
+    	$xianzhi['xian'] = $list;
+    	$xianzhi['xianimg'] = $lis;
+    	//var_dump($xuanshang);die;
+    	$this->ajaxReturn($xianzhi);
     
     }
   
@@ -608,7 +679,7 @@ class MtbuController extends Controller
     	}
         $list = M('forcee as f')->join('user as u on f.uid = u.id')->where("f.id = {$id}")->find();
         $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();
-        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
+        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);
@@ -705,7 +776,7 @@ class MtbuController extends Controller
     	}
         $list = M('forcee as f')->join('user as u on f.uid = u.id')->where("f.id = {$id}")->find();
         $li = M('foree_liuyan as f')->join('user as u on f.uid = u.id')->where("f.fid = {$id}")->order('f.lid desc')->limit('0,3')->select();;
-        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
+        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);
@@ -1079,7 +1150,7 @@ class MtbuController extends Controller
         //var_dump($dt);die;
          $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
 
-         $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
+         $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
          $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
          $this->assign('img',$img);
          $this->assign('dongtai',$dongtai);
@@ -1517,7 +1588,7 @@ class MtbuController extends Controller
     	}
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
-        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
+        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.uid = {$uid}")->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->where("d.uid={$uid}")->order('g.iid desc')->select();
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
         $uuid = $_SESSION['id'];
@@ -1847,7 +1918,7 @@ class MtbuController extends Controller
     	$xianzhi['xian'] = $list;
     	$xianzhi['xianimg'] = $lis;
     	//var_dump($xuanshang);die;
-    	$this->ajaxReturn($xianzhi);;
+    	$this->ajaxReturn($xianzhi);
     
     }
     public function rzxuanshang()

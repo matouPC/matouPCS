@@ -233,9 +233,19 @@ $(function() {
 $(function() {
 	var objUrl;
 	var img_html;
+	var a = 0;
+	var fi = '';
 	$("#myFile").change(function() {
+		
+		a += 1;
+		var input = document.getElementById("myFile");
+		var files = document.getElementById("myFile").files;
+			for(var i=0; i< files.length; i++){
+				alert(input.files[i].name);
+				alert(i);
+			}
 		var img_div = $(".img_div");
-		var filepath = $("input[name='myFile']").val();
+		var filepath = $("input[name='myFile[]']").val();
 		for(var i = 0; i < this.files.length; i++) {
 			objUrl = getObjectURL(this.files[i]);
 			var extStart = filepath.lastIndexOf(".");
@@ -248,7 +258,7 @@ $(function() {
 				$(".img_div").html("");
 				return false;
 			} else {
-				img_html = "<div class='isImg'><img src='" + objUrl + "' onclick='javascript:lookBigImg(this)' style='height: 100%; width: 100%;' /><div class='na1bg' onclick='javascript:removeImg(this)'><div class='delete-1'><img src='img/delete-1.png' /></div>删除</div></div>";
+				img_html = "<div class='isImg'><img src='" + objUrl + "' id='xx"+a+"'  onclick='javascript:lookBigImg(this)' style='height: 100%; width: 100%;' /><div class='na1bg' onclick='javascript:removeImg(this)'><div class='delete-1'><img src='/matouPCS/Public/Home/img/delete-1.png' /></div>删除</div></div>";
 				img_div.append(img_html);
 			}
 		}

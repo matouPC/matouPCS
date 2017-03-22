@@ -1093,7 +1093,13 @@
 										<?php if(is_array($jbzpData)): foreach($jbzpData as $key=>$jbzpDatas): if($jbzps['rid'] == $jbzpDatas['pid']){ ?>
 												<p id="p">
 													<span class="sys black-333"><?php echo ($jbzpDatas["type"]); ?></span>
-													<span class="sex"><?php echo ($jbzpDatas["sex"]); ?></span>
+														<span class="sex">
+													<?php if($jbzpDatas[sex]==1): ?>男
+				                                         <?php elseif($jbzpDatas[sex]==2): ?>  
+				                                             女
+					                                    <?php else: ?>
+					                                      不限<?php endif; ?>
+													</span>
 													<span class="age"><?php echo ($jbzpDatas["age"]); ?>岁</span>
 													<span class="black">岗位要求：</span>
 													<span class="gwyq"><?php echo ($jbzpDatas["content"]); ?></span>

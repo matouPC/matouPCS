@@ -622,7 +622,7 @@
 														}
 													}
 													
-													if(data[i].imagename==''){
+													if(data[i].imagename==null){
 														var img='<img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />';
 													}else{
 												     var img = '<img  width="80" height="80" src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -836,7 +836,7 @@
 										if($('#zz'+lid).hasClass('icon-dz')){
 											zan += 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('点赞成功');
@@ -851,7 +851,7 @@
 										}else{
 											zan -= 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('取消成功');
@@ -878,7 +878,6 @@
 var p=2;
   function tj(id){
 	  var t = "<?php echo session('id');?>";
-	  alert(<?php echo session('id');?>);
 		$.ajax({
 			type:'post',
 			url:"<?php echo U('Mtbu/lyjzdt');?>",
@@ -933,7 +932,7 @@ var p=2;
 										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 									}
 								}
-								if(data[i].imagename==''){
+								if(data[i].imagename==null){
 									var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -1009,7 +1008,7 @@ var p=2;
 								var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 							}
 						}
-						if(data[i].imagename==''){
+						if(data[i].imagename==null){
 							var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 						}else{
 					     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -1084,7 +1083,7 @@ var p=2;
 											var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 										}
 									}
-									if(data[i].imagename==''){
+									if(data[i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';

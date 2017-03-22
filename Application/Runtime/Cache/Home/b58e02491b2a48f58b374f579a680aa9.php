@@ -788,7 +788,6 @@
 				//收藏商铺
 		function change(id) {  
 			var mark = document.getElementById('btns').innerText;
-			alert(mark);
 			if(mark == '收藏商铺') {
 				$.ajax({
 					url:'?s=/Home/Tjcs/spxq_shou/id/'+id,
@@ -827,6 +826,7 @@
 </html>
 
 	</body>
+	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 

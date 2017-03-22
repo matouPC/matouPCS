@@ -768,23 +768,14 @@
 					<div class="s-r-2f-f">
 						<ul>
 							<!-- 推荐应聘 -->
-							<?php if(is_array($listn)): foreach($listn as $key=>$listns): ?><<<<<<< HEAD
-
-=======
->>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
-							<li>
+							<?php if(is_array($listn)): foreach($listn as $key=>$listns): ?><li>
 									<a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($listns["eid"]); ?>">
 									<div class="yp">
 										<div class="xg">
 											<div class="xg-img">
-<<<<<<< HEAD
-												<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
-
-=======
 													<?php if($listns[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
                                       <?php else: ?>
                                       	<img src="/matouPCS/Tu/upload/<?php echo ($listns["imagename"]); ?>"  style="border-radius:50%" width="101" height="101" /><?php endif; ?>
->>>>>>> 7876a57306b1a655acb71b50414182cda7fef6f5
 											</div>
 											<div class="xg_01">
 												<div class="xg_01_01">

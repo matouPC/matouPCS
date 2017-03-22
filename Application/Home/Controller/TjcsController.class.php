@@ -42,7 +42,7 @@ class TjcsController extends Controller
         $shangpinz=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id and leixing=1")->select();
         $shangpins=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id and leixing=2")->select();
         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
-        //var_dump($shangpin);die;
+        
         $this->assign('list',$list);
         $this->assign('shop',$shop);
         $this->assign('shangpinz',$shangpinz);
