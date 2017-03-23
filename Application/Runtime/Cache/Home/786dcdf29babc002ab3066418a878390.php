@@ -461,7 +461,7 @@
 						<div class="xqxx-lb">
 								<ul>
 									<li>全部</li>
-									<li>悬赏</li>
+									<a href="#xs"><li>悬赏</li></a>
 									<li>应赏</li>
 									<li>招聘</li>
 									<li>应聘</li>
@@ -646,6 +646,7 @@
 									</div>
 								<?php } ?>
 								<!-- 报名悬赏 -->
+								<a name="xs"></href> 
 								<?php $num = 0; ?>
 								<?php if(is_array($arr)): foreach($arr as $key=>$arrs): ?><li id="zp<?php echo ($num); ?>">
 										<div class="xialai">

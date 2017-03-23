@@ -11,10 +11,6 @@
 
 	<body>
 		<header>
-<<<<<<< HEAD
-
-=======
->>>>>>> 08d43db1fc20b9fe63eb41aa94642d1197b1d2b9
 			<div class="h-content-main">
 				<div class="h-main-c">
 					<include file="Public/header"/>
@@ -179,66 +175,12 @@
 						</div>
 					</div>
 					<div class="clear"></div>
-				<foreach name="shop" item="v">
-					<div class="s-c-3f">
-						<div class="f3-c-1">
-							<div class="f3-c-user">
-								<div class="f3-c-user-img">
-										 <if condition="$v[imagename]==''">
-									<img src="__PUBLIC__/Home/img/bdmc.png" />
-                                      <else />
-                                      	<img src="/matouPCS/Tu/upload/{$v.imagename}"  width="60" height="60" style="border-radius:50%"/>
-                                    </if>
-									
-								</div>
-								<div class="f3-c-user-xx">
-									<p class="spmc">
-										{$v.shopname}
-									</p>
-									<p>
-										{$v.type}
-									</p>
-									<p>
-										收藏量{$v.collect}
-									</p>
-									<p>
-										{$v.address}
-									</p>
-									<p class="clearfloat"></p>
-								</div>
-							</div>
-							<ul>
-							<foreach name="data" item="datav">
-								<if condition="$v[id]==$datav[pid]">
-								<li>
-									<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
-										<div class="f3-ul-cz">
-											<img src="__PUBLIC__/Home/img/123.png" />
-										</div>
-								
-										<img src="Uploads/Uploads/{$datav.pubtimes}/{$datav.imagenames}"  width="255" height="142" alt="商铺名称" />
-								
-										<div class="f3-ul-c1">
-											<p class="red">￥{$datav.pubtime}元</p>
-											<p  class="lll">浏览量:{$datav.liulan}次</p>
-											<p class="spxq">
-											{$datav.content}
-											</p>
-										</div>
-										<div class="f3-ul-c2">
-										</div>
-									</a>
-								</li>
-								</if>
-								</foreach>
-								<div class="clear"></div>
-							</ul>
-						</div>
+					<div id="ajax_lists">
+						
 					</div>
-				</foreach>
-					<div class="djjzgd">
+					<!-- <div class="djjzgd">
 						<button>点击加载更多</button>
-					</div>
+					</div> -->
 				</div>
 				<div class="s-main-r">
 					<div class="s-r-3f">
@@ -331,6 +273,7 @@
 		<script src="__PUBLIC__/Home/js/city-data.js"></script>
 		<script src="__PUBLIC__/Home/js/hzw-city-picker.min.js"></script>
 		<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
+		<script src="__PUBLIC__/Home/js/sc.js"></script>
 	</body>
 
 </html>

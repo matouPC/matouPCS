@@ -471,41 +471,62 @@
 						<div class="s-main-b">
 							<ul>
 								<!-- 给部队的留言 -->
-								<?php if(is_array($list)): foreach($list as $key=>$lists): ?><li>
-										<div class="xialai">
-											<span class="xll1">
-												<p class="xs1">删除</p>
-											</span>
-										</div>
-										<div class="spxx">
-											<img src="/matouPCS/Public/Home/img/yhmc.png">
-											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
-											<p class="spxx_02"></p>
-											<form>
-												<p class="spxx_03">留言</p>
-												
-											</form>
-										</div>
-										<div class="spxx_00">
-											<p>
-												<?php echo ($lists["content_xx"]); ?>
-											</p>
-										</div>
-										
-										
+								<?php if(is_array($list)): foreach($list as $key=>$lists): if($_SESSION['id'] == $lists['uid'] || $_SESSION['id'] == $lists['fid']){ ?>
+										<li>
+											<div class="xialai">
+												<span class="xll1">
+													<p class="xs1">删除</p>
+												</span>
+											</div>
+											<div class="spxx">
+												<?php if($listn[imagename]==''): ?><img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" >
+                                      <?php else: ?>
 
-										<div class="spxx_sj">
-											<p class="spxx_sj_r">2016-12-12</p>
-											<p class="spxx_hf">
-												回复
-											</p>
-										</div>
-										<div class="no">
-											<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
-										<button class="hf" onclick="bdly_hf(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
-										<div class="clear"></div>
-										</div>
-									</li><?php endforeach; endif; ?>
+                                      	<img style="width:50px;" src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>"/><?php endif; ?>
+												<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+												<p class="spxx_02"></p>
+												<form>
+													<p class="spxx_03">留言</p>
+													
+												</form>
+											</div>
+											<div class="spxx_00">
+												<p>
+													<?php echo ($lists["content_xx"]); ?>
+												</p>
+											</div>
+
+											<?php if(is_array($list_hui)): foreach($list_hui as $key=>$list_huis): if($list_huis['tid'] == $lists['id']){ ?>
+												<div class="spxx">
+													<img src="/matouPCS/Public/Home/img/yhmc.png">
+													<p class="spxx_01"><?php echo ($list_huis["username"]); ?></p>
+													<p class="spxx_02"></p>
+													<form>
+														<p class="spxx_03">
+															回复
+														</p>
+													</form>
+												</div>
+												<div class="spxx_00">
+													<p>
+														<?php echo ($list_huis["content_hf"]); ?>
+													</p>
+												</div>
+												<?php } endforeach; endif; ?>	
+
+											<div class="spxx_sj">
+												<p class="spxx_sj_r">2016-12-12</p>
+												<p class="spxx_hf">
+													回复
+												</p>
+											</div>
+											<div class="no">
+												<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
+											<button class="hf" onclick="bdly_hf(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
+											<div class="clear"></div>
+											</div>
+										</li>
+										<?php } endforeach; endif; ?>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>

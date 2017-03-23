@@ -948,27 +948,53 @@ class UserController extends Controller
     public function bdxx(){
         $uid = $_SESSION['id'];
         // var_dump($uid);die;
-        $list = M("user as u")->join(' user_xx_bd as b on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status = '1'")->order("b.id desc")->select();//留言
-        $list_hui = M('user as u')->join('user_xx_bd as b on b.uid = u.id')->order('b.id desc')->select();//对留言的回复
+        $list = M("user as u")->join(' user_xx_bd as b on u.id = b.uid')->where("b.type_xx = '2' and b.status = '1'")->order("b.id desc")->select();//留言
+        // var_dump($list);
+        $list_hui = M('user as u')->join('user_bdxx_hf as b on b.uid = u.id')->order('b.id')->select();//对留言的回复
+        // var_dump($list_hui);die;
         // var_dump($list);die;
         // var_dump($list);die;
         $this->assign('list',$list);
         $this->assign('list_hui',$list_hui);//对留言的回复
         $this->display();
     }
-    public function bdxx_hf($id,$uid,$content){
-        var_dump($content);
+    public function bdxx_hf($id,$uid,$content){//帖子id  回复用户的id uid  回复的具体内容
+        $data['uid'] = $_SESSION['id'];
+        $data['fid'] = $uid;
+        $data['tid'] = $id;//消息id
+        $data['content_hf'] = $content;//回复内容
+        $ob = M('user_bdxx_hf')->add($data);
+        if($ob > 0){
+            echo '回复成功';
+        }
+        // var_dump($content);
     }
     /**
     *  商铺消息
     */
     public function spxx(){
         $uid = $_SESSION['id'];
-        $list = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '1' and b.status = '1'")->select();//留言
+        $list = M("user as u")->join('user_xx_sp as b on u.id = b.uid')->where("b.type_xx = '1' and b.status = '1'")->select();//留言
+        $list_hui = M('user as u')->join('user_spxx_hf as b on b.uid = u.id')->order('b.id')->select();//对留言的回复
         $li = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status = '1'")->select();//收藏
         $this->assign('list',$list);
+        $this->assign('list_hui',$list_hui);
         $this->assign('li',$li);
         $this->display();
+    }
+    /**
+    *  商铺消息 回复
+    */
+    public function spxx_hf($id,$uid,$content){//帖子id  回复用户的id uid  回复的具体内容
+        $data['uid'] = $_SESSION['id'];
+        $data['fid'] = $uid;
+        $data['tid'] = $id;//消息id
+        $data['content_hf'] = $content;//回复内容
+        $ob = M('user_spxx_hf')->add($data);
+        if($ob > 0){
+            echo '回复成功';
+        }
+        // var_dump($content);
     }
     /**
     *  已发布 悬赏

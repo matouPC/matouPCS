@@ -788,7 +788,7 @@ class BoxController extends CommonController {
     {
     	//码头部队
     	 
-     $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('forcee as s on s.uid = u.id')-> field( "u.*,d.*,s.status")->where('status=2')->order('d.did desc')->limit(0,2)->select();
+        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('forcee as s on s.uid = u.id')-> field( "u.*,d.*,s.status")->where('status=2')->order('d.did desc')->limit(0,2)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
         $uuid = $_SESSION['id'];
         if($uuid == ''){
@@ -796,16 +796,28 @@ class BoxController extends CommonController {
         }
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);
-
-    
     	$this->display('Box/bddz');
     }
-    
-    
-    
-    
-    
+    /**
+    *  商城的搜索分页
+    */
+    public function mtsc(){
+        $count = M('shop')->where('status = "2"')->count();
+        
+        // $num = count($count);
+        $Page = new \Think\PageAjax($count,1);
+        $shop = M('shop')->where('status = "2"')->limit($Page->firstRow.','.$Page->listRows)->select();
+        $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
+        // var_dump($data);
+        $show = $Page->show();// 分页显示输出
+        var_dump($show);
+        $this->assign('shop',$shop);
+        $this->assign('data',$data);
+        
+        // var_dump($show);
+        $this->assign('page',$show);//赋值分页输出
+        $this->display('Box/sc');
+    }
     
 }
 
-?>

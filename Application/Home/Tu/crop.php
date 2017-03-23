@@ -9,6 +9,7 @@
     private $msg;
 
     function __construct($src, $data, $file) {
+
       $this -> setSrc($src);
       $this -> setData($data);
       $this -> setFile($file);
@@ -36,7 +37,6 @@
 
     private function setFile($file) {
       $errorCode = $file['error'];
-
       if ($errorCode === UPLOAD_ERR_OK) {
         $type = exif_imagetype($file['tmp_name']);
 

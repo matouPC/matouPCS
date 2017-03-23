@@ -977,7 +977,7 @@
 															
 									
 				</script>
-					<script type="text/javascript">
+<script type="text/javascript">
 var p=2;
   function tj(id){
 

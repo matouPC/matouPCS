@@ -575,11 +575,11 @@
 											</div>
 											<div class="right">
 												<p class="hf">
-													回复：
+													请耐心等待。。。
 												</p>
-												<p class="jj">
+												<!-- <p class="jj">
 													拒绝
-												</p>
+												</p> -->
 												<p class="rq">
 													2017-01-01
 												</p>

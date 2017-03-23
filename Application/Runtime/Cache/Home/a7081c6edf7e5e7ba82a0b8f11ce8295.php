@@ -473,7 +473,8 @@
 						<div class="s-main-b">
 							<ul>
 								<!-- 商铺消息的留言 -->
-								<?php if(is_array($list)): foreach($list as $key=>$lists): ?><li>
+								<?php if(is_array($list)): foreach($list as $key=>$lists): if($_SESSION['id'] == $lists['uid'] || $_SESSION['id'] == $lists['fid']){ ?>
+									<li>
 										<div class="xialai">
 											<span class="xll1">
 												<p class="xs1">删除</p>
@@ -493,6 +494,23 @@
 												<?php echo ($lists["content_xx"]); ?>
 											</p>
 										</div>
+										<?php if(is_array($list_hui)): foreach($list_hui as $key=>$list_huis): if($list_huis['tid'] == $lists['id']){ ?>
+												<div class="spxx">
+													<img src="/matouPCS/Public/Home/img/yhmc.png">
+													<p class="spxx_01"><?php echo ($list_huis["username"]); ?></p>
+													<p class="spxx_02"></p>
+													<form>
+														<p class="spxx_03">
+															回复
+														</p>
+													</form>
+												</div>
+												<div class="spxx_00">
+													<p>
+														<?php echo ($list_huis["content_hf"]); ?>
+													</p>
+												</div>
+												<?php } endforeach; endif; ?>
 										<div class="spxx_sj">
 											<p class="spxx_sj_r">2016-12-12</p>
 											<p class="spxx_hf">
@@ -501,10 +519,11 @@
 										</div>
 										<div class="no">
 											<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
-										<button class="hf">回复</button>
+										<button class="hf" onclick="sphf(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
 										<div class="clear"></div>
 										</div>
-									</li><?php endforeach; endif; ?>
+									</li>
+									<?php } endforeach; endif; ?>
 								<?php if(is_array($li)): foreach($li as $key=>$lis): ?><li>
 										<div class="xialai">
 											<span class="xll1">
@@ -614,5 +633,6 @@
 	<script src="/matouPCS/Public/Home/js/textarea.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
+	<script src="/matouPCS/Public/Home/js/sply.js"></script>
 
 </html>

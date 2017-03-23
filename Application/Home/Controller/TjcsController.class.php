@@ -8,8 +8,8 @@ class TjcsController extends Controller
     public function index()
     {
     	//码头商品
-    	$shop = M('shop')->where('status = "2"')->limit('0,3')->select();
-    	$data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
+    	// $shop = M('shop')->where('status = "2"')->limit('0,3')->select();
+    	// $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
     	//推荐商品
     	$datas = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->where('leixing="1"')->order('c.id desc')->limit('0,3')->select();
     	//推荐部队部队
