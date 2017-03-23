@@ -384,7 +384,7 @@
 										}else{
 											zan -= 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('取消成功');
@@ -534,7 +534,15 @@
 											<?php if($jbzps['rid'] == $jbzpDatas['pid']){ ?>
 												<p id="p">
 													<span class="sys black-333">{$jbzpDatas.type}</span>
-													<span class="sex">{$jbzpDatas.sex}</span>
+														<span class="sex">
+													<if condition="$jbzpDatas[sex]==1" >  
+				                                             男
+				                                         <elseif condition="$jbzpDatas[sex]==2"/>  
+				                                             女
+					                                    <else />
+					                                      不限
+				                                     	</if>
+													</span>
 													<span class="age">{$jbzpDatas.age}岁</span>
 													<span class="black">岗位要求：</span>
 													<span class="gwyq">{$jbzpDatas.content}</span>

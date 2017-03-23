@@ -524,7 +524,7 @@
 										<input type="text"  id="representative"  name="representative"  placeholder="请输入真实法定代表人姓名" class="gray-in" />
 									</li>
 									<li>
-										<input type="text" id="shopname"  name="shopname"class="gray-in" placeholder="请输入门店的简称、别称" />
+										<input type="text" id="shopname"  name="shopname" class="gray-in" placeholder="请输入门店的简称、别称" />
 									</li>
 									<li>
 										<input type="text" id="address"  name="address" class="white-in xz-city" readonly="readonly" placeholder="请选择" onclick="appendCity(this,'danxuan')" value="" data-value="" />
