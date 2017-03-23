@@ -393,6 +393,7 @@ class BoxController extends CommonController {
     */
     public function zpdt(){
         $type =  addslashes($_GET['type']);//职业
+        var_dump($type);
         $sex =  $_GET['sex'];//性别
         $age =  $_GET['age'];//年龄
         $worktime = $_GET['worktime'];//工作经验
@@ -479,6 +480,7 @@ class BoxController extends CommonController {
         // else if($address != ''){
         //     $where = "e.address = '{$address}'";
         // }
+        var_dump($where);
         //计算总页数
         if(!empty($where)){
             $count = M('recruit2 as r')->where($where)->count();
@@ -502,6 +504,7 @@ class BoxController extends CommonController {
             if($data == ''){
                 $list = '';
             }else{
+
                 $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("forcee as f on f.uid = e.uid")->where($jwhere)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
             }
         }else if(!empty($where) && !empty($address)){//详细条件 地址
@@ -525,7 +528,9 @@ class BoxController extends CommonController {
             if($data == ''){
                 $list = '';
             }else{
-                $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("recruit2 as r on r.pid = e.rid")->join("forcee as f on f.uid = u.id")->where($where)->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+                // die;
+                $list = M('recruit1 as e')->join('user as u on e.uid = u.id')->join("forcee as f on f.uid = u.id")->order("e.rid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+
             }
         }else if(!empty($jwhere)){
             $data = M('recruit2 as r')->join("forcee as f on f.uid = r.usid")->where($jwhere)->select();
@@ -553,23 +558,22 @@ class BoxController extends CommonController {
                     if($value['rid'] == $data[$i]['pid']){
                         // if(in_array($sex,$data[$i])){
                             $value[] = $data[$i];
-                            // var_dump($value);
                         // }
                     }
             }
             $newList[] = $value;
         }
 
-            
-            foreach ($newList as $key => $value) {
-                // var_dump(count($value));
-                for ($i=0; $i < 1; $i++) { //此处是符合这个条件的 有且只有一个
-                    //var_dump($value[$i]);//拿到了查询的值
-                    if($value[$i]['pid'] == $value['rid']){
-                        $newLists[] = $value;
-                    }
+        foreach ($newList as $key => $value) {
+            // var_dump(count($value));
+            for ($i=0; $i < 1; $i++) { //此处是符合这个条件的 有且只有一个
+                //var_dump($value[$i]);//拿到了查询的值
+                if($value[$i]['pid'] == $value['rid']){
+                    $newLists[] = $value;
                 }
             }
+        }
+
         /*********结束********************/
         $show = $Page->show();
         $this->assign('page',$show);//赋值分页输出

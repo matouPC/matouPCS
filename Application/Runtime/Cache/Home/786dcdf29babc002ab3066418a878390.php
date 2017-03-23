@@ -661,42 +661,58 @@
 											<p class="xqxx_01_04">未完成</p>
 										</div>
 										<!--下拉隐藏开始-->
-										<div class="yhmc" id="yhmc<?php echo ($num); ?>">
+										<div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>">
 											<dl>
-												<?php for ($i=0; $i < count($arrs['xs']['uu']); $i++) {?>
-												<dd>
-													<!-- <a href=""> -->
-														<div id="xl_01" class="yhmc_01">
-														<img src="/matouPCS/Public/Home/img/yhmc.png">
-														<p class="yhmc_01_01"><?php echo $arrs['xs']['uu'][$i]['username']; ?></p>
-														<!-- <p class="yhmc_01_01">1年经验</p> -->
-														<p class="yhmc_01_02"></p>
-														<p class="yhmc_01_03">报名</p>
-														<p class="yhmc_01_04">期望赏金：私聊</p>
-														<p class="yhmc_01_04">电话号码：<span id="dh<?php echo $arrs['xs']['uu'][$i]['id'];?>"><?php echo substr($arrs['xs']['uu'][$i]['tel'],0,3).'XXXX'. substr($arrs['xs']['uu'][$i]['tel'],7,11); ?></span></p>
-														<input type="hidden" id="xp<?php echo $arrs['xs']['uu'][$i]['id']; ?>" value="<?php echo $arrs['xs']['uu'][$i]['tel']?>">
-														<button id="btn_c_01" class="yhmc_01_05" onclick="jj(<?php echo $arrs['xs']['wid']; ?>);">拒接</button>
-														<button id="btn_c_02" class="yhmc_01_05" onclick="dl(<?php echo $arrs['xs']['wid']; ?>,<?php echo $arrs['xs']['uu'][$i]['id']; ?>);">电聊</button>
-														<div class="clear"></div>
-														<div class="yhmc-date">
-															<span>2012-12-12</span>
-														</div>
-													</div>
-													<!-- </a> -->
-												</dd>
-												<script type="text/javascript">
-												//拒绝
-													function jj(wid){
+												<div>
+												<?php
+ for ($i=0; $i < count($arrs['xs']['uu']); $i++) { ?>
+													<dd>
+														<!-- <a href=""> -->
+															<div id="xl_01" class="yhmc_01">
+																<img src="/matouPCS/Public/Home/img/yhmc.png">
+																<p class="yhmc_01_01"><?php echo '用户'.$arrs['xs']['uu'][$i]['username']; ?></p>
+																<!-- <p class="yhmc_01_01">1年经验</p> -->
+																<p class="yhmc_01_02"></p>
+																<p class="yhmc_01_03">报名</p>
+																<p class="yhmc_01_04">期望赏金：私聊</p>
+																<p class="yhmc_01_04">电话号码：<span id="dh<?php echo $arrs['xs']['uu'][$i]['id'];?>"><?php echo substr($arrs['xs']['uu'][$i]['tel'],0,3).'XXXX'. substr($arrs['xs']['uu'][$i]['tel'],7,11); ?></span></p>
+																<input type="hidden" id="xp<?php echo $arrs['xs']['uu'][$i]['id']; ?>" value="<?php echo $arrs['xs']['uu'][$i]['tel']?>">
+																<button id="btn_c_01" class="yhmc_01_05" onclick="jj(<?php echo $arrs['xs']['wid']; ?>,<?php echo $arrs['xs']['uu'][$i]['id']; ?>);" >拒接</button>
+																<button id="btn_c_02" class="yhmc_01_05" onclick="dl(<?php echo $arrs['xs']['wid']; ?>,<?php echo $arrs['xs']['uu'][$i]['id']; ?>);" >电聊</button>
+																<div class="clear"></div>
+																<div class="yhmc-date">
+																	<span>2012-12-12</span>
+																</div>
+															</div>
+															</dd>
+													<script type="text/javascript">
+													// //拒绝
+													function jj(wid,uid){
 														if(window.confirm('确定要拒绝么？')){
-															alert('已拒绝');
+																$.ajax({
+																	url:'?s=/Home/User/xqxx_sf/wid/'+wid+'/uid/'+uid,
+																	type:'get',
+																	success:function(data){
+																		alert(data);
+																	},error:function(){
+																		alert('ajax请求失败');
+																	}
+																});
+															}
+													}
+													//电聊
+													function dl(wid,uid){
+														if(window.confirm('确定耗费5个码头币来查看么？')){
+															$('#dh'+uid).html($('#xp'+uid).val());
 														}
 													}
-												//电聊
-													function dl(wid){
-														alert(wid);
-													}
 												</script>
-												<?php } ?>
+
+														<!-- </a> -->
+													
+												<?php  } ?>
+												</div>
+												
 											</dl>
 											<div class="showmore">
 												<a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;">
@@ -718,7 +734,7 @@
 									</div>
 								<?php } ?>
 								<!-- 报名招聘 -->
-								<?php $num_zp = 10; ?>
+								<?php $num_zp = 100; ?>
 								<?php if(is_array($arr_zp)): foreach($arr_zp as $key=>$arr_zps): ?><li>
 									<div class="xialai">
 										<span class="xll1">
@@ -737,26 +753,52 @@
 									<div class="yhmc" id="yhmc<?php echo ($num_zp); ?>">
 										<dl>
 											<!--<dd></dd>-->
+												<div>
 											<?php for ($i=0; $i < count($arr_zps['xs']['uu']); $i++) {?>
 												<dd>
-													<a href="">
+													<!-- <a href=""> -->
 														<div id="xl_01" class="yhmc_01">
 														<img src="/matouPCS/Public/Home/img/yhmc.png">
 														<p class="yhmc_01_01"><?php echo $arr_zps['xs']['uu'][$i]['username'];?></p>
 														<p class="yhmc_01_02"></p>
 														<p class="yhmc_01_03">报名</p>
-														<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-														<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
+														<p class="yhmc_01_04">电话号码：<span id="dhzp<?php echo $arr_zps['xs']['uu'][$i]['id'];?>"><?php echo substr($arr_zps['xs']['uu'][$i]['tel'],0,3).'XXXX'. substr($arr_zps['xs']['uu'][$i]['tel'],7,11); ?></span></p>
+																<input type="hidden" id="xpzp<?php echo $arr_zps['xs']['uu'][$i]['id']; ?>" value="<?php echo $arr_zps['xs']['uu'][$i]['tel']?>">
+														<button id="btn_c_01" class="yhmc_01_05" onclick="jjzp(<?php echo $arr_zps['xs']['id']?>,<?php echo $arr_zps['xs']['uu'][$i]['id']?>)">拒接</button>
+
+														<button id="btn_c_02" class="yhmc_01_05" onclick="dlzp(<?php echo $arr_zps['xs']['uu'][$i]['id']; ?>)">电聊</button>
 														<div class="clear"></div>
 														<div class="yhmc-date">
 															<span>2012-12-12</span>
 														</div>
 													</div>
-													</a>
+													<!-- </a> -->
 
 												</dd>
+												<script type="text/javascript">
+													function jjzp(xid,id){//xidwei
+														if(window.confirm('确定要拒绝么？')){
+																$.ajax({
+																	url:'?s=/Home/User/xqxx_sf_zp/xid/'+xid+'/id/'+id,
+																	type:'get',
+																	success:function(data){
+																		alert(data);
+																	},error:function(){
+																		alert('ajax请求失败');
+																	}
+																});
+															}
+													}
+													function dlzp(id){
+														if(window.confirm('确定耗费5个码头币来查看么？')){
+															$('#dhzp'+id).html($('#xpzp'+id).val());
+														}
+													}
+												</script>
 											<?php } ?>
+											</div>
 										</dl>
+										
 										<div class="showmore">
 											<a id="xx_01<?php echo ($num_zp); ?>" onclick="xx_01(<?php echo ($num_zp); ?>)" href="javascript:;">
 												<div class="ckxq">
@@ -795,28 +837,50 @@
 										<div class="yhmc" id="yhmc<?php echo ($numqg); ?>">
 											<dl>
 												<!--<dd></dd>-->
-												<?php for ($i=0; $i < count($arr_qgs['xs']); $i++) {?>
+												<div>
+												<?php  for ($i=0; $i < count($arr_qgs['xs']); $i++) {?>
 												<dd>
-													<a href="">
+													<!-- <a href=""> -->
 														<div id="xl_01" class="yhmc_01">
 														<img src="/matouPCS/Public/Home/img/yhmc.png">
 														<p class="yhmc_01_01"><?php echo $arr_qgs['xs'][$i]['username']; ?></p>
 														<!-- <p class="yhmc_01_01">1年经验</p> -->
 														<!-- <p class="yhmc_01_02"></p> -->
 														<p class="yhmc_01_03">报名</p>
+														<p class="yhmc_01_04">电话号码：<span id="dhzp<?php echo $arr_qgs['xs']['uu'][$i]['id'];?>"><?php echo substr($arr_qgs['xs'][$i]['tel'],0,3).'XXXX'. substr($arr_qgs['xs'][$i]['tel'],7,11); ?></span></p>
+																<input type="hidden" id="xpzp<?php echo $arr_qgs['xs'][$i]['id']; ?>" value="<?php echo $arr_qgs['xs'][$i]['tel']?>">
 														<!-- <p class="yhmc_01_04">摄影师</p> -->
 														<p class="yhmc_01_04">期望赏金：私聊</p>
-														<button id="btn_c_01" class="yhmc_01_05" onclick="reject();return false;">拒接</button>
-														<button id="btn_c_02" class="yhmc_01_05" onclick="tel();return false;">电聊</button>
+														<button id="btn_c_01" class="yhmc_01_05" onclick="jjqg(<?php echo $arr_qgs['fid']?>,<?php echo $arr_qgs['xs'][$i]['id'];?>)">拒接</button>
+														<button id="btn_c_02" class="yhmc_01_05" onclick="dlqg()">电聊</button>
 														<div class="clear"></div>
 														<div class="yhmc-date">
 															<span>2012-12-12</span>
 														</div>
 													</div>
-													</a>
+													<!-- </a> -->
 
 												</dd>
+												<script type="text/javascript">
+													function jjqg(fid,uid){//fid为求购id  uid为报名用户的id
+														if(window.confirm('确定要拒绝么？')){
+																$.ajax({
+																	url:'?s=/Home/User/xqxx_sf_qg/fid/'+fid+'/uid/'+uid,
+																	type:'get',
+																	success:function(data){
+																		alert(data);
+																	},error:function(){
+																		alert('ajax请求失败');
+																	}
+																});
+															}
+													}
+													function dlqg(){
+														alert('电聊求购');
+													}
+												</script>
 												<?php } ?>
+												</div>
 											</dl>
 											<div class="showmore">
 												<a id="xx_01<?php echo ($numqg); ?>" onclick="xx_01(<?php echo ($numqg); ?>)" href="javascript:;">

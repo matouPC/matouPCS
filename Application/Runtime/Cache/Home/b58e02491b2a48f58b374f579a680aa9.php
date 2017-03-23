@@ -788,7 +788,6 @@
 				//收藏商铺
 		function change(id) {  
 			var mark = document.getElementById('btns').innerText;
-			alert(mark);
 			if(mark == '收藏商铺') {
 				$.ajax({
 					url:'?s=/Home/Tjcs/spxq_shou/id/'+id,

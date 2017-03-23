@@ -798,7 +798,7 @@
 									<div class="detail">
 									<span class="black-333">具体要求：</span>
 											<span class="text48">
-										<?php echo ($newlist["content"]); ?>
+										<?php echo ($newlist["yaoqiu"]); ?>
 											</span>
 									</div>
 								</a>

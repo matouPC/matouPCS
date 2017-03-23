@@ -918,6 +918,7 @@
 	<script src="/matouPCS/Public/Home/js/hzw-city-picker.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/tz.js"></script>
+	<script src="/matouPCS/Public/Home/js/2rank.js"></script>
 <script type="text/javascript">
 function change(id) {
 	//拿到被关注用户id 由于值会丢 决定选择使用cookie

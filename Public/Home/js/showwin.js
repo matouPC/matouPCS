@@ -658,6 +658,7 @@ $('.spxx-lb ul li').click(function() {
 				$('#xx_01'+id).removeClass('act');
 				$("#xx_01"+id+" img").css('transform', 'rotate(0deg)');
 				$('#xx_01'+id+' span').html('查看详情');
+				$('#yhmc'+id+' dl').css('overflow','hidden');
 				$('#yhmc'+id+' dl').stop().animate({
 					height: '0px'
 				}, 1000);
@@ -665,8 +666,9 @@ $('.spxx-lb ul li').click(function() {
 				$('#xx_01'+id).addClass('act');
 				$("#xx_01"+id+" img").css('transform', 'rotate(180deg)');
 				$('#xx_01'+id+' span').html('收起');
+				$('#yhmc'+id+' dl').css('overflow','auto');
 				$('#yhmc'+id+' dl').stop().animate({
-					height: yhmc_height + 'px'
+					height: yhmc_height +10+ 'px'
 				}, 1000);
 			}
 		// });

@@ -641,7 +641,7 @@
 										<ul class="right">
 										<li><?php echo ($list["forcename"]); ?></li>
 										<li><?php echo ($list["type_bd"]); ?></li>
-										<li>河南省郑州市</li>
+										<li><?php echo ($list["address"]); ?></li>
 										<li>
 												<span class="tel"><?php echo (substr($list["tels"],0,3)); ?>XXXX<?php echo (substr($list["tels"],8,11)); ?></span>
 											<button id="btnConfirm">查看</button><input type="hidden" id="xp" value="<?php echo ($list["tels"]); ?>">

@@ -842,11 +842,97 @@ class UserController extends Controller
         // $this->assign('catXs',array_unique($catXs));
         $this->display();
     }
+    public function xqxx_sf($wid,$uid){//对报名用户的回复-》悬赏
+        // var_dump($uid);die;
+        $ob = M('reward2')->where("wid = {$wid}")->select();
+        foreach ($ob as $key => $value) {
+            if($value['bao'] != ''){
+                $userBao = $this->stringimg($value['bao']);
+                    if(in_array($uid,$userBao)){
+                        for ($i=0; $i < count($userBao); $i++) { 
+                            if($userBao[$i] !== $uid){
+                                // var_dump();
+                                $array['bao'] = $userBao[$i].',';
+                            }
+                        }
+                    }
+                }
+        }
+        //拒绝后剩下的用户id  -》修改reward2表中的bao字段
+        // $data['bao'] = $array;
+        
+        if($array == ''){
+           $array['bao'] = '';
+        }
+        // var_dump($array);die;
+        $db = M('reward2')->where("wid = {$wid}")->save($array);
+        if($db > 0){
+            echo '您已成功拒绝该用户！';
+        }
+
+    }
+    public function xqxx_sf_zp($xid,$id){//对报名用户的回复-》招聘
+        // var_dump($uid);die;
+        $ob = M('recruit2')->where("id = {$xid}")->select();
+        foreach ($ob as $key => $value) {
+            if($value['zhao'] != ''){
+                $userBao = $this->stringimg($value['zhao']);
+                    if(in_array($id,$userBao)){
+                        // var_dump(expression)
+                        for ($i=0; $i < count($userBao); $i++) { 
+                            if($userBao[$i] !== $id){
+                                // var_dump();
+                                $array['zhao'] = $userBao[$i].',';
+                            }
+                        }
+                    }
+                }
+        }
+        //拒绝后剩下的用户id  -》修改reward2表中的bao字段
+        // $data['bao'] = $array;
+        if($array == ''){
+           $array['zhao'] = '';
+        }
+        // var_dump($array);die;
+        $db = M('recruit2')->where("id = {$xid}")->save($array);
+        if($db > 0){
+            echo '您已成功拒绝该用户！';
+        }
+
+    }
+    public function xqxx_sf_qg($fid,$uid){//对报名用户的回复-》求购
+        // var_dump($uid);die;
+        $ob = M('flea')->where("fid = {$fid} and type = '1'")->select();
+        foreach ($ob as $key => $value) {
+            if($value['bao'] != ''){
+                $userBao = $this->stringimg($value['bao']);
+                    if(in_array($uid,$userBao)){
+                        // var_dump(expression)
+                        for ($i=0; $i < count($userBao); $i++) { 
+                            if($userBao[$i] !== $uid){
+                                // var_dump();
+                                $array['bao'] = $userBao[$i].',';
+                            }
+                        }
+                    }
+                }
+        }
+        //拒绝后剩下的用户id  -》修改reward2表中的bao字段
+        // $data['bao'] = $array;
+        if($array == ''){
+           $array['bao'] = '';
+        }
+        // var_dump($array);die;
+        $db = M('flea')->where("fid = {$fid} and type = '1'")->save($array);
+        if($db > 0){
+            echo '您已成功拒绝该用户！';
+        }
+
+    }
     /**
     *  需求消息中对留言的回复
     */
     public function xqxx_huifu($id,$fid,$content){//这两个分别是消息id和帖子id fid为被回复用户的id
-        // echo $id;
         $data['uid'] = $_SESSION['id'];
         $data['fid'] = $fid;
         $data['tid'] = $id;//消息id
@@ -861,17 +947,25 @@ class UserController extends Controller
     */
     public function bdxx(){
         $uid = $_SESSION['id'];
-        $list = M("user_xx_bd as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status_xx = '1'")->select();//留言
+        // var_dump($uid);die;
+        $list = M("user as u")->join(' user_xx_bd as b on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status = '1'")->order("b.id desc")->select();//留言
+        $list_hui = M('user as u')->join('user_xx_bd as b on b.uid = u.id')->order('b.id desc')->select();//对留言的回复
+        // var_dump($list);die;
+        // var_dump($list);die;
         $this->assign('list',$list);
+        $this->assign('list_hui',$list_hui);//对留言的回复
         $this->display();
+    }
+    public function bdxx_hf($id,$uid,$content){
+        var_dump($content);
     }
     /**
     *  商铺消息
     */
     public function spxx(){
         $uid = $_SESSION['id'];
-        $list = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '1' and b.status_xx = '1'")->select();//留言
-        $li = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status_xx = '1'")->select();//收藏
+        $list = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '1' and b.status = '1'")->select();//留言
+        $li = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status = '1'")->select();//收藏
         $this->assign('list',$list);
         $this->assign('li',$li);
         $this->display();

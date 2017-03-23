@@ -542,7 +542,7 @@
 											</div>
 											<div class="right">
 												<p class="hf">
-													未回复
+													请耐心等待。。。
 												</p>
 												<p class="rq">
 													2017-01-01
@@ -616,7 +616,7 @@
 											</div>
 											<div class="right">
 												<p class="hf">
-													未回复
+													请耐心等待。。。
 												</p>
 												<p class="rq">
 													2017-01-01
