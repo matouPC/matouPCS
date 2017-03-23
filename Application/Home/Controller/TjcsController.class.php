@@ -38,7 +38,7 @@ class TjcsController extends Controller
         	$id=$v['id'];
         }
     }
-        $shop=M('shop as c')->join('user as u on c.uid = u.id')->where("c.id=$id")->find();
+        $shop=M('shop as c')-> field( "c.*,u.username,u.type_u,u.tel,u.addre")->join('user as u on c.uid = u.id')->where("status=2 and c.id={$id}")->find();
         $shangpinz=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id and leixing=1")->select();
         $shangpins=M('commodity as c')->join('comimage as m on c.id = m.psid')->where("pid=$id and leixing=2")->select();
         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
@@ -95,6 +95,8 @@ class TjcsController extends Controller
         
             $data['price'] = $_POST["price{$i}"];
             $data['content'] = $_POST["content{$i}"];
+            $data['leixing'] = $_POST["leixing{$i}"];
+            $data['name'] = $_POST["name{$i}"];
             $v=M('commodity');
             $id = $v->add($data);
            // $this->upload( $_FILES["upload{$i}"],$id);
@@ -108,7 +110,7 @@ class TjcsController extends Controller
             $data['psid'] =  $id;
             $data['pubtimes']=date("Y-m-d",time());
             if(!$info) {// 上传错误提示错误信息
-                $this->redirect('Tjcs/spcjcg');
+                $this->redirect('Mtbu/spglcg');
             }else{// 上传成功
                 foreach($info as $upload){
                     //echo $file['savepath'].$file['savename'];die;
@@ -127,7 +129,7 @@ class TjcsController extends Controller
             $data['psid'] =  $id;
             $data['pubtimes']=date("Y-m-d",time());
             if(!$info) {// 上传错误提示错误信息
-                $this->redirect('Tjcs/spcjcg');
+                $this->redirect('Mtbu/spglcg');
             }else{// 上传成功
                 foreach($info as $upload){
                     //echo $file['savepath'].$file['savename'];die;
@@ -137,7 +139,7 @@ class TjcsController extends Controller
              }
             
              if($i==$j){
-            $this->redirect('Tjcs/spcjcg');
+            $this->redirect('Mtbu/spglcg');
             }
    
            }
@@ -168,7 +170,7 @@ class TjcsController extends Controller
            	$data['imagename'] =I('imagename');
            	$id = $_SESSION['id'];
            	$img = M('shop');
-           	$ob = $img->where("id = {$id}")->save($data);
+           	$ob = $img->where("status=2 and uid = {$id}")->save($data);
            	if($ob){
            		echo 'y';
            	}

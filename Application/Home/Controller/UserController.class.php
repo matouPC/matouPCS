@@ -154,7 +154,7 @@ class UserController extends Controller
             array_pop($us_fen);
             $arr += $us_fen;
         }
-       $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+       $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);

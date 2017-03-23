@@ -306,7 +306,7 @@
       //alert(bbb);
       $.ajax({  
 	        type: "POST",  
-	         url:"/matouPCS/index.php/Home/Mtbu/usaveimg/",
+	         url:"/matouPCS/index.php/Home/Mtbu/bdusaveimg/",
 	         data: {"imagename":bbb},  
 
 	        success: function(data){ 
