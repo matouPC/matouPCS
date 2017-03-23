@@ -50,7 +50,7 @@
 												<span class="fz1">{$shop.collect}</span>
 											</p>
                                            <php>if($_SESSION['id'] == $shop['uid']){</php>
-                                           		<a href="?s=Home/Mtbd/spgl.php" class="tj_01_06">管理商铺</a>							
+                                           		<a href="?s=/Home/Mtbu/spgl" class="tj_01_06">管理商铺</a>							
 											<php>}else{</php>
 													<php>$shou = explode(",",$shop['shou']);array_pop($shou);
 												if(in_array($_SESSION['id'],$shou)){</php>

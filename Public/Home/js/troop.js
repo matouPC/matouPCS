@@ -622,6 +622,7 @@ $('#mtsc').click(function() {
 		$('#jbxx').click(function() {
 			$('.con1').css('display', 'none');
 			$('.con2').css('display', 'block');
+			$('.bjtx').css('display','none');
 			$('#con-jbxx').removeClass('selected-con');
 			$('#con-tjzp').attr('class', 'selected-con');
 		});
@@ -629,6 +630,7 @@ $('#mtsc').click(function() {
 		$('#syb').click(function() {
 			$('.con1').css('display', 'block');
 			$('.con2').css('display', 'none');
+			$('.bjtx').css('display','block');
 			$('#con-tjzp').removeClass('selected-con');
 			$('#con-jbxx').attr('class', 'selected-con');
 		});

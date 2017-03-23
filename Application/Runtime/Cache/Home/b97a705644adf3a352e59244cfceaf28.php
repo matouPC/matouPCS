@@ -11,10 +11,6 @@
 
 	<body>
 		<header>
-<<<<<<< HEAD
-
-=======
->>>>>>> 08d43db1fc20b9fe63eb41aa94642d1197b1d2b9
 			<div class="h-content-main">
 				<div class="h-main-c">
 					<!DOCTYPE html>

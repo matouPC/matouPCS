@@ -1,0 +1,121 @@
+/*-------------------------------s-c-2f--------------------------------*/
+
+.s-c-2f {
+	width: 850px;
+	height: 250px;
+	background: url(../img/navbg4.png) no-repeat;
+	border-bottom: 1px solid #999999;
+}
+
+.s-c-2f-qh {
+	margin-top: 20px;
+	width: 100%;
+	background: #f2f2f2;
+	height: 50px;
+	border: 1px solid #cccccc;
+}
+
+.s-f2l-c {
+	width: 845px;
+}
+
+.s-f2l-c1 {
+	width: 410px;
+	height: 37px;
+	margin-left: 15px;
+	padding-top: 10px;
+	float: left;
+}
+
+.s-f2l-c2{
+	float: right;
+	width: 258px;
+	height: 34px;
+	border-radius: 50px;
+	border: solid 1px #999999;
+	margin-top: 7px;
+	margin-right: 10px;
+}
+
+.s-f2l-c2 input{
+	height: 34px;
+	color: #333333;
+	border: 0px;
+	outline: none;
+	margin-left: 18px;
+	width: 184px;
+	padding-left: 8px;
+	padding-right: 8px;
+	background-color: transparent;
+}
+
+.s-f2l-c2 button{
+	width: 21px;
+	height: 22px;
+	background: url(../img/ss-gray.png) no-repeat;
+	border: 0px;
+	outline: none;
+	position: relative;
+	top: 5px;
+	right: 3px;
+}
+
+.s-f2l-c1 ul li {
+	width: 100px;
+	height: 30px;
+	margin-left: 10px;
+	float: left;
+	background: #ccc;
+	border-radius: 6px;
+}
+
+.s-f2l-c1 ul li.selected-tab {
+	background-color: #FF9291;
+	color: white;
+}
+
+.s-f2l-c1 ul li a {
+	font-size: 16px;
+	width: 100px;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 6px;
+	color: white;
+}
+
+.s-f2l-c1 ul li a h2{
+	font-size: 16px;
+}
+
+.s-f2l-c1 ul li a:hover {
+	background-color: #FF9291;
+	color: white;
+}
+
+
+.black-333{
+	color: #333333;
+}
+
+.zk {
+	width: 140px;
+	height: 40px;
+	background: #cccccc;
+	color: #fff;
+	font-size: 12px;
+	position: absolute;
+	border-radius: 8px;
+	margin-top: 176px;
+	margin-left: 280px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+
+.zk:hover {
+	background: #FF5C5D;
+}
+

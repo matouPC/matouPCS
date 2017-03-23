@@ -4,6 +4,10 @@
 	/*text-align: center;*/
 }
 
+section{
+	position:relative;
+}
+
 body,
 html {
 	font-family: "microsoft yahei";
@@ -56,6 +60,7 @@ button {
 	width: 1200px;
 	height: auto;
 	margin: 0 auto;
+	position:relative;
 }
 
 
@@ -4829,8 +4834,9 @@ button {
 	width: 198px;
 	height: auto;
 	position: absolute;
-	top: 50px;
+	top: 98px;
 	right: 40px;
+	z-index:100;
 }
 
 .bjtx img {

@@ -19,6 +19,33 @@ class MtbuController extends Controller
 
     	$this->display();
     }
+    public function rzbdsh()
+    {
+    	//商品详情
+    	 
+    	$force = M('forcee as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->where('s.status=2')->order('s.fid desc')->find();
+    
+    	$this->assign('v',$force);
+    	$this->display('Mtbu/rzbdsh');
+    	 
+    }
+    public function spglcg()
+    {
+    	//商品详情
+    
+    	
+    	$this->display('Mtbu/spglcg');
+    
+    }
+    public function bdusaveimg(){
+    	$data['logo'] =I('imagename');
+    	$id = $_SESSION['id'];
+    	$img = M('forcee');
+    	$ob = $img->where("status=2 and uid = {$id}")->save($data);
+    	if($ob){
+    		echo 'y';
+    	}
+    }
     public function rzbdcj()
     {
     	/*  echo '<pre>';
@@ -53,7 +80,12 @@ class MtbuController extends Controller
     		$data['pid'] =  $ob;
     		$data['usid'] =  $_SESSION['id'];
     		$data['pubtimes']=date("Y-m-d",time());
-    		$id= M('forceimage')->add($data);
+    		if($data['imagenames']==''){
+    			 
+    		}else{
+    			$id= M('forceimage')->add($data);
+    		}
+    		
     	
     	}
     	for ($i=1; $i <= $nums ; $i++) {
@@ -74,9 +106,13 @@ class MtbuController extends Controller
     		$data['usid'] =  $_SESSION['id'];
     		$data['usid'] =  $_SESSION['id'];
     		$data['pubtime']=date("Y-m-d",time());
+    		if($data['imagename']==''){
+    			
+    		}else{
     		$id= M('forcevideo')->add($data);
-    		 
+    		}
     	}
+    	$this->redirect('Mtbu/rzbdsh');
     }
     public function dongtaidi()
     {
@@ -1548,9 +1584,9 @@ class MtbuController extends Controller
     	$id=I('id');
         if($id==''){
         $uid = $_SESSION['id'];
-        $v = M('shop')->where("uid = {$uid}")->find();//我的商铺
+        $v = M('shop')->where("uid = {$uid}")->where("status=2")->find();//我的商铺
     }else{
-    	$v = M('shop')->where("id = {$id}")->find();//我的商铺
+    	$v = M('shop')->where("id = {$id}")->where("status=2")->find();//我的商铺
     }
         //var_dump($sp);die;
         $this->assign('v',$v);

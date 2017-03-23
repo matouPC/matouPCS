@@ -23,7 +23,9 @@ a {
 	clear: both;
 }
 
-
+.black-333{
+	color: #333 !important;
+}
 /*------------------------------header------------------------------*/
 
 
@@ -447,6 +449,10 @@ a {
 	margin-bottom: 70px;
 }
 
+.s-c-8f-2f .ul-r select{
+	padding: 5px;
+}
+
 .s-c-8f-2f .ul-r li {
 	display: block;
 	width: 100%;
@@ -581,18 +587,18 @@ a {
 }
 
 select {
-				/*Chromeå’ŒFirefoxé‡Œé¢çš„è¾¹æ¡†æ˜¯ä¸ä¸€æ ·çš„ï¼Œæ‰€ä»¥å¤å†™äº†ä¸€ä¸‹*/
+				/*ChromeºÍFirefoxÀïÃæµÄ±ß¿òÊÇ²»Ò»ÑùµÄ£¬ËùÒÔ¸´Ğ´ÁËÒ»ÏÂ*/
 				border: solid 1px #DEDEDE;
-				/*å¾ˆå…³é”®ï¼šå°†é»˜è®¤çš„selecté€‰æ‹©æ¡†æ ·å¼æ¸…é™¤*/
+				/*ºÜ¹Ø¼ü£º½«Ä¬ÈÏµÄselectÑ¡Ôñ¿òÑùÊ½Çå³ı*/
 				appearance: none;
 				-moz-appearance: none;
 				-webkit-appearance: none;
-				/*åœ¨é€‰æ‹©æ¡†çš„æœ€å³ä¾§ä¸­é—´æ˜¾ç¤ºå°ç®­å¤´å›¾ç‰‡*/
+				/*ÔÚÑ¡Ôñ¿òµÄ×îÓÒ²àÖĞ¼äÏÔÊ¾Ğ¡¼ıÍ·Í¼Æ¬*/
 				background: url(../img/select.png) no-repeat scroll right center transparent;
-				/*ä¸ºä¸‹æ‹‰å°ç®­å¤´ç•™å‡ºä¸€ç‚¹ä½ç½®ï¼Œé¿å…è¢«æ–‡å­—è¦†ç›–*/
+				/*ÎªÏÂÀ­Ğ¡¼ıÍ·Áô³öÒ»µãÎ»ÖÃ£¬±ÜÃâ±»ÎÄ×Ö¸²¸Ç*/
 				padding-right: 14px;
 			}
-			/*æ¸…é™¤ieçš„é»˜è®¤é€‰æ‹©æ¡†æ ·å¼æ¸…é™¤ï¼Œéšè—ä¸‹æ‹‰ç®­å¤´*/
+			/*Çå³ıieµÄÄ¬ÈÏÑ¡Ôñ¿òÑùÊ½Çå³ı£¬Òş²ØÏÂÀ­¼ıÍ·*/
 			
 			select::-ms-expand {
 				display: none;
@@ -1222,7 +1228,7 @@ select {
 	margin-top: 20px;
 	position: relative;
 	min-height: 50px;
-	/*border-bottom: solid 1px #CCCCCC;*/
+	border-bottom: solid 1px #CCCCCC;
 }
 
 .s-c-2f-2f-f img {
@@ -1659,7 +1665,7 @@ select {
 
 .s-c-3f-sp ul li {
 	width: 256px;
-	height: 205px;
+	height: auto;
 	margin-top: 10px;
 	border-radius: 2px;
 	border: 1px solid #ccc;
@@ -1673,10 +1679,20 @@ select {
 	height: 75px;
 }
 
+.cjsp_lx{
+	width: 256px;
+	font-size: 14px;
+}
+.cjsp_lx select{
+	padding: 5px 5px;
+	float: left;
+	width: 66px;
+	margin: 10px 30px;
+}
+
 .cjsp_sc_00 {
 	width: 256px;
 	height: 110px;
-	margin-top: 12px;
 }
 
 .cjsp_sc_01 {
@@ -1826,7 +1842,7 @@ select {
 }
 
 
-/*------------------------------ä¸Šä¼ ä½œå“ç…§ç‰‡------------------------------*/
+/*------------------------------ÉÏ´«×÷Æ·ÕÕÆ¬------------------------------*/
 
 .shade {
 	position: absolute;
