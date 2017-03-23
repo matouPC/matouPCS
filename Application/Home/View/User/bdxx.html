@@ -60,7 +60,11 @@
 											<foreach name="list_hui" item="list_huis">
 												<?php if($list_huis['tid'] == $lists['id']){ ?>
 												<div class="spxx">
-													<img src="__PUBLIC__/Home/img/yhmc.png">
+													<if condition="$lists[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$lists.imagename}" alt="" />
+			                                   </if>
 													<p class="spxx_01">{$list_huis.username}</p>
 													<p class="spxx_02"></p>
 													<form>

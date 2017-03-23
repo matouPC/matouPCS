@@ -94,7 +94,11 @@
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+													<if condition="$newUserZps[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$newUserZps.imagename}" alt="" />
+			                                   </if>
 												</div>
 												<p class="yhmc">
 													用户{$newUserZps.username}
@@ -130,7 +134,11 @@
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+													<if condition="$userIdles[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$userIdles.imagename}" alt="" />
+			                                   </if>
 												</div>
 												<p class="yhmc">
 													用户{$userIdles.username}
@@ -175,7 +183,11 @@
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+													<if condition="$newUserXss[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$newUserXss.imagename}" alt="" />
+			                                   </if>
 												</div>
 												<p class="yhmc">
 													用户{$newUserXss.username}

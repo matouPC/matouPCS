@@ -786,12 +786,15 @@ class UserController extends Controller
         $uid = $_SESSION['id'];
         // var_dump($uid);die;
         $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6'")->order("x.id desc")->select();//闲置留言
-        $list_q = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6'")->order("x.id desc")->select();//求购留言
+        $list_q = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7'")->order("x.id desc")->select();//求购留言
+        // var_dump($list_q);d
         $list_qs = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '7'")->order("x.id desc")->select();//求购收藏
         $list_yps = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '3'")->order("x.id desc")->select();//应聘收藏
         $list_yss = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '1'")->order("x.id desc")->select();//应赏收藏
         $list_hui = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();//发送显示在自己页面上的留言
         $list_hui_js = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();//接受到的回复的留言
+
+        $list_qgxx_hui = M('user as u')->join('user_qgxx_hf as x on u.id = x.uid')->order('x.id')->select();//对于求购留言的回复
 
         $lijb = M('reward1 as e')->where("e.uid = {$uid}")->select();//悬赏基本信息
         $li = M('reward2')->where("usid = {$uid}")->select();//悬赏详情信息
@@ -832,8 +835,14 @@ class UserController extends Controller
                 $arr_qg[] = $value;
             }
         }
-        $this->assign('list',$list);//留言
+        $this->assign('list',$list);//闲置留言
         $this->assign('list_hui',$list_hui);//人家回复你的留言
+
+        // list_q
+        $this->assign('list_q',$list_q);//留言
+        $this->assign('list_qgxx_hui',$list_qgxx_hui);//求购留言回复
+
+
         // var_dump($list_hui_js);die;
         $this->assign('list_hui_js',$list_hui_js);//人家回复你的留言
         $this->assign('arr',$arr);//报名悬赏
@@ -938,6 +947,19 @@ class UserController extends Controller
         $data['tid'] = $id;//消息id
         $data['content_hf'] = $content;//回复内容
         $ob = M('user_xx_hf')->add($data);
+        if($ob > 0){
+            echo '回复成功';
+        }
+    }
+    /**
+    *  需求消息求购中对留言的回复
+    */
+    public function qgxx_huifu($id,$fid,$content){//这两个分别是消息id和帖子id fid为被回复用户的id
+        $data['uid'] = $_SESSION['id'];
+        $data['fid'] = $fid;
+        $data['tid'] = $id;//消息id
+        $data['content_hf'] = $content;//回复内容
+        $ob = M('user_qgxx_hf')->add($data);
         if($ob > 0){
             echo '回复成功';
         }

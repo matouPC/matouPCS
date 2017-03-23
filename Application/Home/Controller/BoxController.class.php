@@ -810,7 +810,7 @@ class BoxController extends CommonController {
         $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
         // var_dump($data);
         $show = $Page->show();// 分页显示输出
-        var_dump($show);
+        // var_dump($show);
         $this->assign('shop',$shop);
         $this->assign('data',$data);
         

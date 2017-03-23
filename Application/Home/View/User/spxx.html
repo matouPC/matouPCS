@@ -40,7 +40,11 @@
 											</span>
 										</div>
 										<div class="spxx">
-											<img src="__PUBLIC__/Home/img/yhmc.png">
+											<if condition="$lists[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$lists.imagename}" alt="" />
+			                                   </if>
 											<p class="spxx_01">{$lists.username}</p>
 											<p class="spxx_02"></p>
 											<form>
@@ -56,7 +60,11 @@
 										<foreach name="list_hui" item="list_huis">
 												<?php if($list_huis['tid'] == $lists['id']){ ?>
 												<div class="spxx">
-													<img src="__PUBLIC__/Home/img/yhmc.png">
+													<if condition="$list_huis[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$list_huis.imagename}" alt="" />
+			                                   </if>
 													<p class="spxx_01">{$list_huis.username}</p>
 													<p class="spxx_02"></p>
 													<form>
@@ -86,6 +94,11 @@
 									</li>
 									<?php } ?>
 								</foreach>
+								<?php if(!empty($list)){ ?>
+								<div class="djjzgd">
+									<button>点击加载更多</button>
+								</div>
+								<?php } ?>
 								<foreach name="li" item="lis">
 									<li>
 										<div class="xialai">
@@ -94,7 +107,11 @@
 											</span>
 										</div>
 										<div class="spxx">
-											<img src="__PUBLIC__/Home/img/yhmc.png">
+											<if condition="$lis[imagename]==''">  
+			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+			                                   <else />
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$lis.imagename}" alt="" />
+			                                   </if>
 											<p class="spxx_01">{$lis.username}</p>
 											<p class="spxx_02"></p>
 											<p class="spxx_03">{$lis.content_xx}</p>
@@ -111,15 +128,17 @@
 									</li>
 								</foreach>
 							</ul>
+							<?php if(!empty($li)){ ?>
+							<div class="djjzgd">
+								<button>点击加载更多</button>
+							</div>
+							<?php } ?>
 							<div class="clearfloat"></div>
 						</div>
 					</div>
 					<div class="clearfloat"></div>
 				</div>
 				<div class="clearfloat"></div>
-				<div class="djjzgd">
-					<button>点击加载更多</button>
-				</div>
 			</div>
 		</section>
 		<?php	include '3rank-footer.php';?>

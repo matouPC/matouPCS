@@ -176,7 +176,7 @@
 							<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
+								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
 							   <a href="#">商铺主页</a>
 							   <?php } ?>
@@ -186,7 +186,7 @@
 									<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -485,7 +485,9 @@
 											</span>
 										</div>
 										<div class="spxx">
-											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<form>
@@ -502,7 +504,9 @@
 										</div>
 										<?php if(is_array($list_hui)): foreach($list_hui as $key=>$list_huis): if($list_huis['tid'] == $lists['id']){ ?>
 											<div class="spxx">
-												<img src="/matouPCS/Public/Home/img/yhmc.png">
+												<?php if($list_huis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($list_huis["imagename"]); ?>" alt="" /><?php endif; ?>
 												<p class="spxx_01"><?php echo ($list_huis["username"]); ?></p>
 												<p class="spxx_02"></p>
 												<form>
@@ -532,8 +536,15 @@
 										</div>
 									</li>
 									<?php  } endforeach; endif; ?>
+								<?php if(!empty($list)){ ?>
+									<div class="djjzgd">
+										<button>点击加载更多</button>
+									</div>
+								<?php } ?>
 								<!-- 求购留言 -->
-								<?php if(is_array($list_q)): foreach($list_q as $key=>$lists): ?><li>
+
+								<?php if(is_array($list_q)): foreach($list_q as $key=>$lists): if($_SESSION['id'] == $lists['uid'] || $_SESSION['id'] == $lists['fid']){ ?>
+									<li>
 										<div class="xialai">
 											<span class="xll1">
 
@@ -541,7 +552,9 @@
 											</span>
 										</div>
 										<div class="spxx">
-											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<form>
@@ -556,6 +569,25 @@
 												<?php echo ($lists["content_xx"]); ?>
 											</p>
 										</div>
+										<?php if(is_array($list_qgxx_hui)): foreach($list_qgxx_hui as $key=>$list_qgxx_huis): if($list_qgxx_huis['tid'] == $lists['id']){ ?>
+											<div class="spxx">
+												<?php if($list_qgxx_huis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($list_qgxx_huis["imagename"]); ?>" alt="" /><?php endif; ?>
+												<p class="spxx_01"><?php echo ($list_qgxx_huis["username"]); ?></p>
+												<p class="spxx_02"></p>
+												<form>
+													<p class="spxx_03">
+														回复
+													</p>
+												</form>
+											</div>
+											<div class="spxx_00">
+												<p>
+													<?php echo ($list_qgxx_huis["content_hf"]); ?>
+												</p>
+											</div>
+											<?php } endforeach; endif; ?>
 										<div class="spxx_sj">
 											<p class="spxx_sj_r">2016-12-12</p>
 											<p class="spxx_hf">
@@ -563,11 +595,17 @@
 											</p>
 										</div>
 										<div class="no">
-											<textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea>
-										<button class="hf" >回复</button>
+											<textarea id="textarea_qg" placeholder="留言留言留言留言留言留言"></textarea>
+										<button class="hf" onclick="liuyan_qg(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
 										<div class="clear"></div>
 										</div>
-									</li><?php endforeach; endif; ?>
+									</li>
+									<?php } endforeach; endif; ?>
+								<?php if(!empty($list_q)){ ?>
+									<div class="djjzgd">
+										<button>点击加载更多</button>
+									</div>
+								<?php } ?>
 								<!-- 求购收藏 -->
 								<?php if(is_array($list_qs)): foreach($list_qs as $key=>$lists): ?><li>
 										<div class="xialai">
@@ -577,7 +615,9 @@
 											</span>
 										</div>
 										<div class="spxx">
-											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<p class="spxx_03">求购收藏</p>
@@ -592,6 +632,11 @@
 											<p class="spxx_sj_r">2016-12-12</p>
 										</div>
 									</li><?php endforeach; endif; ?>
+								<?php if(!empty($list_qs)){ ?>
+									<div class="djjzgd">
+										<button>点击加载更多</button>
+									</div>
+								<?php } ?>
 								<!-- 应聘收藏 -->
 								<?php if(is_array($list_yps)): foreach($list_yps as $key=>$lists): ?><li>
 										<div class="xialai">
@@ -601,7 +646,9 @@
 											</span>
 										</div>
 										<div class="spxx">
-											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<p class="spxx_03">应聘收藏</p>
@@ -625,7 +672,9 @@
 											</span>
 										</div>
 										<div class="spxx">
-											<img src="/matouPCS/Public/Home/img/yhmc.png">
+											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<p class="spxx_03">应赏收藏</p>
@@ -640,11 +689,6 @@
 											<p class="spxx_sj_r">2016-12-12</p>
 										</div>
 									</li><?php endforeach; endif; ?>
-								<?php if(!empty($list)){ ?>
-									<div class="djjzgd">
-										<button>点击加载更多</button>
-									</div>
-								<?php } ?>
 								<!-- 报名悬赏 -->
 								<a name="xs"></href> 
 								<?php $num = 0; ?>
@@ -670,7 +714,11 @@
 													<dd>
 														<!-- <a href=""> -->
 															<div id="xl_01" class="yhmc_01">
-																<img src="/matouPCS/Public/Home/img/yhmc.png">
+							                                   <?php  if($arrs['xs']['uu'][$i]['imagename'] == ''){ ?>
+							                                    	<img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+							                                	<?php }else{ ?>
+							                                	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($arrs['xs']['uu'][$i]['imagename']); ?>" alt="" />
+							                                	<?php } ?>
 																<p class="yhmc_01_01"><?php echo '用户'.$arrs['xs']['uu'][$i]['username']; ?></p>
 																<!-- <p class="yhmc_01_01">1年经验</p> -->
 																<p class="yhmc_01_02"></p>
@@ -759,7 +807,11 @@
 												<dd>
 													<!-- <a href=""> -->
 														<div id="xl_01" class="yhmc_01">
-														<img src="/matouPCS/Public/Home/img/yhmc.png">
+														<?php  if($arr_zps['xs']['uu'][$i]['imagename'] == ''){ ?>
+						                                    	<img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+						                                	<?php }else{ ?>
+						                                	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($arr_zps['xs']['uu'][$i]['imagename']); ?>" alt="" />
+						                                	<?php } ?>
 														<p class="yhmc_01_01"><?php echo $arr_zps['xs']['uu'][$i]['username'];?></p>
 														<p class="yhmc_01_02"></p>
 														<p class="yhmc_01_03">报名</p>
@@ -777,14 +829,7 @@
 
 												</dd>
 												<script type="text/javascript">
-													function jjzp(xid,id){//xidwei
-														if(window.confirm('确定要拒绝么？')){
-																$.ajax({
-																	url:'?s=/Home/User/xqxx_sf_zp/xid/'+xid+'/id/'+id,
-																	type:'get',
-																	success:function(data){
-																		alert(data);
-																	},error:function(){
+													function jjzp(xid,id),error:function(){
 																		alert('ajax请求失败');
 																	}
 																});
@@ -843,7 +888,11 @@
 												<dd>
 													<!-- <a href=""> -->
 														<div id="xl_01" class="yhmc_01">
-														<img src="/matouPCS/Public/Home/img/yhmc.png">
+														<?php  if($arr_qgs['xs'][$i]['imagename'] == ''){ ?>
+						                                    	<img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+						                                	<?php }else{ ?>
+						                                	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($arr_qgs['xs'][$i]['imagename']); ?>" alt="" />
+						                                	<?php } ?>
 														<p class="yhmc_01_01"><?php echo $arr_qgs['xs'][$i]['username']; ?></p>
 														<!-- <p class="yhmc_01_01">1年经验</p> -->
 														<!-- <p class="yhmc_01_02"></p> -->
@@ -863,14 +912,7 @@
 
 												</dd>
 												<script type="text/javascript">
-													function jjqg(fid,uid){//fid为求购id  uid为报名用户的id
-														if(window.confirm('确定要拒绝么？')){
-																$.ajax({
-																	url:'?s=/Home/User/xqxx_sf_qg/fid/'+fid+'/uid/'+uid,
-																	type:'get',
-																	success:function(data){
-																		alert(data);
-																	},error:function(){
+													function jjqg(fid,uid),error:function(){
 																		alert('ajax请求失败');
 																	}
 																});

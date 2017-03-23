@@ -180,7 +180,7 @@
 							<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
+								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
 							   <a href="#">商铺主页</a>
 							   <?php } ?>
@@ -190,7 +190,7 @@
 									<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -533,7 +533,9 @@
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
+													<?php if($newUserZps[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($newUserZps["imagename"]); ?>" alt="" /><?php endif; ?>
 												</div>
 												<p class="yhmc">
 													用户<?php echo ($newUserZps["username"]); ?>
@@ -566,7 +568,9 @@
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
+													<?php if($userIdles[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($userIdles["imagename"]); ?>" alt="" /><?php endif; ?>
 												</div>
 												<p class="yhmc">
 													用户<?php echo ($userIdles["username"]); ?>
@@ -607,7 +611,9 @@
 										<div class="nr">
 											<div class="left">
 												<div class="yhtx">
-													<img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
+													<?php if($newUserXss[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+			                                   <?php else: ?>
+			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($newUserXss["imagename"]); ?>" alt="" /><?php endif; ?>
 												</div>
 												<p class="yhmc">
 													用户<?php echo ($newUserXss["username"]); ?>
