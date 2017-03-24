@@ -138,9 +138,10 @@ class UserController extends Controller
         }
         return $userYps;
     }
-    public function bdzx(){
-        //部队中心
-        $id = $_SESSION['id'];
+    
+    public function bdzxfs(){
+    	//部队中心粉丝
+          $id = $_SESSION['id'];
         $user = M('user')->where(" id = {$id} ")->find();//用户单条查询
         $li = M('user_fen')->where(" uid = {$id} ")->limit('0,6')->select();//查询关注量
         $guanzhu = M('user as u')->join('user_fen as f on u.id = f.uid')->limit('0,6')->select();//我关注的
@@ -154,6 +155,34 @@ class UserController extends Controller
             array_pop($us_fen);
             $arr += $us_fen;
         }
+     // var_dump($li);die;
+        $this->assign('user',$user);
+        $this->assign('arr',$arr);
+        $this->assign('li',$li);
+        $this->assign('guanzhu',$guanzhu);//我关注的
+        $this->assign('bguanzhu',$bguanzhu);//关注我的
+        $this->assign('bb',$bb);//
+    
+    	$this->display('Mtbu/bdzxfs');
+    }
+    public function bdzx(){
+        //部队中心
+        $id = $_SESSION['id'];
+        $user = M('user')->where(" id = {$id} ")->find();//用户单条查询
+        $li = M('user_fen')->where(" uid = {$id} ")->limit('0,6')->select();//查询关注量
+        $guanzhu = M('user as u')->join('user_fen as f on u.id = f.uid')->limit('0,6')->select();//我关注的
+
+        $bguanzhu = M('user as u')->join('user_fen as f on u.id = f.uid')->where("f.uid = {$id}")->limit('0,6')->select();//我的粉丝
+     
+        $bb = M('user')->select();
+        $arr = array();
+        foreach ($bguanzhu as $key => $value) {
+            // var_dump($value['fid']);//这两个id都是关注我的
+            $us_fen = explode(',',$value['fid']);
+            array_pop($us_fen);
+            $arr += $us_fen;
+        }
+     /*    var_dump($arr);die; */
        $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
         $this->assign('img',$img);
@@ -166,6 +195,7 @@ class UserController extends Controller
         $this->assign('bb',$bb);//
         $this->display('Mtbu/bdzx');
     }
+
     /**
     *  闲置留言板
     */
@@ -1298,9 +1328,9 @@ class UserController extends Controller
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
     	if($px=='r'){
-    		$data=M('dongtai as d')-> field( "d.*,u.username,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->where('status=2')->limit($limitpage,$num)->order('d.zan desc')->select();
+    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->where('status=2')->limit($limitpage,$num)->order('d.zan desc')->select();
     	}else{
-    		$data=M('dongtai as d')-> field( "d.*,u.username,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->where('status=2')->limit($limitpage,$num)->order('d.did desc')->select();
+    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->where('status=2')->limit($limitpage,$num)->order('d.did desc')->select();
     	}
     	$img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
     	$dongtai['nr'] = $data;
@@ -1323,9 +1353,9 @@ class UserController extends Controller
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
     	if($px=='r'){
-    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->limit($limitpage,$num)->order('d.zan desc')->select();
+    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre,f.id")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->limit($limitpage,$num)->order('d.zan desc')->select();
     	}else{
-    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->limit($limitpage,$num)->order('d.did desc')->select();
+    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre,f.id")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->limit($limitpage,$num)->order('d.did desc')->select();
     	}
     	$img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
     	$dongtai['nr'] = $data;
@@ -1348,25 +1378,25 @@ class UserController extends Controller
    
 
     		if($where=='z'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
     		}else if($where=='1z'||$where=='1'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
     		}else if($where=='2z'||$where=='2'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
     		}else if ($where=='3z'||$where=='3'){
-    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->order('d.did desc')->limit(1)->select();
     		}else if ($where=='4z'||$where=='3'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->order('d.did desc')->limit(1)->select();
     		}else if($where=='1r') {
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
     		}else if($where=='r') {
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
     		}else if($where=='2r') {
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
     		}else if($where=='3r') {
-    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
     		}else if($where=='4r'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->join('dongimage as i on d.did = i.pid')->where("d.type = 2")->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->where("d.type = 2")->order('d.did desc')->limit(1)->select();
     		}
     		$img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
     		$dongtai['nr'] = $remen;
@@ -1553,12 +1583,7 @@ class UserController extends Controller
     
     	$this->display('Mtbu/bdzxgz');
     }
-    public function bdzxfs(){
-    	//部队中心粉丝
-    	$id = $_SESSION['id'];
     
-    	$this->display('Mtbu/bdzxfs');
-    }
     public function usaveimage(){
             $id = $_SESSION['id'];
         	$img = M('user');
