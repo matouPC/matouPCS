@@ -1256,10 +1256,10 @@
 										<li>
 										<a href="?s=/Home/Tzsc/xqxz/id/<?php echo ($tiaos["fid"]); ?>">
 											<div class="tsuimg">
-										<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" />
-                                      <?php else: ?>
-                                      	<!-- <img src="/matouPCS/Public/upload/<?php echo ($tiaos["pubtime"]); echo ($tiaos["imagename"]); ?>"  alt="" /> -->
-                                      	<img src="/matouPCS/Public/Home/img/flea_people.png" /><?php endif; ?>
+										<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" alt="" />
+	                                   <?php else: ?>
+	                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($tiaos["imagename"]); ?>" alt="" /><?php endif; ?>
+                                    </if>
 											
 											</div>
 											<div class="tscontent1">
@@ -1282,10 +1282,10 @@
 										<li>
 										<a href="?s=/Home/Tzsc/xqqg/id/<?php echo ($tiaos["fid"]); ?>">
 											<div class="tsuimg">
-												<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" />
-                                      <?php else: ?>
-                                      	<!-- <img src="/matouPCS/Public/upload/<?php echo ($tiaos["pubtime"]); ?>/<?php echo ($tiaos["imagename"]); ?>"  alt="" /> -->
-                                      	<img src="/matouPCS/Public/Home/img/flea_people.png" /><?php endif; ?>
+										<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" alt="" />
+	                                   <?php else: ?>
+	                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($tiaos["imagename"]); ?>" alt="" /><?php endif; ?>
+                                    </if>
 											</div>
 											<div class="tscontent1">
 												<div class="tscontent1-a">
