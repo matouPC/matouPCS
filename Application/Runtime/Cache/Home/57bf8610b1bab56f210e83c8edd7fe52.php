@@ -24,7 +24,8 @@
 				</div>
 			</div>
 			<ul>
-			<?php if(is_array($data)): foreach($data as $key=>$datav): if($v[id]==$datav[pid]): ?><li>
+			<?php if(is_array($data)): foreach($data as $key=>$datav): if($v['id'] == $datav['pid']){ ?>
+				<li>
 					<a href="?s=/Home/Tjcs/spxq/id/<?php echo ($datav["id"]); ?>">
 						<div class="f3-ul-cz">
 							<img src="/matouPCS/Public/Home/img/123.png" />
@@ -42,7 +43,8 @@
 						<div class="f3-ul-c2">
 						</div>
 					</a>
-				</li><?php endif; endforeach; endif; ?>
+				</li>
+				<?php } endforeach; endif; ?>
 				<div class="clear"></div>
 			</ul>
 		</div>

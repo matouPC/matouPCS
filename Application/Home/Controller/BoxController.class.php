@@ -802,13 +802,30 @@ class BoxController extends CommonController {
     *  商城的搜索分页
     */
     public function mtsc(){
+        
+        $wp = $_GET['wp'];//物品名
+        // var_dump($wp);
+        if($wp != ''){//目前是单单一个物品
+            $where = "c.name = '{$wp}'";
+        }
+
+        var_dump($where);
         $count = M('shop')->where('status = "2"')->count();
         
         // $num = count($count);
-        $Page = new \Think\PageAjax($count,1);
-        $shop = M('shop')->where('status = "2"')->limit($Page->firstRow.','.$Page->listRows)->select();
-        $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
-        // var_dump($data);
+        $Page = new \Think\PageAjax($count,20);
+        
+        if($where != ''){
+            // $shops = M('shop as s')->join('commodity as c on c.pid = s.id')->where($where)->select();
+            $shop = M('commodity as c')->join(' shop as s on c.pid = s.id')->where("status = '2'")->limit($Page->firstRow.','.$Page->listRows)->select();
+            $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->where($where)->select();
+        }else{
+            $shop = M('shop')->where("status = '2'")->limit($Page->firstRow.','.$Page->listRows)->select();
+            $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
+        }
+        // echo '<pre>';
+        // var_dump($data); 
+        var_dump($shop);
         $show = $Page->show();// 分页显示输出
         // var_dump($show);
         $this->assign('shop',$shop);

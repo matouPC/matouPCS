@@ -28,7 +28,7 @@
 			</div>
 			<ul>
 			<foreach name="data" item="datav">
-				<if condition="$v[id]==$datav[pid]">
+					<?php if($v['id'] == $datav['pid']){ ?>
 				<li>
 					<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
 						<div class="f3-ul-cz">
@@ -48,7 +48,7 @@
 						</div>
 					</a>
 				</li>
-				</if>
+				<?php } ?>
 				</foreach>
 				<div class="clear"></div>
 			</ul>

@@ -498,7 +498,7 @@
 					</div>
 					<div class="s-c-2f">
 						<div id="filter">
-							<dl>
+							<dl id="type">
 								<dt>类型</dt>
 								<dd>
 									<div class="gray">
@@ -516,7 +516,7 @@
 									</div>
 								</dd>
 							</dl>
-							<dl>
+							<dl id="wp">
 								<dt>物品</dt>
 								<dd>
 									<div class="gray">
@@ -583,10 +583,10 @@
 								</dd>
 								<dd>
 									<div class="txjg">
-										<input type="number">
+										<input id="price1" type="number">
 										<span>-</span>
-										<input type="number">&nbsp;元
-										<button>
+										<input id="price2" type="number">&nbsp;元
+										<button onclick="price()">
 											ok
 										</button>
 									</div>
@@ -782,7 +782,7 @@
 		<script src="/matouPCS/Public/Home/js/city-data.js"></script>
 		<script src="/matouPCS/Public/Home/js/hzw-city-picker.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
-		
+		<script src="/matouPCS/Public/Home/js/2rank.js"></script>
 	</body>
 
 </html>
