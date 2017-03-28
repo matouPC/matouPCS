@@ -812,16 +812,19 @@ class UserController extends Controller
     *  需求消息
     */
     public function xqxx(){
-        // echo '<pre>';
+        //echo '<pre>';
         $uid = $_SESSION['id'];
         // var_dump($uid);die;
-        $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6'")->order("x.id desc")->select();//闲置留言
-        $list_q = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7'")->order("x.id desc")->select();//求购留言
-        // var_dump($list_q);d
-        $list_qs = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '7'")->order("x.id desc")->select();//求购收藏
-        $list_yps = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '3'")->order("x.id desc")->select();//应聘收藏
-        $list_yss = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '1'")->order("x.id desc")->select();//应赏收藏
-        $list_hui = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();//发送显示在自己页面上的留言
+        $list = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6'")->order("x.id desc")->limit('0,2')->select();//闲置留言
+
+        $list_q = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7'")->order("x.id desc")->limit('0,2')->select();//求购留言
+      // var_dump($list );die;
+        $list_qs = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid}  and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '7'")->order("x.id desc")->limit('0,1')->select();//求购收藏
+       // var_dump($list_qs);die;
+      $list_yps = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '3'")->order("x.id desc")->limit('0,1')->select();//应聘收藏
+     // var_dump($list_yps);die;
+      $list_yss = M('user as u')->join('user_xx as x on u.id = x.uid')->where(" x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '1'")->order("x.id desc")->limit('0,1')->select();//应赏收藏
+      $list_hui = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();//发送显示在自己页面上的留言
         $list_hui_js = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();//接受到的回复的留言
 
         $list_qgxx_hui = M('user as u')->join('user_qgxx_hf as x on u.id = x.uid')->order('x.id')->select();//对于求购留言的回复
@@ -829,7 +832,7 @@ class UserController extends Controller
         $lijb = M('reward1 as e')->where("e.uid = {$uid}")->select();//悬赏基本信息
         $li = M('reward2')->where("usid = {$uid}")->select();//悬赏详情信息
 
-        $lijb_zp = M('recruit1 as e')->where("e.uid = {$uid}")->select();//招聘基本信息
+        $lijb_zp = M('recruit1 as e')->where("e.uid = {$uid}")->limit('0,1')->select();//招聘基本信息
         $li_zp = M('recruit2')->where("usid = {$uid}")->select();//招聘详情信息
  
         $lijb_qg = M('flea')->where("uid = {$uid} and type = '1'")->select();
@@ -872,14 +875,167 @@ class UserController extends Controller
         $this->assign('list_q',$list_q);//留言
         $this->assign('list_qgxx_hui',$list_qgxx_hui);//求购留言回复
 
-
-        // var_dump($list_hui_js);die;
+        $this->assign('list_qs', $list_qs);//qiugou收藏
+        $this->assign('list_yps', $list_yps);//收藏
+        $this->assign('list_yss',$list_yss);//收藏
+/*         echo '<pre>';
+  var_dump($arr);die; */
         $this->assign('list_hui_js',$list_hui_js);//人家回复你的留言
         $this->assign('arr',$arr);//报名悬赏
         $this->assign('arr_zp',$arr_zp);//报名招聘
         $this->assign('arr_qg',$arr_qg);//报名求购
         // $this->assign('catXs',array_unique($catXs));
         $this->display();
+    }
+    
+    public function xianzhijz()
+    {
+      	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	   $uid = $_SESSION['id'];
+    	
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=2;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$list = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6'")->order("x.id desc")->limit($limitpage,$num)->select();//闲置留言  	   
+        $list_hui = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();
+    	$xianzhi['xz'] = $list;
+    	$xianzhi['xzh'] = $list_hui;
+    /* 	 echo '<pre>';
+       var_dump($list);die; */
+    
+    	$this->ajaxReturn($xianzhi);
+    
+    
+    }
+    
+    public function qiugoujz()
+    {
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	   $uid = $_SESSION['id'];
+    	 
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=2;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$list = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7'")->order("x.id desc")->limit($limitpage,$num)->select();//闲置留言
+    	$list_qgxx_hui = M('user as u')->join('user_qgxx_hf as x on u.id = x.uid')->order('x.id')->select();
+    	$qiugou['qg'] = $list;
+    	$qiugou['qgh'] = $list_qgxx_hui;
+    	/* 	 echo '<pre>';
+    	 var_dump($list);die; */
+
+    		$this->ajaxReturn($qiugou);
+
+    }
+    public function qiugousjz()
+    {
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	   $uid = $_SESSION['id'];
+    
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=2;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid}  and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '7'")->order("x.id desc")->limit($limitpage,$num)->select();//求购收藏
+    	// var_dump($list_qs);die;
+    	$this->ajaxReturn($list );
+    
+    }
+    public function yingpinsjz()
+    {
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=1;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$list= M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '3'")->order("x.id desc")->limit($limitpage,$num)->select();//应聘收藏
+    	
+    	// var_dump($list_qs);die;
+    	$this->ajaxReturn($list );
+    
+    }
+    public function yingshangsjz()
+    {
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=2;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+       $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '1'")->order("x.id desc")->limit($limitpage,$num)->select();//应赏收藏
+    	// var_dump($list_qs);die;
+    	$this->ajaxReturn($list );
+    
+    }
+    
+    public function xuanshangbjz()
+    {
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    
+    	$total=M('reward1')->count();//数据记录总数
+    	$num=1;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	
+    	$lijb = M('reward1 as e')->where("e.uid = {$uid}")->limit($limitpage,$num)->select();//悬赏基本信息
+    	$li = M('reward2')->where("usid = {$uid}")->select();//悬赏详情信息
+           //悬赏
+        foreach ($lijb as $key => $value) {//基本信息
+            foreach ($li as $k => $v) {//详情信息
+                if($value['psid'] == $v['pid'] && $v['bao'] != ''){//如果报名了详情信息表的bao字段肯定有数据
+                    $value['xs'] = $v;//符合条件的直接给详情信息赋值 数组建名为xs 
+                    $value['xs']['uu'] = $this->xsFangfa($v['bao']);
+                    if($value['xs'] != ''){//有的可能xs字段可能为空的存在 所以在这里进行处理
+                        $arr[] = $value;
+                    } 
+                }
+            }
+        }
+    /*     echo '<pre>';
+        var_dump($arr);die; */
+    	$this->ajaxReturn($arr);
+    
+    }
+    public function zhaopinbjz()
+    {
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    
+    	$total=M('reward1')->count();//数据记录总数
+    	$num=1;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$lijb_zp = M('recruit1 as e')->where("e.uid = {$uid}")->limit($limitpage,$num)->select();//招聘基本信息
+    	$li_zp = M('recruit2')->where("usid = {$uid}")->select();//招聘详情信息
+            //招聘
+        foreach ($lijb_zp as $key => $value) {//基本信息
+            foreach ($li_zp as $k => $v) {//详情信息
+                if($value['rid'] == $v['pid'] && $v['zhao'] != ''){//如果报名了详情信息表的bao字段肯定有数据
+                    $value['xs'] = $v;//符合条件的直接给详情信息赋值 数组建名为xs 
+                    $value['xs']['uu'] = $this->xsFangfa($v['zhao']);
+                    // var_dump($this->xsFangfa($v['bao']));
+                    if($value['xs'] != ''){//有的可能xs字段可能为空的存在 所以在这里进行处理
+                        $arr_zp[] = $value;
+                    } 
+                }
+            }
+        }
+    	/*     echo '<pre>';
+    	 var_dump($arr);die; */
+    	$this->ajaxReturn($arr_zp);
+    
     }
     public function xqxx_sf($wid,$uid){//对报名用户的回复-》悬赏
         // var_dump($uid);die;

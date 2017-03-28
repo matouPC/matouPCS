@@ -195,8 +195,8 @@
 						<ul>
 						<foreach name="datas" item="sp">
 							<li>
-								<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
-									<img src="Uploads/Uploads/{$datav.pubtimes}/{$datav.imagenames}"  width="255" height="142" alt="商铺名称" />
+								<a href="?s=/Home/Tjcs/spxq/id/{$sp.id}">
+									<img src="Uploads/Uploads/{$sp.pubtimes}/{$sp.imagenames}"  width="255" height="142" alt="商铺名称" />
 									<div class="f2r-ul-c1">
 										<strong>{$sp.name}</strong>
 										<p class="right red">￥{$sp.price}元/天</p>
@@ -232,7 +232,11 @@
 									<?php } ?>
 								<div class="tj">
 									<div class="tj-img">
-										<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+										<if condition="$listns[imagename]==''">  
+                                	<img src="__PUBLIC__/Home/img/bdmc.png" width="101" height="101">
+                                   <else />
+                                     <img style="border-radius:50%" width="101" height="101" src="/MatouPCS/Tu/upload/{$listns.imagename}"  /> 
+                                   </if>
 									</div>
 									<div class="tj_01">
 										<strong class="tj_01_01">{$listns.shopname}</strong>

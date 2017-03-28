@@ -636,8 +636,8 @@
 					<div class="s-r-2f">
 						<ul>
 						<?php if(is_array($datas)): foreach($datas as $key=>$sp): ?><li>
-								<a href="?s=/Home/Tjcs/spxq/id/<?php echo ($datav["id"]); ?>">
-									<img src="Uploads/Uploads/<?php echo ($datav["pubtimes"]); ?>/<?php echo ($datav["imagenames"]); ?>"  width="255" height="142" alt="商铺名称" />
+								<a href="?s=/Home/Tjcs/spxq/id/<?php echo ($sp["id"]); ?>">
+									<img src="Uploads/Uploads/<?php echo ($sp["pubtimes"]); ?>/<?php echo ($sp["imagenames"]); ?>"  width="255" height="142" alt="商铺名称" />
 									<div class="f2r-ul-c1">
 										<strong><?php echo ($sp["name"]); ?></strong>
 										<p class="right red">￥<?php echo ($sp["price"]); ?>元/天</p>
@@ -671,7 +671,9 @@
 									<?php } ?>
 								<div class="tj">
 									<div class="tj-img">
-										<img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+										<?php if($listns[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
+                                   <?php else: ?>
+                                     <img style="border-radius:50%" width="101" height="101" src="/MatouPCS/Tu/upload/<?php echo ($listns["imagename"]); ?>"  /><?php endif; ?>
 									</div>
 									<div class="tj_01">
 										<strong class="tj_01_01"><?php echo ($listns["shopname"]); ?></strong>

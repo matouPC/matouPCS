@@ -460,13 +460,12 @@
 					<div id="xqxx-lb" class="lb"><p>全部</p>
 						<div class="xqxx-lb">
 								<ul>
-									<li>全部</li>
 									<a href="#xs"><li>悬赏</li></a>
-									<li>应赏</li>
-									<li>招聘</li>
-									<li>应聘</li>
-									<li>求购</li>
-									<li>闲置</li>
+									<a href="#ys"><li>应赏</li></a>
+									<a href="#zp"><li>招聘</li></a>
+									<a href="#yp"><li>应聘</li></a>
+									<a href="#qg"><li>求购</li></a>
+									<a href="#xz"><li>闲置</li></a>
 								</ul>
 							</div>
 						</div>
@@ -477,8 +476,9 @@
 						<div class="s-main-b">
 							<ul>
 								<!-- 闲置留言 -->
-								<?php if(is_array($list)): foreach($list as $key=>$lists): if($_SESSION['id'] == $lists['uid'] || $_SESSION['id'] == $lists['fid']){ ?>
-									<li>
+								<a name="xz"></href> 
+								<div id="xianzhi">
+								<?php if(is_array($list)): foreach($list as $key=>$lists): ?><li>
 										<div class="xialai">
 											<span class="xll1">
 												<p class="xs1">删除</p>
@@ -520,7 +520,7 @@
 													<?php echo ($list_huis["content_hf"]); ?>
 												</p>
 											</div>
-											<?php } endforeach; endif; ?>
+								<?php } endforeach; endif; ?>
 
 										<div class="spxx_sj">
 											<p class="spxx_sj_r">2016-12-12</p>
@@ -534,17 +534,17 @@
 										<button class="hf" onclick="liuyan_xz(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
 										<div class="clear"></div>
 										</div>
-									</li>
-									<?php  } endforeach; endif; ?>
+									</li><?php endforeach; endif; ?>
+								</div>
 								<?php if(!empty($list)){ ?>
 									<div class="djjzgd">
-										<button>点击加载更多</button>
+										<button onclick="tj()" name='btnn' id='btnn' >点击加载更多1</button>
 									</div>
 								<?php } ?>
 								<!-- 求购留言 -->
-
-								<?php if(is_array($list_q)): foreach($list_q as $key=>$lists): if($_SESSION['id'] == $lists['uid'] || $_SESSION['id'] == $lists['fid']){ ?>
-									<li>
+                               <a name="qg"></href> 
+								<div id="qiugou">
+								<?php if(is_array($list_q)): foreach($list_q as $key=>$lists): ?><li>
 										<div class="xialai">
 											<span class="xll1">
 
@@ -599,14 +599,16 @@
 										<button class="hf" onclick="liuyan_qg(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
 										<div class="clear"></div>
 										</div>
-									</li>
-									<?php } endforeach; endif; ?>
+									</li><?php endforeach; endif; ?>
+								</div>
 								<?php if(!empty($list_q)){ ?>
 									<div class="djjzgd">
-										<button>点击加载更多</button>
+									<button onclick="tj1()" name='btn1' id='btn1' >点击加载更多2</button>
 									</div>
 								<?php } ?>
 								<!-- 求购收藏 -->
+								 <a name="qgs"></href> 
+								<div id="qiugous">
 								<?php if(is_array($list_qs)): foreach($list_qs as $key=>$lists): ?><li>
 										<div class="xialai">
 											<span class="xll1">
@@ -632,12 +634,15 @@
 											<p class="spxx_sj_r">2016-12-12</p>
 										</div>
 									</li><?php endforeach; endif; ?>
+								</div>
 								<?php if(!empty($list_qs)){ ?>
 									<div class="djjzgd">
-										<button>点击加载更多</button>
+									<button onclick="tj2()" name='btnt' id='btnt' >点击加载更多3</button>
 									</div>
 								<?php } ?>
 								<!-- 应聘收藏 -->
+								<a name="yps"></href> 
+								<div id="yingpins">
 								<?php if(is_array($list_yps)): foreach($list_yps as $key=>$lists): ?><li>
 										<div class="xialai">
 											<span class="xll1">
@@ -663,7 +668,15 @@
 											<p class="spxx_sj_r">2016-12-12</p>
 										</div>
 									</li><?php endforeach; endif; ?>
+								</div>
+									<?php if(!empty($lists)){ ?>
+									<div class="djjzgd">
+									<button onclick="tj3()" name='btnt1' id='btnt1' >点击加载更多4</button>
+									</div>
+								<?php } ?>
 								<!-- 应赏收藏 -->
+									<a name="yss"></href> 
+								<div id="yingshangs">
 								<?php if(is_array($list_yss)): foreach($list_yss as $key=>$lists): ?><li>
 										<div class="xialai">
 											<span class="xll1">
@@ -689,9 +702,16 @@
 											<p class="spxx_sj_r">2016-12-12</p>
 										</div>
 									</li><?php endforeach; endif; ?>
+									</div>
+									<?php if(!empty($lists)){ ?>
+									<div class="djjzgd">
+									<button onclick="tj4()" name='btnt2' id='btnt2' >点击加载更多5</button>
+									</div>
+								<?php } ?>
 								<!-- 报名悬赏 -->
-								<a name="xs"></href> 
+								<a name="xsb"></href> 
 								<?php $num = 0; ?>
+								<div id="xuanshangb">
 								<?php if(is_array($arr)): foreach($arr as $key=>$arrs): ?><li id="zp<?php echo ($num); ?>">
 										<div class="xialai">
 											<span class="xll1">
@@ -751,6 +771,7 @@
 													}
 													//电聊
 													function dl(wid,uid){
+														alert(222);
 														if(window.confirm('确定耗费5个码头币来查看么？')){
 															$('#dh'+uid).html($('#xp'+uid).val());
 														}
@@ -777,13 +798,16 @@
 										</div>
 									</li>
 									<?php $num++; endforeach; endif; ?>
+								</div>
 								<?php if(!empty($arrs)){ ?>
 									<div class="djjzgd">
-										<button>点击加载更多</button>
+									<button onclick="tj5()" name='btnt3' id='btnt3' >点击加载更多6</button>
 									</div>
 								<?php } ?>
 								<!-- 报名招聘 -->
+								<a name="zpb"></href> 
 								<?php $num_zp = 100; ?>
+								<div id="zhaopinb">
 								<?php if(is_array($arr_zp)): foreach($arr_zp as $key=>$arr_zps): ?><li>
 									<div class="xialai">
 										<span class="xll1">
@@ -829,13 +853,21 @@
 
 												</dd>
 												<script type="text/javascript">
-													function jjzp(xid,id),error:function(){
+													function jjzp(xid,id){
+														if(window.confirm('确定要拒绝么？')){
+																$.ajax({
+																	url:'?s=/Home/User/xqxx_sf_zp/xid/'+xid+'/id/'+id,
+																	type:'get',
+																	success:function(data){
+																		alert(data);
+																	},error:function(){
 																		alert('ajax请求失败');
 																	}
 																});
 															}
 													}
 													function dlzp(id){
+														alert(id);
 														if(window.confirm('确定耗费5个码头币来查看么？')){
 															$('#dhzp'+id).html($('#xpzp'+id).val());
 														}
@@ -859,12 +891,16 @@
 									</div>
 								</li>
 								<?php $num_zp++; endforeach; endif; ?>
+							</div>
 							<?php if(!empty($arr_zps)){ ?>
 									<div class="djjzgd">
-										<button>点击加载更多</button>
+								<button onclick="tj6()" name='btnt4' id='btnt4' >点击加载更多7</button>
 									</div>
 								<?php } ?>
-							<!-- 报名求购 --><?php $numqg = 200; ?>
+							<!-- 报名求购 -->
+							<a name="qgb"></href> 
+							<?php $numqg = 200; ?>
+								<div id="qiugoub">
 								<?php if(is_array($arr_qg)): foreach($arr_qg as $key=>$arr_qgs): ?><li>
 										<div class="xialai">
 											<span class="xll1">
@@ -940,9 +976,10 @@
 
 									</li>
 									<?php $numqg++; endforeach; endif; ?>
+									</div>
 									<?php if(!empty($arr_qgs)){ ?>
 									<div class="djjzgd">
-										<button>点击加载更多</button>
+										<button onclick="tj7()" name='btnt5' id='btnt5' >点击加载更多8</button>
 									</div>
 								<?php } ?>
 							</ul>
@@ -962,15 +999,62 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/3rank-footer.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank-footer.css" />
 	</head>
 	<body>
 		<footer>
 			<div class="f-content-main">
+				<div class="ttm">
+					<div class="s-c-7f">
+						<div class="f7-o1">
+							<ul>
+								<li class="f4-o1-1">
+									<div>
+										<h4>喜事码头客服热线</h4>
+										<p>工作时间:每天9:00-23:00</p>
+										<p>188-8888-888</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h4>关注喜事码头微信公众号</h4>
+										<p>
+											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
+										</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h4>关于我们</h4>
+										<p>
+											<a href="#">关于喜事码头</a>
+										</p>
+										<p>
+											<a href="#">加入我们</a>
+										</p>
+										<p>
+											<a href="#">网站地图</a>
+										</p>
+										<p>
+											<a href="#">合伙人招募</a>
+										</p>
+									</div>
+								</li>
+								<li class="f4-o1-1">
+									<div>
+										<h4>联系我们</h4>
+										<p>官方邮箱:xishimatou@163.com</p>
+										<p>通讯地址:河南省郑州市863软件园</p>
+									</div>
+								</li>
+								<li class="clearf"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
-						
-						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+							<p>© 2016－2017 郑州码头网络技术有限公司 </p>
 						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>
@@ -980,6 +1064,416 @@
 </html>
 
 	</body>
+	<script type="text/javascript">
+
+	  var v=2;
+	  function  tj(){		 
+		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/xianzhijz');?>",
+					data:{k:v},
+					beforeSend:function(){
+			         $("#xianzhi").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						// alert(data['xz']);
+						if(data['xz']!=null){				
+							
+							 for (var i = 0; i < data['xz'].length; i++) {
+								 if(data['xz'][i].imagename==null) {
+                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+								 }else{
+								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
+								 }
+								 var p='';
+								 for (var j= 0; j < data['xzh'].length; j++) {
+									 if(data['xz'][i].id==data['xzh'][j].tid){
+										 if(data['xzh'][j].imagename==null) {
+				                                var imgs='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+												 }else{
+												var imgs='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
+												 }
+									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['xzh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
+									 }
+								 }
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx">'+img+'<p class="spxx_01">'+data['xz'][i].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 闲置留言 </p></form></div><div class="spxx_00"><p> '+data['xz'][i].content_xx+'</p></div> '+p+'<div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p><p class="spxx_hf"> 回复 </p></div><div class="no"><input type="hidden" id="uid" value="'+data['xz'][i].uid+'"><textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea><button class="hf" onclick="liuyan_xz('+data['xz'][i].id+','+data['xz'][i].uid+')">回复</button><div class="clear"></div></div></li>';
+								// alert(p);
+							$("#xianzhi").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnn').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	v++;
+		// alert(p);
+		  } 
+	  
+	  var b=2;
+	  function  tj1(){		 
+		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/qiugoujz');?>",
+					data:{k:b},
+					beforeSend:function(){
+			         $("#qiugou").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						// alert(data['xz']);
+						if(data['qg']!=null){				
+							
+							 for (var i = 0; i < data['qg'].length; i++) {
+								 if(data['qg'][i].imagename==null) {
+                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+								 }else{
+								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['qg'][i].imagename+'" />';
+								 }
+								 var p='';
+								 for (var j= 0; j < data['qgh'].length; j++) {
+									 if(data['qg'][i].id==data['qgh'][j].tid){
+										 if(data['qgh'][j].imagename==null) {
+				                                var imgs='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+												 }else{
+												var imgs='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['qgh'][j].imagename+'" />';
+												 }
+									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['qgh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
+									 }      
+								 }
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx">'+img+'<p class="spxx_01">'+data['qg'][i].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 求购留言 </p></form></div><div class="spxx_00"><p> '+data['qg'][i].content_xx+'</p></div> '+p+'<div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p><p class="spxx_hf"> 回复 </p></div><div class="no"><textarea id="textarea_qg" placeholder="留言留言留言留言留言留言"></textarea><button class="hf" onclick="liuyan_qg('+data['qg'][i].id+','+data['qg'][i].uid+')">回复<div class="clear"></div></div></li>';
+							$("#qiugou").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btn1').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	b++;
+		// alert(p);
+		  } 
+	  var n=2;
+	  function  tj2(){		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/qiugousjz');?>",
+					data:{k:b},
+					beforeSend:function(){
+			         $("#qiugous").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						alert(data);
+						if(data!=null){				
+							
+							 for (var i = 0; i < data.length; i++) {
+								 if(data[i].imagename==null) {
+                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+								 }else{
+								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+								 }
+			
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">求购收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
+							$("#qiugous").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnt').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	n++;
+		// alert(p);
+		  } 
+	  
+	  var m=2;
+	  function  tj2(){		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/qiugousjz');?>",
+					data:{k:m},
+					beforeSend:function(){
+			         $("#qiugous").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+					//	alert(data);
+						if(data!=null){				
+							
+							 for (var i = 0; i < data.length; i++) {
+								 if(data[i].imagename==null) {
+                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+								 }else{
+								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+								 }
+			
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">求购收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
+							$("#qiugous").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnt').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	m++;
+		// alert(p);
+		  } 
+	  var q=1;
+	  function  tj3(){		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/yingpinsjz');?>",
+					data:{k:q},
+					beforeSend:function(){
+			         $("#yingpins").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+					//	alert(data);
+						if(data!=null){				
+							
+							 for (var i = 0; i < data.length; i++) {
+								 if(data[i].imagename==null) {
+                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+								 }else{
+								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+								 }
+			
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">应聘收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
+							$("#yingpins").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnt1').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	m++;
+		// alert(p);
+		  } 
+	  var m=1;
+	  function  tj4(){		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/yingshangsjz');?>",
+					data:{k:m},
+					beforeSend:function(){
+			         $("#yingshangs").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						//alert(data);
+						if(data!=null){				
+							
+							 for (var i = 0; i < data.length; i++) {
+								 if(data[i].imagename==null) {
+                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+								 }else{
+								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+								 }
+			
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">应赏收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
+							$("#yingshangs").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnt2').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	m++;
+		// alert(p);
+		  } 
+	  var g=1;
+	  function  tj5(){		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/xuanshangbjz');?>",
+					data:{k:g},
+					beforeSend:function(){
+			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						//alert(data);
+						if(data!=null){				
+							var $num=3;
+						
+							 for (var i = 0; i < data.length; i++) {
+									var p='';
+								//	 alert(data.length);
+								 for (var j = 0; j < data[i]['xs']['uu'].length; j++) {
+										if(data[i]['xs']['uu'][j]!=null){
+									 if(data[i]['xs']['uu'][j].imagename==null) {
+			                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+											 }else{
+											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
+											 }
+									 var s=data[i]['xs']['uu'][j].tel;
+									 var tel=s.substr(0,3)+'xxxx'+s.substr(7,11);
+									p+='<dd><div id="xl_01" class="yhmc_01"> '+img+'<p class="yhmc_01_01">'+data[i]['xs']['uu'][j].username+'</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">报名</p><p class="yhmc_01_04">期望赏金：私聊</p><p class="yhmc_01_04">电话号码：<span id="dh'+data[i]['xs']['uu'][j].id+'">'+tel+'</span></p><input type="hidden" id="xp'+data[i]['xs']['uu'][j].id+'" value="'+data[i]['xs']['uu'][j].tel+'"><button id="btn_c_01" class="yhmc_01_05" onclick="jj('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >拒接</button><button id="btn_c_02" class="yhmc_01_05" onclick="dl('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >电聊</button><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div></dd>';
+								 }
+								 }
+								 var li = '<li id="zp'+$num+'"><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：'+data[i].time+'</p><p class="xqxx_01_02">活动地点：'+data[i].address+'</p><p class="xqxx_01_03">悬赏内容：'+data[i]['xs'].type+'</p><p class="xqxx_01_03">报名悬赏</p><p class="xqxx_01_04">未完成</p></div><!--下拉隐藏开始--><div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>"><dl><div> '+p+'</div></dl><div class="showmore"><a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;"><div class="ckxq"><img src="/matouPCS/Public/Home/img/xiala.png" /></div><span>查看详情</span></a></div><div class="clearfloat"></div></div></li>';
+								 
+								 $("#xuanshangb").append(li);
+		 	
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnt3').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	g++;
+		// alert(p);
+		  } 
+	  var a=2;
+	  function  tj6(){		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/zhaopinbjz');?>",
+					data:{k:a},
+					beforeSend:function(){
+			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						//alert(data);
+						if(data!=null){				
+							var $num=0;
+						
+							 for (var i = 0; i < data.length; i++) {
+									var p='';
+								//	 alert(data.length);
+								 for (var j = 0; j < data[i]['xs']['uu'].length; j++) {
+										if(data[i]['xs']['uu'][j]!=null){
+									 if(data[i]['xs']['uu'][j].imagename==null) {
+			                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+											 }else{
+											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
+											 }
+									 var s=data[i]['xs']['uu'][j].tel;
+									 var tel=s.substr(0,3)+'xxxx'+s.substr(7,11);
+									p+='<dd><div id="xl_01" class="yhmc_01"> '+img+'<p class="yhmc_01_01">'+data[i]['xs']['uu'][j].username+'</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">报名</p><p class="yhmc_01_04">期望赏金：私聊</p><p class="yhmc_01_04">电话号码：<span id="dhzp'+data[i]['xs']['uu'][j].id+'">'+tel+'</span></p><input type="hidden" id="xpzp'+data[i]['xs']['uu'][j].id+'" value="'+data[i]['xs']['uu'][j].tel+'"><button id="btn_c_01" class="yhmc_01_05" onclick="jjzp('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >拒接</button><button id="btn_c_02" class="yhmc_01_05" onclick="dlzp('+data[i]['xs']['uu'][j].id+');" >电聊</button><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div></dd>';
+								 }
+								 }
+								 var li = '<li "><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"> <p class="xqxx_01_02">工作地点：'+data[i].address_zp+'</p>><p class="xqxx_01_03">招聘内容：'+data[i]['xs'].type+'</p><p class="xqxx_01_03">报名招聘</p><p class="xqxx_01_04">未完成</p></div><!--下拉隐藏开始--><div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>"><dl><div> '+p+'</div></dl><div class="showmore"><a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;"><div class="ckxq"><img src="/matouPCS/Public/Home/img/xiala.png" /></div><span>查看详情</span></a></div><div class="clearfloat"></div></div></li>';
+								 
+								 $("#zhaopinb").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnt4').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	a++;
+		// alert(p);
+		  } 
+	  var s=1;
+	  function  tj7(){		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/qiugoubjz');?>",
+					data:{k:s},
+					beforeSend:function(){
+			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						//alert(data);
+						if(data!=null){				
+							var $num=0;
+						
+							 for (var i = 0; i < data.length; i++) {
+									var p='';
+								//	 alert(data.length);
+								 for (var j = 0; j < data[i]['xs']['uu'].length; j++) {
+										if(data[i]['xs']['uu'][j]!=null){
+									 if(data[i]['xs']['uu'][j].imagename==null) {
+			                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+											 }else{
+											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
+											 }
+									 var s=data[i]['xs']['uu'][j].tel;
+									 var tel=s.substr(0,3)+'xxxx'+s.substr(7,11);
+									p+='<dd><div id="xl_01" class="yhmc_01"> '+img+'<p class="yhmc_01_01">'+data[i]['xs']['uu'][j].username+'</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">报名</p><p class="yhmc_01_04">期望赏金：私聊</p><p class="yhmc_01_04">电话号码：<span id="dh'+data[i]['xs']['uu'][j].id+'">'+tel+'</span></p><input type="hidden" id="xp'+data[i]['xs']['uu'][j].id+'" value="'+data[i]['xs']['uu'][j].tel+'"><button id="btn_c_01" class="yhmc_01_05" onclick="jj('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >拒接</button><button id="btn_c_02" class="yhmc_01_05" onclick="dl('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >电聊</button><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div></dd>';
+								 }
+								 }
+								 var li = '<li id="zp'+$num+'"><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：'+data[i].time+'</p><p class="xqxx_01_02">活动地点：'+data[i].address+'</p><p class="xqxx_01_03">悬赏内容：'+data[i]['xs'].type+'</p><p class="xqxx_01_03">报名悬赏</p><p class="xqxx_01_04">未完成</p></div><!--下拉隐藏开始--><div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>"><dl><div> '+p+'</div></dl><div class="showmore"><a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;"><div class="ckxq"><img src="/matouPCS/Public/Home/img/xiala.png" /></div><span>查看详情</span></a></div><div class="clearfloat"></div></div></li>';
+								 
+								 $("#qiugoub").append(li);
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnt5').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	s++;
+		// alert(p);
+		  } 
+	 
+	  </script>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
