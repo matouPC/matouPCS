@@ -88,11 +88,15 @@ class IndexController extends Controller
             $username = $_POST['username'];//可能是用户名 可能是电话号码
             $password = $_POST['password'];
             $ob = M('user')->where("tel = '{$username}' and password = '{$password}'")->find();
-            $xb = M('user')->where("username = '{$username}' and password = '{$password} '")->find();
+            $xb = M('user')->where("username = '{$username}' and password = '{$password} '")->find();           
             if(!empty($ob)){
                 session_start();
                 $_SESSION['username'] = $ob['tel'];
                 $_SESSION['id'] = $ob['id'];
+                $_SESSION['imagename'] = $ob['imagename'];
+                $sp=M('shop')->where("uid = {$ob['id']}")->order('id desc')->find();
+                $_SESSION['status'] = $sp['status'];
+                
                 // session_id($ob['id']);
                  // session_id() = $xb['id'];
                 //增加粉丝的方法
@@ -107,6 +111,9 @@ class IndexController extends Controller
                 session_start();
                 $_SESSION['username'] = $xb['tel'];
                 $_SESSION['id'] = $xb['id'];
+                $_SESSION['imagename'] = $ob['imagename'];
+                $sp=M('shop')->where("uid = {$xb['id']}")->order('id desc')->find();
+                $_SESSION['status'] = $sp['status'];
                 // session_id('xx') = $xb['id'];
                 //增加粉丝的方法
                 $uid = $_SESSION['id'];//当前用户的id

@@ -148,8 +148,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -747,11 +751,10 @@
 									<a href="">查看码头币规则</a>
 								</li>
 								<li>
-										<?php if($v[tel]==''): ?><input id="tel" value="<?php echo ($v["username"]); ?>" style="display: none;" type="text" class="white-in"/>
+										
+									<input id="tel" value="<?php echo ($v["username"]); ?>" style="display: none;" type="text" class="white-in"/>
 											<button id="bdsjh">绑定手机号</button>
-									<?php else: ?>
-										<input id="tel" value="<?php echo ($v["tel"]); ?>" style="display: none;" type="text" class="white-in" />
-									<button id="bdsjh">绑定手机号</button><?php endif; ?>
+									
 							
 								</li>
 								<li>

@@ -18,7 +18,7 @@ class BoxController extends CommonController {
         $date = $_GET['date'];//活动时间
         $address = $_GET['address'];//活动地点
         $re = $_GET['re'];//热门  排序
-        // var_dump($address);die;
+      //var_dump($address);die;
         // 类型 性别 年龄 活动时间 活动地点         
         if($type != '' && $sex != '' && $age != '' && $date != '' && $address != ''){
             $where = "r.type = '{$type}' and r.sex = '{$sex}' and r.age = '{$age}'";
@@ -393,7 +393,7 @@ class BoxController extends CommonController {
     */
     public function zpdt(){
         $type =  addslashes($_GET['type']);//职业
-        var_dump($type);
+   //     var_dump($type);
         $sex =  $_GET['sex'];//性别
         $age =  $_GET['age'];//年龄
         $worktime = $_GET['worktime'];//工作经验
@@ -480,7 +480,7 @@ class BoxController extends CommonController {
         // else if($address != ''){
         //     $where = "e.address = '{$address}'";
         // }
-        var_dump($where);
+        //var_dump($where);
         //计算总页数
         if(!empty($where)){
             $count = M('recruit2 as r')->where($where)->count();
@@ -760,7 +760,7 @@ class BoxController extends CommonController {
         }else if($price != ''){//价格
             $where = "{$price}";
         }
-
+     //   dump($where);
         //根据不同的条件来计算计算分页数量
         if($where != ''){
             $count = M('flea as f')->join('user as u on f.uid = u.id')->where($where)->count();
@@ -775,8 +775,9 @@ class BoxController extends CommonController {
         }else{
             $list = M('flea as f')->join('user as u on f.uid = u.id')->order("f.fid desc")->limit($Page->firstRow.','.$Page->listRows)->select();
         }
-        
+        $listimg = M('fleaimage')->select();
         $this->assign('list',$list);
+        $this->assign('listimg',$listimg);
         $show = $Page->show();// 分页显示输出
         $this->assign('page',$show);//赋值分页输出
         $this->display();
@@ -804,28 +805,50 @@ class BoxController extends CommonController {
     public function mtsc(){
         
         $wp = $_GET['wp'];//物品名
-        // var_dump($wp);
-        if($wp != ''){//目前是单单一个物品
+         $type = $_GET['type'];//销售&租赁
+        $price = $_GET['price'];//物品类型
+        $address = $_GET['address'];//活动地址
+        if($wp != ''&&$type !=''&&$price!=''){//目前是单单一个物品
+            $where = "c.name = '{$wp}' and c.leixing = '{$type}' and '{$price}'";
+        }else if($wp != ''&&$type !=''){
+        	$where = "c.name = '{$wp}' and c.leixing = '{$type}'";
+        }else if($wp != ''&&$price!=''){//目前是单单一个物品
+            $where = "c.name = '{$wp}'  and '{$price}'";
+        }else if($type !=''&&$price!=''){//目前是单单一个物品
+            $where = "c.leixing = '{$type}' and '{$price}'";
+        }else if($wp != ''){//目前是单单一个物品
             $where = "c.name = '{$wp}'";
+        }else if($type !=''){//目前是单单一个物品
+            $where = "c.leixing = '{$type}'";
+        }else if($price!=''){//目前是单单一个物品
+            $where = "{$price}";
         }
-
-        var_dump($where);
+       // var_dump($where);
         $count = M('shop')->where('status = "2"')->count();
-        
-        // $num = count($count);
+  
         $Page = new \Think\PageAjax($count,20);
-        
+       // dump($map);
         if($where != ''){
-            // $shops = M('shop as s')->join('commodity as c on c.pid = s.id')->where($where)->select();
-            $shop = M('commodity as c')->join(' shop as s on c.pid = s.id')->where("status = '2'")->limit($Page->firstRow.','.$Page->listRows)->select();
+           // $shops = M('shop as s')->join('commodity as c on c.pid = s.id')->where($where)->select();
             $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->where($where)->select();
+               if($data){
+              foreach ($data as $v){
+            	$in[] = $v['pid'];
+            }
+         
+            $map['id'] = array('in', $in);
+            $map['status'] = 2;
+         $shop =  M('shop')->where($map)->limit($Page->firstRow.','.$Page->listRows)->select();
+             }        
+            //$shop+=$sp; 
+          //  dump($map); 
         }else{
             $shop = M('shop')->where("status = '2'")->limit($Page->firstRow.','.$Page->listRows)->select();
             $data = M('commodity as c')->join('comimage as m on c.id = m.psid')->join('shop as s on c.pid = s.id')->select();
         }
         // echo '<pre>';
-        // var_dump($data); 
-        var_dump($shop);
+   // var_dump($address); 
+        //var_dump($shop);
         $show = $Page->show();// 分页显示输出
         // var_dump($show);
         $this->assign('shop',$shop);

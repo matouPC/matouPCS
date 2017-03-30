@@ -27,7 +27,7 @@
 						<ul>
 							<li id="qqaj" style="width: 100px;">
 								<php>if($_SESSION['username'] != ''){</php>
-								<a  class="xxlo" href="?s=/Home/User">{$_SESSION['username']}</a>
+								<a  class="xxlo" href="?s=/Home/User">用户{$_SESSION['username']|substr=0,5}</a>
 								<!-- <span><a href="javascript:void(0);" onclick="QC.Login.signOut();">退出</a></span> -->
 								<php>}else{</php>
 								<a id="login-alert" href="#">请注册\登录</a>

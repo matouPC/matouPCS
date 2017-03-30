@@ -200,9 +200,9 @@ class MtbuController extends Controller
     	$limitpage=($p-1)*$num;//每次查询取记录
 
     	if($address==''){
-    	$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '表演团' ")->limit($limitpage,$num)->order('f.id desc')->select();
+    	$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '表演团' ")->order('f.id desc')->limit($limitpage,$num)->select();
     	}else{
-    			$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '表演团'  and addre='{$address}'")->limit($limitpage,$num)->order('f.id desc')->select();
+    			$data=M('forcee as f')->join('forceimage as r on f.id = r.pid')->join('user as u on u.id = f.uid')->where("f.type_bd = '表演团'  and addre='{$address}'")->order('f.id desc')->limit($limitpage,$num)->select();
     	}
     	//$this->ajaxReturn($data);
     	$this->ajaxReturn($data);

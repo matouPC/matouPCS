@@ -8,10 +8,10 @@ for( var i=0; i<cNode.length; i++){
             this.index="";
             break;
         case 1:
-            this.index="销售";
+            this.index="2";
             break;
         case 2:
-            this.index="租赁";
+            this.index="1";
             break;
         }
      if(this.index == ''){
@@ -21,8 +21,8 @@ for( var i=0; i<cNode.length; i++){
      }
      // alert(type);
      setCookie("type",type);
-     // alert(getCookie('type'));
-     // getPage(1);
+   // alert(getCookie('type'));
+     getPage(1);
      // ajax();
     }
 }
@@ -84,10 +84,14 @@ function price(){
     if($('#price1').val() == '' || $('#price2').val() == ''){
         alert('您输入的价格有误');
     }else{
-        // alert($('#price1').val()+ '-' +$('#price2').val());
-        setCookie('price1',$('#price1').val());
-        setCookie('price2',$('#price2').val());
+        var price='c.price>'+$('#price1').val()+ ' and ' +'c.price<'+$('#price2').val();
+        //setCookie('price1',$('#price1').val());
+        //setCookie('price2',$('#price2').val());
+        setCookie("price",price);
+        //alert(getCookie('price'));
+        getPage(1);
     }
+   ;
 }
 
 //加载列表项
@@ -102,13 +106,13 @@ $(function() {
 function getPage(page) {
     var type = getCookie("type");//类型
     var wp = getCookie("wp");//物品名
-    // alert(wp);
-    var price1 = getCookie("price1");//价格1
-    var price2 = getCookie("price2");//价格2
+    //alert(wp);
+    var price = getCookie("price");//价格1
+   // var price2 = getCookie("price2");//价格2
     var address = getCookie("address");//地址
     // alert(getCookie('address'));
      $("#ajax_lists").html("<h1>请稍等。。。</h1>");
-     $.get(url_ajax, {p:page,wp:wp}, function(data) {
+     $.get(url_ajax, {p:page,wp:wp,type:type,price:price}, function(data) {
         $('#ajax_lists').html(data);
     })
 }
@@ -117,8 +121,8 @@ function onbeforeunload_handler(){
     var warning="确认退出sssssssssss?";
     setCookie("type",'');//类型
     setCookie("wp",'');//物品名
-    setCookie("price1",'');//价格1
-    setCookie("price2",'');//价格2  
+    setCookie("price",'');//价格1
+    //setCookie("price2",'');//价格2  
     setCookie("address",'');//活动地点   
     return warning;      
 }

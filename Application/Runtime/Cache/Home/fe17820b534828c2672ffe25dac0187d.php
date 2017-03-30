@@ -3,7 +3,13 @@
 	<div class="user_01">
 					<a href="?s=/Home/Tzsc/xqxz/id/<?php echo ($lists["fid"]); ?>">
 							<div class="xztp">
-									<img src="/matouPCS/Public/Home/img/yhmc-big.png" alt="闲置">
+								<?php if(is_array($listimg)): foreach($listimg as $key=>$v): if($v[pid]==$lists[fid]): $file = explode(',',$v['imagenames']); array_pop($file); endif; endforeach; endif; ?>			
+								<?php if($file==''): ?><img src="/matouPCS/Public/Home/img/yhmc-big.png" alt="闲置">
+                                      <?php else: ?>
+                                      		<img  width="254" height="150" class="xqcc-c5" src="<?php echo '/matouPCS/Uploads/'.substr($file[0],1); ?>" /><?php endif; ?>
+							
+									
+								
 									</div>
 									<div class="user_01_01">
 										<div class="user_01_02">
@@ -25,7 +31,10 @@
 								<a href="?s=/Home/Tzsc/xqqg/id/<?php echo ($lists["fid"]); ?>">
 									<div class="user_02">
 										<div class="wptp">
-											<img src="/matouPCS/Public/Home/img/bdmc.png">
+										<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png">
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>"   width="120" height="120" style="border-radius:50%"/><?php endif; ?>
+									
 										</div>
 										<p>用户<?php echo (substr($lists["username"],0,5)); ?></p>
 										<div class="clearfloat"></div>

@@ -4,7 +4,23 @@
 	<div class="user_01">
 					<a href="?s=/Home/Tzsc/xqxz/id/{$lists.fid}">
 							<div class="xztp">
-									<img src="__PUBLIC__/Home/img/yhmc-big.png" alt="闲置">
+								<foreach name='listimg' item='v'>
+									<if condition="$v[pid]==$lists[fid]">
+								<?php 
+									$file = explode(',',$v['imagenames']);
+									array_pop($file);
+
+								?>
+								       </if>
+									</foreach>			
+								<if condition="$file==''">
+										<img src="__PUBLIC__/Home/img/yhmc-big.png" alt="闲置">
+                                      <else />
+                                      		<img  width="254" height="150" class="xqcc-c5" src="<?php echo '/matouPCS/Uploads/'.substr($file[0],1); ?>" />
+                                    </if>
+							
+									
+								
 									</div>
 									<div class="user_01_01">
 										<div class="user_01_02">
@@ -28,7 +44,12 @@
 								<a href="?s=/Home/Tzsc/xqqg/id/{$lists.fid}">
 									<div class="user_02">
 										<div class="wptp">
-											<img src="__PUBLIC__/Home/img/bdmc.png">
+										<if condition="$lists[imagename]==''">
+										<img src="__PUBLIC__/Home/img/bdmc.png">
+                                      <else />
+                                      	<img src="/matouPCS/Tu/upload/{$lists.imagename}"   width="120" height="120" style="border-radius:50%"/>
+                                    </if>
+									
 										</div>
 										<p>用户{$lists.username|substr=0,5}</p>
 										<div class="clearfloat"></div>

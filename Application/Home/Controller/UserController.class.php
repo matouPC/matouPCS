@@ -183,7 +183,7 @@ class UserController extends Controller
             $arr += $us_fen;
         }
      /*    var_dump($arr);die; */
-       $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
+       $dongtai=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(0,4)->select();
         $img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
         $this->assign('img',$img);
         $this->assign('dongtai',$dongtai);
@@ -815,15 +815,15 @@ class UserController extends Controller
         //echo '<pre>';
         $uid = $_SESSION['id'];
         // var_dump($uid);die;
-        $list = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6'")->order("x.id desc")->limit('0,2')->select();//闲置留言
+        $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6' and (x.uid={$uid} or x.fid={$uid})")->order("x.id desc")->limit('0,5')->select();//闲置留言
 
-        $list_q = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7'")->order("x.id desc")->limit('0,2')->select();//求购留言
+        $list_q = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7' and (x.uid={$uid} or x.fid={$uid})")->order("x.id desc")->limit('0,5')->select();//求购留言
       // var_dump($list );die;
-        $list_qs = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid}  and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '7'")->order("x.id desc")->limit('0,1')->select();//求购收藏
+        $list_qs = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid}  and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '7'")->order("x.id desc")->limit('0,5')->select();//求购收藏
        // var_dump($list_qs);die;
-      $list_yps = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '3'")->order("x.id desc")->limit('0,1')->select();//应聘收藏
+      $list_yps = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '3'")->order("x.id desc")->limit('0,5')->select();//应聘收藏
      // var_dump($list_yps);die;
-      $list_yss = M('user as u')->join('user_xx as x on u.id = x.uid')->where(" x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '1'")->order("x.id desc")->limit('0,1')->select();//应赏收藏
+      $list_yss = M('user as u')->join('user_xx as x on u.id = x.uid')->where(" x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '1'")->order("x.id desc")->limit('0,5')->select();//应赏收藏
       $list_hui = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();//发送显示在自己页面上的留言
         $list_hui_js = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();//接受到的回复的留言
 
@@ -832,7 +832,7 @@ class UserController extends Controller
         $lijb = M('reward1 as e')->where("e.uid = {$uid}")->select();//悬赏基本信息
         $li = M('reward2')->where("usid = {$uid}")->select();//悬赏详情信息
 
-        $lijb_zp = M('recruit1 as e')->where("e.uid = {$uid}")->limit('0,1')->select();//招聘基本信息
+        $lijb_zp = M('recruit1 as e')->where("e.uid = {$uid}")->limit('0,5')->select();//招聘基本信息
         $li_zp = M('recruit2')->where("usid = {$uid}")->select();//招聘详情信息
  
         $lijb_qg = M('flea')->where("uid = {$uid} and type = '1'")->select();
@@ -878,8 +878,8 @@ class UserController extends Controller
         $this->assign('list_qs', $list_qs);//qiugou收藏
         $this->assign('list_yps', $list_yps);//收藏
         $this->assign('list_yss',$list_yss);//收藏
-/*         echo '<pre>';
-  var_dump($arr);die; */
+/*          echo '<pre>';
+  var_dump($arr_qg);die; */
         $this->assign('list_hui_js',$list_hui_js);//人家回复你的留言
         $this->assign('arr',$arr);//报名悬赏
         $this->assign('arr_zp',$arr_zp);//报名招聘
@@ -894,11 +894,11 @@ class UserController extends Controller
     	   $uid = $_SESSION['id'];
     	
     	$total=M('user_xx')->count();//数据记录总数
-    	$num=2;//每页记录数
+    	$num=5;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
-    	$list = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6'")->order("x.id desc")->limit($limitpage,$num)->select();//闲置留言  	   
+    	$list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6' and (x.uid={$uid} or x.fid={$uid})")->order("x.id desc")->limit($limitpage,$num)->select();//闲置留言  	   
         $list_hui = M('user as u')->join('user_xx_hf as x on u.id = x.uid')->order('x.id')->select();
     	$xianzhi['xz'] = $list;
     	$xianzhi['xzh'] = $list_hui;
@@ -916,11 +916,11 @@ class UserController extends Controller
     	   $uid = $_SESSION['id'];
     	 
     	$total=M('user_xx')->count();//数据记录总数
-    	$num=2;//每页记录数
+    	$num=5;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
-    	$list = M('user as u')->join('user_xx as x on u.id = x.uid or uid=x.fid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7'")->order("x.id desc")->limit($limitpage,$num)->select();//闲置留言
+    	$list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7' and (x.uid={$uid} or x.fid={$uid})")->order("x.id desc")->limit($limitpage,$num)->select();//闲置留言
     	$list_qgxx_hui = M('user as u')->join('user_qgxx_hf as x on u.id = x.uid')->order('x.id')->select();
     	$qiugou['qg'] = $list;
     	$qiugou['qgh'] = $list_qgxx_hui;
@@ -936,7 +936,7 @@ class UserController extends Controller
     	   $uid = $_SESSION['id'];
     
     	$total=M('user_xx')->count();//数据记录总数
-    	$num=2;//每页记录数
+    	$num=5;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
@@ -951,7 +951,7 @@ class UserController extends Controller
     	$uid = $_SESSION['id'];
     
     	$total=M('user_xx')->count();//数据记录总数
-    	$num=1;//每页记录数
+    	$num=5;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
@@ -967,7 +967,7 @@ class UserController extends Controller
     	$uid = $_SESSION['id'];
     
     	$total=M('user_xx')->count();//数据记录总数
-    	$num=2;//每页记录数
+    	$num=5;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
@@ -983,7 +983,7 @@ class UserController extends Controller
     	$uid = $_SESSION['id'];
     
     	$total=M('reward1')->count();//数据记录总数
-    	$num=1;//每页记录数
+    	$num=5;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
@@ -1013,7 +1013,7 @@ class UserController extends Controller
     	$uid = $_SESSION['id'];
     
     	$total=M('reward1')->count();//数据记录总数
-    	$num=1;//每页记录数
+    	$num=5;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
@@ -1035,6 +1035,28 @@ class UserController extends Controller
     	/*     echo '<pre>';
     	 var_dump($arr);die; */
     	$this->ajaxReturn($arr_zp);
+    
+    }
+    public function qiugoubjz()
+    {
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    
+    	$total=M('flea')->count();//数据记录总数
+    	$num=5;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	$lijb_qg = M('flea')->where("uid = {$uid} and type = '1'")->limit($limitpage,$num)->select();
+           //求购
+        foreach ($lijb_qg as $key => $value) {
+            if($value['bao'] != ''){
+                $value['xs'] = $this->xsFangfa($value['bao']);
+                $arr_qg[] = $value;
+            }
+        }
+    	/*     echo '<pre>';
+    	 var_dump($arr);die; */
+    	$this->ajaxReturn($arr_qg);
     
     }
     public function xqxx_sf($wid,$uid){//对报名用户的回复-》悬赏
@@ -1156,7 +1178,7 @@ class UserController extends Controller
     public function bdxx(){
         $uid = $_SESSION['id'];
         // var_dump($uid);die;
-        $list = M("user as u")->join(' user_xx_bd as b on u.id = b.uid')->where("b.type_xx = '2' and b.status = '1'")->order("b.id desc")->select();//留言
+        $list = M("user as u")->join(' user_xx_bd as b on u.id = b.uid')->where("b.type_xx = '2' and b.status = '1' and (b.uid={$uid} or b.fid={$uid})")->order("b.id desc")->limit(0,5)->select();//留言
         // var_dump($list);
         $list_hui = M('user as u')->join('user_bdxx_hf as b on b.uid = u.id')->order('b.id')->select();//对留言的回复
         // var_dump($list_hui);die;
@@ -1165,6 +1187,28 @@ class UserController extends Controller
         $this->assign('list',$list);
         $this->assign('list_hui',$list_hui);//对留言的回复
         $this->display();
+    }
+    public function bdxxjz()
+    {
+    	//部队消息加载
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    	 
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=5;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$list = M("user as u")->join(' user_xx_bd as b on u.id = b.uid')->where("b.type_xx = '2' and b.status = '1' and (b.uid={$uid} or b.fid={$uid})")->limit($limitpage,$num)->order("b.id desc")->select();
+    	$list_hui = M('user as u')->join('user_bdxx_hf as b on b.uid = u.id')->order('b.id')->select();//对留言的回复
+    	$xianzhi['xz'] = $list;
+    	$xianzhi['xzh'] = $list_hui;
+    	/* 	 echo '<pre>';
+    	 var_dump($list);die; */
+    
+    	$this->ajaxReturn($xianzhi);
+    
+    
     }
     public function bdxx_hf($id,$uid,$content){//帖子id  回复用户的id uid  回复的具体内容
         $data['uid'] = $_SESSION['id'];
@@ -1182,13 +1226,60 @@ class UserController extends Controller
     */
     public function spxx(){
         $uid = $_SESSION['id'];
-        $list = M("user as u")->join('user_xx_sp as b on u.id = b.uid')->where("b.type_xx = '1' and b.status = '1'")->select();//留言
+        
+        $list = M("user as u")->join('user_xx_sp as b on u.id = b.uid')->where("b.type_xx = '1' and b.status = '1' and (b.uid={$uid} or b.fid={$uid})")->order("b.id desc")->limit(0,5)->select();//留言
         $list_hui = M('user as u')->join('user_spxx_hf as b on b.uid = u.id')->order('b.id')->select();//对留言的回复
-        $li = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status = '1'")->select();//收藏
+
+        $li = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = 13 and b.type_xx = '2' and b.status = '1'")->order("b.id desc")->limit(0,1)->limit(0,5)->select();//收藏
+ /*  echo '<pre>';
+        var_dump($li);die;  */
         $this->assign('list',$list);
         $this->assign('list_hui',$list_hui);
         $this->assign('li',$li);
         $this->display();
+    }
+    public function spxxjz()
+    {
+    	//部队消息加载
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=5;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	$list = M("user as u")->join('user_xx_sp as b on u.id = b.uid')->where("b.type_xx = '1' and b.status = '1' and (b.uid={$uid} or b.fid={$uid})")->limit($limitpage,$num)->order("b.id desc")->select();//留言
+    	$list_hui = M('user as u')->join('user_spxx_hf as b on b.uid = u.id')->order('b.id')->select();//对留言的回复
+
+    	$xianzhi['xz'] = $list;
+    	$xianzhi['xzh'] = $list_hui;
+    	/* 	 echo '<pre>';
+    	 var_dump($list);die; */
+    
+    	$this->ajaxReturn($xianzhi);
+    
+    
+    }
+    public function spxxsjz()
+    {
+    	//部队消息加载
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$uid = $_SESSION['id'];
+    
+    	$total=M('user_xx')->count();//数据记录总数
+    	$num=5;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    
+    $li = M("user_xx_sp as b")->join('user as u on u.id = b.uid')->where("b.fid = {$uid} and b.type_xx = '2' and b.status = '1'")->limit($limitpage,$num)->order("b.id desc")->select();//收藏
+    /* echo '<pre>';
+    	 var_dump($list);die; */
+    
+    	$this->ajaxReturn($li);
+    
+    
     }
     /**
     *  商铺消息 回复
@@ -1454,7 +1545,7 @@ class UserController extends Controller
     	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
     	$px=I('pxs');
     	$total=M('dongtai')->count();//数据记录总数
-    	$num=1;//每页记录数
+    	$num=4;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
@@ -1472,14 +1563,35 @@ class UserController extends Controller
     	}else{
         $this->ajaxReturn($data);
     	}
-  
-    
+    }
+    public function grbdjz(){
+    	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
+    	$px=I('pxs');
+    	$total=M('dongtai')->count();//数据记录总数
+    	$num=4;//每页记录数
+    	$totalpage=ceil($total/$num);//总计页数
+    	$limitpage=($p-1)*$num;//每次查询取记录
+    	//超过最大页数，退出
+    	if($px=='r'){
+    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->where('u.bdlx=1')->limit($limitpage,$num)->order('d.zan desc')->select();
+    	}else{
+    		$data=M('dongtai as d')->join('user as u on d.uid = u.id')->where('u.bdlx=1')->limit($limitpage,$num)->order('d.did desc')->select();
+    	}
+    	$img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
+    	$dongtai['nr'] = $data;
+    	$dongtai['tu'] = $img;
+    	//  echo 1;
+    	if(count($data)>0){
+    		$this->ajaxReturn($dongtai);
+    	}else{
+    		$this->ajaxReturn($data);
+    	}
     }
     public function rzbdjz(){
        $p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
     	$px=I('pxs');
     	$total=M('dongtai')->count();//数据记录总数
-    	$num=1;//每页记录数
+    	$num=4;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
@@ -1504,14 +1616,14 @@ class UserController extends Controller
     	$p=isset($_POST['k'])?intval(trim($_POST['k'])):0;
     	$px=I('pxs');
     	$total=M('dongtai')->count();//数据记录总数
-    	$num=1;//每页记录数
+    	$num=4;//每页记录数
     	$totalpage=ceil($total/$num);//总计页数
     	$limitpage=($p-1)*$num;//每次查询取记录
     	//超过最大页数，退出
     	if($px=='r'){
-    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre,f.id")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->limit($limitpage,$num)->order('d.zan desc')->select();
+    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre,f.id")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->order('d.zan desc')->limit($limitpage,$num)->select();
     	}else{
-    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre,f.id")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->limit($limitpage,$num)->order('d.did desc')->select();
+    		$data=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre,f.id")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->order('d.did desc')->limit($limitpage,$num)->select();
     	}
     	$img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
     	$dongtai['nr'] = $data;
@@ -1534,30 +1646,34 @@ class UserController extends Controller
    
 
     		if($where=='z'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(0,4)->select();
     		}else if($where=='1z'||$where=='1'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(0,4)->select();
     		}else if($where=='2z'||$where=='2'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where('bdlx= 1')->order('d.did desc')->limit(0,4)->select();
     		}else if ($where=='3z'||$where=='3'){
-    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->order('d.did desc')->limit(1)->select();
-    		}else if ($where=='4z'||$where=='3'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->order('d.did desc')->limit(0,4)->select();
+    		}else if ($where=='4z'||$where=='4'){
+    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->order('d.did desc')->limit(0,4)->select();
     		}else if($where=='1r') {
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(0,4)->select();
     		}else if($where=='r') {
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(0,4)->select();
     		}else if($where=='2r') {
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->where("d.type = 2 and u.bdlx = 1")->order('d.zan desc')->limit(0,4)->select();
     		}else if($where=='3r') {
-    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(1)->select();
+    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('forcee as f on f.uid = u.id')->where("d.type = 2")->order('d.zan desc')->limit(0,4)->select();
     		}else if($where=='4r'){
-    			$remen=M('dongtai as d')->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->where("d.type = 2")->order('d.did desc')->limit(1)->select();
+    			$remen=M('dongtai as d')-> field( "d.*,u.username,u.imagename,u.tel,u.sex,u.addre")->join('user as u on d.uid = u.id')->join('shop as f on f.uid = u.id')->where("d.type = 2")->order('d.did desc')->limit(0,4)->select();
     		}
     		$img=M('dongimage as g')->join('dongtai as d on d.did = g.pid')->order('g.iid desc')->select();
+    		if($remen){
     		$dongtai['nr'] = $remen;
     		$dongtai['tu'] = $img;
     	$this->ajaxReturn($dongtai);
+    		}else{
+    			$this->ajaxReturn($remen);
+    		}
     }   
     //小测试使用
     public function a(){

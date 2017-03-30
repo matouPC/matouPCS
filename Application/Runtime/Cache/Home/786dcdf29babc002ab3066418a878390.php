@@ -37,8 +37,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -460,12 +464,14 @@
 					<div id="xqxx-lb" class="lb"><p>全部</p>
 						<div class="xqxx-lb">
 								<ul>
-									<a href="#xs"><li>悬赏</li></a>
-									<a href="#ys"><li>应赏</li></a>
-									<a href="#zp"><li>招聘</li></a>
-									<a href="#yp"><li>应聘</li></a>
-									<a href="#qg"><li>求购</li></a>
-									<a href="#xz"><li>闲置</li></a>
+									<a href="#xz"><li>闲置留言</li></a>
+									<a href="#qg"><li>求购留言</li></a>
+									<a href="#qgs"><li>求购收藏</li></a>
+									<a href="#yps"><li>应聘收藏</li></a>
+									<a href="#yss"><li>应赏收藏</li></a>
+									<a href="#xsb"><li>悬赏报名</li></a>
+									<a href="#zpb"><li>招聘报名</li></a>
+									<a href="#qgb"><li>求购报名</li></a>
 								</ul>
 							</div>
 						</div>
@@ -488,7 +494,11 @@
 											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
 			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
-											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
+											<p class="spxx_01">
+						<?php if($lists[tel]==$lists[username]): ?>用户<?php echo (substr($lists["username"],0,5)); ?>
+					<?php else: ?>
+					用户<?php echo ($lists["username"]); endif; ?>
+                                          </p>
 											<p class="spxx_02"></p>
 											<form>
 												<p class="spxx_03">
@@ -507,7 +517,11 @@
 												<?php if($list_huis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
 			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($list_huis["imagename"]); ?>" alt="" /><?php endif; ?>
-												<p class="spxx_01"><?php echo ($list_huis["username"]); ?></p>
+												<p class="spxx_01">
+						       <?php if($$list_huis[tel]==$$list_huis[username]): ?>用户<?php echo (substr($list_huis["username"],0,5)); ?>
+					            <?php else: ?>
+					        用户<?php echo ($list_huis["username"]); endif; ?>
+												</p>
 												<p class="spxx_02"></p>
 												<form>
 													<p class="spxx_03">
@@ -525,7 +539,7 @@
 										<div class="spxx_sj">
 											<p class="spxx_sj_r">2016-12-12</p>
 											<p class="spxx_hf">
-												回复
+												回复1
 											</p>
 										</div>
 										<div class="no">
@@ -538,10 +552,10 @@
 								</div>
 								<?php if(!empty($list)){ ?>
 									<div class="djjzgd">
-										<button onclick="tj()" name='btnn' id='btnn' >点击加载更多1</button>
+										<button onclick="tj()" name='btnn' id='btnn' >点击加载更多</button>
 									</div>
 								<?php } ?>
-								<!-- 求购留言 -->
+								 <!-- 求购留言 -->
                                <a name="qg"></href> 
 								<div id="qiugou">
 								<?php if(is_array($list_q)): foreach($list_q as $key=>$lists): ?><li>
@@ -603,7 +617,7 @@
 								</div>
 								<?php if(!empty($list_q)){ ?>
 									<div class="djjzgd">
-									<button onclick="tj1()" name='btn1' id='btn1' >点击加载更多2</button>
+									<button onclick="tj1()" name='btn1' id='btn1' >点击加载更多</button>
 									</div>
 								<?php } ?>
 								<!-- 求购收藏 -->
@@ -637,7 +651,7 @@
 								</div>
 								<?php if(!empty($list_qs)){ ?>
 									<div class="djjzgd">
-									<button onclick="tj2()" name='btnt' id='btnt' >点击加载更多3</button>
+									<button onclick="tj2()" name='btnt' id='btnt' >点击加载更多</button>
 									</div>
 								<?php } ?>
 								<!-- 应聘收藏 -->
@@ -671,7 +685,7 @@
 								</div>
 									<?php if(!empty($lists)){ ?>
 									<div class="djjzgd">
-									<button onclick="tj3()" name='btnt1' id='btnt1' >点击加载更多4</button>
+									<button onclick="tj3()" name='btnt1' id='btnt1' >点击加载更多</button>
 									</div>
 								<?php } ?>
 								<!-- 应赏收藏 -->
@@ -705,7 +719,7 @@
 									</div>
 									<?php if(!empty($lists)){ ?>
 									<div class="djjzgd">
-									<button onclick="tj4()" name='btnt2' id='btnt2' >点击加载更多5</button>
+									<button onclick="tj4()" name='btnt2' id='btnt2' >点击加载更多</button>
 									</div>
 								<?php } ?>
 								<!-- 报名悬赏 -->
@@ -801,7 +815,7 @@
 								</div>
 								<?php if(!empty($arrs)){ ?>
 									<div class="djjzgd">
-									<button onclick="tj5()" name='btnt3' id='btnt3' >点击加载更多6</button>
+									<button onclick="tj5()" name='btnt3' id='btnt3' >点击加载更多</button>
 									</div>
 								<?php } ?>
 								<!-- 报名招聘 -->
@@ -894,7 +908,7 @@
 							</div>
 							<?php if(!empty($arr_zps)){ ?>
 									<div class="djjzgd">
-								<button onclick="tj6()" name='btnt4' id='btnt4' >点击加载更多7</button>
+								<button onclick="tj6()" name='btnt4' id='btnt4' >点击加载更多</button>
 									</div>
 								<?php } ?>
 							<!-- 报名求购 -->
@@ -933,7 +947,7 @@
 														<!-- <p class="yhmc_01_01">1年经验</p> -->
 														<!-- <p class="yhmc_01_02"></p> -->
 														<p class="yhmc_01_03">报名</p>
-														<p class="yhmc_01_04">电话号码：<span id="dhzp<?php echo $arr_qgs['xs']['uu'][$i]['id'];?>"><?php echo substr($arr_qgs['xs'][$i]['tel'],0,3).'XXXX'. substr($arr_qgs['xs'][$i]['tel'],7,11); ?></span></p>
+														<p class="yhmc_01_04">电话号码：<span id="dhzp<?php echo $arr_qgs['xs'][$i]['id'];?>"><?php echo substr($arr_qgs['xs'][$i]['tel'],0,3).'XXXX'. substr($arr_qgs['xs'][$i]['tel'],7,11); ?></span></p>
 																<input type="hidden" id="xpzp<?php echo $arr_qgs['xs'][$i]['id']; ?>" value="<?php echo $arr_qgs['xs'][$i]['tel']?>">
 														<!-- <p class="yhmc_01_04">摄影师</p> -->
 														<p class="yhmc_01_04">期望赏金：私聊</p>
@@ -948,7 +962,15 @@
 
 												</dd>
 												<script type="text/javascript">
-													function jjqg(fid,uid),error:function(){
+													function jjqg(fid,uid){
+														//fid为求购id  uid为报名用户的id
+														if(window.confirm('确定要拒绝么？')){
+																$.ajax({
+																	url:'?s=/Home/User/xqxx_sf_qg/fid/'+fid+'/uid/'+uid,
+																	type:'get',
+																	success:function(data){
+																		alert(data);
+																	},error:function(){
 																		alert('ajax请求失败');
 																	}
 																});
@@ -979,7 +1001,7 @@
 									</div>
 									<?php if(!empty($arr_qgs)){ ?>
 									<div class="djjzgd">
-										<button onclick="tj7()" name='btnt5' id='btnt5' >点击加载更多8</button>
+										<button onclick="tj7()" name='btnt5' id='btnt5' >点击加载更多</button>
 									</div>
 								<?php } ?>
 							</ul>
@@ -1098,9 +1120,12 @@
 									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['xzh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
 									 }
 								 }
-								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx">'+img+'<p class="spxx_01">'+data['xz'][i].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 闲置留言 </p></form></div><div class="spxx_00"><p> '+data['xz'][i].content_xx+'</p></div> '+p+'<div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p><p class="spxx_hf"> 回复 </p></div><div class="no"><input type="hidden" id="uid" value="'+data['xz'][i].uid+'"><textarea id="textarea" placeholder="留言留言留言留言留言留言"></textarea><button class="hf" onclick="liuyan_xz('+data['xz'][i].id+','+data['xz'][i].uid+')">回复</button><div class="clear"></div></div></li>';
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx">'+img+'<p class="spxx_01">'+data['xz'][i].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 闲置留言 </p></form></div><div class="spxx_00"><p> '+data['xz'][i].content_xx+'</p></div> '+p+'<div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p><p class="spxx_hf"> 回复 </p></div><div class="no"><input type="hidden" id="uid" value="'+data['xz'][i].uid+'"><textarea id="liuyan" placeholder="留言留言留言留言留言留言"></textarea><button class="hf" onclick="liuyan_xz1('+data['xz'][i].id+','+data['xz'][i].uid+')">回复</button><div class="clear"></div></div></li>';
 								// alert(p);
 							$("#xianzhi").append(li);
+							$('.spxx_hf').click(function() {
+								$(this).parents('li').children('.no').show();
+							});
 		 		
 							 }
 						}else{
@@ -1150,9 +1175,11 @@
 									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['qgh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
 									 }      
 								 }
-								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx">'+img+'<p class="spxx_01">'+data['qg'][i].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 求购留言 </p></form></div><div class="spxx_00"><p> '+data['qg'][i].content_xx+'</p></div> '+p+'<div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p><p class="spxx_hf"> 回复 </p></div><div class="no"><textarea id="textarea_qg" placeholder="留言留言留言留言留言留言"></textarea><button class="hf" onclick="liuyan_qg('+data['qg'][i].id+','+data['qg'][i].uid+')">回复<div class="clear"></div></div></li>';
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx">'+img+'<p class="spxx_01">'+data['qg'][i].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 求购留言 </p></form></div><div class="spxx_00"><p> '+data['qg'][i].content_xx+'</p></div> '+p+'<div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p><p class="spxx_hf"> 回复 </p></div><div class="no"><textarea id="liuyan_qg" placeholder="留言留言留言留言留言留言"></textarea><button class="hf" onclick="liuyan_qg1('+data['qg'][i].id+','+data['qg'][i].uid+')">回复<div class="clear"></div></div></li>';
 							$("#qiugou").append(li);
-		 		
+							$('.spxx_hf').click(function() {
+								$(this).parents('li').children('.no').show();
+							});
 							 }
 						}else{
 							 //alert(22);
@@ -1174,7 +1201,7 @@
 				$.ajax({
 					type:'post',
 					url:"<?php echo U('User/qiugousjz');?>",
-					data:{k:b},
+					data:{k:n},
 					beforeSend:function(){
 			         $("#qiugous").append("<div id='load'>加载中……</div>");
 					},
@@ -1208,46 +1235,8 @@
 		// alert(p);
 		  } 
 	  
-	  var m=2;
-	  function  tj2(){		 
-		  var t = "<?php echo session('id');?>";
-				$.ajax({
-					type:'post',
-					url:"<?php echo U('User/qiugousjz');?>",
-					data:{k:m},
-					beforeSend:function(){
-			         $("#qiugous").append("<div id='load'>加载中……</div>");
-					},
-					success:function(data){
-					//	alert(data);
-						if(data!=null){				
-							
-							 for (var i = 0; i < data.length; i++) {
-								 if(data[i].imagename==null) {
-                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
-								 }else{
-								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
-								 }
-			
-								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">求购收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
-							$("#qiugous").append(li);
-		 		
-							 }
-						}else{
-							 //alert(22);
-							 document.getElementById('btnt').innerHTML = '加载完毕';
-			 				flag=true;	
-						}	
-			 },
-			 	complete:function(){
-			           $("#load").remove();
-					},
-				 	dataType:'json'
-				 	});
-			 	m++;
-		// alert(p);
-		  } 
-	  var q=1;
+
+	  var q=2;
 	  function  tj3(){		 
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
@@ -1404,7 +1393,7 @@
 									p+='<dd><div id="xl_01" class="yhmc_01"> '+img+'<p class="yhmc_01_01">'+data[i]['xs']['uu'][j].username+'</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">报名</p><p class="yhmc_01_04">期望赏金：私聊</p><p class="yhmc_01_04">电话号码：<span id="dhzp'+data[i]['xs']['uu'][j].id+'">'+tel+'</span></p><input type="hidden" id="xpzp'+data[i]['xs']['uu'][j].id+'" value="'+data[i]['xs']['uu'][j].tel+'"><button id="btn_c_01" class="yhmc_01_05" onclick="jjzp('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >拒接</button><button id="btn_c_02" class="yhmc_01_05" onclick="dlzp('+data[i]['xs']['uu'][j].id+');" >电聊</button><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div></dd>';
 								 }
 								 }
-								 var li = '<li "><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"> <p class="xqxx_01_02">工作地点：'+data[i].address_zp+'</p>><p class="xqxx_01_03">招聘内容：'+data[i]['xs'].type+'</p><p class="xqxx_01_03">报名招聘</p><p class="xqxx_01_04">未完成</p></div><!--下拉隐藏开始--><div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>"><dl><div> '+p+'</div></dl><div class="showmore"><a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;"><div class="ckxq"><img src="/matouPCS/Public/Home/img/xiala.png" /></div><span>查看详情</span></a></div><div class="clearfloat"></div></div></li>';
+								 var li = '<li "><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"> <p class="xqxx_01_02">工作地点：'+data[i].address_zp+'</p><p class="xqxx_01_03">招聘内容：'+data[i]['xs'].type+'</p><p class="xqxx_01_03">报名招聘</p><p class="xqxx_01_04">未完成</p></div><!--下拉隐藏开始--><div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>"><dl><div> '+p+'</div></dl><div class="showmore"><a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;"><div class="ckxq"><img src="/matouPCS/Public/Home/img/xiala.png" /></div><span>查看详情</span></a></div><div class="clearfloat"></div></div></li>';
 								 
 								 $("#zhaopinb").append(li);
 		 		
@@ -1434,27 +1423,27 @@
 			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						//alert(data);
+					
 						if(data!=null){				
-							var $num=0;
+							var $num=1245;
 						
 							 for (var i = 0; i < data.length; i++) {
 									var p='';
 								//	 alert(data.length);
-								 for (var j = 0; j < data[i]['xs']['uu'].length; j++) {
-										if(data[i]['xs']['uu'][j]!=null){
-									 if(data[i]['xs']['uu'][j].imagename==null) {
+								 for (var j = 0; j < data[i]['xs'].length; j++) {
+										if(data[i]['xs'][j]!=null){
+									 if(data[i]['xs'][j].imagename==null) {
 			                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 											 }else{
-											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
+											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs'][j].imagename+'" />';
 											 }
-									 var s=data[i]['xs']['uu'][j].tel;
+									 var s=data[i]['xs'][j].tel;
 									 var tel=s.substr(0,3)+'xxxx'+s.substr(7,11);
-									p+='<dd><div id="xl_01" class="yhmc_01"> '+img+'<p class="yhmc_01_01">'+data[i]['xs']['uu'][j].username+'</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">报名</p><p class="yhmc_01_04">期望赏金：私聊</p><p class="yhmc_01_04">电话号码：<span id="dh'+data[i]['xs']['uu'][j].id+'">'+tel+'</span></p><input type="hidden" id="xp'+data[i]['xs']['uu'][j].id+'" value="'+data[i]['xs']['uu'][j].tel+'"><button id="btn_c_01" class="yhmc_01_05" onclick="jj('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >拒接</button><button id="btn_c_02" class="yhmc_01_05" onclick="dl('+data[i]['xs'].wid+','+data[i]['xs']['uu'][j].id+');" >电聊</button><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div></dd>';
+									p+='<dd><div id="xl_01" class="yhmc_01"> '+img+'<p class="yhmc_01_01">'+data[i]['xs'][j].username+'</p><p class="yhmc_01_02"></p><p class="yhmc_01_03">报名</p><p class="yhmc_01_04">期望赏金：私聊</p><p class="yhmc_01_04">电话号码：<span id="dhzp'+data[i]['xs'][j].id+'">'+tel+'</span></p><input type="hidden" id="xpzp'+data[i]['xs'][j].id+'" value="'+data[i]['xs'][j].tel+'"><button id="btn_c_01" class="yhmc_01_05" onclick="jjqg('+data[i].fid+','+data[i]['xs'][j].id+');" >拒接</button><button id="btn_c_02" class="yhmc_01_05" onclick="dlqg();" >电聊</button><div class="clear"></div><div class="yhmc-date"><span>2012-12-12</span></div></div></dd>';
 								 }
 								 }
-								 var li = '<li id="zp'+$num+'"><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">活动时间：'+data[i].time+'</p><p class="xqxx_01_02">活动地点：'+data[i].address+'</p><p class="xqxx_01_03">悬赏内容：'+data[i]['xs'].type+'</p><p class="xqxx_01_03">报名悬赏</p><p class="xqxx_01_04">未完成</p></div><!--下拉隐藏开始--><div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>"><dl><div> '+p+'</div></dl><div class="showmore"><a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;"><div class="ckxq"><img src="/matouPCS/Public/Home/img/xiala.png" /></div><span>查看详情</span></a></div><div class="clearfloat"></div></div></li>';
-								 
+								 var li = '<li id="zp'+$num+'"><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="xqxx"><p class="xqxx_01_01">发布时间：'+data[i].date+'</p><p class="xqxx_01_02">地点：'+data[i].address+'</p><p class="xqxx_01_03">求购内容：'+data[i].name+'</p><p class="xqxx_01_03">报名求购</p><p class="xqxx_01_04">未完成</p></div><!--下拉隐藏开始--><div class="yhmc <?php echo ($num); ?>" id="yhmc<?php echo ($num); ?>"><dl><div> '+p+'</div></dl><div class="showmore"><a id="xx_01<?php echo ($num); ?>" onclick="xx_01(<?php echo ($num); ?>)" href="javascript:;"><div class="ckxq"><img src="/matouPCS/Public/Home/img/xiala.png" /></div><span>查看详情</span></a></div><div class="clearfloat"></div></div></li>';
+									alert(li);
 								 $("#qiugoub").append(li);
 		 		
 							 }

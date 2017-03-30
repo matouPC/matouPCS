@@ -124,7 +124,7 @@
 					
 								</foreach>
 							</ul>
-								<a class="ckgd-gz" href="?s=/Home/User/bdzxfs">查看更多</a>
+							<!-- 	<a class="ckgd-gz" href="?s=/Home/User/bdzxfs">查看更多</a> -->
 						</div>
 						<div class="s-c-1f-2f">
 							<div class="left">
@@ -197,7 +197,7 @@
 								</foreach>
 							
 							</ul>
-							<a class="ckgd-gz" href="?s=/Home/User/bdzxfs">查看更多</a>
+						<!-- 	<a class="ckgd-gz" href="?s=/Home/User/bdzxfs">查看更多</a> -->
 						</div>
 					</div>
 
@@ -333,7 +333,9 @@
 					<foreach name='dongtai' item='v'>	
 						<div id="conn" class="s-c-3f-1f">
 							<div class="mdhd">
-								<img src="__PUBLIC__/Home/img/mdhd.png" />
+								<if condition="$v[type]=='2'">  
+                                   	<img src="__PUBLIC__/Home/img/mdhd.png" />
+                                   </if>
 							</div>
 							<div class="yhtx">
 								    	<php>if($_SESSION['id'] == $v['uid']){</php>
@@ -488,12 +490,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 
 						$("#le").append(li);
 	 		
@@ -521,7 +528,7 @@ var p=2;
 					data:{where:where},
 					dataType:"json",
 					success:function(data){
-						
+						if(data!=null){		
 						var pl='';
 						 for (var i = 0; i < data['nr'].length; i++) {
 							 var myArray=new Array()
@@ -572,12 +579,17 @@ var p=2;
 							}else{
 						     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 							}
+						  if(data['nr'][i].type==2){
+								var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+							}else{
+						     var imgh = '';
+							}
 	                  	 for (var j= 0; j < data['tu'].length; j++) {
 							 if(data['nr'][i].did==data['tu'][j].pid){
 								p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 							 }
 						 }
-	                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+	                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
 	                    	
 							
 						};
@@ -585,6 +597,9 @@ var p=2;
 				
 						$('#re').html(pl);
 						$('#re').val('');
+						}else{
+							$('#re').html('');
+						}
 					},error:function(){
 						alert('no');
 					}
@@ -656,12 +671,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -685,7 +705,7 @@ var p=2;
 	  var t = "{:session('id')}";
 			$.ajax({
 				type:'post',
-				url:"{:U('User/bdjz')}",
+				url:"{:U('User/grbdjz')}",
 				data:{k:w,id:id},
 				beforeSend:function(){
 		         $("#ha").append("<div id='load'>加载中……</div>");
@@ -743,12 +763,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -770,7 +795,6 @@ var p=2;
 
   function tj3(id){		 
 	  var t = "{:session('id')}";
-	  alert(3);
 			$.ajax({
 				type:'post',
 				url:"{:U('User/rzbdjz')}",
@@ -831,12 +855,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -854,14 +883,14 @@ var p=2;
 		 	e++;
 	// alert(p);
 	  }  
-  var r=2;
+  var rf=2;
 
   function tj4(id){		 
 	  var t = "{:session('id')}";
 			$.ajax({
 				type:'post',
 				url:"{:U('User/spbdjz')}",
-				data:{k:r,id:id},
+				data:{k:rf,id:id},
 				beforeSend:function(){
 		         $("#ha").append("<div id='load'>加载中……</div>");
 				},
@@ -918,12 +947,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -938,7 +972,7 @@ var p=2;
 				},
 			 	dataType:'json'
 			 	});
-		 	r++;
+		 	rf++;
 	// alert(p);
 	  }  
   var t=2;
@@ -1006,12 +1040,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1036,7 +1075,7 @@ var p=2;
 	  var pxs='r';
 			$.ajax({
 				type:'post',
-				url:"{:U('User/bdjz')}",
+				url:"{:U('User/grbdjz')}",
 				data:{k:y,id:id,pxs:pxs},
 				beforeSend:function(){
 		         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1094,12 +1133,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1182,12 +1226,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	           
 						$("#ha").append(li);
 						 }
@@ -1270,12 +1319,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1357,12 +1411,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1444,12 +1503,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1531,12 +1595,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1560,7 +1629,7 @@ var p=2;
 	  var t = "{:session('id')}";
 			$.ajax({
 				type:'post',
-				url:"{:U('User/bdjz')}",
+				url:"{:U('User/grbdjz')}",
 				data:{k:b,id:id},
 				beforeSend:function(){
 		         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1618,12 +1687,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1705,12 +1779,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }
@@ -1792,12 +1871,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+							  if(data['nr'][i].type==2){
+									var imgh='<img src="__PUBLIC__/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="__PUBLIC__/Home/img/mdhd.png" /></div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="__PUBLIC__/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 	                          
 						$("#ha").append(li);
 						 }

@@ -432,7 +432,7 @@ function wxdlgo(){
         });
     }
 }
-wxdlgo();
+//wxdlgo();
 function setCookie(cookieName, cookieValue, cookieExpires) {
     try {
         cookieName = cookieName.trim();

@@ -42,8 +42,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -181,7 +185,7 @@
 							<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
+								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
 							   <a href="#">商铺主页</a>
 							   <?php } ?>
@@ -191,7 +195,7 @@
 									<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
 							   <a href="#">管理商铺</a>
 							   <?php } ?>
@@ -673,7 +677,7 @@
 														}
 													}
 													
-													if(data[i].imagename==''){
+													if(data[i].imagename==null){
 														var img='<img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />';
 													}else{
 												     var img = '<img  width="80" height="80" src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -773,7 +777,7 @@
 										}else{
 											zan -= 1;
 											$.ajax({
-												url:"?s=/Home/Mtbu/rzbd_liu_zan/lid/"+lid+"/zan/"+zan,
+												url:"?s=/Home/Mtbu/spbd_liu_zan/lid/"+lid+"/zan/"+zan,
 												type:"get",
 												success:function(data){
 													alert('取消成功');
@@ -978,7 +982,7 @@ var p=2;
 										var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 									}
 								}
-								if(data[i].imagename==''){
+								if(data[i].imagename==null){
 									var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -1054,7 +1058,7 @@ var p=2;
 								var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 							}
 						}
-						if(data[i].imagename==''){
+						if(data[i].imagename==null){
 							var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 						}else{
 					     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -1129,7 +1133,7 @@ var p=2;
 											var url='<a href="?s=/Home/Mtbu/rzbddydt/id/'+data[i].uid+'">';	
 										}
 									}
-									if(data[i].imagename==''){
+									if(data[i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';

@@ -38,8 +38,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -461,7 +465,7 @@
 								<ul>
 									<li>全部</li>
 									<li>留言</li>
-									<li>关注</li>
+									<!-- <li>关注</li> -->
 								</ul>
 							</div>
 						</div>
@@ -469,10 +473,9 @@
 				<div class="wk_01">
 					<div class="con">
 						<div class="s-main-b">
-							<ul>
+							<ul id="budui">
 								<!-- 给部队的留言 -->
-								<?php if(is_array($list)): foreach($list as $key=>$lists): if($_SESSION['id'] == $lists['uid'] || $_SESSION['id'] == $lists['fid']){ ?>
-										<li>
+								<?php if(is_array($list)): foreach($list as $key=>$lists): ?><li>
 											<div class="xialai">
 												<span class="xll1">
 													<p class="xs1">删除</p>
@@ -527,8 +530,7 @@
 											<button class="hf" onclick="bdly_hf(<?php echo ($lists["id"]); ?>,<?php echo ($lists["uid"]); ?>)">回复</button>
 											<div class="clear"></div>
 											</div>
-										</li>
-										<?php } endforeach; endif; ?>
+										</li><?php endforeach; endif; ?>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>
@@ -537,11 +539,10 @@
 				</div>
 				<div class="clearfloat"></div>
 				<div class="djjzgd">
-					<button>点击加载更多</button>
+					<button onclick="tj()" name='btnn' id='btnn' >点击加载更多</button>
 				</div>
 			</div>
 		</section>
-		<?php	include '3rank-footer.php';?>
 		<!DOCTYPE html>
 <html>
 	<head>
@@ -617,5 +618,61 @@
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/showWin.js"></script>
 	<script src="/matouPCS/Public/Home/js/bdly.js"></script>
+	<script type="text/javascript">
 
+	  var v=2;
+	  function  tj(){		 
+		 
+		  var t = "<?php echo session('id');?>";
+				$.ajax({
+					type:'post',
+					url:"<?php echo U('User/bdxxjz');?>",
+					data:{k:v},
+					beforeSend:function(){
+			         $("#budui").append("<div id='load'>加载中……</div>");
+					},
+					success:function(data){
+						// alert(data['xz']);
+						if(data['xz']!=null){				
+							
+							 for (var i = 0; i < data['xz'].length; i++) {
+								 if(data['xz'][i].imagename==null) {
+                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+								 }else{
+								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
+								 }
+								 var p='';
+								 for (var j= 0; j < data['xzh'].length; j++) {
+									 if(data['xz'][i].id==data['xzh'][j].tid){
+										 if(data['xzh'][j].imagename==null) {
+				                                var imgs='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
+												 }else{
+												var imgs='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
+												 }
+									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['xzh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
+									 }
+								 }
+								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx">'+img+'<p class="spxx_01">'+data['xz'][i].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 闲置留言 </p></form></div><div class="spxx_00"><p> '+data['xz'][i].content_xx+'</p></div> '+p+'<div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p><p class="spxx_hf"> 回复 </p></div><div class="no"><input type="hidden" id="uid" value="'+data['xz'][i].uid+'"><textarea id="liuyanbd" placeholder="留言留言留言留言留言留言"></textarea><button class="hf" onclick="bdly_hf1('+data['xz'][i].id+','+data['xz'][i].uid+')">回复</button><div class="clear"></div></div></li>';
+								// alert(p);
+							$("#budui").append(li);
+							$('.spxx_hf').click(function() {
+								$(this).parents('li').children('.no').show();
+							});
+		 		
+							 }
+						}else{
+							 //alert(22);
+							 document.getElementById('btnn').innerHTML = '加载完毕';
+			 				flag=true;	
+						}	
+			 },
+			 	complete:function(){
+			           $("#load").remove();
+					},
+				 	dataType:'json'
+				 	});
+			 	v++;
+		// alert(p);
+		  } 
+</script>
 </html>

@@ -43,8 +43,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -834,9 +838,9 @@
 				</div>
 			<div id="re" class="s-main-l">
 					<div id="conn" class="s-c-3f">
-						<div class="s-c-3f-1f">
-							<?php if(is_array($dongtai)): foreach($dongtai as $key=>$v): ?><div class="mdhd">
-								<img src="/matouPCS/Public/Home/img/mdhd.png" />
+						<?php if(is_array($dongtai)): foreach($dongtai as $key=>$v): ?><div class="s-c-3f-1f">
+							<div class="mdhd">
+								<?php if($v[type]=='2'): ?><img src="/matouPCS/Public/Home/img/mdhd.png" /><?php endif; ?>
 							</div>
 							<div class="yhtx">
 								<a href="">
@@ -880,13 +884,16 @@
 								</div>
 								<p class="clearfloat"></p>
 							</div>
-							<div class="clearfloat"></div><?php endforeach; endif; ?>
-						</div>
+							<div class="clearfloat"></div>
+						</div><?php endforeach; endif; ?>
 					</div>
 					<div class="s-main-b">
+						 <?php if(!empty($dongtai)){ ?>
 						<div class="margin">
 							<button onclick="tj(<?php echo ($v["uid"]); ?>)" name='btn' id='btn' >点击加载更多</button>
 						</div>
+						<?php } ?>
+
 					</div>
 				</div>
 				<div class="clearfloat"></div>
@@ -971,7 +978,7 @@
 															
 									
 				</script>
-					<script type="text/javascript">
+	<script type="text/javascript">
 var p=2;
   function tj(id){
 
@@ -1022,12 +1029,17 @@ var p=2;
 								}else{
 							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
+								if(data['nr'][i].type==2){
+									var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+								}else{
+							     var imgh = '';
+								}
 							 for (var j= 0; j < data['tu'].length; j++) {
 								 if(data['nr'][i].did==data['tu'][j].pid){
 									p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 								 }
 							 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		//	alert(li);
 						$("#conn").append(li);
 	 		
@@ -1091,13 +1103,18 @@ var p=2;
     					}else{
     				     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
     					}
+                		if(data['nr'][i].type==2){
+							var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+						}else{
+					     var imgh = '';
+						}
                   	 for (var j= 0; j < data['tu'].length; j++) {
 						 if(data['nr'][i].did==data['tu'][j].pid){
 							p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 						 }
 					 }
                 
-                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
+                  	 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+' </p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
                     	
 						
 					};
@@ -1156,12 +1173,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-									 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+									 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 							 }
@@ -1223,12 +1245,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPC/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"><p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1291,12 +1318,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href=""><img src="/matouPCS/Public/Home/img/yhmc.png" /></a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1359,12 +1391,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1428,12 +1465,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1497,12 +1539,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1566,12 +1613,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1634,12 +1686,17 @@ var p=2;
 									}else{
 								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
+									if(data['nr'][i].type==2){
+										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
+									}else{
+								     var imgh = '';
+									}
 								 for (var j= 0; j < data['tu'].length; j++) {
 									 if(data['nr'][i].did==data['tu'][j].pid){
 										p+='<li><a rel="gallery1" class="boxer" href="/matouPCS/Uploads/'+data['tu'][j].imagename+'"><div class="pic"><img src="/matouPCS/Uploads/'+data['tu'][j].imagename+'" /></div></a></li>';
 									 }
 								 }
-								 var li = '<div class="s-c-3f-1f"><div class="mdhd"><img src="/matouPCS/Public/Home/img/mdhd.png" /></div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
+								 var li = '<div class="s-c-3f-1f"><div class="mdhd">'+imgh+'</div><div class="yhtx"><a href="">'+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="szd">所在地：'+data['nr'][i].addre+'</p><p class="dtnr"> '+data['nr'][i].content+'</p><ul>'+p+'</ul><div class="bottom"><p class="left">'+data['nr'][i].time+'</p><span class="delete"><img src="/matouPCS/Public/Home/img/delete-2.png" /></span><div class="right dz-qx"> <p onclick="zan1('+data['nr'][i].did+','+data['nr'][i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 17px;" id="s'+data['nr'][i].did+'">'+data['nr'][i].zan+'</span></p></div><p class="clearfloat"></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div';
 		                          
 							$("#ha").append(li);
 		 		
@@ -1660,8 +1717,7 @@ var p=2;
 		  }  
 
   
-</script>
-		</section>
+</script>		</section>
 		<!DOCTYPE html>
 <html>
 	<head>

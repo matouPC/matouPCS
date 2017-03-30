@@ -48,7 +48,7 @@
 						<ul>
 							<li id="qqaj" style="width: 100px;">
 								<?php if($_SESSION['username'] != ''){ ?>
-								<a  class="xxlo" href="?s=/Home/User"><?php echo ($_SESSION['username']); ?></a>
+								<a  class="xxlo" href="?s=/Home/User">用户<?php echo (substr($_SESSION['username'],0,5)); ?></a>
 								<!-- <span><a href="javascript:void(0);" onclick="QC.Login.signOut();">退出</a></span> -->
 								<?php }else{ ?>
 								<a id="login-alert" href="#">请注册\登录</a>
@@ -921,8 +921,8 @@
 								</ul>
 							</div>
 							<div class="s-f3-r-3f">
-								<div style="width: 110px; height: 35px;" class="center">
-									<button>立即应聘</button>
+								<div class="center ljyp">
+								<a href="?s=/Home/Zpdt1/index/type/0">立即应聘</a>
 								</div>
 							</div>
 						</div>

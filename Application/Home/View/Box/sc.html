@@ -32,7 +32,12 @@
 				<li>
 					<a href="?s=/Home/Tjcs/spxq/id/{$datav.id}">
 						<div class="f3-ul-cz">
-							<img src="__PUBLIC__/Home/img/123.png" />
+						 <if condition="$datav[leixing]=='1'">
+					<img src="__PUBLIC__/Home/img/12.png" />
+                      <else />
+                      	<img src="__PUBLIC__/Home/img/123.png" />
+                    </if>
+							
 						</div>
 				
 						<img src="Uploads/Uploads/{$datav.pubtimes}/{$datav.imagenames}"  width="255" height="142" alt="商铺名称" />

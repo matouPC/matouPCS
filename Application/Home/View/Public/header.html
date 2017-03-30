@@ -27,8 +27,12 @@
 									<li class="login-register">
 									<php>if($_SESSION['username'] != ''){</php>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<php>if($_SESSION['imagename'] != ''){</php>
+													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/{$_SESSION['imagename']}"/> 
+													<php>}else{</php>
 												<img src="__PUBLIC__/Home/img/tx.png" />
+												<php>}</php>
 											</div>
 											<p>用户{$_SESSION['username']|substr=0,5}</p>
 										</a>

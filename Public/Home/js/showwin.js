@@ -604,7 +604,7 @@ function gradeChange2(){
 //需求
 $('#xqxx-lb').hover(function() {
 	$('.xqxx-lb ul').stop().animate({
-		height: '150px'
+		height: '200px'
 	}, 300);
 }, function() {
 	$('.xqxx-lb ul').stop().animate({

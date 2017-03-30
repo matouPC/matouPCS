@@ -126,8 +126,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -666,7 +670,7 @@
 							<div class="f3-t-1">
 							
 								<ul id='xxoo1'>
-									
+									<div class="clear"></div>
 								</ul>
 				
 						</div>
@@ -679,13 +683,12 @@
 							<div class="s-c-3f">
 							<div class="f3-t-1">
 								<ul id="xxoo2">
-								
-									<li class="clearfloat"></li>
+									<div class="clear"></div>
 								</ul>
 							</div>
 						</div>
 						  <div class="djjzgd">
-							<button onclick="tj2()" name='btn2' id='btn2' >点击加载更多</button>
+							<button onclick="tj2()" name='btnn' id='btnn' >点击加载更多</button>
 						</div>
 					</div>
 					
@@ -694,8 +697,7 @@
 							<div class="s-c-3f">
 							<div class="f3-t-1">
 								<ul id="xxoo3">
-							
-									<li class="clearfloat"></li>
+									<div class="clear"></div>
 								</ul>
 							</div>
 						</div>
@@ -707,8 +709,7 @@
 							<div class="s-c-3f">
 							<div class="f3-t-1">
 								<ul id='xxoo4'>
-								
-									<li class="clearfloat"></li>
+									<div class="clear"></div>
 								</ul>
 							</div>
 						</div>
@@ -777,8 +778,8 @@
 										
 							
 						};
-						
-						$('#xxoo'+id).html(li);
+						var p = '<div class="clear"></div>';
+						$('#xxoo'+id).html(li+p);
 						$('#xxoo'+id).val('');
 					},error:function(){
 						alert('no');
@@ -882,7 +883,7 @@
 									
 									 for (var i = 0; i < data.length; i++) {
 							
-									$("#xxoo1").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+									$("#xxoo1").prepend('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 				 		
 									 }
 							}else{
@@ -906,7 +907,7 @@
 						$.ajax({
 							type:'post',
 							url:"<?php echo U('Mtbu/buduijzby');?>",
-							data:{k:w,address:address},
+							data:{k:t,address:address},
 							beforeSend:function(){
 					         $("#xxoo2").append("<div id='load'>加载中……</div>");
 							},
@@ -917,12 +918,12 @@
 										
 										 for (var i = 0; i < data.length; i++) {
 								
-										$("#xxoo2").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+										$("#xxoo2").prepend('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 					 		
 										 }
 								}else{
 									 //alert(22);
-									 document.getElementById('btn2').innerHTML = '加载完毕';
+									 document.getElementById('btnn').innerHTML = '加载完毕';
 					 				flag=true;	
 								}	
 					 },
@@ -941,7 +942,7 @@
 							$.ajax({
 								type:'post',
 								url:"<?php echo U('Mtbu/buduijzhq');?>",
-								data:{k:w,address:address},
+								data:{k:r,address:address},
 								beforeSend:function(){
 						         $("#xxoo3").append("<div id='load'>加载中……</div>");
 								},
@@ -952,7 +953,7 @@
 											
 											 for (var i = 0; i < data.length; i++) {
 									
-											$("#xxoo3").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+											$("#xxoo3").prepend('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 						 		
 											 }
 									}else{
@@ -987,7 +988,7 @@
 												
 												 for (var i = 0; i < data.length; i++) {
 										
-												$("#xxoo4").append('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
+												$("#xxoo4").prepend('<li><a href="#"><div class="f3-t-1-c1"><img src="/matouPCS/Public/Home/img/bdmc.png" /></div><div class="f3-t-1-c2"><p>'+data[i].forcename+'</p></div><div class="f3-t-1-c3l"><p>部队类型:'+data[i].type_bd+'</p></div><div class="f3-t-1-c3r"><p>粉丝数量100</p></div><div class="f3-t-1-c4"><p>'+data[i].content+'...</p></div><div class="f3-t-1-c5"><p>所在地：'+data[i].address+'</p></div><div class="clearfloat"></div></a></li>');
 							 		
 												 }
 										}else{
@@ -1150,174 +1151,9 @@
 					$(".con").eq(num).show().slblings().hide();
 				})
 			});
-			$(function() {
+			
+		
 
-					$("#tt").bigAutocomplete({
-						width: 440,
-						data: [{
-							title: "中国好声音",
-							result: {
-								ff: "qq"
-							}
-						}, {
-							title: "中国移动网上营业厅"
-						}, {
-							title: "中国银行"
-						}, {
-							title: "中国移动"
-						}, {
-							title: "中国好声音第三期"
-						}, {
-							title: "中国好声音 第一期"
-						}, {
-							title: "中国电信网上营业厅"
-						}, {
-							title: "中国工商银行"
-						}, {
-							title: "中国好声音第二期"
-						}, {
-							title: "中国地图"
-						}],
-
-					});
-
-				})
-				//----------------------------remove tab切换样式--------------------------
-			$('.s-c-2f a').click(function() {
-				$(this).parents('div').children('.s-f2l-c1').each(function() {
-					$('a', this).removeClass('selected-tab');
-				});
-				$(this).attr('class', 'selected-tab');
-			});
-			//			地址选择
-			var cityPicker = new HzwCityPicker({
-				data: data,
-				target: 'city',
-				valType: 'k-v',
-				hideCityInput: {
-					name: 'city',
-					id: 'city'
-				},
-				hideProvinceInput: {
-					name: 'province',
-					id: 'province'
-				}
-
-			});
-			cityPicker.init();
-
-			$(function() {
-				//日期
-				$('#date').date_input();
-				//选中filter下的所有a标签，为其添加hover方法，该方法有两个参数，分别是鼠标移上和移开所执行的函数。
-				$("#filter a").hover(
-					function() {
-						$(this).addClass("seling");
-					},
-					function() {
-						$(this).removeClass("seling");
-					}
-				);
-
-				//选中filter下所有的dt标签，并且为dt标签后面的第一个dd标签下的a标签添加样式seled。(感叹jquery的强大)
-				$("#filter dt+dd a").attr("class", "seled");
-				/*注意：这儿应该是设置(attr)样式，而不是添加样式(addClass)，
-				                                                     不然后面通过$("#filter a[class='seled']")访问不到class样式为seled的a标签。*/
-
-				//为filter下的所有a标签添加单击事件
-				$("#filter a").click(function() {
-					$(this).parents("dl").children("dd").each(function() {
-						//下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
-						//$(this).children("div").children("a").removeClass("seled");
-						//$(this).find("a").removeClass("seled");
-						$('a', this).removeClass("seled");
-					});
-
-					$(this).attr("class", "seled");
-
-					//				alert(RetSelecteds()); //返回选中结果
-				});
-				//返回选中结果
-			});
-
-			function RetSelecteds() {
-				var result = "";
-				$("#filter a[class='seled']").each(function() {
-					result += $(this).html() + "\n";
-				});
-				return result;
-			}
-			//		$('#date').click(function(){
-			//				alert(RetSelecteds()+$('#date').val()+$('#city').val());
-			//			})
-			$('.px .hot').click(function() {
-				$('.px .hot').css('background-color', '#ff5c5d');
-				$('.px .new').css('background-color', '#999999');
-			})
-			$('.px .new').click(function() {
-					$('.px .new').css('background-color', '#ff5c5d');
-					$('.px .hot').css('background-color', '#999999');
-				})
-				//		下拉菜单
-			$('#select-yfb').hover(function() {
-				$('#select-yfb a img').css('transition-duration', '.5s');
-				$('#select-yfb a img').css('transform', 'rotate(180deg)');
-				$('.select-yfb').stop().animate({
-					height: '150px'
-				}, 300);
-			}, function() {
-				$('#select-yfb a img').css('transition-duration', '.5s');
-				$('#select-yfb a img').css('transform', 'rotate(0deg)');
-				$('.select-yfb').stop().animate({
-					height: '0px'
-				}, 300);
-			});
-			$('#select-xx').hover(function() {
-				$('.select-xx').stop().animate({
-					height: '75px'
-				}, 300);
-			}, function() {
-				$('.select-xx').stop().animate({
-					height: '0px'
-				}, 300);
-			});
-			//查看号码
-			$(function() {
-				$("#find").click(function() {
-					//				alert("充值")
-					$("#spdl").show();
-					$("#find").css("background", "#ff5c5d");
-				});
-				$("#spdl-ok").click(function() {
-
-				});
-				$("#spdl-esc").click(function() {
-					$(".spdl").hide();
-				});
-			});
-
-			//弹窗
-			$(function() {
-				$("#fbp1").css("border", "2px solid #ff5c5d");
-				$("#fbp2").click(function() {
-						$("#fbp2").css("border", "2px solid #ff5c5d");
-						$("#fbp1").css("border", "2px solid  #f2f2f2");
-					}),
-					$("#fbp1").click(function() {
-						$("#fbp1").css("border", "2px solid #ff5c5d");
-						$("#fbp2").css("border", "2px solid  #f2f2f2");
-					});
-				$(".rhide").click(function() {
-					$("#spdl").hide();
-					$("#find").css("background", "#bfbfbf");
-					$("#find").css("color", "#fff");
-				});
-				$("#tjbtn").click(function() {
-					$("#spdl").hide();
-					$("#find").css("background", "#bfbfbf");
-					$("#find").css("color", "#fff");
-				});
-			});
 
 		</script>
 	</body>
