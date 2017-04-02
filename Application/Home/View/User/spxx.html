@@ -43,7 +43,7 @@
 											<if condition="$lists[imagename]==''">  
 			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
 			                                   <else />
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$lists.imagename}" alt="" />
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$lists.imagename}" alt="" />
 			                                   </if>
 											<p class="spxx_01">{$lists.username}</p>
 											<p class="spxx_02"></p>
@@ -63,7 +63,7 @@
 													<if condition="$list_huis[imagename]==''">  
 			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
 			                                   <else />
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$list_huis.imagename}" alt="" />
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$list_huis.imagename}" alt="" />
 			                                   </if>
 													<p class="spxx_01">{$list_huis.username}</p>
 													<p class="spxx_02"></p>
@@ -112,7 +112,7 @@
 											<if condition="$lis[imagename]==''">  
 			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
 			                                   <else />
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$lis.imagename}" alt="" />
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$lis.imagename}" alt="" />
 			                                   </if>
 											<p class="spxx_01">{$lis.username}</p>
 											<p class="spxx_02"></p>
@@ -172,7 +172,7 @@ function  tj(){
 							 if(data['xz'][i].imagename==null) {
                           var img='<img src="__PUBLIC__/Home/img/yhmc.png"/>';
 							 }else{
-							var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
+							var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
 							 }
 							 var p='';
 							 for (var j= 0; j < data['xzh'].length; j++) {
@@ -180,7 +180,7 @@ function  tj(){
 									 if(data['xzh'][j].imagename==null) {
 			                                var imgs='<img src="__PUBLIC__/Home/img/yhmc.png"/>';
 											 }else{
-											var imgs='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
+											var imgs='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
 											 }
 								 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['xzh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
 								 }
@@ -224,7 +224,7 @@ function  tjj(){
 							 if(data[i].imagename==null) {
                           var img='<img src="__PUBLIC__/Home/img/yhmc.png"/>';
 							 }else{
-							var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+							var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" />';
 							 }
 		
 							 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">收藏</p><div class="spxx_img"><img src="__PUBLIC__/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';

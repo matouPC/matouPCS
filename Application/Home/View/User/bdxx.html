@@ -62,7 +62,7 @@
 													<if condition="$lists[imagename]==''">  
 			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
 			                                   <else />
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/{$lists.imagename}" alt="" />
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$lists.imagename}" alt="" />
 			                                   </if>
 													<p class="spxx_01">{$list_huis.username}</p>
 													<p class="spxx_02"></p>
@@ -135,7 +135,7 @@
 								 if(data['xz'][i].imagename==null) {
                                 var img='<img src="__PUBLIC__/Home/img/yhmc.png"/>';
 								 }else{
-								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
+								var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
 								 }
 								 var p='';
 								 for (var j= 0; j < data['xzh'].length; j++) {
@@ -143,7 +143,7 @@
 										 if(data['xzh'][j].imagename==null) {
 				                                var imgs='<img src="__PUBLIC__/Home/img/yhmc.png"/>';
 												 }else{
-												var imgs='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
+												var imgs='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
 												 }
 									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['xzh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
 									 }

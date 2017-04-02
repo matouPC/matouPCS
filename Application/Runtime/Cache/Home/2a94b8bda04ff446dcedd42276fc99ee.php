@@ -534,9 +534,9 @@
 		</header>
 		<div class="spdlc" id="spdlc" title="消息">
 			<div class="titlenac">
-				<img src="img/swtitle.png">
+				<img src="/matouPCS/Public/Home/img/swtitle.png">
 				<div class="rhidec">
-					<img src="img/hide.png">
+					<img src="/matouPCS/Public/Home/img/hide.png">
 				</div>
 			</div>
 			<div class="fbtypec">
@@ -551,7 +551,7 @@
 			<div class="spfxb"></div>
 
 			<div class="contentimg">
-				<img src="img/xzjs.png" />
+				<img src="/matouPCS/Public/Home/img/xzjs.png" />
 			</div>
 		</div>
 		<section>
@@ -692,78 +692,125 @@
 								<table cellpadding="0" cellspacing="0">
 									<tr>
 										<td >
+											
+											<?php if(empty($_SESSION['username'])){ ?>
+											<a  href="#" onclick="alert('您还没有登录!')">
 											<div class="s-f1-r-6 center">
 												<img src="/matouPCS/Public/Home/img/rightside_icon01.png" alt="" />
 											</div>
-											<?php if(empty($_SESSION['username'])){ ?>
-												<span class="s-f1-r-word"><a id="findc" href="#" onclick="alert('您还没有登录!')">发布悬赏</a></span>
+												<span class="s-f1-r-word">发布悬赏</span></a>
 											<?php }else{ ?>
 												<?php if(in_array($_SESSION['id'],$ren)){ ?>
-												<span class="s-f1-r-word"><a  href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
+												<a  id="findc" href="?s=/Home/Xsdt/txxs/">
+													<div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon01.png" alt="" />
+											          </div>
+												<span class="s-f1-r-word">发布悬赏</span></a>
 												<?php }else{ ?>
-												<span class="s-f1-r-word"><a  href="?s=/Home/Xsdt/txxs/">发布悬赏</a></span>
+												<a  id="findc" href="?s=/Home/Xsdt/txxs/">
+												<div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon01.png" alt="" />
+											</div>
+												<span class="s-f1-r-word">发布悬赏</span></a>
 												<?php } ?>
 												<!-- <span class="s-f1-r-word"><a href="?s=/Home/Xsdt/txxs">发布悬赏</a></span> -->
 											<?php } ?>
 										</td>
 										<td>
-											<div class="s-f1-r-6 center">
+											
+											<?php if(empty($_SESSION['username'])){ ?>
+											<a id="fbys" href="#" onclick="alert('您还没有登录!')">
+                                           <div class="s-f1-r-6 center">
 												<img src="/matouPCS/Public/Home/img/rightside_icon02.png" alt="" />
 											</div>
-											<?php if(empty($_SESSION['username'])){ ?>
-
-											<span class="s-f1-r-word"><a id="fbys" href="#" onclick="alert('您还没有登录!')">发布应赏</a></span>
+											<span class="s-f1-r-word">发布应赏</span></a>
 											
 											<?php }else if(!empty($fbys)){ ?>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应赏!')">发布应赏</a></span>
+											<a href="#" onclick="alert('您已发布过应赏!')">
+											    <div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon02.png" alt="" />
+											</div>
+											<span class="s-f1-r-word">发布应赏</span></a>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a id="fbys" href="?s=/Home/Ysq/txys">发布应赏</a></span>
+											<a id="fbys" href="?s=/Home/Ysq/txys">
+											 <div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon02.png" alt="" />
+											</div>
+											<span class="s-f1-r-word">发布应赏</span></a>
 											<?php } ?>
 										</td>
 									</tr>
 									<tr>
 										<td>
+											
+											<?php if(empty($_SESSION['username'])){ ?>
+											<a id="fbzp" href="#" onclick="alert('您还没有登录!')">
 											<div class="s-f1-r-6 center">
 												<img src="/matouPCS/Public/Home/img/rightside_icon03.png" alt="" />
 											</div>
-											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a id="fbzp" href="#" onclick="alert('您还没有登录!')">发布招聘</a></span>
+											<span class="s-f1-r-word">发布招聘</span></a>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a id="fbzp" href="?s=/Home/Zpdt/txzp">发布招聘</a></span>
+											<a id="fbzp" href="?s=/Home/Zpdt/txzp">
+											<div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon03.png" alt="" />
+											</div>
+											<span class="s-f1-r-word">发布招聘</span></a>
 											<?php } ?>
 										</td>
 										<td>
-											<div class="s-f1-r-6 center">
+										
+											<?php if(empty($_SESSION['username'])){ ?>
+											<a id="fbyp" href="#" onclick="alert('您还没有登录!')">
+												<div class="s-f1-r-6 center">
 												<img src="/matouPCS/Public/Home/img/rightside_icon04.png" alt="" />
 											</div>
-											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a id="fbyp" href="#" onclick="alert('您还没有登录!')">发布应聘</a></span>
+											<span class="s-f1-r-word">发布应聘</span></a>
 											<?php }else if(!empty($fbyp)){ ?>
-											<span class="s-f1-r-word"><a href="#" onclick="alert('您已发布过应聘!')">发布应聘</a></span>
+											<a href="#" onclick="alert('您已发布过应聘!')">
+												<div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon04.png" alt="" />
+											</div>
+											<span class="s-f1-r-word">发布应聘</span></a>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a id="fbyp" href="?s=/Home/Zpdt1/txyp">发布应聘</a></span>
+											<a id="fbyp" href="?s=/Home/Zpdt1/txyp">
+												<div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon04.png" alt="" />
+											</div>
+											<span class="s-f1-r-word">发布应聘</span></a>
 											<?php } ?>
 										</td>
 									</tr>
 									<tr>
 										<td>
+											
+											<?php if(empty($_SESSION['username'])){ ?>
+											<a id="fbqg" href="#" onclick="alert('您还没有登录!')">
 											<div class="s-f1-r-6 center">
 												<img src="/matouPCS/Public/Home/img/rightside_icon05.png" alt="" />
 											</div>
-											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a id="fbqg" href="#" onclick="alert('您还没有登录!')">发布二手求购</a></span>
+											<span class="s-f1-r-word">发布二手求购</span></a>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a id="fbqg" href="?s=/Home/Tzsc/txqg">发布二手求购</a></span>
+											<a id="fbqg" href="?s=/Home/Tzsc/txqg">
+											<div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon05.png" alt="" />
+											</div>
+											<span class="s-f1-r-word">发布二手求购</span></a>
 											<?php } ?>
 										</td>
 										<td>
+											
+											<?php if(empty($_SESSION['username'])){ ?>
+											<a id="fbxz" href="#" onclick="alert('您还没有登录!')">
 											<div class="s-f1-r-6 center">
 												<img src="/matouPCS/Public/Home/img/rightside_icon06.png" alt="" />
 											</div>
-											<?php if(empty($_SESSION['username'])){ ?>
-											<span class="s-f1-r-word"><a id="fbxz" href="#" onclick="alert('您还没有登录!')">发布二手闲置</a></span>
+											<span class="s-f1-r-word">发布二手闲置</span></a>
 											<?php }else{ ?>
-											<span class="s-f1-r-word"><a id="fbxz" href="?s=/Home/Tzsc/txxz">发布二手闲置</a></span>
+											<a id="fbxz" href="?s=/Home/Tzsc/txxz">
+											<div class="s-f1-r-6 center">
+												<img src="/matouPCS/Public/Home/img/rightside_icon06.png" alt="" />
+											</div>
+											<span class="s-f1-r-word">发布二手闲置</span></a>
 											<?php } ?>
 										</td>
 									</tr>
@@ -1258,7 +1305,7 @@
 											<div class="tsuimg">
 										<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" alt="" />
 	                                   <?php else: ?>
-	                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($tiaos["imagename"]); ?>" alt="" /><?php endif; ?>
+	                                     	<img src="/matouPCS/Tu/upload/<?php echo ($tiaos["imagename"]); ?>" alt="" /><?php endif; ?>
                                     </if>
 											
 											</div>
@@ -1284,7 +1331,7 @@
 											<div class="tsuimg">
 										<?php if($tiaos[imagename]==''): ?><img src="/matouPCS/Public/Home/img/flea_people.png" alt="" />
 	                                   <?php else: ?>
-	                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($tiaos["imagename"]); ?>" alt="" /><?php endif; ?>
+	                                     	<img src="/matouPCS/Tu/upload/<?php echo ($tiaos["imagename"]); ?>" alt="" /><?php endif; ?>
                                     </if>
 											</div>
 											<div class="tscontent1">

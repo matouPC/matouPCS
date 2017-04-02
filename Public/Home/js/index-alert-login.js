@@ -84,6 +84,7 @@ var password = $('#register-passWord').val();
             type:"post",
             data:{username:username,password:password},
             success:function(data){
+            	alert($('#codes').val());
             if($('#yzm').val() != $('#codes').val()){
                 alert('验证码有误！');
             }else if(data == 'y'){
@@ -196,7 +197,7 @@ function shortMessagraxc() {
         var tel = $('#register-userName').val();
         $.ajax({
             type : "get",
-            url : "http://139.196.34.227/matouPC/sdk-php-2016-06-07/taobao-sdk-PHP-auto_1455552377940-20160607/fileTest.php?tel="+tel,
+            url : "/matouPCS/sdk-php-2016-06-07/taobao-sdk-PHP-auto_1455552377940-20160607/fileTest.php?tel="+tel,
             success:function(data){
                 $('#codes').val(data);
             },error:function(){
