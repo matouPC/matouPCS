@@ -465,7 +465,7 @@
 					<div class="h-c-2f">
 						<div class="s-f2-l-f">
 							<div class="f2-l-1-f">
-								<a href="indexstore.php">
+								<a href="?s=/Home/index">
 									<img alt="码头商城" src="/matouPCS/Public/Home/img/logo.png" />
 								</a>
 							</div>
@@ -773,6 +773,7 @@
 				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
+<<<<<<< HEAD
 						<h6>友情链接：</h6>
 						<a href="#">友情链接544</a>
 						<a href="#">友情链接</a>
@@ -791,6 +792,9 @@
 						<a href="#">友情链接</a>
 						<a href="#">友情链接</a>
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+=======
+							<p>© 2016－2017 郑州码头网络技术有限公司 </p>
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
 				</div>

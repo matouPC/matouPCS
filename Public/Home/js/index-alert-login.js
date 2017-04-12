@@ -393,7 +393,11 @@ function qqLogins(){
 *   微信登录
 */
 function wxLogin(){
+<<<<<<< HEAD
     window.open('https://open.weixin.qq.com/connect/qrconnect?appid=wx06fc578080933319&redirect_uri=http://www.xishimatou.com&response_type=code&scope=snsapi_login#wechat_redirect');
+=======
+    window.open('https://open.weixin.qq.com/connect/qrconnect?appid=wx06fc578080933319&redirect_uri=http://www.xishimatou.com/matouPCS&response_type=code&scope=snsapi_login#wechat_redirect');
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
     
 }
 function wxdlgo(){

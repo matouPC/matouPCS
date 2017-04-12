@@ -63,58 +63,63 @@
 			</div>
 			<div class="alert-tel-3f">
 				<ul>
-					<li>
+					<li class="aaa">
 						<div class="left">
 							手&nbsp;&nbsp;机&nbsp;&nbsp;号
 						</div>
 						<div class="right">
+
 							<input type="tel" id="bd-tel" class="bd-tel" placeholder="请输入您的手机号码" />
-							<input type="button" autocomplete="off" value="获取验证码" id="btn_yzm" class="button" />
+							<input type="button" autocomplete="off" value="获取验证码" id="btn_yzmn" class="button" />
 						</div>
-						<div class="clearfloat"></div>
+						<div class="clearfloat">
 						<p class="tsxx">*请输入手机号码</p>
+						</div>
 					</li>
 					<li>
 						<div class="left">
 							验&nbsp;&nbsp;证&nbsp;&nbsp;码
 						</div>
 						<div class="right">
-							<input type="tel" class="word-border" placeholder="请输入您的验证码" />
-							<div class="alert-false">
-								<img src="/matouPCS/Public/Home/img/false.png" alt="" />
-							</div>
-							<div class="alert-true">
-								<img src="/matouPCS/Public/Home/img/true.png" alt="" />
-							</div>
+						 
+							<input type="tel"  id="fyzms"  class="word-border" placeholder="请输入您的验证码" />
+							<input type="hidden" id="fcodes" >	
+							    <div style="display:none" class="alert-true">
+											<img src="/matouPCS/Public/Home/img/true.png">
+										</div>
+										<div  style="display:none" class="alert-false">
+											<img src="/matouPCS/Public/Home/img/false.png">
+										</div> 
 						</div>
 						<div class="clearfloat"></div>
 					</li>
-					<li>
+					<li class="bbb">
 						<div class="left">
 							输入密码
 						</div>
 						<div class="right">
-							<input type="tel" placeholder="建议使用至少两种字符组合" class="word-border" />
+							<input type="tel" id="rpassWord" placeholder="建议使用至少两种字符组合" class="word-border" />
 						</div>
 						<div class="clearfloat"></div>
-						<p class="tsxx">*请输入密码</p>
+						<p class="tsxx"></p>
 					</li>
-					<li>
+					<li class="ccc">
 						<div class="left">
 							确认密码
 						</div>
 						<div class="right">
-							<input type="tel" placeholder="请再次输入您的密码" class="word-border" />
+							<input id="againa" type="tel" placeholder="请再次输入您的密码" class="word-border" />
 						</div>
 						<div class="clearfloat"></div>
-						<p class="tsxx">*两次密码输入不一致，请重新输入</p>
+						<p class="tsxx"></p>
 					</li>
 				</ul>
-				<div class="ok">
+				<div id="submitt" class="ok">
 					<button>确定</button>
 				</div>
 			</div>
 		</div>
+			<div class="alert-blackq"></div>
 		<!--绑定手机号结束-->
 		<header>
 			<div class="h-content-main">
@@ -314,7 +319,7 @@
 								<a class="action" href="#" id="find">发动态</a>
 								<div class="strf"></div>
 							</li>
-							<li class="clearf"></li>
+							<div class="clearf"></div>
 						</ul>
 					</div>
 					<div class="clearf"></div>
@@ -872,6 +877,7 @@
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/main-tx.js"></script>
 	<script src="/matouPCS/Public/Home/js/troop.js"></script>
+		<script src="/matouPCS/Public/Home/js/index-alert-tel.js"></script>
 <script type="text/javascript">
 function tj(){
 	

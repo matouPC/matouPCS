@@ -404,6 +404,7 @@ $(function() {
 		setTimeout(function() {
 			$('.bjcg').fadeOut();
 		}, 1000);
+		$('body').css('overflow','auto');
 	});
 	$('#bj-cancel').click(function() {
 		$('.alert-black-bj').fadeOut();

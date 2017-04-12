@@ -71,81 +71,84 @@
             </ul>
         </div>
     </div>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--头部完结-->  
     <!--/sidebar-->
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/matouPCS/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">跳蚤市场</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="/matouPCS/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">码头商城管理</span></div>
         </div>
         
         <div class="result-wrap">
-             <form action="/matouPCS/admin/Flea/save" method="post" id="myform" name="myform" enctype="multipart/form-data">
+             <form action="/matouPCS/admin/Shop/save" method="post" id="myform" name="myform" enctype="multipart/form-data">
                     <table class="insert-tab" width="100%">
                         <tbody>
                             <tr>
-                                <th><i class="require-red">*</i>物品名称：</th>
+                                <th><i class="require-red">*</i>商铺名：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="name" size="20" value="" type="text">
-                                             <input type="hidden" name="uid" value="1"/>
+                                    <input class="common-text required" id="title" name="shopname" size="20" value="" type="text">
                                 </td>
                             </tr>
-                               <tr>
+                          
+                            <tr>
+                                <th><i class="require-red">*</i>营业执照：</th>
+                                <td>
+                                    <input class="common-text required" id="type" name="charter" size="40" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>法定代表人：</th>
+                                <td>
+                                    <input class="common-text required" id="name" name="representative" size="20" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
                                 <th><i class="require-red">*</i>类型：</th>
                                 <td>
-                 
-                                     <input type="radio" name = 'type'  value="1"  checked="checked" readonly="true"/> 求购
-                                      <input type="radio" name = 'type'  value="2"  readonly="true"/> 闲置
-                                   
+                                    <input class="common-text required" id="sex" name="type" size="20" value="" type="text">
                                 </td>
                             </tr>
-                         <tr>
+                              <tr>
                                 <th><i class="require-red">*</i>地址：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="address" size="40" value="" type="text">
+                                    <input class="common-text required" id="sex" name="address" size="30" value="" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <th><i class="require-red">*</i>预算：</th>
+                                <th><i class="require-red">*</i>网站链接：</th>
                                 <td>
-                                    <input class="common-text required" id="price" name="price" size="12" value="" type="text">
+                                    <input class="common-text required" id="age" name="lianjie" size="30" value="" type="text">
                                 </td>
                             </tr>
-                            <tr>
+                                <tr>
                                 <th><i class="require-red">*</i>联系电话：</th>
                                 <td>
-                                    <input class="common-text required" id="name" name="tels" size="11" value="" type="text">
+                                    <input class="common-text required" id="age" name="tel" size="30" value="" type="text">
                                 </td>
                             </tr>
-                               <tr>
+                                <tr>
                                 <th><i class="require-red">*</i>qq：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="qqs" size="10" value="" type="text">
+                                    <input class="common-text required" id="age" name="qq" size="30" value="" type="text">
                                 </td>
                             </tr>
-                        
                             <tr>
-                                <th><i class="require-red">*</i>报名人数：</th>
-                                <td>
-                                    <input class="common-text required" id="sex" name="num" size="5" value="" type="text">
-                                </td>
-                            </tr>
-                      
-                          <tr>
                                 <th><i class="require-red">*</i>收藏数：</th>
                                 <td>
-                                    <input class="common-text required" id="sex" name="collect" size="5" value="" type="text">
+                                    <input class="common-text required" id="height" name="collect" size="12" value="" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <th>具体要求：</th>
-                                <td><textarea name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></textarea></td>
+                                <th><i class="require-red">*</i>店铺头像：</th>
+                                <td><input name="smallimg" id="" type="file" multiple="multiple" name="upload[]"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
                             </tr>
+                 
                             <tr>
                                 <th></th>
                                 <td>
                                     <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
-                                    <a href="/matouPCS/Admin/Flea"><input class="btn btn6"  value="返回"></a>
+                                    <a href="/matouPCS/Admin/Shop"><input class="btn btn6"  value="返回"></a>
                                 </td>
                             </tr>
                         </tbody></table>

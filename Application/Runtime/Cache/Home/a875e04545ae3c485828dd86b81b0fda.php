@@ -1114,6 +1114,7 @@ var p=2;
 					if(data!=null){		
 						var zan='';
 						 for (var i = 0; i < data['nr'].length; i++) {
+<<<<<<< HEAD
 								if(data['nr'][i].zid==null){
 									 var aa=2;
 								}else{
@@ -1136,8 +1137,11 @@ var p=2;
 							if(aa==1){
 								var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 							}else{
+=======
+						
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 								var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz"></span>';
-							}
+					
 	                            var p='';
 							 if(data['nr'][i].username==data['nr'][i].tel){
 							

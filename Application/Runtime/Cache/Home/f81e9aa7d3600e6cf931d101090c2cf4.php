@@ -186,7 +186,11 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
+<<<<<<< HEAD
 							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
+=======
+							   <a href="#">商铺主页</a>
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 							   <?php } ?>
                                 
 										</li>
@@ -196,7 +200,11 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
+<<<<<<< HEAD
 							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
+=======
+							   <a href="#">管理商铺</a>
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 							   <?php } ?>
 										
 										</li>
@@ -413,6 +421,7 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+<<<<<<< HEAD
 		              alert(222);
 					   alert(content);
 		    $.ajax({  
@@ -422,6 +431,15 @@
 				        success: function(data){ 
 				            alert(666);
 				        	//	 window.location.reload(true);//重新加载当前文挡
+=======
+		    $.ajax({  
+				        type: "POST",  
+				         url:"/matouPCS/index.php/Home/User/usave1",
+				         data: {content:content,type:types,tu:tu},  
+				        success: function(data){ 
+				
+				        		 window.location.reload(true);//重新加载当前文挡
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 				  
 	                	
 				      
@@ -496,8 +514,15 @@
 				</div>
 				<div class="s-main-l">
 					<div class="s-c-2f">
+<<<<<<< HEAD
 						<a href="?s=/Home/Mtbu/rzbd" class="zk">
 								进入码头部队				
+=======
+						<a href="?s=/Home/Mtbu/rzbd">
+							<a href="mtbu-zy.php" class="zk">
+								进入码头部队
+							</a>
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 						</a>
 					</div>
 					<div class="s-c-3f">
@@ -506,9 +531,13 @@
 								<a href="#">
 									<div class="sc3f-ulc1">
 										<span class="ulc1">
+<<<<<<< HEAD
 										   <?php if($v[logo]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
                                       <?php else: ?>
                                       	<img style="width: 101px; border-radius:50%" src="/matouPCS/Tu//upload/<?php echo ($v["logo"]); ?>" alt="" /><?php endif; ?>
+=======
+											<img src="/matouPCS/Public/Home/img/bdmc.png" alt="" />
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 										</span>
 										<span class="ulc2">
 											<strong class="p18 black-333"><?php echo ($v["forcename"]); ?></strong>

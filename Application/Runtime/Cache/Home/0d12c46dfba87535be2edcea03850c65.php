@@ -41,8 +41,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -180,9 +184,9 @@
 							<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">商铺主页</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spgl">商铺主页</a>
+								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -190,9 +194,9 @@
 									<?php if($sp['status']==1){?>
 								<a href="?s=/Home/Tjcs/spcjcg">管理商铺</a>
 								<?php }else if($sp['status']==2){ ?>
-								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($sp['uid']); ?>">管理商铺</a>
+								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -409,13 +413,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+		              alert(222);
+					   alert(content);
 		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/User/usave1",
+				         url:"?s=/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
 				  
 	                	
 				      
@@ -484,14 +490,15 @@
 					</div>
 				</div>
 				<div class="s-main-l">
-					<div class="s-c-3f-zp">
+				<?php if(is_array($list)): foreach($list as $key=>$lists): ?><div class="s-c-3f-zp">
 						<div class="f3-c-1">
-							<?php if(is_array($list)): foreach($list as $key=>$lists): ?><a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($lists["eid"]); ?>">
+							
+								<a href="?s=/Home/Zpdt/xqyp/id/<?php echo ($lists["rid"]); ?>">
 									<div>
 										<div class="tx">
 											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 									</div>
 									<p class="app_01_01"><?php echo ($lists["name"]); ?></p>
 									<p class="app_01">所在地：<?php echo ($lists["addre"]); ?></p>
@@ -519,13 +526,14 @@
 										</ul>
 										<?php } endforeach; endif; ?>
 									<ul class="app_03">
-										<li class="">已有10人收藏</li>
+										<li class="">已有<?php echo ($lists["collect"]); ?>人收藏</li>
 										<li class="app_03_01"><?php echo ($lists["date"]); ?></li>
 										<div class="clearfloat"></div>
 									</ul>
-								</a><?php endforeach; endif; ?>
+								</a>
+							
 						</div>
-					</div>
+					</div><?php endforeach; endif; ?>
 				</div>
 				<div class="clearfloat"></div>
 			</div>

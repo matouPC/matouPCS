@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>喜事码头-首页</title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header-index.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
@@ -972,7 +972,11 @@
 										<div class="logo">
 										<?php if($zpbds[logo]==''): ?><img src="/matouPCS/Public/Home/img/LOGO-zp.png" />
                                    <?php else: ?>
+<<<<<<< HEAD
                                      <img style="border-radius:50%;width: 80px"  src="/Tu/upload/<?php echo ($zpbds["logo"]); ?>"  /><?php endif; ?>
+=======
+                                     <img style="border-radius:50%;width: 80px"  src="/matouPCS/Tu/upload/<?php echo ($zpbds["logo"]); ?>"  /><?php endif; ?>
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 											
 										</div>
 										<div class="content-zp">

@@ -1931,6 +1931,7 @@ class UserController extends Controller
     		$fu = $form->add($data);
     	}
     }
+<<<<<<< HEAD
     //领取码头币
     public function mtb_lq(){
         $uid = $_SESSION['id'];
@@ -1973,4 +1974,85 @@ class UserController extends Controller
             echo 'n';
         }
     }
+=======
+    //验证绑定手机信息
+    public function user(){
+    	$id =  $_SESSION['id']; 
+    	$user = $_GET['u'];
+    	$ob = M('user')->where("tel = {$user} and id = {$id}")->find();
+    	if($ob == null){
+    		echo 'y';
+    	}else{
+    		echo 'n';
+    	}
+    }   
+    
+    public function regins(){
+    	if(!empty($_POST['username']) && !empty($_POST['password'])){
+    		$uid =  $_SESSION['id'];
+    		$data['tel'] = $_POST['username'];
+    		$password = $_POST['password'];
+    		// $data['password'] = '132312';
+    		
+    		$ob = M('user')->where("id = {$uid}")->find();
+    		if( $ob['password']==$password ){
+    			$user = M('user')->where("id = {$uid}")->save($data);
+    			echo 'y';
+    			// $this->ajaxReturn('y');
+    		}else{
+    			// $this->ajaxReturn('n');
+    			echo 'n';
+    		}
+    	}else{
+    		echo 'n';
+    	}
+    }
+    
+    //领取码头币
+    public function mtb_lq(){
+    	$uid = $_SESSION['id'];
+    	$li = M('user')->where("id = {$uid}")->find();
+    	$arr_mtb_time = $this->stringimg($li['mtb_time']);
+    	if(in_array(date('Y-m-d',time()),$arr_mtb_time)){
+    		$this->ajaxReturn(1);
+    	}else{
+    		$armtb = array('0' => 10,'1' => 20,'2' => 15,'3' => 20,'4' => 30,'5' => 15,'6' => 10,'7' => 50);
+    		shuffle($armtb);
+    		$this->ajaxReturn($armtb);
+    	}
+    }
+    //领取到的码头币的数量
+    public function mtbcc($mtbsl){
+    	date_default_timezone_set('prc');
+    	$uid = $_SESSION['id'];
+    	$mtbsls = intval($mtbsl);
+    	$li = M('user')->where("id = {$uid}")->find();
+    	$lis['mtb'] = $li['mtb'] + $mtbsls;
+    	$lis['mtb_time'] .= date('Y-m-d',time()).',';
+    
+    	$arr_mtb_time = $this->stringimg($li['mtb_time']);
+    	$adMtb = M('user')->where("id = {$uid}")->save($lis);
+    	if($adMtb > 0){
+    		echo 'ok';
+    	}
+    }
+    //码头币扣除
+    public function mtbkc(){
+    	$uid = $_SESSION['id'];
+    	$li = M('user')->where("id = {$uid}")->find();
+    	if(intval($li['mtb']) > 0){
+    		$lis['mtb'] = intval($li['mtb']) - 5;
+    		$ob = M('user')->where("id = {$uid}")->save($lis);
+    		if($ob > 0){
+    			echo 'y';
+    		}
+    	}else{
+    		echo 'n';
+    	}
+    }
+    
+    
+    
+    
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 }

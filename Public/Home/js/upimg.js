@@ -4,7 +4,7 @@
 			i+=1;
 			$(".p12").hide();
 			$(".dianji").hide();
-			$(".s-c-2f-2f-f ul").append('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="yszp'+i+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
+			$(".s-c-2f-2f-f ul").prepend('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="yszp'+i+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
 				$(".refcc").on("click", function() {
 					if($(".s-c-3f").css("height") == "10px") {
 						$(".p12").show();

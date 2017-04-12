@@ -205,7 +205,11 @@
 								<a class="action" href="#" id="find">发动态</a>
 								<div class="strf"></div>
 							</li>
+<<<<<<< HEAD
 							<li class="clearf"></li>
+=======
+							<div class="clearf"></div>
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 						</ul>
 					</div>
 					<div class="clearf"></div>
@@ -411,6 +415,7 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+<<<<<<< HEAD
 		    $.ajax({  
 				        type: "POST",  
 				         url:"/matouPCS/index.php/Home/User/usave1",
@@ -418,6 +423,17 @@
 				        success: function(data){ 
 				
 				        		 window.location.reload(true);//重新加载当前文挡
+=======
+		              alert(222);
+					   alert(content);
+		    $.ajax({  
+				        type: "POST",  
+				         url:"?s=/Home/User/usave1",
+				         data: {content:content,type:types,tu:tu},  
+				        success: function(data){ 
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
+>>>>>>> 65a0b2eee38cda9182a145a39c362109ecc1dfb1
 				  
 	                	
 				      
@@ -523,26 +539,19 @@
 		<section>
 			<div class="s-main-c">
 				<div class="s-main-t">
-					<p>已发布悬赏</p>
-				</div>
-				<div class="s-main-t-qb">
-					<div class="s-main-t-qb" id="man-top">
-						<p>全部<span class="xll11"></span></p>
-					</div>
-					<div class="na-top">
-						<ul>
-							<li>
-								<a href="#">全部</a>
-							</li>
-							<li>
-								<a href="#">留言</a>
-							</li>
-							<li>
-								<a href="#">关注</a>
-							</li>
-						</ul>
+				<h1>已发布悬赏</h1>
+					<div id="bdxx-lb" class="lb">
+						<p>全部</p>
+						<div class="bdxx-lb">
+							<ul>
+								<li>全部</li>
+								<li>留言</li>
+								<li>关注</li>
+							</ul>
+						</div>
 					</div>
 				</div>
+
 
 				<div class="wk_01">
 					<div>

@@ -282,7 +282,7 @@
 								<a class="action" href="#" id="find">发动态</a>
 								<div class="strf"></div>
 							</li>
-							<li class="clearf"></li>
+							<div class="clearf"></div>
 						</ul>
 					</div>
 					<div class="clearf"></div>

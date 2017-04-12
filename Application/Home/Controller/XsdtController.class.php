@@ -18,6 +18,7 @@ class XsdtController extends Controller
         $this->assign('listn',$listNew);        
         $this->assign('num',$num);		
         $this->display();
+   
     }
     public function xsdt(){
         $this->display('Xsdt/txxs');
