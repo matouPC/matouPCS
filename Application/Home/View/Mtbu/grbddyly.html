@@ -201,6 +201,9 @@
 											success:function(data){
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -215,6 +218,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].lid+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -243,7 +247,7 @@
 														}
 													}
 													
-													if(data[i].imagename==''){
+													if(data[i].imagename==null){
 														var img='<img src="__PUBLIC__/Home/img/tx2-3r.png" alt="" />';
 													}else{
 												     var img = '<img  width="80" height="80" src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
@@ -498,7 +502,7 @@ var p=2;
 	
 		$.ajax({
 			type:'post',
-			url:"{:U('Mtbu/grlyjzdt')}",
+			url:"?s=/Home/Mtbu/grlyjzdt",
 			data:{k:p,id:id},
 			beforeSend:function(){
 	         $("#conn").append("<div id='load'>加载中……</div>");
@@ -507,8 +511,10 @@ var p=2;
 	
 				if(data!=null){				
 						//alert(1);
-									 for (var i = 0; i < data.length; i++) {
-						                                   												
+						 for (var i = 0; i < data.length; i++) {
+											if(data[i].zid==null){
+												 var aa=2;
+											}else{                        												
 							 var myArray=new Array()
 							 var str=data[i].zid;  
 							 myArray = str.split(","); 
@@ -523,6 +529,7 @@ var p=2;
 		
 								 }
 							 }
+							}
 							if(aa==1){
 								var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 							}else{
@@ -586,7 +593,9 @@ var p=2;
 
 	                   var li='';
 	      			 for (var i = 0; i < data.length; i++) {
-							
+	      				if(data[i].zid==null){
+							 var aa=2;
+						}else{	
 						 var myArray=new Array()
 						 var str=data[i].zid;  
 						 myArray = str.split(","); 
@@ -601,6 +610,7 @@ var p=2;
 
 							 }
 						 }
+						}
 						if(aa==1){
 							var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 						}else{
@@ -655,7 +665,9 @@ var p=2;
 
                 var li='';
    			 for (var i = 0; i < data.length; i++) {
-						
+   				if(data[i].zid==null){
+					 var aa=2;
+				}else{	
 					 var myArray=new Array()
 					 var str=data[i].zid;  
 					 myArray = str.split(","); 
@@ -670,6 +682,7 @@ var p=2;
 
 						 }
 					 }
+				}
 					if(aa==1){
 						var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 					}else{
@@ -723,7 +736,7 @@ var p=2;
 			// alert(id);
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/grlyjzdtre')}",
+					url:"?s=/Home/Mtbu/grlyjzdtre",
 					data:{k:pc,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -732,7 +745,9 @@ var p=2;
 						// alert(data);
 						if(data!=null){				
 							 for (var i = 0; i < data.length; i++) {
-									
+									if(data[i].zid==null){
+										 var aa=2;
+									}else{	
 								 var myArray=new Array()
 								 var str=data[i].zid;  
 								 myArray = str.split(","); 
@@ -747,6 +762,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 								}else{
@@ -803,7 +819,7 @@ var p=2;
 		
 			$.ajax({
 				type:'post',
-				url:"{:U('Mtbu/grlyjzdt')}",
+				url:"?s=/Home/Mtbu/grlyjzdt",
 				data:{k:p,id:id},
 				beforeSend:function(){
 		         $("#ha").append("<div id='load'>加载中……</div>");
@@ -812,7 +828,9 @@ var p=2;
 		
 					if(data!=null){				
 						 for (var i = 0; i < data.length; i++) {
-								
+								if(data[i].zid==null){
+									 var aa=2;
+								}else{
 							 var myArray=new Array()
 							 var str=data[i].zid;  
 							 myArray = str.split(","); 
@@ -827,6 +845,7 @@ var p=2;
 		
 								 }
 							 }
+								}
 							if(aa==1){
 								var dianzan='<span id="zz'+data[i].lid+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 							}else{

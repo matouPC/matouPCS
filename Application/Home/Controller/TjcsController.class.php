@@ -97,6 +97,11 @@ class TjcsController extends Controller
             $data['content'] = $_POST["content{$i}"];
             $data['leixing'] = $_POST["leixing{$i}"];
             $data['name'] = $_POST["name{$i}"];
+            if($data['leixing']=='出租'){
+            	$data['leixing']=1;
+            }else{
+            	$data['leixing']=2;
+            }
             $v=M('commodity');
             $id = $v->add($data);
            // $this->upload( $_FILES["upload{$i}"],$id);
@@ -110,7 +115,7 @@ class TjcsController extends Controller
             $data['psid'] =  $id;
             $data['pubtimes']=date("Y-m-d",time());
             if(!$info) {// 上传错误提示错误信息
-                $this->redirect('Mtbu/spglcg');
+                  $this->spglcg();
             }else{// 上传成功
                 foreach($info as $upload){
                     //echo $file['savepath'].$file['savename'];die;
@@ -129,7 +134,7 @@ class TjcsController extends Controller
             $data['psid'] =  $id;
             $data['pubtimes']=date("Y-m-d",time());
             if(!$info) {// 上传错误提示错误信息
-                $this->redirect('Mtbu/spglcg');
+                 $this->spglcg();
             }else{// 上传成功
                 foreach($info as $upload){
                     //echo $file['savepath'].$file['savename'];die;
@@ -139,13 +144,25 @@ class TjcsController extends Controller
              }
             
              if($i==$j){
-            $this->redirect('Mtbu/spglcg');
+            $this->spglcg();
             }
    
            }
     
            }   
-    
+           public function spglcg()
+           {
+           	//商品详情
+           
+           	$uid=$_SESSION['id'];
+           	 
+           	$v = M('shop')->where("uid = {$uid}")->where("status=2")->find();//我的商铺
+           	 
+           	$this->assign('v',$v);
+           
+           	$this->display('Mtbu/spglcg');
+           
+           }
           public function spcjcg()
            {
             //商品详情

@@ -104,7 +104,7 @@
 										<div class="spxx_sj">
 											<p class="spxx_sj_r">2016-12-12</p>
 											<p class="spxx_hf">
-												回复1
+												回复
 											</p>
 										</div>
 										<div class="no">
@@ -305,7 +305,7 @@
 									</li>
 								</foreach>
 									</div>
-									<php>if(!empty(list_yss)){</php>
+									<php>if(!empty($list_yss)){</php>
 									<div class="djjzgd">
 									<button onclick="tj4()" name='btnt2' id='btnt2' >点击加载更多</button>
 									</div>
@@ -628,7 +628,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/xianzhijz')}",
+					url:"?s=/Home/User/xianzhijz",
 					data:{k:v},
 					beforeSend:function(){
 			         $("#xianzhi").append("<div id='load'>加载中……</div>");
@@ -683,7 +683,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/qiugoujz')}",
+					url:"?s=/Home/User/qiugoujz",
 					data:{k:b},
 					beforeSend:function(){
 			         $("#qiugou").append("<div id='load'>加载中……</div>");
@@ -734,13 +734,13 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/qiugousjz')}",
+					url:"?s=/Home/User/qiugousjz",
 					data:{k:n},
 					beforeSend:function(){
 			         $("#qiugous").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						alert(data);
+					//alert(data);
 						if(data!=null){				
 							
 							 for (var i = 0; i < data.length; i++) {
@@ -775,7 +775,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/yingpinsjz')}",
+					url:"?s=/Home/User/yingpinsjz",
 					data:{k:q},
 					beforeSend:function(){
 			         $("#yingpins").append("<div id='load'>加载中……</div>");
@@ -814,7 +814,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/yingshangsjz')}",
+					url:"?s=/Home/User/yingshangsjz",
 					data:{k:m},
 					beforeSend:function(){
 			         $("#yingshangs").append("<div id='load'>加载中……</div>");
@@ -853,7 +853,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/xuanshangbjz')}",
+					url:"?s=/Home/User/xuanshangbjz",
 					data:{k:g},
 					beforeSend:function(){
 			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
@@ -902,7 +902,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/zhaopinbjz')}",
+					url:"?s=/Home/User/zhaopinbjz",
 					data:{k:a},
 					beforeSend:function(){
 			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
@@ -951,7 +951,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/qiugoubjz')}",
+					url:"?s=/Home/User/qiugoubjz",
 					data:{k:s},
 					beforeSend:function(){
 			         $("#xuanshangb").append("<div id='load'>加载中……</div>");

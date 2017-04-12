@@ -1,7 +1,7 @@
 <?php
 
 $typeArr = array("jpg", "png", "gif", "jpeg"); //允许上传文件格式
-$path = "uploads/"; //上传路径
+$path = "Uploads/"; //上传路径
 
 if (isset($_POST)) {
     $name = $_FILES['file']['name'];

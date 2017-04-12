@@ -213,7 +213,7 @@
 								//获得基本信息id
 								var content = $('#content_x').val();
 								if(content == ''){
-									alert('滚犊子');
+									alert('请输入内容');
 								}else{
 									$.ajax({
 										url:"?s=/Home/User/qliuyan",
@@ -221,7 +221,7 @@
 										data:{xsid:xsid,content:content,fid:fid},
 										dataType:"json",
 										success:function(data){
-											console.log(data);
+											//console.log(data);
 											$('#content').val('');
 											var content = '';
 											for (var i = 0; i < data.length; i++) {
@@ -230,7 +230,7 @@
 												}else{
 											     var use = data[i].username;
 												}
-												if(data[i].imagename==''){
+												if(data[i].imagename==null){
 													var img='<img src="__PUBLIC__/Home/img/pltx.png" alt="" />';
 												}else{
 											     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';

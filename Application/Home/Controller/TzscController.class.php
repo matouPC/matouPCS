@@ -188,7 +188,7 @@ class TzscController extends Controller
     }
     public function qgfbwc(){
         //求购发布完成
-        $list = M('flea as f')->join('fleaimage as e on f.fid = e.pid')->join('user as u on f.uid = u.id')->where('type = 2 and tz_status = "1"')->limit('0,6')->select();
+        $list = M('flea as f')->join('fleaimage as e on f.fid = e.pid')->join('user as u on f.uid = u.id')->where('type = 2 and tz_status = "1"')->limit('0,6')->order('fid desc')->select();
         $id = M('flea')->where(' type = 1 and tz_status = "1"')->order('fid desc')->find();
 
         $this->assign('list',$list);
@@ -197,7 +197,7 @@ class TzscController extends Controller
     }
     public function xzfbwc(){
         //闲置发布完成
-        $list = M('flea as f')->join('user as u on f.uid = u.id')->where('type = 1 and tz_status = "1"')->limit('0,6')->select();
+        $list = M('flea as f')->join('user as u on f.uid = u.id')->where('type = 1 and tz_status = "1"')->limit('0,6')->order('fid desc')->select();
         $id = M('flea')->where(' type = 2 and tz_status = "1"')->order('fid desc')->find();
         $this->assign('id',$id['fid']);
         $this->assign('list',$list);

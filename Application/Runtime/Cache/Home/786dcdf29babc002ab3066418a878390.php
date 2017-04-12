@@ -39,7 +39,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -182,7 +182,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -192,7 +192,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -409,13 +409,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+		              alert(222);
+					   alert(content);
 		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/User/usave1",
+				         url:"?s=/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
 				  
 	                	
 				      
@@ -493,7 +495,7 @@
 										<div class="spxx">
 											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01">
 						<?php if($lists[tel]==$lists[username]): ?>用户<?php echo (substr($lists["username"],0,5)); ?>
 					<?php else: ?>
@@ -516,7 +518,7 @@
 											<div class="spxx">
 												<?php if($list_huis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($list_huis["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($list_huis["imagename"]); ?>" alt="" /><?php endif; ?>
 												<p class="spxx_01">
 						       <?php if($$list_huis[tel]==$$list_huis[username]): ?>用户<?php echo (substr($list_huis["username"],0,5)); ?>
 					            <?php else: ?>
@@ -539,7 +541,7 @@
 										<div class="spxx_sj">
 											<p class="spxx_sj_r">2016-12-12</p>
 											<p class="spxx_hf">
-												回复1
+												回复
 											</p>
 										</div>
 										<div class="no">
@@ -568,7 +570,7 @@
 										<div class="spxx">
 											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<form>
@@ -587,7 +589,7 @@
 											<div class="spxx">
 												<?php if($list_qgxx_huis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($list_qgxx_huis["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($list_qgxx_huis["imagename"]); ?>" alt="" /><?php endif; ?>
 												<p class="spxx_01"><?php echo ($list_qgxx_huis["username"]); ?></p>
 												<p class="spxx_02"></p>
 												<form>
@@ -633,7 +635,7 @@
 										<div class="spxx">
 											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<p class="spxx_03">求购收藏</p>
@@ -667,7 +669,7 @@
 										<div class="spxx">
 											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<p class="spxx_03">应聘收藏</p>
@@ -683,7 +685,7 @@
 										</div>
 									</li><?php endforeach; endif; ?>
 								</div>
-									<?php if(!empty($lists)){ ?>
+									<?php if(!empty($list_yps)){ ?>
 									<div class="djjzgd">
 									<button onclick="tj3()" name='btnt1' id='btnt1' >点击加载更多</button>
 									</div>
@@ -701,7 +703,7 @@
 										<div class="spxx">
 											<?php if($lists[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 			                                   <?php else: ?>
-			                                     	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
+			                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($lists["imagename"]); ?>" alt="" /><?php endif; ?>
 											<p class="spxx_01"><?php echo ($lists["username"]); ?></p>
 											<p class="spxx_02"></p>
 											<p class="spxx_03">应赏收藏</p>
@@ -717,7 +719,7 @@
 										</div>
 									</li><?php endforeach; endif; ?>
 									</div>
-									<?php if(!empty($lists)){ ?>
+									<?php if(!empty($list_yss)){ ?>
 									<div class="djjzgd">
 									<button onclick="tj4()" name='btnt2' id='btnt2' >点击加载更多</button>
 									</div>
@@ -751,7 +753,7 @@
 							                                   <?php  if($arrs['xs']['uu'][$i]['imagename'] == ''){ ?>
 							                                    	<img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 							                                	<?php }else{ ?>
-							                                	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($arrs['xs']['uu'][$i]['imagename']); ?>" alt="" />
+							                                	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($arrs['xs']['uu'][$i]['imagename']); ?>" alt="" />
 							                                	<?php } ?>
 																<p class="yhmc_01_01"><?php echo '用户'.$arrs['xs']['uu'][$i]['username']; ?></p>
 																<!-- <p class="yhmc_01_01">1年经验</p> -->
@@ -813,7 +815,7 @@
 									</li>
 									<?php $num++; endforeach; endif; ?>
 								</div>
-								<?php if(!empty($arrs)){ ?>
+								<?php if(!empty($arr)){ ?>
 									<div class="djjzgd">
 									<button onclick="tj5()" name='btnt3' id='btnt3' >点击加载更多</button>
 									</div>
@@ -848,7 +850,7 @@
 														<?php  if($arr_zps['xs']['uu'][$i]['imagename'] == ''){ ?>
 						                                    	<img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 						                                	<?php }else{ ?>
-						                                	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($arr_zps['xs']['uu'][$i]['imagename']); ?>" alt="" />
+						                                	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($arr_zps['xs']['uu'][$i]['imagename']); ?>" alt="" />
 						                                	<?php } ?>
 														<p class="yhmc_01_01"><?php echo $arr_zps['xs']['uu'][$i]['username'];?></p>
 														<p class="yhmc_01_02"></p>
@@ -906,7 +908,7 @@
 								</li>
 								<?php $num_zp++; endforeach; endif; ?>
 							</div>
-							<?php if(!empty($arr_zps)){ ?>
+							<?php if(!empty($arr_zp)){ ?>
 									<div class="djjzgd">
 								<button onclick="tj6()" name='btnt4' id='btnt4' >点击加载更多</button>
 									</div>
@@ -941,7 +943,7 @@
 														<?php  if($arr_qgs['xs'][$i]['imagename'] == ''){ ?>
 						                                    	<img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
 						                                	<?php }else{ ?>
-						                                	<img style="width:60px;" src="/MatouPCS/Tu/upload/<?php echo ($arr_qgs['xs'][$i]['imagename']); ?>" alt="" />
+						                                	<img style="width:60px;" src="/matouPCS/Tu/upload/<?php echo ($arr_qgs['xs'][$i]['imagename']); ?>" alt="" />
 						                                	<?php } ?>
 														<p class="yhmc_01_01"><?php echo $arr_qgs['xs'][$i]['username']; ?></p>
 														<!-- <p class="yhmc_01_01">1年经验</p> -->
@@ -999,7 +1001,7 @@
 									</li>
 									<?php $numqg++; endforeach; endif; ?>
 									</div>
-									<?php if(!empty($arr_qgs)){ ?>
+									<?php if(!empty($arr_qg)){ ?>
 									<div class="djjzgd">
 										<button onclick="tj7()" name='btnt5' id='btnt5' >点击加载更多</button>
 									</div>
@@ -1094,7 +1096,7 @@
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/xianzhijz');?>",
+					url:"?s=/Home/User/xianzhijz",
 					data:{k:v},
 					beforeSend:function(){
 			         $("#xianzhi").append("<div id='load'>加载中……</div>");
@@ -1107,7 +1109,7 @@
 								 if(data['xz'][i].imagename==null) {
                                 var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 								 }else{
-								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
+								var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['xz'][i].imagename+'" />';
 								 }
 								 var p='';
 								 for (var j= 0; j < data['xzh'].length; j++) {
@@ -1115,7 +1117,7 @@
 										 if(data['xzh'][j].imagename==null) {
 				                                var imgs='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 												 }else{
-												var imgs='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
+												var imgs='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['xzh'][j].imagename+'" />';
 												 }
 									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['xzh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
 									 }
@@ -1149,7 +1151,7 @@
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/qiugoujz');?>",
+					url:"?s=/Home/User/qiugoujz",
 					data:{k:b},
 					beforeSend:function(){
 			         $("#qiugou").append("<div id='load'>加载中……</div>");
@@ -1162,7 +1164,7 @@
 								 if(data['qg'][i].imagename==null) {
                                 var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 								 }else{
-								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['qg'][i].imagename+'" />';
+								var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['qg'][i].imagename+'" />';
 								 }
 								 var p='';
 								 for (var j= 0; j < data['qgh'].length; j++) {
@@ -1170,7 +1172,7 @@
 										 if(data['qgh'][j].imagename==null) {
 				                                var imgs='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 												 }else{
-												var imgs='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['qgh'][j].imagename+'" />';
+												var imgs='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['qgh'][j].imagename+'" />';
 												 }
 									 p+='<div class="spxx">'+imgs+'<p class="spxx_01">'+data['qgh'][j].username+'</p><p class="spxx_02"></p><form><p class="spxx_03"> 回复 </p></form></div><div class="spxx_00"><p>'+data['xzh'][j].content_hf+'</p></div>';
 									 }      
@@ -1200,20 +1202,20 @@
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/qiugousjz');?>",
+					url:"?s=/Home/User/qiugousjz",
 					data:{k:n},
 					beforeSend:function(){
 			         $("#qiugous").append("<div id='load'>加载中……</div>");
 					},
 					success:function(data){
-						alert(data);
+					//alert(data);
 						if(data!=null){				
 							
 							 for (var i = 0; i < data.length; i++) {
 								 if(data[i].imagename==null) {
                                 var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 								 }else{
-								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+								var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" />';
 								 }
 			
 								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">求购收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
@@ -1241,7 +1243,7 @@
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/yingpinsjz');?>",
+					url:"?s=/Home/User/yingpinsjz",
 					data:{k:q},
 					beforeSend:function(){
 			         $("#yingpins").append("<div id='load'>加载中……</div>");
@@ -1254,7 +1256,7 @@
 								 if(data[i].imagename==null) {
                                 var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 								 }else{
-								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+								var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" />';
 								 }
 			
 								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">应聘收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
@@ -1275,12 +1277,12 @@
 			 	m++;
 		// alert(p);
 		  } 
-	  var m=1;
+	  var m=2;
 	  function  tj4(){		 
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/yingshangsjz');?>",
+					url:"?s=/Home/User/yingshangsjz",
 					data:{k:m},
 					beforeSend:function(){
 			         $("#yingshangs").append("<div id='load'>加载中……</div>");
@@ -1293,7 +1295,7 @@
 								 if(data[i].imagename==null) {
                                 var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 								 }else{
-								var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" />';
+								var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" />';
 								 }
 			
 								 var li = '<li><div class="xialai"><span class="xll1"><p class="xs1">删除</p></span></div><div class="spxx"> '+img+'<p class="spxx_01">'+data[i].username+'</p><p class="spxx_02"></p><p class="spxx_03">应赏收藏</p><div class="spxx_img"><img src="/matouPCS/Public/Home/img/heart.png" /></div><p class="spxx_04"> 收藏 </p></div><div class="spxx_sj"><p class="spxx_sj_r">2016-12-12</p></div></li>';
@@ -1314,12 +1316,12 @@
 			 	m++;
 		// alert(p);
 		  } 
-	  var g=1;
+	  var g=2;
 	  function  tj5(){		 
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/xuanshangbjz');?>",
+					url:"?s=/Home/User/xuanshangbjz",
 					data:{k:g},
 					beforeSend:function(){
 			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
@@ -1337,7 +1339,7 @@
 									 if(data[i]['xs']['uu'][j].imagename==null) {
 			                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 											 }else{
-											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
+											var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
 											 }
 									 var s=data[i]['xs']['uu'][j].tel;
 									 var tel=s.substr(0,3)+'xxxx'+s.substr(7,11);
@@ -1368,7 +1370,7 @@
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/zhaopinbjz');?>",
+					url:"?s=/Home/User/zhaopinbjz",
 					data:{k:a},
 					beforeSend:function(){
 			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
@@ -1386,7 +1388,7 @@
 									 if(data[i]['xs']['uu'][j].imagename==null) {
 			                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 											 }else{
-											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
+											var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i]['xs']['uu'][j].imagename+'" />';
 											 }
 									 var s=data[i]['xs']['uu'][j].tel;
 									 var tel=s.substr(0,3)+'xxxx'+s.substr(7,11);
@@ -1412,12 +1414,12 @@
 			 	a++;
 		// alert(p);
 		  } 
-	  var s=1;
+	  var s=2;
 	  function  tj7(){		 
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('User/qiugoubjz');?>",
+					url:"?s=/Home/User/qiugoubjz",
 					data:{k:s},
 					beforeSend:function(){
 			         $("#xuanshangb").append("<div id='load'>加载中……</div>");
@@ -1435,7 +1437,7 @@
 									 if(data[i]['xs'][j].imagename==null) {
 			                                var img='<img src="/matouPCS/Public/Home/img/yhmc.png"/>';
 											 }else{
-											var img='<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i]['xs'][j].imagename+'" />';
+											var img='<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i]['xs'][j].imagename+'" />';
 											 }
 									 var s=data[i]['xs'][j].tel;
 									 var tel=s.substr(0,3)+'xxxx'+s.substr(7,11);

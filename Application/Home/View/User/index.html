@@ -232,12 +232,16 @@
 							<div class="sctx-y">
 								<div class="container" id="crop-avatar">
 									<div id="sctx" class="avatar-view" title="点击上传头像">
-										<img src="/matouPCS/Tu//upload/{$v.imagename}" alt="" />
+										   <if condition="$v[imagename]==''">
+									<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
+                                      <else />
+                                      	<img src="/matouPCS/Tu//upload/{$v.imagename}" alt="" />
+                                    </if>	
 									</div>
 									<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
 										<div class="modal-dialog modal-lg">
 											<div class="modal-content">
-												<form action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
+												<form class="avatar-form"  action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
 													<div class="modal-header">
 														<button class="close" data-dismiss="modal" type="button">&times;</button>
 														<h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
@@ -420,11 +424,11 @@ function tj(){
    
     $.ajax({  
         type: "POST",  
-         url:"/matouPCS/index.php/Home/User/usave/",
+         url:"?s=/Home/User/usave/",
          data: {"username":username,"password":password,"address":address,"password1":password1,"password2":password2,"zhiye":zhiye},  
 
         success: function(data){ 
-        	alert(555);
+        //	alert(555);
         	if(data=='y'){
         		//alert('密码输入错误，修改失败');
         		 $('#xxoo').html('<p style="display: block;color:red">*密码输入错误，修改失败</p>');

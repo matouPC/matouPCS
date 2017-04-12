@@ -48,7 +48,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -539,6 +539,7 @@
 									</li>
 									<li>
 										<input type="text" id="qq"  name="qq"  class="white-in lxdh" placeholder="请输入QQ" />
+										 <input type="hidden" name="imagename" value="<?php echo $_COOKIE['img'];?>">
 									</li>
 									<li class="parents" >
 										<input  name="type"  type="radio"  checked="checked" value='销售商'/>销售商
@@ -658,7 +659,7 @@
 
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="/matouPCS/Public/Home/js/main-sp.js"></script>
+	<script src="/matouPCS/Public/Home/js/main-spcj.js"></script>
 	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
 	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
 	<script src="/matouPCS/Public/Home/js/bootstrap.min.js"></script>
@@ -668,7 +669,7 @@
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 			
 	<script>
-		 function tj(){		 	
+		 function tj(){
 			    var  	charter = $("#charter").val();  
 			    var representative = $("#representative").val();
 			    var shopname= $("#shopname").val();

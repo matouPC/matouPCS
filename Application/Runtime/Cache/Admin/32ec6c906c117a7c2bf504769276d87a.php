@@ -100,7 +100,7 @@ $(".registerform").Validform({
    <div class="error-box"></div>
    
 
-      <form  action="/matouPCS/index.php/Admin/Login/check" method="post">
+      <form  action="/matouPCS/Admin/Login/check" method="post">
          
    <div class="fm-item">
 	   <label for="logonId" class="form-label">喜事码头：</label>
@@ -117,7 +117,7 @@ $(".registerform").Validform({
   <div class="fm-item pos-r">
 	   <label for="logonId" class="form-label">验证码</label>
 	   <input type="text" value="输入验证码" name="verify"  maxlength="100" id="yzm" class="i-text yzm" nullmsg="请输入验证码！" >    
-       <div class="ui-form-explain"><img class="yzm-img"  style="vertical-align:bottom; height:35px;width: 100px;" size=5  onclick="this.src='/matouPCS/index.php/Admin/Login/verify/'+Math.random();" style="height:30px" src="/matouPCS/index.php/Admin/Login/verify"/></div>
+       <div class="ui-form-explain"><img class="yzm-img"  style="vertical-align:bottom; height:35px;width: 100px;" size=5  onclick="this.src='/matouPCS/Admin/Login/verify/'+Math.random();" style="height:30px" src="/matouPCS/Admin/Login/verify"/></div>
   </div>
   
   <div class="fm-item">

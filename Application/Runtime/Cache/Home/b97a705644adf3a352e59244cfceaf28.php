@@ -44,7 +44,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -187,7 +187,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -197,7 +197,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -414,13 +414,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+		              alert(222);
+					   alert(content);
 		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/User/usave1",
+				         url:"?s=/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
 				  
 	                	
 				      
@@ -677,7 +679,7 @@
 									<div class="tj-img">
 										<?php if($listns[imagename]==''): ?><img src="/matouPCS/Public/Home/img/bdmc.png" width="101" height="101">
                                    <?php else: ?>
-                                     <img style="border-radius:50%" width="101" height="101" src="/MatouPCS/Tu/upload/<?php echo ($listns["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="border-radius:50%" width="101" height="101" src="/matouPCS/Tu/upload/<?php echo ($listns["imagename"]); ?>"  /><?php endif; ?>
 									</div>
 									<div class="tj_01">
 										<strong class="tj_01_01"><?php echo ($listns["shopname"]); ?></strong>
@@ -715,7 +717,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank-footer.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
 	</head>
 	<body>
 		<footer>
@@ -726,14 +729,14 @@
 							<ul>
 								<li class="f4-o1-1">
 									<div>
-										<h4>喜事码头客服热线</h4>
+										<h5>喜事码头客服热线</h5>
 										<p>工作时间:每天9:00-23:00</p>
 										<p>188-8888-888</p>
 									</div>
 								</li>
 								<li class="f4-o1-1">
 									<div>
-										<h4>关注喜事码头微信公众号</h4>
+										<h5>关注喜事码头微信公众号</h5>
 										<p>
 											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
 										</p>
@@ -741,7 +744,7 @@
 								</li>
 								<li class="f4-o1-1">
 									<div>
-										<h4>关于我们</h4>
+										<h5>关于我们</h5>
 										<p>
 											<a href="#">关于喜事码头</a>
 										</p>
@@ -758,7 +761,7 @@
 								</li>
 								<li class="f4-o1-1">
 									<div>
-										<h4>联系我们</h4>
+										<h5>联系我们</h5>
 										<p>官方邮箱:xishimatou@163.com</p>
 										<p>通讯地址:河南省郑州市863软件园</p>
 									</div>
@@ -770,6 +773,23 @@
 				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
+						<h6>友情链接：</h6>
+						<a href="#">友情链接544</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
 						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
@@ -778,7 +798,6 @@
 		</footer>
 	</body>
 </html>
-
 		<script type="text/javascript" src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 		<script src="/matouPCS/Public/Home/js/sc.js"></script>
 		<script type="text/javascript" src="/matouPCS/Public/Home/js/jquery.bigautocomplete.js"></script>

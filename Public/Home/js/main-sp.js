@@ -298,7 +298,7 @@
 
     cropDone: function () {
       this.$avatarForm.get(0).reset();
-      this.$avatar.attr('src',"http://127.0.0.1/matouPCS/Tu/"+this.url);
+      this.$avatar.attr('src',"/matouPCS/Tu/"+this.url);
       this.stopCropper();
       this.$avatarModal.modal('hide');
       var aaa = this.url;
@@ -306,7 +306,7 @@
       //alert(bbb);
       $.ajax({  
 	        type: "POST",  
-	         url:"/matouPCS/index.php/Home/Tjcs/usaveimg/",
+	         url:"?s=/Home/Tjcs/usaveimg/",
 	         data: {"imagename":bbb},  
 
 	        success: function(data){ 

@@ -93,6 +93,7 @@
 									</li>
 									<li>
 										<input type="text" id="qq"  name="qq"  class="white-in lxdh" placeholder="请输入QQ" />
+										 <input type="hidden" name="imagename" value="<?php echo $_COOKIE['img'];?>">
 									</li>
 									<li class="parents" >
 										<input  name="type"  type="radio"  checked="checked" value='销售商'/>销售商
@@ -191,7 +192,7 @@
 		<include file="Public/foot"/>
 	</body>
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="__PUBLIC__/Home/js/main-sp.js"></script>
+	<script src="__PUBLIC__/Home/js/main-spcj.js"></script>
 	<script src="__PUBLIC__/Home/js/City_data.js"></script>
 	<script src="__PUBLIC__/Home/js/areadata.js"></script>
 	<script src="__PUBLIC__/Home/js/bootstrap.min.js"></script>
@@ -201,7 +202,7 @@
 	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 			
 	<script>
-		 function tj(){		 	
+		 function tj(){
 			    var  	charter = $("#charter").val();  
 			    var representative = $("#representative").val();
 			    var shopname= $("#shopname").val();
@@ -214,7 +215,7 @@
 				 $.ajax({
 				                 cache: true,
 				                 type: "POST",
-				                 url:"/matouPCS/index.php/Home/Tjcs/usave/",
+				                 url:"?s=/Home/Tjcs/usave/",
 				                 data:$('#myform').serialize(),// 你的formid
 				                 async: false,
 				                 error: function(request) {

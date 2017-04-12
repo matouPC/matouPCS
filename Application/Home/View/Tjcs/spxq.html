@@ -187,9 +187,12 @@
 											data:{id:p,contents:contents},
 											dataType:"json",
 											success:function(data){
-												alert(id)
+												//alert(id)
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -203,6 +206,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -231,7 +235,7 @@
 														}
 													}
 													
-													if(data[i].imagename==''){
+													if(data[i].imagename==null){
 														var img='<img src="__PUBLIC__/Home/img/pltx.png" alt="" />';
 													}else{
 												     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';

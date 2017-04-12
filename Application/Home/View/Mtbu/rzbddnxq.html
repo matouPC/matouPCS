@@ -371,6 +371,9 @@
 										
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -385,6 +388,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -545,9 +549,10 @@
 						<div id="ul" class="s-main-l">
 					<div class="s-c-2f">
 						<ul>
+							<foreach name="jbxs" item="jbxss">
 							<li>
 								<!-- 悬赏 -->
-							<foreach name="jbxs" item="jbxss">
+						
 							<a href="?s=/Home/xsdt/xqxs/id/{$jbxss['psid']}">
 								<h3 style="color:#FF5C5D;">悬赏</h3>
 									<p>
@@ -775,7 +780,7 @@
 				<div class="clearfloat"></div>
 			</div>
 		</section>
-		<script type="text/javascript">
+	<script type="text/javascript">
 function ajax(where,id){
 
 	//alert(where);
@@ -1398,7 +1403,7 @@ var p=2;
 
 		$.ajax({
 			type:'post',
-			url:"{:U('Mtbu/rzxuanshangjz')}",
+			url:"?s=/Home/Mtbu/rzxuanshangjz",
 			data:{k:p,id:id,where:where},
 			beforeSend:function(){
 	         $("#shiyan").append("<div id='load'>加载中……</div>");
@@ -1457,7 +1462,7 @@ var p=2;
 		//alert(where);
 			$.ajax({
 				type:'post',
-				url:"{:U('Mtbu/rzyingshangjz')}",
+				url:"?s=/Home/Mtbu/rzyingshangjz",
 				data:{k:pm,id:id,where:where},
 				beforeSend:function(){
 		         $("#ys").append("<div id='load'>加载中……</div>");
@@ -1504,7 +1509,7 @@ var p=2;
 		//alert(id);
 			$.ajax({
 				type:'post',
-				url:"{:U('Mtbu/rzzhaopinjz')}",
+				url:"?s=/Home/Mtbu/rzzhaopinjz",
 				data:{k:pn,id:id,where:where},
 				beforeSend:function(){
 		         $("#yzp").append("<div id='load'>加载中……</div>");
@@ -1564,7 +1569,7 @@ var p=2;
 	//	alert(id);
 			$.ajax({
 				type:'post',
-				url:"{:U('Mtbu/rzyingpinjz')}",
+				url:"?s=/Home/Mtbu/rzyingpinjz",
 				data:{k:pb,id:id,where:where},
 				beforeSend:function(){
 		         $("#yp").append("<div id='load'>加载中……</div>");
@@ -1616,7 +1621,7 @@ var p=2;
 		//	alert(id);
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/rzqiugoujz')}",
+					url:"?s=/Home/Mtbu/rzqiugoujz",
 					data:{k:pv,id:id,where:where},
 					beforeSend:function(){
 			         $("#qg").append("<div id='load'>加载中……</div>");
@@ -1654,7 +1659,7 @@ var p=2;
 	
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/rzxianzhijz')}",
+					url:"?s=/Home/Mtbu/rzxianzhijz",
 					data:{k:pc,id:id,where:where},
 					beforeSend:function(){
 			         $("#xz").append("<div id='load'>加载中……</div>");
@@ -1700,7 +1705,7 @@ var p=2;
 
 		$.ajax({
 			type:'post',
-			url:"{:U('Mtbu/rzxuanshangjz')}",
+			url:"?s=/Home/Mtbu/rzxuanshangjz",
 			data:{k:pj,id:id,where:where},
 			beforeSend:function(){
 	         $("#shiyan").append("<div id='load'>加载中……</div>");
@@ -1759,7 +1764,7 @@ var p=2;
 	//	alert(where);
 			$.ajax({
 				type:'post',
-				url:"{:U('Mtbu/rzyingshangjz')}",
+				url:"?s=/Home/Mtbu/rzyingshangjz",
 				data:{k:pmc,id:id,where:where},
 				beforeSend:function(){
 		         $("#ys").append("<div id='load'>加载中……</div>");
@@ -1807,7 +1812,7 @@ var p=2;
 		//alert(id);
 			$.ajax({
 				type:'post',
-				url:"{:U('Mtbu/rzzhaopinjz')}",
+				url:"?s=/Home/Mtbu/rzzhaopinjz",
 				data:{k:pnc,id:id,where:where},
 				beforeSend:function(){
 		         $("#yzp").append("<div id='load'>加载中……</div>");
@@ -1867,7 +1872,7 @@ var p=2;
 	//	alert(id);
 			$.ajax({
 				type:'post',
-				url:"{:U('Mtbu/rzyingpinjz')}",
+				url:"?s=/Home/Mtbu/rzyingpinjz",
 				data:{k:pbc,id:id,where:where},
 				beforeSend:function(){
 		         $("#yp").append("<div id='load'>加载中……</div>");
@@ -1918,7 +1923,7 @@ var p=2;
 		//	alert(id);
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/rzqiugoujz')}",
+					url:"?s=/Home/Mtbu/rzqiugoujz",
 					data:{k:pvc,id:id,where:where},
 					beforeSend:function(){
 			         $("#qg").append("<div id='load'>加载中……</div>");
@@ -1955,7 +1960,7 @@ var p=2;
 
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/rzxianzhijz')}",
+					url:"?s=/Home/Mtbu/rzxianzhijz",
 					data:{k:pcc,id:id,where:where},
 					beforeSend:function(){
 			         $("#xz").append("<div id='load'>加载中……</div>");
@@ -1994,6 +1999,7 @@ var p=2;
 		// alert(p);
 		  } 
 </script>
+
 		<include file="Public/foot"/>
 	</body>
 	

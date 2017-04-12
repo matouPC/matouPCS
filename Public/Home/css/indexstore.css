@@ -480,7 +480,7 @@ margin-bottom: 40px;
 	/*background: #00BFFF;*/
 }
 
-/*banner�ֲ���ʼ*/
+/*banner锟街诧拷锟斤拷始*/
 #PicSlide {
 	width: 978px;
 	height: 450px;
@@ -550,7 +550,7 @@ margin-bottom: 40px;
 	text-align: center;
 }
 
-/*banner�ֲ�����*/
+/*banner锟街诧拷锟斤拷锟斤拷*/
 .s-f1-r {
 	margin-left: 20px;
 	width: 200px;
@@ -801,35 +801,8 @@ margin-bottom: 40px;
 }
 
 /*------3f-------*/
-.s-c-3f {
-	width: 100%;
-	height: auto;
-	margin-top: 30px;
-	/*background: yellowgreen;*/
-}
-.s-f3-l {
-	width: 980px;
-	height: 427px;
-	float: right;
-	margin-right: -9px;
-	margin-top: -2px;
-}
-.s-f3-l ul {
-	width: 100%;
-	/*margin-top: 22px;*/
-}
-.s-f3-l ul li {
-	float: left;
-	margin: 7.5px;
-}
-.s-f3-l ul li a {
-	display: block;
-	width: 100%;
-	/*border: 1px solid #008B8B;*/
-	
-	position: relative;
-	overflow: hidden;
-}
+
+
 .abg1 {
 	width: 200px;
 	height: 200px;
@@ -913,7 +886,7 @@ margin-bottom: 40px;
 	width: 100%;
 }
 
-/*��Ƹ�����������ʼ*/
+/*锟斤拷聘锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟绞�*/
 .s-f3-r {
 	width: 200px;
 	height: 420px;
@@ -1001,7 +974,7 @@ margin-bottom: 40px;
 	/*font-weight: bold;*/
 }
 
-/*��Ƹ�������������*/
+/*锟斤拷聘锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟�*/
 .s-f3-x {
 	width: 100%;
 	height: 120px;
@@ -1016,7 +989,7 @@ margin-bottom: 40px;
 	/*background: burlywood;*/
 }
 
-/*��ͷ�����ұ�����ʼ*/
+/*锟斤拷头锟斤拷锟斤拷锟揭憋拷锟斤拷锟斤拷始*/
 .s-f4-r {
 	width: 200px;
 	height: 380px;
@@ -1112,7 +1085,7 @@ margin-bottom: 40px;
 	line-height: 34px;
 }
 
-/*��ͷ�����ұ�������*/
+/*锟斤拷头锟斤拷锟斤拷锟揭憋拷锟斤拷锟斤拷锟斤拷*/
 .s-f4-l {
 	width: 1000px;
 	height: 408px;
@@ -1176,7 +1149,7 @@ margin-bottom: 40px;
 	/*background: cyan;*/
 }
 
-/*��ͷ�̳��������ʼ*/
+/*锟斤拷头锟教筹拷锟斤拷锟斤拷锟斤拷锟绞�*/
 .s-f5-l {
 	width: 200px;
 	height: 450px;
@@ -1281,7 +1254,7 @@ margin-bottom: 40px;
 	line-height: 34px;
 }
 
-/*��ͷ�̳����������*/
+/*锟斤拷头锟教筹拷锟斤拷锟斤拷锟斤拷锟斤拷锟�*/
 .s-f5-r {
 	width: 1000px;
 	height: 515px;
@@ -1590,7 +1563,7 @@ margin-bottom: 40px;
 
 /*-------------*/
 
-/*troops开始*/
+/*troops寮�濮�*/
 .troops {
 	width: 980px;
 	height: auto;
@@ -1697,7 +1670,7 @@ margin-bottom: 40px;
 	background: #cccccc;
 	margin: 25px auto;
 	text-align: center;
-	font: "微软雅黑";
+	font: "寰蒋闆呴粦";
 	font-size: 14px;
 	line-height: 26px;
 	color: #999999;
@@ -1709,9 +1682,9 @@ margin-bottom: 40px;
 	color: #fff;
 }
 
-/*troops结束*/
+/*troops缁撴潫*/
 
-/*wharf开始*/
+/*wharf寮�濮�*/
 .wharf {
 	width: 980px;
 	height: 456px;
@@ -1902,9 +1875,9 @@ margin-bottom: 40px;
 	top: 1px;
 }
 
-/*wharf结束*/
+/*wharf缁撴潫*/
 
-/*search开始*/
+/*search寮�濮�*/
 .search_input {
 	margin: 50px 0 0 0px;
 	clear: both;
@@ -1971,4 +1944,83 @@ margin-bottom: 40px;
 	width: 520px;
 	height: 60px;
 	background: #AA1C1F;
+}
+.s-f3-l {
+	width: 980px;
+	height: 427px;
+	float: right;
+	margin-right: -9px;
+	margin-top: -2px;
+}
+
+.s-f3-l .border{
+	border-top: solid 1px #f5f5f5;
+}
+
+
+.s-f3-l ul {
+	width: 100%;
+	margin-top: 7.5px;
+	float: left;
+}
+.s-f3-l ul li {
+	float: left;
+}
+
+.s-f3-l li:hover{
+	background-color: #f5f5f5;
+}
+
+.s-f3-l ul li a {
+	display: block;
+	width: 440px;
+	height: 80px;
+	position: relative;
+	overflow: hidden;
+	padding: 12px 10px 12px 40px;
+}
+
+.s-f3-l ul li a .logo{
+	width: 80px;
+	height: 80px;
+	border-radius: 100px;
+	float: left;
+	margin-right: 53px;
+}
+
+.content-zp{
+	float: left;
+}
+
+.content-zp strong{
+	display: block;
+	font-size: 20px;
+	color: #FF5C5D;
+	line-height: 20px;
+}
+
+.content-zp span{
+	display: block;
+	font-size: 18px;
+	color: #FF5C5D;
+	line-height: 18px;
+	float: left;
+	margin-right: 10px;
+}
+
+.content-zp p{
+	display: block;
+	font-size: 16px;
+	color: #999999;
+	line-height: 16px;
+	margin-top: 12px;
+	height: 18px;
+}
+
+.content-zp .szcs{
+	color: #aaa;
+	font-size: 14px;
+	line-height: 14px;
+	margin-top: 12px;
+	height: 14px;
 }

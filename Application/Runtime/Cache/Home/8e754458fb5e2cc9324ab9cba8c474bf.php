@@ -48,7 +48,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -191,7 +191,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -201,7 +201,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -418,13 +418,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+		              alert(222);
+					   alert(content);
 		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/User/usave1",
+				         url:"?s=/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
 				  
 	                	
 				      
@@ -477,7 +479,6 @@
 			</div>
 		</header>
 		<section>
-	 <form action="/matouPCS/index.php/Home/Mtbu/rzbdcj" method="post" id="myform" name="myform" enctype="multipart/form-data">
 			<div class="s-main-c">
 			<div class="bjtx">
 								<div class="sctx-y">
@@ -488,7 +489,7 @@
 										<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
 											<div class="modal-dialog modal-lg">
 												<div class="modal-content">
-														<form action="/matouPCS/Tu/crop.php" class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
+														<form class="avatar-form"  action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
 														<div class="modal-header">
 															<button class="close" data-dismiss="modal" type="button">&times;</button>
 															<h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
@@ -543,6 +544,7 @@
 								
 								</div>
 							</div>
+							 <form action="/matouPCS/Home/Mtbu/rzbdcj" method="post" id="myform" name="myform" enctype="multipart/form-data">
 				<div class="s-main-l right-tx">
 					<div class="con1">
 				
@@ -581,6 +583,7 @@
 									</li>
 									<li>
 										<input type="text" id="qq"  name="qq" class="white-in lxdh" placeholder="请输入QQ" />
+										 <input type="hidden" name="logo" value="<?php echo $_COOKIE['img'];?>">
 									</li>
 									<li class="parents" style="height: 138px;">
 										<div id="typee" class="left">
@@ -812,7 +815,7 @@
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/City_data.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/areadata.js"></script>
-	<script src="/matouPCS/Public/Home/js/main-bd.js"></script>
+<script src="/matouPCS/Public/Home/js/main-bdcj.js"></script>
 	<script src="/matouPCS/Public/Home/js/bootstrap.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/cropper.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/showwin2.js"></script>

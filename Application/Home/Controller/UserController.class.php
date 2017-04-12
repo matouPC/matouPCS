@@ -273,6 +273,8 @@ class UserController extends Controller
         $uid = $_SESSION['id'];
         // var_dump($uid);die;
         $fbys = M('user as u')->join("due as d on u.id = d.uid")->join("dueimage as m on d.did = m.pid")->join('duevideo as v on d.did = v.pid')->join("due_dang as a on d.did = a.pid")->where("u.id = {$uid}")->find();
+        // echo '<pre>';
+        // var_dump($fbys);die;
         $this->assign('fbys',$fbys);
         $this->assign('fbys_zp',$this->stringimg($fbys['imagename_z']));//应赏照片作品
         $this->assign('fbys_sp',$this->stringimg($fbys['imagename_v']));//应赏视频作品
@@ -812,14 +814,16 @@ class UserController extends Controller
     *  需求消息
     */
     public function xqxx(){
-        //echo '<pre>';
+        // echo '<pre>';
         $uid = $_SESSION['id'];
         // var_dump($uid);die;
         $list = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '6' and (x.uid={$uid} or x.fid={$uid})")->order("x.id desc")->limit('0,5')->select();//闲置留言
+        // var_dump($list);die;
 
         $list_q = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.status_xx = '1' and x.type_xx = '3' and x.type_xs = '7' and (x.uid={$uid} or x.fid={$uid})")->order("x.id desc")->limit('0,5')->select();//求购留言
       // var_dump($list );die;
         $list_qs = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid}  and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '7'")->order("x.id desc")->limit('0,5')->select();//求购收藏
+
        // var_dump($list_qs);die;
       $list_yps = M('user as u')->join('user_xx as x on u.id = x.uid')->where("x.fid = {$uid} and x.status_xx = '1' and x.type_xx = '1' and x.type_xs = '3'")->order("x.id desc")->limit('0,5')->select();//应聘收藏
      // var_dump($list_yps);die;
@@ -836,6 +840,7 @@ class UserController extends Controller
         $li_zp = M('recruit2')->where("usid = {$uid}")->select();//招聘详情信息
  
         $lijb_qg = M('flea')->where("uid = {$uid} and type = '1'")->select();
+        
         //悬赏
         foreach ($lijb as $key => $value) {//基本信息
             foreach ($li as $k => $v) {//详情信息
@@ -848,6 +853,7 @@ class UserController extends Controller
                 }
             }
         }
+
         //招聘
         foreach ($lijb_zp as $key => $value) {//基本信息
             foreach ($li_zp as $k => $v) {//详情信息
@@ -861,6 +867,7 @@ class UserController extends Controller
                 }
             }
         }
+
         //求购
         foreach ($lijb_qg as $key => $value) {
             if($value['bao'] != ''){
@@ -868,6 +875,7 @@ class UserController extends Controller
                 $arr_qg[] = $value;
             }
         }
+
         $this->assign('list',$list);//闲置留言
         $this->assign('list_hui',$list_hui);//人家回复你的留言
 
@@ -1899,13 +1907,10 @@ class UserController extends Controller
     	$id = $_SESSION['id'];
     	$img = M('user');
     	$ob = $img->where("id = {$id}")->save($data);
-    if($ob){
-    	echo 'y';
+        if($ob){
+        	echo 'y';
+        }
     }
-    }
-    
-    
-
     public function usave1(){
     	//echo '<pre>';
     	//var_dump($_FILES['upload1']);die;
@@ -1923,14 +1928,49 @@ class UserController extends Controller
     	$data['pid']=$id;
     	foreach ($array as $v){
     		$data['imagename'] = $v;
-    		 
     		$fu = $form->add($data);
-    
     	}
-    
-    
     }
-    
-    
-    
+    //领取码头币
+    public function mtb_lq(){
+        $uid = $_SESSION['id'];
+        $li = M('user')->where("id = {$uid}")->find();
+        $arr_mtb_time = $this->stringimg($li['mtb_time']);
+        if(in_array(date('Y-m-d',time()),$arr_mtb_time)){
+             $this->ajaxReturn(1);
+        }else{
+            $armtb = array('0' => 10,'1' => 20,'2' => 15,'3' => 20,'4' => 30,'5' => 15,'6' => 10,'7' => 50);
+            shuffle($armtb);
+            $this->ajaxReturn($armtb);
+        }
+    }
+    //领取到的码头币的数量
+    public function mtbcc($mtbsl){
+        date_default_timezone_set('prc');
+        $uid = $_SESSION['id'];
+        $mtbsls = intval($mtbsl);
+        $li = M('user')->where("id = {$uid}")->find();
+        $lis['mtb'] = $li['mtb'] + $mtbsls;
+        $lis['mtb_time'] .= date('Y-m-d',time()).','; 
+
+        $arr_mtb_time = $this->stringimg($li['mtb_time']);
+        $adMtb = M('user')->where("id = {$uid}")->save($lis);
+        if($adMtb > 0){
+            echo 'ok';
+        }
+    }
+    //码头币扣除
+    public function mtbkc(){
+        $uid = $_SESSION['id'];
+        $li = M('user')->where("id = {$uid}")->find();
+        if(intval($li['mtb']) > 0){
+            $lis['mtb'] = intval($li['mtb']) - 5;
+            $ob = M('user')->where("id = {$uid}")->save($lis);
+            if($ob > 0){
+                echo 'y';
+            }
+        }else{
+            echo 'n';
+        }
+    }
 }

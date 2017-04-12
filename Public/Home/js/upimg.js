@@ -189,7 +189,7 @@
 					var $os = $(that).siblings(".click1");
 					$($os).parent().parent().parent()	.remove();
 					if($(".txfg1-a").css("height") > "110px"){
-						alert("1");
+						//alert("1");
 						$(".txfg1-c2-1-a").css("display","block");
 						$(".txfg1-a").css("height","126px")
 					}else{
@@ -230,11 +230,11 @@
 		// $("#hfx3-1-u").click(function() {
 			
 		function hfx3(){ //应赏图片的方法this
-			alert(456);
+		//	alert(456);
 			var im = document.getElementById("this").getElementsByTagName("li").length;
 			im++;
 			if( im > 9 ){
-				alert('滚犊子(最多张图片)');
+				alert('(最多张图片)');
 			}else{
 				$(".p12").hide();
 				$(".dianji").hide();

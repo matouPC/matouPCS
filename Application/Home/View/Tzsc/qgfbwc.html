@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/fbwc.css" />
 		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin.css" />
 	</head>
-
 	<body>
 		<header>
 			<div class="h-content-main">
@@ -25,7 +24,7 @@
 					<div class="h-c-3f">
 						<img src="__PUBLIC__/Home/img/navbg4.png" alt="" />
 						<a href="#">
-							<a href="?s=/Home/Tzsc/xqqg/id/{$id}" class="h-f3-c1">查看求购详情页</a>
+							<a href="?s=/Home/Tzsc/xqqg/id/{$fid}" class="h-f3-c1">查看求购详情页</a>
 						</a>
 					</div>
 				</div>
@@ -47,7 +46,12 @@
 								<div class="user_01">
 									<a href="?s=/Home/Tzsc/xqxz/id/{$lists.fid}">
 										<div class="xztp">
-											<img src="__PUBLIC__/Home/img/yhmc-big.png" alt="">
+											<?php 
+									$file = explode(',',$lists['imagenames']);
+									array_pop($file);
+								?>
+								<img src="<?php echo '/matouPCS/Uploads/'.substr($file[0],1); ?>" />
+							
 										</div>
 										<div class="user_01_01">
 											<div class="user_01_02">
@@ -62,95 +66,7 @@
 									</a>
 								</div>
 							</foreach>
-							<!-- <div class="user_01">
-								<a href="#">
-									<div class="user_02">
-										<div class="wptp">
-											<img src="img/bdmc.png" alt="">
-										</div>
-										<p>闲置：音响</p>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="user_01_01b">
-										<div class="user_01_02">
-											<p>音响</p><span>预算￥500元</span></div>
-										<p class="user_01_03b">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
-										<p class="user_01_04">已有20人收藏</p>
-										<p class="user_01_05">郑州</p>
-										<div class="clearfloat"></div>
-									</div>
-								</a>
-							</div>
-
-							<div class="user_01">
-								<a href="#">
-									<div class="xztp">
-										<img src="img/yhmc-big.png" alt="">
-									</div>
-									<div class="user_01_01">
-										<div class="user_01_02">
-											<p>闲置：音响</p><span>￥500元</span></div>
-										<p class="user_01_03">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。</p>
-										<p class="user_01_04">已有20人收藏</p>
-										<p class="user_01_05">郑州</p>
-									</div>
-								</a>
-							</div>
-
-							<div class="user_01">
-								<a href="#">
-									<div class="user_02">
-										<div class="wptp">
-											<img src="img/bdmc.png" alt="">
-										</div>
-										<p>闲置：音响</p>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="user_01_01b">
-										<div class="user_01_02">
-											<p>音响</p><span>预算￥500元</span></div>
-										<p class="user_01_03b">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
-										<p class="user_01_04">已有20人收藏</p>
-										<p class="user_01_05">郑州</p>
-										<div class="clearfloat"></div>
-									</div>
-								</a>
-							</div>
-
-							<div class="user_01">
-								<a href="#">
-									<div class="xztp">
-										<img src="img/yhmc-big.png" alt="">
-									</div>
-									<div class="user_01_01">
-										<div class="user_01_02">
-											<p>闲置：音响</p><span>￥500元</span></div>
-										<p class="user_01_03">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍。。。</p>
-										<p class="user_01_04">已有20人收藏</p>
-										<p class="user_01_05">郑州</p>
-									</div>
-								</a>
-							</div>
-
-							<div class="user_01">
-								<a href="#">
-									<div class="user_02">
-										<div class="wptp">
-											<img src="img/bdmc.png" alt="">
-										</div>
-										<p>闲置：音响</p>
-										<div class="clearfloat"></div>
-									</div>
-									<div class="user_01_01b">
-										<div class="user_01_02">
-											<p>音响</p><span>预算￥500元</span></div>
-										<p class="user_01_03b">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
-										<p class="user_01_04">已有20人收藏</p>
-										<p class="user_01_05">郑州</p>
-										<div class="clearfloat"></div>
-									</div>
-								</a>
-							</div> -->
+						
 							<div class="clearfloat"></div>
 						</div>
 						<br>
@@ -159,7 +75,7 @@
 				<div class="clearfloat"></div>
 			</div>
 		</section>
-		<include file="Public/footer"/>
+		<include file="Public/foot"/>
 	</body>
-	<script src="js/scrolltopcontrol.js"></script>
+	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 </html>

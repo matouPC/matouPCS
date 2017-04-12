@@ -31,7 +31,6 @@
 			</div>
 		</header>
 		<section>
-	 <form action="__APP__/Home/Mtbu/rzbdcj" method="post" id="myform" name="myform" enctype="multipart/form-data">
 			<div class="s-main-c">
 			<div class="bjtx">
 								<div class="sctx-y">
@@ -42,7 +41,7 @@
 										<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
 											<div class="modal-dialog modal-lg">
 												<div class="modal-content">
-														<form action="/matouPCS/Tu/crop.php" class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
+														<form class="avatar-form"  action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
 														<div class="modal-header">
 															<button class="close" data-dismiss="modal" type="button">&times;</button>
 															<h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
@@ -97,6 +96,7 @@
 								
 								</div>
 							</div>
+							 <form action="__APP__/Home/Mtbu/rzbdcj" method="post" id="myform" name="myform" enctype="multipart/form-data">
 				<div class="s-main-l right-tx">
 					<div class="con1">
 				
@@ -135,6 +135,7 @@
 									</li>
 									<li>
 										<input type="text" id="qq"  name="qq" class="white-in lxdh" placeholder="请输入QQ" />
+										 <input type="hidden" name="logo" value="<?php echo $_COOKIE['img'];?>">
 									</li>
 									<li class="parents" style="height: 138px;">
 										<div id="typee" class="left">
@@ -345,7 +346,7 @@
 	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/Home/js/City_data.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/Home/js/areadata.js"></script>
-	<script src="__PUBLIC__/Home/js/main-bd.js"></script>
+<script src="__PUBLIC__/Home/js/main-bdcj.js"></script>
 	<script src="__PUBLIC__/Home/js/bootstrap.min.js"></script>
 	<script src="__PUBLIC__/Home/js/cropper.min.js"></script>
 	<script src="__PUBLIC__/Home/js/showwin2.js"></script>

@@ -150,7 +150,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -293,7 +293,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -303,7 +303,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -520,13 +520,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+		              alert(222);
+					   alert(content);
 		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/User/usave1",
+				         url:"?s=/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
 				  
 	                	
 				      
@@ -675,12 +677,14 @@
 							<div class="sctx-y">
 								<div class="container" id="crop-avatar">
 									<div id="sctx" class="avatar-view" title="点击上传头像">
-										<img src="/matouPCS/Tu//upload/<?php echo ($v["imagename"]); ?>" alt="" />
+										   <?php if($v[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Tu//upload/<?php echo ($v["imagename"]); ?>" alt="" /><?php endif; ?>	
 									</div>
 									<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
 										<div class="modal-dialog modal-lg">
 											<div class="modal-content">
-												<form action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
+												<form class="avatar-form"  action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
 													<div class="modal-header">
 														<button class="close" data-dismiss="modal" type="button">&times;</button>
 														<h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
@@ -883,11 +887,11 @@ function tj(){
    
     $.ajax({  
         type: "POST",  
-         url:"/matouPCS/index.php/Home/User/usave/",
+         url:"?s=/Home/User/usave/",
          data: {"username":username,"password":password,"address":address,"password1":password1,"password2":password2,"zhiye":zhiye},  
 
         success: function(data){ 
-        	alert(555);
+        //	alert(555);
         	if(data=='y'){
         		//alert('密码输入错误，修改失败');
         		 $('#xxoo').html('<p style="display: block;color:red">*密码输入错误，修改失败</p>');

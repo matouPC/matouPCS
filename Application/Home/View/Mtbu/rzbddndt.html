@@ -347,6 +347,9 @@
 										
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -361,6 +364,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -684,7 +688,7 @@ var p=2;
 	 // alert(id);
 		$.ajax({
 			type:'post',
-			url:"{:U('Mtbu/dnjzdt')}",
+			url:"?s=/Home/Mtbu/dnjzdt",
 			data:{k:p,id,id},
 			beforeSend:function(){
 	         $("#conn").append("<div id='load'>加载中……</div>");
@@ -695,6 +699,9 @@ var p=2;
 					if(data!=null){		
 						var zan='';
 						 for (var i = 0; i < data['nr'].length; i++) {
+								if(data['nr'][i].zid==null){
+									 var aa=2;
+								}else{
 							 var myArray=new Array()
 							 var str=data['nr'][i].zid;  
 							 myArray = str.split(","); 
@@ -710,6 +717,7 @@ var p=2;
 		
 								 }
 							 }
+								}
 							if(aa==1){
 								var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 							}else{
@@ -771,6 +779,9 @@ var p=2;
 					
 					var pl='';
 					 for (var i = 0; i < data['nr'].length; i++) {
+							if(data['nr'][i].zid==null){
+								 var aa=2;
+							}else{
 						 var myArray=new Array()
 						 var str=data['nr'][i].zid;  
 						 myArray = str.split(","); 
@@ -785,6 +796,7 @@ var p=2;
 	
 							 }
 						 }
+							}
 						if(aa==1){
 							var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 						}else{
@@ -831,7 +843,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdt')}",
+					url:"?s=/Home/Mtbu/dtjzdt",
 					data:{k:l,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -841,6 +853,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -855,6 +870,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -904,7 +920,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdthd')}",
+					url:"?s=/Home/Mtbu/dtjzdthd",
 					data:{k:z,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -913,6 +929,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -927,6 +946,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -977,7 +997,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdt')}",
+					url:"?s=/Home/Mtbu/dtjzdt",
 					data:{k:x,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -986,6 +1006,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1000,6 +1023,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1050,7 +1074,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdtre')}",
+					url:"?s=/Home/Mtbu/dtjzdtre",
 					data:{k:c,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1059,6 +1083,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1073,6 +1100,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1123,7 +1151,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdtre')}",
+					url:"?s=/Home/Mtbu/dtjzdtre",
 					data:{k:v,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1133,6 +1161,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1147,6 +1178,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1197,7 +1229,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdt')}",
+					url:"?s=/Home/Mtbu/dtjzdt",
 					data:{k:b,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1207,6 +1239,9 @@ var p=2;
 							if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1221,6 +1256,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1271,7 +1307,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdthdr')}",
+					url:"?s=/Home/Mtbu/dtjzdthdr",
 					data:{k:n,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1281,6 +1317,9 @@ var p=2;
 							if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1295,6 +1334,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1345,7 +1385,7 @@ var p=2;
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/dtjzdthd')}",
+					url:"?s=/Home/Mtbu/dtjzdthd",
 					data:{k:m,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1354,6 +1394,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1368,6 +1411,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>部队设置</title>
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/troop.css" />
+	</head>
+
+	<body>
+		<header>
+			<div class="h-content-main">
+				<div class="h-main-c">
+						<include file="Public/header"/>
+					<div class="h-c-2f">
+						<img src="__PUBLIC__/Home/img/navbg2.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="s-main-c">
+				<div class="s-main-l right-tx">
+					<div class="s-c-1f-ss">
+						<input type="text" placeholder="搜索全站" />
+						<button></button>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="s-c-2f-ss">
+						<php>if(!empty($xsList)){</php>
+						<div class="s-c-8f-1f" id="xsdt-a">
+							<h2>悬赏大厅</h2>
+						</div>
+						<php>}</php>
+						<div class="s-c-2f-ss-2f">
+							<ul>
+								<foreach name="xsList" item="xsLists">
+									<li>
+										<a href="?s=/Home/xsdt/xqxs/id/{$xsLists['psid']}">
+											<div class="s-l-1f">
+												<div class="yhtx">
+													<if condition="$xsLists[imagename]==''">  
+				                                  		<img src="__PUBLIC__/Home/img/yhmc.png.png" alt="" />
+				                                   <else />
+				                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$xsLists.imagename}" alt="" />
+				                                   </if>
+												</div>
+												<h3 class="yhmc">
+													用户{$xsLists['username']|substr=0,6}
+												</h3>
+												<p class="hdsj">
+													活动时间：{$xsLists['time']}
+												</p>
+												<p class="hddd">
+													活动地点：{$xsLists['address']}
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="s-l-2f">
+												<foreach name="xsList_xq" item="xsList_xqs">
+													<php>if($xsList_xqs['pid'] == $xsLists['psid']){</php>
+													<div class="s-l-2f-1f">
+														<p class="black-333">{$xsList_xqs.type}</p>
+														<php>if($xsList_xqs['sex'] == 1){</php>
+														<p class="sex">男</p>
+														<php>}</php>
+														<php>if($xsList_xqs['sex'] == 2){</php>
+														<p class="sex">女</p>
+														<php>}</php>
+														<php>if($xsList_xqs['sex'] == 3){</php>
+														<p class="sex">不限</p>
+														<php>}</php>
+														<p class="age">年龄{$xsList_xqs.age}</p>
+														<p class="jtyq">
+															<span class="black-333">具体要求：</span> {$xsList_xqs.yaoqiu}
+														</p>
+														<p class="jg">
+															<span class="black-333">价格：</span>
+															{$xsList_xqs.price}元/天
+														</p>
+														<php>
+															$bao = explode(',',$xsList['bao']);
+															array_pop($bao);
+															$xsbaos = count($bao);
+														</php>
+														<p class="bm">
+															{$xsbaos}人报名
+														</p>
+														<div class="clearfloat"></div>
+													</div>
+													<php>}</php>
+												</foreach>
+											</div>
+											<div class="s-l-3f">
+												<div class="left">
+													<!-- 已有10人收藏 -->
+												</div>
+												<div class="right">
+													{$xsLists['date']}
+												</div>
+												<div class="clearfloat"></div>
+											</div>
+										</a>
+									</li>
+								</foreach>
+							</ul>
+						</div>
+						<php>if(!empty($xsLists)){</php>
+						<div class="djjzgd">
+							<button>点击加载更多</button>
+						</div>
+						<php>}</php>
+					</div>
+					<div class="clear"></div>
+					<div class="s-c-2f-ss">
+						<php>if(!empty($ysList)){</php>
+						<div class="s-c-8f-1f" id="ysdt-a">
+							<h2>应赏大厅</h2>
+						</div>
+						<php>}</php>
+						<div class="s-c-3f-ss-2f">
+							<ul>
+								<foreach name="ysList" item="ysLists">
+									<li>
+										<a href="?s=/Home/Ysq/xqys/id/{$ysLists.did}">
+											<div class="s-l-1f">
+												<div class="yhtx">
+													<if condition="$ysLists[imagename]==''">  
+				                                  		<img src="__PUBLIC__/Home/img/yhmc.png.png" alt="" />
+				                                   <else />
+				                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$ysLists.imagename}" alt="" />
+				                                   </if>
+												</div>
+												<h3 class="yhmc">
+													用户{$ysLists.username|substr=0,6}
+												</h3>
+												<p class="jg">
+													<span class="black-333">薪资：</span>
+													{$ysLists.price}元/天
+												</p>
+												<p class="szd">
+													所在地：{$ysLists.address}
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="s-l-2f">
+												<div class="middle">
+													<p class="black-333">{$ysLists.name}</p>
+													<p class="age">{$ysLists.age}</p>
+													<p class="grjj">
+														<span class="black-333">个人简介：</span>
+														{$ysLists.content}
+													</p>
+													<div class="clearfloat"></div>
+												</div>
+												<div class="middle">
+													<p class="black-333">职位:{$ysLists.type_d}</p>
+													<p class="zpzp">
+														<php>$zhao = explode(',',$ysLists['imagename_z']);
+															array_pop($zhao);
+															$zhaos = count($zhao);</php>
+														<span class="black-333">照片作品：</span>
+														{$zhaos}个
+													</p>
+													<php>
+													$video = explode(',',$ysLists['imagename_v']);
+															array_pop($video);
+															$videos = count($video)-1;</php>
+													<p class="spzp">
+														<span class="black-333">视频作品：</span>
+														{$videos}个
+													</p>
+													<?php 
+														$types = explode(',',$ysLists['type']); 
+														$video = explode(',',$ysLists['video']); 
+														array_pop($types);
+														array_pop($video);
+													?>
+													<p class="dq">
+														<span class="black-333">档期：</span>
+														{$types[0]}&nbsp;{$video[0]}&nbsp;&nbsp;&nbsp;
+													</p>
+													<div class="clearfloat"></div>
+												</div>
+											</div>
+											<php>
+												$ys_shou = explode(',',$ysLists['due_shou']);
+												array_pop($ys_shou);
+												$ysshou = count($ys_shou);
+											</php>
+											<div class="s-l-3f">
+												<div class="left">
+													已有{$ysshou}人收藏
+												</div>
+												<div class="right">
+													{$ysLists['date']}
+												</div>
+												<div class="clearfloat"></div>
+											</div>
+										</a>
+									</li>
+								</foreach>
+							</ul>
+						</div>
+						<php>if(!empty($ysList)){</php>
+							<div class="djjzgd">
+								<button>点击加载更多</button>
+							</div>
+						<php>}</php>
+					</div>
+					<div class="clear"></div>
+					<div class="s-c-2f-ss">
+						<php>if(!empty($zpList)){</php>
+							<div class="s-c-8f-1f" id="zpdt-a">
+								<h2>招聘大厅</h2>
+							</div>
+						<php>}</php>
+						<div class="s-c-4f-ss-2f">
+							<ul>
+								<foreach name="zpList" item="zpLists">
+									<li>
+										<a href="?s=/Home/Zpdt1/xqzp/id/{$zpLists.rid}">
+											<div class="s-l-1f">
+												<div class="yhtx">
+													<if condition="$zpLists[imagename]==''">  
+				                                  		<img src="__PUBLIC__/Home/img/yhmc.png.png" alt="" />
+				                                   <else />
+				                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$zpLists.imagename}" alt="" />
+				                                   </if>
+												</div>
+												<h3 class="yhmc">
+													用户{$zpLists.username|substr=0,6}
+												</h3>
+												<p class="bdmc">
+													部队名称：
+												</p>
+												<p class="bdlx">
+													部队类型：
+												</p>
+												<p class="szd">
+													工作地点：{$zpLists.address_zp}
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="s-l-2f">
+												<foreach name="zpList_xq" item="zpList_xqss">
+													<php>if($zpList_xqss['pid'] == $zpLists['rid']){</php>
+														<div class="middle">
+															<p class="black-333">{$zpList_xqss.type}</p>
+															<p class="age">{$zpList_xqss.age}</p>
+															<p class="gwyq">
+																<span class="black-333">岗位要求：</span>
+																{$zpList_xqss.content}
+															</p>
+															<p class="jg">
+																<span class="black-333">薪资：</span>
+																{$zpList_xqss.price}元/天
+															</p>
+															<php>
+																$zhao = explode(',',$zpList_xqss['zhao']);
+																array_pop($zhao);
+																$zhaos = count($zhao);
+															</php>
+															<p class="bm">{$zhaos}人应聘</p>
+															<div class="clearfloat"></div>
+														</div>
+													<php>}</php>
+												</foreach>
+											</div>
+											<div class="s-l-3f">
+												<div class="right">
+													{$zpLists.date}
+												</div>
+												<div class="clearfloat"></div>
+											</div>
+										</a>
+									</li>
+								</foreach>
+							</ul>
+						</div>
+						<php>if(!empty($zpList)){</php>
+							<div class="djjzgd">
+								<button>点击加载更多</button>
+							</div>
+						<php>}</php>
+					</div>
+					<div class="clear"></div>
+					<div class="s-c-2f-ss">
+						<php>if(!empty($ypList)){</php>
+						<div class="s-c-8f-1f" id="ypdt-a">
+							<h2>应聘大厅</h2>
+						</div>
+						<php>}</php>
+						<div class="s-c-5f-ss-2f">
+							<ul>
+								<foreach name="ypList" item="ypLists">
+									<li>
+										<a href="?s=/Home/Zpdt/xqyp/id/{$ypLists.eid}">
+											<div class="s-l-1f">
+												<div class="yhtx">
+													<if condition="$ypLists[imagename]==''">  
+				                                  		<img src="__PUBLIC__/Home/img/yhmc.png.png" alt="" />
+				                                   <else />
+				                                     	<img style="width:60px;" src="/matouPCS/Tu/upload/{$ypLists.imagename}" alt="" />
+				                                   </if>
+													<!-- <img src="img/yhmc.png" alt="" /> -->
+												</div>
+												<h3 class="yhmc">
+													用户{$ypLists.username|substr=0,6}
+												</h3>
+												<p class="szd">
+													工作地点：{$ypLists.address}
+												</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="s-l-2f">
+												<div class="middle">
+													<p class="black-333">{$ypLists.name}</p>
+													<p class="age">年龄{$ypLists.ages}</p>
+													<p class="gzjy">
+														<span class="black-333">工作经验：</span>
+														{$ypLists.worktimes}年
+													</p>
+													<p class="grjj">
+														<span class="black-333">个人简介：</span>
+														{$ypLists.content}
+													</p>
+													<p class="ypzw">
+														<span class="black-333">应聘职位：</span>
+														{$ypLists.type}
+													</p>
+													<!--<p class="bm">10人报名</p>-->
+													<div class="clearfloat"></div>
+												</div>
+
+												<div class="middle">
+													<p class="gzsj">
+														<span class="black-333">工作时间：</span>
+														{$ypList_gz[0][worktime]}
+													</p>
+													<p class="szgs">
+														<span class="black-333">所在公司：</span>
+														{$ypList_gz[0][workname]}
+													</p>
+													<p class="zw">
+														<span class="black-333">职位：</span>
+														{$ypList_gz[0][typew]}
+													</p>
+													<div class="clearfloat"></div>
+												</div>
+											</div>
+											<div class="s-l-3f">
+												<?php 
+												$shou_yp = explode(',',$ypLists);
+												array_pop($shou_yp);
+												$num_yp = count($shou_yp);
+												 ?>
+												<div class="left">
+													已有{$num_yp}人收藏
+												</div>
+												<div class="right">
+													{$ypLists[date]}
+												</div>
+												<div class="clearfloat"></div>
+											</div>
+										</a>
+									</li>
+								</foreach>
+							</ul>
+						</div>
+						<php>if(!empty($ypList)){</php>
+							<div class="djjzgd">
+								<button>点击加载更多</button>
+							</div>
+						<php>}</php>
+					</div>
+					<div class="clear"></div>
+					<div class="s-c-2f-ss">
+						<php>if(!empty($tzList)){</php>
+							<div class="s-c-8f-1f" id="tzsc-a">
+								<h2>跳蚤市场</h2>
+							</div>
+						<php>}</php>
+						<div class="user">
+							<foreach name="tzList" item="tzLists">
+								<?php  $img = explode(',',$tzLists['imagenames']);
+										 $shou = explode(',',$tzLists['shou']);
+										 $bao = explode(',',$tzLists['bao']);
+										 array_pop($shou);
+										 array_pop($bao);
+										 $shous = count($shou);
+										 $baos = count($bao);
+									   ?>
+								<php>if($tzLists['type'] == 2){</php>
+								<div class="user_01">
+									<a href="?s=/Home/Tzsc/xqxz/id/{$tzLists.fid}">
+										<div class="xztp">
+		                                  	<if condition="$tzLists[imagenames]==''">  
+		                                  		<img src="__PUBLIC__/Home/img/yhmc.png.png" alt="" />
+		                                   <else />
+		                                     	<img src="/matouPCS/Uploads/{$img[0]}" alt="" />
+		                                   </if>
+										</div>
+										<div class="user_01_01">
+											<div class="user_01_02">
+												<p>闲置：{$tzLists.name}</p><span>￥{$tzLists.price}元</span></div>
+											<p class="user_01_03">
+												<span class="black-333">商品介绍：</span>
+												<span class="text69">
+													{$tzLists.content}
+												</span>
+											</p>
+											<p class="user_01_04">已有{$shous}人收藏</p>
+											<p class="user_01_05">{$tzLists.address}</p>
+										</div>
+									</a>
+								</div>
+								<php>}else{</php>
+									<div class="user_01">
+										<a href="#">
+											<div class="user_02">
+												<div class="wptp">
+													<if condition="$tzLists[imagenames]==''">  
+				                                  		<img src="__PUBLIC__/Home/img/yhmc.png.png" alt="" />
+				                                   <else />
+				                                     	<img src="/matouPCS/Uploads/{$tzLists[imagenames][0]}" alt="" />
+				                                   </if>
+												</div>
+												<p>用户{$tzLists.username|substr=0,6}</p>
+												<div class="clearfloat"></div>
+											</div>
+											<div class="user_01_01-f">
+												<div class="user_01_02">
+													<p>{$tzLists.name}</p><span>预算￥{$tzLists.price}元</span></div>
+												<p class="user_01_03-f">
+													<span class="black-333">商品介绍：</span>
+													<span class="text90">
+														{$tzLists.content}
+													</span>
+												</p>
+												<p class="user_01_04">已有{$baos}人报名</p>
+												<p class="user_01_05">{$tzLists.address}</p>
+												<div class="clearfloat"></div>
+											</div>
+										</a>
+									</div>
+								<php>}</php>
+							</foreach>
+							
+							<div class="clearfloat"></div>
+						</div>
+						<php>if(!empty($tzList)){</php>
+							<div class="djjzgd">
+								<button>点击加载更多</button>
+							</div>
+						<php>}</php>
+					</div>
+					<div class="clear"></div>
+					<div class="s-c-2f-ss">
+						<php>if(!empty($bdList)){</php>
+							<div class="s-c-8f-1f" id="mtbd-a">
+								<h2>码头部队</h2>
+							</div>
+						<php>}</php>
+						<div class="f3-t-1">
+								<ul>
+									<foreach name="bdList" item="bdLists">
+										<li>
+											<php>if($_SESSION['id'] == $bdLists['uid']){</php>
+												  <if condition="$bdLists[bdlx]=='1'">
+											<a href="?s=/Home/Mtbu/grbddndt/id/{$bdLists.uid}">	
+											<elseif condition="$bdLists[bdlx]=='6'"/>
+											<a href="?s=/Home/Mtbu/spbddndt/id/{$bdLists.uid}">
+											<a href="?s=/Home/Mtbu/rzbddndt/id/{$bdLists.uid}">
+												</if>
+												<php>}else{</php>
+			                                        <if condition="$bdLists[bdlx]=='1'">
+											<a href="?s=/Home/Mtbu/grbddydt/id/{$bdLists.uid}">
+											<elseif condition="$bdLists[bdlx]=='6'"/>
+											<a href="?s=/Home/Mtbu/spbddydt/id/{$bdLists.uid}">
+											<else/>
+											<a href="?s=/Home/Mtbu/rzbddydt/id/{$bdLists.uid}">
+												</if>
+			                                       <php>}</php>
+												<div class="f3-t-1-c1">
+													<if condition="$bdLists[logo]==''">  
+				                                  		<img src="__PUBLIC__/Home/img/yhmc.png.png" alt="" />
+				                                   <else />
+				                                     	<img src="/matouPCS/Uploads/{$bdLists[logo]}" alt="" />
+				                                   </if>
+												</div>
+												<div class="f3-t-1-c2">
+													<strong>{$bdLists.forcename}</strong>
+												</div>
+												<div class="f3-t-1-c3l">
+													<p>部队类型: {$bdLists.type_bd}</p>
+												</div>
+												<div class="f3-t-1-c3r">
+													<p>粉丝数量100</p>
+												</div>
+												<div class="clear"></div>
+												<div class="f3-t-1-c4">
+													<p>
+														<span class="black-333">部队介绍：</span>
+														<span class="text72">
+															{$bdLists.content}</p>
+														</span>
+												</div>
+												<div class="f3-t-1-c5">
+													<p>所在地：{$bdLists.address}</p>
+												</div>
+												<div class="clearfloat"></div>
+											</a>
+										</li>
+									</foreach>
+									<div class="clear"></div>
+								</ul>
+							</div>
+							<php>if(!empty($bdList)){</php>
+								<div class="djjzgd">
+									<button>点击加载更多</button>
+								</div>
+							<php>}</php>
+					</div>
+					<php>if(!empty($scList)){</php>
+						<div class="clear"></div>
+						<div class="s-c-2f-ss">
+							<div class="s-c-8f-1f" id="mtsc-a">
+								<h2>码头商城</h2>
+							</div>
+							<div class="s-c-8f-ss-2f">
+								<ul>
+									<foreach name="scList" item="scLists">
+										<li>
+											<a href="?s=/Home/Tjcs/spxq/id/{$scLists.id}">
+												<div class="wptp">
+													<if condition="$scLists['imagenames']==''">  
+				                                  		<img src="__PUBLIC__/Home/img/yhmc-big.png" alt="">
+				                                   <else />
+				                                     	<img src="/matouPCS/Uploads/{$scLists[imagenames]}" alt="" />
+				                                   </if>
+												</div>
+												<div class="nr">
+													<p class="yhmc">用户{$scLists.username|substr=0,6}</p>
+													<!-- <span>{$scLists.name}</span> -->
+													<p class="jg">￥{$scLists.price}</p>
+													<div class="clearfloat"></div>
+												</div>
+												<p class="spjs">
+													<span class="black-333">商品介绍：</span>
+													{$scLists.content}
+												</p>
+												<p class="bottom">
+													<!-- <span class="left">已有10人报名</span> -->
+													<span class="right">{$scLists.address}</p>
+													<span class="clearfloat"></span>
+												</p>
+											</a>
+										</li>
+									</foreach>
+									<div class="clearfloat"></div>
+								</ul>
+							</div>
+							<div class="djjzgd">
+								<button>点击加载更多</button>
+							</div>
+						</div>
+						<php>}</php>
+				</div>
+
+				<div class="s-main-r left-tx">
+					<p class="px-22">WEDDING PIER</p>
+					<p class="px-22">
+						<h1>喜事码头</h1>
+					</p>
+					<p class="px-14">简单&nbsp;&nbsp;&nbsp;&nbsp;方便&nbsp;&nbsp;&nbsp;&nbsp;效率</p>
+					<div class="bdsz">
+						<div class="bdsz-bt">
+							全部
+						</div>
+						<ul>
+							<li id="xsdt" class="selected-con">
+								<a rel="nofollow" href="javascript://">
+									<h2>悬赏大厅</h2>
+								</a>
+							</li>
+							<li id="ysdt">
+								<a rel="nofollow" href="javascript://">
+									<h2>应赏大厅</h2>
+								</a>
+							</li>
+							<li id="zpdt">
+								<a rel="nofollow" href="javascript://">
+									<h2>招聘大厅</h2>
+								</a>
+							</li>
+							<li id="ypdt">
+								<a rel="nofollow" href="javascript://">
+									<h2>应聘大厅</h2>
+								</a>
+							</li>
+							<li id="tzsc">
+								<a rel="nofollow" href="javascript://">
+									<h2>跳蚤市场</h2>
+								</a>
+							</li>
+							<li id="mtbd">
+								<a rel="nofollow" href="javascript://">
+									<h2>码头部队</h2>
+								</a>
+							</li>
+							<li id="mtsc">
+								<a rel="nofollow" href="javascript://">
+									<h2>码头商城</h2>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+			<div class="clearfloat"></div>
+		</section>
+		<include file="Public/footer"/>
+	</body>
+	<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
+	<script src="__PUBLIC__/Home/js/troop.js"></script>
+
+</html>

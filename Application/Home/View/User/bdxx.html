@@ -122,7 +122,7 @@
 		  var t = "{:session('id')}";
 				$.ajax({
 					type:'post',
-					url:"{:U('User/bdxxjz')}",
+					url:"?s=/Home/User/bdxxjz",
 					data:{k:v},
 					beforeSend:function(){
 			         $("#budui").append("<div id='load'>加载中……</div>");

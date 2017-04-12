@@ -348,7 +348,7 @@
 	  function tj(){	
 		  var t = "{:session('id')}";
 	      var address = getCookie("add");//活动时间
-		alert(1);
+	//	alert(1);
 				$.ajax({
 					type:'post',
 					url:"{:U('Mtbu/buduijzre')}",
@@ -361,6 +361,9 @@
 						if(data!=null){		
 							
 	               	 for (var i = 0; i < data['nr'].length; i++) {
+							if(data['nr'][i].zid==null){
+								 var aa=2;
+							}else{
 	               		 var myArray=new Array()
 						 var str=data['nr'][i].zid;  
 						 myArray = str.split(","); 
@@ -375,6 +378,7 @@
 	
 							 }
 						 }
+							}
 						if(aa==1){
 							var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 						}else{

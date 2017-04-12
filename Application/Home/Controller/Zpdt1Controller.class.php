@@ -39,7 +39,7 @@ class Zpdt1Controller extends Controller
         $data['price'] = $_POST['price'];
         $data['worktimes'] = $_POST['worktime'];
         $data['ages'] = $_POST['age'];
-        $data['tel'] = $_POST['tel'];
+        $data['tels'] = $_POST['tel'];
         $data['qqs'] = $_POST['qq'];
         $data['content'] = $_POST['content'];
         $data['uid'] = $_SESSION['id'];
@@ -199,6 +199,6 @@ class Zpdt1Controller extends Controller
       $this->assign('data',$data);
       $this->assign('id',$pid['eid']);
 
-      $this->display('Zpdt/ypfbwc');
+      $this->display('Zpdt1/zpfbwc');
     }
 }
