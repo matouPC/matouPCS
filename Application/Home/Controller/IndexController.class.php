@@ -11,10 +11,12 @@ class IndexController extends Controller
         //悬赏大厅
         $list_one = M('reward2 as  r')->join('reward1 as e on r.pid = e.psid ')->join(' user as u on e.uid = u.id')->order('e.psid desc')->limit('0,21')->select();
         //判断是否已发布了应赏
-
+          //招聘大厅(
+          $zpbd=M('recruit2 as  r')->join('recruit1 as e on e.rid = r.pid ')->join(' user as u on e.uid = u.id')->join(' forcee as f on f.uid = u.id')->where('f.status=2')->order('e.rid desc')->limit('0,8')->select();
+      
     	//认证部队遍历
         // $budui = M('forcee')->where('status = 2')->order('collect desc')->limit('0,4')->select();
-        $budui = M("user as u")->join('forcee as f on f.uid = u.id')->where("f.status = 2")->order("f.collect desc")->limit('0,4')->select();
+        $budui = M("user as u")->join('forcee as f on f.uid = u.id')->where("f.status = 2")->order("f.id desc")->limit('0,4')->select();
         //判断当前用户是否为认证部队
         if(!empty($_SESSION['id'])){
             $uid = $_SESSION['id'];
@@ -26,19 +28,19 @@ class IndexController extends Controller
         if(!empty($_SESSION['id'])){
         	$uid = $_SESSION['id'];//当前用户的id
         	$sp = M('shop')->where("uid = {$uid}")->limit('1')->find();//我的商铺
-        	//  var_dump($sp);die;
+        	// 
         	$this->assign('sp',$sp);
         }
     	//码头商城遍历
-    	$shang = M('shop')->order('collect desc')->limit(' 0,4')->select();
+    	$shang = M('shop')->where('status=2')->order('id desc')->limit(' 0,4')->select();
     	//跳槽市场
     	$tiao = M('flea as f')->join('user as u on f.uid = u.id')->order('f.fid desc')->where("tz_status = '1'")->limit('0,5')->select();
     	$this->assign('stu_one',$list_one);
     	// $this->assign('stu_two',$list_two);
     	// $this->assign('stu_three',$list_three);
     	//个人中心首页
-
     	$this->assign('budui',$budui);
+    	$this->assign('zpbd',$zpbd);
 
     	$this->assign('shang',$shang);
 
@@ -63,11 +65,11 @@ class IndexController extends Controller
         }
     }
     //提交注册信息
-    public function regin(){
+    public function regins(){
         if(!empty($_POST['username']) && !empty($_POST['password'])){
 
             $data['tel'] = $_POST['username']; 
-            // $data['tel'] = '123123'; 
+             $data['username'] = $_POST['username']; 
             $data['password'] = $_POST['password'];
             // $data['password'] = '132312';
             $ob = M('user')->order('id desc')->add($data);
@@ -82,14 +84,20 @@ class IndexController extends Controller
             echo 'n';
         }
     }
+    public function ceshi(){
+    	
+    			echo 'y';
+    			// $this->ajaxReturn('y');
+    
+    }
     //用户登录
     public function login(){
         // if(!empty($_POST['username']) && !empty($_POST['password'])){
             $username = $_POST['username'];//可能是用户名 可能是电话号码
             $password = $_POST['password'];
-            $ob = M('user')->where("tel = '{$username}' and password = '{$password}'")->find();
+       /*      $ob = M('user')->where("tel = '{$username}' and password = '{$password}'")->find(); */
             $xb = M('user')->where("username = '{$username}' and password = '{$password} '")->find();           
-            if(!empty($ob)){
+/*             if(!empty($ob)){
                 session_start();
                 $_SESSION['username'] = $ob['tel'];
                 $_SESSION['id'] = $ob['id'];
@@ -102,18 +110,32 @@ class IndexController extends Controller
                 //增加粉丝的方法
                 $uid = $_SESSION['id'];//当前用户的id
                 $ji = M('user_fen')->where(" uid = {$uid}")->find();
-                if(empty($ji)){
+                if(!empty($ji)){
                     $arr['uid'] = $uid;
                     $dd = M('user_fen')->add($arr);
                 }
                 echo 'y';
-            }else if(!empty($xb)){
+            }else */
+            	 if(!empty($xb)){
                 session_start();
+                if($xb['username']==null){
                 $_SESSION['username'] = $xb['tel'];
+                }else{
+                	$_SESSION['username'] = $xb['username'];
+                }
                 $_SESSION['id'] = $xb['id'];
-                $_SESSION['imagename'] = $ob['imagename'];
-                $sp=M('shop')->where("uid = {$xb['id']}")->order('id desc')->find();
-                $_SESSION['status'] = $sp['status'];
+                $_SESSION['imagename'] = $xb['imagename'];
+                $sp=M('shop')->where("uid = {$xb['id']}")->find();
+                if($sp){
+                	$sps=M('shop')->where("status = 2 and uid = {$xb['id']}")->find();
+                	if($sps){
+                         $_SESSION['status'] = 2;
+                	  }else{
+                	  	$_SESSION['status'] = 1;
+                	  }
+                }else{
+                	$_SESSION['status'] = 0;
+                }
                 // session_id('xx') = $xb['id'];
                 //增加粉丝的方法
                 $uid = $_SESSION['id'];//当前用户的id

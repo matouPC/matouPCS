@@ -23,15 +23,15 @@
         <div class="topbar-logo-wrap clearfix">
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
-                <li><a class="on" href="/matouPCS/index.php/Admin/Index/index">首页</a></li>
-                <li><a href="/matouPCS/index.php/Index/index" target="_blank">网站首页</a></li>
+                <li><a class="on" href="?s=/Admin/Index/index">首页</a></li>
+                <li><a href="?s=/Index/index" target="_blank">网站首页</a></li>
             </ul>
         </div>
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
                 <li><a href="#">你好[<?php echo (cookie('username')); ?>]</a></li>
                 <li><a href="#">修改密码</a></li>      
-                <li><a href="/matouPCS/index.php/Admin/Login/index">退出</a></li>
+                <li><a href="?s=/Admin/Login/index">退出</a></li>
             </ul>
         </div>
     </div>
@@ -46,25 +46,25 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
-                         <li><a href="/matouPCS/index.php/Admin/Viwepager"><i class="icon-font">&#xe008;</i>图片轮播管理</a></li>
-                          <li><a href="/matouPCS/index.php/Admin/Reward"><i class="icon-font">&#xe005;</i>悬赏大厅管理</a></li>
-                            <li><a href="/matouPCS/index.php/Admin/Due"><i class="icon-font">&#xe005;</i>应赏区管理</a></li>
-                          <li><a href="/matouPCS/index.php/Admin/Recruit"><i class="icon-font">&#xe005;</i>招聘大厅管理</a></li>
-                              <li><a href="/matouPCS/index.php/Admin/Employ"><i class="icon-font">&#xe005;</i>应聘区管理</a></li>
-                          <li><a href="/matouPCS/index.php/Admin/Force"><i class="icon-font">&#xe005;</i>码头部队管理</a></li>
-                          <li><a href="/matouPCS/index.php/Admin/Shop"><i class="icon-font">&#xe005;</i>码头商城管理</a></li>
-                          <li><a href="/matouPCS/index.php/Admin/Flea"><i class="icon-font">&#xe005;</i>跳蚤市场管理</a></li>
-                         <li><a href="/matouPCS/index.php/Admin/Friend"><i class="icon-font">&#xe052;</i>友情链接</a></li>
-                         <li><a href="/matouPCS/index.php/Admin/Us"><i class="icon-font">&#xe052;</i>关于我们</a></li>
+                         <li><a href="?s=/Admin/Viwepager"><i class="icon-font">&#xe008;</i>图片轮播管理</a></li>
+                          <li><a href="?s=/Admin/Reward"><i class="icon-font">&#xe005;</i>悬赏大厅管理</a></li>
+                            <li><a href="?s=/Admin/Due"><i class="icon-font">&#xe005;</i>应赏区管理</a></li>
+                          <li><a href="?s=/Admin/Recruit"><i class="icon-font">&#xe005;</i>招聘大厅管理</a></li>
+                              <li><a href="?s=/Admin/Employ"><i class="icon-font">&#xe005;</i>应聘区管理</a></li>
+                          <li><a href="?s=/Admin/Force"><i class="icon-font">&#xe005;</i>码头部队管理</a></li>
+                          <li><a href="?s=/Admin/Shop"><i class="icon-font">&#xe005;</i>码头商城管理</a></li>
+                          <li><a href="?s=/Admin/Flea"><i class="icon-font">&#xe005;</i>跳蚤市场管理</a></li>
+                         <li><a href="?s=/Admin/Friend"><i class="icon-font">&#xe052;</i>友情链接</a></li>
+                         <li><a href="?s=/Admin/Us"><i class="icon-font">&#xe052;</i>关于我们</a></li>
                     
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="icon-font">&#xe018;</i>用户管理</a>
                     <ul class="sub-menu">
-                     <li><a href="/matouPCS/index.php/Admin/User"><i class="icon-font">&#xe005;</i>用户信息管理</a></li>
-                     <li><a href="/matouPCS/index.php/Admin/Bdzx"><i class="icon-font">&#xe005;</i>认证部队中心管理</a></li>
-                      <li><a href="/matouPCS/index.php/Admin/Liuyan"><i class="icon-font">&#xe004;</i>留言管理</a></li>
+                     <li><a href="?s=/Admin/User"><i class="icon-font">&#xe005;</i>用户信息管理</a></li>
+                     <li><a href="?s=/Admin/Bdzx"><i class="icon-font">&#xe005;</i>认证部队中心管理</a></li>
+                      <li><a href="?s=/Admin/Liuyan"><i class="icon-font">&#xe004;</i>留言管理</a></li>
                   
                     </ul>
                 </li>
@@ -76,11 +76,11 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/matouPCS/index.php/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">招聘大厅管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="/matouPCS/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">招聘大厅管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
-                <form action="/matouPCS/index.php/Admin/Recruit/index" method="post">
+                <form action="/matouPCS/Admin/Recruit/index" method="post">
                <table class="search-tab">
                         <tr>
                             <th width="70">招聘人:</th>
@@ -95,8 +95,8 @@
             <form name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="/matouPCS/index.php/Admin/Recruit/add"><i class="icon-font"></i>添加招聘</a>
-                         <a id="batchDel" href="javascript:void(0)"><input form="myform"  formaction="/matouPCS/index.php/Admin/Recruit/bdel" 
+                        <a href="/matouPCS/Admin/Recruit/add"><i class="icon-font"></i>添加招聘</a>
+                         <a id="batchDel" href="javascript:void(0)"><input form="myform"  formaction="/matouPCS/Admin/Recruit/bdel" 
                         type="submit" class="btn btn-primary btn2" onclick="return confirm('确定删除这些信息吗？');" value="批量删除"/></a>
                     </div>
                 </div>
@@ -131,9 +131,9 @@
                              <td><?php echo ($v["rqq"]); ?></td>
                              <td><?php echo ($v["remail"]); ?></td>
                               <td><?php echo ($v["collect"]); ?></td>
-                                  <td>    <a class=" link-update" href="/matouPCS/index.php/Admin/Recruit/tem?rid=<?php echo ($v["rid"]); ?>">招聘详情</a></td>
+                                  <td>    <a class=" link-update" href="/matouPCS/Admin/Recruit/tem?rid=<?php echo ($v["rid"]); ?>">招聘详情</a></td>
                             <td>
-                                <a class="link-update" href="/matouPCS/index.php/Admin/Recruit/update?rid=<?php echo ($v["rid"]); ?>">修改内容</a>
+                                <a class="link-update" href="/matouPCS/Admin/Recruit/update?rid=<?php echo ($v["rid"]); ?>">修改内容</a>
                              
                                   <a class="link-del"   onclick="shanchu(<?php echo ($v["rid"]); ?>)">删除</a>
                             </td>

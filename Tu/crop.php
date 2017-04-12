@@ -38,13 +38,14 @@
       $errorCode = $file['error'];
 
       if ($errorCode === UPLOAD_ERR_OK) {
-        $type = exif_imagetype($file['tmp_name']);
-
+        $type = getimagesize($file['tmp_name']);
+     //  echo ($file['tmp_name']);die();
         if ($type) {
-          $extension = image_type_to_extension($type);
+          $extension = image_type_to_extension($type['2']);
+ 
           $src = 'upload/' . date('YmdHis') . '.original' . $extension;
 
-          if ($type == IMAGETYPE_GIF || $type == IMAGETYPE_JPEG || $type == IMAGETYPE_PNG) {
+          if ($type['2'] == IMAGETYPE_GIF || $type['2'] == IMAGETYPE_JPEG || $type['2'] == IMAGETYPE_PNG) {
 
             if (file_exists($src)) {
               unlink($src);
@@ -54,7 +55,7 @@
 
             if ($result) {
               $this -> src = $src;
-              $this -> type = $type;
+              $this -> type = $type['2'];
               $this -> extension = $extension;
               $this -> setDst();
             } else {

@@ -43,7 +43,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -490,33 +490,33 @@
 									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                        	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?>
+                                        	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?>
 								</a>
 								<?php elseif($list[bdlx]=='6'): ?>
 								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>">  
 								<?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                        	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
+                                        	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php else: ?>
 								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                      	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
 									<?php }else{ ?>
                                         <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                      	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php elseif($list[bdlx]=='6'): ?>
 								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                      	  	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
+                                      	  	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php else: ?>
 								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>">  
 								<?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                    	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
+                                    	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
                                        <?php } ?>
 						</div>
 						<div class="u-cont">

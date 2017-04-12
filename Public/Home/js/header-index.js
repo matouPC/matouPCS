@@ -4,7 +4,7 @@ $('#xz-city').leoweather({
 });
 
 //		------------------------------------------------------------------------登陆弹窗------------------------------------------------------------------------
-$(function() {
+/*$(function() {
 	shortMessagraxc(); //��ȡ��֤��
 	// ---------------------------------------------       �ж���֤��
 	$('#yzm').blur(function() {
@@ -58,7 +58,7 @@ $(function() {
 	$('#again').click(function() {
 		$('.register-again p').css('display', 'none');
 	})
-})
+})*/
 var checkPhone = function(a) {
 	var patrn = /^((?:13|15|18|14|17)\d{9}|0(?:10|2\d|[3-9]\d{2})[1-9]\d{6,7})$/;
 	if(!patrn.exec(a)) return false;
@@ -84,7 +84,7 @@ $(function() {
 		}
 	})
 	/*yanzhengma*/
-function shortMessagraxc() {
+/*function shortMessagraxc() {
 	$('#btn_yzm').click(function() {
 		var count = 60;
 		var countdown = setInterval(CountDown, 1000);
@@ -99,8 +99,8 @@ function shortMessagraxc() {
 			count--;
 		}
 	})
-};
-$(function() {
+};*/
+/*$(function() {
 	$('#login-alert').click(function() {
 		$('body').css('overflow','hidden');
 		$('.alert').fadeIn();
@@ -137,7 +137,7 @@ $(function() {
 			});
 		}
 	}
-});
+});*/
 $(function() {
 	$(".action").click(function(){
 		$('.action').css('background-color','#ff5c5d');
@@ -237,12 +237,12 @@ $('#select-sp').hover(function() {
 
 
 //上传图片开始
-
+var tu = '';
 var upload_total = 9; //最多上传数量
 var uploader = new plupload.Uploader({ //创建实例的构造方法
 	runtimes: 'gears,html5,html4,silverlight,flash', //上传插件初始化选用那种方式的优先级顺序
 	browse_button: ['btn', 'btn2'], // 上传按钮
-	url: "ajax.php", //远程上传地址
+	url: "/matouPCS/ajax.php", //远程上传地址
 	flash_swf_url: 'plupload/Moxie.swf', //flash文件地址
 	silverlight_xap_url: 'plupload/Moxie.xap', //silverlight文件地址
 	filters: {
@@ -255,6 +255,7 @@ var uploader = new plupload.Uploader({ //创建实例的构造方法
 		]
 	},
 	multi_selection: true, //true:ctrl多文件上传, false 单文件上传
+	
 	init: {
 		FilesAdded: function(up, files) { //文件上传前
 			var length_has_upload = $("#ul_pics").children("li").length;
@@ -278,15 +279,24 @@ var uploader = new plupload.Uploader({ //创建实例的构造方法
 			});
 			$("#" + file.id).find(".percent").text(percent + "%");
 		},
+		
 		FileUploaded: function(up, file, info) { //文件上传成功的时候触发
+			
 			showPhotoUploadBox($('#btn'));
 			var uploaded_length = $(".img_common").length;
+			
 			if(uploaded_length <= upload_total) {
+				i++;
 				var data = eval("(" + info.response + ")"); //解析返回的json数据
 				$("#" + file.id).html("<input type='hidden'name='pic[]' value='" + data.pic + "'/><input type='hidden'name='pic_name[]' value='" + data.name + "'/>\n\
-                <img class='img_common' src='" + data.pic + "'/><span class='picbg'></span><a class='pic_close' onclick=delPic('" + data.pic + "','" + file.id + "')></a>");
+              <img class='img_common' src='" + data.pic + "'/><span class='picbg'></span><a class='pic_close' onclick=delPic('" + data.pic + "','" + file.id + "')></a>");
+				tu+= data.name+',';
 			}
 			showUploadBtn();
+			  setCookie('tu',tu);
+			  Close();
+			
+			
 		},
 		Error: function(up, err) { //上传出错的时候触发
 			alert(err.message);
@@ -296,13 +306,11 @@ var uploader = new plupload.Uploader({ //创建实例的构造方法
 uploader.init();
 
 function delPic(pic, file_id) { //删除图片 参数1图片路径  参数2 随机数
-	$.post("del.php", {
+	$.post("/matouPCS/del.php", {
 		pic: pic
 	}, function(data) {
 		$("#" + file_id).remove();
 		showUploadBtn();
-		  setCookie('tu',tu);
-		  Close();
 	})
 }
 

@@ -17,7 +17,7 @@ $('.content-3f').click(function(){
                 $('.login-passWord p').css('display','block');
             }
         },error:function(){
-            alert('no');
+            alert('no1');
         }
     });
 });
@@ -62,16 +62,7 @@ if($('#register-passWord').val() == ''){
     $('.register-3f').append('<p id="reg" style="color:red">不能为空!</p>');
 }
 });
-$('#again').blur(function(){
-if($('#register-passWord').val() == ''){
-    $('.register-passWord p').css('display','block');
-}else if(!pass.test(y)){
-    $('.register-passWord p').html('<p style="display: none;">*密码只能是6道18位数字或字母组合</p>');
-    $('.register-passWord p').css('display','block');
 
-    // alert('密码只能是6道10位数字或字母组合');
-}
-});
 // 提交表单
 // function ssub(){
 $('#submit').click(function(){
@@ -80,11 +71,11 @@ var password = $('#register-passWord').val();
 
 // if( p == 1 && u == 1 && ps == 1){
         $.ajax({
-            url:"?s=/Home/Index/regin",
+            url:"?s=/Home/Index/regins",
             type:"post",
             data:{username:username,password:password},
             success:function(data){
-            	alert($('#codes').val());
+            	//alert($('#codes').val());
             if($('#yzm').val() != $('#codes').val()){
                 alert('验证码有误！');
             }else if(data == 'y'){
@@ -199,7 +190,8 @@ function shortMessagraxc() {
             type : "get",
             url : "/matouPCS/sdk-php-2016-06-07/taobao-sdk-PHP-auto_1455552377940-20160607/fileTest.php?tel="+tel,
             success:function(data){
-                $('#codes').val(data);
+            	//alert(data);
+              $('#codes').val(data);
             },error:function(){
                 alert('123123');
             }
@@ -328,7 +320,7 @@ function windowDl(){
                         setCookie('openid',data);
                         qqLogins();
                     },error:function(){
-                        alert('no');
+                        alert('qqno');
                     }
                });
            }
@@ -402,20 +394,25 @@ function qqLogins(){
 */
 function wxLogin(){
     window.open('https://open.weixin.qq.com/connect/qrconnect?appid=wx06fc578080933319&redirect_uri=http://www.xishimatou.com/matouPCS&response_type=code&scope=snsapi_login#wechat_redirect');
+    
 }
 function wxdlgo(){
+	var url = document.URL;
+	// alert(url);
+	if(url.indexOf("code") != -1){
     var wxss = window.location.href.split("?");
     setCookie('wxcode',wxss[1]);
     var wxcode = getCookie('wxcode');
-    if(wxcode != ''){
-        // alert(wxcode);
+ 
+    if(wxcode!=undefined){
+     // alert(wxcode);
         $.ajax({
             url:"?s=/Home/User/wxcode/",
             type:"post",
             data:{code:wxcode},
             dataType:'json',
             success:function(data){
-                console.log(data);
+              // console.log(data);
                 $('#login-alert').attr('href','?s=/Home/User');
                  $('#findc').attr('href','?s=/Home/Xsdt/txxs/');
                  $('#fbys').attr('href','?s=/Home/Ysq/txys');
@@ -433,7 +430,8 @@ function wxdlgo(){
         });
     }
 }
-//wxdlgo();
+}
+wxdlgo();
 function setCookie(cookieName, cookieValue, cookieExpires) {
     try {
         cookieName = cookieName.trim();

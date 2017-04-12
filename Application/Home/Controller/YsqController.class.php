@@ -208,7 +208,7 @@ class YsqController extends Controller
     }
     public function ysxqwc(){
         //应赏发布完成
-        $list = M('reward1 as e')->join('user as u on e.uid = u.id')->order('e.psid desc')->limit('0,3')->select();
+        $list = M('reward1 as e')->join('user as u on e.uid = u.id')->limit('0,3')->order('e.psid desc')->select();
         //相关多少条
         $id = M('due')->order('did desc')->find();
         $data = M('reward2 as r')->join('reward1 as e on r.pid = e.psid')->select();

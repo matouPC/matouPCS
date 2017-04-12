@@ -44,7 +44,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -471,7 +471,7 @@
 								<div class="yhtx">
 								<?php if($dt[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
-                                     <img style="width: 120px; height: 120px;border-radius:50%" src="/MatouPCS/Tu/upload/<?php echo ($dt["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="width: 120px; height: 120px;border-radius:50%" src="/matouPCS/Tu/upload/<?php echo ($dt["imagename"]); ?>"  /><?php endif; ?>
 									<div class="vip">
 										<img src="/matouPCS/Public/Home/img/rzlogo.png" />
 									</div>
@@ -723,6 +723,9 @@
 											success:function(data){
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -737,6 +740,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -765,10 +769,10 @@
 														}
 													}
 													
-													if(data[i].imagename==''){
+													if(data[i].imagename==null){
 														var img='<img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />';
 													}else{
-												     var img = '<img  width="80" height="80" src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
+												     var img = '<img  width="80" height="80" src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
 													}
 													
 													
@@ -804,7 +808,7 @@
                               <?php } ?>
                               		 <?php if($lis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />
                                    <?php else: ?>
-                                     <img width="80" height="80" src="/MatouPCS/Tu/upload/<?php echo ($lis["imagename"]); ?>"  /><?php endif; ?>
+                                     <img width="80" height="80" src="/matouPCS/Tu/upload/<?php echo ($lis["imagename"]); ?>"  /><?php endif; ?>
 									
 										</a>
 										<div class="vip">
@@ -912,9 +916,10 @@
 				<div id="ul" class="s-main-l">
 					<div class="s-c-2f">
 						<ul>
-							<li>
+							
 								<!-- 悬赏 -->
-							<?php if(is_array($jbxs)): foreach($jbxs as $key=>$jbxss): ?><a href="?s=/Home/xsdt/xqxs/id/<?php echo ($jbxss['psid']); ?>">
+							<?php if(is_array($jbxs)): foreach($jbxs as $key=>$jbxss): ?><li>
+							<a href="?s=/Home/xsdt/xqxs/id/<?php echo ($jbxss['psid']); ?>">
 								<h3 style="color:#FF5C5D;">悬赏</h3>
 									<p>
 										<span class="black">活动时间：</span>
@@ -1759,7 +1764,7 @@ var p=2;
 
 		$.ajax({
 			type:'post',
-			url:"<?php echo U('Mtbu/xuanshangjz');?>",
+			url:"?s=/Home/Mtbu/xuanshangjz",
 			data:{k:p,id:id,where:where},
 			beforeSend:function(){
 	         $("#shiyan").append("<div id='load'>加载中……</div>");
@@ -1798,7 +1803,7 @@ var p=2;
 						$("#shiyan").append(xxoo);
 			
 				}else{
-					 //alert(22);
+					
 					 document.getElementById('btnn').innerHTML = '加载完毕';
 	 				flag=true;	
 				}	
@@ -1818,7 +1823,7 @@ var p=2;
 		//alert(where);
 			$.ajax({
 				type:'post',
-				url:"<?php echo U('Mtbu/yingshangjz');?>",
+				url:"?s=/Home/Mtbu/yingshangjz",
 				data:{k:pm,id:id,where:where},
 				beforeSend:function(){
 		         $("#ys").append("<div id='load'>加载中……</div>");
@@ -1865,7 +1870,7 @@ var p=2;
 		//alert(id);
 			$.ajax({
 				type:'post',
-				url:"<?php echo U('Mtbu/zhaopinjz');?>",
+				url:"?s=/Home/Mtbu/zhaopinjz",
 				data:{k:pn,id:id,where:where},
 				beforeSend:function(){
 		         $("#zp").append("<div id='load'>加载中……</div>");
@@ -1925,7 +1930,7 @@ var p=2;
 	//	alert(id);
 			$.ajax({
 				type:'post',
-				url:"<?php echo U('Mtbu/yingpinjz');?>",
+				url:"?s=/Home/Mtbu/yingpinjz",
 				data:{k:pb,id:id,where:where},
 				beforeSend:function(){
 		         $("#yp").append("<div id='load'>加载中……</div>");
@@ -1977,7 +1982,7 @@ var p=2;
 		//	alert(id);
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/qiugoujz');?>",
+					url:"?s=/Home/Mtbu/qiugoujz",
 					data:{k:pv,id:id,where:where},
 					beforeSend:function(){
 			         $("#qg").append("<div id='load'>加载中……</div>");
@@ -2015,7 +2020,7 @@ var p=2;
 	
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/xianzhijz');?>",
+					url:"?s=/Home/Mtbu/xianzhijz",
 					data:{k:pc,id:id,where:where},
 					beforeSend:function(){
 			         $("#xz").append("<div id='load'>加载中……</div>");
@@ -2061,7 +2066,7 @@ var p=2;
 
 		$.ajax({
 			type:'post',
-			url:"<?php echo U('Mtbu/xuanshangjz');?>",
+			url:"?s=/Home/Mtbu/xuanshangjz",
 			data:{k:pj,id:id,where:where},
 			beforeSend:function(){
 	         $("#shiyan").append("<div id='load'>加载中……</div>");
@@ -2120,7 +2125,7 @@ var p=2;
 	//	alert(where);
 			$.ajax({
 				type:'post',
-				url:"<?php echo U('Mtbu/yingshangjz');?>",
+				url:"?s=/Home/Mtbu/yingshangjz",
 				data:{k:pmc,id:id,where:where},
 				beforeSend:function(){
 		         $("#ys").append("<div id='load'>加载中……</div>");
@@ -2168,7 +2173,7 @@ var p=2;
 		//alert(id);
 			$.ajax({
 				type:'post',
-				url:"<?php echo U('Mtbu/zhaopinjz');?>",
+				url:"?s=/Home/Mtbu/zhaopinjz",
 				data:{k:pnc,id:id,where:where},
 				beforeSend:function(){
 		         $("#zp").append("<div id='load'>加载中……</div>");
@@ -2228,7 +2233,7 @@ var p=2;
 	//	alert(id);
 			$.ajax({
 				type:'post',
-				url:"<?php echo U('Mtbu/yingpinjz');?>",
+				url:"?s=/Home/Mtbu/yingpinjz",
 				data:{k:pbc,id:id,where:where},
 				beforeSend:function(){
 		         $("#yp").append("<div id='load'>加载中……</div>");
@@ -2279,7 +2284,7 @@ var p=2;
 		//	alert(id);
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/qiugoujz');?>",
+					url:"?s=/Home/Mtbu/qiugoujz",
 					data:{k:pvc,id:id,where:where},
 					beforeSend:function(){
 			         $("#qg").append("<div id='load'>加载中……</div>");
@@ -2316,7 +2321,7 @@ var p=2;
 
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/xianzhijz');?>",
+					url:"?s=/Home/Mtbu/xianzhijz",
 					data:{k:pcc,id:id,where:where},
 					beforeSend:function(){
 			         $("#xz").append("<div id='load'>加载中……</div>");

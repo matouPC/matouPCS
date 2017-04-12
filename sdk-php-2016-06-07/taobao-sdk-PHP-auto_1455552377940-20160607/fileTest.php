@@ -18,6 +18,6 @@
     $req ->setRecNum( "{$tel}" );
     $req ->setSmsTemplateCode( "SMS_37985087" );
     $resp = $c ->execute( $req );
-  //var_dump($resp);
+//var_dump($resp);
 
 ?>

@@ -8,7 +8,7 @@
                     <div class="yhtx">
                        <?php if($list[$i][imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
-                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($list[$i]["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/<?php echo ($list[$i]["imagename"]); ?>"  /><?php endif; ?>
                     </div>
                     <p class="yhmc">
                      <?php if($list[$i][tel]==$list[$i][username]): ?>用户<?php echo (substr($list[$i]["username"],0,5)); ?>

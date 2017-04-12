@@ -48,7 +48,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -191,7 +191,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -201,7 +201,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -418,13 +418,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+		              alert(222);
+					   alert(content);
 		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/User/usave1",
+				         url:"?s=/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
 				  
 	                	
 				      
@@ -539,6 +541,7 @@
 									</li>
 									<li>
 										<input type="text" id="qq"  name="qq"  class="white-in lxdh" placeholder="请输入QQ" />
+										 <input type="hidden" name="imagename" value="<?php echo $_COOKIE['img'];?>">
 									</li>
 									<li class="parents" >
 										<input  name="type"  type="radio"  checked="checked" value='销售商'/>销售商
@@ -658,7 +661,7 @@
 
 	</body>
 	<script src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script src="/matouPCS/Public/Home/js/main-sp.js"></script>
+	<script src="/matouPCS/Public/Home/js/main-spcj.js"></script>
 	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
 	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
 	<script src="/matouPCS/Public/Home/js/bootstrap.min.js"></script>
@@ -668,7 +671,7 @@
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 			
 	<script>
-		 function tj(){		 	
+		 function tj(){
 			    var  	charter = $("#charter").val();  
 			    var representative = $("#representative").val();
 			    var shopname= $("#shopname").val();
@@ -681,7 +684,7 @@
 				 $.ajax({
 				                 cache: true,
 				                 type: "POST",
-				                 url:"/matouPCS/index.php/Home/Tjcs/usave/",
+				                 url:"?s=/Home/Tjcs/usave/",
 				                 data:$('#myform').serialize(),// 你的formid
 				                 async: false,
 				                 error: function(request) {

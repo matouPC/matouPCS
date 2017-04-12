@@ -4,7 +4,7 @@
 			i+=1;
 			$(".p12").hide();
 			$(".dianji").hide();
-			$(".s-c-2f-2f-f ul").append('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="yszp'+i+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
+			$(".s-c-2f-2f-f ul").prepend('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="yszp'+i+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
 				$(".refcc").on("click", function() {
 					if($(".s-c-3f").css("height") == "10px") {
 						$(".p12").show();
@@ -189,7 +189,7 @@
 					var $os = $(that).siblings(".click1");
 					$($os).parent().parent().parent()	.remove();
 					if($(".txfg1-a").css("height") > "110px"){
-						alert("1");
+						//alert("1");
 						$(".txfg1-c2-1-a").css("display","block");
 						$(".txfg1-a").css("height","126px")
 					}else{
@@ -230,11 +230,11 @@
 		// $("#hfx3-1-u").click(function() {
 			
 		function hfx3(){ //应赏图片的方法this
-			alert(456);
+		//	alert(456);
 			var im = document.getElementById("this").getElementsByTagName("li").length;
 			im++;
 			if( im > 9 ){
-				alert('滚犊子(最多张图片)');
+				alert('(最多张图片)');
 			}else{
 				$(".p12").hide();
 				$(".dianji").hide();

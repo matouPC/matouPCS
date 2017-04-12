@@ -23,7 +23,7 @@ class MtbuController extends Controller
     {
     	//商品详情
     	 
-    	$force = M('forcee as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->where('s.status=2')->order('s.fid desc')->find();
+    	$force = M('forcee as s')->field( "s.*,u.username,u.addre,u.fen" ) ->join('user as u on s.uid = u.id')->where('s.status=2')->order('s.id desc')->find();
     
     	$this->assign('v',$force);
     	$this->display('Mtbu/rzbdsh');
@@ -32,9 +32,21 @@ class MtbuController extends Controller
     public function spglcg()
     {
     	//商品详情
-    
+ 
+    	$uid=$_SESSION['id'];
     	
+    	$v = M('shop')->where("uid = {$uid}")->where("status=2")->find();//我的商铺
+    	
+    	$this->assign('v',$v);
+    
     	$this->display('Mtbu/spglcg');
+    
+    }
+    public function spglsh()
+    {
+    	//商品详情
+    
+    	$this->display('Mtbu/spglsh');
     
     }
     public function bdusaveimg(){
@@ -63,6 +75,7 @@ class MtbuController extends Controller
     		}
     
     	}
+    	$_POST['uid']= $_SESSION['id'];
     	$ob = $did = M('forcee')->add($_POST);
     	
     	for ($i=1; $i <= $num ; $i++) {
@@ -88,7 +101,7 @@ class MtbuController extends Controller
     		
     	
     	}
-    	for ($i=1; $i <= $nums ; $i++) {
+    	for ($i=1; $i <= $nums-1 ; $i++) {
     		 
     		$upload=$_FILES["file{$i}"];
     		$upload = new \Think\Upload($upload);
@@ -97,6 +110,7 @@ class MtbuController extends Controller
     		$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
     		$upload->savePath  =      './Uploads/'; // 设置附件上传目录
     		$info   =   $upload->upload(array($_FILES["file{$i}"]));
+    	//var_dump($nums);die;
     		foreach($info as $upload){
     			$data['imagename'] =  $upload['savename'];
     		}
@@ -112,7 +126,7 @@ class MtbuController extends Controller
     		$id= M('forcevideo')->add($data);
     		}
     	}
-    	$this->redirect('Mtbu/rzbdsh');
+    	$this->rzbdsh();
     }
     public function dongtaidi()
     {
@@ -1654,6 +1668,7 @@ class MtbuController extends Controller
     	}
         $dt = M('shop as s')->join('user as u on s.uid = u.id')->where("s.id = {$id}")->find();
         $sp = M('shop')->where("id = {$id}")->select();//我的商铺
+ 
         $list = M('shop_liuyan as s')-> field( "s.*,u.username,u.type_u,u.tel,u.imagename,u.addre")->join('user as u on s.uid = u.id')->where("s.sid = {$id}")->order('s.id desc')->limit('0,3')->select();
         $uuid = $_SESSION['id'];
         if($uuid == ''){

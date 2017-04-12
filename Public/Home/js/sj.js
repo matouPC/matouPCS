@@ -1,12 +1,12 @@
 //删除档期->或删除照片
 // alert(document.getElementById('pic1').src);
-if(document.getElementById('pic1').src == 'http://localhost/matouPCS/Uploads/'){
+if(document.getElementById('pic1').src == '?s=/matouPCS/Uploads/'){
 	$('#pic1').attr('src','/matouPCS/Public/Home/img/scsp.png');
 }
-if(document.getElementById('pic2').src == 'http://localhost/matouPCS/Uploads/'){
+if(document.getElementById('pic2').src == '?s=/matouPCS/Uploads/'){
 	$('#pic2').attr('src','/matouPCS/Public/Home/img/scsp.png');
 }
-if(document.getElementById('pic3').src == 'http://localhost/matouPCS/Uploads/'){
+if(document.getElementById('pic3').src == '?s=/matouPCS/Uploads/'){
 	$('#pic3').attr('src','/matouPCS/Public/Home/img/scsp.png');
 }
 // if(document.getElementById('pics1').src == 'http://localhost/matouPCS/Uploads/'){

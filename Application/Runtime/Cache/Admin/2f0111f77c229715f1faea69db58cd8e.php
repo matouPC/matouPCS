@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?><script type='text/javascript'>top.location.replace('?s=/Admin/Login/index')</script>

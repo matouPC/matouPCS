@@ -45,7 +45,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -188,7 +188,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -198,7 +198,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -475,7 +475,7 @@
 								<div class="yhtx">
 										<?php if($dt[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
-                                     <img style="width: 120px; height: 120px;border-radius:50%" src="/MatouPCS/Tu/upload/<?php echo ($dt["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="width: 120px; height: 120px;border-radius:50%" src="/matouPCS/Tu/upload/<?php echo ($dt["imagename"]); ?>"  /><?php endif; ?>
 									<div class="vip">
 										<img src="/matouPCS/Public/Home/img/rzlogo.png" />
 									</div>
@@ -645,6 +645,9 @@
 											success:function(data){
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -659,6 +662,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -687,10 +691,10 @@
 														}
 													}
 													
-													if(data[i].imagename==''){
+													if(data[i].imagename==null){
 														var img='<img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />';
 													}else{
-												     var img = '<img  width="80" height="80" src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
+												     var img = '<img  width="80" height="80" src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
 													}
 													
 													
@@ -726,7 +730,7 @@
                               <?php } ?>
                               		 <?php if($lis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />
                                    <?php else: ?>
-                                     <img width="80" height="80" src="/MatouPCS/Tu/upload/<?php echo ($lis["imagename"]); ?>"  /><?php endif; ?>
+                                     <img width="80" height="80" src="/matouPCS/Tu/upload/<?php echo ($lis["imagename"]); ?>"  /><?php endif; ?>
 									
 										</a>
 										<div class="vip">
@@ -846,7 +850,7 @@
 								<a href="">
 										<?php if($v[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
-                                     <img style="width: 60px; height: 60px;border-radius:50%" src="/MatouPCS/Tu/upload/<?php echo ($v["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="width: 60px; height: 60px;border-radius:50%" src="/matouPCS/Tu/upload/<?php echo ($v["imagename"]); ?>"  /><?php endif; ?>
 								</a>
 								<div class="vip">
 									<img src="/matouPCS/Public/Home/img/rzlogo.png" />
@@ -978,7 +982,7 @@
 															
 									
 				</script>
-	<script type="text/javascript">
+<script type="text/javascript">
 var p=2;
   function tj(id){
 
@@ -986,7 +990,7 @@ var p=2;
 	 // alert(id);
 		$.ajax({
 			type:'post',
-			url:"<?php echo U('Mtbu/dnjzdt');?>",
+			url:"?s=/Home/Mtbu/dnjzdt",
 			data:{k:p,id,id},
 			beforeSend:function(){
 	         $("#conn").append("<div id='load'>加载中……</div>");
@@ -997,6 +1001,9 @@ var p=2;
 					if(data!=null){		
 						var zan='';
 						 for (var i = 0; i < data['nr'].length; i++) {
+								if(data['nr'][i].zid==null){
+									 var aa=2;
+								}else{
 							 var myArray=new Array()
 							 var str=data['nr'][i].zid;  
 							 myArray = str.split(","); 
@@ -1012,6 +1019,7 @@ var p=2;
 		
 								 }
 							 }
+								}
 							if(aa==1){
 								var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 							}else{
@@ -1027,7 +1035,7 @@ var p=2;
 								if(data['nr'][i].imagename==null){
 									var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 								}else{
-							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+							     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 								}
 								if(data['nr'][i].type==2){
 									var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1073,6 +1081,9 @@ var p=2;
 					
 					var pl='';
 					 for (var i = 0; i < data['nr'].length; i++) {
+							if(data['nr'][i].zid==null){
+								 var aa=2;
+							}else{
 						 var myArray=new Array()
 						 var str=data['nr'][i].zid;  
 						 myArray = str.split(","); 
@@ -1087,6 +1098,7 @@ var p=2;
 	
 							 }
 						 }
+							}
 						if(aa==1){
 							var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 						}else{
@@ -1101,7 +1113,7 @@ var p=2;
                     	if(data['nr'][i].imagename==null){
     						var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
     					}else{
-    				     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+    				     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
     					}
                 		if(data['nr'][i].type==2){
 							var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1133,7 +1145,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdt');?>",
+					url:"?s=/Home/Mtbu/dtjzdt",
 					data:{k:l,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1143,6 +1155,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1157,6 +1172,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1171,7 +1187,7 @@ var p=2;
 								 	if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1206,7 +1222,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdthd');?>",
+					url:"?s=/Home/Mtbu/dtjzdthd",
 					data:{k:z,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1215,6 +1231,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1229,6 +1248,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1243,7 +1263,7 @@ var p=2;
 								 	if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1279,7 +1299,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdt');?>",
+					url:"?s=/Home/Mtbu/dtjzdt",
 					data:{k:x,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1288,6 +1308,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1302,6 +1325,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1316,7 +1340,7 @@ var p=2;
 								 	if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1352,7 +1376,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdtre');?>",
+					url:"?s=/Home/Mtbu/dtjzdtre",
 					data:{k:c,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1361,6 +1385,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1375,6 +1402,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1389,7 +1417,7 @@ var p=2;
 								 if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1425,7 +1453,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdtre');?>",
+					url:"?s=/Home/Mtbu/dtjzdtre",
 					data:{k:v,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1435,6 +1463,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1449,6 +1480,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1463,7 +1495,7 @@ var p=2;
 								 if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1499,7 +1531,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdt');?>",
+					url:"?s=/Home/Mtbu/dtjzdt",
 					data:{k:b,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1509,6 +1541,9 @@ var p=2;
 							if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1523,6 +1558,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1537,7 +1573,7 @@ var p=2;
 								 if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1573,7 +1609,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdthdr');?>",
+					url:"?s=/Home/Mtbu/dtjzdthdr",
 					data:{k:n,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1583,6 +1619,9 @@ var p=2;
 							if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1597,6 +1636,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1611,7 +1651,7 @@ var p=2;
 								 if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1647,7 +1687,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/dtjzdthd');?>",
+					url:"?s=/Home/Mtbu/dtjzdthd",
 					data:{k:m,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1656,6 +1696,9 @@ var p=2;
 						if(data!=null){				
 							
 							 for (var i = 0; i < data['nr'].length; i++) {
+									if(data['nr'][i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data['nr'][i].zid;  
 								 myArray = str.split(","); 
@@ -1670,6 +1713,7 @@ var p=2;
 			
 									 }
 								 }
+									}
 								if(aa==1){
 									var dianzan='<span id="z'+data['nr'][i].did+'" style="font-size:17px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1684,7 +1728,7 @@ var p=2;
 								 if(data['nr'][i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/yhmc.png" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data['nr'][i].imagename+'" /> ';
 									}
 									if(data['nr'][i].type==2){
 										var imgh='<img src="/matouPCS/Public/Home/img/mdhd.png" />';
@@ -1717,7 +1761,8 @@ var p=2;
 		  }  
 
   
-</script>		</section>
+</script>
+</section>
 		<!DOCTYPE html>
 <html>
 	<head>

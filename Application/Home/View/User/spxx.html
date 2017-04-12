@@ -159,7 +159,7 @@ function  tj(){
 	  var t = "{:session('id')}";
 			$.ajax({
 				type:'post',
-				url:"{:U('User/spxxjz')}",
+				url:"?s=/Home/User/spxxjz",
 				data:{k:v},
 				beforeSend:function(){
 		         $("#shangpul").append("<div id='load'>加载中……</div>");
@@ -212,7 +212,7 @@ var n=2;
 function  tjj(){		
 			$.ajax({
 				type:'post',
-				url:"{:U('User/spxxsjz')}",
+				url:"?s=/Home/User/spxxsjz",
 				data:{k:n},
 				beforeSend:function(){
 		         $("#shangpus").append("<div id='load'>加载中……</div>");

@@ -4,11 +4,11 @@
 			a+=1;
 			$(this).parents('.cs').children('.s-c-3f-sp').children('ul').prepend('<li>' +
 					'<div class="cjsp_sc">' +
-					'<div class="photobg1"><div class="remm"><img  src="/MatouPCS/public/Home/img/sc_01.png" width="19" height="18"></div>' +
+					'<div class="photobg1"><div class="remm"><img  src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div>' +
 					'<input name="upload'+a+'" class="photobt" type="file" id="photo1">' +
-					'<p class="addimg"><img src="/MatouPCS/public/Home/img/photoadd.png"></p><div class="click1"></div>' +
-					'</div><div class="photobg2"><div class="remm"><img  src="/MatouPCS/public/Home/img/sc_01.png" width="19" height="18"></div>' +
-					'<input class="photobt"name="uploads'+a+'" type="file" id="photo2"><p class="addimg"><img src="/MatouPCS/public/Home/img/photoadd.png"></p>' +
+					'<p class="addimg"><img src="/matouPCS/Public/Home/img/photoadd.png"></p><div class="click1"></div>' +
+					'</div><div class="photobg2"><div class="remm"><img  src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div>' +
+					'<input class="photobt"name="uploads'+a+'" type="file" id="photo2"><p class="addimg"><img src="/matouPCS/Public/Home/img/photoadd.png"></p>' +
 					'<div class="click1"></div></div></div>'+
 					'<div class="cjsp_lx"><select name="leixing'+a+'"><option>出租</option><option>出售</option></select>'+
 					'<select name="name'+a+'"><option>音响</option><option>舞台</option><option>灯光</option><option>屏幕</option><option>泡泡机</option>'+
@@ -17,7 +17,7 @@
 					'<div class="cjsp_sc_00">' +
 					'<textarea name="content'+a+'" class="cjsp_sc_01" placeholder=请输入商品信息(不得超过60个字) maxlength="120"></textarea>' +
 					'<p class="cjsp_sc_02">价格：<input  name="price'+a+'" type="text" class="cjsp_sc_02_01" maxlength="6">&nbsp;元</p>' +
-					'<img class="refcc" src="/MatouPCS/public/Home/img/sc_01.png" width="19" height="18" class="cjsp_sc_02_02"></div>' +
+					'<img class="refcc" src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18" class="cjsp_sc_02_02"></div>' +
 					'<div class="mycontent"></li>'),
 				$(".refcc").on("click", function() {
 					$(this).parent().parent().remove();

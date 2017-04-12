@@ -35,7 +35,7 @@
 			<div class="s-main-c">
 				<div class="s-main-r">
 					<div class="s-c-1f">
-						<a href="s=/Home/Ysq">
+						<a href="?s=/Home/Ysq">
 							<img src="__PUBLIC__/Home/img/jrysdt.png" alt="" />
 						</a>
 					</div>
@@ -45,20 +45,18 @@
 						<ul>
 							<foreach name="list" item="lists">
 								<li>
-									<a href="">
+									<a href="?s=/Home/Ysq/xqys/id/{$lists.did}">
 										<div>
 											<div class="tx">
 												<if condition="$lists[imagename]==''">  
 			                                  			<img src="__PUBLIC__/Home/img/yhmc.png" alt="" />
 			                                   <else />
-			                                     	<img src="/matouPCS/Tu/upload/{$lists.imagename}" alt="" />
+			                                     	<img style="width: 60px; height: 60px;border-radius:50%" src="/matouPCS/Tu/upload/{$lists.imagename}" alt="" />
 			                                   </if>
 												
 											</div>
 											<p class="yhmc">用户{$lists.username|substr=0,6}</p>
-											<p class="price">
-												{$lists.price}元/天
-											</p>
+									
 											<p class="hddd">所在地：{$lists.addre}</p>
 											<div class="clearfloat"></div>
 										</div>
@@ -85,7 +83,7 @@
 											<p class="zpzp"><span class="xqcc-c0">照片作品：</span>{$imgnums}个</p>
 											<p class="spzp"><span class="xqcc-c0">视频作品：</span>{$vidnums}个</p>
 											<p class="dq">
-												<span class="xqcc-c0">档期：</span> 2<?php echo $dang[0];echo $dangs[0];?>&nbsp;&nbsp;......
+												<span class="xqcc-c0">档期：</span> <?php echo $dang[0];echo $dangs[0];?>&nbsp;&nbsp;......
 											</p>
 											<div class="clearfloat"></div>
 										</div>
@@ -104,6 +102,6 @@
 		</section>
 		<include file="Public/foot"/>
 	</body>
-	<script src="js/scrolltopcontrol.js"></script>
+	<script src="__PUBLIC__/Home/js/scrolltopcontrol.js"></script>
 
 </html>

@@ -48,10 +48,8 @@
 				</div>
 				<div class="s-main-l">
 					<div class="s-c-2f">
-						<a href="?s=/Home/Mtbu/rzbd">
-							<a href="mtbu-zy.php" class="zk">
-								进入码头部队
-							</a>
+						<a href="?s=/Home/Mtbu/rzbd" class="zk">
+								进入码头部队				
 						</a>
 					</div>
 					<div class="s-c-3f">
@@ -60,7 +58,11 @@
 								<a href="#">
 									<div class="sc3f-ulc1">
 										<span class="ulc1">
-											<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+										   <if condition="$v[logo]==''">
+									<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+                                      <else />
+                                      	<img style="width: 101px; border-radius:50%" src="/matouPCS/Tu//upload/{$v.logo}" alt="" />
+                                    </if>
 										</span>
 										<span class="ulc2">
 											<strong class="p18 black-333">{$v.forcename}</strong>

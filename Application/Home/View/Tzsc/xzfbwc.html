@@ -25,7 +25,7 @@
 					<div class="h-c-3f">
 						<img src="__PUBLIC__/Home/img/navbg4.png" alt="" />
 						<a href="#">
-							<a href="?s=/Home/Tzsc/xqxz/id/{$id}" class="h-f3-c1">查看闲置详情页</a>
+							<a href="?s=/Home/Tzsc/xqxz/id/{$fid}" class="h-f3-c1">查看闲置详情页</a>
 						</a>
 					</div>
 				</div>
@@ -47,7 +47,11 @@
 								<a href="?s=/Home/Tzsc/xqqg/id/{$lists.fid}">
 									<div class="user_02">
 										<div class="wptp">
-											<img src="__PUBLIC__/Home/img/bdmc.png">
+										  <if condition="$lists[imagename]==''">
+									<img src="__PUBLIC__/Home/img/bdmc.png">>
+                                      <else />
+                                      	<img src="/matouPCS/Tu/upload/{$lists.imagename}" style="border-radius:50%" width="120" height="120"/>
+                                    </if>	
 										</div>
 										<p>用户{$lists.username|substr=0,5}</p>
 										<div class="clearfloat"></div>

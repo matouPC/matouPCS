@@ -23,7 +23,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>喜事码头-首页</title>
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/header-index.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
 		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
@@ -181,7 +181,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -191,7 +191,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -295,6 +295,7 @@
 									<div class="register-2f">
 										<span class="title">验 证 码</span>
 										<input id="yzm" type="text" maxlength="4" placeholder="请输入您的手机验证码">
+										<input type="hidden" id="codes" >							
 										<div class="alert-true">
 											<img src="/matouPCS/Public/Home/img/true.png">
 										</div>
@@ -327,7 +328,7 @@
 										</p>
 										<div class="clear"></div>
 									</div>
-									<div class="register-6f">
+									<div class="register-6f" id="submit">
 										<button>注册</button>
 									</div>
 								</li>
@@ -409,13 +410,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+				//    alert(tu);
+				 //   alert(content);
 				    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/user/usave1",
+				         url:"?s=/Home/user/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				        	
+				        		 window.location.reload(true);//重新加载当前文挡 */
 				  
 	                	
 				      
@@ -447,11 +450,12 @@
 		<script src="/matouPCS/Public/Home/js/City_data.js"></script>
 		<script src="/matouPCS/Public/Home/js/areadata.js"></script>
 		<script src="/matouPCS/Public/Home/js/sinaFaceAndEffec.js"></script>
+		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 		<script src="/matouPCS/Public/Home/plupload/plupload.full.min.js"></script>
-		<script src="/matouPCS/Public/Home/js/header-index.js"></script>
+     	<script src="/matouPCS/Public/Home/js/header-index.js"></script>
 		<script src="/matouPCS/Public/Home/js/index-alert-login.js"></script>
 		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101383226" data-redirecturi="http://www.xishimatou.com;" charset="utf-8"></script>
-		<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+	
 	</body>
 </html>
 
@@ -542,9 +546,9 @@
 			<div class="fbtypec">
 			</div>
 			<div class="contentc">
-				<div class="cca" id="cca">个人</div>
+					<a  href="?s=/Home/Xsdt/txxs/"><div class="cca" id="cca">个人</div></a>
 				<div class="ccb" id="ccb">
-					<p class="ccrc">婚庆公司<br>影楼<br>工作室<br>表演团体</p>
+					<a  href="?s=/Home/Xsdt/txxs/"><p class="ccrc">婚庆公司<br>影楼<br>工作室<br>表演团体</p></a>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -562,7 +566,7 @@
 							<div id="PicSlide">
 								<ul class="img">
 									<li style="display:list-item;">
-										<a href="?s=/Home/Zpdt1"><img src="/matouPCS/Public/Home/img/banner_big01.png" width="980" height="450" /></a>
+										<a href="?s=/Home/Zpdt1"><img src="/matouPCS/Public/Home/img/banner_big01.png" width="980" ="450" /></a>
 									</li>
 									<li>
 										<a href="?s=/Home/Tzsc"><img src="/matouPCS/Public/Home/img/banner_big02.png" width="980" height="450" /></a>
@@ -610,13 +614,14 @@
 								<div class="center s-f1-r-1f-word">
 									<p class="h2">发现更多好服务</p>
 								</div>
-								<div id="lqmtb" class="center">
-									<div class="img"><img src="/matouPCS/Public/Home/img/M.png" alt="" /></div>
-									<span>领取码头币</span>
-								</div>
+									<div id="lqmtb" class="center">
+										<div class="img"><img src="/matouPCS/Public/Home/img/M.png" alt="" /></div>
+										<span id="lqmtbs">领取码头币</span>
+										<input type="hidden" id="uuid" value="<?php echo ($_SESSION['id']); ?>">
+									</div>
 								<!--领取码头币开始-->
-								<div class="gold-black">
-									<div class="gold-white">
+								<div class="gold-black" id="mts">
+									<!-- <div class="gold-white">
 										<div class="gold-title">
 											<img src="/matouPCS/Public/Home/img/gold-title.png" />
 										</div>
@@ -684,7 +689,7 @@
 										</div>
 
 										<div class="clear"></div>
-									</div>
+									</div> -->
 								</div>
 								<!--领取码头币结束-->
 							</div>
@@ -864,7 +869,7 @@
 							</div>
 						</div>
 						<div class="s-f2-r">
-							<div class="s-f2-r-1f">
+							<div style="text-align: center" class="s-f2-r-1f">
 								<h2>5秒发布悬赏</h2>
 							</div>
 							<div class="s-f2-r-2f">
@@ -973,118 +978,32 @@
 								</div>
 							</div>
 						</div>
-						<div class="s-f3-l">
+					<div class="s-f3-l">
 							<ul>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/1" class="abgs1">
-										<img src="/matouPCS/Public/Home/img/recruit_pic01.png" />
-										<div class="abg1">
-											<div class="abg1-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">经理/店长</div>
-											<div class="abg1-r">查看更多</div>
+								<div class="border">
+									<?php if(is_array($zpbd)): foreach($zpbd as $key=>$zpbds): ?><li>
+									<a href="?s=/Home/Zpdt1/xqzp/id/<?php echo ($zpbds["rid"]); ?>">
+										<div class="logo">
+										<?php if($zpbds[logo]==''): ?><img src="/matouPCS/Public/Home/img/LOGO-zp.png" />
+                                   <?php else: ?>
+                                     <img style="border-radius:50%;width: 80px"  src="/matouPCS/Tu/upload/<?php echo ($zpbds["logo"]); ?>"  /><?php endif; ?>
+											
 										</div>
-									</a>
-
-								</li>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/2" class="abgs2">
-										<img src="/matouPCS/Public/Home/img/recruit_pic02.png" />
-										<div class="abg2">
-											<div class="abg2-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">营业员</div>
-											<div class="abg1-r">查看更多</div>
+										<div class="content-zp">
+											<strong><?php echo ($zpbds["type"]); ?></strong>
+											<p>
+												<span><?php echo ($zpbds["price"]); ?></span>
+												<?php echo ($zpbds["address"]); ?>
+											</p>
+											<p class="szcs"><?php echo ($zpbds["type_bd"]); ?></p>
 										</div>
+										<div class="clear"></div>
 									</a>
-								</li>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/3" class="abgs1">
-										<img src="/matouPCS/Public/Home/img/recruit_pic03.png" />
-										<div class="abg1">
-											<div class="abg1-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">化妆师</div>
-											<div class="abg1-r">查看更多</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/4" class="abgs1">
-										<img src="/matouPCS/Public/Home/img/recruit_pic04b.png" />
-										<div class="abg1">
-											<div class="abg1-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">数码师/设计</div>
-											<div class="abg1-r">查看更多</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/5" class="abgs1">
-										<img src="/matouPCS/Public/Home/img/recruit_pic05.png" />
-										<div class="abg1">
-											<div class="abg1-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">视频剪辑师</div>
-											<div class="abg1-r">查看更多</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/6" class="abgs1">
-										<img src="/matouPCS/Public/Home/img/recruit_pic06.png" />
-										<div class="abg1">
-											<div class="abg1-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">摄像师</div>
-											<div class="abg1-r">查看更多</div>
-										</div>
-
-									</a>
-								</li>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/7" class="abgs2">
-										<img src="/matouPCS/Public/Home/img/recruit_pic07.png" />
-										<div class="abg2">
-											<div class="abg2-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">摄影师</div>
-											<div class="abg1-r">查看更多</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="?s=/Home/Zpdt1/index/type/8" class="abgs1">
-										<img src="/matouPCS/Public/Home/img/recruit_pic08.png" />
-										<div class="abg1">
-											<div class="abg1-c">
-												<p>Welcome to</p>
-												<p>the wedding pier</p>
-											</div>
-											<div class="abg1-l">策划师</div>
-											<div class="abg1-r">查看更多</div>
-										</div>
-									</a>
-								</li>
-								<li class="clearf"></li>
+								</li><?php endforeach; endif; ?>
+								<div class="clear"></div>
+								</div>
 							</ul>
-							<ul class="clearf"></ul>
-						</div>>
+						</div>
 						<div class="clear"></div>
 						<div class="s-f3-x">
 							<img src="/matouPCS/Public/Home/img/bannerfgx1.png" />
@@ -1110,7 +1029,7 @@
 						<div class="troops">
 							<!-- 码头部队 -->
 							<?php if(is_array($budui)): foreach($budui as $key=>$buduis): ?><div class="company">
-									<p class="company_01_01"><img src="/matouPCS/Public/Home/img/sca.png" />关注<?php echo ($buduis["fen"]); ?></p>
+									<p class="company_01_01"><img style="margin-left: 10px"  src="/matouPCS/Public/Home/img/sca.png" />关注<?php echo ($buduis["fen"]); ?></p>
 									<div class="hp">
 										<img src="/matouPCS/Public/Home/img/wharf_force_people.png">
 									</div>
@@ -1260,7 +1179,7 @@
 											</div>
 											<div class="mtsc-cr">
 												<p style="font-size: 16px;color: #5b5b5b;"><?php echo ($shangs["shopname"]); ?></p>
-												<p style="height: 20px;">地址：<?php echo ($shangs["address"]); ?>&nbsp;</p>
+												<p >地址：<?php echo ($shangs["address"]); ?>&nbsp;</p>
 												<p>类型：<?php echo ($shangs["type"]); ?></p>
 											<div class="mtscc">
 												<p>
@@ -1422,21 +1341,23 @@
 											</a>
 										</div>
 									</li>
-									<div class="clear"></div>
+			                  	<div class="clear"></div>
 								</ul>
 							</div>
 						</div>
 						<div class="clearf"></div>
 					</div>
-
-					<span style="height: 50px;display: block;"></span>
-
-				<!DOCTYPE html>
+					<div class="clearf"></div>
+				</div>
+			</div>
+		</section>
+		<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/matouPCS/Public/Home/css/2rank-footer.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/showwin2.css" />
+		<link rel="stylesheet" href="/matouPCS/Public/Home/css/indexstore.css" />
 	</head>
 	<body>
 		<footer>
@@ -1447,14 +1368,14 @@
 							<ul>
 								<li class="f4-o1-1">
 									<div>
-										<h4>喜事码头客服热线</h4>
+										<h5>喜事码头客服热线</h5>
 										<p>工作时间:每天9:00-23:00</p>
 										<p>188-8888-888</p>
 									</div>
 								</li>
 								<li class="f4-o1-1">
 									<div>
-										<h4>关注喜事码头微信公众号</h4>
+										<h5>关注喜事码头微信公众号</h5>
 										<p>
 											<img src="/matouPCS/Public/Home/img/erweima_top.png" />
 										</p>
@@ -1462,7 +1383,7 @@
 								</li>
 								<li class="f4-o1-1">
 									<div>
-										<h4>关于我们</h4>
+										<h5>关于我们</h5>
 										<p>
 											<a href="#">关于喜事码头</a>
 										</p>
@@ -1479,7 +1400,7 @@
 								</li>
 								<li class="f4-o1-1">
 									<div>
-										<h4>联系我们</h4>
+										<h5>联系我们</h5>
 										<p>官方邮箱:xishimatou@163.com</p>
 										<p>通讯地址:河南省郑州市863软件园</p>
 									</div>
@@ -1491,6 +1412,23 @@
 				</div>
 				<div class="f-main-c">
 					<div class="f-c-1f">
+						<h6>友情链接：</h6>
+						<a href="#">友情链接544</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
+						<a href="#">友情链接</a>
 						<p>© 2016－2017 郑州码头网络技术有限公司 </p>
 						<p><a href="http://www.miitbeian.gov.cn">豫ICP备16015506号</a></p>
 					</div>
@@ -1499,14 +1437,15 @@
 		</footer>
 	</body>
 </html>
-
 	</body>
-	<script type="text/javascript" src="j/matouPCS/Public/Home/s/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/matouPCS/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script src="/matouPCS/Public/Home/js/jquery.leoweather.min.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/indexstore.js"></script>
 	<script type="text/javascript" src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/City_data.js"></script>
 	<script src="/matouPCS/Public/Home/js/areadata.js"></script>
+	<!-- <script src="/matouPCS/Public/Home/js/sousuo.js"></script> -->
 	<script src="/matouPCS/Public/Home/js/showwin2.js"></script>
+	<script src="/matouPCS/Public/Home/js/mtb.js"></script>
 
 </html>

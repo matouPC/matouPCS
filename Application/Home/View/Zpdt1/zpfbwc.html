@@ -42,10 +42,11 @@
 					</div>
 				</div>
 				<div class="s-main-l">
+				<foreach name="list" item="lists">
 					<div class="s-c-3f-zp">
 						<div class="f3-c-1">
-							<foreach name="list" item="lists">
-								<a href="?s=/Home/Zpdt/xqyp/id/{$lists.eid}">
+							
+								<a href="?s=/Home/Zpdt/xqyp/id/{$lists.rid}">
 									<div>
 										<div class="tx">
 											<if condition="$lists[imagename]==''">  
@@ -82,14 +83,15 @@
 										<php>}</php>
 									</foreach>
 									<ul class="app_03">
-										<li class="">已有10人收藏</li>
+										<li class="">已有{$lists.collect}人收藏</li>
 										<li class="app_03_01">{$lists.date}</li>
 										<div class="clearfloat"></div>
 									</ul>
 								</a>
-							</foreach>
+							
 						</div>
 					</div>
+					</foreach>
 				</div>
 				<div class="clearfloat"></div>
 			</div>

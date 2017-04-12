@@ -44,7 +44,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -474,7 +474,7 @@
 								<div class="yhtx">
 										<?php if($dt[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
-                                     <img style="width: 120px; height: 120px;border-radius:50%" src="/MatouPCS/Tu/upload/<?php echo ($dt["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="width: 120px; height: 120px;border-radius:50%" src="/matouPCS/Tu/upload/<?php echo ($dt["imagename"]); ?>"  /><?php endif; ?>
 									<div class="vip">
 										<img src="/matouPCS/Public/Home/img/rzlogo.png" />
 									</div>
@@ -584,6 +584,9 @@
 											success:function(data){
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -598,6 +601,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -629,7 +633,7 @@
 													if(data[i].imagename==null){
 														var img='<img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />';
 													}else{
-												     var img = '<img  width="80" height="80" src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
+												     var img = '<img  width="80" height="80" src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
 													}
 													
 													
@@ -665,7 +669,7 @@
                               <?php } ?>
                               		 <?php if($lis[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" alt="" />
                                    <?php else: ?>
-                                     <img width="80" height="80" src="/MatouPCS/Tu/upload/<?php echo ($lis["imagename"]); ?>"  /><?php endif; ?>
+                                     <img width="80" height="80" src="/matouPCS/Tu/upload/<?php echo ($lis["imagename"]); ?>"  /><?php endif; ?>
 									
 										</a>
 										<div class="vip">
@@ -796,7 +800,7 @@
                                        <?php } ?>
 										<?php if($v[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png"/>
                                    <?php else: ?>
-                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($v["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/<?php echo ($v["imagename"]); ?>"  /><?php endif; ?>
 									</a>
 									<div class="vip">
 										<img src="/matouPCS/Public/Home/img/rzlogo.png" />
@@ -884,7 +888,7 @@ var p=2;
 	  var t = "<?php echo session('id');?>";
 		$.ajax({
 			type:'post',
-			url:"<?php echo U('Mtbu/lyjzdt');?>",
+			url:"?s=/Home/Mtbu/lyjzdt",
 			data:{k:p,id:id},
 			beforeSend:function(){
 	         $("#content").append("<div id='load'>加载中……</div>");
@@ -894,7 +898,9 @@ var p=2;
 				if(data!=null){				
 						//
 						 for (var i = 0; i < data.length; i++) {
-						                                   												
+								if(data[i].zid==null){
+									 var aa=2;
+								}else{                            												
 							 var myArray=new Array()
 							 var str=data[i].zid;  
 							 myArray = str.split(","); 
@@ -909,6 +915,7 @@ var p=2;
 		
 								 }
 							 }
+								}
 							if(aa==1){
 								var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 							}else{
@@ -939,7 +946,7 @@ var p=2;
 								if(data[i].imagename==null){
 									var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 								}else{
-							     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
+							     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
 								}
 						$("#contentt").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 职位名称： '+data[i].type_u+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 	 		
@@ -970,7 +977,9 @@ var p=2;
 
                    var li='';
       			 for (var i = 0; i < data.length; i++) {
-						
+      				if(data[i].zid==null){
+						 var aa=2;
+					}else{
 					 var myArray=new Array()
 					 var str=data[i].zid;  
 					 myArray = str.split(","); 
@@ -985,6 +994,7 @@ var p=2;
 
 						 }
 					 }
+					}
 					if(aa==1){
 						var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 					}else{
@@ -1015,7 +1025,7 @@ var p=2;
 						if(data[i].imagename==null){
 							var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 						}else{
-					     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
+					     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
 						
 							}
 						li+='<div class="s-c-3f-1f"><div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 职位名称： '+data[i].type_u+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>';
@@ -1036,7 +1046,7 @@ var p=2;
 		  var t = "<?php echo session('id');?>";;
 				$.ajax({
 					type:'post',
-					url:"<?php echo U('Mtbu/lyjzdtre');?>",
+					url:"?s=/Home/Mtbu/lyjzdtre",
 					data:{k:pc,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -1045,7 +1055,9 @@ var p=2;
 						// alert(data);
 						if(data!=null){				
 							 for (var i = 0; i < data.length; i++) {
-									
+									if(data[i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data[i].zid;  
 								 myArray = str.split(","); 
@@ -1060,6 +1072,7 @@ var p=2;
 			
 									 }
 								 }
+								}
 								if(aa==1){
 									var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 								}else{
@@ -1090,7 +1103,7 @@ var p=2;
 									if(data[i].imagename==null){
 										var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 									}else{
-								     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
+								     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
 									}
 							$("#ha").append('<div class="s-c-3f-1f"><div><div class="yhtx">'+url+img+'</a><div class="vip"><img src="/matouPCS/Public/Home/img/rzlogo.png" /></div><div class="clearfloat"></div></div><p class="yhmc"><a href="">'+use+'</a></p><p class="zwmc"> 职位名称： '+data[i].type_u+'</p><p class="szd">所在地：'+data[i].addre+'</p><div class="clearfloat"></div></div><p class="dtnr"> '+data[i].contents+'</p><div class="bottom"><p class="left">'+data[i].stime+'</p><!--<span class="delete"><img src="img/delete-2.png" /></span>--><div class="right dz-qx"><p onclick="zan1('+data[i].id+','+data[i].zan+')" class="dz dz-qx">'+dianzan+'</span><span style="font-size: 15px;" id="ss'+data[i].id+'">'+data[i].zan+'</span></p></div><p class="clearfloat"></p></div><div class="clearfloat"></div></div>');
 		 		

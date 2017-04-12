@@ -41,8 +41,12 @@
 									<li class="login-register">
 									<?php if($_SESSION['username'] != ''){ ?>
 										<a href="?s=/Home/User">
-											<div class="dltx">
+											<div class="dltx">			
+													<?php if($_SESSION['imagename'] != ''){ ?>
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
+												<?php } ?>
 											</div>
 											<p>用户<?php echo (substr($_SESSION['username'],0,5)); ?></p>
 										</a>
@@ -484,33 +488,33 @@
 									  <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddndt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                        	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?>
+                                        	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?>
 								</a>
 								<?php elseif($list[bdlx]=='6'): ?>
 								<a href="?s=/Home/Mtbu/spbddndt/id/<?php echo ($list["uid"]); ?>">  
 								<?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                        	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
+                                        	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php else: ?>
 								<a href="?s=/Home/Mtbu/rzbddndt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                      	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
 									<?php }else{ ?>
                                         <?php if($list[bdlx]=='1'): ?><a href="?s=/Home/Mtbu/grbddydt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                      	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
+                                      	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php elseif($list[bdlx]=='6'): ?>
 								<a href="?s=/Home/Mtbu/spbddydt/id/<?php echo ($list["uid"]); ?>">
 								  <?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                      	  	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
+                                      	  	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a>
 								<?php else: ?>
 								<a href="?s=/Home/Mtbu/rzbddydt/id/<?php echo ($list["uid"]); ?>">  
 								<?php if($list[imagename]==''): ?><img src="/matouPCS/Public/Home/img/tx2-3r.png" />
                                       <?php else: ?>
-                                    	<img src="/MatouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
+                                    	<img src="/matouPCS/Tu/upload/<?php echo ($list["imagename"]); ?>"  alt="" /><?php endif; ?></a><?php endif; ?>
                                        <?php } ?>
 						</div>
 						<div class="u-cont">
@@ -629,7 +633,7 @@
 								//获得基本信息id
 								var content = $('#content_x').val();
 								if(content == ''){
-									alert('滚犊子');
+									alert('请输入内容');
 								}else{
 									$.ajax({
 										url:"?s=/Home/User/qliuyan",
@@ -637,7 +641,7 @@
 										data:{xsid:xsid,content:content,fid:fid},
 										dataType:"json",
 										success:function(data){
-											console.log(data);
+											//console.log(data);
 											$('#content').val('');
 											var content = '';
 											for (var i = 0; i < data.length; i++) {
@@ -646,10 +650,10 @@
 												}else{
 											     var use = data[i].username;
 												}
-												if(data[i].imagename==''){
+												if(data[i].imagename==null){
 													var img='<img src="/matouPCS/Public/Home/img/pltx.png" alt="" />';
 												}else{
-											     var img = '<img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/'+data[i].imagename+'" /> ';
+											     var img = '<img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/'+data[i].imagename+'" /> ';
 												}
 												content += '<div class="s-5f-c1"><div class="s-5f-c1-1-c1" style="border: 0 solid #fff;margin-top: 10px;"><div class="s-5f-c1-1-c1img">'+img+'</div><div class="s-5f-c1-1-c1p1">用户名称：'+use+'</div><div class="s-5f-c1-1-c1p2">所在地：'+data[i]['addre']+'</div></div><div class="s-5f-c1-1"><div class="s-5f-c1-1-c1">'+data[i]['contents']+'</div>'+data[i]['ltime']+'</div></div>';
 											};
@@ -670,7 +674,7 @@
 								
 	                        <?php if($lius[imagename]==''): ?><img src="/matouPCS/Public/Home/img/pltx.png" alt="" />
                                    <?php else: ?>
-                                     <img style="border-radius:50%;width: 60px"  src="/MatouPCS/Tu/upload/<?php echo ($lius["imagename"]); ?>"  /><?php endif; ?>
+                                     <img style="border-radius:50%;width: 60px"  src="/matouPCS/Tu/upload/<?php echo ($lius["imagename"]); ?>"  /><?php endif; ?>
 								
 								</div>
 								<div class="s-5f-c1-1-c1p1">

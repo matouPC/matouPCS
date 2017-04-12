@@ -13,7 +13,7 @@ class BsController extends Controller{
 		
 		if(!isset($_COOKIE['username'])){
 			//跳转到登录页                                                                           跳转到最原始的页面
-			$this->show("<script type='text/javascript'>top.location.replace('Login/index')</script>");
+			$this->show("<script type='text/javascript'>top.location.replace('?s=/Admin/Login/index')</script>");
 		}
 	}
 }

@@ -156,7 +156,7 @@ $(function() {
 });
 $(function() {
 	$("#find").click(function() {
-		//								alert("充值")
+										alert("充值")
 		$("#spdlb").fadeIn(350).show();
 		$(".show-bg").fadeIn(350).show();
 		$("#find").css("background", "#ff5c5d");
@@ -828,29 +828,44 @@ $('#zpxx').click(function() {
 	$('.list-b').attr('src', 'img/list-2-red.png');
 });
 
-//查看号码
-$(function() {
+//查看号码  应赏详情
+// $(function() {
 	$("#sp").click(function() {
-		//				alert("充值")
+						// alert("充值");
 		$("#spdl").show();
 	});
 	$("#spdl-ok").click(function() {
-		var xp = $('#xp').val();
-		$("#spdl-p").text("联系电话："+xp);
-		$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
-		//				<input type="text"  class="time" id="stime">
-		if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
-			//					$("#id").value = "5"
-			//					c = c-1
-			setTimeout(function() {
-				$(".spdl").hide();
-			}, 3000);
-		}
+		$.ajax({
+			url:'?s=/Home/User/mtbkc',
+			type:'get',
+			success:function(data){
+				// alert('成功');
+				if(data == 'y'){
+					var xp = $('#xp').val();
+					$("#spdl-p").text("联系电话："+xp);
+					$("#spdl .spdl-c").html('<span>支付成功<br>3秒后自动关闭</span>');
+					//				<input type="text"  class="time" id="stime">
+					if($("#spdl .spdl-c span").text() == "支付成功3秒后自动关闭") {
+						//					$("#id").value = "5"
+						//					c = c-1
+						setTimeout(function() {
+							$(".spdl").hide();
+						}, 3000);
+					}
+				}
+				if(data == 'n'){
+					alert('码头币余额不足,请充值');
+				}
+			},error:function(){
+				alert('失败');
+			}
+		});
+		
 	});
 	$("#spdl-esc").click(function() {
 		$(".spdl").hide();
 	});
-});
+// });
 //报名
 $("#bt-p").click(function() {
 	$(".xqbta a").css("font-size", "12px");
@@ -875,7 +890,7 @@ $("#hfx3-1_zp").click(function() {
 	i+=1;
 	$(".p12").hide();
 	$(".dianji").hide();
-	$("#ypzps").append('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="ypimg'+i+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
+	$("#ypzps").prepend('<li><div class="cjsp_sc"><div class="photobg1"><div class="remm"><img src="/matouPCS/Public/Home/img/sc_01.png" width="19" height="18"></div><input class="photobt" name="ypimg'+i+'" type="file" id="photo1"><p class="addimg"></p><div class="click1"></div></div></div></li>'),
 		$(".refcc").on("click", function() {
 			if($(".s-c-3f").css("height") == "10px") {
 				$(".p12").show();

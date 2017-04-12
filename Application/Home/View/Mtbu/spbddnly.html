@@ -144,6 +144,9 @@
 											success:function(data){
 												var li = '';
 												for (var i = 0; i < data.length; i++) {
+													if(data[i].zid==null){
+														 var aa=2;
+													}else{
 													 var myArray=new Array()
 													 var str=data[i].zid;  
 													 myArray = str.split(","); 
@@ -158,6 +161,7 @@
 								
 														 }
 													 }
+													}
 													if(aa==1){
 														var dianzan='<span id="z'+data[i].id+'"  class="icon-dz-kz"></span>';
 													}else{
@@ -474,7 +478,7 @@ var p=2;
 	  var t = "{:session('id')}";
 		$.ajax({
 			type:'post',
-			url:"{:U('Mtbu/lyjzdt')}",
+			url:"?s=/Home/Mtbu/lyjzdt",
 			data:{k:p,id:id},
 			beforeSend:function(){
 	         $("#content").append("<div id='load'>加载中……</div>");
@@ -484,7 +488,9 @@ var p=2;
 				if(data!=null){				
 						//
 						 for (var i = 0; i < data.length; i++) {
-						                                   												
+								if(data[i].zid==null){
+									 var aa=2;
+								}else{                            												
 							 var myArray=new Array()
 							 var str=data[i].zid;  
 							 myArray = str.split(","); 
@@ -499,6 +505,7 @@ var p=2;
 		
 								 }
 							 }
+								}
 							if(aa==1){
 								var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 							}else{
@@ -560,7 +567,9 @@ var p=2;
 
                    var li='';
       			 for (var i = 0; i < data.length; i++) {
-						
+      				if(data[i].zid==null){
+						 var aa=2;
+					}else{
 					 var myArray=new Array()
 					 var str=data[i].zid;  
 					 myArray = str.split(","); 
@@ -575,6 +584,7 @@ var p=2;
 
 						 }
 					 }
+					}
 					if(aa==1){
 						var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 					}else{
@@ -626,7 +636,7 @@ var p=2;
 		  var t = "{:session('id')}";;
 				$.ajax({
 					type:'post',
-					url:"{:U('Mtbu/lyjzdtre')}",
+					url:"?s=/Home/Mtbu/lyjzdtre",
 					data:{k:pc,id:id},
 					beforeSend:function(){
 			         $("#ha").append("<div id='load'>加载中……</div>");
@@ -635,7 +645,9 @@ var p=2;
 						// alert(data);
 						if(data!=null){				
 							 for (var i = 0; i < data.length; i++) {
-									
+									if(data[i].zid==null){
+										 var aa=2;
+									}else{
 								 var myArray=new Array()
 								 var str=data[i].zid;  
 								 myArray = str.split(","); 
@@ -650,6 +662,7 @@ var p=2;
 			
 									 }
 								 }
+								}
 								if(aa==1){
 									var dianzan='<span id="zz'+data[i].id+'" style="font-size:15px;" class="icon-dz-kz"></span>';
 								}else{

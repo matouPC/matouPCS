@@ -63,58 +63,63 @@
 			</div>
 			<div class="alert-tel-3f">
 				<ul>
-					<li>
+					<li class="aaa">
 						<div class="left">
 							手&nbsp;&nbsp;机&nbsp;&nbsp;号
 						</div>
 						<div class="right">
+
 							<input type="tel" id="bd-tel" class="bd-tel" placeholder="请输入您的手机号码" />
-							<input type="button" autocomplete="off" value="获取验证码" id="btn_yzm" class="button" />
+							<input type="button" autocomplete="off" value="获取验证码" id="btn_yzmn" class="button" />
 						</div>
-						<div class="clearfloat"></div>
+						<div class="clearfloat">
 						<p class="tsxx">*请输入手机号码</p>
+						</div>
 					</li>
 					<li>
 						<div class="left">
 							验&nbsp;&nbsp;证&nbsp;&nbsp;码
 						</div>
 						<div class="right">
-							<input type="tel" class="word-border" placeholder="请输入您的验证码" />
-							<div class="alert-false">
-								<img src="/matouPCS/Public/Home/img/false.png" alt="" />
-							</div>
-							<div class="alert-true">
-								<img src="/matouPCS/Public/Home/img/true.png" alt="" />
-							</div>
+						 
+							<input type="tel"  id="fyzms"  class="word-border" placeholder="请输入您的验证码" />
+							<input type="hidden" id="fcodes" >	
+							    <div style="display:none" class="alert-true">
+											<img src="/matouPCS/Public/Home/img/true.png">
+										</div>
+										<div  style="display:none" class="alert-false">
+											<img src="/matouPCS/Public/Home/img/false.png">
+										</div> 
 						</div>
 						<div class="clearfloat"></div>
 					</li>
-					<li>
+					<li class="bbb">
 						<div class="left">
 							输入密码
 						</div>
 						<div class="right">
-							<input type="tel" placeholder="建议使用至少两种字符组合" class="word-border" />
+							<input type="tel" id="rpassWord" placeholder="建议使用至少两种字符组合" class="word-border" />
 						</div>
 						<div class="clearfloat"></div>
-						<p class="tsxx">*请输入密码</p>
+						<p class="tsxx"></p>
 					</li>
-					<li>
+					<li class="ccc">
 						<div class="left">
 							确认密码
 						</div>
 						<div class="right">
-							<input type="tel" placeholder="请再次输入您的密码" class="word-border" />
+							<input id="againa" type="tel" placeholder="请再次输入您的密码" class="word-border" />
 						</div>
 						<div class="clearfloat"></div>
-						<p class="tsxx">*两次密码输入不一致，请重新输入</p>
+						<p class="tsxx"></p>
 					</li>
 				</ul>
-				<div class="ok">
+				<div id="submitt" class="ok">
 					<button>确定</button>
 				</div>
 			</div>
 		</div>
+			<div class="alert-blackq"></div>
 		<!--绑定手机号结束-->
 		<header>
 			<div class="h-content-main">
@@ -150,7 +155,7 @@
 										<a href="?s=/Home/User">
 											<div class="dltx">			
 													<?php if($_SESSION['imagename'] != ''){ ?>
-													 <img style="border-radius:50%;width: 30px"  src="/MatouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
+													 <img style="border-radius:50%;width: 30px"  src="/matouPCS/Tu/upload/<?php echo ($_SESSION['imagename']); ?>"/> 
 													<?php }else{ ?>
 												<img src="/matouPCS/Public/Home/img/tx.png" />
 												<?php } ?>
@@ -293,7 +298,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Tjcs/spxq/uid/<?php echo ($sp['uid']); ?>">商铺主页</a>
 							   <?php }else{ ?>	
-							   <a href="#">商铺主页</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">商铺主页</a>
 							   <?php } ?>
                                 
 										</li>
@@ -303,7 +308,7 @@
 								<?php }else if($sp['status']==2){ ?>
 								<a href="?s=/Home/Mtbu/spgl">管理商铺</a>
 							   <?php }else{ ?>	
-							   <a href="#">管理商铺</a>
+							   <a href="#" onclick="alert('你暂时还没注册商铺')">管理商铺</a>
 							   <?php } ?>
 										
 										</li>
@@ -314,7 +319,7 @@
 								<a class="action" href="#" id="find">发动态</a>
 								<div class="strf"></div>
 							</li>
-							<li class="clearf"></li>
+							<div class="clearf"></div>
 						</ul>
 					</div>
 					<div class="clearf"></div>
@@ -520,13 +525,15 @@
 			function tj(){
 				   var tu = getCookie("tu");
 				    var content= $("#content").val();  
+		              alert(222);
+					   alert(content);
 		    $.ajax({  
 				        type: "POST",  
-				         url:"/matouPCS/index.php/Home/User/usave1",
+				         url:"?s=/Home/User/usave1",
 				         data: {content:content,type:types,tu:tu},  
 				        success: function(data){ 
-				
-				        		 window.location.reload(true);//重新加载当前文挡
+				            alert(666);
+				        	//	 window.location.reload(true);//重新加载当前文挡
 				  
 	                	
 				      
@@ -675,12 +682,14 @@
 							<div class="sctx-y">
 								<div class="container" id="crop-avatar">
 									<div id="sctx" class="avatar-view" title="点击上传头像">
-										<img src="/matouPCS/Tu//upload/<?php echo ($v["imagename"]); ?>" alt="" />
+										   <?php if($v[imagename]==''): ?><img src="/matouPCS/Public/Home/img/yhmc.png" alt="" />
+                                      <?php else: ?>
+                                      	<img src="/matouPCS/Tu//upload/<?php echo ($v["imagename"]); ?>" alt="" /><?php endif; ?>	
 									</div>
 									<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
 										<div class="modal-dialog modal-lg">
 											<div class="modal-content">
-												<form action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
+												<form class="avatar-form"  action="/matouPCS/Tu/crop.php" enctype="multipart/form-data" method="post">
 													<div class="modal-header">
 														<button class="close" data-dismiss="modal" type="button">&times;</button>
 														<h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
@@ -868,6 +877,7 @@
 	<script src="/matouPCS/Public/Home/js/scrolltopcontrol.js"></script>
 	<script src="/matouPCS/Public/Home/js/main-tx.js"></script>
 	<script src="/matouPCS/Public/Home/js/troop.js"></script>
+		<script src="/matouPCS/Public/Home/js/index-alert-tel.js"></script>
 <script type="text/javascript">
 function tj(){
 	
@@ -883,11 +893,11 @@ function tj(){
    
     $.ajax({  
         type: "POST",  
-         url:"/matouPCS/index.php/Home/User/usave/",
+         url:"?s=/Home/User/usave/",
          data: {"username":username,"password":password,"address":address,"password1":password1,"password2":password2,"zhiye":zhiye},  
 
         success: function(data){ 
-        	alert(555);
+        //	alert(555);
         	if(data=='y'){
         		//alert('密码输入错误，修改失败');
         		 $('#xxoo').html('<p style="display: block;color:red">*密码输入错误，修改失败</p>');

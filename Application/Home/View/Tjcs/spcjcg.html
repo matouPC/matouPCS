@@ -48,10 +48,9 @@
 				</div>
 				<div class="s-main-l">
 					<div class="s-c-2f">
-						<a href="#">
+
 							<a href="?s=/Home/Tjcs" class="zk">
 								进入码头商城
-							</a>
 						</a>
 					</div>
 					<div class="s-c-3f">
@@ -60,7 +59,12 @@
 								<a href="#">
 									<div class="sc3f-ulc1">
 										<span class="ulc1">
-											<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+										   <if condition="$v[imagename]==''">
+									<img src="__PUBLIC__/Home/img/bdmc.png" alt="" />
+                                      <else />
+                                      	<img src="/matouPCS/Tu//upload/{$v.imagename}" alt="" />
+                                    </if>	
+
 										</span>
 										<span class="ulc2">
 											<strong class="p18 black-333">{$v.shopname}</strong>
